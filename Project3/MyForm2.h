@@ -40,6 +40,7 @@ namespace Project3 {
 	private: System::Windows::Forms::RichTextBox^  richTextBox2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Label^  label4;
 	protected:
 
 	private:
@@ -61,6 +62,7 @@ namespace Project3 {
 			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// richTextBox1
@@ -80,7 +82,7 @@ namespace Project3 {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(69, 55);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(149, 20);
+			this->label1->Size = System::Drawing::Size(173, 25);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"New Project Name";
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm2::label1_Click);
@@ -93,7 +95,7 @@ namespace Project3 {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(114, 171);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(40, 20);
+			this->label2->Size = System::Drawing::Size(47, 25);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"ID #";
 			// 
@@ -104,13 +106,14 @@ namespace Project3 {
 			this->richTextBox2->Size = System::Drawing::Size(265, 49);
 			this->richTextBox2->TabIndex = 3;
 			this->richTextBox2->Text = L"";
+			this->richTextBox2->TextChanged += gcnew System::EventHandler(this, &MyForm2::richTextBox2_TextChanged);
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(73, 270);
+			this->label3->Location = System::Drawing::Point(791, 46);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(52, 17);
+			this->label3->Size = System::Drawing::Size(57, 20);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"label3";
 			this->label3->Click += gcnew System::EventHandler(this, &MyForm2::label3_Click);
@@ -125,11 +128,22 @@ namespace Project3 {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm2::button1_Click);
 			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(791, 176);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(57, 20);
+			this->label4->TabIndex = 6;
+			this->label4->Text = L"label4";
+			this->label4->Click += gcnew System::EventHandler(this, &MyForm2::label4_Click);
+			// 
 			// MyForm2
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(10, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1084, 328);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->richTextBox2);
@@ -154,9 +168,17 @@ namespace Project3 {
 	}
 	private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	String ^ in = richTextBox1->Text;
-	label3->Text = in;
-}
+	private: System::Void richTextBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		String ^ in = richTextBox1->Text;
+		label3->Text = in;
+		String ^ id = richTextBox2->Text;
+		label4->Text = id;
+
+
+	}
 };
 }
