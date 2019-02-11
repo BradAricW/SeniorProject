@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96BDC425-68A5-42DB-B695-DD307760AF45}</ProjectGuid>
+    <ProjectGuid>{C0F23EDA-0F62-4B0B-9040-F9954F1301C1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EdgeLook1</RootNamespace>
-    <AssemblyName>EdgeLook1</AssemblyName>
+    <RootNamespace>Form1</RootNamespace>
+    <AssemblyName>Form1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,12 +51,6 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProjectPage.Designer.cs">
-      <DependentUpon>ProjectPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
