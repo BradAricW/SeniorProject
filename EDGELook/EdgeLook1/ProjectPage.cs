@@ -27,6 +27,7 @@ namespace EdgeLook1
 
         }
 
+<<<<<<< HEAD
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -58,6 +59,9 @@ namespace EdgeLook1
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
+=======
+        private void label4_Click(object sender, EventArgs e)
+>>>>>>> d0c24046e4fbfb14eebfa57079a21f4930daef65
         {
 
         }
