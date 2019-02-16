@@ -16,7 +16,7 @@ namespace EdgeLook1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProjectPage());
+            Application.Run(new AddProjectPage());
         }
     }
 }
