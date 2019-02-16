@@ -1,0 +1,10 @@
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.exe.config
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.exe
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.pdb
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.Properties.Resources.resources
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csproj.GenerateResource.cache
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csproj.CoreCompileInputs.cache
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.exe
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.pdb
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csprojAssemblyReference.cache
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.ProjectPage.resources
