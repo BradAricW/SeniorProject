@@ -18,4 +18,8 @@ C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\De
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.Form1.resources
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.AddProjectPage.resources
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.Form1.resources
+<<<<<<< HEAD
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.AddProjectPage.resources
+=======
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csprojAssemblyReference.cache
+>>>>>>> 17412212aef524a7f5bdea3d4bc70c7f55cf3c2e
