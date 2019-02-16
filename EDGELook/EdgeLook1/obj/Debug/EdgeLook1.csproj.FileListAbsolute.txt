@@ -18,3 +18,4 @@ C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\De
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csproj.CoreCompileInputs.cache
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.exe
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.pdb
+C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.Form1.resources
