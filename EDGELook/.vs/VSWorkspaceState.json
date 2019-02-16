@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EdgeLook1"
+    "\\EdgeLook1",
+    "\\EdgeLook1\\obj\\Debug\\TempPE"
   ],
-  "SelectedNode": "\\EdgeLook1\\AddProjectPage.cs",
+  "SelectedNode": "\\EdgeLook1\\EdgeLook1.csproj",
   "PreviewInSolutionExplorer": false
 }

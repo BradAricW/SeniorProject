@@ -52,6 +52,7 @@
     <Compile Include="AddProjectPage.Designer.cs">
       <DependentUpon>AddProjectPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

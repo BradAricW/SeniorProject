@@ -1,0 +1,20 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-Form1.Designer",
+      "appliesTo": "EdgeLook1/Form1.Designer.cs",
+      "type": "launch"
+    },
+    {
+      "taskName": "task-AddProjectPage.Designer",
+      "appliesTo": "EdgeLook1/AddProjectPage.Designer.cs",
+      "type": "launch"
+    },
+    {
+      "taskName": "task-Form1.Designer",
+      "appliesTo": "EdgeLook1/Form1.Designer.cs",
+      "type": "launch"
+    }
+  ]
+}

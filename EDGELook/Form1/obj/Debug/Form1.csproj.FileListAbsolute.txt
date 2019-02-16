@@ -1,0 +1,9 @@
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\Form1\bin\Debug\Form1.exe.config
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\Form1\bin\Debug\Form1.exe
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\Form1\bin\Debug\Form1.pdb
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\Form1\obj\Debug\Form1.csprojAssemblyReference.cache
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\Form1\obj\Debug\Form1.Properties.Resources.resources
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\Form1\obj\Debug\Form1.csproj.GenerateResource.cache
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\Form1\obj\Debug\Form1.csproj.CoreCompileInputs.cache
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\Form1\obj\Debug\Form1.exe
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\Form1\obj\Debug\Form1.pdb
