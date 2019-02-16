@@ -10,7 +10,6 @@ C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\De
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.exe
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.pdb
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csprojAssemblyReference.cache
-C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.ProjectPage.resources
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.Properties.Resources.resources
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csproj.GenerateResource.cache
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csproj.CoreCompileInputs.cache
@@ -19,3 +18,4 @@ C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\De
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.Form1.resources
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.AddProjectPage.resources
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.Form1.resources
+C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.AddProjectPage.resources
