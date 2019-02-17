@@ -1,0 +1,10 @@
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\bin\Debug\TaskBar.exe.config
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\bin\Debug\TaskBar.exe
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\bin\Debug\TaskBar.pdb
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\obj\Debug\TaskBar.csprojAssemblyReference.cache
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\obj\Debug\TaskBar.Form1.resources
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\obj\Debug\TaskBar.Properties.Resources.resources
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\obj\Debug\TaskBar.csproj.GenerateResource.cache
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\obj\Debug\TaskBar.csproj.CoreCompileInputs.cache
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\obj\Debug\TaskBar.exe
+C:\Users\alpokorney\source\repos\TaskBar\TaskBar\obj\Debug\TaskBar.pdb
