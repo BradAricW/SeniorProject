@@ -1,6 +1,6 @@
 ﻿namespace EdgeLook1
 {
-    partial class ProfilePage
+    partial class EmployeePage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfilePage));
-            this.editButton1 = new System.Windows.Forms.Button();
-            this.editButton2 = new System.Windows.Forms.Button();
-            this.editButton3 = new System.Windows.Forms.Button();
-            this.viewButton = new System.Windows.Forms.Button();
-            this.profileLabel = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeePage));
             this.backPanel = new System.Windows.Forms.Panel();
             this.projectList = new System.Windows.Forms.ListBox();
             this.emailLabel = new System.Windows.Forms.Label();
@@ -45,77 +40,12 @@
             this.contactLabel = new System.Windows.Forms.Label();
             this.vacationLabel = new System.Windows.Forms.Label();
             this.hoursLabel1 = new System.Windows.Forms.Label();
-            this.sevenWonders = new System.Windows.Forms.Label();
+            this.viewButton = new System.Windows.Forms.Button();
+            this.employeeLabel = new System.Windows.Forms.Label();
             this.edgeLogo = new System.Windows.Forms.Label();
+            this.sevenWonders = new System.Windows.Forms.Label();
             this.backPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // editButton1
-            // 
-            this.editButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.editButton1.FlatAppearance.BorderSize = 0;
-            this.editButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton1.ForeColor = System.Drawing.Color.Snow;
-            this.editButton1.Location = new System.Drawing.Point(221, 34);
-            this.editButton1.Name = "editButton1";
-            this.editButton1.Size = new System.Drawing.Size(75, 23);
-            this.editButton1.TabIndex = 0;
-            this.editButton1.Text = "Edit";
-            this.editButton1.UseVisualStyleBackColor = false;
-            this.editButton1.Click += new System.EventHandler(this.EditButton1_Click);
-            // 
-            // editButton2
-            // 
-            this.editButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.editButton2.FlatAppearance.BorderSize = 0;
-            this.editButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton2.ForeColor = System.Drawing.Color.Snow;
-            this.editButton2.Location = new System.Drawing.Point(221, 105);
-            this.editButton2.Name = "editButton2";
-            this.editButton2.Size = new System.Drawing.Size(75, 23);
-            this.editButton2.TabIndex = 1;
-            this.editButton2.Text = "Edit";
-            this.editButton2.UseVisualStyleBackColor = false;
-            this.editButton2.Click += new System.EventHandler(this.EditButton2_Click);
-            // 
-            // editButton3
-            // 
-            this.editButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.editButton3.FlatAppearance.BorderSize = 0;
-            this.editButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton3.ForeColor = System.Drawing.Color.Snow;
-            this.editButton3.Location = new System.Drawing.Point(221, 176);
-            this.editButton3.Name = "editButton3";
-            this.editButton3.Size = new System.Drawing.Size(75, 23);
-            this.editButton3.TabIndex = 2;
-            this.editButton3.Text = "Edit";
-            this.editButton3.UseVisualStyleBackColor = false;
-            this.editButton3.Click += new System.EventHandler(this.EditButton3_Click);
-            // 
-            // viewButton
-            // 
-            this.viewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.viewButton.FlatAppearance.BorderSize = 0;
-            this.viewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewButton.ForeColor = System.Drawing.Color.Snow;
-            this.viewButton.Location = new System.Drawing.Point(113, 301);
-            this.viewButton.Name = "viewButton";
-            this.viewButton.Size = new System.Drawing.Size(75, 23);
-            this.viewButton.TabIndex = 3;
-            this.viewButton.Text = "View";
-            this.viewButton.UseVisualStyleBackColor = false;
-            this.viewButton.Click += new System.EventHandler(this.ViewButton_Click);
-            // 
-            // profileLabel
-            // 
-            this.profileLabel.AutoSize = true;
-            this.profileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileLabel.Location = new System.Drawing.Point(342, 11);
-            this.profileLabel.Name = "profileLabel";
-            this.profileLabel.Size = new System.Drawing.Size(92, 24);
-            this.profileLabel.TabIndex = 4;
-            this.profileLabel.Text = "My Profile";
             // 
             // backPanel
             // 
@@ -131,14 +61,10 @@
             this.backPanel.Controls.Add(this.vacationLabel);
             this.backPanel.Controls.Add(this.hoursLabel1);
             this.backPanel.Controls.Add(this.viewButton);
-            this.backPanel.Controls.Add(this.editButton3);
-            this.backPanel.Controls.Add(this.editButton1);
-            this.backPanel.Controls.Add(this.editButton2);
-            this.backPanel.Location = new System.Drawing.Point(246, 43);
+            this.backPanel.Location = new System.Drawing.Point(250, 42);
             this.backPanel.Name = "backPanel";
             this.backPanel.Size = new System.Drawing.Size(300, 327);
-            this.backPanel.TabIndex = 5;
-            this.backPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.backPanel.TabIndex = 6;
             // 
             // projectList
             // 
@@ -255,23 +181,47 @@
             this.hoursLabel1.TabIndex = 4;
             this.hoursLabel1.Text = "Hours Available";
             // 
-            // sevenWonders
+            // viewButton
             // 
-            this.sevenWonders.Image = ((System.Drawing.Image)(resources.GetObject("sevenWonders.Image")));
-            this.sevenWonders.Location = new System.Drawing.Point(396, 376);
-            this.sevenWonders.Name = "sevenWonders";
-            this.sevenWonders.Size = new System.Drawing.Size(111, 65);
-            this.sevenWonders.TabIndex = 6;
+            this.viewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.viewButton.FlatAppearance.BorderSize = 0;
+            this.viewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewButton.ForeColor = System.Drawing.Color.Snow;
+            this.viewButton.Location = new System.Drawing.Point(113, 301);
+            this.viewButton.Name = "viewButton";
+            this.viewButton.Size = new System.Drawing.Size(75, 23);
+            this.viewButton.TabIndex = 3;
+            this.viewButton.Text = "View";
+            this.viewButton.UseVisualStyleBackColor = false;
+            // 
+            // employeeLabel
+            // 
+            this.employeeLabel.AutoSize = true;
+            this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeLabel.Location = new System.Drawing.Point(246, 11);
+            this.employeeLabel.Name = "employeeLabel";
+            this.employeeLabel.Size = new System.Drawing.Size(106, 24);
+            this.employeeLabel.TabIndex = 7;
+            this.employeeLabel.Text = "Employee: ";
             // 
             // edgeLogo
             // 
             this.edgeLogo.Image = ((System.Drawing.Image)(resources.GetObject("edgeLogo.Image")));
-            this.edgeLogo.Location = new System.Drawing.Point(290, 376);
+            this.edgeLogo.Location = new System.Drawing.Point(292, 375);
             this.edgeLogo.Name = "edgeLogo";
             this.edgeLogo.Size = new System.Drawing.Size(100, 65);
-            this.edgeLogo.TabIndex = 7;
+            this.edgeLogo.TabIndex = 9;
             // 
-            // ProfilePage
+            // sevenWonders
+            // 
+            this.sevenWonders.Image = ((System.Drawing.Image)(resources.GetObject("sevenWonders.Image")));
+            this.sevenWonders.Location = new System.Drawing.Point(398, 375);
+            this.sevenWonders.Name = "sevenWonders";
+            this.sevenWonders.Size = new System.Drawing.Size(111, 65);
+            this.sevenWonders.TabIndex = 8;
+            // 
+            // EmployeePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -279,11 +229,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.edgeLogo);
             this.Controls.Add(this.sevenWonders);
-            this.Controls.Add(this.profileLabel);
+            this.Controls.Add(this.employeeLabel);
             this.Controls.Add(this.backPanel);
-            this.Name = "ProfilePage";
-            this.Text = "My Profile";
-            this.Load += new System.EventHandler(this.ProfilePage_Load);
+            this.Name = "EmployeePage";
+            this.Text = "Employee Page";
             this.backPanel.ResumeLayout(false);
             this.backPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -291,18 +240,10 @@
 
         }
 
-
-
         #endregion
 
-        private System.Windows.Forms.Button editButton1;
-        private System.Windows.Forms.Button editButton2;
-        private System.Windows.Forms.Button editButton3;
-        private System.Windows.Forms.Button viewButton;
-        private System.Windows.Forms.Label profileLabel;
         private System.Windows.Forms.Panel backPanel;
-        private System.Windows.Forms.Label hoursLabel1;
-        private System.Windows.Forms.Label sevenWonders;
+        private System.Windows.Forms.ListBox projectList;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label phoneLabel;
         private System.Windows.Forms.Label endLabel;
@@ -311,7 +252,10 @@
         private System.Windows.Forms.Label projectsLabel;
         private System.Windows.Forms.Label contactLabel;
         private System.Windows.Forms.Label vacationLabel;
+        private System.Windows.Forms.Label hoursLabel1;
+        private System.Windows.Forms.Button viewButton;
+        private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.Label edgeLogo;
-        private System.Windows.Forms.ListBox projectList;
+        private System.Windows.Forms.Label sevenWonders;
     }
 }
