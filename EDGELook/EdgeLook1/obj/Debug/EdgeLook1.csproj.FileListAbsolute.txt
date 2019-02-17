@@ -35,3 +35,5 @@ C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLo
 C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.exe
 C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.pdb
 C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.EmployeePage.resources
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.EmployeePage.resources
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.ProfilePage.resources
