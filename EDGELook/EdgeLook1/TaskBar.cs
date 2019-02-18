@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TaskBar
 {
-    public partial class Form1 : Form
+    public partial class TaskBar : Form
     {
         bool isSideMenuPanelOpen = false;
 
