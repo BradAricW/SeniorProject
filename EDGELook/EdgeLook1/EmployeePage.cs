@@ -16,5 +16,10 @@ namespace EdgeLook1
         {
             InitializeComponent();
         }
+
+        private void hoursLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

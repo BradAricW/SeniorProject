@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.projectNumberLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxProjectNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxProjectName = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -44,7 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TextBoxNotes = new System.Windows.Forms.RichTextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -68,17 +68,17 @@
             this.projectNumberLabel.Size = new System.Drawing.Size(450, 30);
             this.projectNumberLabel.TabIndex = 1;
             this.projectNumberLabel.Text = "Project Number                                  ";
-            this.projectNumberLabel.Click += new System.EventHandler(this.label1_Click);
+            this.projectNumberLabel.Click += new System.EventHandler(this.projectNumLabel);
             // 
-            // textBox1
+            // textBoxProjectNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 35);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(445, 26);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Input Project Number";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxProjectNumber.Location = new System.Drawing.Point(3, 35);
+            this.textBoxProjectNumber.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textBoxProjectNumber.Name = "textBoxProjectNumber";
+            this.textBoxProjectNumber.Size = new System.Drawing.Size(445, 26);
+            this.textBoxProjectNumber.TabIndex = 3;
+            this.textBoxProjectNumber.Text = "Input Project Number";
+            this.textBoxProjectNumber.TextChanged += new System.EventHandler(this.textBox_ProjectNumber);
             // 
             // label2
             // 
@@ -90,14 +90,15 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Description                                  ";
             // 
-            // textBox2
+            // textBoxProjectName
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 101);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(445, 26);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Input Description";
+            this.textBoxProjectName.Location = new System.Drawing.Point(3, 101);
+            this.textBoxProjectName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textBoxProjectName.Name = "textBoxProjectName";
+            this.textBoxProjectName.Size = new System.Drawing.Size(445, 26);
+            this.textBoxProjectName.TabIndex = 5;
+            this.textBoxProjectName.Text = "Input Description";
+            this.textBoxProjectName.TextChanged += new System.EventHandler(this.textBox_ProjectName);
             // 
             // textBox3
             // 
@@ -204,7 +205,7 @@
             this.button1.TabIndex = 16;
             this.button1.Text = "Add Project";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.addProject_Click);
             // 
             // label8
             // 
@@ -217,15 +218,15 @@
             this.label8.Text = "Notes";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // richTextBox1
+            // TextBoxNotes
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(3, 35);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(384, 453);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.TextBoxNotes.Location = new System.Drawing.Point(3, 35);
+            this.TextBoxNotes.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.TextBoxNotes.Name = "TextBoxNotes";
+            this.TextBoxNotes.Size = new System.Drawing.Size(384, 453);
+            this.TextBoxNotes.TabIndex = 19;
+            this.TextBoxNotes.Text = "";
+            this.TextBoxNotes.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // button3
             // 
@@ -321,9 +322,9 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
             this.flowLayoutPanel1.Controls.Add(this.projectNumberLabel);
-            this.flowLayoutPanel1.Controls.Add(this.textBox1);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxProjectNumber);
             this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.textBox2);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxProjectName);
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Controls.Add(this.textBox3);
             this.flowLayoutPanel1.Controls.Add(this.label4);
@@ -342,7 +343,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.TextBoxNotes);
             this.panel1.Location = new System.Drawing.Point(868, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(390, 493);
@@ -379,9 +380,9 @@
         #endregion
 
         private System.Windows.Forms.Label projectNumberLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxProjectNumber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxProjectName;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
@@ -394,7 +395,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox TextBoxNotes;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkBox1;

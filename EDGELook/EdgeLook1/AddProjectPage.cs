@@ -22,7 +22,7 @@ namespace EdgeLook1
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void projectNumLabel(object sender, EventArgs e)
         {
 
         }
@@ -67,12 +67,24 @@ namespace EdgeLook1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addProject_Click(object sender, EventArgs e)
+        {
+            String projectName;
+            String projectNumber;
+            projectName = textBoxProjectName.Text;
+            //TextBoxNotes.Text = projectName; //Simple test
+            projectNumber = textBoxProjectNumber.Text;
+            //TextBoxNotes.Text = " " + projectNumber;  //Simple test
+            
+
+        }
+
+        private void textBox_ProjectNumber(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox_ProjectName(object sender, EventArgs e)
         {
 
         }
