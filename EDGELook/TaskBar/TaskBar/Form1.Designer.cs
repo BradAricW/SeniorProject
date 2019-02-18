@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.sideMenuOptionsPanel = new System.Windows.Forms.Panel();
+            this.aboutButtonSideMenu = new System.Windows.Forms.Button();
+            this.schedulesButtonSideMenu = new System.Windows.Forms.Button();
+            this.employeesSideMenuButton = new System.Windows.Forms.Button();
+            this.projectsButtonSideMenu = new System.Windows.Forms.Button();
+            this.homeButtonSideMenu = new System.Windows.Forms.Button();
             this.scheduelsButtonMain = new System.Windows.Forms.Button();
             this.employeesButtonMain = new System.Windows.Forms.Button();
             this.projectsButtonMain = new System.Windows.Forms.Button();
@@ -37,12 +43,6 @@
             this.employeeIDLabel = new System.Windows.Forms.Label();
             this.signOut = new System.Windows.Forms.Label();
             this.sideMenuPanel = new System.Windows.Forms.Label();
-            this.sideMenuOptionsPanel = new System.Windows.Forms.Panel();
-            this.aboutButtonSideMenu = new System.Windows.Forms.Button();
-            this.schedulesButtonSideMenu = new System.Windows.Forms.Button();
-            this.employeesSideMenuButton = new System.Windows.Forms.Button();
-            this.projectsButtonSideMenu = new System.Windows.Forms.Button();
-            this.homeButtonSideMenu = new System.Windows.Forms.Button();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -63,91 +63,12 @@
             this.panelMain.Controls.Add(this.sideMenuPanel);
             this.panelMain.Controls.Add(this.HeaderLabel);
             this.panelMain.Controls.Add(this.label2);
-            this.panelMain.Location = new System.Drawing.Point(37, 28);
+            this.panelMain.Location = new System.Drawing.Point(117, 80);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(943, 213);
+            this.panelMain.Size = new System.Drawing.Size(2986, 1395);
             this.panelMain.TabIndex = 0;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // scheduelsButtonMain
-            // 
-            this.scheduelsButtonMain.BackColor = System.Drawing.Color.White;
-            this.scheduelsButtonMain.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scheduelsButtonMain.Location = new System.Drawing.Point(672, 150);
-            this.scheduelsButtonMain.Name = "scheduelsButtonMain";
-            this.scheduelsButtonMain.Size = new System.Drawing.Size(181, 57);
-            this.scheduelsButtonMain.TabIndex = 9;
-            this.scheduelsButtonMain.Text = "Schedules";
-            this.scheduelsButtonMain.UseVisualStyleBackColor = false;
-            this.scheduelsButtonMain.Click += new System.EventHandler(this.scheduelsButtonMain_Click);
-            // 
-            // employeesButtonMain
-            // 
-            this.employeesButtonMain.BackColor = System.Drawing.Color.White;
-            this.employeesButtonMain.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeesButtonMain.Location = new System.Drawing.Point(485, 150);
-            this.employeesButtonMain.Name = "employeesButtonMain";
-            this.employeesButtonMain.Size = new System.Drawing.Size(181, 57);
-            this.employeesButtonMain.TabIndex = 8;
-            this.employeesButtonMain.Text = "Employees";
-            this.employeesButtonMain.UseVisualStyleBackColor = false;
-            this.employeesButtonMain.Click += new System.EventHandler(this.employeesButtonMain_Click);
-            // 
-            // projectsButtonMain
-            // 
-            this.projectsButtonMain.BackColor = System.Drawing.Color.White;
-            this.projectsButtonMain.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectsButtonMain.Location = new System.Drawing.Point(298, 150);
-            this.projectsButtonMain.Name = "projectsButtonMain";
-            this.projectsButtonMain.Size = new System.Drawing.Size(181, 57);
-            this.projectsButtonMain.TabIndex = 7;
-            this.projectsButtonMain.Text = "Projects";
-            this.projectsButtonMain.UseVisualStyleBackColor = false;
-            this.projectsButtonMain.Click += new System.EventHandler(this.projectsButtonMain_Click);
-            // 
-            // homeButtonMain
-            // 
-            this.homeButtonMain.BackColor = System.Drawing.Color.White;
-            this.homeButtonMain.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButtonMain.Location = new System.Drawing.Point(111, 150);
-            this.homeButtonMain.Name = "homeButtonMain";
-            this.homeButtonMain.Size = new System.Drawing.Size(181, 57);
-            this.homeButtonMain.TabIndex = 6;
-            this.homeButtonMain.Text = "Home";
-            this.homeButtonMain.UseVisualStyleBackColor = false;
-            this.homeButtonMain.Click += new System.EventHandler(this.homeButtonMain_Click);
-            // 
-            // employeeIDLabel
-            // 
-            this.employeeIDLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeIDLabel.Location = new System.Drawing.Point(702, 90);
-            this.employeeIDLabel.Name = "employeeIDLabel";
-            this.employeeIDLabel.Size = new System.Drawing.Size(238, 31);
-            this.employeeIDLabel.TabIndex = 5;
-            this.employeeIDLabel.Text = "Welcome, Example!";
-            this.employeeIDLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // signOut
-            // 
-            this.signOut.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signOut.Location = new System.Drawing.Point(848, 10);
-            this.signOut.Name = "signOut";
-            this.signOut.Size = new System.Drawing.Size(83, 32);
-            this.signOut.TabIndex = 3;
-            this.signOut.Text = "Sign Out";
-            this.signOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.signOut.Click += new System.EventHandler(this.signOut_Click);
-            // 
-            // sideMenuPanel
-            // 
-            this.sideMenuPanel.BackColor = System.Drawing.Color.White;
-            this.sideMenuPanel.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sideMenuPanel.Location = new System.Drawing.Point(5, 10);
-            this.sideMenuPanel.Name = "sideMenuPanel";
-            this.sideMenuPanel.Size = new System.Drawing.Size(75, 29);
-            this.sideMenuPanel.TabIndex = 0;
-            this.sideMenuPanel.Text = "Menu";
-            this.sideMenuPanel.Click += new System.EventHandler(this.sideMenuPanel_Click);
             // 
             // sideMenuOptionsPanel
             // 
@@ -157,17 +78,19 @@
             this.sideMenuOptionsPanel.Controls.Add(this.employeesSideMenuButton);
             this.sideMenuOptionsPanel.Controls.Add(this.projectsButtonSideMenu);
             this.sideMenuOptionsPanel.Controls.Add(this.homeButtonSideMenu);
-            this.sideMenuOptionsPanel.Location = new System.Drawing.Point(10, 42);
+            this.sideMenuOptionsPanel.Location = new System.Drawing.Point(32, 120);
+            this.sideMenuOptionsPanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.sideMenuOptionsPanel.Name = "sideMenuOptionsPanel";
-            this.sideMenuOptionsPanel.Size = new System.Drawing.Size(130, 0);
+            this.sideMenuOptionsPanel.Size = new System.Drawing.Size(412, 0);
             this.sideMenuOptionsPanel.TabIndex = 1;
             this.sideMenuOptionsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // aboutButtonSideMenu
             // 
-            this.aboutButtonSideMenu.Location = new System.Drawing.Point(0, 164);
+            this.aboutButtonSideMenu.Location = new System.Drawing.Point(0, 467);
+            this.aboutButtonSideMenu.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.aboutButtonSideMenu.Name = "aboutButtonSideMenu";
-            this.aboutButtonSideMenu.Size = new System.Drawing.Size(130, 44);
+            this.aboutButtonSideMenu.Size = new System.Drawing.Size(412, 125);
             this.aboutButtonSideMenu.TabIndex = 4;
             this.aboutButtonSideMenu.Text = "About";
             this.aboutButtonSideMenu.UseVisualStyleBackColor = true;
@@ -175,9 +98,10 @@
             // 
             // schedulesButtonSideMenu
             // 
-            this.schedulesButtonSideMenu.Location = new System.Drawing.Point(0, 123);
+            this.schedulesButtonSideMenu.Location = new System.Drawing.Point(0, 350);
+            this.schedulesButtonSideMenu.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.schedulesButtonSideMenu.Name = "schedulesButtonSideMenu";
-            this.schedulesButtonSideMenu.Size = new System.Drawing.Size(130, 44);
+            this.schedulesButtonSideMenu.Size = new System.Drawing.Size(412, 125);
             this.schedulesButtonSideMenu.TabIndex = 3;
             this.schedulesButtonSideMenu.Text = "Schedules";
             this.schedulesButtonSideMenu.UseVisualStyleBackColor = true;
@@ -185,9 +109,10 @@
             // 
             // employeesSideMenuButton
             // 
-            this.employeesSideMenuButton.Location = new System.Drawing.Point(0, 82);
+            this.employeesSideMenuButton.Location = new System.Drawing.Point(0, 233);
+            this.employeesSideMenuButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeesSideMenuButton.Name = "employeesSideMenuButton";
-            this.employeesSideMenuButton.Size = new System.Drawing.Size(130, 44);
+            this.employeesSideMenuButton.Size = new System.Drawing.Size(412, 125);
             this.employeesSideMenuButton.TabIndex = 2;
             this.employeesSideMenuButton.Text = "Employees";
             this.employeesSideMenuButton.UseVisualStyleBackColor = true;
@@ -195,9 +120,10 @@
             // 
             // projectsButtonSideMenu
             // 
-            this.projectsButtonSideMenu.Location = new System.Drawing.Point(0, 41);
+            this.projectsButtonSideMenu.Location = new System.Drawing.Point(0, 117);
+            this.projectsButtonSideMenu.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectsButtonSideMenu.Name = "projectsButtonSideMenu";
-            this.projectsButtonSideMenu.Size = new System.Drawing.Size(130, 44);
+            this.projectsButtonSideMenu.Size = new System.Drawing.Size(412, 125);
             this.projectsButtonSideMenu.TabIndex = 1;
             this.projectsButtonSideMenu.Text = "Projects";
             this.projectsButtonSideMenu.UseVisualStyleBackColor = true;
@@ -206,33 +132,124 @@
             // homeButtonSideMenu
             // 
             this.homeButtonSideMenu.Location = new System.Drawing.Point(0, 0);
+            this.homeButtonSideMenu.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.homeButtonSideMenu.Name = "homeButtonSideMenu";
-            this.homeButtonSideMenu.Size = new System.Drawing.Size(130, 44);
+            this.homeButtonSideMenu.Size = new System.Drawing.Size(412, 125);
             this.homeButtonSideMenu.TabIndex = 0;
             this.homeButtonSideMenu.Text = "Home";
             this.homeButtonSideMenu.UseVisualStyleBackColor = true;
             this.homeButtonSideMenu.Click += new System.EventHandler(this.homeButtonSideMenu_Click);
             // 
+            // scheduelsButtonMain
+            // 
+            this.scheduelsButtonMain.BackColor = System.Drawing.Color.White;
+            this.scheduelsButtonMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scheduelsButtonMain.Location = new System.Drawing.Point(2128, 427);
+            this.scheduelsButtonMain.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.scheduelsButtonMain.Name = "scheduelsButtonMain";
+            this.scheduelsButtonMain.Size = new System.Drawing.Size(573, 162);
+            this.scheduelsButtonMain.TabIndex = 9;
+            this.scheduelsButtonMain.Text = "Schedules";
+            this.scheduelsButtonMain.UseVisualStyleBackColor = false;
+            this.scheduelsButtonMain.Click += new System.EventHandler(this.scheduelsButtonMain_Click);
+            // 
+            // employeesButtonMain
+            // 
+            this.employeesButtonMain.BackColor = System.Drawing.Color.White;
+            this.employeesButtonMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeesButtonMain.Location = new System.Drawing.Point(1536, 427);
+            this.employeesButtonMain.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.employeesButtonMain.Name = "employeesButtonMain";
+            this.employeesButtonMain.Size = new System.Drawing.Size(573, 162);
+            this.employeesButtonMain.TabIndex = 8;
+            this.employeesButtonMain.Text = "Employees";
+            this.employeesButtonMain.UseVisualStyleBackColor = false;
+            this.employeesButtonMain.Click += new System.EventHandler(this.employeesButtonMain_Click);
+            // 
+            // projectsButtonMain
+            // 
+            this.projectsButtonMain.BackColor = System.Drawing.Color.White;
+            this.projectsButtonMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectsButtonMain.Location = new System.Drawing.Point(944, 427);
+            this.projectsButtonMain.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.projectsButtonMain.Name = "projectsButtonMain";
+            this.projectsButtonMain.Size = new System.Drawing.Size(573, 162);
+            this.projectsButtonMain.TabIndex = 7;
+            this.projectsButtonMain.Text = "Projects";
+            this.projectsButtonMain.UseVisualStyleBackColor = false;
+            this.projectsButtonMain.Click += new System.EventHandler(this.projectsButtonMain_Click);
+            // 
+            // homeButtonMain
+            // 
+            this.homeButtonMain.BackColor = System.Drawing.Color.White;
+            this.homeButtonMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButtonMain.Location = new System.Drawing.Point(352, 427);
+            this.homeButtonMain.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.homeButtonMain.Name = "homeButtonMain";
+            this.homeButtonMain.Size = new System.Drawing.Size(573, 162);
+            this.homeButtonMain.TabIndex = 6;
+            this.homeButtonMain.Text = "Home";
+            this.homeButtonMain.UseVisualStyleBackColor = false;
+            this.homeButtonMain.Click += new System.EventHandler(this.homeButtonMain_Click);
+            // 
+            // employeeIDLabel
+            // 
+            this.employeeIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeIDLabel.Location = new System.Drawing.Point(2223, 256);
+            this.employeeIDLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.employeeIDLabel.Name = "employeeIDLabel";
+            this.employeeIDLabel.Size = new System.Drawing.Size(754, 88);
+            this.employeeIDLabel.TabIndex = 5;
+            this.employeeIDLabel.Text = "Welcome, Example!";
+            this.employeeIDLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // signOut
+            // 
+            this.signOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signOut.Location = new System.Drawing.Point(2685, 28);
+            this.signOut.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.signOut.Name = "signOut";
+            this.signOut.Size = new System.Drawing.Size(263, 91);
+            this.signOut.TabIndex = 3;
+            this.signOut.Text = "Sign Out";
+            this.signOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.signOut.Click += new System.EventHandler(this.signOut_Click);
+            // 
+            // sideMenuPanel
+            // 
+            this.sideMenuPanel.BackColor = System.Drawing.Color.White;
+            this.sideMenuPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sideMenuPanel.Location = new System.Drawing.Point(16, 28);
+            this.sideMenuPanel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.sideMenuPanel.Name = "sideMenuPanel";
+            this.sideMenuPanel.Size = new System.Drawing.Size(238, 83);
+            this.sideMenuPanel.TabIndex = 0;
+            this.sideMenuPanel.Text = "Menu";
+            this.sideMenuPanel.Click += new System.EventHandler(this.sideMenuPanel_Click);
+            // 
             // HeaderLabel
             // 
             this.HeaderLabel.BackColor = System.Drawing.Color.Blue;
             this.HeaderLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderLabel.Font = new System.Drawing.Font("Century", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HeaderLabel.ForeColor = System.Drawing.Color.White;
             this.HeaderLabel.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.HeaderLabel.Location = new System.Drawing.Point(0, 0);
+            this.HeaderLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.HeaderLabel.Name = "HeaderLabel";
-            this.HeaderLabel.Size = new System.Drawing.Size(943, 121);
+            this.HeaderLabel.Size = new System.Drawing.Size(2986, 344);
             this.HeaderLabel.TabIndex = 2;
             this.HeaderLabel.Text = "EDGELook";
             this.HeaderLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HeaderLabel.Click += new System.EventHandler(this.HeaderLabel_Click);
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(-3, 0);
+            this.label2.Location = new System.Drawing.Point(-10, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(946, 147);
+            this.label2.Size = new System.Drawing.Size(2996, 418);
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
@@ -243,10 +260,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 558);
+            this.ClientSize = new System.Drawing.Size(3217, 1588);
             this.Controls.Add(this.panelMain);
+            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelMain.ResumeLayout(false);

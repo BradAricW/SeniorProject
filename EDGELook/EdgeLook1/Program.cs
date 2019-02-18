@@ -21,7 +21,6 @@ namespace EdgeLook1
             Application.Run(new EmployeePage());
             Application.Run(new LoginPage());
             Application.Run(new HomePage());
-            Application.Run(new TaskBar());
         }
     }
 }

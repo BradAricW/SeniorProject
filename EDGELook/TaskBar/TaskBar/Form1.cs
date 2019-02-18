@@ -112,6 +112,9 @@ namespace TaskBar
             MessageBox.Show("Scheduels Button Clicked");
         }
 
+        private void HeaderLabel_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
