@@ -37,3 +37,17 @@ C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLo
 C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.EmployeePage.resources
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.EmployeePage.resources
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.ProfilePage.resources
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.exe.config
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.exe
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.pdb
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csprojAssemblyReference.cache
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.AddProjectPage.resources
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.EmployeePage.resources
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.LoginPage.resources
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.ProfilePage.resources
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.Properties.Resources.resources
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csproj.GenerateResource.cache
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csproj.CoreCompileInputs.cache
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.exe
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.pdb
+C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.HomePage.resources

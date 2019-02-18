@@ -17,9 +17,10 @@ namespace EdgeLook1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AddProjectPage());
-            Application.Run(new Form1());
             Application.Run(new ProfilePage());
             Application.Run(new EmployeePage());
+            Application.Run(new LoginPage());
+            Application.Run(new HomePage());
         }
     }
 }

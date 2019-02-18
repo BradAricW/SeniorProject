@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\EDGELook",
+    "\\EDGELook\\EdgeLook1",
     "\\Project",
     "\\Test"
   ],
-  "SelectedNode": "\\Project\\Project1.cpp",
+  "SelectedNode": "\\EDGELook\\EdgeLook1",
   "PreviewInSolutionExplorer": false
 }
