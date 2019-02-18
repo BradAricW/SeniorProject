@@ -1,6 +1,6 @@
 ﻿namespace TaskBar
 {
-    partial class Form1
+    partial class TaskBar
     {
         /// <summary>
         /// Required designer variable.
