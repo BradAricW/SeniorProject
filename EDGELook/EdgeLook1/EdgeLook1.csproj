@@ -69,6 +69,12 @@
       <DependentUpon>AddProjectPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="EditProjectPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProjectPage.Designer.cs">
+      <DependentUpon>EditProjectPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddProjectPage.resx">
       <DependentUpon>AddProjectPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProjectPage.resx">
+      <DependentUpon>EditProjectPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeePage.resx">
       <DependentUpon>EmployeePage.cs</DependentUpon>
