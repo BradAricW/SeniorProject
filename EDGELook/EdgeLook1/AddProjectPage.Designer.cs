@@ -31,12 +31,12 @@
             this.projectNumberLabel = new System.Windows.Forms.Label();
             this.textBoxProjectNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxProjectName = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxProjectDescription = new System.Windows.Forms.TextBox();
+            this.textBoxProjectDueDates = new System.Windows.Forms.TextBox();
+            this.textBoxProjectPhase = new System.Windows.Forms.TextBox();
+            this.textBoxProjectDeliverables = new System.Windows.Forms.TextBox();
+            this.textBoxProjectHours = new System.Windows.Forms.TextBox();
+            this.textBoxProjectStatus = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,19 +63,20 @@
             // 
             this.projectNumberLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectNumberLabel.ForeColor = System.Drawing.Color.Snow;
-            this.projectNumberLabel.Location = new System.Drawing.Point(3, 0);
+            this.projectNumberLabel.Location = new System.Drawing.Point(2, 0);
+            this.projectNumberLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.projectNumberLabel.Name = "projectNumberLabel";
-            this.projectNumberLabel.Size = new System.Drawing.Size(450, 30);
+            this.projectNumberLabel.Size = new System.Drawing.Size(300, 19);
             this.projectNumberLabel.TabIndex = 1;
             this.projectNumberLabel.Text = "Project Number                                  ";
             this.projectNumberLabel.Click += new System.EventHandler(this.projectNumLabel);
             // 
             // textBoxProjectNumber
             // 
-            this.textBoxProjectNumber.Location = new System.Drawing.Point(3, 35);
-            this.textBoxProjectNumber.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textBoxProjectNumber.Location = new System.Drawing.Point(2, 22);
+            this.textBoxProjectNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBoxProjectNumber.Name = "textBoxProjectNumber";
-            this.textBoxProjectNumber.Size = new System.Drawing.Size(445, 26);
+            this.textBoxProjectNumber.Size = new System.Drawing.Size(298, 20);
             this.textBoxProjectNumber.TabIndex = 3;
             this.textBoxProjectNumber.Text = "Input Project Number";
             this.textBoxProjectNumber.TextChanged += new System.EventHandler(this.textBox_ProjectNumber);
@@ -84,75 +85,77 @@
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(3, 66);
+            this.label2.Location = new System.Drawing.Point(2, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(450, 30);
+            this.label2.Size = new System.Drawing.Size(300, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Description                                  ";
             // 
-            // textBoxProjectName
+            // textBoxProjectDescription
             // 
-            this.textBoxProjectName.Location = new System.Drawing.Point(3, 101);
-            this.textBoxProjectName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBoxProjectName.Name = "textBoxProjectName";
-            this.textBoxProjectName.Size = new System.Drawing.Size(445, 26);
-            this.textBoxProjectName.TabIndex = 5;
-            this.textBoxProjectName.Text = "Input Description";
-            this.textBoxProjectName.TextChanged += new System.EventHandler(this.textBox_ProjectName);
+            this.textBoxProjectDescription.Location = new System.Drawing.Point(2, 67);
+            this.textBoxProjectDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBoxProjectDescription.Name = "textBoxProjectDescription";
+            this.textBoxProjectDescription.Size = new System.Drawing.Size(298, 20);
+            this.textBoxProjectDescription.TabIndex = 5;
+            this.textBoxProjectDescription.Text = "Input Description";
+            this.textBoxProjectDescription.TextChanged += new System.EventHandler(this.textBox_ProjectName);
             // 
-            // textBox3
+            // textBoxProjectDueDates
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 167);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(445, 26);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.Text = "Input Due Dates";
+            this.textBoxProjectDueDates.Location = new System.Drawing.Point(2, 112);
+            this.textBoxProjectDueDates.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBoxProjectDueDates.Name = "textBoxProjectDueDates";
+            this.textBoxProjectDueDates.Size = new System.Drawing.Size(298, 20);
+            this.textBoxProjectDueDates.TabIndex = 6;
+            this.textBoxProjectDueDates.Text = "Input Due Dates";
             // 
-            // textBox4
+            // textBoxProjectPhase
             // 
-            this.textBox4.Location = new System.Drawing.Point(3, 233);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(445, 26);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "Input Phase";
+            this.textBoxProjectPhase.Location = new System.Drawing.Point(2, 157);
+            this.textBoxProjectPhase.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBoxProjectPhase.Name = "textBoxProjectPhase";
+            this.textBoxProjectPhase.Size = new System.Drawing.Size(298, 20);
+            this.textBoxProjectPhase.TabIndex = 7;
+            this.textBoxProjectPhase.Text = "Input Phase";
             // 
-            // textBox5
+            // textBoxProjectDeliverables
             // 
-            this.textBox5.Location = new System.Drawing.Point(3, 299);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(445, 26);
-            this.textBox5.TabIndex = 8;
-            this.textBox5.Text = "Input Deliverables";
+            this.textBoxProjectDeliverables.Location = new System.Drawing.Point(2, 202);
+            this.textBoxProjectDeliverables.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBoxProjectDeliverables.Name = "textBoxProjectDeliverables";
+            this.textBoxProjectDeliverables.Size = new System.Drawing.Size(298, 20);
+            this.textBoxProjectDeliverables.TabIndex = 8;
+            this.textBoxProjectDeliverables.Text = "Input Deliverables";
             // 
-            // textBox6
+            // textBoxProjectHours
             // 
-            this.textBox6.Location = new System.Drawing.Point(3, 365);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(445, 26);
-            this.textBox6.TabIndex = 9;
-            this.textBox6.Text = "Input Hours";
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBoxProjectHours.Location = new System.Drawing.Point(2, 247);
+            this.textBoxProjectHours.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBoxProjectHours.Name = "textBoxProjectHours";
+            this.textBoxProjectHours.Size = new System.Drawing.Size(298, 20);
+            this.textBoxProjectHours.TabIndex = 9;
+            this.textBoxProjectHours.Text = "Input Hours";
+            this.textBoxProjectHours.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // textBox7
+            // textBoxProjectStatus
             // 
-            this.textBox7.Location = new System.Drawing.Point(3, 431);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(445, 26);
-            this.textBox7.TabIndex = 10;
-            this.textBox7.Text = "Input Status";
+            this.textBoxProjectStatus.Location = new System.Drawing.Point(2, 292);
+            this.textBoxProjectStatus.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBoxProjectStatus.Name = "textBoxProjectStatus";
+            this.textBoxProjectStatus.Size = new System.Drawing.Size(298, 20);
+            this.textBoxProjectStatus.TabIndex = 10;
+            this.textBoxProjectStatus.Text = "Input Status";
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.label3.ForeColor = System.Drawing.Color.Snow;
-            this.label3.Location = new System.Drawing.Point(3, 132);
+            this.label3.Location = new System.Drawing.Point(2, 90);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(450, 30);
+            this.label3.Size = new System.Drawing.Size(300, 19);
             this.label3.TabIndex = 11;
             this.label3.Text = "Due Date                                    ";
             // 
@@ -160,9 +163,10 @@
             // 
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.label4.ForeColor = System.Drawing.Color.Snow;
-            this.label4.Location = new System.Drawing.Point(3, 198);
+            this.label4.Location = new System.Drawing.Point(2, 135);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(450, 30);
+            this.label4.Size = new System.Drawing.Size(300, 19);
             this.label4.TabIndex = 12;
             this.label4.Text = "Phase                                       ";
             // 
@@ -170,9 +174,10 @@
             // 
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.label5.ForeColor = System.Drawing.Color.Snow;
-            this.label5.Location = new System.Drawing.Point(3, 264);
+            this.label5.Location = new System.Drawing.Point(2, 180);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(450, 30);
+            this.label5.Size = new System.Drawing.Size(300, 19);
             this.label5.TabIndex = 13;
             this.label5.Text = "Deliverables                                       ";
             // 
@@ -180,9 +185,10 @@
             // 
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.label6.ForeColor = System.Drawing.Color.Snow;
-            this.label6.Location = new System.Drawing.Point(3, 330);
+            this.label6.Location = new System.Drawing.Point(2, 225);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(450, 30);
+            this.label6.Size = new System.Drawing.Size(300, 19);
             this.label6.TabIndex = 14;
             this.label6.Text = "Hours                                       ";
             // 
@@ -190,18 +196,20 @@
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.label7.ForeColor = System.Drawing.Color.Snow;
-            this.label7.Location = new System.Drawing.Point(3, 396);
+            this.label7.Location = new System.Drawing.Point(2, 270);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(450, 30);
+            this.label7.Size = new System.Drawing.Size(300, 19);
             this.label7.TabIndex = 15;
             this.label7.Text = "Status                                     ";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.Location = new System.Drawing.Point(519, 636);
+            this.button1.Location = new System.Drawing.Point(346, 413);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 92);
+            this.button1.Size = new System.Drawing.Size(125, 60);
             this.button1.TabIndex = 16;
             this.button1.Text = "Add Project";
             this.button1.UseVisualStyleBackColor = false;
@@ -211,19 +219,20 @@
             // 
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Location = new System.Drawing.Point(2, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(387, 30);
+            this.label8.Size = new System.Drawing.Size(258, 19);
             this.label8.TabIndex = 18;
             this.label8.Text = "Notes";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // TextBoxNotes
             // 
-            this.TextBoxNotes.Location = new System.Drawing.Point(3, 35);
-            this.TextBoxNotes.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.TextBoxNotes.Location = new System.Drawing.Point(2, 23);
+            this.TextBoxNotes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.TextBoxNotes.Name = "TextBoxNotes";
-            this.TextBoxNotes.Size = new System.Drawing.Size(384, 453);
+            this.TextBoxNotes.Size = new System.Drawing.Size(257, 296);
             this.TextBoxNotes.TabIndex = 19;
             this.TextBoxNotes.Text = "";
             this.TextBoxNotes.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -232,10 +241,10 @@
             // 
             this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(236, 38);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.button3.Location = new System.Drawing.Point(157, 25);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 38);
+            this.button3.Size = new System.Drawing.Size(78, 25);
             this.button3.TabIndex = 20;
             this.button3.Text = "Add Myself";
             this.button3.UseVisualStyleBackColor = false;
@@ -246,9 +255,10 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(118, 68);
+            this.label9.Location = new System.Drawing.Point(79, 44);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 20);
+            this.label9.Size = new System.Drawing.Size(50, 13);
             this.label9.TabIndex = 21;
             this.label9.Text = "Assigned";
             this.label9.Click += new System.EventHandler(this.label9_Click);
@@ -256,11 +266,11 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(98, 105);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.checkBox1.Location = new System.Drawing.Point(65, 68);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBox1.Size = new System.Drawing.Size(114, 24);
+            this.checkBox1.Size = new System.Drawing.Size(78, 17);
             this.checkBox1.TabIndex = 22;
             this.checkBox1.Text = "Assigned? ";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -268,10 +278,10 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(75, 160);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textBox8.Location = new System.Drawing.Point(50, 104);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(170, 26);
+            this.textBox8.Size = new System.Drawing.Size(115, 20);
             this.textBox8.TabIndex = 23;
             this.textBox8.Text = "[Please Select]";
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
@@ -280,10 +290,10 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(56, 232);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.button2.Location = new System.Drawing.Point(37, 151);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 29);
+            this.button2.Size = new System.Drawing.Size(56, 19);
             this.button2.TabIndex = 24;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = false;
@@ -292,10 +302,10 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(190, 232);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.button4.Location = new System.Drawing.Point(127, 151);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 29);
+            this.button4.Size = new System.Drawing.Size(56, 19);
             this.button4.TabIndex = 25;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = false;
@@ -303,18 +313,19 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(63, 302);
+            this.label10.Location = new System.Drawing.Point(42, 196);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(212, 20);
+            this.label10.Size = new System.Drawing.Size(142, 13);
             this.label10.TabIndex = 26;
             this.label10.Text = "List of Employees On Project";
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(64, 337);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.listView1.Location = new System.Drawing.Point(43, 219);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(210, 115);
+            this.listView1.Size = new System.Drawing.Size(141, 76);
             this.listView1.TabIndex = 27;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -324,37 +335,39 @@
             this.flowLayoutPanel1.Controls.Add(this.projectNumberLabel);
             this.flowLayoutPanel1.Controls.Add(this.textBoxProjectNumber);
             this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.textBoxProjectName);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxProjectDescription);
             this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.textBox3);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxProjectDueDates);
             this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.textBox4);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxProjectPhase);
             this.flowLayoutPanel1.Controls.Add(this.label5);
-            this.flowLayoutPanel1.Controls.Add(this.textBox5);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxProjectDeliverables);
             this.flowLayoutPanel1.Controls.Add(this.label6);
-            this.flowLayoutPanel1.Controls.Add(this.textBox6);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxProjectHours);
             this.flowLayoutPanel1.Controls.Add(this.label7);
-            this.flowLayoutPanel1.Controls.Add(this.textBox7);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(391, 54);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxProjectStatus);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(239, 35);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(450, 493);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(322, 348);
             this.flowLayoutPanel1.TabIndex = 28;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.TextBoxNotes);
-            this.panel1.Location = new System.Drawing.Point(868, 54);
+            this.panel1.Location = new System.Drawing.Point(579, 35);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 493);
+            this.panel1.Size = new System.Drawing.Size(260, 320);
             this.panel1.TabIndex = 29;
             // 
             // AddProjectPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1341, 778);
+            this.ClientSize = new System.Drawing.Size(894, 506);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.listView1);
@@ -366,6 +379,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddProjectPage";
             this.Text = "AddProjectPage";
             this.Load += new System.EventHandler(this.AddProjectPage_Load);
@@ -382,12 +396,12 @@
         private System.Windows.Forms.Label projectNumberLabel;
         private System.Windows.Forms.TextBox textBoxProjectNumber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxProjectName;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxProjectDescription;
+        private System.Windows.Forms.TextBox textBoxProjectDueDates;
+        private System.Windows.Forms.TextBox textBoxProjectPhase;
+        private System.Windows.Forms.TextBox textBoxProjectDeliverables;
+        private System.Windows.Forms.TextBox textBoxProjectHours;
+        private System.Windows.Forms.TextBox textBoxProjectStatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

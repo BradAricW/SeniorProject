@@ -25,25 +25,25 @@ namespace EdgeLook1
         database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
 
-            MySqlConnection conn = new MySqlConnection(connString);
-            MySqlCommand command = conn.CreateCommand();
-            command.CommandText = "select * from Employee";
+            //MySqlConnection conn = new MySqlConnection(connString);
+            //MySqlCommand command = conn.CreateCommand();
+            //command.CommandText = "select * from Employee";
 
-            try
-            {
-                conn.Open();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            MySqlDataReader reader = command.ExecuteReader();
-            String test = "";
-            while (reader.Read())
-            {
-                test += reader["fname"].ToString() + "\n";
-            }
-            MessageBox.Show(test);
+            //try
+            //{
+            //    //conn.Open();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+            //MySqlDataReader reader = command.ExecuteReader();
+            //String test = "";
+            //while (reader.Read())
+            //{
+            //    test += reader["fname"].ToString() + "\n";
+            //}
+            //MessageBox.Show(test);
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -52,7 +52,7 @@ namespace EdgeLook1
             //Application.Run(new EmployeePage());
             //Application.Run(new LoginPage());
             //Application.Run(new HomePage());
-            conn.Close();
+            //conn.Close();
         }
     }
 }

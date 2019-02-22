@@ -12,6 +12,14 @@ namespace EdgeLook1
 {
     public partial class AddProjectPage : Form
     {
+        private String projectNum;
+        private String projectDesc;
+        private String projectDueDates;
+        private String projectPhase;
+        private String projectDeliverables;
+        private int projectHours;
+        private String projectStatus;
+        private String projectNotes;
         public AddProjectPage()
         {
             InitializeComponent();
@@ -69,12 +77,16 @@ namespace EdgeLook1
 
         private void addProject_Click(object sender, EventArgs e)
         {
-            String projectName;
-            String projectNumber;
-            projectName = textBoxProjectName.Text;
-            //TextBoxNotes.Text = projectName; //Simple test
-            projectNumber = textBoxProjectNumber.Text;
-            //TextBoxNotes.Text = " " + projectNumber;  //Simple test
+            projectNum = textBoxProjectNumber.Text;
+            projectDesc = textBoxProjectDescription.Text;
+            projectDueDates = textBoxProjectDueDates.Text;
+            projectPhase = textBoxProjectPhase.Text;
+            projectDueDates = textBoxProjectDueDates.Text;
+            projectHours = int.Parse(textBoxProjectHours.Text);
+            projectDeliverables = textBoxProjectDeliverables.Text;
+            projectStatus = textBoxProjectStatus.Text;
+            projectNotes = TextBoxNotes.Text;
+            MessageBox.Show(projectNum + " " + projectDesc);
             
 
         }
@@ -85,6 +97,11 @@ namespace EdgeLook1
         }
 
         private void textBox_ProjectName(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
