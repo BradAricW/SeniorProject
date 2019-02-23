@@ -159,7 +159,7 @@
             this.label3.Size = new System.Drawing.Size(450, 29);
             this.label3.TabIndex = 11;
             this.label3.Text = "Due Date                                    ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Click += new System.EventHandler(this.label_DueDate);
             // 
             // label4
             // 

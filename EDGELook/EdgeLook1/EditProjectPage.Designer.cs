@@ -58,6 +58,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,7 +86,7 @@
             this.flowLayoutPanel1.Controls.Add(this.textBoxProjectStatus);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(427, 104);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(478, 492);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(455, 486);
             this.flowLayoutPanel1.TabIndex = 29;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -409,11 +410,23 @@
             this.button5.Text = "Add Notes";
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.button6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button6.Location = new System.Drawing.Point(567, 686);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(191, 90);
+            this.button6.TabIndex = 35;
+            this.button6.Text = "Save Project";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
             // EditProjectPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1415, 844);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
@@ -463,5 +476,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
