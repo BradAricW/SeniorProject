@@ -47,11 +47,12 @@ namespace EdgeLook1
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddProjectPage());
+            //Application.Run(new AddProjectPage());
             //Application.Run(new ProfilePage());
             //Application.Run(new EmployeePage());
             //Application.Run(new LoginPage());
             //Application.Run(new HomePage());
+            Application.Run(new EditProjectPage());
             //conn.Close();
         }
     }

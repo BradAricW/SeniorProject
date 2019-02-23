@@ -56,6 +56,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,6 +65,9 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
             this.flowLayoutPanel1.Controls.Add(this.projectNumberLabel);
             this.flowLayoutPanel1.Controls.Add(this.textBoxProjectNumber);
@@ -80,7 +85,7 @@
             this.flowLayoutPanel1.Controls.Add(this.textBoxProjectStatus);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(427, 104);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(455, 492);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(478, 492);
             this.flowLayoutPanel1.TabIndex = 29;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -232,9 +237,10 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.TextBoxNotes);
-            this.panel1.Location = new System.Drawing.Point(914, 103);
+            this.panel1.Location = new System.Drawing.Point(937, 103);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(390, 492);
             this.panel1.TabIndex = 30;
@@ -260,6 +266,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.listView1);
             this.panel2.Controls.Add(this.label1);
@@ -364,6 +371,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(267, 57);
@@ -375,11 +383,39 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(714, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 38);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Edit Project";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.Location = new System.Drawing.Point(1200, 57);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(124, 43);
+            this.button5.TabIndex = 34;
+            this.button5.Text = "Add Notes";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // EditProjectPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1392, 844);
+            this.ClientSize = new System.Drawing.Size(1415, 844);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -425,5 +461,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
     }
 }

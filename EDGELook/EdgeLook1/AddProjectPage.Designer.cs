@@ -55,8 +55,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -203,6 +203,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(519, 635);
@@ -236,6 +237,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(253, 30);
@@ -317,6 +319,9 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
             this.flowLayoutPanel1.Controls.Add(this.projectNumberLabel);
             this.flowLayoutPanel1.Controls.Add(this.textBoxProjectNumber);
@@ -332,13 +337,15 @@
             this.flowLayoutPanel1.Controls.Add(this.textBoxProjectHours);
             this.flowLayoutPanel1.Controls.Add(this.label7);
             this.flowLayoutPanel1.Controls.Add(this.textBoxProjectStatus);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(388, 76);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(391, 80);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(455, 493);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(456, 488);
             this.flowLayoutPanel1.TabIndex = 28;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.TextBoxNotes);
             this.panel1.Location = new System.Drawing.Point(863, 76);
@@ -348,6 +355,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.listView1);
             this.panel2.Controls.Add(this.label1);
@@ -361,6 +369,15 @@
             this.panel2.Size = new System.Drawing.Size(340, 493);
             this.panel2.TabIndex = 30;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 108);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 20);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Edit Employee";
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
@@ -370,15 +387,6 @@
             this.label1.Size = new System.Drawing.Size(346, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Assigned                                 ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 108);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 20);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Edit Employee";
             // 
             // AddProjectPage
             // 
@@ -393,6 +401,7 @@
             this.Controls.Add(this.button1);
             this.Name = "AddProjectPage";
             this.Text = "AddProjectPage";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AddProjectPage_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
