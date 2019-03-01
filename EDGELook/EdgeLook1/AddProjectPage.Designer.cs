@@ -112,6 +112,7 @@
             this.textBoxProjectDueDates.Size = new System.Drawing.Size(452, 26);
             this.textBoxProjectDueDates.TabIndex = 6;
             this.textBoxProjectDueDates.Text = "Input Due Dates";
+            this.textBoxProjectDueDates.TextChanged += new System.EventHandler(this.textBox_ProjectDueDates);
             // 
             // textBoxProjectPhase
             // 
@@ -121,6 +122,7 @@
             this.textBoxProjectPhase.Size = new System.Drawing.Size(452, 26);
             this.textBoxProjectPhase.TabIndex = 7;
             this.textBoxProjectPhase.Text = "Input Phase";
+            this.textBoxProjectPhase.TextChanged += new System.EventHandler(this.textBoxProjectPhase_TextChanged);
             // 
             // textBoxProjectDeliverables
             // 
@@ -223,7 +225,7 @@
             this.label8.Size = new System.Drawing.Size(387, 29);
             this.label8.TabIndex = 18;
             this.label8.Text = "Notes";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.label8.Click += new System.EventHandler(this.label8_Notes);
             // 
             // TextBoxNotes
             // 
@@ -233,7 +235,7 @@
             this.TextBoxNotes.Size = new System.Drawing.Size(384, 453);
             this.TextBoxNotes.TabIndex = 19;
             this.TextBoxNotes.Text = "";
-            this.TextBoxNotes.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.TextBoxNotes.TextChanged += new System.EventHandler(this.richTextBox1_Notes);
             // 
             // button3
             // 
@@ -247,7 +249,7 @@
             this.button3.TabIndex = 20;
             this.button3.Text = "Add Myself";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.button3_AddMyself);
             // 
             // checkBox1
             // 
@@ -270,7 +272,7 @@
             this.textBox8.Size = new System.Drawing.Size(298, 26);
             this.textBox8.TabIndex = 23;
             this.textBox8.Text = "[Please Select]";
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_SelectEmployee);
             // 
             // button2
             // 
@@ -283,7 +285,7 @@
             this.button2.TabIndex = 24;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.buttonClick_Remove);
             // 
             // button4
             // 
@@ -296,7 +298,7 @@
             this.button4.TabIndex = 25;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.buttonClick_Add);
             // 
             // label10
             // 
@@ -315,7 +317,7 @@
             this.listView1.Size = new System.Drawing.Size(274, 148);
             this.listView1.TabIndex = 27;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_EmployeeList);
             // 
             // flowLayoutPanel1
             // 
@@ -368,6 +370,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(340, 493);
             this.panel2.TabIndex = 30;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label9
             // 
@@ -387,6 +390,7 @@
             this.label1.Size = new System.Drawing.Size(346, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Assigned                                 ";
+            this.label1.Click += new System.EventHandler(this.label1_Assigned);
             // 
             // AddProjectPage
             // 

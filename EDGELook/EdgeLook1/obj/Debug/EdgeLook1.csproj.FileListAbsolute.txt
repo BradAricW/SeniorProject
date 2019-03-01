@@ -33,3 +33,5 @@ C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\Edge
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.pdb
 C:\Users\valer\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.EditProjectPage.resources
 C:\Users\valer\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.SearchEmpcs.resources
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csprojAssemblyReference.cache
+C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.SearchEmpcs.resources

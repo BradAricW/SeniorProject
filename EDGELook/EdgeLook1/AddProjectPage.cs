@@ -30,7 +30,7 @@ namespace EdgeLook1
             InitializeComponent();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkAssigned_checkBox(object sender, EventArgs e)
         {
 
         }
@@ -40,17 +40,17 @@ namespace EdgeLook1
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void label8_Notes(object sender, EventArgs e)
         {
 
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void richTextBox1_Notes(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_AddMyself(object sender, EventArgs e)
         {
 
         }
@@ -65,7 +65,7 @@ namespace EdgeLook1
 
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
+        private void textBox8_SelectEmployee(object sender, EventArgs e)
         {
 
         }
@@ -123,22 +123,42 @@ namespace EdgeLook1
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonClick_Remove(object sender, EventArgs e)
         {
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonClick_Add(object sender, EventArgs e)
         {
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listView1_EmployeeList(object sender, EventArgs e)
         {
 
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox_ProjectDueDates(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Assigned(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBoxProjectPhase_TextChanged(object sender, EventArgs e)
         {
 
         }
