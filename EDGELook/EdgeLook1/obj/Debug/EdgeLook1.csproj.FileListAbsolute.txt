@@ -31,6 +31,7 @@ C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\Edge
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csproj.CopyComplete
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.exe
 C:\Users\Manjot\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.pdb
+<<<<<<< HEAD
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.exe.config
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.exe
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\bin\Debug\EdgeLook1.pdb
@@ -48,3 +49,7 @@ C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\De
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.csproj.CopyComplete
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.exe
 C:\Users\nenek\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.pdb
+=======
+C:\Users\valer\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.EditProjectPage.resources
+C:\Users\valer\OneDrive\Documents\GitHub\SeniorProject\EDGELook\EdgeLook1\obj\Debug\EdgeLook1.SearchEmpcs.resources
+>>>>>>> 9309d62b750f10edd7ab655a3a7a29d432c60235
