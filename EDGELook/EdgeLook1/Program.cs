@@ -14,45 +14,41 @@ namespace EdgeLook1
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+
         [STAThread]
         static void Main()
         {
-            String server = "athena";
-            String database = "sevenwonders";
-            String uid = "sevenwonders";
-            String password = "sw_db";
-            String connString = "SERVER=" + server + ";" + "DATABASE=" +
-        database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            //string server = "athena";
+            //string database = "sevenwonders";
+            //string uid = "sevenwonders";
+            //string password = "sw_db";
+            //string connstring = "server=" + server + ";" + "database=" +
+            //database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
 
 
-            //MySqlConnection conn = new MySqlConnection(connString);
+            //MySqlConnection conn = new MySqlConnection(connstring);
             //MySqlCommand command = conn.CreateCommand();
-            //command.CommandText = "select * from Employee";
+            //command.CommandText = "select * from employee";
 
             //try
             //{
-            //    //conn.Open();
+            //    conn.Open();
             //}
             //catch (Exception ex)
             //{
             //    Console.WriteLine(ex.Message);
             //}
-            //MySqlDataReader reader = command.ExecuteReader();
-            //String test = "";
-            //while (reader.Read())
-            //{
-            //    test += reader["fname"].ToString() + "\n";
-            //}
-            //MessageBox.Show(test);
-            
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new AddProjectPage());
+            Application.Run(new AddProjectPage());
             //Application.Run(new ProfilePage());
             //Application.Run(new EmployeePage());
             //Application.Run(new LoginPage());
             //Application.Run(new HomePage());
-            Application.Run(new EditProjectPage());
+            //Application.Run(new EditProjectPage());
             //conn.Close();
         }
     }

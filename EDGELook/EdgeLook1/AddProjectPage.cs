@@ -7,19 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace EdgeLook1
 {
     public partial class AddProjectPage : Form
     {
-        private String projectNum;
-        private String projectDesc;
-        private String projectDueDates;
-        private String projectPhase;
-        private String projectDeliverables;
+        private string projectNum;
+        private string projectDesc;
+        private string projectDueDates;
+        private string projectPhase;
+        private string projectDeliverables;
         private int projectHours;
-        private String projectStatus;
-        private String projectNotes;
+        private string projectStatus;
+        private string projectNotes;
+
+        private DBConn Conn;
+         
         public AddProjectPage()
         {
             InitializeComponent();
@@ -77,17 +82,19 @@ namespace EdgeLook1
 
         private void addProject_Click(object sender, EventArgs e)
         {
+
+            Conn = new DBConn();
             projectNum = textBoxProjectNumber.Text;
             projectDesc = textBoxProjectDescription.Text;
             projectDueDates = textBoxProjectDueDates.Text;
             projectPhase = textBoxProjectPhase.Text;
-            projectDueDates = textBoxProjectDueDates.Text;
-            projectHours = int.Parse(textBoxProjectHours.Text);
             projectDeliverables = textBoxProjectDeliverables.Text;
+            projectHours = int.Parse(textBoxProjectHours.Text);
             projectStatus = textBoxProjectStatus.Text;
             projectNotes = TextBoxNotes.Text;
-            MessageBox.Show(projectNum + " " + projectDesc);
-            
+            //String addProj = "INSERT INTO PROJECT VALUES (\'" + projectNum + "\', "+ 322 + ", \'" + projectDesc + " \', \'" + projectPhase + " \', \'" + projectDueDates + " \', \'" + projectDeliverables +  "\', " + projectHours + ", \'" + projectStatus + "\');";
+            //MessageBox.Show(addProj);
+            Conn.addProject(projectNum,projectDesc,projectDueDates,projectPhase,projectDeliverables,projectHours,projectStatus);
 
         }
 
