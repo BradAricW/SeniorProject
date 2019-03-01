@@ -22,62 +22,62 @@ namespace EdgeLook1
 
         }
 
-        private void textBoxProjectNumber_TextChanged(object sender, EventArgs e)
+        private void textBox_ProjectNumber(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label2_Description(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxProjectDescription_TextChanged(object sender, EventArgs e)
+        private void textBox_ProjectDescription(object sender, EventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void label3_DueDate(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxProjectDueDates_TextChanged(object sender, EventArgs e)
+        private void textBox_ProjectDueDates(object sender, EventArgs e)
         {
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void label4_Phase(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxProjectPhase_TextChanged(object sender, EventArgs e)
+        private void textBox_ProjectPhase(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxProjectDeliverables_TextChanged(object sender, EventArgs e)
+        private void textBox_ProjectDeliverables(object sender, EventArgs e)
         {
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void label6_Hour(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxProjectHours_TextChanged(object sender, EventArgs e)
+        private void textBox_ProjectHours(object sender, EventArgs e)
         {
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void label7_Status(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxProjectStatus_TextChanged(object sender, EventArgs e)
+        private void textBox_ProjectStatus(object sender, EventArgs e)
         {
 
         }
@@ -87,37 +87,37 @@ namespace EdgeLook1
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button_AddProject(object sender, EventArgs e)
         {
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listView_ListOfEmployeeOfProject(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_Remove(object sender, EventArgs e)
         {
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button_Add(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
+        private void textBox8_EditEmployee(object sender, EventArgs e)
         {
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void label_EditEmployee(object sender, EventArgs e)
         {
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_Assigned(object sender, EventArgs e)
         {
 
         }
@@ -127,7 +127,27 @@ namespace EdgeLook1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_EditProject(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_AddNotes(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Notes(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxNotes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Deliverables(object sender, EventArgs e)
         {
 
         }
