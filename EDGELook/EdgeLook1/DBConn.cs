@@ -17,6 +17,7 @@ namespace EdgeLook1
         private string password;
         private string connString;
         private MySqlConnection conn;
+        private int eID;
 
         //CONSTRUCTOR
         public DBConn()
@@ -55,6 +56,28 @@ namespace EdgeLook1
             MySqlCommand cmd = new MySqlCommand(addProj, this.conn);
             Console.WriteLine(cmd.ExecuteNonQuery());
             
+        }
+        public void editHours(int empHours)
+        {
+            int currentHours = 0;
+            String getHours = "SELECT hoursAvail FROM Employee as E WHERE " + this.eID + " == E.employeeID";
+            MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
+            conn.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                currentHours = reader.GetInt16("hoursAvail");
+            }
+            if(empHours != currentHours)
+            {
+                String setHours = "UPDATE Employee SET hoursAvail = " + empHours + "WHERE employeeID = this.eID";
+                MySqlCommand cmd2 = new MySqlCommand(setHours, this.conn);
+                Console.WriteLine(cmd.ExecuteNonQuery());
+            }
+        }
+        public void setEID(int employeeID)
+        {
+            eID = employeeID;
         }
     }
 }

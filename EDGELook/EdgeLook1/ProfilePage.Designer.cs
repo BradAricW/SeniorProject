@@ -47,6 +47,7 @@
             this.hoursLabel1 = new System.Windows.Forms.Label();
             this.sevenWonders = new System.Windows.Forms.Label();
             this.edgeLogo = new System.Windows.Forms.Label();
+            this.hoursTextBox = new System.Windows.Forms.TextBox();
             this.backPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,6 +121,7 @@
             // backPanel
             // 
             this.backPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.backPanel.Controls.Add(this.hoursTextBox);
             this.backPanel.Controls.Add(this.projectList);
             this.backPanel.Controls.Add(this.emailLabel);
             this.backPanel.Controls.Add(this.phoneLabel);
@@ -271,12 +273,19 @@
             this.edgeLogo.Size = new System.Drawing.Size(100, 65);
             this.edgeLogo.TabIndex = 7;
             // 
+            // hoursTextBox
+            // 
+            this.hoursTextBox.Location = new System.Drawing.Point(60, 37);
+            this.hoursTextBox.Name = "hoursTextBox";
+            this.hoursTextBox.Size = new System.Drawing.Size(35, 20);
+            this.hoursTextBox.TabIndex = 14;
+            // 
             // ProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(809, 468);
             this.Controls.Add(this.edgeLogo);
             this.Controls.Add(this.sevenWonders);
             this.Controls.Add(this.profileLabel);
@@ -313,5 +322,6 @@
         private System.Windows.Forms.Label vacationLabel;
         private System.Windows.Forms.Label edgeLogo;
         private System.Windows.Forms.ListBox projectList;
+        private System.Windows.Forms.TextBox hoursTextBox;
     }
 }

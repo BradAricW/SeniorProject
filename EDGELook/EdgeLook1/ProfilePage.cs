@@ -12,6 +12,8 @@ namespace EdgeLook1
 {
     public partial class ProfilePage : Form
     {
+        private DBConn Conn;
+        private int hoursNum;
         public ProfilePage()
         {
             InitializeComponent();
@@ -24,7 +26,9 @@ namespace EdgeLook1
 
         private void EditButton1_Click(object sender, EventArgs e)
         {
-
+            Conn = new DBConn();
+            hoursNum = int.Parse(hoursTextBox.Text);
+            Conn.editHours(hoursNum);
         }
 
         private void EditButton2_Click(object sender, EventArgs e)
