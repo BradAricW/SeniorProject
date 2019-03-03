@@ -32,20 +32,20 @@
             this.edgeLogo = new System.Windows.Forms.Label();
             this.sevenWonders = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.loginLabel = new System.Windows.Forms.Label();
-            this.eMailLabel = new System.Windows.Forms.Label();
-            this.passLabel = new System.Windows.Forms.Label();
-            this.emailBox = new System.Windows.Forms.TextBox();
-            this.passBox = new System.Windows.Forms.TextBox();
-            this.loginButton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.passBox = new System.Windows.Forms.TextBox();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.passLabel = new System.Windows.Forms.Label();
+            this.eMailLabel = new System.Windows.Forms.Label();
+            this.loginLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // edgeLogo
             // 
             this.edgeLogo.Image = ((System.Drawing.Image)(resources.GetObject("edgeLogo.Image")));
-            this.edgeLogo.Location = new System.Drawing.Point(293, 335);
+            this.edgeLogo.Location = new System.Drawing.Point(300, 370);
             this.edgeLogo.Name = "edgeLogo";
             this.edgeLogo.Size = new System.Drawing.Size(100, 65);
             this.edgeLogo.TabIndex = 9;
@@ -53,7 +53,7 @@
             // sevenWonders
             // 
             this.sevenWonders.Image = ((System.Drawing.Image)(resources.GetObject("sevenWonders.Image")));
-            this.sevenWonders.Location = new System.Drawing.Point(399, 335);
+            this.sevenWonders.Location = new System.Drawing.Point(406, 370);
             this.sevenWonders.Name = "sevenWonders";
             this.sevenWonders.Size = new System.Drawing.Size(111, 65);
             this.sevenWonders.TabIndex = 8;
@@ -68,68 +68,10 @@
             this.panel1.Controls.Add(this.passLabel);
             this.panel1.Controls.Add(this.eMailLabel);
             this.panel1.Controls.Add(this.loginLabel);
-            this.panel1.Location = new System.Drawing.Point(247, 49);
+            this.panel1.Location = new System.Drawing.Point(254, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 242);
             this.panel1.TabIndex = 10;
-            // 
-            // loginLabel
-            // 
-            this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginLabel.ForeColor = System.Drawing.Color.White;
-            this.loginLabel.Location = new System.Drawing.Point(121, 28);
-            this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(58, 24);
-            this.loginLabel.TabIndex = 0;
-            this.loginLabel.Text = "Login";
-            // 
-            // eMailLabel
-            // 
-            this.eMailLabel.AutoSize = true;
-            this.eMailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eMailLabel.ForeColor = System.Drawing.Color.White;
-            this.eMailLabel.Location = new System.Drawing.Point(32, 76);
-            this.eMailLabel.Name = "eMailLabel";
-            this.eMailLabel.Size = new System.Drawing.Size(45, 15);
-            this.eMailLabel.TabIndex = 1;
-            this.eMailLabel.Text = "Email: ";
-            // 
-            // passLabel
-            // 
-            this.passLabel.AutoSize = true;
-            this.passLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passLabel.ForeColor = System.Drawing.Color.White;
-            this.passLabel.Location = new System.Drawing.Point(10, 113);
-            this.passLabel.Name = "passLabel";
-            this.passLabel.Size = new System.Drawing.Size(67, 15);
-            this.passLabel.TabIndex = 2;
-            this.passLabel.Text = "Password: ";
-            // 
-            // emailBox
-            // 
-            this.emailBox.Location = new System.Drawing.Point(83, 75);
-            this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(180, 20);
-            this.emailBox.TabIndex = 3;
-            // 
-            // passBox
-            // 
-            this.passBox.Location = new System.Drawing.Point(83, 112);
-            this.passBox.Name = "passBox";
-            this.passBox.Size = new System.Drawing.Size(180, 20);
-            this.passBox.TabIndex = 4;
-            // 
-            // loginButton
-            // 
-            this.loginButton.BackColor = System.Drawing.Color.White;
-            this.loginButton.FlatAppearance.BorderSize = 0;
-            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.Location = new System.Drawing.Point(188, 150);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
-            this.loginButton.TabIndex = 5;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = false;
             // 
             // linkLabel1
             // 
@@ -142,12 +84,71 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "[Create Account]";
             // 
+            // loginButton
+            // 
+            this.loginButton.BackColor = System.Drawing.Color.White;
+            this.loginButton.FlatAppearance.BorderSize = 0;
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButton.Location = new System.Drawing.Point(188, 150);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 5;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // passBox
+            // 
+            this.passBox.Location = new System.Drawing.Point(83, 112);
+            this.passBox.Name = "passBox";
+            this.passBox.Size = new System.Drawing.Size(180, 20);
+            this.passBox.TabIndex = 4;
+            // 
+            // emailBox
+            // 
+            this.emailBox.Location = new System.Drawing.Point(83, 75);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(180, 20);
+            this.emailBox.TabIndex = 3;
+            // 
+            // passLabel
+            // 
+            this.passLabel.AutoSize = true;
+            this.passLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passLabel.ForeColor = System.Drawing.Color.White;
+            this.passLabel.Location = new System.Drawing.Point(10, 113);
+            this.passLabel.Name = "passLabel";
+            this.passLabel.Size = new System.Drawing.Size(67, 15);
+            this.passLabel.TabIndex = 2;
+            this.passLabel.Text = "Password: ";
+            // 
+            // eMailLabel
+            // 
+            this.eMailLabel.AutoSize = true;
+            this.eMailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eMailLabel.ForeColor = System.Drawing.Color.White;
+            this.eMailLabel.Location = new System.Drawing.Point(32, 76);
+            this.eMailLabel.Name = "eMailLabel";
+            this.eMailLabel.Size = new System.Drawing.Size(45, 15);
+            this.eMailLabel.TabIndex = 1;
+            this.eMailLabel.Text = "Email: ";
+            // 
+            // loginLabel
+            // 
+            this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginLabel.ForeColor = System.Drawing.Color.White;
+            this.loginLabel.Location = new System.Drawing.Point(121, 28);
+            this.loginLabel.Name = "loginLabel";
+            this.loginLabel.Size = new System.Drawing.Size(58, 24);
+            this.loginLabel.TabIndex = 0;
+            this.loginLabel.Text = "Login";
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(809, 526);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.edgeLogo);
             this.Controls.Add(this.sevenWonders);

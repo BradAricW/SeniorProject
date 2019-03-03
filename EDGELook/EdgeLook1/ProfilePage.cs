@@ -49,14 +49,36 @@ namespace EdgeLook1
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ProjectList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void HomeButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ProjectsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmployeesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SchedulesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SignOut_Click(object sender, EventArgs e)
+        {
+            LoginPage login = new LoginPage();
+            login.Show();
+            
         }
     }
 }

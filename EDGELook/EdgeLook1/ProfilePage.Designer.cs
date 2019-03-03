@@ -35,6 +35,7 @@
             this.viewButton = new System.Windows.Forms.Button();
             this.profileLabel = new System.Windows.Forms.Label();
             this.backPanel = new System.Windows.Forms.Panel();
+            this.hoursTextBox = new System.Windows.Forms.TextBox();
             this.projectList = new System.Windows.Forms.ListBox();
             this.emailLabel = new System.Windows.Forms.Label();
             this.phoneLabel = new System.Windows.Forms.Label();
@@ -47,8 +48,19 @@
             this.hoursLabel1 = new System.Windows.Forms.Label();
             this.sevenWonders = new System.Windows.Forms.Label();
             this.edgeLogo = new System.Windows.Forms.Label();
-            this.hoursTextBox = new System.Windows.Forms.TextBox();
+            this.taskbarMain = new System.Windows.Forms.Panel();
+            this.edgelookLabel = new System.Windows.Forms.Label();
+            this.taskbarMenu = new System.Windows.Forms.Panel();
+            this.schedulesButton = new System.Windows.Forms.Button();
+            this.employeesButton = new System.Windows.Forms.Button();
+            this.projectsButton = new System.Windows.Forms.Button();
+            this.homeButton = new System.Windows.Forms.Button();
+            this.taskBGPanel = new System.Windows.Forms.Panel();
+            this.signOut = new System.Windows.Forms.Label();
             this.backPanel.SuspendLayout();
+            this.taskbarMain.SuspendLayout();
+            this.taskbarMenu.SuspendLayout();
+            this.taskBGPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // editButton1
@@ -112,7 +124,7 @@
             this.profileLabel.AutoSize = true;
             this.profileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileLabel.Location = new System.Drawing.Point(342, 11);
+            this.profileLabel.Location = new System.Drawing.Point(342, 90);
             this.profileLabel.Name = "profileLabel";
             this.profileLabel.Size = new System.Drawing.Size(92, 24);
             this.profileLabel.TabIndex = 4;
@@ -136,11 +148,17 @@
             this.backPanel.Controls.Add(this.editButton3);
             this.backPanel.Controls.Add(this.editButton1);
             this.backPanel.Controls.Add(this.editButton2);
-            this.backPanel.Location = new System.Drawing.Point(246, 43);
+            this.backPanel.Location = new System.Drawing.Point(246, 122);
             this.backPanel.Name = "backPanel";
             this.backPanel.Size = new System.Drawing.Size(300, 327);
             this.backPanel.TabIndex = 5;
-            this.backPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // hoursTextBox
+            // 
+            this.hoursTextBox.Location = new System.Drawing.Point(60, 37);
+            this.hoursTextBox.Name = "hoursTextBox";
+            this.hoursTextBox.Size = new System.Drawing.Size(35, 20);
+            this.hoursTextBox.TabIndex = 14;
             // 
             // projectList
             // 
@@ -260,7 +278,7 @@
             // sevenWonders
             // 
             this.sevenWonders.Image = ((System.Drawing.Image)(resources.GetObject("sevenWonders.Image")));
-            this.sevenWonders.Location = new System.Drawing.Point(396, 376);
+            this.sevenWonders.Location = new System.Drawing.Point(396, 455);
             this.sevenWonders.Name = "sevenWonders";
             this.sevenWonders.Size = new System.Drawing.Size(111, 65);
             this.sevenWonders.TabIndex = 6;
@@ -268,33 +286,141 @@
             // edgeLogo
             // 
             this.edgeLogo.Image = ((System.Drawing.Image)(resources.GetObject("edgeLogo.Image")));
-            this.edgeLogo.Location = new System.Drawing.Point(290, 376);
+            this.edgeLogo.Location = new System.Drawing.Point(290, 455);
             this.edgeLogo.Name = "edgeLogo";
             this.edgeLogo.Size = new System.Drawing.Size(100, 65);
             this.edgeLogo.TabIndex = 7;
             // 
-            // hoursTextBox
+            // taskbarMain
             // 
-            this.hoursTextBox.Location = new System.Drawing.Point(60, 37);
-            this.hoursTextBox.Name = "hoursTextBox";
-            this.hoursTextBox.Size = new System.Drawing.Size(35, 20);
-            this.hoursTextBox.TabIndex = 14;
+            this.taskbarMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.taskbarMain.Controls.Add(this.signOut);
+            this.taskbarMain.Controls.Add(this.edgelookLabel);
+            this.taskbarMain.Location = new System.Drawing.Point(0, 0);
+            this.taskbarMain.Name = "taskbarMain";
+            this.taskbarMain.Size = new System.Drawing.Size(811, 46);
+            this.taskbarMain.TabIndex = 8;
+            // 
+            // edgelookLabel
+            // 
+            this.edgelookLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.edgelookLabel.AutoSize = true;
+            this.edgelookLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edgelookLabel.ForeColor = System.Drawing.Color.White;
+            this.edgelookLabel.Location = new System.Drawing.Point(310, 9);
+            this.edgelookLabel.Name = "edgelookLabel";
+            this.edgelookLabel.Size = new System.Drawing.Size(160, 33);
+            this.edgelookLabel.TabIndex = 0;
+            this.edgelookLabel.Text = "EDGELook";
+            this.edgelookLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // taskbarMenu
+            // 
+            this.taskbarMenu.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.taskbarMenu.Controls.Add(this.schedulesButton);
+            this.taskbarMenu.Controls.Add(this.employeesButton);
+            this.taskbarMenu.Controls.Add(this.projectsButton);
+            this.taskbarMenu.Controls.Add(this.homeButton);
+            this.taskbarMenu.Location = new System.Drawing.Point(0, 52);
+            this.taskbarMenu.Name = "taskbarMenu";
+            this.taskbarMenu.Size = new System.Drawing.Size(811, 36);
+            this.taskbarMenu.TabIndex = 9;
+            // 
+            // schedulesButton
+            // 
+            this.schedulesButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.schedulesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.schedulesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.schedulesButton.Location = new System.Drawing.Point(490, 0);
+            this.schedulesButton.Name = "schedulesButton";
+            this.schedulesButton.Size = new System.Drawing.Size(100, 36);
+            this.schedulesButton.TabIndex = 3;
+            this.schedulesButton.Text = "Schedules";
+            this.schedulesButton.UseVisualStyleBackColor = true;
+            this.schedulesButton.Click += new System.EventHandler(this.SchedulesButton_Click);
+            // 
+            // employeesButton
+            // 
+            this.employeesButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.employeesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employeesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeesButton.Location = new System.Drawing.Point(390, 0);
+            this.employeesButton.Name = "employeesButton";
+            this.employeesButton.Size = new System.Drawing.Size(100, 36);
+            this.employeesButton.TabIndex = 2;
+            this.employeesButton.Text = "Employees";
+            this.employeesButton.UseVisualStyleBackColor = true;
+            this.employeesButton.Click += new System.EventHandler(this.EmployeesButton_Click);
+            // 
+            // projectsButton
+            // 
+            this.projectsButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.projectsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.projectsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectsButton.Location = new System.Drawing.Point(290, 0);
+            this.projectsButton.Name = "projectsButton";
+            this.projectsButton.Size = new System.Drawing.Size(100, 36);
+            this.projectsButton.TabIndex = 1;
+            this.projectsButton.Text = "Projects";
+            this.projectsButton.UseVisualStyleBackColor = true;
+            this.projectsButton.Click += new System.EventHandler(this.ProjectsButton_Click);
+            // 
+            // homeButton
+            // 
+            this.homeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.Location = new System.Drawing.Point(190, 0);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(100, 36);
+            this.homeButton.TabIndex = 0;
+            this.homeButton.Text = "Home";
+            this.homeButton.UseVisualStyleBackColor = true;
+            this.homeButton.Click += new System.EventHandler(this.HomeButton_Click);
+            // 
+            // taskBGPanel
+            // 
+            this.taskBGPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.taskBGPanel.Controls.Add(this.taskbarMenu);
+            this.taskBGPanel.Controls.Add(this.taskbarMain);
+            this.taskBGPanel.Location = new System.Drawing.Point(0, 0);
+            this.taskBGPanel.Name = "taskBGPanel";
+            this.taskBGPanel.Size = new System.Drawing.Size(811, 88);
+            this.taskBGPanel.TabIndex = 10;
+            // 
+            // signOut
+            // 
+            this.signOut.AutoSize = true;
+            this.signOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signOut.ForeColor = System.Drawing.Color.White;
+            this.signOut.Location = new System.Drawing.Point(748, 3);
+            this.signOut.Name = "signOut";
+            this.signOut.Size = new System.Drawing.Size(58, 16);
+            this.signOut.TabIndex = 1;
+            this.signOut.Text = "Sign Out";
+            this.signOut.Click += new System.EventHandler(this.SignOut_Click);
             // 
             // ProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(809, 468);
+            this.ClientSize = new System.Drawing.Size(809, 526);
             this.Controls.Add(this.edgeLogo);
             this.Controls.Add(this.sevenWonders);
             this.Controls.Add(this.profileLabel);
             this.Controls.Add(this.backPanel);
+            this.Controls.Add(this.taskBGPanel);
+            this.MaximizeBox = false;
             this.Name = "ProfilePage";
             this.Text = "My Profile";
             this.Load += new System.EventHandler(this.ProfilePage_Load);
             this.backPanel.ResumeLayout(false);
             this.backPanel.PerformLayout();
+            this.taskbarMain.ResumeLayout(false);
+            this.taskbarMain.PerformLayout();
+            this.taskbarMenu.ResumeLayout(false);
+            this.taskBGPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +449,14 @@
         private System.Windows.Forms.Label edgeLogo;
         private System.Windows.Forms.ListBox projectList;
         private System.Windows.Forms.TextBox hoursTextBox;
+        private System.Windows.Forms.Panel taskbarMain;
+        private System.Windows.Forms.Panel taskbarMenu;
+        private System.Windows.Forms.Panel taskBGPanel;
+        private System.Windows.Forms.Button homeButton;
+        private System.Windows.Forms.Button projectsButton;
+        private System.Windows.Forms.Label edgelookLabel;
+        private System.Windows.Forms.Button schedulesButton;
+        private System.Windows.Forms.Button employeesButton;
+        private System.Windows.Forms.Label signOut;
     }
 }

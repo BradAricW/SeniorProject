@@ -18,3 +18,13 @@ C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug
 C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.csproj.CoreCompileInputs.cache
 C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.exe
 C:\Users\brada\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.pdb
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\bin\Debug\TaskBar.exe.config
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\bin\Debug\TaskBar.exe
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\bin\Debug\TaskBar.pdb
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.csprojAssemblyReference.cache
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.Form1.resources
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.Properties.Resources.resources
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.csproj.GenerateResource.cache
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.csproj.CoreCompileInputs.cache
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.exe
+C:\Users\Brad\Documents\GitHub\SeniorProject\EDGELook\TaskBar\TaskBar\obj\Debug\TaskBar.pdb

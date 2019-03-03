@@ -12,9 +12,16 @@ namespace EdgeLook1
 {
     public partial class LoginPage : Form
     {
+        
         public LoginPage()
         {
             InitializeComponent();
+            
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
