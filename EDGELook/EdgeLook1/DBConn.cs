@@ -57,7 +57,7 @@ namespace EdgeLook1
             Console.WriteLine(cmd.ExecuteNonQuery());
             
         }
-        public void editHours(int empHours)
+        public int editHours(int empHours)
         {
             int currentHours = 0;
             String getHours = "SELECT hoursAvail FROM Employee as E WHERE " + this.eID + " == E.employeeID";
@@ -73,7 +73,9 @@ namespace EdgeLook1
                 String setHours = "UPDATE Employee SET hoursAvail = " + empHours + "WHERE employeeID = this.eID";
                 MySqlCommand cmd2 = new MySqlCommand(setHours, this.conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
+                currentHours = empHours;
             }
+            return currentHours;
         }
         public void setEID(int employeeID)
         {

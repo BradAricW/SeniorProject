@@ -14,9 +14,12 @@ namespace EdgeLook1
     {
         private DBConn Conn;
         private int hoursNum;
+        private int eID;
         public ProfilePage()
         {
             InitializeComponent();
+            Conn = new DBConn();
+            Conn.setEID(eID);
         }
 
         private void ProfilePage_Load(object sender, EventArgs e)
@@ -26,9 +29,9 @@ namespace EdgeLook1
 
         private void EditButton1_Click(object sender, EventArgs e)
         {
-            Conn = new DBConn();
+            //Conn = new DBConn();
             hoursNum = int.Parse(hoursTextBox.Text);
-            Conn.editHours(hoursNum);
+            hoursNum = Conn.editHours(hoursNum);
         }
 
         private void EditButton2_Click(object sender, EventArgs e)
