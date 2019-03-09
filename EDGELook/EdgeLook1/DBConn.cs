@@ -22,24 +22,24 @@ namespace EdgeLook1
         //CONSTRUCTOR
         public DBConn()
         {
-            //this.server = "athena";
-            //this.database = "sevenwonders";
-            //this.uid = "sevenwonders";
-            //this.password = "sw_db";
-            //this.connstring = "server=" + server + ";" + "database=" +
-            //database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+            this.server = "athena";
+            this.database = "sevenwonders";
+            this.uid = "sevenwonders";
+            this.password = "sw_db";
+            this.connstring = "server=" + server + ";" + "database=" +
+            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
 
              
         }
 
         public void addProject(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status, String Notes)
         {
-            server = "localhost";
-            database = "edge";
-            uid = "root";
-            password = "valeriyk1";
-            connString = "server=" + server + ";" + "database=" +
-            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+            //server = "localhost";
+            //database = "edge";
+            //uid = "root";
+            //password = "valeriyk1";
+            //connString = "server=" + server + ";" + "database=" +
+            //database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
 
 
             conn = new MySqlConnection(connString);
@@ -55,7 +55,7 @@ namespace EdgeLook1
             String addProj = "INSERT INTO Project VALUES (\'" + Num + "\', " + 322 + ", \'" + Desc + " \', \'" + Phase + " \', \'" + dueDates + " \', \'" + Deliv + "\', " + Hours + ", \'" + Status + "\');";
             String addNotes =  "UPDATE Notes SET notes =  " + Notes;
             MySqlCommand cmd = new MySqlCommand(addProj, this.conn);
-            MySqlCommand cmd = new MySqlCommand(addNotes, this.conn);
+            MySqlCommand cmd1 = new MySqlCommand(addNotes, this.conn);
             Console.WriteLine(cmd.ExecuteNonQuery());
             
         }

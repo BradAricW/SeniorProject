@@ -41,8 +41,8 @@ namespace EdgeLook1
             //}
 
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new AddProjectPage());
             Application.Run(new AddProjectPage());
             //Application.Run(new ProfilePage());
