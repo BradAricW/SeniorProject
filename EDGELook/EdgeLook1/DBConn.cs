@@ -53,9 +53,18 @@ namespace EdgeLook1
                Console.WriteLine(ex.Message);
             }
             String addProj = "INSERT INTO Project VALUES (\'" + Num + "\', " + 322 + ", \'" + Desc + " \', \'" + Phase + " \', \'" + dueDates + " \', \'" + Deliv + "\', " + Hours + ", \'" + Status + "\');";
-            String addNotes =  "UPDATE Notes SET notes =  " + Notes;
             MySqlCommand cmd = new MySqlCommand(addProj, this.conn);
+
+            String addNotes =  "UPDATE Notes SET notes =  " + Notes;
             MySqlCommand cmd1 = new MySqlCommand(addNotes, this.conn);
+
+            String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID";
+            String setMyID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID";
+            MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
+
+            String setOtherID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID";
+            MySqlCommand cmd3 = new MySqlCommand(setOtherID, this.conn);
+
             Console.WriteLine(cmd.ExecuteNonQuery());
             
         }
