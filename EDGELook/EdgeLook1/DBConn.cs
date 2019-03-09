@@ -26,13 +26,13 @@ namespace EdgeLook1
             this.database = "sevenwonders";
             this.uid = "sevenwonders";
             this.password = "sw_db";
-            this.connstring = "server=" + server + ";" + "database=" +
+            this.connString = "server=" + server + ";" + "database=" +
             database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
 
              
         }
 
-        public void addProject(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status, String Notes)
+        public void addProject(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status, String noteInsert)
         {
             //server = "localhost";
             //database = "edge";
@@ -40,6 +40,13 @@ namespace EdgeLook1
             //password = "valeriyk1";
             //connString = "server=" + server + ";" + "database=" +
             //database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+
+            /*this.server = "athena";
+            this.database = "sevenwonders";
+            this.uid = "sevenwonders";
+            this.password = "sw_db";
+            this.connstring = "server=" + server + ";" + "database=" +
+            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";*/
 
 
             conn = new MySqlConnection(connString);
@@ -55,7 +62,7 @@ namespace EdgeLook1
             String addProj = "INSERT INTO Project VALUES (\'" + Num + "\', " + 322 + ", \'" + Desc + " \', \'" + Phase + " \', \'" + dueDates + " \', \'" + Deliv + "\', " + Hours + ", \'" + Status + "\');";
             MySqlCommand cmd = new MySqlCommand(addProj, this.conn);
 
-            String addNotes =  "UPDATE Notes SET notes =  " + Notes;
+            String addNotes =  "INSERT INTO Notes VALUES (\'"+NULL+"\',"+NULL+"\', " + noteInsert+ "\')";
             MySqlCommand cmd1 = new MySqlCommand(addNotes, this.conn);
 
             String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID";
@@ -66,6 +73,7 @@ namespace EdgeLook1
             MySqlCommand cmd3 = new MySqlCommand(setOtherID, this.conn);
 
             Console.WriteLine(cmd.ExecuteNonQuery());
+            Console.WriteLine(cmd1.ExecuteNonQuery());
             
         }
         public int editHours(int empHours)

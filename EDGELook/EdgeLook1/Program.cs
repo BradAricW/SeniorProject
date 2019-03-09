@@ -19,7 +19,7 @@ namespace EdgeLook1
         [STAThread]
         static void Main()
         {
-            //string server = "athena";
+           // string server = "athena";
             //string database = "sevenwonders";
             //string uid = "sevenwonders";
             //string password = "sw_db";
@@ -33,7 +33,7 @@ namespace EdgeLook1
 
             //try
             //{
-            //    conn.Open();
+             //   conn.Open();
             //}
             //catch (Exception ex)
             //{
