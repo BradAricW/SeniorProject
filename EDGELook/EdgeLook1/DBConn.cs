@@ -41,12 +41,7 @@ namespace EdgeLook1
             //connString = "server=" + server + ";" + "database=" +
             //database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
 
-            /*this.server = "athena";
-            this.database = "sevenwonders";
-            this.uid = "sevenwonders";
-            this.password = "sw_db";
-            this.connstring = "server=" + server + ";" + "database=" +
-            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";*/
+       
 
 
             conn = new MySqlConnection(connString);
@@ -60,24 +55,42 @@ namespace EdgeLook1
                Console.WriteLine(ex.Message);
             }
             String addProj = "INSERT INTO Project VALUES (\'" + Num + "\', " + 322 + ", \'" + Desc + " \', \'" + Phase + " \', \'" + dueDates + " \', \'" + Deliv + "\', " + Hours + ", \'" + Status + "\');";
-            MySqlCommand cmd = new MySqlCommand(addProj, this.conn);
 
-            String addNotes = "INSERT INTO Notes VALUES (\'" + 322 + "\', " + Num + ", \'" + noteInsert + "\');";
-          
-            MySqlCommand cmd1 = new MySqlCommand(addNotes, this.conn);
-            Console.WriteLine(cmd1.ExecuteNonQuery());
+            //MySqlCommand cmd = new MySqlCommand(addProj, this.conn);
 
-            String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID";
-            String setMyID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID";
-            MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO Notes (notes) VALUES @noteValue);",conn);
+            cmd.Parameters.AddWithValue("@noteValue", noteInsert);
+            cmd.ExecuteNonQuery();
 
-            String setOtherID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID";
-            MySqlCommand cmd3 = new MySqlCommand(setOtherID, this.conn);
+            //MySqlCommand cmd1 = new MySqlCommand(addNotes, this.conn);
+            //Console.WriteLine(cmd1.ExecuteNonQuery());
 
-            Console.WriteLine(cmd.ExecuteNonQuery());
+            //String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID";
+            //String setMyID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID";
+            //MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
+
+            //String setOtherID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID";
+            //MySqlCommand cmd3 = new MySqlCommand(setOtherID, this.conn);
+
+            //Console.WriteLine(cmd.ExecuteNonQuery());
             //Console.WriteLine(cmd1.ExecuteNonQuery());
             
         }
+
+        public void assignEmployee(Boolean myselfButton) {
+            if(myselfButton) {
+                
+                String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID";
+                MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                
+                String setMyID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID";
+                MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
+                Console.WriteLine(cmd1.ExecuteNonQuery());
+            }
+}
+
         public int editHours(int empHours)
         {
             int currentHours = 0;

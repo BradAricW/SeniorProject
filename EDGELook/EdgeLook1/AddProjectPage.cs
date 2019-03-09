@@ -52,6 +52,10 @@ namespace EdgeLook1
 
         private void button3_AddMyself(object sender, EventArgs e)
         {
+            Conn = new DBConn();
+            Boolean addedMyself = true;
+            Conn.assignEmployee(addedMyself);
+
 
         }
 
