@@ -32,7 +32,7 @@ namespace EdgeLook1
              
         }
 
-        public void addProject(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status)
+        public void addProject(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status, String Notes)
         {
             server = "localhost";
             database = "edge";
@@ -53,7 +53,9 @@ namespace EdgeLook1
                Console.WriteLine(ex.Message);
             }
             String addProj = "INSERT INTO Project VALUES (\'" + Num + "\', " + 322 + ", \'" + Desc + " \', \'" + Phase + " \', \'" + dueDates + " \', \'" + Deliv + "\', " + Hours + ", \'" + Status + "\');";
+            String addNotes =  "UPDATE Notes SET notes =  " + Notes;
             MySqlCommand cmd = new MySqlCommand(addProj, this.conn);
+            MySqlCommand cmd = new MySqlCommand(addNotes, this.conn);
             Console.WriteLine(cmd.ExecuteNonQuery());
             
         }

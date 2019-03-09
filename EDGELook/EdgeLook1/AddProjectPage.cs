@@ -94,7 +94,7 @@ namespace EdgeLook1
             projectNotes = TextBoxNotes.Text;
             //String addProj = "INSERT INTO PROJECT VALUES (\'" + projectNum + "\', "+ 322 + ", \'" + projectDesc + " \', \'" + projectPhase + " \', \'" + projectDueDates + " \', \'" + projectDeliverables +  "\', " + projectHours + ", \'" + projectStatus + "\');";
             //MessageBox.Show(addProj);
-            Conn.addProject(projectNum,projectDesc,projectDueDates,projectPhase,projectDeliverables,projectHours,projectStatus);
+            Conn.addProject(projectNum,projectDesc,projectDueDates,projectPhase,projectDeliverables,projectHours,projectStatus,projectNotes);
 
         }
 
