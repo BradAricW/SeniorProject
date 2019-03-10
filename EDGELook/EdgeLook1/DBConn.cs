@@ -80,12 +80,12 @@ namespace EdgeLook1
         public void assignEmployee(Boolean myselfButton) {
             if(myselfButton) {
                 
-                String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID";
+                String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID;";
                 MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
                 conn.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();
                 
-                String setMyID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID";
+                String setMyID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID;";
                 MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
                 Console.WriteLine(cmd1.ExecuteNonQuery());
             }
@@ -94,7 +94,7 @@ namespace EdgeLook1
         public int editHours(int empHours)
         {
             int currentHours = 0;
-            String getHours = "SELECT hoursAvail FROM Employee as E WHERE " + this.eID + " == E.employeeID";
+            String getHours = "SELECT hoursAvail FROM Employee as E WHERE " + this.eID + " == E.employeeID;";
             MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
             conn.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -104,7 +104,7 @@ namespace EdgeLook1
             }
             if(empHours != currentHours)
             {
-                String setHours = "UPDATE Employee SET hoursAvail = " + empHours + "WHERE employeeID = this.eID";
+                String setHours = "UPDATE Employee SET hoursAvail = " + empHours + "WHERE employeeID = this.eID;";
                 MySqlCommand cmd2 = new MySqlCommand(setHours, this.conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
                 currentHours = empHours;
@@ -114,6 +114,23 @@ namespace EdgeLook1
         public void setEID(int employeeID)
         {
             eID = employeeID;
+        }
+        public void login (String username, String password)
+        {
+            String getLogin = "SELECT employeeID FROM Employee WHERE email = " + username + " AND pssword = " + password + ";";
+            MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                eID = reader.getInt16("employeeID");
+            }
+            if (eID == null)
+            {
+                Console.WriteLine("Not valid login");
+            }
+            else
+                Console.WriteLine("Logged in");
+            return eID;
         }
     }
 }
