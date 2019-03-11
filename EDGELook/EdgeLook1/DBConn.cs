@@ -152,5 +152,10 @@ namespace EdgeLook1
             Console.WriteLine(cmd1.ExecuteNonQuery());
         }
 
+        public void editProj()
+        {
+
+        }
+
     } // Class DBConn END
 } // Name Space EdgeLook END
