@@ -115,6 +115,7 @@ namespace EdgeLook1
         {
             eID = employeeID;
         }
+       
         public void login (String username, String password)
         {
             String getLogin = "SELECT employeeID FROM Employee WHERE email = " + username + " AND pssword = " + password + ";";
@@ -131,6 +132,25 @@ namespace EdgeLook1
             else
                 Console.WriteLine("Logged in");
             return eID;
+        } // Login
+
+
+        // Not Tested!!!!!!!
+        public void editNotes(String addNotes){
+            String getMyID = "SELECT employeeID FROM Employee WHERE " + this.editHours + " == Employee.employeeID;";
+            MySqlCommand cmd = new MySqlCommannd(getMyID, this.conn);
+            conn.Open();
+            MySqlDataReader idValue = cmd.ExecuteReader();
+
+            String getPrjID = "SELECT prjNo FROM project WHERE " + this.progID + " == Project.prjNo;";
+            cmd = new MySqlCommand(getPrjID, this.conn);
+            conn.Open();
+            MySqlDataReader prjValue = cmd.ExecuteReader();
+
+            String commandText = "UPDATE Notes.notes SET notes = (notes " + addNotes + ") WHERE employeeID = " + idValue.GetValue() + "and prjNo = " + prjValue.GetValue() + ";";
+            MySqlCommand cmd1 = new MySqlCommand(commandText, this.conn);
+            Console.WriteLine(cmd1.ExecuteNonQuery());
         }
-    }
-}
+
+    } // Class DBConn END
+} // Name Space EdgeLook END

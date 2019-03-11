@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace EdgeLook1
 {
     public partial class EditProjectPage : Form
     {
+
+        private DBConn Conn;
+
         public EditProjectPage()
         {
             InitializeComponent();
@@ -134,7 +139,7 @@ namespace EdgeLook1
 
         private void button5_AddNotes(object sender, EventArgs e)
         {
-
+           DBConn.editNotes(TextBoxNotes);
         }
 
         private void label_Notes(object sender, EventArgs e)
