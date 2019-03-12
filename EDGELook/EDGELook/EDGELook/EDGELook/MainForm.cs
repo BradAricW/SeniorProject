@@ -31,27 +31,85 @@ namespace EDGELook
             this.loginBG.Visible = true;
             this.taskbarMenu.Visible = false;
             this.profileBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.searchProjectsBG.Visible = false;
         }
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
-
+            this.profileBG.Visible = true;
+            this.scheduleBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.searchProjectsBG.Visible = false;
         }
 
         private void ProjectsButton_Click(object sender, EventArgs e)
         {
-
+            this.profileBG.Visible = false;
+            this.scheduleBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.searchProjectsBG.Visible = true;
         }
 
         private void EmployeesButton_Click(object sender, EventArgs e)
         {
-
+            this.profileBG.Visible = false;
+            this.scheduleBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = true;
+            this.searchProjectsBG.Visible = false;
         }
 
         private void SchedulesButton_Click(object sender, EventArgs e)
         {
+            this.profileBG.Visible = false;
+            this.scheduleBG.Visible = true;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.searchProjectsBG.Visible = false;
+        }
+
+        private void CreateAccountLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
 
         }
 
+        private void SearchEmployeesViewButton_Click(object sender, EventArgs e)
+        {
+            this.profileBG.Visible = false;
+            this.scheduleBG.Visible = false;
+            this.employeePageBG.Visible = true;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.searchProjectsBG.Visible = false;
+        }
+
+        private void SearchProjectsViewButton_Click(object sender, EventArgs e)
+        {
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.scheduleBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = true;
+            this.searchEmployeesBG.Visible = false;
+        }
+
+        private void SearchProjectsPageAddProjectButton_Click(object sender, EventArgs e)
+        {
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.scheduleBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = true;
+            this.searchEmployeesBG.Visible = false;
+        }
     }
 }
