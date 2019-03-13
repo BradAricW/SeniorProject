@@ -127,7 +127,11 @@ namespace EDGELook
             edit.editProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox);
         }
 
-
-
+        private void projectPageAddSelfButton_Click(object sender, EventArgs e)
+        {
+            Conn = new DBConn();
+            Boolean addedMyself = true;
+            Conn.assignEmployee(addedMyself);
+        }
     }
 }
