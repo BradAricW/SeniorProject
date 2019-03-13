@@ -29,11 +29,12 @@ create table WorksOn (
     
 create table Notes (
 	employeeID		int		NOT NULL,
-    prjNo			varchar(30)		NOT NULL,
-    notes			varchar(255),
-    primary key(employeeID, prjNo),
-    foreign key(employeeID) references Employee(employeeID),
-    foreign key(prjNo) references Project(prjNo));
+    	prjNo			varchar(30)	NOT NULL,
+	timeStamp		datetime	NOT NULL,
+    	notes			varchar(255),
+    	primary key(employeeID, prjNo),
+    	foreign key(employeeID) references Employee(employeeID),
+    	foreign key(prjNo) references Project(prjNo));
     
 create table Vacation (
 	employeeID		int		NOT NULL,
@@ -79,9 +80,9 @@ create table Vacation (
  values(322,'2019-06-11','2019-06-15');
  
  insert into Notes
- values(425,'E349','Project needs this and this');
+ values(425,'E349','2019-03-12 18:38:00',Project needs this and this');
  
  insert into Notes
- values(322,'F163','Project needs this and that');
+ values(322,'F163','2019-03-10 18:38:00''Project needs this and that');
  
     
