@@ -74,4 +74,4 @@ namespace EDGELook
         }
 
         } // END EDITPROJECTPAGE
-} v// END EDGELOOK
+} // END EDGELOOK

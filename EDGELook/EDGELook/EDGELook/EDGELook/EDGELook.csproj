@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="DBConn.cs" />
     <Compile Include="EditProjectPage.cs" />
-    <Compile Include="EditProjectPage1.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
