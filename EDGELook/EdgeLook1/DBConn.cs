@@ -28,32 +28,23 @@ namespace EdgeLook1
             this.password = "sw_db";
             this.connString = "server=" + server + ";" + "database=" +
             database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
-
+            
              
         }
 
         public void addProject(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status, String noteInsert)
         {
-            //server = "localhost";
-            //database = "edge";
-            //uid = "root";
-            //password = "valeriyk1";
-            //connString = "server=" + server + ";" + "database=" +
-            //database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
-
-       
-
-
+            try
+                {
+                    conn.Open();
+                }
+            catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             conn = new MySqlConnection(connString);
             //MySqlCommand command = conn.CreateCommand();
-            try
-            {
-                conn.Open();
-            }
-            catch (Exception ex)
-            {
-               Console.WriteLine(ex.Message);
-            }
+            
             String addProj = "INSERT INTO Project VALUES (\'" + Num + "\', " + 322 + ", \'" + Desc + " \', \'" + Phase + " \', \'" + dueDates + " \', \'" + Deliv + "\', " + Hours + ", \'" + Status + "\');";
 
             //MySqlCommand cmd = new MySqlCommand(addProj, this.conn);
@@ -115,46 +106,58 @@ namespace EdgeLook1
         {
             eID = employeeID;
         }
-       
-        public void login (String username, String password)
+
+        //public void login (String username, String password)
+        //{
+        //    String getLogin = "SELECT employeeID FROM Employee WHERE email = " + username + " AND pssword = " + password + ";";
+        //    MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
+        //    MySqlDataReader reader = cmd.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+        //        eID = reader.getInt16("employeeID");
+        //    }
+        //    if (eID == null)
+        //    {
+        //        Console.WriteLine("Not valid login");
+        //    }
+        //    else
+        //        Console.WriteLine("Logged in");
+        //    return eID;
+        //} // Login
+
+
+        //// Not Tested!!!!!!!
+        public void editNotes(String addNotes)
         {
-            String getLogin = "SELECT employeeID FROM Employee WHERE email = " + username + " AND pssword = " + password + ";";
-            MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+           try
             {
-                eID = reader.getInt16("employeeID");
+                conn.Open();
             }
-            if (eID == null)
+            catch (Exception ex)
             {
-                Console.WriteLine("Not valid login");
+                Console.WriteLine(ex.Message);
             }
-            else
-                Console.WriteLine("Logged in");
-            return eID;
-        } // Login
+            conn = new MySqlConnection(connString);
 
-
-        // Not Tested!!!!!!!
-        public void editNotes(String addNotes){
-            String getMyID = "SELECT employeeID FROM Employee WHERE " + this.editHours + " == Employee.employeeID;";
-            MySqlCommand cmd = new MySqlCommannd(getMyID, this.conn);
-            conn.Open();
-            MySqlDataReader idValue = cmd.ExecuteReader();
-
-            String getPrjID = "SELECT prjNo FROM project WHERE " + this.progID + " == Project.prjNo;";
-            cmd = new MySqlCommand(getPrjID, this.conn);
-            conn.Open();
-            MySqlDataReader prjValue = cmd.ExecuteReader();
-
-            String commandText = "UPDATE Notes.notes SET notes = (notes " + addNotes + ") WHERE employeeID = " + idValue.GetValue() + "and prjNo = " + prjValue.GetValue() + ";";
-            MySqlCommand cmd1 = new MySqlCommand(commandText, this.conn);
-            Console.WriteLine(cmd1.ExecuteNonQuery());
+            MySqlCommand cmd = new MySqlCommand("select * from Project;",conn); 
         }
 
-        public void editProj()
+        public void editProj(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status)
         {
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conn = new MySqlConnection(connString);
+            MessageBox.Show(Num);
 
+            String edProj = "UPDATE Project set prjNo = '" + Num + "' where prjNo = 'uu';";
+            MySqlCommand cmd = new MySqlCommand(edProj, conn);
+            //MessageBox.Show("Project changed to " + Num);
         }
 
     } // Class DBConn END
