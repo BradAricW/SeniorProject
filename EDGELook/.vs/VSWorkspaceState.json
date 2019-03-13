@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EdgeLook1"
+    "\\EDGELook",
+    "\\EdgeLook1",
+    "\\EDGELook\\EDGELook",
+    "\\EDGELook\\EDGELook\\EDGELook",
+    "\\EDGELook\\EDGELook\\EDGELook\\Properties"
   ],
-  "SelectedNode": "\\EdgeLook1\\AddProjectPage.Designer.cs",
+  "SelectedNode": "\\EdgeLook1\\EditProjectPage.cs",
   "PreviewInSolutionExplorer": false
 }

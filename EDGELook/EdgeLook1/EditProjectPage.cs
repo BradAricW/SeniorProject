@@ -202,10 +202,15 @@ namespace EdgeLook1
                 textBoxProjectDeliverables.Text = dr.GetString(5);
                 textBoxProjectHours.Text = dr.GetString(6);
                 textBoxProjectStatus.Text = dr.GetString(7);
-                textBoxNotes.Text = dr.GetString(10);
+                //textBoxNotes.Text = dr.GetString(10);
                 temp = true;
             }
             
+            // con.Open();
+            // MySqlCommand cmd = new MySqlCommand("select notes, timeStamp from NOTES, Notes where projNo = xxx ORDER BY timeStamp;", con);
+            // MySqlDataReader dr = cmd.ExecuteReader();
+            // textBoxNotes.Text = dr.GetString(0);
+
             if (temp == false)
                 MessageBox.Show("not found");
             con.Close();

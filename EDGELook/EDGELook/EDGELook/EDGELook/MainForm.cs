@@ -12,6 +12,10 @@ namespace EDGELook
 {
     public partial class MainForm : Form
     {
+
+        EditProjectPage edit = new EditProjectPage();
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -100,6 +104,8 @@ namespace EDGELook
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
+
+            edit.autoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox);
         }
 
         private void SearchProjectsPageAddProjectButton_Click(object sender, EventArgs e)
@@ -111,5 +117,17 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
         }
+
+
+        // Button Functionality
+
+        // Update Project
+        private void projectPageUpdateButton_Click(object sender, EventArgs e)
+        {
+            edit.editProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox);
+        }
+
+
+
     }
 }

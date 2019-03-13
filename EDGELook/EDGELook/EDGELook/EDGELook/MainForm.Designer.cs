@@ -71,6 +71,12 @@
             this.projectPageAddNotesButton = new System.Windows.Forms.Button();
             this.projectPageNotesLabel = new System.Windows.Forms.Label();
             this.projectPagePanel2 = new System.Windows.Forms.Panel();
+            this.projectPageStatusBox = new System.Windows.Forms.TextBox();
+            this.projectPageDeliverablesBox = new System.Windows.Forms.TextBox();
+            this.projectPagePhaseBox = new System.Windows.Forms.TextBox();
+            this.projectPageDueBox = new System.Windows.Forms.TextBox();
+            this.projectPageDescriptionBox = new System.Windows.Forms.TextBox();
+            this.projectPagePNumBox = new System.Windows.Forms.TextBox();
             this.projectPageStatusLabel = new System.Windows.Forms.Label();
             this.projectPageHoursTextBox = new System.Windows.Forms.TextBox();
             this.projectPageAddHoursButton = new System.Windows.Forms.Button();
@@ -128,12 +134,6 @@
             this.searchProjectsList = new System.Windows.Forms.ListBox();
             this.searchProjectsViewButton = new System.Windows.Forms.Button();
             this.searchProjectsLabel = new System.Windows.Forms.Label();
-            this.projectPagePNumBox = new System.Windows.Forms.TextBox();
-            this.projectPageDescriptionBox = new System.Windows.Forms.TextBox();
-            this.projectPageDueBox = new System.Windows.Forms.TextBox();
-            this.projectPagePhaseBox = new System.Windows.Forms.TextBox();
-            this.projectPageDeliverablesBox = new System.Windows.Forms.TextBox();
-            this.projectPageStatusBox = new System.Windows.Forms.TextBox();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -596,9 +596,9 @@
             // projectPagePanel3
             // 
             this.projectPagePanel3.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.projectPagePanel3.Controls.Add(this.projectPageNotesBox);
             this.projectPagePanel3.Controls.Add(this.projectPageAddNotesButton);
             this.projectPagePanel3.Controls.Add(this.projectPageNotesLabel);
+            this.projectPagePanel3.Controls.Add(this.projectPageNotesBox);
             this.projectPagePanel3.Location = new System.Drawing.Point(585, 20);
             this.projectPagePanel3.Name = "projectPagePanel3";
             this.projectPagePanel3.Size = new System.Drawing.Size(300, 420);
@@ -642,7 +642,6 @@
             // projectPagePanel2
             // 
             this.projectPagePanel2.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.projectPagePanel2.Controls.Add(this.projectPageStatusBox);
             this.projectPagePanel2.Controls.Add(this.projectPageDeliverablesBox);
             this.projectPagePanel2.Controls.Add(this.projectPagePhaseBox);
             this.projectPagePanel2.Controls.Add(this.projectPageDueBox);
@@ -661,10 +660,53 @@
             this.projectPagePanel2.Controls.Add(this.projectPageUpdateButton);
             this.projectPagePanel2.Controls.Add(this.projectPagePhaseLabel);
             this.projectPagePanel2.Controls.Add(this.projectPagePNameLabel);
+            this.projectPagePanel2.Controls.Add(this.projectPageStatusBox);
             this.projectPagePanel2.Location = new System.Drawing.Point(255, 20);
             this.projectPagePanel2.Name = "projectPagePanel2";
             this.projectPagePanel2.Size = new System.Drawing.Size(300, 420);
             this.projectPagePanel2.TabIndex = 1;
+            // 
+            // projectPageStatusBox
+            // 
+            this.projectPageStatusBox.Location = new System.Drawing.Point(0, 398);
+            this.projectPageStatusBox.Name = "projectPageStatusBox";
+            this.projectPageStatusBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPageStatusBox.TabIndex = 24;
+            // 
+            // projectPageDeliverablesBox
+            // 
+            this.projectPageDeliverablesBox.Location = new System.Drawing.Point(0, 268);
+            this.projectPageDeliverablesBox.Name = "projectPageDeliverablesBox";
+            this.projectPageDeliverablesBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPageDeliverablesBox.TabIndex = 23;
+            // 
+            // projectPagePhaseBox
+            // 
+            this.projectPagePhaseBox.Location = new System.Drawing.Point(0, 216);
+            this.projectPagePhaseBox.Name = "projectPagePhaseBox";
+            this.projectPagePhaseBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPagePhaseBox.TabIndex = 22;
+            // 
+            // projectPageDueBox
+            // 
+            this.projectPageDueBox.Location = new System.Drawing.Point(0, 164);
+            this.projectPageDueBox.Name = "projectPageDueBox";
+            this.projectPageDueBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPageDueBox.TabIndex = 21;
+            // 
+            // projectPageDescriptionBox
+            // 
+            this.projectPageDescriptionBox.Location = new System.Drawing.Point(0, 112);
+            this.projectPageDescriptionBox.Name = "projectPageDescriptionBox";
+            this.projectPageDescriptionBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPageDescriptionBox.TabIndex = 20;
+            // 
+            // projectPagePNumBox
+            // 
+            this.projectPagePNumBox.Location = new System.Drawing.Point(0, 60);
+            this.projectPagePNumBox.Name = "projectPagePNumBox";
+            this.projectPagePNumBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPagePNumBox.TabIndex = 19;
             // 
             // projectPageStatusLabel
             // 
@@ -795,6 +837,7 @@
             this.projectPageUpdateButton.TabIndex = 2;
             this.projectPageUpdateButton.Text = "Update Project";
             this.projectPageUpdateButton.UseVisualStyleBackColor = false;
+            this.projectPageUpdateButton.Click += new System.EventHandler(this.projectPageUpdateButton_Click);
             // 
             // projectPagePhaseLabel
             // 
@@ -1328,48 +1371,6 @@
             this.searchProjectsLabel.TabIndex = 14;
             this.searchProjectsLabel.Text = "Search Projects";
             // 
-            // projectPagePNumBox
-            // 
-            this.projectPagePNumBox.Location = new System.Drawing.Point(0, 60);
-            this.projectPagePNumBox.Name = "projectPagePNumBox";
-            this.projectPagePNumBox.Size = new System.Drawing.Size(300, 20);
-            this.projectPagePNumBox.TabIndex = 19;
-            // 
-            // projectPageDescriptionBox
-            // 
-            this.projectPageDescriptionBox.Location = new System.Drawing.Point(0, 112);
-            this.projectPageDescriptionBox.Name = "projectPageDescriptionBox";
-            this.projectPageDescriptionBox.Size = new System.Drawing.Size(300, 20);
-            this.projectPageDescriptionBox.TabIndex = 20;
-            // 
-            // projectPageDueBox
-            // 
-            this.projectPageDueBox.Location = new System.Drawing.Point(0, 164);
-            this.projectPageDueBox.Name = "projectPageDueBox";
-            this.projectPageDueBox.Size = new System.Drawing.Size(300, 20);
-            this.projectPageDueBox.TabIndex = 21;
-            // 
-            // projectPagePhaseBox
-            // 
-            this.projectPagePhaseBox.Location = new System.Drawing.Point(0, 216);
-            this.projectPagePhaseBox.Name = "projectPagePhaseBox";
-            this.projectPagePhaseBox.Size = new System.Drawing.Size(300, 20);
-            this.projectPagePhaseBox.TabIndex = 22;
-            // 
-            // projectPageDeliverablesBox
-            // 
-            this.projectPageDeliverablesBox.Location = new System.Drawing.Point(0, 268);
-            this.projectPageDeliverablesBox.Name = "projectPageDeliverablesBox";
-            this.projectPageDeliverablesBox.Size = new System.Drawing.Size(300, 20);
-            this.projectPageDeliverablesBox.TabIndex = 23;
-            // 
-            // projectPageStatusBox
-            // 
-            this.projectPageStatusBox.Location = new System.Drawing.Point(0, 398);
-            this.projectPageStatusBox.Name = "projectPageStatusBox";
-            this.projectPageStatusBox.Size = new System.Drawing.Size(300, 20);
-            this.projectPageStatusBox.TabIndex = 24;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1378,14 +1379,14 @@
             this.ClientSize = new System.Drawing.Size(909, 561);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
+            this.Controls.Add(this.searchProjectsBG);
+            this.Controls.Add(this.searchEmployeesBG);
+            this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.scheduleBG);
-            this.Controls.Add(this.searchProjectsBG);
-            this.Controls.Add(this.searchEmployeesBG);
-            this.Controls.Add(this.employeePageBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
