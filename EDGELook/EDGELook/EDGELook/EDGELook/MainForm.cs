@@ -122,12 +122,14 @@ namespace EDGELook
         // Button Functionality
 
         // Update Project
-        private void projectPageUpdateButton_Click(object sender, EventArgs e)
+        private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
             edit.editProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox);
         }
 
+        private void AddEmployeeButton_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
