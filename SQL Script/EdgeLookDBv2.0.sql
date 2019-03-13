@@ -80,9 +80,9 @@ create table Vacation (
  values(322,'2019-06-11','2019-06-15');
  
  insert into Notes
- values(425,'E349','2019-03-12 18:38:00',Project needs this and this');
+ values(425,'E349','2019-03-12 18:38:00', 'Project needs this and this');
  
  insert into Notes
- values(322,'F163','2019-03-10 18:38:00''Project needs this and that');
+ values(322,'F163','2019-03-10 18:38:00', 'Project needs this and that');
  
     
