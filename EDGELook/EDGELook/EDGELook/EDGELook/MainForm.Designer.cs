@@ -979,8 +979,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 34);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Add Myself";
+            this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.ProjectPageAddEmployeeButton_Click);
             // 
             // projectPageRemoveEmployeeButton
             // 
@@ -1055,7 +1056,7 @@
             this.projectPageAddSelfButton.TabIndex = 3;
             this.projectPageAddSelfButton.Text = "Add Myself";
             this.projectPageAddSelfButton.UseVisualStyleBackColor = false;
-            this.projectPageAddSelfButton.Click += new System.EventHandler(this.projectPageAddSelfButton_Click);
+            this.projectPageAddSelfButton.Click += new System.EventHandler(this.ProjectPageAddSelfButton_Click);
             // 
             // employeePageBG
             // 
@@ -1262,7 +1263,7 @@
             // 
             this.schedulePageTempCalendar.CalendarDimensions = new System.Drawing.Size(4, 3);
             this.schedulePageTempCalendar.Location = new System.Drawing.Point(165, 118);
-            this.schedulePageTempCalendar.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.schedulePageTempCalendar.Margin = new System.Windows.Forms.Padding(14);
             this.schedulePageTempCalendar.Name = "schedulePageTempCalendar";
             this.schedulePageTempCalendar.TabIndex = 0;
             // 
@@ -1488,14 +1489,14 @@
             this.ClientSize = new System.Drawing.Size(1364, 863);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.projectPageBG);
-            this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.scheduleBG);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
+            this.Controls.Add(this.projectPageBG);
+            this.Controls.Add(this.loginBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;

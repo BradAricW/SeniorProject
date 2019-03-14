@@ -18,6 +18,7 @@ namespace EDGELook
         private string connString;
         private MySqlConnection conn;
         private int eID;
+        private String projectID;
 
         //CONSTRUCTOR
         public DBConn()
@@ -71,14 +72,18 @@ namespace EDGELook
         public void assignEmployee(Boolean myselfButton)
         {
             if (myselfButton)
+                conn.Open();
             {
 
                 String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID;";
                 MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
-                conn.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                String setMyID = "UPDATE WorksOn SET employeeID = " + getMyID + "WHERE employeeID = this.eID;";
+                String getProjectID = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
+                MySqlCommand cmd2 = new MySqlCommand(getProjectID, this.conn);
+                MySqlDataReader reader1 = cmd2.ExecuteReader();
+
+                String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + getMyID + "\'," + getProjectID + "\');";
                 MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
                 Console.WriteLine(cmd1.ExecuteNonQuery());
             }
