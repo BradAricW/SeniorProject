@@ -108,7 +108,7 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
 
-            edit.autoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox);
+            edit.autoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox);
         }
 
         private void SearchProjectsPageAddProjectButton_Click(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace EDGELook
         // Update Project
         private void projectPageUpdateButton_Click(object sender, EventArgs e)
         {
-            edit.editProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox);
+            edit.editProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox);
         }
 
         private void projectPageAddSelfButton_Click(object sender, EventArgs e)
@@ -135,6 +135,11 @@ namespace EDGELook
             Conn = new DBConn();
             Boolean addedMyself = true;
             Conn.assignEmployee(addedMyself);
+        }
+
+        private void projectPageAddNotesButton_Click(object sender, EventArgs e)
+        {
+            edit.addNotes(projectPagePNumBox, projectPageNotesBox);
         }
     }
 }
