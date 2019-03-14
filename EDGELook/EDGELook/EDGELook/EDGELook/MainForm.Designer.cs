@@ -532,6 +532,7 @@
             this.profileEditButton1.TabIndex = 0;
             this.profileEditButton1.Text = "Edit";
             this.profileEditButton1.UseVisualStyleBackColor = false;
+            this.profileEditButton1.Click += new System.EventHandler(this.ProfileEditButton1_Click);
             // 
             // profileEditButton2
             // 
@@ -1392,14 +1393,14 @@
             this.ClientSize = new System.Drawing.Size(909, 561);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
+            this.Controls.Add(this.profileBG);
+            this.Controls.Add(this.formBGTemp);
+            this.Controls.Add(this.scheduleBG);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
-            this.Controls.Add(this.profileBG);
-            this.Controls.Add(this.formBGTemp);
-            this.Controls.Add(this.scheduleBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";

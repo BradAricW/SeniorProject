@@ -17,7 +17,7 @@ namespace EDGELook
         private string password;
         private string connString;
         private MySqlConnection conn;
-        private int eID;
+        private int? eID;
         private String projectID;
 
         //CONSTRUCTOR
@@ -87,6 +87,7 @@ namespace EDGELook
 
         public int EditHours(int empHours)
         {
+            conn = new MySqlConnection(connString);
             int currentHours = 0;
             String getHours = "SELECT hoursAvail FROM Employee as E WHERE " + this.eID + " == E.employeeID;";
             MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
@@ -110,7 +111,7 @@ namespace EDGELook
             eID = employeeID;
         }
 
-        public int Login (String username, String password)
+        public int? Login (String username, String password)
         {
             conn = new MySqlConnection(connString);
             try

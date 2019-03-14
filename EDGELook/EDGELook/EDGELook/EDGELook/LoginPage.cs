@@ -12,7 +12,8 @@ namespace EDGELook
         private string email;
         private string password;
         private DBConn Conn;
-        private int result, success;
+        private int? result;
+        private int success;
 
         public int Login (TextBox emailBox, TextBox passwordBox)
         {

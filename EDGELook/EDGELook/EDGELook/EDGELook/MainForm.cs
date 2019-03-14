@@ -19,6 +19,7 @@ namespace EDGELook
         private int loginResult;
         EditProjectPage edit = new EditProjectPage();
         private DBConn Conn;
+        ProfilePage profile = new ProfilePage();
 
         public MainForm()
         {
@@ -150,6 +151,11 @@ namespace EDGELook
         private void SearchProjectsList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ProfileEditButton1_Click(object sender, EventArgs e)
+        {
+            profile.EditMyHours(profileHoursTextBox);
         }
     }
 }

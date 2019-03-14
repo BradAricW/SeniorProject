@@ -23,7 +23,7 @@ namespace EDGELook
         private string projectDeliverables;
         private int projectHours;
         private string projectStatus;
-        private DBConn Conn;
+        //private DBConn Conn;
 
         //Edit Project
         public void EditProject (TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
@@ -47,17 +47,36 @@ namespace EDGELook
             projectHours = int.Parse(projectPageHoursTextBox.Text);
             projectStatus = projectPageStatusBox.Text;
 
-            //Conn.editProj(projectNum, projectDesc, projectDueDates, projectPhase, projectDeliverables, projectHours, projectStatus);
-            MySqlCommand cmd = new MySqlCommand("UPDATE Project SET description = '" + projectDesc + 
-                                                                    "', dueDate = '" + projectDueDates +  
-                                                                    "', prjPhase = '" + projectPhase +  
-                                                                    "', deliverables = '" + projectDeliverables + 
-                                                                    "', hoursNeeded = " + projectHours + 
-                                                                    ", prjStatus = '" + projectStatus + 
-                                                                    "' WHERE prjNo = '" + projectNum + "';", con);
-            cmd.ExecuteReader();
+            String pNumCompare = "SELECT prjNo FROM Project WHERE prjNo = '" + projectNum + "';";
+            Console.WriteLine(pNumCompare);
+            if (pNumCompare.Equals(null))
+            {
+                //Conn.editProj(projectNum, projectDesc, projectDueDates, projectPhase, projectDeliverables, projectHours, projectStatus);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Project VALUES description = '" + projectDesc +
+                                                                        "', dueDate = '" + projectDueDates +
+                                                                        "', prjPhase = '" + projectPhase +
+                                                                        "', deliverables = '" + projectDeliverables +
+                                                                        "', hoursNeeded = " + projectHours +
+                                                                        ", prjStatus = '" + projectStatus +
+                                                                        "' WHERE prjNo = '" + projectNum + "';", con);
+                cmd.ExecuteReader();
 
-            Console.WriteLine("Project Changed");
+                Console.WriteLine("Project Added");
+            }
+            else
+            {
+                //Conn.editProj(projectNum, projectDesc, projectDueDates, projectPhase, projectDeliverables, projectHours, projectStatus);
+                MySqlCommand cmd = new MySqlCommand("UPDATE Project SET description = '" + projectDesc +
+                                                                        "', dueDate = '" + projectDueDates +
+                                                                        "', prjPhase = '" + projectPhase +
+                                                                        "', deliverables = '" + projectDeliverables +
+                                                                        "', hoursNeeded = " + projectHours +
+                                                                        ", prjStatus = '" + projectStatus +
+                                                                        "' WHERE prjNo = '" + projectNum + "';", con);
+                cmd.ExecuteReader();
+
+                Console.WriteLine("Project Changed");
+            }
 
         } // END EDITPROJECT
 
