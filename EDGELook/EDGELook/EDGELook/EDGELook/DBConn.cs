@@ -71,8 +71,9 @@ namespace EDGELook
 
         public void assignEmployee(Boolean myselfButton)
         {
+            conn.Open();
             if (myselfButton)
-                conn.Open();
+              
             {
 
                 String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID;";
