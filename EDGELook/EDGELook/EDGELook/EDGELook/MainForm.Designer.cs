@@ -1357,6 +1357,7 @@
             this.searchProjectsList.ScrollAlwaysVisible = true;
             this.searchProjectsList.Size = new System.Drawing.Size(300, 229);
             this.searchProjectsList.TabIndex = 13;
+            this.searchProjectsList.SelectedIndexChanged += new System.EventHandler(this.SearchProjectsList_SelectedIndexChanged);
             // 
             // searchProjectsViewButton
             // 

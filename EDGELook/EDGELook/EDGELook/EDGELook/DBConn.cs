@@ -137,7 +137,7 @@ namespace EDGELook
                 Console.WriteLine(ex.Message);
             }
             
-            String getLogin = "SELECT employeeID FROM Employee WHERE email = " + username + " AND pssword = " + password + ";";
+            String getLogin = "SELECT employeeID FROM Employee WHERE email = '" + username + "' AND pssword = '" + password + "';";
             MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())

@@ -27,14 +27,14 @@ namespace EDGELook
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            //loginResult = login.Login(emailBox, passBox);
-            //if (loginResult == 1)
-           // {
+            loginResult = login.Login(emailBox, passBox);
+            if (loginResult == 1)
+            {
                 this.signOutLabel.Visible = true;
                 this.loginBG.Visible = false;
                 this.taskbarMenu.Visible = true;
                 this.profileBG.Visible = true;
-           // }
+            }
         }
 
         private void SignOutLabel_Click(object sender, EventArgs e)
@@ -145,6 +145,11 @@ namespace EDGELook
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
         {
             edit.AddNotes(projectPagePNumBox, projectPageNotesBox);
+        }
+
+        private void SearchProjectsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
