@@ -87,6 +87,16 @@ namespace EDGELook
                 MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
                 Console.WriteLine(cmd1.ExecuteNonQuery());
             }
+            //Get ID through Email or from input box
+            String otherID = " ";
+
+            String getProjectID2 = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
+            MySqlCommand cmd3 = new MySqlCommand(getProjectID2, this.conn);
+            MySqlDataReader reader2 = cmd3.ExecuteReader();
+
+            String setotherID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + otherID + "\'," + getProjectID2 + "\');";
+            MySqlCommand cmd4 = new MySqlCommand(setotherID, this.conn);
+            Console.WriteLine(cmd4.ExecuteNonQuery());
         }
 
         public int editHours(int empHours)
