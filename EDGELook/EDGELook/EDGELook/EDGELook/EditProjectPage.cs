@@ -26,7 +26,7 @@ namespace EDGELook
         private DBConn Conn;
 
         //Edit Project
-        public void editProject (TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
+        public void EditProject (TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
         {
             String server = "athena";
             String database = "sevenwonders";
@@ -63,7 +63,7 @@ namespace EDGELook
 
 
         // Auto Display Project Info in Edit Project Page
-        public void autoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
+        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
         {
             String server = "athena";
             String database = "sevenwonders";
@@ -87,7 +87,7 @@ namespace EDGELook
                 projectPageHoursTextBox.Text = dr.GetString(6);
                 projectPageStatusBox.Text = dr.GetString(7);
                // textBoxNotes.Text = dr.GetString(10);
-               displayNotes(projectPagePNumBox.Text, projectPageNotesBox);
+               DisplayNotes(projectPagePNumBox.Text, projectPageNotesBox);
                 temp = true;
             }
             if (temp == false)
@@ -96,7 +96,7 @@ namespace EDGELook
         } // END AUTODISPLAY
        
 
-        public void addNotes(TextBox projectPagePNumBox, ListBox projectPageNotesBox)
+        public void AddNotes(TextBox projectPagePNumBox, ListBox projectPageNotesBox)
         {
             String server = "athena";
             String database = "sevenwonders";
@@ -112,7 +112,7 @@ namespace EDGELook
         }
 
         // Displays Notes in the Edit Project Page
-        public void displayNotes(String projectPagePNumBox, ListBox projectPageNotesBox) {
+        public void DisplayNotes(String projectPagePNumBox, ListBox projectPageNotesBox) {
 
             String server = "athena";
             String database = "sevenwonders";

@@ -16,7 +16,7 @@ namespace EDGELook
         {
             Conn = new DBConn();
             myHours = int.Parse(hoursBox.Text);
-            Conn.editHours(myHours);
+            Conn.EditHours(myHours);
         }
     }
 }

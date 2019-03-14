@@ -67,6 +67,7 @@
             this.profileBG = new System.Windows.Forms.Panel();
             this.projectPageBG = new System.Windows.Forms.Panel();
             this.projectPagePanel3 = new System.Windows.Forms.Panel();
+            this.projectPageNotesTextBox = new System.Windows.Forms.TextBox();
             this.projectPageAddNotesButton = new System.Windows.Forms.Button();
             this.projectPageNotesLabel = new System.Windows.Forms.Label();
             this.projectPageNotesBox = new System.Windows.Forms.ListBox();
@@ -93,7 +94,7 @@
             this.projectPagePanel1 = new System.Windows.Forms.Panel();
             this.projectPageEmployeeList = new System.Windows.Forms.ListBox();
             this.projectPageEmployeeListLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.projectPageAddEmployeeButton = new System.Windows.Forms.Button();
             this.projectPageRemoveEmployeeButton = new System.Windows.Forms.Button();
             this.projectPageEditEmployeeText = new System.Windows.Forms.TextBox();
             this.projectPageEditEmployeeLabel = new System.Windows.Forms.Label();
@@ -596,6 +597,7 @@
             // projectPagePanel3
             // 
             this.projectPagePanel3.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.projectPagePanel3.Controls.Add(this.projectPageNotesTextBox);
             this.projectPagePanel3.Controls.Add(this.projectPageAddNotesButton);
             this.projectPagePanel3.Controls.Add(this.projectPageNotesLabel);
             this.projectPagePanel3.Controls.Add(this.projectPageNotesBox);
@@ -603,6 +605,13 @@
             this.projectPagePanel3.Name = "projectPagePanel3";
             this.projectPagePanel3.Size = new System.Drawing.Size(300, 420);
             this.projectPagePanel3.TabIndex = 2;
+            // 
+            // projectPageNotesTextBox
+            // 
+            this.projectPageNotesTextBox.Location = new System.Drawing.Point(0, 5);
+            this.projectPageNotesTextBox.Name = "projectPageNotesTextBox";
+            this.projectPageNotesTextBox.Size = new System.Drawing.Size(220, 20);
+            this.projectPageNotesTextBox.TabIndex = 7;
             // 
             // projectPageAddNotesButton
             // 
@@ -616,7 +625,7 @@
             this.projectPageAddNotesButton.TabIndex = 5;
             this.projectPageAddNotesButton.Text = "Add Notes";
             this.projectPageAddNotesButton.UseVisualStyleBackColor = false;
-            this.projectPageAddNotesButton.Click += new System.EventHandler(this.projectPageAddNotesButton_Click);
+            this.projectPageAddNotesButton.Click += new System.EventHandler(this.ProjectPageAddNotesButton_Click);
             // 
             // projectPageNotesLabel
             // 
@@ -831,11 +840,11 @@
             this.projectPageUpdateButton.TabIndex = 2;
             this.projectPageUpdateButton.Text = "Update Project";
             this.projectPageUpdateButton.UseVisualStyleBackColor = false;
-            this.projectPageUpdateButton.Click += new System.EventHandler(this.projectPageUpdateButton_Click);
+            this.projectPageUpdateButton.Click += new System.EventHandler(this.ProjectPageUpdateButton_Click);
             // 
             // projectPagePhaseLabel
             // 
-            this.projectPagePhaseLabel.BackColor = System.Drawing.Color.White;
+            this.projectPagePhaseLabel.BackColor = System.Drawing.SystemColors.MenuBar;
             this.projectPagePhaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPagePhaseLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPagePhaseLabel.Location = new System.Drawing.Point(150, 0);
@@ -847,7 +856,7 @@
             // 
             // projectPagePNameLabel
             // 
-            this.projectPagePNameLabel.BackColor = System.Drawing.Color.White;
+            this.projectPagePNameLabel.BackColor = System.Drawing.SystemColors.MenuBar;
             this.projectPagePNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPagePNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPagePNameLabel.Location = new System.Drawing.Point(0, 0);
@@ -869,7 +878,7 @@
             this.projectPagePanel1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.projectPagePanel1.Controls.Add(this.projectPageEmployeeList);
             this.projectPagePanel1.Controls.Add(this.projectPageEmployeeListLabel);
-            this.projectPagePanel1.Controls.Add(this.button1);
+            this.projectPagePanel1.Controls.Add(this.projectPageAddEmployeeButton);
             this.projectPagePanel1.Controls.Add(this.projectPageRemoveEmployeeButton);
             this.projectPagePanel1.Controls.Add(this.projectPageEditEmployeeText);
             this.projectPagePanel1.Controls.Add(this.projectPageEditEmployeeLabel);
@@ -902,18 +911,19 @@
             this.projectPageEmployeeListLabel.Text = "List of Employees On Project";
             this.projectPageEmployeeListLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // projectPageAddEmployeeButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(115, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 22);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Add Myself";
-            this.button1.UseVisualStyleBackColor = false;
+            this.projectPageAddEmployeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.projectPageAddEmployeeButton.FlatAppearance.BorderSize = 0;
+            this.projectPageAddEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.projectPageAddEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectPageAddEmployeeButton.ForeColor = System.Drawing.Color.Snow;
+            this.projectPageAddEmployeeButton.Location = new System.Drawing.Point(115, 135);
+            this.projectPageAddEmployeeButton.Name = "projectPageAddEmployeeButton";
+            this.projectPageAddEmployeeButton.Size = new System.Drawing.Size(75, 22);
+            this.projectPageAddEmployeeButton.TabIndex = 9;
+            this.projectPageAddEmployeeButton.Text = "Add Employee";
+            this.projectPageAddEmployeeButton.UseVisualStyleBackColor = false;
             // 
             // projectPageRemoveEmployeeButton
             // 
@@ -982,7 +992,7 @@
             this.projectPageAddSelfButton.TabIndex = 3;
             this.projectPageAddSelfButton.Text = "Add Myself";
             this.projectPageAddSelfButton.UseVisualStyleBackColor = false;
-            this.projectPageAddSelfButton.Click += new System.EventHandler(this.projectPageAddSelfButton_Click);
+            this.projectPageAddSelfButton.Click += new System.EventHandler(this.ProjectPageAddSelfButton_Click);
             // 
             // employeePageBG
             // 
@@ -1171,7 +1181,7 @@
             // 
             // schedulePageTempCalendar
             // 
-            this.schedulePageTempCalendar.CalendarDimensions = new System.Drawing.Size(2, 1);
+            this.schedulePageTempCalendar.CalendarDimensions = new System.Drawing.Size(3, 2);
             this.schedulePageTempCalendar.Location = new System.Drawing.Point(110, 77);
             this.schedulePageTempCalendar.Name = "schedulePageTempCalendar";
             this.schedulePageTempCalendar.TabIndex = 0;
@@ -1381,14 +1391,14 @@
             this.ClientSize = new System.Drawing.Size(909, 561);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
+            this.Controls.Add(this.searchProjectsBG);
+            this.Controls.Add(this.searchEmployeesBG);
+            this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.scheduleBG);
-            this.Controls.Add(this.searchProjectsBG);
-            this.Controls.Add(this.searchEmployeesBG);
-            this.Controls.Add(this.employeePageBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -1406,6 +1416,7 @@
             this.profileBG.PerformLayout();
             this.projectPageBG.ResumeLayout(false);
             this.projectPagePanel3.ResumeLayout(false);
+            this.projectPagePanel3.PerformLayout();
             this.projectPagePanel2.ResumeLayout(false);
             this.projectPagePanel2.PerformLayout();
             this.projectPagePanel1.ResumeLayout(false);
@@ -1488,7 +1499,7 @@
         private System.Windows.Forms.Label projectPageHoursLabel;
         private System.Windows.Forms.ListBox projectPageEmployeeList;
         private System.Windows.Forms.Label projectPageEmployeeListLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button projectPageAddEmployeeButton;
         private System.Windows.Forms.Button projectPageRemoveEmployeeButton;
         private System.Windows.Forms.TextBox projectPageEditEmployeeText;
         private System.Windows.Forms.Label projectPageEditEmployeeLabel;
@@ -1535,6 +1546,7 @@
         private System.Windows.Forms.TextBox projectPageDueBox;
         private System.Windows.Forms.TextBox projectPageDescriptionBox;
         private System.Windows.Forms.TextBox projectPagePNumBox;
+        private System.Windows.Forms.TextBox projectPageNotesTextBox;
     }
 }
 

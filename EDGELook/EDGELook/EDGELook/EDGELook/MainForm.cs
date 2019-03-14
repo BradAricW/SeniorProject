@@ -15,7 +15,8 @@ namespace EDGELook
 {
     public partial class MainForm : Form
     {
-
+        LoginPage login = new LoginPage();
+        private int loginResult;
         EditProjectPage edit = new EditProjectPage();
         private DBConn Conn;
 
@@ -26,10 +27,14 @@ namespace EDGELook
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            this.signOutLabel.Visible = true;
-            this.loginBG.Visible = false;
-            this.taskbarMenu.Visible = true;
-            this.profileBG.Visible = true;
+            //loginResult = login.Login(emailBox, passBox);
+            //if (loginResult == 1)
+           // {
+                this.signOutLabel.Visible = true;
+                this.loginBG.Visible = false;
+                this.taskbarMenu.Visible = true;
+                this.profileBG.Visible = true;
+           // }
         }
 
         private void SignOutLabel_Click(object sender, EventArgs e)
@@ -108,7 +113,7 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
 
-            edit.autoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox);
         }
 
         private void SearchProjectsPageAddProjectButton_Click(object sender, EventArgs e)
@@ -125,21 +130,21 @@ namespace EDGELook
         // Button Functionality
 
         // Update Project
-        private void projectPageUpdateButton_Click(object sender, EventArgs e)
+        private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
-            edit.editProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox);
+            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox);
         }
 
-        private void projectPageAddSelfButton_Click(object sender, EventArgs e)
+        private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
         {
             Conn = new DBConn();
             Boolean addedMyself = true;
-            Conn.assignEmployee(addedMyself);
+            Conn.AssignEmployee(addedMyself);
         }
 
-        private void projectPageAddNotesButton_Click(object sender, EventArgs e)
+        private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
         {
-            edit.addNotes(projectPagePNumBox, projectPageNotesBox);
+            edit.AddNotes(projectPagePNumBox, projectPageNotesBox);
         }
     }
 }

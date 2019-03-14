@@ -33,7 +33,7 @@ namespace EDGELook
 
         }
 
-        public void addProject(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status, String noteInsert)
+        public void AddProject(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status, String noteInsert)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace EDGELook
 
         }
 
-        public void assignEmployee(Boolean myselfButton)
+        public void AssignEmployee(Boolean myselfButton)
         {
             conn.Open();
             if (myselfButton)
@@ -100,7 +100,7 @@ namespace EDGELook
             Console.WriteLine(cmd4.ExecuteNonQuery());
         }
 
-        public int editHours(int empHours)
+        public int EditHours(int empHours)
         {
             int currentHours = 0;
             String getHours = "SELECT hoursAvail FROM Employee as E WHERE " + this.eID + " == E.employeeID;";
@@ -120,32 +120,42 @@ namespace EDGELook
             }
             return currentHours;
         }
-        public void setEID(int employeeID)
+        public void SetEID(int employeeID)
         {
             eID = employeeID;
         }
 
-        //public void login (String username, String password)
-        //{
-        //    String getLogin = "SELECT employeeID FROM Employee WHERE email = " + username + " AND pssword = " + password + ";";
-        //    MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
-        //    MySqlDataReader reader = cmd.ExecuteReader();
-        //    while (reader.Read())
-        //    {
-        //        eID = reader.getInt16("employeeID");
-        //    }
-        //    if (eID == null)
-        //    {
-        //        Console.WriteLine("Not valid login");
-        //    }
-        //    else
-        //        Console.WriteLine("Logged in");
-        //    return eID;
-        //} // Login
+        public int Login (String username, String password)
+        {
+            conn = new MySqlConnection(connString);
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+            String getLogin = "SELECT employeeID FROM Employee WHERE email = " + username + " AND pssword = " + password + ";";
+            MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                eID = reader.GetInt16("employeeID");
+            }
+            if (eID == null)
+            {
+                Console.WriteLine("Not valid login");
+            }
+            else
+                Console.WriteLine("Logged in");
+            return eID;
+        } // Login
 
 
         //// Not Tested!!!!!!!
-        public void editNotes(String addNotes)
+        public void EditNotes(String addNotes)
         {
             try
             {
@@ -160,7 +170,7 @@ namespace EDGELook
             MySqlCommand cmd = new MySqlCommand("select * from Project;", conn);
         }
 
-        public void editProj(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status)
+        public void EditProj(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status)
         {
             try
             {

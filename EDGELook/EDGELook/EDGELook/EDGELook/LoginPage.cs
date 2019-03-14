@@ -12,13 +12,19 @@ namespace EDGELook
         private string email;
         private string password;
         private DBConn Conn;
+        private int result, success;
 
-        public void Login (TextBox emailBox, TextBox passwordBox)
+        public int Login (TextBox emailBox, TextBox passwordBox)
         {
             Conn = new DBConn();
             email = emailBox.Text;
             password = passwordBox.Text;
-            Conn.login(email, password);
+            result = Conn.Login(email, password);
+            if (result == null)
+                success = 0;
+            else
+                success = 1;
+            return success;
         }
     }
 }
