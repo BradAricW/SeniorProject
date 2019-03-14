@@ -23,22 +23,38 @@ namespace EDGELook
         private string projectDeliverables;
         private int projectHours;
         private string projectStatus;
-        //private DBConn Conn;
+
+
+        private string server;
+        private string database;
+        private string uid;
+        private string password;
+        private string connString;
+
+        private MySqlConnection con;
+        //private DBConn conn;
 
         //Edit Project
         public void EditProject (TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
         {
-            String server = "athena";
-            String database = "sevenwonders";
-            String uid = "sevenwonders";
-            String password = "sw_db";
-            String connString = "server=" + server + ";" + "database=" +
+            this.server = "athena";
+            this.database = "sevenwonders";
+            this.uid = "sevenwonders";
+            this.password = "sw_db";
+            this.connString = "server=" + server + ";" + "database=" +
             database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
 
-            MySqlConnection con = new MySqlConnection(connString);
-            con.Open();
-            
-            //Conn = new DBConn();
+            con = new MySqlConnection(connString);
+            try
+            {
+                con.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            //conn = new DBConn();
             projectNum = projectPagePNumBox.Text;
             projectDesc = projectPageDescriptionBox.Text;
             projectDueDates = projectPageDueBox.Text;
@@ -48,8 +64,12 @@ namespace EDGELook
             projectStatus = projectPageStatusBox.Text;
 
             String pNumCompare = "SELECT prjNo FROM Project WHERE prjNo = '" + projectNum + "';";
+            MySqlCommand compare = new MySqlCommand(pNumCompare);
+           // MySqlDataReader dr = compare.ExecuteReader(); 
+
             Console.WriteLine(pNumCompare);
-            if (pNumCompare.Equals(null))
+            if(pNumCompare == null)
+            //if (dr.GetString(0) == null)
             {
                 //Conn.editProj(projectNum, projectDesc, projectDueDates, projectPhase, projectDeliverables, projectHours, projectStatus);
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO Project VALUES description = '" + projectDesc +

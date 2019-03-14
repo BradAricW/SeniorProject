@@ -88,22 +88,35 @@ namespace EDGELook
         public int EditHours(int empHours)
         {
             conn = new MySqlConnection(connString);
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "'WHERE employeeID = '" + this.eID + "';", conn);
+            Console.WriteLine(cmd.ExecuteNonQuery());
+
             int currentHours = 0;
-            String getHours = "SELECT hoursAvail FROM Employee as E WHERE " + this.eID + " == E.employeeID;";
+            /*String getHours = "SELECT hoursAvail FROM Employee WHERE employeeID = '" + this.eID + "';";
             MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
-            conn.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 currentHours = reader.GetInt16("hoursAvail");
             }
+            Console.WriteLine(currentHours);
             if (empHours != currentHours)
             {
                 String setHours = "UPDATE Employee SET hoursAvail = " + empHours + "WHERE employeeID = this.eID;";
                 MySqlCommand cmd2 = new MySqlCommand(setHours, this.conn);
-                Console.WriteLine(cmd.ExecuteNonQuery());
+                Console.WriteLine("Hours Updated");
+               // Console.WriteLine(cmd2.ExecuteNonQuery());
                 currentHours = empHours;
-            }
+            }*/
             return currentHours;
         }
         public void SetEID(int employeeID)
