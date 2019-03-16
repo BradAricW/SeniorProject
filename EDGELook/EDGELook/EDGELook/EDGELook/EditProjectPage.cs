@@ -212,7 +212,7 @@ namespace EDGELook
 
         String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == "+getMyID+" ";
         MySqlCommand cmd1 = new MySqlCommand(removeID, this.conn);
-        MySqlDataReader query = cmd.ExecuteNonQuery();
+        MySqlDataReader query = cmd1.ExecuteNonQuery();
 
     } //END REMOVEEMPLOYEE: MM and SZ   
     

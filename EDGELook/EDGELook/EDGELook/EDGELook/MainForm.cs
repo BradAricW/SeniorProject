@@ -156,5 +156,12 @@ namespace EDGELook
         {
             profile.EditMyHours(profileHoursTextBox);
         }
+
+        private void projectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
+        {
+            String firstName = "";
+            String lastName = "";
+            edit.RemoveEmployee(firstName, lastName);
+        }
     }
 }
