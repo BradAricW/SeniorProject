@@ -54,36 +54,7 @@ namespace EDGELook
 
         }
 
-        public void AssignEmployee(Boolean myselfButton)
-        {
-            conn.Open();
-            if (myselfButton)
-              
-            {
-
-                String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID;";
-                MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                String getProjectID = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
-                MySqlCommand cmd2 = new MySqlCommand(getProjectID, this.conn);
-                MySqlDataReader reader1 = cmd2.ExecuteReader();
-
-                String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + getMyID + "\'," + getProjectID + "\');";
-                MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
-                Console.WriteLine(cmd1.ExecuteNonQuery());
-            }
-            //Get ID through Email or from input box
-            String otherID = " ";
-
-            String getProjectID2 = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
-            MySqlCommand cmd3 = new MySqlCommand(getProjectID2, this.conn);
-            MySqlDataReader reader2 = cmd3.ExecuteReader();
-
-            String setotherID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + otherID + "\'," + getProjectID2 + "\');";
-            MySqlCommand cmd4 = new MySqlCommand(setotherID, this.conn);
-            Console.WriteLine(cmd4.ExecuteNonQuery());
-        }
+        
 
         public int EditHours(int empHours)
         {

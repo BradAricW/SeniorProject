@@ -138,9 +138,8 @@ namespace EDGELook
 
         private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
         {
-            Conn = new DBConn();
             Boolean addedMyself = true;
-            Conn.AssignEmployee(addedMyself);
+            edit.AssignEmployee(addedMyself);
         }
 
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
