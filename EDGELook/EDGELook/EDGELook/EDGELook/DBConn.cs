@@ -56,7 +56,7 @@ namespace EDGELook
 
         
 
-        public int EditHours(int empHours)
+        /*public int EditHours(int empHours)
         {
             conn = new MySqlConnection(connString);
             try
@@ -87,15 +87,15 @@ namespace EDGELook
                 Console.WriteLine("Hours Updated");
                // Console.WriteLine(cmd2.ExecuteNonQuery());
                 currentHours = empHours;
-            }*/
+            }
             return currentHours;
-        }
+        }*/
         public void SetEID(int employeeID)
         {
             eID = employeeID;
         }
 
-        public int? Login (String username, String password)
+        /*public int? Login (String username, String password)
         {
             conn = new MySqlConnection(connString);
             try
@@ -121,7 +121,7 @@ namespace EDGELook
             else
                 Console.WriteLine("Logged in");
             return eID;
-        } // Login
+        } // Login*/
 
 
         //// Not Tested!!!!!!!
@@ -156,6 +156,16 @@ namespace EDGELook
             String edProj = "UPDATE Project set prjNo = '" + Num + "' where prjNo = 'uu';";
             MySqlCommand cmd = new MySqlCommand(edProj, conn);
             //MessageBox.Show("Project changed to " + Num);
+        }
+        public String connectionSetUp()
+        {
+            this.server = "athena";
+            this.database = "sevenwonders";
+            this.uid = "sevenwonders";
+            this.password = "sw_db";
+            this.connString = "server=" + server + ";" + "database=" +
+            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+            return connString;
         }
 
 

@@ -16,10 +16,11 @@ namespace EDGELook
     public partial class MainForm : Form
     {
         LoginPage login = new LoginPage();
-        private int loginResult;
+        //private int loginResult;
         EditProjectPage edit = new EditProjectPage();
         private DBConn Conn;
         ProfilePage profile = new ProfilePage();
+        int? eID;
 
         public MainForm()
         {
@@ -28,8 +29,13 @@ namespace EDGELook
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            loginResult = login.Login(emailBox, passBox);
-            if (loginResult == 1)
+            eID = login.Login(emailBox, passBox);
+            int success;
+            if (eID == null)
+                success = 0;
+            else
+                success = 1;
+            if (success == 1)
             {
                 this.signOutLabel.Visible = true;
                 this.loginBG.Visible = false;
@@ -154,7 +160,7 @@ namespace EDGELook
 
         private void ProfileEditButton1_Click(object sender, EventArgs e)
         {
-            profile.EditMyHours(profileHoursTextBox);
+            profile.EditMyHours(profileHoursTextBox, eID);
         }
 
         private void projectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
