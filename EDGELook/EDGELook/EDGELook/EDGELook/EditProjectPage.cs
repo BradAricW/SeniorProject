@@ -23,6 +23,7 @@ namespace EDGELook
         private string projectDeliverables;
         private int projectHours;
         private string projectStatus;
+        private string projectID;
 
 
         private string server;
@@ -35,7 +36,7 @@ namespace EDGELook
         //private DBConn conn;
 
         //Edit Project
-        public void EditProject (TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
+        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
         {
             this.server = "athena";
             this.database = "sevenwonders";
@@ -65,10 +66,10 @@ namespace EDGELook
 
             String pNumCompare = "SELECT prjNo FROM Project WHERE prjNo = '" + projectNum + "';";
             MySqlCommand compare = new MySqlCommand(pNumCompare);
-           // MySqlDataReader dr = compare.ExecuteReader(); 
+            // MySqlDataReader dr = compare.ExecuteReader(); 
 
             Console.WriteLine(pNumCompare);
-            if(pNumCompare == null)
+            if (pNumCompare == null)
             //if (dr.GetString(0) == null)
             {
                 //Conn.editProj(projectNum, projectDesc, projectDueDates, projectPhase, projectDeliverables, projectHours, projectStatus);
@@ -125,15 +126,15 @@ namespace EDGELook
                 projectPageDeliverablesBox.Text = dr.GetString(5);
                 projectPageHoursTextBox.Text = dr.GetString(6);
                 projectPageStatusBox.Text = dr.GetString(7);
-               // textBoxNotes.Text = dr.GetString(10);
-               DisplayNotes(projectPagePNumBox.Text, projectPageNotesBox);
+                // textBoxNotes.Text = dr.GetString(10);
+                DisplayNotes(projectPagePNumBox.Text, projectPageNotesBox);
                 temp = true;
             }
             if (temp == false)
                 MessageBox.Show("not found");
             con.Close();
         } // END AUTODISPLAY
-       
+
 
         public void AddNotes(TextBox projectPagePNumBox, ListBox projectPageNotesBox)
         {
@@ -151,7 +152,8 @@ namespace EDGELook
         }
 
         // Displays Notes in the Edit Project Page
-        public void DisplayNotes(String projectPagePNumBox, ListBox projectPageNotesBox) {
+        public void DisplayNotes(String projectPagePNumBox, ListBox projectPageNotesBox)
+        {
 
             String server = "athena";
             String database = "sevenwonders";
@@ -163,7 +165,7 @@ namespace EDGELook
             bool temp = false;
             MySqlConnection con = new MySqlConnection(connString);
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT timeStamp, notes  FROM Notes WHERE prjNo = '" + projectPagePNumBox +"';", con);
+            MySqlCommand cmd = new MySqlCommand("SELECT timeStamp, notes  FROM Notes WHERE prjNo = '" + projectPagePNumBox + "';", con);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -171,15 +173,14 @@ namespace EDGELook
             }
         } // END EDIT NOTES
 
-        } // END EDITPROJECTPAGE
-
-     public void AssignEmployee(Boolean myselfButton) {
+        public void AssignEmployee(Boolean myselfButton)
+        {
             //conn.Open();
             if (myselfButton)
-              
+
             {
 
-                String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID;";
+                String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID;"; //login ID from employee table
                 MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -202,18 +203,21 @@ namespace EDGELook
             MySqlCommand cmd4 = new MySqlCommand(setotherID, this.conn);
             Console.WriteLine(cmd4.ExecuteNonQuery());
 
-    } //END ASSIGNEMPLOYEE: MM and SZ
+        } //END ASSIGNEMPLOYEE: MM and SZ
 
-    public void RemoveEmployee(String firstName, String lastName) { //get first name and last name as parameter?
-        //conn.Open();
-        String getMyID = "SELECT employeeID FROM Employee WHERE fname = "+firstName+" AND lname = "+lastName+"";
-        MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
-        MySqlDataReader reader = cmd.ExecuteReader();
 
-        String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == "+getMyID+" ";
-        MySqlCommand cmd1 = new MySqlCommand(removeID, this.conn);
-        MySqlDataReader query = cmd1.ExecuteNonQuery();
+        public void RemoveEmployee(String firstName, String lastName)
+        { //get first name and last name as parameter?
+            //conn.Open();
+            String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
+            MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
 
-    } //END REMOVEEMPLOYEE: MM and SZ   
-    
+            String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + getMyID + " ";
+            MySqlCommand cmd1 = new MySqlCommand(removeID, this.conn);
+            MySqlDataReader query = cmd1.ExecuteNonQuery();
+
+        } //END REMOVEEMPLOYEE: MM and SZ   
+
+    } // END INTERNAL CLASS EDGELOOK
 } // END EDGELOOK
