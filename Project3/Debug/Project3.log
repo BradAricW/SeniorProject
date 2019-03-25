@@ -1,8 +1,0 @@
-﻿  MyForm.cpp
-  MyForm1.cpp
-  MyForm2.cpp
-  Generating Code...
-  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
-  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-LINK : error LNK2001: unresolved external symbol _main
-C:\Users\Manjot\source\repos\Project3\Debug\Project3.exe : fatal error LNK1120: 1 unresolved externals
