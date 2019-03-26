@@ -14,48 +14,39 @@ using MySql.Data.MySqlClient;
 
 namespace EDGELook
 {
-    internal class EditProjectPage
+    class EditProjectPage
     {
-        private string projectNum;
-        private string projectDesc;
-        private string projectDueDates;
-        private string projectPhase;
-        private string projectDeliverables;
-        private int projectHours;
-        private string projectStatus;
-        private string projectID;
+        private string  projectNum;
+        private string  projectDesc;
+        private string  projectDueDates;
+        private string  projectPhase;
+        private string  projectDeliverables;
+        private int     projectHours;
+        private string  projectStatus;
+        private string  projectID;
+        
 
+        private int flag = 0;
 
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
-        private string connString;
+        //private MySqlConnection con;
+        private DBConn sql = new DBConn();
 
-        private MySqlConnection con;
-        //private DBConn conn;
+        public int getFlag()
+        {
+            return flag;
+        }
+        public void setFlag(int n)
+        {
+             flag = n;
+            Console.WriteLine("Flag Set: " + flag);
+        }
+
 
         //Edit Project
         public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
         {
-            this.server = "athena";
-            this.database = "sevenwonders";
-            this.uid = "sevenwonders";
-            this.password = "sw_db";
-            this.connString = "server=" + server + ";" + "database=" +
-            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+            int flag = getFlag();
 
-            con = new MySqlConnection(connString);
-            try
-            {
-                con.Open();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            //conn = new DBConn();
             projectNum = projectPagePNumBox.Text;
             projectDesc = projectPageDescriptionBox.Text;
             projectDueDates = projectPageDueBox.Text;
@@ -64,39 +55,29 @@ namespace EDGELook
             projectHours = int.Parse(projectPageHoursTextBox.Text);
             projectStatus = projectPageStatusBox.Text;
 
-            String pNumCompare = "SELECT prjNo FROM Project WHERE prjNo = '" + projectNum + "';";
-            MySqlCommand compare = new MySqlCommand(pNumCompare);
-            // MySqlDataReader dr = compare.ExecuteReader(); 
+            if (flag == 1)
+            { // if its an update
+                String upDateProject = ("UPDATE Project SET description = '" + projectDesc +
+                                                                       "', dueDate = '" + projectDueDates +
+                                                                       "', prjPhase = '" + projectPhase +
+                                                                       "', deliverables = '" + projectDeliverables +
+                                                                       "', hoursNeeded = " + projectHours +
+                                                                       ", prjStatus = '" + projectStatus +
+                                                                       "' WHERE prjNo = '" + projectNum + "';");
+                sql.queryRunner(upDateProject);
+                Console.WriteLine("Project Changed");
+            }
+            else if (flag == 0)
+            { // if its a new project
 
-            Console.WriteLine(pNumCompare);
-            if (pNumCompare == null)
-            //if (dr.GetString(0) == null)
-            {
-                //Conn.editProj(projectNum, projectDesc, projectDueDates, projectPhase, projectDeliverables, projectHours, projectStatus);
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO Project VALUES description = '" + projectDesc +
-                                                                        "', dueDate = '" + projectDueDates +
-                                                                        "', prjPhase = '" + projectPhase +
-                                                                        "', deliverables = '" + projectDeliverables +
-                                                                        "', hoursNeeded = " + projectHours +
-                                                                        ", prjStatus = '" + projectStatus +
-                                                                        "' WHERE prjNo = '" + projectNum + "';", con);
-                cmd.ExecuteReader();
-
+                String addProject = ("INSERT INTO Project (prjNo, prjLeader, description, prjPhase, dueDate, deliverables, hoursNeeded, prjStatus)" + 
+                                             "VALUES ('" + projectNum + "', " + "'322', '" + projectDesc + "', '" + projectPhase + "', '" + projectDueDates + "', '" + projectDeliverables + "', '" + projectHours + "', '" + projectStatus + "');");
+                sql.queryRunner(addProject);
                 Console.WriteLine("Project Added");
             }
             else
             {
-                //Conn.editProj(projectNum, projectDesc, projectDueDates, projectPhase, projectDeliverables, projectHours, projectStatus);
-                MySqlCommand cmd = new MySqlCommand("UPDATE Project SET description = '" + projectDesc +
-                                                                        "', dueDate = '" + projectDueDates +
-                                                                        "', prjPhase = '" + projectPhase +
-                                                                        "', deliverables = '" + projectDeliverables +
-                                                                        "', hoursNeeded = " + projectHours +
-                                                                        ", prjStatus = '" + projectStatus +
-                                                                        "' WHERE prjNo = '" + projectNum + "';", con);
-                cmd.ExecuteReader();
-
-                Console.WriteLine("Project Changed");
+                Console.WriteLine("ISSUE WITH EDIT PROJECT! FLAG PASSED INCORRECT VALUE.");
             }
 
         } // END EDITPROJECT
@@ -149,7 +130,7 @@ namespace EDGELook
             con.Open();
             MySqlCommand cmd = new MySqlCommand("INSERT INTO Notes (employeeID, projNo, timeStamp, notes) VALUES (000, " + projectPagePNumBox + ", NOW(), " + projectPageNotesBox + "; ", con);
 
-        }
+        } // END ADDNOTES
 
         // Displays Notes in the Edit Project Page
         public void DisplayNotes(String projectPagePNumBox, ListBox projectPageNotesBox)
@@ -173,6 +154,7 @@ namespace EDGELook
             }
         } // END EDIT NOTES
 
+
         public void AssignEmployee(Boolean myselfButton)
         {
             //conn.Open();
@@ -192,6 +174,7 @@ namespace EDGELook
                 MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
                 Console.WriteLine(cmd1.ExecuteNonQuery());
             }
+
             //Get ID through Email or from input box
             String otherID = " ";
 
@@ -218,6 +201,7 @@ namespace EDGELook
             MySqlDataReader query = cmd1.ExecuteNonQuery();
 
         } //END REMOVEEMPLOYEE: MM and SZ   
+        
 
     } // END INTERNAL CLASS EDGELOOK
 } // END EDGELOOK

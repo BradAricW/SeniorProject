@@ -29,8 +29,35 @@ namespace EDGELook
             this.password = "sw_db";
             this.connString = "server=" + server + ";" + "database=" +
             database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+        }
+
+        // AMANDA - Added to try to run queries from EditPage 3/25/2019 6:52 PM
+        public void queryRunner(String input)
+        {
+            this.server = "athena";
+            this.database = "sevenwonders";
+            this.uid = "sevenwonders";
+            this.password = "sw_db";
+            this.connString = "server=" + server + ";" + "database=" +
+            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+
+            conn = new MySqlConnection(connString);
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
 
+            Console.WriteLine("Query Passed");
+
+            MySqlCommand cmd = new MySqlCommand(input, conn);
+            Console.WriteLine("Input: " + input);
+            Console.WriteLine("cmd: " + cmd);
+            Console.WriteLine(cmd.ExecuteNonQuery());
         }
 
         public void AddProject(String Num, String Desc, String dueDates, String Phase, String Deliv, int Hours, String Status, String noteInsert)

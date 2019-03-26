@@ -121,6 +121,8 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
 
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox);
+            edit.setFlag(1);
+            Console.WriteLine("Edit Project. Flag set to 1");
         }
 
         private void SearchProjectsPageAddProjectButton_Click(object sender, EventArgs e)
@@ -131,6 +133,9 @@ namespace EDGELook
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
+
+            edit.setFlag(0);
+            Console.WriteLine("Add Project. Flag set to 0");
         }
 
 
