@@ -42,6 +42,7 @@ namespace EDGELook
                 this.taskbarMenu.Visible = true;
                 this.profileBG.Visible = true;
             }
+            
         }
 
         private void SignOutLabel_Click(object sender, EventArgs e)
@@ -120,7 +121,8 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
 
-            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox);
+
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox, eID);
             edit.setFlag(1);
             Console.WriteLine("Edit Project. Flag set to 1");
         }
@@ -144,13 +146,13 @@ namespace EDGELook
         // Update Project
         private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
-            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox);
+            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox, eID);
         }
 
         private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
         {
             Boolean addedMyself = true;
-            edit.AssignEmployee(addedMyself);
+            //edit.AssignEmployee(addedMyself);
         }
 
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
@@ -172,7 +174,7 @@ namespace EDGELook
         {
             String firstName = "";
             String lastName = "";
-            edit.RemoveEmployee(firstName, lastName);
+            //edit.RemoveEmployee(firstName, lastName);
         }
     }
 }

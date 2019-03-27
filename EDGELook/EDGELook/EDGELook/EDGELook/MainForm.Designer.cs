@@ -242,6 +242,7 @@
             // 
             this.passBox.Location = new System.Drawing.Point(83, 112);
             this.passBox.Name = "passBox";
+            this.passBox.PasswordChar = '*';
             this.passBox.Size = new System.Drawing.Size(180, 20);
             this.passBox.TabIndex = 4;
             // 
@@ -1393,7 +1394,6 @@
             this.ClientSize = new System.Drawing.Size(928, 582);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.formBGTemp);
@@ -1401,6 +1401,7 @@
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
+            this.Controls.Add(this.projectPageBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";

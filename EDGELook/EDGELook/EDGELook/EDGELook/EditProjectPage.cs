@@ -43,7 +43,7 @@ namespace EDGELook
 
 
         //Edit Project
-        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
+        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox, int? eID)
         {
             int flag = getFlag();
 
@@ -65,15 +65,16 @@ namespace EDGELook
                                                                        ", prjStatus = '" + projectStatus +
                                                                        "' WHERE prjNo = '" + projectNum + "';");
                 sql.queryRunner(upDateProject);
-                Console.WriteLine("Project Changed");
+                MessageBox.Show("Project Changed");
             }
             else if (flag == 0)
             { // if its a new project
 
                 String addProject = ("INSERT INTO Project (prjNo, prjLeader, description, prjPhase, dueDate, deliverables, hoursNeeded, prjStatus)" + 
-                                             "VALUES ('" + projectNum + "', " + "'322', '" + projectDesc + "', '" + projectPhase + "', '" + projectDueDates + "', '" + projectDeliverables + "', '" + projectHours + "', '" + projectStatus + "');");
+                                             "VALUES ('" + projectNum + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectPhase + "', '" + projectDueDates + "', '" + projectDeliverables + "', '" + projectHours + "', '" + projectStatus + "');");
+                MessageBox.Show(addProject);
                 sql.queryRunner(addProject);
-                Console.WriteLine("Project Added");
+                MessageBox.Show("Project Added");
             }
             else
             {
@@ -84,7 +85,7 @@ namespace EDGELook
 
 
         // Auto Display Project Info in Edit Project Page
-        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox)
+        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox, int? eID)
         {
             String server = "athena";
             String database = "sevenwonders";
@@ -96,7 +97,8 @@ namespace EDGELook
             bool temp = false;
             MySqlConnection con = new MySqlConnection(connString);
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("select * from Project, Notes where employeeID = 425 and prjLeader = 425;", con);
+            String getProjInfo = "select * from Project, Notes where employeeID = " + eID + " and prjLeader = " + eID + ";";
+            MySqlCommand cmd = new MySqlCommand(getProjInfo, con);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -147,11 +149,11 @@ namespace EDGELook
             MySqlConnection con = new MySqlConnection(connString);
             con.Open();
             MySqlCommand cmd = new MySqlCommand("SELECT timeStamp, notes  FROM Notes WHERE prjNo = '" + projectPagePNumBox + "';", con);
-            MySqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                projectPageNotesBox.Items.Add(dr.GetString(0) + " " + dr.GetString(1));
-            }
+            //MySqlDataReader dr = cmd.ExecuteReader();
+            //while (dr.Read())
+            //{
+            //    projectPageNotesBox.Items.Add(dr.GetString(0) + " " + dr.GetString(1));
+            //}
         } // END EDIT NOTES
 
 
@@ -201,7 +203,7 @@ namespace EDGELook
             MySqlDataReader query = cmd1.ExecuteNonQuery();
 
         } //END REMOVEEMPLOYEE: MM and SZ   
-        
+
 
     } // END INTERNAL CLASS EDGELOOK
 } // END EDGELOOK
