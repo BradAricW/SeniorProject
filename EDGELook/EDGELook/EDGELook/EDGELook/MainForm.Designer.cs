@@ -135,6 +135,8 @@
             this.searchProjectsList = new System.Windows.Forms.ListBox();
             this.searchProjectsViewButton = new System.Windows.Forms.Button();
             this.searchProjectsLabel = new System.Windows.Forms.Label();
+            this.notesGridView = new System.Windows.Forms.DataGridView();
+            this.projectsGrid = new System.Windows.Forms.DataGridView();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -153,6 +155,8 @@
             this.searchEmployeesBackPanel.SuspendLayout();
             this.searchProjectsBG.SuspendLayout();
             this.searchProjectsPageBackPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -599,6 +603,7 @@
             // projectPagePanel3
             // 
             this.projectPagePanel3.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.projectPagePanel3.Controls.Add(this.notesGridView);
             this.projectPagePanel3.Controls.Add(this.projectPageNotesTextBox);
             this.projectPagePanel3.Controls.Add(this.projectPageAddNotesButton);
             this.projectPagePanel3.Controls.Add(this.projectPageNotesLabel);
@@ -648,7 +653,7 @@
             this.projectPageNotesBox.Location = new System.Drawing.Point(0, 62);
             this.projectPageNotesBox.Name = "projectPageNotesBox";
             this.projectPageNotesBox.ScrollAlwaysVisible = true;
-            this.projectPageNotesBox.Size = new System.Drawing.Size(300, 355);
+            this.projectPageNotesBox.Size = new System.Drawing.Size(297, 82);
             this.projectPageNotesBox.TabIndex = 6;
             // 
             // projectPagePanel2
@@ -1292,6 +1297,7 @@
             // searchProjectsPageBackPanel
             // 
             this.searchProjectsPageBackPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.searchProjectsPageBackPanel.Controls.Add(this.projectsGrid);
             this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsPageAddProjectButton);
             this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsSearchLabel);
             this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsSearchButton);
@@ -1386,6 +1392,22 @@
             this.searchProjectsLabel.TabIndex = 14;
             this.searchProjectsLabel.Text = "Search Projects";
             // 
+            // notesGridView
+            // 
+            this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.notesGridView.Location = new System.Drawing.Point(4, 60);
+            this.notesGridView.Name = "notesGridView";
+            this.notesGridView.Size = new System.Drawing.Size(293, 360);
+            this.notesGridView.TabIndex = 8;
+            // 
+            // projectsGrid
+            // 
+            this.projectsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.projectsGrid.Location = new System.Drawing.Point(15, 81);
+            this.projectsGrid.Name = "projectsGrid";
+            this.projectsGrid.Size = new System.Drawing.Size(259, 169);
+            this.projectsGrid.TabIndex = 18;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1394,14 +1416,14 @@
             this.ClientSize = new System.Drawing.Size(928, 582);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.loginBG);
-            this.Controls.Add(this.profileBG);
-            this.Controls.Add(this.formBGTemp);
-            this.Controls.Add(this.scheduleBG);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
+            this.Controls.Add(this.loginBG);
+            this.Controls.Add(this.profileBG);
+            this.Controls.Add(this.formBGTemp);
+            this.Controls.Add(this.scheduleBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -1437,6 +1459,8 @@
             this.searchProjectsBG.PerformLayout();
             this.searchProjectsPageBackPanel.ResumeLayout(false);
             this.searchProjectsPageBackPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1550,6 +1574,8 @@
         private System.Windows.Forms.TextBox projectPageDescriptionBox;
         private System.Windows.Forms.TextBox projectPagePNumBox;
         private System.Windows.Forms.TextBox projectPageNotesTextBox;
+        private System.Windows.Forms.DataGridView notesGridView;
+        private System.Windows.Forms.DataGridView projectsGrid;
     }
 }
 

@@ -44,6 +44,7 @@ namespace EDGELook
             }
             
         }
+        //private void 
 
         private void SignOutLabel_Click(object sender, EventArgs e)
         {
@@ -75,6 +76,9 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = true;
+
+
+            edit.ListProjects(projectsGrid, eID);
         }
 
         private void EmployeesButton_Click(object sender, EventArgs e)
@@ -122,7 +126,8 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
 
 
-            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox, eID);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, eID);
+            edit.DisplayNotes(notesGridView);
             edit.setFlag(1);
             Console.WriteLine("Edit Project. Flag set to 1");
         }

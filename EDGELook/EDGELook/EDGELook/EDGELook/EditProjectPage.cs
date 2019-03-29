@@ -24,6 +24,7 @@ namespace EDGELook
         private int     projectHours;
         private string  projectStatus;
         private string  projectID;
+        private string notesPNum;
         
 
         private int flag = 0;
@@ -85,7 +86,7 @@ namespace EDGELook
 
 
         // Auto Display Project Info in Edit Project Page
-        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox, int? eID)
+        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, int? eID)
         {
             String server = "athena";
             String database = "sevenwonders";
@@ -103,6 +104,7 @@ namespace EDGELook
             while (dr.Read())
             {
                 projectPagePNumBox.Text = dr.GetString(0);
+                notesPNum = dr.GetString(0);
                 projectPageDescriptionBox.Text = dr.GetString(2);
                 projectPagePhaseBox.Text = dr.GetString(3);
                 projectPageDueBox.Text = dr.GetString(4);
@@ -110,7 +112,7 @@ namespace EDGELook
                 projectPageHoursTextBox.Text = dr.GetString(6);
                 projectPageStatusBox.Text = dr.GetString(7);
                 // textBoxNotes.Text = dr.GetString(10);
-                DisplayNotes(projectPagePNumBox.Text, projectPageNotesBox);
+                //DisplayNotes(projectPagePNumBox.Text, projectPageNotesBox);
                 temp = true;
             }
             if (temp == false)
@@ -135,7 +137,8 @@ namespace EDGELook
         } // END ADDNOTES
 
         // Displays Notes in the Edit Project Page
-        public void DisplayNotes(String projectPagePNumBox, ListBox projectPageNotesBox)
+        //public void DisplayNotes(String projectPagePNumBox, ListBox projectPageNotesBox)
+        public void DisplayNotes(DataGridView grid)
         {
 
             String server = "athena";
@@ -148,61 +151,82 @@ namespace EDGELook
             bool temp = false;
             MySqlConnection con = new MySqlConnection(connString);
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT timeStamp, notes  FROM Notes WHERE prjNo = '" + projectPagePNumBox + "';", con);
+            //MySqlCommand cmd = new MySqlCommand("SELECT timeStamp, notes  FROM Notes WHERE prjNo = '" + projectPagePNumBox + "';", con);
             //MySqlDataReader dr = cmd.ExecuteReader();
             //while (dr.Read())
             //{
             //    projectPageNotesBox.Items.Add(dr.GetString(0) + " " + dr.GetString(1));
             //}
+            MySqlDataAdapter da = new MySqlDataAdapter("select nDate, notes from Notes where prjNo = '" + notesPNum +"';",con);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            grid.DataSource = table;
+            //grid.Columns[0].Visible = false;
         } // END EDIT NOTES
 
-
-        public void AssignEmployee(Boolean myselfButton)
+        public void ListProjects(DataGridView projectsGrid, int? eID)
         {
-            //conn.Open();
-            if (myselfButton)
+            String server = "athena";
+            String database = "sevenwonders";
+            String uid = "sevenwonders";
+            String password = "sw_db";
+            String connString = "server=" + server + ";" + "database=" +
+            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
 
-            {
+            MySqlConnection con = new MySqlConnection(connString);
+            con.Open();
 
-                String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID;"; //login ID from employee table
-                MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataAdapter da = new MySqlDataAdapter("Select prjNo, Description from Project where prjLeader = '" + eID + "';",con);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            projectsGrid.DataSource = table;
+        }
+    //    public void AssignEmployee(Boolean myselfButton)
+    //    {
+    //        //conn.Open();
+    //        if (myselfButton)
 
-                String getProjectID = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
-                MySqlCommand cmd2 = new MySqlCommand(getProjectID, this.conn);
-                MySqlDataReader reader1 = cmd2.ExecuteReader();
+    //        {
 
-                String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + getMyID + "\'," + getProjectID + "\');";
-                MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
-                Console.WriteLine(cmd1.ExecuteNonQuery());
-            }
+    //            String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID;"; //login ID from employee table
+    //            MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
+    //            MySqlDataReader reader = cmd.ExecuteReader();
 
-            //Get ID through Email or from input box
-            String otherID = " ";
+    //            String getProjectID = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
+    //            MySqlCommand cmd2 = new MySqlCommand(getProjectID, this.conn);
+    //            MySqlDataReader reader1 = cmd2.ExecuteReader();
 
-            String getProjectID2 = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
-            MySqlCommand cmd3 = new MySqlCommand(getProjectID2, this.conn);
-            MySqlDataReader reader2 = cmd3.ExecuteReader();
+    //            String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + getMyID + "\'," + getProjectID + "\');";
+    //            MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
+    //            Console.WriteLine(cmd1.ExecuteNonQuery());
+    //        }
 
-            String setotherID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + otherID + "\'," + getProjectID2 + "\');";
-            MySqlCommand cmd4 = new MySqlCommand(setotherID, this.conn);
-            Console.WriteLine(cmd4.ExecuteNonQuery());
+    //        //Get ID through Email or from input box
+    //        String otherID = " ";
 
-        } //END ASSIGNEMPLOYEE: MM and SZ
+    //        String getProjectID2 = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
+    //        MySqlCommand cmd3 = new MySqlCommand(getProjectID2, this.conn);
+    //        MySqlDataReader reader2 = cmd3.ExecuteReader();
+
+    //        String setotherID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + otherID + "\'," + getProjectID2 + "\');";
+    //        MySqlCommand cmd4 = new MySqlCommand(setotherID, this.conn);
+    //        Console.WriteLine(cmd4.ExecuteNonQuery());
+
+    //    } //END ASSIGNEMPLOYEE: MM and SZ
 
 
-        public void RemoveEmployee(String firstName, String lastName)
-        { //get first name and last name as parameter?
-            //conn.Open();
-            String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
-            MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
+    //    public void RemoveEmployee(String firstName, String lastName)
+    //    { //get first name and last name as parameter?
+    //        //conn.Open();
+    //        String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
+    //        MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
+    //        MySqlDataReader reader = cmd.ExecuteReader();
 
-            String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + getMyID + " ";
-            MySqlCommand cmd1 = new MySqlCommand(removeID, this.conn);
-            MySqlDataReader query = cmd1.ExecuteNonQuery();
+    //        String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + getMyID + " ";
+    //        MySqlCommand cmd1 = new MySqlCommand(removeID, this.conn);
+    //        MySqlDataReader query = cmd1.ExecuteNonQuery();
 
-        } //END REMOVEEMPLOYEE: MM and SZ   
+    //    } //END REMOVEEMPLOYEE: MM and SZ   
 
 
     } // END INTERNAL CLASS EDGELOOK
