@@ -25,6 +25,7 @@ namespace EDGELook
         private string  projectStatus;
         private string  projectID;
         private string notesPNum;
+        private int eID;
         
 
         private int flag = 0;
