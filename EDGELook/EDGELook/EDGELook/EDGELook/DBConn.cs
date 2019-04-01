@@ -31,6 +31,13 @@ namespace EDGELook
             database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
         }
 
+        public MySqlConnection Dbsetup()
+        {
+            conn = new MySqlConnection(connString);
+            return conn;
+        }
+        //No more code after this point
+
         // AMANDA - Added to try to run queries from EditPage 3/25/2019 6:52 PM
         public void queryRunner(String input)
         {
