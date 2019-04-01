@@ -26,12 +26,13 @@ namespace EDGELook
         private string  projectID;
         private string notesPNum;
         private int eID;
-        
+
+        private MySqlConnection conn;
 
         private int flag = 0;
 
         //private MySqlConnection con;
-        private DBConn sql = new DBConn();
+        //private DBConn sql = new DBConn();
 
         public int getFlag()
         {
@@ -184,7 +185,7 @@ namespace EDGELook
         }
         public void AssignEmployee(Boolean myselfButton)
         {
-            //conn.Open();
+            conn.Open();
             if (myselfButton)
 
             {
@@ -201,7 +202,7 @@ namespace EDGELook
                 MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
                 Console.WriteLine(cmd1.ExecuteNonQuery());
             }
-
+            
             //Get ID through Email or from input box
             String otherID = " ";
 
@@ -212,6 +213,7 @@ namespace EDGELook
             String setotherID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + otherID + "\'," + getProjectID2 + "\');";
             MySqlCommand cmd4 = new MySqlCommand(setotherID, this.conn);
             Console.WriteLine(cmd4.ExecuteNonQuery());
+            conn.Close();
 
         } //END ASSIGNEMPLOYEE: MM and SZ
 
