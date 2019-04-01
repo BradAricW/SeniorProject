@@ -15,11 +15,12 @@ namespace EDGELook
 {
     public partial class MainForm : Form
     {
-        LoginPage login = new LoginPage();
+        LoginPage login;
         //private int loginResult;
         EditProjectPage edit = new EditProjectPage();
-        private DBConn Conn;
-        ProfilePage profile = new ProfilePage();
+        private DBConn dbconn;
+        private MySqlConnection conn;
+        ProfilePage profile;
         int? eID;
 
         public MainForm()
@@ -29,6 +30,12 @@ namespace EDGELook
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            //setup Connection object
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            login = new LoginPage();
+            login.Setup(conn);
+
             eID = login.Login(emailBox, passBox);
             int success;
             if (eID == null)
@@ -42,7 +49,11 @@ namespace EDGELook
                 this.taskbarMenu.Visible = true;
                 this.profileBG.Visible = true;
             }
-            
+            profile = new ProfilePage();
+            profile.Setup(conn, eID);
+            profile.GetHours(profileHoursTextBox);
+           
+
         }
         //private void 
 

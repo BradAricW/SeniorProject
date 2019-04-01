@@ -13,19 +13,13 @@ namespace EDGELook
         private string email;
         private string password;
         private MySqlConnection conn;
-        private DBConn Conn;
-        private int? result;
-        private int success;
         private int? eID;
 
         public int? Login (TextBox emailBox, TextBox passwordBox)
         {
-
-            Conn = new DBConn();
             email = emailBox.Text;
             password = passwordBox.Text;
-            String connString = Conn.connectionSetUp();
-            conn = new MySqlConnection(connString);
+
             try
             {
                 conn.Open();
@@ -48,12 +42,12 @@ namespace EDGELook
             }
             else
                 Console.WriteLine("Logged in");
-            /*if (result == null)
-                success = 0;
-            else
-                success = 1;
-            return success;*/
+            conn.Close();
             return eID;
+        }
+        public void Setup(MySqlConnection newConn)
+        {
+            conn = newConn;
         }
     }
 }
