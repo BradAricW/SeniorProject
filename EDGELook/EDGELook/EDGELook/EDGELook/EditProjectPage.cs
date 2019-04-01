@@ -218,18 +218,21 @@ namespace EDGELook
         } //END ASSIGNEMPLOYEE: MM and SZ
 
 
-    //    public void RemoveEmployee(String firstName, String lastName)
-    //    { //get first name and last name as parameter?
-    //        //conn.Open();
-    //        String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
-    //        MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
-    //        MySqlDataReader reader = cmd.ExecuteReader();
+        public String RemoveEmployee(String firstName, String lastName)
+        { //get first name and last name as parameter?
+            //conn.Open();
+            String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
+            MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
 
-    //        String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + getMyID + " ";
-    //        MySqlCommand cmd1 = new MySqlCommand(removeID, this.conn);
-    //        MySqlDataReader query = cmd1.ExecuteNonQuery();
+            String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + getMyID + " ";
+            MySqlCommand cmd1 = new MySqlCommand(removeID, this.conn);
+            MySqlDataReader query = cmd1.ExecuteNonQuery();
+            return "";
 
-    //    } //END REMOVEEMPLOYEE: MM and SZ   
+        } //END REMOVEEMPLOYEE: MM and SZ   
+
+        
 
 
     } // END INTERNAL CLASS EDGELOOK

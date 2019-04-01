@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace EDGELook
 {
     public partial class MainForm : Form
     {
+        
         LoginPage login;
         //private int loginResult;
         EditProjectPage edit = new EditProjectPage();
@@ -191,7 +193,21 @@ namespace EDGELook
             String firstName = "";
             String lastName = "";
             //edit.RemoveEmployee(firstName, lastName);
+            if(this.projectPageEmployeeList.SelectedIndex >= 0)
+            {
+                
+                String fullName = this.projectPageEmployeeList.ToString();
+                string[] names = fullName.Split(' ');
+                firstName = names[0];
+                lastName = names[1];
+                edit.RemoveEmployee(firstName, lastName);
+
+            }
         }
 
+        private void projectPageEmployeeList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
