@@ -46,6 +46,10 @@
             this.projectsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
             this.profileBackPanel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.profileStartTextBox = new System.Windows.Forms.TextBox();
+            this.profileEmailTextBox = new System.Windows.Forms.TextBox();
+            this.profilePhoneTextBox = new System.Windows.Forms.TextBox();
             this.profileHoursTextBox = new System.Windows.Forms.TextBox();
             this.profileProjectList = new System.Windows.Forms.ListBox();
             this.profileEmailLabel = new System.Windows.Forms.Label();
@@ -67,6 +71,7 @@
             this.profileBG = new System.Windows.Forms.Panel();
             this.projectPageBG = new System.Windows.Forms.Panel();
             this.projectPagePanel3 = new System.Windows.Forms.Panel();
+            this.notesGridView = new System.Windows.Forms.DataGridView();
             this.projectPageNotesTextBox = new System.Windows.Forms.TextBox();
             this.projectPageAddNotesButton = new System.Windows.Forms.Button();
             this.projectPageNotesLabel = new System.Windows.Forms.Label();
@@ -92,17 +97,20 @@
             this.projectPagePNameLabel = new System.Windows.Forms.Label();
             this.projectPageStatusBox = new System.Windows.Forms.TextBox();
             this.projectPagePanel1 = new System.Windows.Forms.Panel();
+            this.projectPageAssignLabel = new System.Windows.Forms.Label();
+            this.projectPageToBeAssignedListBox = new System.Windows.Forms.ListBox();
             this.projectPageEmployeeList = new System.Windows.Forms.ListBox();
-            this.projectPageEmployeeListLabel = new System.Windows.Forms.Label();
             this.projectPageAddEmployeeButton = new System.Windows.Forms.Button();
             this.projectPageRemoveEmployeeButton = new System.Windows.Forms.Button();
             this.projectPageEditEmployeeText = new System.Windows.Forms.TextBox();
-            this.projectPageEditEmployeeLabel = new System.Windows.Forms.Label();
-            this.projectPageAssignedCheck = new System.Windows.Forms.CheckBox();
             this.projectPageAssignedLabel = new System.Windows.Forms.Label();
             this.projectPageAddSelfButton = new System.Windows.Forms.Button();
             this.employeePageBG = new System.Windows.Forms.Panel();
             this.employeePagePanel1 = new System.Windows.Forms.Panel();
+            this.employeeEmailTextBox = new System.Windows.Forms.TextBox();
+            this.employeePhoneTextBox = new System.Windows.Forms.TextBox();
+            this.employeeEndTextBox = new System.Windows.Forms.TextBox();
+            this.employeeStartTextBox = new System.Windows.Forms.TextBox();
             this.employeePageHoursBox = new System.Windows.Forms.TextBox();
             this.employeePageProjectsList = new System.Windows.Forms.ListBox();
             this.employeePageEmailLabel = new System.Windows.Forms.Label();
@@ -128,6 +136,7 @@
             this.searchEmployeesLabel = new System.Windows.Forms.Label();
             this.searchProjectsBG = new System.Windows.Forms.Panel();
             this.searchProjectsPageBackPanel = new System.Windows.Forms.Panel();
+            this.projectsGrid = new System.Windows.Forms.DataGridView();
             this.searchProjectsPageAddProjectButton = new System.Windows.Forms.Button();
             this.searchProjectsSearchLabel = new System.Windows.Forms.Label();
             this.searchProjectsSearchButton = new System.Windows.Forms.Button();
@@ -135,8 +144,8 @@
             this.searchProjectsList = new System.Windows.Forms.ListBox();
             this.searchProjectsViewButton = new System.Windows.Forms.Button();
             this.searchProjectsLabel = new System.Windows.Forms.Label();
-            this.notesGridView = new System.Windows.Forms.DataGridView();
-            this.projectsGrid = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.projectPageEmployeesOnLabel = new System.Windows.Forms.Label();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -146,6 +155,7 @@
             this.profileBG.SuspendLayout();
             this.projectPageBG.SuspendLayout();
             this.projectPagePanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notesGridView)).BeginInit();
             this.projectPagePanel2.SuspendLayout();
             this.projectPagePanel1.SuspendLayout();
             this.employeePageBG.SuspendLayout();
@@ -155,7 +165,6 @@
             this.searchEmployeesBackPanel.SuspendLayout();
             this.searchProjectsBG.SuspendLayout();
             this.searchProjectsPageBackPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.notesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -357,6 +366,10 @@
             // profileBackPanel
             // 
             this.profileBackPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.profileBackPanel.Controls.Add(this.textBox1);
+            this.profileBackPanel.Controls.Add(this.profileStartTextBox);
+            this.profileBackPanel.Controls.Add(this.profileEmailTextBox);
+            this.profileBackPanel.Controls.Add(this.profilePhoneTextBox);
             this.profileBackPanel.Controls.Add(this.profileHoursTextBox);
             this.profileBackPanel.Controls.Add(this.profileProjectList);
             this.profileBackPanel.Controls.Add(this.profileEmailLabel);
@@ -377,6 +390,34 @@
             this.profileBackPanel.Size = new System.Drawing.Size(300, 327);
             this.profileBackPanel.TabIndex = 13;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(148, 106);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(50, 20);
+            this.textBox1.TabIndex = 21;
+            // 
+            // profileStartTextBox
+            // 
+            this.profileStartTextBox.Location = new System.Drawing.Point(50, 106);
+            this.profileStartTextBox.Name = "profileStartTextBox";
+            this.profileStartTextBox.Size = new System.Drawing.Size(50, 20);
+            this.profileStartTextBox.TabIndex = 20;
+            // 
+            // profileEmailTextBox
+            // 
+            this.profileEmailTextBox.Location = new System.Drawing.Point(64, 189);
+            this.profileEmailTextBox.Name = "profileEmailTextBox";
+            this.profileEmailTextBox.Size = new System.Drawing.Size(150, 20);
+            this.profileEmailTextBox.TabIndex = 19;
+            // 
+            // profilePhoneTextBox
+            // 
+            this.profilePhoneTextBox.Location = new System.Drawing.Point(64, 166);
+            this.profilePhoneTextBox.Name = "profilePhoneTextBox";
+            this.profilePhoneTextBox.Size = new System.Drawing.Size(150, 20);
+            this.profilePhoneTextBox.TabIndex = 18;
+            // 
             // profileHoursTextBox
             // 
             this.profileHoursTextBox.Location = new System.Drawing.Point(60, 37);
@@ -393,7 +434,7 @@
             this.profileProjectList.Location = new System.Drawing.Point(0, 235);
             this.profileProjectList.Name = "profileProjectList";
             this.profileProjectList.ScrollAlwaysVisible = true;
-            this.profileProjectList.Size = new System.Drawing.Size(300, 34);
+            this.profileProjectList.Size = new System.Drawing.Size(300, 64);
             this.profileProjectList.TabIndex = 13;
             // 
             // profileEmailLabel
@@ -612,6 +653,14 @@
             this.projectPagePanel3.Name = "projectPagePanel3";
             this.projectPagePanel3.Size = new System.Drawing.Size(300, 420);
             this.projectPagePanel3.TabIndex = 2;
+            // 
+            // notesGridView
+            // 
+            this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.notesGridView.Location = new System.Drawing.Point(4, 60);
+            this.notesGridView.Name = "notesGridView";
+            this.notesGridView.Size = new System.Drawing.Size(293, 360);
+            this.notesGridView.TabIndex = 8;
             // 
             // projectPageNotesTextBox
             // 
@@ -883,13 +932,14 @@
             // projectPagePanel1
             // 
             this.projectPagePanel1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.projectPagePanel1.Controls.Add(this.projectPageEmployeesOnLabel);
+            this.projectPagePanel1.Controls.Add(this.label1);
+            this.projectPagePanel1.Controls.Add(this.projectPageAssignLabel);
+            this.projectPagePanel1.Controls.Add(this.projectPageToBeAssignedListBox);
             this.projectPagePanel1.Controls.Add(this.projectPageEmployeeList);
-            this.projectPagePanel1.Controls.Add(this.projectPageEmployeeListLabel);
             this.projectPagePanel1.Controls.Add(this.projectPageAddEmployeeButton);
             this.projectPagePanel1.Controls.Add(this.projectPageRemoveEmployeeButton);
             this.projectPagePanel1.Controls.Add(this.projectPageEditEmployeeText);
-            this.projectPagePanel1.Controls.Add(this.projectPageEditEmployeeLabel);
-            this.projectPagePanel1.Controls.Add(this.projectPageAssignedCheck);
             this.projectPagePanel1.Controls.Add(this.projectPageAssignedLabel);
             this.projectPagePanel1.Controls.Add(this.projectPageAddSelfButton);
             this.projectPagePanel1.Location = new System.Drawing.Point(25, 20);
@@ -897,26 +947,35 @@
             this.projectPagePanel1.Size = new System.Drawing.Size(200, 420);
             this.projectPagePanel1.TabIndex = 0;
             // 
+            // projectPageAssignLabel
+            // 
+            this.projectPageAssignLabel.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.projectPageAssignLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectPageAssignLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.projectPageAssignLabel.Location = new System.Drawing.Point(2, 0);
+            this.projectPageAssignLabel.Name = "projectPageAssignLabel";
+            this.projectPageAssignLabel.Size = new System.Drawing.Size(198, 30);
+            this.projectPageAssignLabel.TabIndex = 13;
+            this.projectPageAssignLabel.Text = "Assign Employees";
+            this.projectPageAssignLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // projectPageToBeAssignedListBox
+            // 
+            this.projectPageToBeAssignedListBox.FormattingEnabled = true;
+            this.projectPageToBeAssignedListBox.Location = new System.Drawing.Point(0, 59);
+            this.projectPageToBeAssignedListBox.Name = "projectPageToBeAssignedListBox";
+            this.projectPageToBeAssignedListBox.ScrollAlwaysVisible = true;
+            this.projectPageToBeAssignedListBox.Size = new System.Drawing.Size(200, 108);
+            this.projectPageToBeAssignedListBox.TabIndex = 12;
+            // 
             // projectPageEmployeeList
             // 
             this.projectPageEmployeeList.FormattingEnabled = true;
-            this.projectPageEmployeeList.Location = new System.Drawing.Point(0, 190);
+            this.projectPageEmployeeList.Location = new System.Drawing.Point(0, 281);
             this.projectPageEmployeeList.Name = "projectPageEmployeeList";
             this.projectPageEmployeeList.ScrollAlwaysVisible = true;
-            this.projectPageEmployeeList.Size = new System.Drawing.Size(200, 225);
+            this.projectPageEmployeeList.Size = new System.Drawing.Size(200, 108);
             this.projectPageEmployeeList.TabIndex = 11;
-            // 
-            // projectPageEmployeeListLabel
-            // 
-            this.projectPageEmployeeListLabel.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.projectPageEmployeeListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectPageEmployeeListLabel.ForeColor = System.Drawing.Color.Black;
-            this.projectPageEmployeeListLabel.Location = new System.Drawing.Point(0, 161);
-            this.projectPageEmployeeListLabel.Name = "projectPageEmployeeListLabel";
-            this.projectPageEmployeeListLabel.Size = new System.Drawing.Size(200, 26);
-            this.projectPageEmployeeListLabel.TabIndex = 10;
-            this.projectPageEmployeeListLabel.Text = "List of Employees On Project";
-            this.projectPageEmployeeListLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectPageAddEmployeeButton
             // 
@@ -925,7 +984,7 @@
             this.projectPageAddEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageAddEmployeeButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddEmployeeButton.Location = new System.Drawing.Point(115, 135);
+            this.projectPageAddEmployeeButton.Location = new System.Drawing.Point(115, 225);
             this.projectPageAddEmployeeButton.Name = "projectPageAddEmployeeButton";
             this.projectPageAddEmployeeButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageAddEmployeeButton.TabIndex = 9;
@@ -938,7 +997,7 @@
             this.projectPageRemoveEmployeeButton.FlatAppearance.BorderSize = 0;
             this.projectPageRemoveEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageRemoveEmployeeButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageRemoveEmployeeButton.Location = new System.Drawing.Point(10, 135);
+            this.projectPageRemoveEmployeeButton.Location = new System.Drawing.Point(58, 393);
             this.projectPageRemoveEmployeeButton.Name = "projectPageRemoveEmployeeButton";
             this.projectPageRemoveEmployeeButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageRemoveEmployeeButton.TabIndex = 8;
@@ -948,44 +1007,21 @@
             // 
             // projectPageEditEmployeeText
             // 
-            this.projectPageEditEmployeeText.Location = new System.Drawing.Point(10, 109);
+            this.projectPageEditEmployeeText.Location = new System.Drawing.Point(10, 199);
             this.projectPageEditEmployeeText.Name = "projectPageEditEmployeeText";
             this.projectPageEditEmployeeText.Size = new System.Drawing.Size(180, 20);
             this.projectPageEditEmployeeText.TabIndex = 7;
             // 
-            // projectPageEditEmployeeLabel
-            // 
-            this.projectPageEditEmployeeLabel.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.projectPageEditEmployeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectPageEditEmployeeLabel.ForeColor = System.Drawing.Color.Black;
-            this.projectPageEditEmployeeLabel.Location = new System.Drawing.Point(0, 83);
-            this.projectPageEditEmployeeLabel.Name = "projectPageEditEmployeeLabel";
-            this.projectPageEditEmployeeLabel.Size = new System.Drawing.Size(200, 26);
-            this.projectPageEditEmployeeLabel.TabIndex = 6;
-            this.projectPageEditEmployeeLabel.Text = "Edit Employee";
-            this.projectPageEditEmployeeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // projectPageAssignedCheck
-            // 
-            this.projectPageAssignedCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectPageAssignedCheck.Location = new System.Drawing.Point(50, 57);
-            this.projectPageAssignedCheck.Name = "projectPageAssignedCheck";
-            this.projectPageAssignedCheck.Size = new System.Drawing.Size(100, 26);
-            this.projectPageAssignedCheck.TabIndex = 5;
-            this.projectPageAssignedCheck.Text = "Assigned?";
-            this.projectPageAssignedCheck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.projectPageAssignedCheck.UseVisualStyleBackColor = true;
-            // 
             // projectPageAssignedLabel
             // 
             this.projectPageAssignedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.projectPageAssignedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectPageAssignedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageAssignedLabel.ForeColor = System.Drawing.Color.White;
             this.projectPageAssignedLabel.Location = new System.Drawing.Point(0, 31);
             this.projectPageAssignedLabel.Name = "projectPageAssignedLabel";
             this.projectPageAssignedLabel.Size = new System.Drawing.Size(200, 26);
             this.projectPageAssignedLabel.TabIndex = 4;
-            this.projectPageAssignedLabel.Text = "Assigned";
+            this.projectPageAssignedLabel.Text = "Employees To Be Assigned";
             this.projectPageAssignedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectPageAddSelfButton
@@ -994,7 +1030,7 @@
             this.projectPageAddSelfButton.FlatAppearance.BorderSize = 0;
             this.projectPageAddSelfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddSelfButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddSelfButton.Location = new System.Drawing.Point(125, 4);
+            this.projectPageAddSelfButton.Location = new System.Drawing.Point(10, 225);
             this.projectPageAddSelfButton.Name = "projectPageAddSelfButton";
             this.projectPageAddSelfButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageAddSelfButton.TabIndex = 3;
@@ -1015,6 +1051,10 @@
             // employeePagePanel1
             // 
             this.employeePagePanel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.employeePagePanel1.Controls.Add(this.employeeEmailTextBox);
+            this.employeePagePanel1.Controls.Add(this.employeePhoneTextBox);
+            this.employeePagePanel1.Controls.Add(this.employeeEndTextBox);
+            this.employeePagePanel1.Controls.Add(this.employeeStartTextBox);
             this.employeePagePanel1.Controls.Add(this.employeePageHoursBox);
             this.employeePagePanel1.Controls.Add(this.employeePageProjectsList);
             this.employeePagePanel1.Controls.Add(this.employeePageEmailLabel);
@@ -1032,6 +1072,34 @@
             this.employeePagePanel1.Size = new System.Drawing.Size(300, 327);
             this.employeePagePanel1.TabIndex = 13;
             // 
+            // employeeEmailTextBox
+            // 
+            this.employeeEmailTextBox.Location = new System.Drawing.Point(69, 189);
+            this.employeeEmailTextBox.Name = "employeeEmailTextBox";
+            this.employeeEmailTextBox.Size = new System.Drawing.Size(150, 20);
+            this.employeeEmailTextBox.TabIndex = 18;
+            // 
+            // employeePhoneTextBox
+            // 
+            this.employeePhoneTextBox.Location = new System.Drawing.Point(69, 166);
+            this.employeePhoneTextBox.Name = "employeePhoneTextBox";
+            this.employeePhoneTextBox.Size = new System.Drawing.Size(150, 20);
+            this.employeePhoneTextBox.TabIndex = 17;
+            // 
+            // employeeEndTextBox
+            // 
+            this.employeeEndTextBox.Location = new System.Drawing.Point(157, 109);
+            this.employeeEndTextBox.Name = "employeeEndTextBox";
+            this.employeeEndTextBox.Size = new System.Drawing.Size(50, 20);
+            this.employeeEndTextBox.TabIndex = 16;
+            // 
+            // employeeStartTextBox
+            // 
+            this.employeeStartTextBox.Location = new System.Drawing.Point(50, 109);
+            this.employeeStartTextBox.Name = "employeeStartTextBox";
+            this.employeeStartTextBox.Size = new System.Drawing.Size(50, 20);
+            this.employeeStartTextBox.TabIndex = 15;
+            // 
             // employeePageHoursBox
             // 
             this.employeePageHoursBox.Location = new System.Drawing.Point(60, 37);
@@ -1048,7 +1116,7 @@
             this.employeePageProjectsList.Location = new System.Drawing.Point(0, 235);
             this.employeePageProjectsList.Name = "employeePageProjectsList";
             this.employeePageProjectsList.ScrollAlwaysVisible = true;
-            this.employeePageProjectsList.Size = new System.Drawing.Size(300, 34);
+            this.employeePageProjectsList.Size = new System.Drawing.Size(300, 64);
             this.employeePageProjectsList.TabIndex = 13;
             // 
             // employeePageEmailLabel
@@ -1309,6 +1377,14 @@
             this.searchProjectsPageBackPanel.Size = new System.Drawing.Size(300, 327);
             this.searchProjectsPageBackPanel.TabIndex = 13;
             // 
+            // projectsGrid
+            // 
+            this.projectsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.projectsGrid.Location = new System.Drawing.Point(15, 81);
+            this.projectsGrid.Name = "projectsGrid";
+            this.projectsGrid.Size = new System.Drawing.Size(259, 169);
+            this.projectsGrid.TabIndex = 18;
+            // 
             // searchProjectsPageAddProjectButton
             // 
             this.searchProjectsPageAddProjectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
@@ -1392,21 +1468,29 @@
             this.searchProjectsLabel.TabIndex = 14;
             this.searchProjectsLabel.Text = "Search Projects";
             // 
-            // notesGridView
+            // label1
             // 
-            this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.notesGridView.Location = new System.Drawing.Point(4, 60);
-            this.notesGridView.Name = "notesGridView";
-            this.notesGridView.Size = new System.Drawing.Size(293, 360);
-            this.notesGridView.TabIndex = 8;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 169);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(200, 26);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Designate Hours";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // projectsGrid
+            // projectPageEmployeesOnLabel
             // 
-            this.projectsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.projectsGrid.Location = new System.Drawing.Point(15, 81);
-            this.projectsGrid.Name = "projectsGrid";
-            this.projectsGrid.Size = new System.Drawing.Size(259, 169);
-            this.projectsGrid.TabIndex = 18;
+            this.projectPageEmployeesOnLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.projectPageEmployeesOnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectPageEmployeesOnLabel.ForeColor = System.Drawing.Color.White;
+            this.projectPageEmployeesOnLabel.Location = new System.Drawing.Point(0, 253);
+            this.projectPageEmployeesOnLabel.Name = "projectPageEmployeesOnLabel";
+            this.projectPageEmployeesOnLabel.Size = new System.Drawing.Size(200, 26);
+            this.projectPageEmployeesOnLabel.TabIndex = 15;
+            this.projectPageEmployeesOnLabel.Text = "Employees On Project";
+            this.projectPageEmployeesOnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -1416,14 +1500,14 @@
             this.ClientSize = new System.Drawing.Size(928, 582);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.searchProjectsBG);
-            this.Controls.Add(this.searchEmployeesBG);
-            this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.scheduleBG);
+            this.Controls.Add(this.searchProjectsBG);
+            this.Controls.Add(this.searchEmployeesBG);
+            this.Controls.Add(this.employeePageBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -1442,6 +1526,7 @@
             this.projectPageBG.ResumeLayout(false);
             this.projectPagePanel3.ResumeLayout(false);
             this.projectPagePanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notesGridView)).EndInit();
             this.projectPagePanel2.ResumeLayout(false);
             this.projectPagePanel2.PerformLayout();
             this.projectPagePanel1.ResumeLayout(false);
@@ -1459,7 +1544,6 @@
             this.searchProjectsBG.PerformLayout();
             this.searchProjectsPageBackPanel.ResumeLayout(false);
             this.searchProjectsPageBackPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.notesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).EndInit();
             this.ResumeLayout(false);
 
@@ -1525,12 +1609,9 @@
         private System.Windows.Forms.Label projectPageHoursLabel2;
         private System.Windows.Forms.Label projectPageHoursLabel;
         private System.Windows.Forms.ListBox projectPageEmployeeList;
-        private System.Windows.Forms.Label projectPageEmployeeListLabel;
         private System.Windows.Forms.Button projectPageAddEmployeeButton;
         private System.Windows.Forms.Button projectPageRemoveEmployeeButton;
         private System.Windows.Forms.TextBox projectPageEditEmployeeText;
-        private System.Windows.Forms.Label projectPageEditEmployeeLabel;
-        private System.Windows.Forms.CheckBox projectPageAssignedCheck;
         private System.Windows.Forms.Label projectPageAssignedLabel;
         private System.Windows.Forms.Button projectPageAddSelfButton;
         private System.Windows.Forms.Panel employeePageBG;
@@ -1576,6 +1657,18 @@
         private System.Windows.Forms.TextBox projectPageNotesTextBox;
         private System.Windows.Forms.DataGridView notesGridView;
         private System.Windows.Forms.DataGridView projectsGrid;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox profileStartTextBox;
+        private System.Windows.Forms.TextBox profileEmailTextBox;
+        private System.Windows.Forms.TextBox profilePhoneTextBox;
+        private System.Windows.Forms.ListBox projectPageToBeAssignedListBox;
+        private System.Windows.Forms.TextBox employeeEmailTextBox;
+        private System.Windows.Forms.TextBox employeePhoneTextBox;
+        private System.Windows.Forms.TextBox employeeEndTextBox;
+        private System.Windows.Forms.TextBox employeeStartTextBox;
+        private System.Windows.Forms.Label projectPageAssignLabel;
+        private System.Windows.Forms.Label projectPageEmployeesOnLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 
