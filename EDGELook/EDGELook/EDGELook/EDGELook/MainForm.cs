@@ -195,12 +195,14 @@ namespace EDGELook
             //edit.RemoveEmployee(firstName, lastName);
             if(this.projectPageEmployeeList.SelectedIndex >= 0)
             {
-                
+                this.projectPageEmployeeList.Items.RemoveAt(this.projectPageEmployeeList.SelectedIndex);
+                String ret = "";
                 String fullName = this.projectPageEmployeeList.ToString();
                 string[] names = fullName.Split(' ');
                 firstName = names[0];
                 lastName = names[1];
-                edit.RemoveEmployee(firstName, lastName);
+                ret = edit.RemoveEmployee(firstName, lastName);
+                projectPageToBeAssignedListBox.Items.Add(ret);
 
             }
         }

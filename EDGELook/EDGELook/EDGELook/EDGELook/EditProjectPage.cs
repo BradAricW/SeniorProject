@@ -224,15 +224,15 @@ namespace EDGELook
             String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
             MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
-
-            int getHours = "SELECT hours FROM WorkOn WHERE employeeID == " + getMyID + " ";
+            
+            String getHours = "SELECT hours FROM WorksOn WHERE employeeID == " + getMyID + " ";
             MySqlCommand cmd2 = new MySqlCommand(getMyID, this.conn);
             MySqlDataReader reader1 = cmd2.ExecuteReader();
-            String hours = getHours.ToString;
+            String hours = getHours.ToString();
 
             String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + getMyID + " ";
-            MySqlCommand cmd1 = new MySqlCommand(removeID, this.conn);
-            MySqlDataReader query = cmd1.ExecuteQuery();
+            MySqlCommand cmd1 = new MySqlCommand(removeID, conn);
+            Console.WriteLine(cmd1.ExecuteNonQuery());
 
             String ret = firstName + " " + lastName + " " + hours;
             return ret;
