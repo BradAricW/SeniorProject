@@ -37,6 +37,8 @@ namespace EDGELook
             conn = dbconn.Dbsetup();
             login = new LoginPage();
             login.Setup(conn);
+            emailBox.Text = "iris@yahoo.com";
+            passBox.Text = "******";
 
             eID = login.Login(emailBox, passBox);
             int success;
@@ -90,6 +92,9 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = true;
 
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            edit.Setup(conn);
 
             edit.ListProjects(projectsGrid, eID);
         }
@@ -138,6 +143,9 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
 
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            edit.Setup(conn);
 
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, eID);
             edit.DisplayNotes(notesGridView);
@@ -164,6 +172,9 @@ namespace EDGELook
         // Update Project
         private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            edit.Setup(conn);
             edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox, eID);
         }
 
@@ -175,7 +186,12 @@ namespace EDGELook
 
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
         {
-            edit.AddNotes(projectPagePNumBox, projectPageNotesBox);
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            edit.Setup(conn);
+
+            edit.AddNotes(eID, projectPagePNumBox, projectPageNotesTextBox);
+            edit.DisplayNotes(notesGridView);
         }
 
         private void SearchProjectsList_SelectedIndexChanged(object sender, EventArgs e)
