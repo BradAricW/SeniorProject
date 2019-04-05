@@ -39,8 +39,8 @@ namespace EDGELook
             login = new LoginPage();
             login.Setup(conn);
             //QUICK LOGIN
-            //emailBox.Text = "iris@yahoo.com";
-            //passBox.Text = "******";
+            emailBox.Text = "iris@yahoo.com";
+            passBox.Text = "******";
 
             eID = login.Login(emailBox, passBox);
             int success;
@@ -150,7 +150,7 @@ namespace EDGELook
             conn = dbconn.Dbsetup();
             edit.Setup(conn);
             Clear();
-            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, eID,testPrjNo);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID,testPrjNo);
             edit.DisplayNotes(notesGridView);
             edit.setFlag(1);
             Console.WriteLine("Edit Project. Flag set to 1");
@@ -178,7 +178,7 @@ namespace EDGELook
             dbconn = new DBConn();
             conn = dbconn.Dbsetup();
             edit.Setup(conn);
-            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox, eID);
+            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, projectPageNotesBox, eID);
         }
 
         private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
@@ -240,7 +240,8 @@ namespace EDGELook
         }
         void Clear()
         {
-            projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPageDueBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageHoursTextBox.Text = projectPageStatusBox.Text = "";
+            //projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPageDueBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageStatusBox.Text = "";
+            //projectPageHoursBox.Value = 0;
         }
     }
 }

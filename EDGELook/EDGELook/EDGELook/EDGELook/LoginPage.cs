@@ -19,7 +19,6 @@ namespace EDGELook
         {
             email = emailBox.Text;
             password = passwordBox.Text;
-
             try
             {
                 conn.Open();

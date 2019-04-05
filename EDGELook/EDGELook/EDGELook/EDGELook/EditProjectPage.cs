@@ -47,16 +47,16 @@ namespace EDGELook
 
 
         //Edit Project
-        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox, int? eID)
+        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, DateTimePicker projectPageDueDateBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox, int? eID)
         {
             int flag = getFlag();
 
             projectNum = projectPagePNumBox.Text;
             projectDesc = projectPageDescriptionBox.Text;
-            projectDueDates = projectPageDueBox.Text;
+            projectDueDates = projectPageDueDateBox.Text;
             projectPhase = projectPagePhaseBox.Text;
             projectDeliverables = projectPageDeliverablesBox.Text;
-            projectHours = int.Parse(projectPageHoursTextBox.Text);
+            projectHours = (int)projectPageHoursBox.Value;
             projectStatus = projectPageStatusBox.Text;
             conn.Open();
 
@@ -94,7 +94,7 @@ namespace EDGELook
 
 
         // Auto Display Project Info in Edit Project Page
-        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, int? eID, String prjNo)
+        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, DateTimePicker projectPageDueDateBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, int? eID, String prjNo)
         {
             bool temp = false;  
             conn.Open();
@@ -107,9 +107,9 @@ namespace EDGELook
                 notesPNum = dr.GetString(0);
                 projectPageDescriptionBox.Text = dr.GetString(2);
                 projectPagePhaseBox.Text = dr.GetString(3);
-                projectPageDueBox.Text = dr.GetString(4);
+                projectPageDueDateBox.Text = dr.GetString(4);
                 projectPageDeliverablesBox.Text = dr.GetString(5);
-                projectPageHoursTextBox.Text = dr.GetString(6);
+                projectPageHoursBox.Value = dr.GetDecimal(6);
                 projectPageStatusBox.Text = dr.GetString(7);
                 temp = true;
             }
