@@ -211,5 +211,40 @@ namespace EDGELook
         {
 
         }
+
+        private void employeeStartTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void employeeEndTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void employeePageHoursBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void profileEditButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void projectPageAddEmployeeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void profileStartTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

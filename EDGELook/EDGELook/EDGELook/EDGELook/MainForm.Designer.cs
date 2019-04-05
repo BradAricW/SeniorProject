@@ -415,6 +415,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(73, 26);
             this.textBox1.TabIndex = 21;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // profileStartTextBox
             // 
@@ -423,6 +424,7 @@
             this.profileStartTextBox.Name = "profileStartTextBox";
             this.profileStartTextBox.Size = new System.Drawing.Size(73, 26);
             this.profileStartTextBox.TabIndex = 20;
+            this.profileStartTextBox.TextChanged += new System.EventHandler(this.profileStartTextBox_TextChanged);
             // 
             // profileEmailTextBox
             // 
@@ -629,6 +631,7 @@
             this.profileEditButton2.TabIndex = 1;
             this.profileEditButton2.Text = "Edit";
             this.profileEditButton2.UseVisualStyleBackColor = false;
+            this.profileEditButton2.Click += new System.EventHandler(this.profileEditButton2_Click);
             // 
             // profileLabel
             // 
@@ -1093,6 +1096,7 @@
             this.projectPageAddEmployeeButton.TabIndex = 9;
             this.projectPageAddEmployeeButton.Text = "Add Employee";
             this.projectPageAddEmployeeButton.UseVisualStyleBackColor = false;
+            this.projectPageAddEmployeeButton.Click += new System.EventHandler(this.projectPageAddEmployeeButton_Click);
             // 
             // projectPageRemoveEmployeeButton
             // 
@@ -1204,6 +1208,7 @@
             this.employeeEndTextBox.Name = "employeeEndTextBox";
             this.employeeEndTextBox.Size = new System.Drawing.Size(73, 26);
             this.employeeEndTextBox.TabIndex = 16;
+            this.employeeEndTextBox.TextChanged += new System.EventHandler(this.employeeEndTextBox_TextChanged);
             // 
             // employeeStartTextBox
             // 
@@ -1212,6 +1217,7 @@
             this.employeeStartTextBox.Name = "employeeStartTextBox";
             this.employeeStartTextBox.Size = new System.Drawing.Size(73, 26);
             this.employeeStartTextBox.TabIndex = 15;
+            this.employeeStartTextBox.TextChanged += new System.EventHandler(this.employeeStartTextBox_TextChanged);
             // 
             // employeePageHoursBox
             // 
@@ -1220,6 +1226,7 @@
             this.employeePageHoursBox.Name = "employeePageHoursBox";
             this.employeePageHoursBox.Size = new System.Drawing.Size(50, 26);
             this.employeePageHoursBox.TabIndex = 14;
+            this.employeePageHoursBox.TextChanged += new System.EventHandler(this.employeePageHoursBox_TextChanged);
             // 
             // employeePageProjectsList
             // 
@@ -1385,7 +1392,7 @@
             // schedulePageTempCalendar
             // 
             this.schedulePageTempCalendar.Location = new System.Drawing.Point(165, 118);
-            this.schedulePageTempCalendar.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.schedulePageTempCalendar.Margin = new System.Windows.Forms.Padding(14);
             this.schedulePageTempCalendar.Name = "schedulePageTempCalendar";
             this.schedulePageTempCalendar.TabIndex = 0;
             // 
@@ -1622,14 +1629,14 @@
             this.ClientSize = new System.Drawing.Size(1392, 895);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.projectPageBG);
-            this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.scheduleBG);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
+            this.Controls.Add(this.projectPageBG);
+            this.Controls.Add(this.loginBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
