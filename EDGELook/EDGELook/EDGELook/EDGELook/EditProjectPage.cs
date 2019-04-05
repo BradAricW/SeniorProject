@@ -94,11 +94,11 @@ namespace EDGELook
 
 
         // Auto Display Project Info in Edit Project Page
-        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, int? eID)
+        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, int? eID, String prjNo)
         {
             bool temp = false;  
             conn.Open();
-            String getProjInfo = "select * from Project, Notes where employeeID = " + eID + " and prjLeader = " + eID + ";";
+            String getProjInfo = "select * from Project where prjNo = '" + prjNo + "' and prjLeader = " + eID + ";";
             MySqlCommand cmd = new MySqlCommand(getProjInfo, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -111,8 +111,6 @@ namespace EDGELook
                 projectPageDeliverablesBox.Text = dr.GetString(5);
                 projectPageHoursTextBox.Text = dr.GetString(6);
                 projectPageStatusBox.Text = dr.GetString(7);
-                // textBoxNotes.Text = dr.GetString(10);
-                //DisplayNotes(projectPagePNumBox.Text, projectPageNotesBox);
                 temp = true;
             }
             if (temp == false)
@@ -124,10 +122,11 @@ namespace EDGELook
         public void AddNotes(int? eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
         {
             conn.Open();
+            
             String notes = "INSERT INTO Notes (employeeID, prjNo, nDate, notes) VALUES (" + eID + ", \"" + projectPagePNumBox.Text + "\", NOW(), '" + projectPageNotesBox.Text + "'); ";
-            MessageBox.Show("INSERT INTO Notes (employeeID, prjNo, nDate, notes) VALUES (" + eID + ", \"" + projectPagePNumBox.Text + "\", NOW(), '" + projectPageNotesBox.Text + "'); ");
             MySqlCommand cmd = new MySqlCommand(notes, conn);
             cmd.ExecuteNonQuery();
+            projectPageNotesBox.Text = "";
 
         } // END ADDNOTES
 
@@ -135,7 +134,6 @@ namespace EDGELook
         //public void DisplayNotes(String projectPagePNumBox, ListBox projectPageNotesBox)
         public void DisplayNotes(DataGridView grid)
         {
-            bool temp = false;
             MySqlDataAdapter da = new MySqlDataAdapter("select nDate, notes from Notes where prjNo = '" + notesPNum +"';",conn);
             DataTable table = new DataTable();
             da.Fill(table);

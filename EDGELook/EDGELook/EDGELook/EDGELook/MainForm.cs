@@ -24,6 +24,7 @@ namespace EDGELook
         private MySqlConnection conn;
         ProfilePage profile;
         int? eID;
+        private String testPrjNo;
 
         public MainForm()
         {
@@ -37,8 +38,9 @@ namespace EDGELook
             conn = dbconn.Dbsetup();
             login = new LoginPage();
             login.Setup(conn);
-            emailBox.Text = "iris@yahoo.com";
-            passBox.Text = "******";
+            //QUICK LOGIN
+            //emailBox.Text = "iris@yahoo.com";
+            //passBox.Text = "******";
 
             eID = login.Login(emailBox, passBox);
             int success;
@@ -56,6 +58,7 @@ namespace EDGELook
             profile = new ProfilePage();
             profile.Setup(conn, eID);
             profile.GetHours(profileHoursTextBox);
+            emailBox.Text = passBox.Text = "";
            
 
         }
@@ -146,8 +149,8 @@ namespace EDGELook
             dbconn = new DBConn();
             conn = dbconn.Dbsetup();
             edit.Setup(conn);
-
-            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, eID);
+            Clear();
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, eID,testPrjNo);
             edit.DisplayNotes(notesGridView);
             edit.setFlag(1);
             Console.WriteLine("Edit Project. Flag set to 1");
@@ -226,6 +229,18 @@ namespace EDGELook
         private void projectPageEmployeeList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void projectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(projectsGrid.CurrentRow.Index != -1)
+            {
+                testPrjNo = projectsGrid.CurrentRow.Cells[0].Value.ToString();
+            }
+        }
+        void Clear()
+        {
+            projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPageDueBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageHoursTextBox.Text = projectPageStatusBox.Text = "";
         }
     }
 }

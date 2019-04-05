@@ -660,11 +660,17 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.PowderBlue;
             this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.notesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.notesGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.notesGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.notesGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.notesGridView.Location = new System.Drawing.Point(4, 60);
             this.notesGridView.Name = "notesGridView";
+            this.notesGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.notesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.notesGridView.Size = new System.Drawing.Size(293, 360);
-            this.notesGridView.TabIndex = 8;
+            this.notesGridView.TabIndex = 18;
             // 
             // projectPageNotesTextBox
             // 
@@ -1423,6 +1429,7 @@
             this.projectsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.projectsGrid.Size = new System.Drawing.Size(300, 241);
             this.projectsGrid.TabIndex = 18;
+            this.projectsGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.projectsGrid_CellMouseClick);
             // 
             // searchProjectsPageAddProjectButton
             // 
@@ -1515,14 +1522,14 @@
             this.ClientSize = new System.Drawing.Size(928, 582);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.searchProjectsBG);
-            this.Controls.Add(this.searchEmployeesBG);
-            this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.scheduleBG);
+            this.Controls.Add(this.searchProjectsBG);
+            this.Controls.Add(this.searchEmployeesBG);
+            this.Controls.Add(this.employeePageBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
