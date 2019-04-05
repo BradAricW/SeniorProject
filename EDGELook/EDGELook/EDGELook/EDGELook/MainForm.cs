@@ -230,7 +230,7 @@ namespace EDGELook
         private void profileEditButton2_Click(object sender, EventArgs e)
         {
 
-        }
+        } //Teneha: edit button
 
         private void projectPageAddEmployeeButton_Click(object sender, EventArgs e)
         {
@@ -240,11 +240,11 @@ namespace EDGELook
         private void profileStartTextBox_TextChanged(object sender, EventArgs e)
         {
 
-        }
+        } //Teneha: start input box
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-        }
+        } //Teneha: end input box
     }
 }
