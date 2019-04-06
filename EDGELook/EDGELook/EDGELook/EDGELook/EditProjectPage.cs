@@ -25,7 +25,7 @@ namespace EDGELook
         private string  projectStatus;
         private string  projectID;
         private string notesPNum;
-        private int eID;
+        //private int? eID;
 
         private MySqlConnection conn;
 
@@ -183,17 +183,17 @@ namespace EDGELook
             da.Fill(table);
             projectsGrid.DataSource = table;
         }
-        public void AssignEmployee(Boolean myselfButton)
+        public String AssignEmployee(Boolean myselfButton, int hours, int? eID, String firstName, String lastName)
         {
             conn.Open();
-            if (myselfButton)
-
+            if (myselfButton == true)
             {
 
-                String getMyID = "SELECT employeeID FROM Employee as E WHERE " + this.eID + " == E.employeeID;"; //login ID from employee table
+                String getMyID = "SELECT employeeID FROM Employee as E WHERE " + eID + " == E.employeeID;"; //login ID from employee table
                 MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
+                //check how we get correct project number
                 String getProjectID = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
                 MySqlCommand cmd2 = new MySqlCommand(getProjectID, this.conn);
                 MySqlDataReader reader1 = cmd2.ExecuteReader();
@@ -201,26 +201,42 @@ namespace EDGELook
                 String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + getMyID + "\'," + getProjectID + "\');";
                 MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
                 Console.WriteLine(cmd1.ExecuteNonQuery());
+
+                conn.Close();
             }
-            
-            //Get ID through Email or from input box
-            String otherID = " ";
+            else
+            {
 
-            String getProjectID2 = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
-            MySqlCommand cmd3 = new MySqlCommand(getProjectID2, this.conn);
-            MySqlDataReader reader2 = cmd3.ExecuteReader();
+                conn.Open();
+                //Get ID through Email or from input box
+                String otherID = " ";
 
-            String setotherID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + otherID + "\'," + getProjectID2 + "\');";
-            MySqlCommand cmd4 = new MySqlCommand(setotherID, this.conn);
-            Console.WriteLine(cmd4.ExecuteNonQuery());
+                String getProjectID2 = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
+                MySqlCommand cmd3 = new MySqlCommand(getProjectID2, this.conn);
+                MySqlDataReader reader2 = cmd3.ExecuteReader();
+
+                String setotherID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + otherID + "\'," + getProjectID2 + "\');";
+                MySqlCommand cmd4 = new MySqlCommand(setotherID, this.conn);
+                Console.WriteLine(cmd4.ExecuteNonQuery());
+                conn.Close();
+            }
+
+            conn.Open();
+
+            String setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + eID + "';";
+            MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
+            Console.WriteLine(cmd5.ExecuteNonQuery());
             conn.Close();
+
+            String ret = firstName + " " + lastName + " " + setHours;
+            return ret;
 
         } //END ASSIGNEMPLOYEE: MM and SZ
 
 
-        public String RemoveEmployee(String firstName, String lastName)
+        public String RemoveEmployee(String firstName, String lastName, int? eID)
         { //get first name and last name as parameter?
-            //conn.Open();
+            conn.Open();
             String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
             MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -228,13 +244,20 @@ namespace EDGELook
             String getHours = "SELECT hours FROM WorksOn WHERE employeeID == " + getMyID + " ";
             MySqlCommand cmd2 = new MySqlCommand(getMyID, this.conn);
             MySqlDataReader reader1 = cmd2.ExecuteReader();
-            String hours = getHours.ToString();
+            //String hours = getHours.ToString();
 
             String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + getMyID + " ";
             MySqlCommand cmd1 = new MySqlCommand(removeID, conn);
             Console.WriteLine(cmd1.ExecuteNonQuery());
 
-            String ret = firstName + " " + lastName + " " + hours;
+            //hoursAvail
+            String setHours = "UPDATE Employee SET hoursAvail = '" + getHours + "'WHERE employeeID = '" + eID + "';";
+            MySqlCommand cmd3 = new MySqlCommand(setHours, this.conn);
+            Console.WriteLine(cmd3.ExecuteNonQuery());
+
+            conn.Open();
+
+            String ret = firstName + " " + lastName + " " + getHours;
             return ret;
 
         } //END REMOVEEMPLOYEE: MM and SZ   

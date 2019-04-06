@@ -1120,6 +1120,7 @@
             this.projectPageEditEmployeeText.Name = "projectPageEditEmployeeText";
             this.projectPageEditEmployeeText.Size = new System.Drawing.Size(268, 26);
             this.projectPageEditEmployeeText.TabIndex = 7;
+            this.projectPageEditEmployeeText.TextChanged += new System.EventHandler(this.projectPageEditEmployeeText_TextChanged);
             // 
             // projectPageAssignedLabel
             // 
@@ -1629,14 +1630,14 @@
             this.ClientSize = new System.Drawing.Size(1392, 895);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
+            this.Controls.Add(this.projectPageBG);
+            this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.scheduleBG);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
-            this.Controls.Add(this.projectPageBG);
-            this.Controls.Add(this.loginBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;

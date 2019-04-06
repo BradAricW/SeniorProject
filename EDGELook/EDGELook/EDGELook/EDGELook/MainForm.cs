@@ -24,6 +24,7 @@ namespace EDGELook
         private MySqlConnection conn;
         ProfilePage profile;
         int? eID;
+        private int hours;
 
         public MainForm()
         {
@@ -170,7 +171,22 @@ namespace EDGELook
         private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
         {
             Boolean addedMyself = true;
-            //edit.AssignEmployee(addedMyself);
+            String firstName = "";
+            String lastName = "";
+
+            //edit.AssignEmployee(addedMyself, hours, eID);
+            if (this.projectPageToBeAssignedListBox.SelectedIndex >= 0)
+            {
+                this.projectPageToBeAssignedListBox.Items.RemoveAt(this.projectPageEmployeeList.SelectedIndex);
+                String ret = "";
+                String fullName = this.projectPageEmployeeList.ToString();
+                string[] names = fullName.Split(' ');
+                firstName = names[0];
+                lastName = names[1];
+                ret = edit.AssignEmployee(addedMyself, hours, eID, firstName, lastName);
+                projectPageEmployeeList.Items.Add(ret);
+
+            } //SZ, MM: add self button
         }
 
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
@@ -201,7 +217,7 @@ namespace EDGELook
                 string[] names = fullName.Split(' ');
                 firstName = names[0];
                 lastName = names[1];
-                ret = edit.RemoveEmployee(firstName, lastName);
+                ret = edit.RemoveEmployee(firstName, lastName, eID);
                 projectPageToBeAssignedListBox.Items.Add(ret);
 
             }
@@ -234,8 +250,9 @@ namespace EDGELook
 
         private void projectPageAddEmployeeButton_Click(object sender, EventArgs e)
         {
-
-        }
+            Boolean addMyself = false;
+            edit.AssignEmployee(addMyself, hours, eID, "", "" );
+        } //SZ, MM: add employee button 
 
         private void profileStartTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -246,5 +263,12 @@ namespace EDGELook
         {
 
         } //Teneha: end input box
+
+        private void projectPageEditEmployeeText_TextChanged(object sender, EventArgs e)
+        {
+            
+            hours = int.Parse(projectPageEditEmployeeText.Text);
+            
+        } //SZ, MM: input text box for hours
     }
 }
