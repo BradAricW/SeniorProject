@@ -67,7 +67,7 @@ namespace EDGELook
                                                                        "', hoursNeeded = " + projectHours +
                                                                        ", prjStatus = '" + projectStatus +
                                                                        "' WHERE prjNo = '" + projectNum + "';");
-                sql.queryRunner(upDateProject);
+                //sql.queryRunner(upDateProject);
                 MessageBox.Show("Project Changed");
             }
             else if (flag == 0)
@@ -76,7 +76,7 @@ namespace EDGELook
                 String addProject = ("INSERT INTO Project (prjNo, prjLeader, description, prjPhase, dueDate, deliverables, hoursNeeded, prjStatus)" + 
                                              "VALUES ('" + projectNum + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectPhase + "', '" + projectDueDates + "', '" + projectDeliverables + "', '" + projectHours + "', '" + projectStatus + "');");
                 MessageBox.Show(addProject);
-                sql.queryRunner(addProject);
+                //sql.queryRunner(addProject);
                 MessageBox.Show("Project Added");
             }
             else
