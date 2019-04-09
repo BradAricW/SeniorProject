@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleBackPanel = new System.Windows.Forms.Panel();
             this.titleFrontPanel = new System.Windows.Forms.Panel();
             this.signOutLabel = new System.Windows.Forms.Label();
@@ -79,11 +80,9 @@
             this.projectPagePanel2 = new System.Windows.Forms.Panel();
             this.projectPageDeliverablesBox = new System.Windows.Forms.TextBox();
             this.projectPagePhaseBox = new System.Windows.Forms.TextBox();
-            this.projectPageDueBox = new System.Windows.Forms.TextBox();
             this.projectPageDescriptionBox = new System.Windows.Forms.TextBox();
             this.projectPagePNumBox = new System.Windows.Forms.TextBox();
             this.projectPageStatusLabel = new System.Windows.Forms.Label();
-            this.projectPageHoursTextBox = new System.Windows.Forms.TextBox();
             this.projectPageAddHoursButton = new System.Windows.Forms.Button();
             this.projectPageHoursLabel2 = new System.Windows.Forms.Label();
             this.projectPageHoursLabel = new System.Windows.Forms.Label();
@@ -146,6 +145,8 @@
             this.searchProjectsList = new System.Windows.Forms.ListBox();
             this.searchProjectsViewButton = new System.Windows.Forms.Button();
             this.searchProjectsLabel = new System.Windows.Forms.Label();
+            this.projectPageHoursBox = new System.Windows.Forms.NumericUpDown();
+            this.projectPageDueDateBox = new System.Windows.Forms.DateTimePicker();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -166,6 +167,7 @@
             this.searchProjectsBG.SuspendLayout();
             this.searchProjectsPageBackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectPageHoursBox)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -711,13 +713,13 @@
             // projectPagePanel2
             // 
             this.projectPagePanel2.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.projectPagePanel2.Controls.Add(this.projectPageDueDateBox);
+            this.projectPagePanel2.Controls.Add(this.projectPageHoursBox);
             this.projectPagePanel2.Controls.Add(this.projectPageDeliverablesBox);
             this.projectPagePanel2.Controls.Add(this.projectPagePhaseBox);
-            this.projectPagePanel2.Controls.Add(this.projectPageDueBox);
             this.projectPagePanel2.Controls.Add(this.projectPageDescriptionBox);
             this.projectPagePanel2.Controls.Add(this.projectPagePNumBox);
             this.projectPagePanel2.Controls.Add(this.projectPageStatusLabel);
-            this.projectPagePanel2.Controls.Add(this.projectPageHoursTextBox);
             this.projectPagePanel2.Controls.Add(this.projectPageAddHoursButton);
             this.projectPagePanel2.Controls.Add(this.projectPageHoursLabel2);
             this.projectPagePanel2.Controls.Add(this.projectPageHoursLabel);
@@ -749,13 +751,6 @@
             this.projectPagePhaseBox.Size = new System.Drawing.Size(300, 20);
             this.projectPagePhaseBox.TabIndex = 22;
             // 
-            // projectPageDueBox
-            // 
-            this.projectPageDueBox.Location = new System.Drawing.Point(0, 164);
-            this.projectPageDueBox.Name = "projectPageDueBox";
-            this.projectPageDueBox.Size = new System.Drawing.Size(300, 20);
-            this.projectPageDueBox.TabIndex = 21;
-            // 
             // projectPageDescriptionBox
             // 
             this.projectPageDescriptionBox.Location = new System.Drawing.Point(0, 112);
@@ -781,13 +776,6 @@
             this.projectPageStatusLabel.TabIndex = 17;
             this.projectPageStatusLabel.Text = "Status";
             this.projectPageStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // projectPageHoursTextBox
-            // 
-            this.projectPageHoursTextBox.Location = new System.Drawing.Point(5, 345);
-            this.projectPageHoursTextBox.Name = "projectPageHoursTextBox";
-            this.projectPageHoursTextBox.Size = new System.Drawing.Size(100, 20);
-            this.projectPageHoursTextBox.TabIndex = 16;
             // 
             // projectPageAddHoursButton
             // 
@@ -1412,11 +1400,22 @@
             // 
             // projectsGrid
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.projectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.projectsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.projectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.projectsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.projectsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectsGrid.Location = new System.Drawing.Point(0, 56);
             this.projectsGrid.Name = "projectsGrid";
+            this.projectsGrid.ReadOnly = true;
+            this.projectsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.projectsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.projectsGrid.Size = new System.Drawing.Size(301, 238);
             this.projectsGrid.TabIndex = 18;
+            this.projectsGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.projectsGrid_CellMouseClick);
             // 
             // searchProjectsPageAddProjectButton
             // 
@@ -1501,6 +1500,25 @@
             this.searchProjectsLabel.TabIndex = 14;
             this.searchProjectsLabel.Text = "Search Projects";
             // 
+            // projectPageHoursBox
+            // 
+            this.projectPageHoursBox.Location = new System.Drawing.Point(5, 345);
+            this.projectPageHoursBox.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.projectPageHoursBox.Name = "projectPageHoursBox";
+            this.projectPageHoursBox.Size = new System.Drawing.Size(101, 20);
+            this.projectPageHoursBox.TabIndex = 25;
+            // 
+            // projectPageDueDateBox
+            // 
+            this.projectPageDueDateBox.Location = new System.Drawing.Point(4, 165);
+            this.projectPageDueDateBox.Name = "projectPageDueDateBox";
+            this.projectPageDueDateBox.Size = new System.Drawing.Size(291, 20);
+            this.projectPageDueDateBox.TabIndex = 26;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1554,6 +1572,7 @@
             this.searchProjectsPageBackPanel.ResumeLayout(false);
             this.searchProjectsPageBackPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectPageHoursBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1613,7 +1632,6 @@
         private System.Windows.Forms.Button projectPageAddNotesButton;
         private System.Windows.Forms.Label projectPageNotesLabel;
         private System.Windows.Forms.Label projectPageStatusLabel;
-        private System.Windows.Forms.TextBox projectPageHoursTextBox;
         private System.Windows.Forms.Button projectPageAddHoursButton;
         private System.Windows.Forms.Label projectPageHoursLabel2;
         private System.Windows.Forms.Label projectPageHoursLabel;
@@ -1660,7 +1678,6 @@
         private System.Windows.Forms.TextBox projectPageStatusBox;
         private System.Windows.Forms.TextBox projectPageDeliverablesBox;
         private System.Windows.Forms.TextBox projectPagePhaseBox;
-        private System.Windows.Forms.TextBox projectPageDueBox;
         private System.Windows.Forms.TextBox projectPageDescriptionBox;
         private System.Windows.Forms.TextBox projectPagePNumBox;
         private System.Windows.Forms.TextBox projectPageNotesTextBox;
@@ -1678,6 +1695,8 @@
         private System.Windows.Forms.Label projectPageAssignLabel;
         private System.Windows.Forms.Label projectPageEmployeesOnLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker projectPageDueDateBox;
+        private System.Windows.Forms.NumericUpDown projectPageHoursBox;
     }
 }
 

@@ -25,6 +25,7 @@ namespace EDGELook
         ProfilePage profile;
         int? eID;
         private int hours;
+        private String testPrjNo;
 
         public MainForm()
         {
@@ -38,6 +39,9 @@ namespace EDGELook
             conn = dbconn.Dbsetup();
             login = new LoginPage();
             login.Setup(conn);
+            //QUICK LOGIN
+            emailBox.Text = "iris@yahoo.com";
+            passBox.Text = "******";
 
             eID = login.Login(emailBox, passBox);
             int success;
@@ -55,8 +59,8 @@ namespace EDGELook
             profile = new ProfilePage();
             profile.Setup(conn, eID);
             profile.GetHours(profileHoursTextBox);
-           
 
+            emailBox.Text = passBox.Text = "";
         }
         //private void 
 
@@ -91,6 +95,9 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = true;
 
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            edit.Setup(conn);
 
             edit.ListProjects(projectsGrid, eID);
         }
@@ -139,8 +146,12 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
 
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            edit.Setup(conn);
 
-            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, eID);
+            Clear();
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID, testPrjNo);
             edit.DisplayNotes(notesGridView);
             edit.setFlag(1);
             Console.WriteLine("Edit Project. Flag set to 1");
@@ -155,6 +166,7 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
 
+            Clear();
             edit.setFlag(0);
             Console.WriteLine("Add Project. Flag set to 0");
         }
@@ -165,7 +177,10 @@ namespace EDGELook
         // Update Project
         private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
-            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursTextBox, projectPageStatusBox, projectPageNotesBox, eID);
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            edit.Setup(conn);
+            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, projectPageNotesBox, eID);
         }
 
         private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
@@ -191,7 +206,12 @@ namespace EDGELook
 
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
         {
-            edit.AddNotes(projectPagePNumBox, projectPageNotesBox);
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            edit.Setup(conn);
+
+            edit.AddNotes(eID, projectPagePNumBox, projectPageNotesBox);
+            edit.DisplayNotes(notesGridView);
         }
 
         private void SearchProjectsList_SelectedIndexChanged(object sender, EventArgs e)
@@ -270,5 +290,21 @@ namespace EDGELook
             hours = int.Parse(projectPageEditEmployeeText.Text);
             
         } //SZ, MM: input text box for hours
+
+
+
+        private void Clear()
+        {
+            projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageStatusBox.Text = "";
+            projectPageHoursBox.Value = 0;
+        }
+
+        private void projectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (projectsGrid.CurrentRow.Index != -1)
+            {
+                testPrjNo = projectsGrid.CurrentRow.Cells[0].Value.ToString();
+            }
+        }
     }
 }

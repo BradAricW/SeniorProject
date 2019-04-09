@@ -31,9 +31,6 @@ namespace EDGELook
 
         private int flag = 0;
 
-        //private MySqlConnection con;
-        //private DBConn sql = new DBConn();
-
         public int getFlag()
         {
             return flag;
@@ -43,20 +40,24 @@ namespace EDGELook
              flag = n;
             Console.WriteLine("Flag Set: " + flag);
         }
-
+        public void Setup(MySqlConnection con)
+        {
+            this.conn = con;
+        }
 
         //Edit Project
-        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox, int? eID)
+        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, DateTimePicker projectPageDueDateBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox, int? eID)
         {
             int flag = getFlag();
 
             projectNum = projectPagePNumBox.Text;
             projectDesc = projectPageDescriptionBox.Text;
-            projectDueDates = projectPageDueBox.Text;
+            projectDueDates = projectPageDueDateBox.Text;
             projectPhase = projectPagePhaseBox.Text;
             projectDeliverables = projectPageDeliverablesBox.Text;
-            projectHours = int.Parse(projectPageHoursTextBox.Text);
+            projectHours = (int)projectPageHoursBox.Value;
             projectStatus = projectPageStatusBox.Text;
+            conn.Open();
 
             if (flag == 1)
             { // if its an update
@@ -68,6 +69,8 @@ namespace EDGELook
                                                                        ", prjStatus = '" + projectStatus +
                                                                        "' WHERE prjNo = '" + projectNum + "';");
                 //sql.queryRunner(upDateProject);
+                MySqlCommand cmd = new MySqlCommand(upDateProject, conn);
+                cmd.ExecuteNonQuery();
                 MessageBox.Show("Project Changed");
             }
             else if (flag == 0)
@@ -75,8 +78,9 @@ namespace EDGELook
 
                 String addProject = ("INSERT INTO Project (prjNo, prjLeader, description, prjPhase, dueDate, deliverables, hoursNeeded, prjStatus)" + 
                                              "VALUES ('" + projectNum + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectPhase + "', '" + projectDueDates + "', '" + projectDeliverables + "', '" + projectHours + "', '" + projectStatus + "');");
+                MySqlCommand cmd = new MySqlCommand(addProject, conn);
+                cmd.ExecuteNonQuery();
                 MessageBox.Show(addProject);
-                //sql.queryRunner(addProject);
                 MessageBox.Show("Project Added");
             }
             else
@@ -88,20 +92,12 @@ namespace EDGELook
 
 
         // Auto Display Project Info in Edit Project Page
-        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDueBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, TextBox projectPageHoursTextBox, TextBox projectPageStatusBox, int? eID)
+        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, DateTimePicker projectPageDueDateBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, int? eID, String prjNo)
         {
-            String server = "athena";
-            String database = "sevenwonders";
-            String uid = "sevenwonders";
-            String password = "sw_db";
-            String connString = "server=" + server + ";" + "database=" +
-            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
-
             bool temp = false;
-            MySqlConnection con = new MySqlConnection(connString);
-            con.Open();
-            String getProjInfo = "select * from Project, Notes where employeeID = " + eID + " and prjLeader = " + eID + ";";
-            MySqlCommand cmd = new MySqlCommand(getProjInfo, con);
+            conn.Open();
+            String getProjInfo = "select * from Project where prjNo = '" + prjNo + "' and prjLeader = " + eID + ";";
+            MySqlCommand cmd = new MySqlCommand(getProjInfo, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -109,32 +105,26 @@ namespace EDGELook
                 notesPNum = dr.GetString(0);
                 projectPageDescriptionBox.Text = dr.GetString(2);
                 projectPagePhaseBox.Text = dr.GetString(3);
-                projectPageDueBox.Text = dr.GetString(4);
+                projectPageDueDateBox.Text = dr.GetString(4);
                 projectPageDeliverablesBox.Text = dr.GetString(5);
-                projectPageHoursTextBox.Text = dr.GetString(6);
+                projectPageHoursBox.Value = dr.GetDecimal(6);
                 projectPageStatusBox.Text = dr.GetString(7);
-                // textBoxNotes.Text = dr.GetString(10);
-                //DisplayNotes(projectPagePNumBox.Text, projectPageNotesBox);
+                
                 temp = true;
             }
             if (temp == false)
                 MessageBox.Show("not found");
-            con.Close();
+            conn.Close();
         } // END AUTODISPLAY
 
 
-        public void AddNotes(TextBox projectPagePNumBox, ListBox projectPageNotesBox)
+        public void AddNotes(int? eID, TextBox projectPagePNumBox, ListBox projectPageNotesBox)
         {
-            String server = "athena";
-            String database = "sevenwonders";
-            String uid = "sevenwonders";
-            String password = "sw_db";
-            String connString = "server=" + server + ";" + "database=" +
-            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
-
-            MySqlConnection con = new MySqlConnection(connString); //this might be the new connection that is causing issues (message from MM)
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO Notes (employeeID, projNo, timeStamp, notes) VALUES (000, " + projectPagePNumBox + ", NOW(), " + projectPageNotesBox + "; ", con);
+            conn.Open();
+            String notes = "INSERT INTO Notes (employeeID, prjNo, nDate, notes) VALUES (" + eID + ", \"" + projectPagePNumBox.Text + "\", NOW(), '" + projectPageNotesBox.Text + "'); ";
+            MySqlCommand cmd = new MySqlCommand(notes, conn);
+            cmd.ExecuteNonQuery();
+            projectPageNotesBox.Text = "";
 
         } // END ADDNOTES
 
@@ -142,43 +132,19 @@ namespace EDGELook
         //public void DisplayNotes(String projectPagePNumBox, ListBox projectPageNotesBox)
         public void DisplayNotes(DataGridView grid)
         {
-
-            String server = "athena";
-            String database = "sevenwonders";
-            String uid = "sevenwonders";
-            String password = "sw_db";
-            String connString = "server=" + server + ";" + "database=" +
-            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
-
-            bool temp = false;
-            MySqlConnection con = new MySqlConnection(connString);
-            con.Open();
-            //MySqlCommand cmd = new MySqlCommand("SELECT timeStamp, notes  FROM Notes WHERE prjNo = '" + projectPagePNumBox + "';", con);
-            //MySqlDataReader dr = cmd.ExecuteReader();
-            //while (dr.Read())
-            //{
-            //    projectPageNotesBox.Items.Add(dr.GetString(0) + " " + dr.GetString(1));
-            //}
-            MySqlDataAdapter da = new MySqlDataAdapter("select nDate, notes from Notes where prjNo = '" + notesPNum +"';",con);
+            //conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("select nDate, notes from Notes where prjNo = '" + notesPNum +"';",conn);
             DataTable table = new DataTable();
             da.Fill(table);
             grid.DataSource = table;
-            //grid.Columns[0].Visible = false;
+            conn.Close();
         } // END EDIT NOTES
 
         public void ListProjects(DataGridView projectsGrid, int? eID)
         {
-            String server = "athena";
-            String database = "sevenwonders";
-            String uid = "sevenwonders";
-            String password = "sw_db";
-            String connString = "server=" + server + ";" + "database=" +
-            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+            conn.Open();
 
-            MySqlConnection con = new MySqlConnection(connString);
-            con.Open();
-
-            MySqlDataAdapter da = new MySqlDataAdapter("Select prjNo, Description from Project where prjLeader = '" + eID + "';",con);
+            MySqlDataAdapter da = new MySqlDataAdapter("Select prjNo, Description from Project where prjLeader = '" + eID + "';",conn);
             DataTable table = new DataTable();
             da.Fill(table);
             projectsGrid.DataSource = table;
