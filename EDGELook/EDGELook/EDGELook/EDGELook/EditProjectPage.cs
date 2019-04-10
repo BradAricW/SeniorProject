@@ -46,7 +46,7 @@ namespace EDGELook
         }
 
         //Edit Project
-        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, DateTimePicker projectPageDueDateBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, ListBox projectPageNotesBox, int? eID)
+        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, DateTimePicker projectPageDueDateBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, int? eID)
         {
             int flag = getFlag();
 
@@ -96,7 +96,7 @@ namespace EDGELook
         {
             bool temp = false;
             conn.Open();
-            String getProjInfo = "select * from Project where prjNo = '" + prjNo + "' and prjLeader = " + eID + ";";
+            String getProjInfo = "select * from Project where prjNo = '" + prjNo + "';"; // and prjLeader = " + eID + "
             MySqlCommand cmd = new MySqlCommand(getProjInfo, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -113,30 +113,32 @@ namespace EDGELook
                 temp = true;
             }
             if (temp == false)
-                MessageBox.Show("not found");
+                MessageBox.Show("Not found");
             conn.Close();
         } // END AUTODISPLAY
 
 
-        public void AddNotes(int? eID, TextBox projectPagePNumBox, ListBox projectPageNotesBox)
+        public void AddNotes(int? eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
         {
             conn.Open();
             String notes = "INSERT INTO Notes (employeeID, prjNo, nDate, notes) VALUES (" + eID + ", \"" + projectPagePNumBox.Text + "\", NOW(), '" + projectPageNotesBox.Text + "'); ";
             MySqlCommand cmd = new MySqlCommand(notes, conn);
             cmd.ExecuteNonQuery();
             projectPageNotesBox.Text = "";
+            conn.Close();
 
         } // END ADDNOTES
 
         // Displays Notes in the Edit Project Page
-        //public void DisplayNotes(String projectPagePNumBox, ListBox projectPageNotesBox)
         public void DisplayNotes(DataGridView grid)
         {
-            //conn.Open();
+            conn.Open();
             MySqlDataAdapter da = new MySqlDataAdapter("select nDate, notes from Notes where prjNo = '" + notesPNum +"';",conn);
             DataTable table = new DataTable();
             da.Fill(table);
             grid.DataSource = table;
+            grid.Columns[0].Width = 100;
+            grid.Columns[1].Width = 157;
             conn.Close();
         } // END EDIT NOTES
 
@@ -144,10 +146,11 @@ namespace EDGELook
         {
             conn.Open();
 
-            MySqlDataAdapter da = new MySqlDataAdapter("Select prjNo, Description from Project where prjLeader = '" + eID + "';",conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("Select prjNo, Description from Project ;",conn); //where prjLeader = '" + eID + "'
             DataTable table = new DataTable();
             da.Fill(table);
             projectsGrid.DataSource = table;
+            conn.Close();
         }
         public String AssignEmployee(Boolean myselfButton, int hours, int? eID, String firstName, String lastName)
         {
@@ -173,7 +176,7 @@ namespace EDGELook
             else
             {
 
-                conn.Open();
+                //conn.Open();
                 //Get ID through Email or from input box
                 String otherID = " ";
 
@@ -221,8 +224,8 @@ namespace EDGELook
             MySqlCommand cmd3 = new MySqlCommand(setHours, this.conn);
             Console.WriteLine(cmd3.ExecuteNonQuery());
 
-            conn.Open();
-
+            //conn.Open();
+            conn.Close();
             String ret = firstName + " " + lastName + " " + getHours;
             return ret;
 

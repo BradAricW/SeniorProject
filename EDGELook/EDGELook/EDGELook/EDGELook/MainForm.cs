@@ -20,12 +20,15 @@ namespace EDGELook
         LoginPage login;
         //private int loginResult;
         EditProjectPage edit = new EditProjectPage();
+        EmployeePage employee = new EmployeePage();
         private DBConn dbconn;
         private MySqlConnection conn;
         ProfilePage profile;
         int? eID;
         private int hours;
         private String testPrjNo;
+        private String profilePrjNo;
+        private String empNo;
 
         public MainForm()
         {
@@ -39,9 +42,10 @@ namespace EDGELook
             conn = dbconn.Dbsetup();
             login = new LoginPage();
             login.Setup(conn);
+            employee.Setup(conn);
             //QUICK LOGIN
-            emailBox.Text = "iris@yahoo.com";
-            passBox.Text = "******";
+            //emailBox.Text = "iris@yahoo.com";
+            //passBox.Text = "******";
 
             eID = login.Login(emailBox, passBox);
             int success;
@@ -55,12 +59,18 @@ namespace EDGELook
                 this.loginBG.Visible = false;
                 this.taskbarMenu.Visible = true;
                 this.profileBG.Visible = true;
-            }
-            profile = new ProfilePage();
-            profile.Setup(conn, eID);
-            profile.GetHours(profileHoursTextBox);
+                emailBox.Text = "";
 
-            emailBox.Text = passBox.Text = "";
+                profile = new ProfilePage();
+                profile.Setup(conn, eID);
+                profile.GetHours(profileHoursTextBox);
+                profile.GetEmail(profileEmailTextBox);
+                profile.GetPhone(profilePhoneTextBox);
+                profile.ListProjects(profileProjectGrid);
+                edit.Setup(conn);
+            }
+            passBox.Text = "";
+
         }
         //private void 
 
@@ -74,6 +84,9 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
+
+            //clear all data
+            this.Clear();
         }
 
         private void HomeButton_Click(object sender, EventArgs e)
@@ -84,6 +97,12 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
+            this.Clear();
+
+            profile.GetHours(profileHoursTextBox);
+            profile.GetEmail(profileEmailTextBox);
+            profile.GetPhone(profilePhoneTextBox);
+            profile.ListProjects(profileProjectGrid);
         }
 
         private void ProjectsButton_Click(object sender, EventArgs e)
@@ -94,10 +113,11 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = true;
+            this.Clear();
 
-            dbconn = new DBConn();
-            conn = dbconn.Dbsetup();
-            edit.Setup(conn);
+            //dbconn = new DBConn();
+            //conn = dbconn.Dbsetup();
+            //edit.Setup(conn);
 
             edit.ListProjects(projectsGrid, eID);
         }
@@ -110,6 +130,9 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = true;
             this.searchProjectsBG.Visible = false;
+            this.Clear();
+
+            employee.ListEmployees(searchEmployeesGrid, eID);
         }
 
         private void SchedulesButton_Click(object sender, EventArgs e)
@@ -120,9 +143,10 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
+            this.Clear();
         }
 
-        private void CreateAccountLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ResetPassLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }
@@ -135,6 +159,12 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
+
+            employee.GetHours(employeePageHoursBox);
+            employee.GetEmail(employeeEmailTextBox);
+            employee.GetPhone(employeePhoneTextBox);
+            employee.ListProjects(employeeProjectGrid);
+            employee.NameDisplay(employeePageLabel);
         }
 
         private void SearchProjectsViewButton_Click(object sender, EventArgs e)
@@ -145,10 +175,6 @@ namespace EDGELook
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
-
-            dbconn = new DBConn();
-            conn = dbconn.Dbsetup();
-            edit.Setup(conn);
 
             Clear();
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID, testPrjNo);
@@ -177,10 +203,10 @@ namespace EDGELook
         // Update Project
         private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
-            dbconn = new DBConn();
-            conn = dbconn.Dbsetup();
-            edit.Setup(conn);
-            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, projectPageNotesBox, eID);
+            //dbconn = new DBConn();
+            //conn = dbconn.Dbsetup();
+            //edit.Setup(conn);
+            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID);
         }
 
         private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
@@ -210,13 +236,8 @@ namespace EDGELook
             conn = dbconn.Dbsetup();
             edit.Setup(conn);
 
-            edit.AddNotes(eID, projectPagePNumBox, projectPageNotesBox);
+            edit.AddNotes(eID, projectPagePNumBox, projectPageNotesTextBox);
             edit.DisplayNotes(notesGridView);
-        }
-
-        private void SearchProjectsList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void ProfileEditButton1_Click(object sender, EventArgs e)
@@ -224,7 +245,7 @@ namespace EDGELook
             profile.EditMyHours(profileHoursTextBox, eID);
         }
 
-        private void projectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
+        private void ProjectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
         {
             String firstName = "";
             String lastName = "";
@@ -243,48 +264,33 @@ namespace EDGELook
             }
         }
 
-        private void projectPageEmployeeList_SelectedIndexChanged(object sender, EventArgs e)
+        private void ProjectPageEmployeeList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void employeeStartTextBox_TextChanged(object sender, EventArgs e)
+        private void EmployeeStartTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void employeeEndTextBox_TextChanged(object sender, EventArgs e)
+        private void EmployeeEndTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void employeePageHoursBox_TextChanged(object sender, EventArgs e)
+        private void EmployeePageHoursBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void profileEditButton2_Click(object sender, EventArgs e)
-        {
-
-        } //Teneha: edit button
-
-        private void projectPageAddEmployeeButton_Click(object sender, EventArgs e)
+        private void ProjectPageAddEmployeeButton_Click(object sender, EventArgs e)
         {
             Boolean addMyself = false;
             edit.AssignEmployee(addMyself, hours, eID, "", "" );
         } //SZ, MM: add employee button 
 
-        private void profileStartTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        } //Teneha: start input box
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        } //Teneha: end input box
-
-        private void projectPageEditEmployeeText_TextChanged(object sender, EventArgs e)
+        private void ProjectPageEditEmployeeText_TextChanged(object sender, EventArgs e)
         {
             
             hours = int.Parse(projectPageEditEmployeeText.Text);
@@ -297,14 +303,55 @@ namespace EDGELook
         {
             projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageStatusBox.Text = "";
             projectPageHoursBox.Value = 0;
+            profileHoursTextBox.Text =  profileEmailTextBox.Text = profilePhoneTextBox.Text = "";
+            searchProjectsTextBox.Text = searchEmployeesTextBox.Text = "";
+            employeePageHoursBox.Text =  employeeEmailTextBox.Text = employeePhoneTextBox.Text = "";
         }
 
-        private void projectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void ProjectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (projectsGrid.CurrentRow.Index != -1)
             {
                 testPrjNo = projectsGrid.CurrentRow.Cells[0].Value.ToString();
             }
+        }
+
+        private void ProfileProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (profileProjectGrid.CurrentRow.Index != -1)
+            {
+                profilePrjNo = profileProjectGrid.CurrentRow.Cells[0].Value.ToString();
+            }
+        }
+
+        private void ProfileViewButton_Click(object sender, EventArgs e)
+        {
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.scheduleBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = true;
+            this.searchEmployeesBG.Visible = false;
+
+            Clear();
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID, profilePrjNo);
+            edit.DisplayNotes(notesGridView);
+            edit.setFlag(1);
+            Console.WriteLine("Edit Project. Flag set to 1");
+        }
+
+        private void SearchEmployeesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (searchEmployeesGrid.CurrentRow.Index != -1)
+            {
+                empNo = searchEmployeesGrid.CurrentRow.Cells[0].Value.ToString();
+                employee.SetID(empNo);
+            }
+        }
+
+        private void profileEditButton2_Click(object sender, EventArgs e)
+        {
+            profile.EditContact(profileEmailTextBox, profilePhoneTextBox);
         }
     }
 }
