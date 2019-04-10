@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleBackPanel = new System.Windows.Forms.Panel();
             this.titleFrontPanel = new System.Windows.Forms.Panel();
             this.signOutLabel = new System.Windows.Forms.Label();
@@ -50,6 +50,9 @@
             this.projectsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
             this.profileBackPanel = new System.Windows.Forms.Panel();
+            this.vacationLabel = new System.Windows.Forms.Label();
+            this.profileEndDate = new System.Windows.Forms.DateTimePicker();
+            this.profileStartDate = new System.Windows.Forms.DateTimePicker();
             this.profileProjectGrid = new System.Windows.Forms.DataGridView();
             this.profileEmailTextBox = new System.Windows.Forms.TextBox();
             this.profilePhoneTextBox = new System.Windows.Forms.TextBox();
@@ -108,6 +111,8 @@
             this.projectPageAddSelfButton = new System.Windows.Forms.Button();
             this.employeePageBG = new System.Windows.Forms.Panel();
             this.employeePagePanel1 = new System.Windows.Forms.Panel();
+            this.employeeEndDate = new System.Windows.Forms.DateTimePicker();
+            this.employeeStartDate = new System.Windows.Forms.DateTimePicker();
             this.employeeProjectGrid = new System.Windows.Forms.DataGridView();
             this.employeeEmailTextBox = new System.Windows.Forms.TextBox();
             this.employeePhoneTextBox = new System.Windows.Forms.TextBox();
@@ -142,11 +147,6 @@
             this.searchProjectsTextBox = new System.Windows.Forms.TextBox();
             this.searchProjectsViewButton = new System.Windows.Forms.Button();
             this.searchProjectsLabel = new System.Windows.Forms.Label();
-            this.profileStartDate = new System.Windows.Forms.DateTimePicker();
-            this.profileEndDate = new System.Windows.Forms.DateTimePicker();
-            this.vacationLabel = new System.Windows.Forms.Label();
-            this.employeeStartDate = new System.Windows.Forms.DateTimePicker();
-            this.employeeEndDate = new System.Windows.Forms.DateTimePicker();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -394,13 +394,38 @@
             this.profileBackPanel.Size = new System.Drawing.Size(300, 327);
             this.profileBackPanel.TabIndex = 13;
             // 
+            // vacationLabel
+            // 
+            this.vacationLabel.AutoSize = true;
+            this.vacationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.vacationLabel.Location = new System.Drawing.Point(110, 23);
+            this.vacationLabel.Name = "vacationLabel";
+            this.vacationLabel.Size = new System.Drawing.Size(55, 13);
+            this.vacationLabel.TabIndex = 25;
+            this.vacationLabel.Text = "Vacation: ";
+            // 
+            // profileEndDate
+            // 
+            this.profileEndDate.Location = new System.Drawing.Point(72, 62);
+            this.profileEndDate.Name = "profileEndDate";
+            this.profileEndDate.Size = new System.Drawing.Size(200, 20);
+            this.profileEndDate.TabIndex = 24;
+            this.profileEndDate.Value = new System.DateTime(2019, 4, 10, 0, 0, 0, 0);
+            // 
+            // profileStartDate
+            // 
+            this.profileStartDate.Location = new System.Drawing.Point(72, 38);
+            this.profileStartDate.Name = "profileStartDate";
+            this.profileStartDate.Size = new System.Drawing.Size(200, 20);
+            this.profileStartDate.TabIndex = 23;
+            // 
             // profileProjectGrid
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.profileProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.profileProjectGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.profileProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1072,13 +1097,30 @@
             this.employeePagePanel1.Size = new System.Drawing.Size(300, 327);
             this.employeePagePanel1.TabIndex = 13;
             // 
+            // employeeEndDate
+            // 
+            this.employeeEndDate.Enabled = false;
+            this.employeeEndDate.Location = new System.Drawing.Point(53, 93);
+            this.employeeEndDate.Name = "employeeEndDate";
+            this.employeeEndDate.Size = new System.Drawing.Size(200, 20);
+            this.employeeEndDate.TabIndex = 25;
+            this.employeeEndDate.Value = new System.DateTime(2019, 4, 10, 0, 0, 0, 0);
+            // 
+            // employeeStartDate
+            // 
+            this.employeeStartDate.Enabled = false;
+            this.employeeStartDate.Location = new System.Drawing.Point(53, 71);
+            this.employeeStartDate.Name = "employeeStartDate";
+            this.employeeStartDate.Size = new System.Drawing.Size(200, 20);
+            this.employeeStartDate.TabIndex = 24;
+            // 
             // employeeProjectGrid
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.employeeProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            this.employeeProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.employeeProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.employeeProjectGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.employeeProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1283,11 +1325,11 @@
             // 
             // searchEmployeesGrid
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.searchEmployeesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.searchEmployeesGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.searchEmployeesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1384,11 +1426,11 @@
             // 
             // projectsGrid
             // 
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.projectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.projectsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.projectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1473,44 +1515,6 @@
             this.searchProjectsLabel.TabIndex = 14;
             this.searchProjectsLabel.Text = "Search Projects";
             // 
-            // profileStartDate
-            // 
-            this.profileStartDate.Location = new System.Drawing.Point(72, 38);
-            this.profileStartDate.Name = "profileStartDate";
-            this.profileStartDate.Size = new System.Drawing.Size(200, 20);
-            this.profileStartDate.TabIndex = 23;
-            // 
-            // profileEndDate
-            // 
-            this.profileEndDate.Location = new System.Drawing.Point(72, 62);
-            this.profileEndDate.Name = "profileEndDate";
-            this.profileEndDate.Size = new System.Drawing.Size(200, 20);
-            this.profileEndDate.TabIndex = 24;
-            // 
-            // vacationLabel
-            // 
-            this.vacationLabel.AutoSize = true;
-            this.vacationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.vacationLabel.Location = new System.Drawing.Point(110, 23);
-            this.vacationLabel.Name = "vacationLabel";
-            this.vacationLabel.Size = new System.Drawing.Size(55, 13);
-            this.vacationLabel.TabIndex = 25;
-            this.vacationLabel.Text = "Vacation: ";
-            // 
-            // employeeStartDate
-            // 
-            this.employeeStartDate.Location = new System.Drawing.Point(53, 71);
-            this.employeeStartDate.Name = "employeeStartDate";
-            this.employeeStartDate.Size = new System.Drawing.Size(200, 20);
-            this.employeeStartDate.TabIndex = 24;
-            // 
-            // employeeEndDate
-            // 
-            this.employeeEndDate.Location = new System.Drawing.Point(53, 93);
-            this.employeeEndDate.Name = "employeeEndDate";
-            this.employeeEndDate.Size = new System.Drawing.Size(200, 20);
-            this.employeeEndDate.TabIndex = 25;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1519,14 +1523,14 @@
             this.ClientSize = new System.Drawing.Size(928, 582);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
+            this.Controls.Add(this.profileBG);
+            this.Controls.Add(this.formBGTemp);
+            this.Controls.Add(this.scheduleBG);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
-            this.Controls.Add(this.profileBG);
-            this.Controls.Add(this.formBGTemp);
-            this.Controls.Add(this.scheduleBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
