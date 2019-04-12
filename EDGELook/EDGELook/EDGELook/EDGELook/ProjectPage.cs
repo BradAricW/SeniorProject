@@ -140,12 +140,13 @@ namespace EDGELook
             assigned.Columns[0].Width = 77;
             assigned.Columns[1].Width = 80;
             //populate unassigned grid
-            MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT fname, lname FROM Employee e WHERE(not exists(SELECT * FROM WorksOn w WHERE prjNo = '" + projectID + "' AND e.employeeID = w.employeeID)) OR(not exists(SELECT * FROM WorksOn x WHERE e.employeeID = x.employeeID))", conn);
+            MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT fname, lname, hoursavail FROM Employee e WHERE(not exists(SELECT * FROM WorksOn w WHERE prjNo = '" + projectID + "' AND e.employeeID = w.employeeID)) OR(not exists(SELECT * FROM WorksOn x WHERE e.employeeID = x.employeeID))", conn);
             DataTable table2 = new DataTable();
             da2.Fill(table2);
             unassigned.DataSource = table2;
-            unassigned.Columns[0].Width = 77;
-            unassigned.Columns[1].Width = 80;
+            unassigned.Columns[0].Width = 55;
+            unassigned.Columns[1].Width = 55;
+            unassigned.Columns[2].Width = 47;
             conn.Close();
 
         }
