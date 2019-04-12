@@ -14,7 +14,7 @@ using MySql.Data.MySqlClient;
 
 namespace EDGELook
 {
-    class EditProjectPage
+    class ProjectPage
     {
         private string  projectNum;
         private string  projectDesc;
@@ -129,6 +129,27 @@ namespace EDGELook
 
         } // END ADDNOTES
 
+        public void DisplayEmployees(DataGridView unassigned, DataGridView assigned)
+        {
+            conn.Open();
+            //populate assigned gird
+            MySqlDataAdapter da = new MySqlDataAdapter("select fname, lname from Employee e, WorksOn w where w.employeeID = e.employeeID AND w.prjNo = '" + projectID + "';", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            assigned.DataSource = table;
+            assigned.Columns[0].Width = 77;
+            assigned.Columns[1].Width = 80;
+            //populate unassigned grid
+            MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT fname, lname FROM Employee e WHERE(not exists(SELECT * FROM WorksOn w WHERE prjNo = '" + projectID + "' AND e.employeeID = w.employeeID)) OR(not exists(SELECT * FROM WorksOn x WHERE e.employeeID = x.employeeID))", conn);
+            DataTable table2 = new DataTable();
+            da2.Fill(table2);
+            unassigned.DataSource = table2;
+            unassigned.Columns[0].Width = 77;
+            unassigned.Columns[1].Width = 80;
+            conn.Close();
+
+        }
+
         // Displays Notes in the Edit Project Page
         public void DisplayNotes(DataGridView grid)
         {
@@ -156,7 +177,7 @@ namespace EDGELook
         {
             String setHours = "";
             conn.Open();
-            String getHours = "SELECT hoursAvail FROM Employee WHERE " + eID + " == E.employeeID;";
+            String getHours = "SELECT hoursAvail FROM Employee E WHERE " + eID + " = E.employeeID;";
             MySqlCommand cmd6 = new MySqlCommand(getHours, this.conn);
             MySqlDataReader reader3 = cmd6.ExecuteReader();
             int checkHours = int.Parse(getHours);
@@ -164,12 +185,12 @@ namespace EDGELook
                 if (myselfButton == true)
                 {
 
-                    String getMyID = "SELECT employeeID FROM Employee as E WHERE " + eID + " == E.employeeID;"; //login ID from employee table
+                    String getMyID = "SELECT employeeID FROM Employee as E WHERE " + eID + " = E.employeeID;"; //login ID from employee table
                     MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     //check how we get correct project number
-                    String getProjectID = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
+                    String getProjectID = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " = P.prjNo;";
                     MySqlCommand cmd2 = new MySqlCommand(getProjectID, this.conn);
                     MySqlDataReader reader1 = cmd2.ExecuteReader();
 
@@ -205,7 +226,8 @@ namespace EDGELook
             }
             
             else {
-                String error = "error"; //how to show this
+                MessageBox.Show("Not enough hours available to be added to project.");
+                //String error = "error"; //how to show this
             }
             String ret = firstName + " " + lastName + " " + setHours;
             return ret;
@@ -241,7 +263,10 @@ namespace EDGELook
 
         } //END REMOVEEMPLOYEE: MM and SZ   
 
-        
+        public void EditID(String newID)
+        {
+            projectID = newID;
+        }
 
 
     } // END INTERNAL CLASS EDGELOOK

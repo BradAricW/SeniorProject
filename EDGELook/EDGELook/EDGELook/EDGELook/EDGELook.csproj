@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConn.cs" />
-    <Compile Include="EditProjectPage.cs" />
+    <Compile Include="ProjectPage.cs" />
     <Compile Include="EmployeePage.cs" />
     <Compile Include="LoginPage.cs" />
     <Compile Include="MainForm.cs">

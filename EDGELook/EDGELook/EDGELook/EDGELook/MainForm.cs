@@ -19,7 +19,7 @@ namespace EDGELook
         
         LoginPage login;
         //private int loginResult;
-        EditProjectPage edit = new EditProjectPage();
+        ProjectPage edit = new ProjectPage();
         EmployeePage employee = new EmployeePage();
         private DBConn dbconn;
         private MySqlConnection conn;
@@ -177,8 +177,10 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
 
             Clear();
+            edit.EditID(testPrjNo);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID, testPrjNo);
             edit.DisplayNotes(notesGridView);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.setFlag(1);
             Console.WriteLine("Edit Project. Flag set to 1");
         }
@@ -216,18 +218,19 @@ namespace EDGELook
             String lastName = "";
 
             //edit.AssignEmployee(addedMyself, hours, eID);
-            if (this.projectPageToBeAssignedListBox.SelectedIndex >= 0)
-            {
-                this.projectPageToBeAssignedListBox.Items.RemoveAt(this.projectPageEmployeeList.SelectedIndex);
-                String ret = "";
-                String fullName = this.projectPageEmployeeList.ToString();
-                string[] names = fullName.Split(' ');
-                firstName = names[0];
-                lastName = names[1];
-                ret = edit.AssignEmployee(addedMyself, hours, eID, firstName, lastName);
-                projectPageEmployeeList.Items.Add(ret);
+            /* if (this.projectPageToBeAssignedListBox.SelectedIndex >= 0)
+             {
+                 this.projectPageToBeAssignedListBox.Items.RemoveAt(this.projectPageEmployeeList.SelectedIndex);
+                 String ret = "";
+                 String fullName = this.projectPageEmployeeList.ToString();
+                 string[] names = fullName.Split(' ');
+                 firstName = names[0];
+                 lastName = names[1];
+                 ret = edit.AssignEmployee(addedMyself, hours, eID, firstName, lastName);
+                 projectPageEmployeeList.Items.Add(ret); 
 
-            } //SZ, MM: add self button
+             } //SZ, MM: add self button 
+             NOTE: Was not working even before I changed to grid, definitely doesn't now. -Brad */
         }
 
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
@@ -250,7 +253,7 @@ namespace EDGELook
             String firstName = "";
             String lastName = "";
             //edit.RemoveEmployee(firstName, lastName);
-            if(this.projectPageEmployeeList.SelectedIndex >= 0)
+            /*if(this.projectPageEmployeeList.SelectedIndex >= 0)
             {
                 this.projectPageEmployeeList.Items.RemoveAt(this.projectPageEmployeeList.SelectedIndex);
                 String ret = "";
@@ -261,7 +264,7 @@ namespace EDGELook
                 ret = edit.RemoveEmployee(firstName, lastName, eID);
                 projectPageToBeAssignedListBox.Items.Add(ret);
 
-            }
+            } Same note as before: wasn't working, changed to grid, now needs to be rewritten -Brad*/
         }
 
         private void ProjectPageEmployeeList_SelectedIndexChanged(object sender, EventArgs e)
@@ -334,8 +337,10 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
 
             Clear();
+            edit.EditID(profilePrjNo);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID, profilePrjNo);
             edit.DisplayNotes(notesGridView);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.setFlag(1);
             Console.WriteLine("Edit Project. Flag set to 1");
         }
@@ -349,7 +354,7 @@ namespace EDGELook
             }
         }
 
-        private void profileEditButton2_Click(object sender, EventArgs e)
+        private void ProfileEditButton2_Click(object sender, EventArgs e)
         {
             profile.EditContact(profileEmailTextBox, profilePhoneTextBox);
         }
