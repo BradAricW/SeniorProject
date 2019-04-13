@@ -76,12 +76,30 @@ namespace EDGELook
             else if (flag == 0)
             { // if its a new project
 
-                String addProject = ("INSERT INTO Project (prjNo, prjLeader, description, prjPhase, dueDate, deliverables, hoursNeeded, prjStatus)" + 
-                                             "VALUES ('" + projectNum + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectPhase + "', '" + projectDueDates + "', '" + projectDeliverables + "', '" + projectHours + "', '" + projectStatus + "');");
-                MySqlCommand cmd = new MySqlCommand(addProject, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show(addProject);
-                MessageBox.Show("Project Added");
+                //Checks for a duplicate project
+                string prj = null;
+                String getPrjDup = "SELECT  prjNo FROM Project WHERE prjNo = '" + this.projectNum + "';";
+                MySqlCommand cmd1 = new MySqlCommand(getPrjDup, this.conn);
+                MySqlDataReader reader = cmd1.ExecuteReader();
+                while (reader.Read())
+                {
+                    prj = reader.GetString("prjNo");
+                }
+              
+                if (prj != null)
+                {
+                    MessageBox.Show("Duplicate Project");
+                }
+                else
+                {
+
+                    String addProject = ("INSERT INTO Project (prjNo, prjLeader, description, prjPhase, dueDate, deliverables, hoursNeeded, prjStatus)" +
+                                                 "VALUES ('" + projectNum + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectPhase + "', '" + projectDueDates + "', '" + projectDeliverables + "', '" + projectHours + "', '" + projectStatus + "');");
+                    MySqlCommand cmd = new MySqlCommand(addProject, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show(addProject);
+                    MessageBox.Show("Project Added");
+                }
             }
             else
             {
@@ -120,12 +138,16 @@ namespace EDGELook
 
         public void AddNotes(int? eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
         {
+            //Don't need validation here because NOW() will always make the entry unique
+            string pid = projectPagePNumBox.Text;          
             conn.Open();
-            String notes = "INSERT INTO Notes (employeeID, prjNo, nDate, notes) VALUES (" + eID + ", \"" + projectPagePNumBox.Text + "\", NOW(), '" + projectPageNotesBox.Text + "'); ";
+            String notes = "INSERT INTO Notes (employeeID, prjNo, nDate, notes) VALUES (" + eID + ", '" + pid + "', NOW(), '" + projectPageNotesBox.Text + "'); ";
             MySqlCommand cmd = new MySqlCommand(notes, conn);
             cmd.ExecuteNonQuery();
             projectPageNotesBox.Text = "";
             conn.Close();
+            
+           
 
         } // END ADDNOTES
 
