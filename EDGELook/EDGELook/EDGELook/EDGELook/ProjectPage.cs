@@ -196,6 +196,8 @@ namespace EDGELook
                 MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
                 Console.WriteLine(cmd1.ExecuteNonQuery());
 
+                //update hours in employee table hoursAvail - hours
+
                 String setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + eID + "';";
                 MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
                 Console.WriteLine(cmd5.ExecuteNonQuery());
@@ -204,64 +206,55 @@ namespace EDGELook
 
             
         }
-        public String AssignEmployee(Boolean myselfButton, int hours, int? eID, String firstName, String lastName)
+        public void AssignEmployee(int hours, String firstName, String lastName)
         {
-            String setHours = "";
+            //String setHours = "";
+            //conn.Open();
+                
+
             conn.Open();
-            String getHours = "SELECT hoursAvail FROM Employee E WHERE " + eID + " = E.employeeID;";
-            MySqlCommand cmd6 = new MySqlCommand(getHours, this.conn);
-            MySqlDataReader reader3 = cmd6.ExecuteReader();
-            int checkHours = int.Parse(getHours);
-            if(hours <= checkHours) {
-                if (myselfButton == true)
-                {
+            //Get ID through Email or from input box
+            int empID = 0;
+            String getID = "SELECT employeeID FROM Employee E WHERE E.fname  = '" + firstName + "' AND  E.lname  = '" + lastName + "';";
+            MySqlCommand cmd = new MySqlCommand(getID, this.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                empID = reader.GetInt32("employeeID");
+            }
+            
+            conn.Close();
 
-                    String getMyID = "SELECT employeeID FROM Employee as E WHERE " + eID + " = E.employeeID;"; //login ID from employee table
-                    MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
+            conn.Open();
+            int hoursAvail = 0;
+            String getHours = "SELECT hoursAvail FROM Employee E WHERE " + empID + " = E.employeeID;";
+            MySqlCommand cmd1 = new MySqlCommand(getHours, this.conn);
+            MySqlDataReader reader1 = cmd1.ExecuteReader();
+            while (reader1.Read())
+            {
+                hoursAvail = reader1.GetInt32("hoursAvail");
+            }
+            conn.Close();
 
-                    //check how we get correct project number
-                    String getProjectID = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " = P.prjNo;";
-                    MySqlCommand cmd2 = new MySqlCommand(getProjectID, this.conn);
-                    MySqlDataReader reader1 = cmd2.ExecuteReader();
-
-                    String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + getMyID + "\'," + getProjectID + "\');";
-                    MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
-                    Console.WriteLine(cmd1.ExecuteNonQuery());
-
-                    conn.Close();
-                }
-                else
-                {
-
-                    //conn.Open();
-                    //Get ID through Email or from input box
-                    String otherID = " ";
-
-                    String getProjectID2 = "SELECT prjNo FROM Project as P WHERE " + this.projectID + " == P.prjNo;";
-                    MySqlCommand cmd3 = new MySqlCommand(getProjectID2, this.conn);
-                    MySqlDataReader reader2 = cmd3.ExecuteReader();
-                        
-                    String setotherID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (\'" + otherID + "\'," + getProjectID2 + "\');";
-                    MySqlCommand cmd4 = new MySqlCommand(setotherID, this.conn);
-                    Console.WriteLine(cmd4.ExecuteNonQuery());
-                    conn.Close();
-                }
-
+            if(hours <= hoursAvail) 
+            {
                 conn.Open();
 
-                setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + eID + "';";
+                String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (" + empID + ",\'" + projectID + "');";
+                MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
+                Console.WriteLine(cmd2.ExecuteNonQuery());
+
+                //update hours in employee table hoursAvail - hours
+
+                String setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + empID + "';";
                 MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
                 Console.WriteLine(cmd5.ExecuteNonQuery());
                 conn.Close();
             }
-            
-            else {
+            else 
+            {
                 MessageBox.Show("Not enough hours available to be added to project.");
-                //String error = "error"; //how to show this
             }
-            String ret = firstName + " " + lastName + " " + setHours;
-            return ret;
 
         } //END ASSIGNEMPLOYEE: MM and SZ
 

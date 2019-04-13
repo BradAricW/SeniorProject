@@ -296,8 +296,12 @@ namespace EDGELook
 
         private void ProjectPageAddEmployeeButton_Click(object sender, EventArgs e)
         {
-            Boolean addMyself = false;
-            edit.AssignEmployee(addMyself, hours, eID, "", "" );
+            String fname = "Iris";
+            String lname = "Ivy";
+            hours = int.Parse(projectPageEditEmployeeText.Text);
+            edit.AssignEmployee(hours, fname, lname);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+
         } //SZ, MM: add employee button 
 
         private void ProjectPageEditEmployeeText_TextChanged(object sender, EventArgs e)
