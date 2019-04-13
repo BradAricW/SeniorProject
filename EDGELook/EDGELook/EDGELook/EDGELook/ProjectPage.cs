@@ -261,16 +261,34 @@ namespace EDGELook
             if(hours <= hoursAvail) 
             {
                 conn.Open();
-
-                String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (" + empID + ",\'" + projectID + "');";
-                MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
-                Console.WriteLine(cmd2.ExecuteNonQuery());
-
+                //this ensures the program doesn't crash due to duplicate entries in the db
+                string dupId = null;
+                String getEmpDup = "SELECT  employeeID FROM WorksOn WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
+                MySqlCommand cmddup = new MySqlCommand(getEmpDup, this.conn);
+                MySqlDataReader reader2 = cmddup.ExecuteReader();
+                while (reader2.Read())
+                {
+                    dupId = reader2.GetString("employeeID");
+                }
+                conn.Close();
+                if (dupId != null)
+                {
+                    MessageBox.Show("Duplicate Employee on Project, Hours Updated");
+                }
+                else
+                {
+                    conn.Open();
+                    String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (" + empID + ",\'" + projectID + "');";
+                    MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
+                    Console.WriteLine(cmd2.ExecuteNonQuery());
+                    conn.Close();
+                }
                 //update hours in employee table hoursAvail - hours
-
+                conn.Open();
                 String setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + empID + "';";
                 MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
                 Console.WriteLine(cmd5.ExecuteNonQuery());
+                
                 conn.Close();
             }
             else 
