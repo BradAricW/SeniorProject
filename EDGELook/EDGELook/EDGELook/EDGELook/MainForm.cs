@@ -213,9 +213,16 @@ namespace EDGELook
 
         private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
         {
-            Boolean addedMyself = true;
-            String firstName = "";
-            String lastName = "";
+            //Boolean addedMyself = true;
+            //String firstName = "";
+            //String lastName = "";
+
+            hours = int.Parse(projectPageEditEmployeeText.Text); //get hours from input box
+
+            //String ret = "";
+            edit.AssignMyself(hours, eID);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+
 
             //edit.AssignEmployee(addedMyself, hours, eID);
             /* if (this.projectPageToBeAssignedListBox.SelectedIndex >= 0)

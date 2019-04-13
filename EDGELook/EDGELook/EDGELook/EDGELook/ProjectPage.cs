@@ -133,12 +133,13 @@ namespace EDGELook
         {
             conn.Open();
             //populate assigned gird
-            MySqlDataAdapter da = new MySqlDataAdapter("select fname, lname from Employee e, WorksOn w where w.employeeID = e.employeeID AND w.prjNo = '" + projectID + "';", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("select fname, lname, hours from Employee e, WorksOn w where w.employeeID = e.employeeID AND w.prjNo = '" + projectID + "';", conn);
             DataTable table = new DataTable();
             da.Fill(table);
             assigned.DataSource = table;
-            assigned.Columns[0].Width = 77;
-            assigned.Columns[1].Width = 80;
+            assigned.Columns[0].Width = 55;
+            assigned.Columns[1].Width = 55;
+            assigned.Columns[1].Width = 47;
             //populate unassigned grid
             MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT fname, lname, hoursavail FROM Employee e WHERE(not exists(SELECT * FROM WorksOn w WHERE prjNo = '" + projectID + "' AND e.employeeID = w.employeeID)) OR(not exists(SELECT * FROM WorksOn x WHERE e.employeeID = x.employeeID))", conn);
             DataTable table2 = new DataTable();
@@ -173,6 +174,35 @@ namespace EDGELook
             da.Fill(table);
             projectsGrid.DataSource = table;
             conn.Close();
+        }
+
+        public void AssignMyself(int hours, int? eID)
+        {
+            conn.Open();
+            int hoursAvail = 0;
+            String getHours = "SELECT hoursAvail FROM Employee E WHERE " + eID + " = E.employeeID;";
+            MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                hoursAvail = reader.GetInt32("hoursAvail");
+            }
+            conn.Close();
+            if(hours <= hoursAvail) 
+            {
+                conn.Open();
+
+                String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (" + eID + ",\'" + projectID + "');";
+                MySqlCommand cmd1 = new MySqlCommand(setMyID, this.conn);
+                Console.WriteLine(cmd1.ExecuteNonQuery());
+
+                String setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + eID + "';";
+                MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
+                Console.WriteLine(cmd5.ExecuteNonQuery());
+                conn.Close();
+            }
+
+            
         }
         public String AssignEmployee(Boolean myselfButton, int hours, int? eID, String firstName, String lastName)
         {
