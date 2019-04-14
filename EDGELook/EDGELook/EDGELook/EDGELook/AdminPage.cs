@@ -54,5 +54,19 @@ namespace EDGELook
         {
             conn = newConn;          
         }
+        public void removeEmployee(TextBox employeeIDBox)
+        {
+            int employeeRem = -1;
+            try { employeeRem = int.Parse(employeeIDBox.Text); }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conn.Open();
+            string deleteEmployee = "DELETE FROM Employee WHERE employeeID = '" + employeeRem + "';";
+            MySqlCommand cmd = new MySqlCommand(deleteEmployee, conn);
+            Console.WriteLine(cmd.ExecuteNonQuery());
+            conn.Close();
+        }
     }
 }
