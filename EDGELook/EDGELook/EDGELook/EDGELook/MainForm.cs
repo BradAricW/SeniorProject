@@ -28,7 +28,7 @@ namespace EDGELook
         private int hours;
         private String testPrjNo;
         private String profilePrjNo;
-        private String empNo;
+        private String empNo, tempEID;
         private Boolean isAdmin = false;
 
         public MainForm()
@@ -73,7 +73,8 @@ namespace EDGELook
                 if(isAdmin == true)
                 {
                     admin = new AdminPage();
-                    admin.Setup(conn);                   
+                    admin.Setup(conn);
+                    this.adminLabel.Visible = true;
                 }
             }
             passBox.Text = "";
@@ -92,6 +93,8 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
+            this.adminLabel.Visible = false;
+            this.adminBackPanel.Visible = false;
 
             //clear all data
             this.Clear();
@@ -105,6 +108,7 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
+            this.adminBackPanel.Visible = false;
             this.Clear();
 
             profile.GetHours(profileHoursTextBox);
@@ -121,6 +125,7 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = true;
+            this.adminBackPanel.Visible = false;
             this.Clear();
 
             //dbconn = new DBConn();
@@ -138,6 +143,7 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = true;
             this.searchProjectsBG.Visible = false;
+            this.adminBackPanel.Visible = false;
             this.Clear();
 
             employee.ListEmployees(searchEmployeesGrid, eID);
@@ -151,6 +157,7 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
+            this.adminBackPanel.Visible = false;
             this.Clear();
         }
 
@@ -167,6 +174,7 @@ namespace EDGELook
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
+            this.adminBackPanel.Visible = false;
 
             employee.GetHours(employeePageHoursBox);
             employee.GetEmail(employeeEmailTextBox);
@@ -183,6 +191,7 @@ namespace EDGELook
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
 
             Clear();
             edit.EditID(testPrjNo);
@@ -201,6 +210,7 @@ namespace EDGELook
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
 
             Clear();
             edit.setFlag(0);
@@ -283,26 +293,6 @@ namespace EDGELook
             } Same note as before: wasn't working, changed to grid, now needs to be rewritten -Brad*/
         }
 
-        private void ProjectPageEmployeeList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EmployeeStartTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EmployeeEndTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EmployeePageHoursBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ProjectPageAddEmployeeButton_Click(object sender, EventArgs e)
         {
             String fname = "Iris";
@@ -333,17 +323,21 @@ namespace EDGELook
 
         private void ProjectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (projectsGrid.CurrentRow.Index != -1)
+            if (projectsGrid.SelectedCells.Count > 0)
             {
-                testPrjNo = projectsGrid.CurrentRow.Cells[0].Value.ToString();
+                int selectedRowIndex = projectsGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = projectsGrid.Rows[selectedRowIndex];
+                testPrjNo = selectedRow.Cells[0].Value.ToString();
             }
         }
 
         private void ProfileProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (profileProjectGrid.CurrentRow.Index != -1)
+            if (profileProjectGrid.SelectedCells.Count > 0)
             {
-                profilePrjNo = profileProjectGrid.CurrentRow.Cells[0].Value.ToString();
+                int selectedRowIndex = profileProjectGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = profileProjectGrid.Rows[selectedRowIndex];
+                profilePrjNo = selectedRow.Cells[0].Value.ToString();
             }
         }
 
@@ -355,6 +349,7 @@ namespace EDGELook
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
 
             Clear();
             edit.EditID(profilePrjNo);
@@ -367,9 +362,11 @@ namespace EDGELook
 
         private void SearchEmployeesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (searchEmployeesGrid.CurrentRow.Index != -1)
+            if (searchEmployeesGrid.SelectedCells.Count > 0)
             {
-                empNo = searchEmployeesGrid.CurrentRow.Cells[0].Value.ToString();
+                int selectedRowIndex = searchEmployeesGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = searchEmployeesGrid.Rows[selectedRowIndex];
+                empNo = selectedRow.Cells[0].Value.ToString();
                 employee.SetID(empNo);
             }
         }
@@ -377,6 +374,57 @@ namespace EDGELook
         private void ProfileEditButton2_Click(object sender, EventArgs e)
         {
             profile.EditContact(profileEmailTextBox, profilePhoneTextBox);
+        }
+
+        private void AdminLabel_Click(object sender, EventArgs e)
+        {
+            isAdmin = profile.getAdmin();
+            if (isAdmin == true)
+            {
+                this.searchProjectsBG.Visible = false;
+                this.profileBG.Visible = false;
+                this.scheduleBG.Visible = false;
+                this.employeePageBG.Visible = false;
+                this.projectPageBG.Visible = false;
+                this.searchEmployeesBG.Visible = false;
+                this.adminBackPanel.Visible = true;
+
+                admin.DisplayEmployees(adminEmployeeGrid);
+
+            }
+        }
+
+        private void AdminRemoveUserButton_Click(object sender, EventArgs e)
+        {
+            admin.RemoveEmployee(tempEID);
+            admin.DisplayEmployees(adminEmployeeGrid);
+        }
+
+        private void AdminUpdateUserButton_Click(object sender, EventArgs e)
+        {
+            admin.UpdateEmployee(tempEID, adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox);
+            admin.DisplayEmployees(adminEmployeeGrid);
+        }
+
+        private void AdminSelectUserButton_Click(object sender, EventArgs e)
+        {
+            admin.SelectEmployee(tempEID, adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox);
+        }
+
+        private void AdminAddUserButton_Click(object sender, EventArgs e)
+        {
+            admin.NewEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminPassBox, adminHoursBox, adminCheckBox);
+            admin.DisplayEmployees(adminEmployeeGrid);
+        }
+
+        private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (adminEmployeeGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = adminEmployeeGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = adminEmployeeGrid.Rows[selectedRowIndex];
+                tempEID = selectedRow.Cells[0].Value.ToString();  
+            }
         }
     }
 }

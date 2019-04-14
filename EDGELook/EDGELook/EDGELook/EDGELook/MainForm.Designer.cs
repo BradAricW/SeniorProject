@@ -34,8 +34,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.titleBackPanel = new System.Windows.Forms.Panel();
             this.titleFrontPanel = new System.Windows.Forms.Panel();
+            this.adminLabel = new System.Windows.Forms.Label();
             this.signOutLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.loginPanel = new System.Windows.Forms.Panel();
@@ -149,6 +151,29 @@
             this.searchProjectsTextBox = new System.Windows.Forms.TextBox();
             this.searchProjectsViewButton = new System.Windows.Forms.Button();
             this.searchProjectsLabel = new System.Windows.Forms.Label();
+            this.adminBackPanel = new System.Windows.Forms.Panel();
+            this.adminMainPanel = new System.Windows.Forms.Panel();
+            this.adminNoteLabel = new System.Windows.Forms.Label();
+            this.adminRemoveUserButton = new System.Windows.Forms.Button();
+            this.adminUpdateUserButton = new System.Windows.Forms.Button();
+            this.adminSelectUserButton = new System.Windows.Forms.Button();
+            this.adminAddUserButton = new System.Windows.Forms.Button();
+            this.adminEmployeeGrid = new System.Windows.Forms.DataGridView();
+            this.adminCheckBox = new System.Windows.Forms.CheckBox();
+            this.adminHoursLabel = new System.Windows.Forms.Label();
+            this.adminPhoneLabel = new System.Windows.Forms.Label();
+            this.adminPassLabel = new System.Windows.Forms.Label();
+            this.adminEmailLabel = new System.Windows.Forms.Label();
+            this.adminLNameLabel = new System.Windows.Forms.Label();
+            this.adminFNameLabel = new System.Windows.Forms.Label();
+            this.adminEIDLabel = new System.Windows.Forms.Label();
+            this.adminHoursBox = new System.Windows.Forms.TextBox();
+            this.adminPhoneBox = new System.Windows.Forms.TextBox();
+            this.adminPassBox = new System.Windows.Forms.TextBox();
+            this.adminEmailBox = new System.Windows.Forms.TextBox();
+            this.adminLNameBox = new System.Windows.Forms.TextBox();
+            this.adminFNameBox = new System.Windows.Forms.TextBox();
+            this.adminEmployeeIDBox = new System.Windows.Forms.TextBox();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -175,6 +200,9 @@
             this.searchProjectsBG.SuspendLayout();
             this.searchProjectsPageBackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).BeginInit();
+            this.adminBackPanel.SuspendLayout();
+            this.adminMainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -189,12 +217,26 @@
             // titleFrontPanel
             // 
             this.titleFrontPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.titleFrontPanel.Controls.Add(this.adminLabel);
             this.titleFrontPanel.Controls.Add(this.signOutLabel);
             this.titleFrontPanel.Controls.Add(this.titleLabel);
             this.titleFrontPanel.Location = new System.Drawing.Point(0, 0);
             this.titleFrontPanel.Name = "titleFrontPanel";
             this.titleFrontPanel.Size = new System.Drawing.Size(925, 55);
             this.titleFrontPanel.TabIndex = 0;
+            // 
+            // adminLabel
+            // 
+            this.adminLabel.AutoSize = true;
+            this.adminLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminLabel.ForeColor = System.Drawing.Color.White;
+            this.adminLabel.Location = new System.Drawing.Point(12, 9);
+            this.adminLabel.Name = "adminLabel";
+            this.adminLabel.Size = new System.Drawing.Size(94, 16);
+            this.adminLabel.TabIndex = 3;
+            this.adminLabel.Text = "System Admin";
+            this.adminLabel.Visible = false;
+            this.adminLabel.Click += new System.EventHandler(this.AdminLabel_Click);
             // 
             // signOutLabel
             // 
@@ -316,7 +358,7 @@
             this.taskbarMenu.Controls.Add(this.homeButton);
             this.taskbarMenu.Location = new System.Drawing.Point(0, 65);
             this.taskbarMenu.Name = "taskbarMenu";
-            this.taskbarMenu.Size = new System.Drawing.Size(925, 40);
+            this.taskbarMenu.Size = new System.Drawing.Size(910, 40);
             this.taskbarMenu.TabIndex = 12;
             this.taskbarMenu.Visible = false;
             // 
@@ -425,6 +467,8 @@
             // 
             // profileProjectGrid
             // 
+            this.profileProjectGrid.AllowUserToAddRows = false;
+            this.profileProjectGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
@@ -439,6 +483,7 @@
             this.profileProjectGrid.Name = "profileProjectGrid";
             this.profileProjectGrid.ReadOnly = true;
             this.profileProjectGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.profileProjectGrid.RowTemplate.ReadOnly = true;
             this.profileProjectGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.profileProjectGrid.Size = new System.Drawing.Size(300, 99);
             this.profileProjectGrid.TabIndex = 22;
@@ -662,9 +707,12 @@
             // 
             // notesGridView
             // 
+            this.notesGridView.AllowUserToAddRows = false;
+            this.notesGridView.AllowUserToDeleteRows = false;
             this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.notesGridView.Location = new System.Drawing.Point(0, 60);
             this.notesGridView.Name = "notesGridView";
+            this.notesGridView.RowTemplate.ReadOnly = true;
             this.notesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.notesGridView.Size = new System.Drawing.Size(300, 360);
             this.notesGridView.TabIndex = 8;
@@ -951,6 +999,8 @@
             // 
             // projectPageOnProjectGrid
             // 
+            this.projectPageOnProjectGrid.AllowUserToAddRows = false;
+            this.projectPageOnProjectGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
@@ -959,6 +1009,7 @@
             this.projectPageOnProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectPageOnProjectGrid.Location = new System.Drawing.Point(0, 282);
             this.projectPageOnProjectGrid.Name = "projectPageOnProjectGrid";
+            this.projectPageOnProjectGrid.RowTemplate.ReadOnly = true;
             this.projectPageOnProjectGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.projectPageOnProjectGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.projectPageOnProjectGrid.Size = new System.Drawing.Size(200, 108);
@@ -966,6 +1017,8 @@
             // 
             // projectPageAssignmentGrid
             // 
+            this.projectPageAssignmentGrid.AllowUserToAddRows = false;
+            this.projectPageAssignmentGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
@@ -974,6 +1027,7 @@
             this.projectPageAssignmentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectPageAssignmentGrid.Location = new System.Drawing.Point(0, 59);
             this.projectPageAssignmentGrid.Name = "projectPageAssignmentGrid";
+            this.projectPageAssignmentGrid.RowTemplate.ReadOnly = true;
             this.projectPageAssignmentGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.projectPageAssignmentGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.projectPageAssignmentGrid.Size = new System.Drawing.Size(200, 108);
@@ -1115,7 +1169,7 @@
             // employeeEndDate
             // 
             this.employeeEndDate.Enabled = false;
-            this.employeeEndDate.Location = new System.Drawing.Point(53, 93);
+            this.employeeEndDate.Location = new System.Drawing.Point(60, 94);
             this.employeeEndDate.Name = "employeeEndDate";
             this.employeeEndDate.Size = new System.Drawing.Size(200, 20);
             this.employeeEndDate.TabIndex = 25;
@@ -1124,13 +1178,15 @@
             // employeeStartDate
             // 
             this.employeeStartDate.Enabled = false;
-            this.employeeStartDate.Location = new System.Drawing.Point(53, 71);
+            this.employeeStartDate.Location = new System.Drawing.Point(60, 71);
             this.employeeStartDate.Name = "employeeStartDate";
             this.employeeStartDate.Size = new System.Drawing.Size(200, 20);
             this.employeeStartDate.TabIndex = 24;
             // 
             // employeeProjectGrid
             // 
+            this.employeeProjectGrid.AllowUserToAddRows = false;
+            this.employeeProjectGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
@@ -1145,20 +1201,21 @@
             this.employeeProjectGrid.Name = "employeeProjectGrid";
             this.employeeProjectGrid.ReadOnly = true;
             this.employeeProjectGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.employeeProjectGrid.RowTemplate.ReadOnly = true;
             this.employeeProjectGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeeProjectGrid.Size = new System.Drawing.Size(300, 92);
             this.employeeProjectGrid.TabIndex = 23;
             // 
             // employeeEmailTextBox
             // 
-            this.employeeEmailTextBox.Location = new System.Drawing.Point(69, 164);
+            this.employeeEmailTextBox.Location = new System.Drawing.Point(59, 166);
             this.employeeEmailTextBox.Name = "employeeEmailTextBox";
             this.employeeEmailTextBox.Size = new System.Drawing.Size(150, 20);
             this.employeeEmailTextBox.TabIndex = 18;
             // 
             // employeePhoneTextBox
             // 
-            this.employeePhoneTextBox.Location = new System.Drawing.Point(69, 141);
+            this.employeePhoneTextBox.Location = new System.Drawing.Point(60, 140);
             this.employeePhoneTextBox.Name = "employeePhoneTextBox";
             this.employeePhoneTextBox.Size = new System.Drawing.Size(150, 20);
             this.employeePhoneTextBox.TabIndex = 17;
@@ -1169,7 +1226,6 @@
             this.employeePageHoursBox.Name = "employeePageHoursBox";
             this.employeePageHoursBox.Size = new System.Drawing.Size(35, 20);
             this.employeePageHoursBox.TabIndex = 14;
-            this.employeePageHoursBox.TextChanged += new System.EventHandler(this.EmployeePageHoursBox_TextChanged);
             // 
             // employeePageEmailLabel
             // 
@@ -1189,7 +1245,7 @@
             this.employeePagePhoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.employeePagePhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeePagePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePagePhoneLabel.Location = new System.Drawing.Point(8, 145);
+            this.employeePagePhoneLabel.Location = new System.Drawing.Point(3, 142);
             this.employeePagePhoneLabel.Name = "employeePagePhoneLabel";
             this.employeePagePhoneLabel.Size = new System.Drawing.Size(59, 15);
             this.employeePagePhoneLabel.TabIndex = 11;
@@ -1340,6 +1396,8 @@
             // 
             // searchEmployeesGrid
             // 
+            this.searchEmployeesGrid.AllowUserToAddRows = false;
+            this.searchEmployeesGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
@@ -1354,6 +1412,7 @@
             this.searchEmployeesGrid.Name = "searchEmployeesGrid";
             this.searchEmployeesGrid.ReadOnly = true;
             this.searchEmployeesGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.searchEmployeesGrid.RowTemplate.ReadOnly = true;
             this.searchEmployeesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.searchEmployeesGrid.Size = new System.Drawing.Size(300, 238);
             this.searchEmployeesGrid.TabIndex = 19;
@@ -1441,6 +1500,8 @@
             // 
             // projectsGrid
             // 
+            this.projectsGrid.AllowUserToAddRows = false;
+            this.projectsGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
@@ -1455,6 +1516,7 @@
             this.projectsGrid.Name = "projectsGrid";
             this.projectsGrid.ReadOnly = true;
             this.projectsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.projectsGrid.RowTemplate.ReadOnly = true;
             this.projectsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.projectsGrid.Size = new System.Drawing.Size(300, 238);
             this.projectsGrid.TabIndex = 18;
@@ -1530,22 +1592,268 @@
             this.searchProjectsLabel.TabIndex = 14;
             this.searchProjectsLabel.Text = "Search Projects";
             // 
+            // adminBackPanel
+            // 
+            this.adminBackPanel.Controls.Add(this.adminMainPanel);
+            this.adminBackPanel.Location = new System.Drawing.Point(0, 106);
+            this.adminBackPanel.Name = "adminBackPanel";
+            this.adminBackPanel.Size = new System.Drawing.Size(910, 465);
+            this.adminBackPanel.TabIndex = 23;
+            this.adminBackPanel.Visible = false;
+            // 
+            // adminMainPanel
+            // 
+            this.adminMainPanel.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.adminMainPanel.Controls.Add(this.adminNoteLabel);
+            this.adminMainPanel.Controls.Add(this.adminRemoveUserButton);
+            this.adminMainPanel.Controls.Add(this.adminUpdateUserButton);
+            this.adminMainPanel.Controls.Add(this.adminSelectUserButton);
+            this.adminMainPanel.Controls.Add(this.adminAddUserButton);
+            this.adminMainPanel.Controls.Add(this.adminEmployeeGrid);
+            this.adminMainPanel.Controls.Add(this.adminCheckBox);
+            this.adminMainPanel.Controls.Add(this.adminHoursLabel);
+            this.adminMainPanel.Controls.Add(this.adminPhoneLabel);
+            this.adminMainPanel.Controls.Add(this.adminPassLabel);
+            this.adminMainPanel.Controls.Add(this.adminEmailLabel);
+            this.adminMainPanel.Controls.Add(this.adminLNameLabel);
+            this.adminMainPanel.Controls.Add(this.adminFNameLabel);
+            this.adminMainPanel.Controls.Add(this.adminEIDLabel);
+            this.adminMainPanel.Controls.Add(this.adminHoursBox);
+            this.adminMainPanel.Controls.Add(this.adminPhoneBox);
+            this.adminMainPanel.Controls.Add(this.adminPassBox);
+            this.adminMainPanel.Controls.Add(this.adminEmailBox);
+            this.adminMainPanel.Controls.Add(this.adminLNameBox);
+            this.adminMainPanel.Controls.Add(this.adminFNameBox);
+            this.adminMainPanel.Controls.Add(this.adminEmployeeIDBox);
+            this.adminMainPanel.Location = new System.Drawing.Point(15, 15);
+            this.adminMainPanel.Name = "adminMainPanel";
+            this.adminMainPanel.Size = new System.Drawing.Size(882, 438);
+            this.adminMainPanel.TabIndex = 0;
+            // 
+            // adminNoteLabel
+            // 
+            this.adminNoteLabel.Location = new System.Drawing.Point(656, 252);
+            this.adminNoteLabel.Name = "adminNoteLabel";
+            this.adminNoteLabel.Size = new System.Drawing.Size(200, 160);
+            this.adminNoteLabel.TabIndex = 22;
+            this.adminNoteLabel.Text = resources.GetString("adminNoteLabel.Text");
+            // 
+            // adminRemoveUserButton
+            // 
+            this.adminRemoveUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.adminRemoveUserButton.FlatAppearance.BorderSize = 0;
+            this.adminRemoveUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminRemoveUserButton.ForeColor = System.Drawing.Color.White;
+            this.adminRemoveUserButton.Location = new System.Drawing.Point(656, 222);
+            this.adminRemoveUserButton.Name = "adminRemoveUserButton";
+            this.adminRemoveUserButton.Size = new System.Drawing.Size(200, 23);
+            this.adminRemoveUserButton.TabIndex = 21;
+            this.adminRemoveUserButton.Text = "Remove User";
+            this.adminRemoveUserButton.UseVisualStyleBackColor = false;
+            this.adminRemoveUserButton.Click += new System.EventHandler(this.AdminRemoveUserButton_Click);
+            // 
+            // adminUpdateUserButton
+            // 
+            this.adminUpdateUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.adminUpdateUserButton.FlatAppearance.BorderSize = 0;
+            this.adminUpdateUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminUpdateUserButton.ForeColor = System.Drawing.Color.White;
+            this.adminUpdateUserButton.Location = new System.Drawing.Point(656, 193);
+            this.adminUpdateUserButton.Name = "adminUpdateUserButton";
+            this.adminUpdateUserButton.Size = new System.Drawing.Size(200, 23);
+            this.adminUpdateUserButton.TabIndex = 20;
+            this.adminUpdateUserButton.Text = "Update User";
+            this.adminUpdateUserButton.UseVisualStyleBackColor = false;
+            this.adminUpdateUserButton.Click += new System.EventHandler(this.AdminUpdateUserButton_Click);
+            // 
+            // adminSelectUserButton
+            // 
+            this.adminSelectUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.adminSelectUserButton.FlatAppearance.BorderSize = 0;
+            this.adminSelectUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminSelectUserButton.ForeColor = System.Drawing.Color.White;
+            this.adminSelectUserButton.Location = new System.Drawing.Point(656, 165);
+            this.adminSelectUserButton.Name = "adminSelectUserButton";
+            this.adminSelectUserButton.Size = new System.Drawing.Size(200, 23);
+            this.adminSelectUserButton.TabIndex = 19;
+            this.adminSelectUserButton.Text = "Select User";
+            this.adminSelectUserButton.UseVisualStyleBackColor = false;
+            this.adminSelectUserButton.Click += new System.EventHandler(this.AdminSelectUserButton_Click);
+            // 
+            // adminAddUserButton
+            // 
+            this.adminAddUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.adminAddUserButton.FlatAppearance.BorderSize = 0;
+            this.adminAddUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminAddUserButton.ForeColor = System.Drawing.Color.White;
+            this.adminAddUserButton.Location = new System.Drawing.Point(656, 136);
+            this.adminAddUserButton.Name = "adminAddUserButton";
+            this.adminAddUserButton.Size = new System.Drawing.Size(200, 23);
+            this.adminAddUserButton.TabIndex = 18;
+            this.adminAddUserButton.Text = "Add User";
+            this.adminAddUserButton.UseVisualStyleBackColor = false;
+            this.adminAddUserButton.Click += new System.EventHandler(this.AdminAddUserButton_Click);
+            // 
+            // adminEmployeeGrid
+            // 
+            this.adminEmployeeGrid.AllowUserToAddRows = false;
+            this.adminEmployeeGrid.AllowUserToDeleteRows = false;
+            this.adminEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adminEmployeeGrid.Location = new System.Drawing.Point(26, 135);
+            this.adminEmployeeGrid.Name = "adminEmployeeGrid";
+            this.adminEmployeeGrid.RowTemplate.ReadOnly = true;
+            this.adminEmployeeGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.adminEmployeeGrid.ShowEditingIcon = false;
+            this.adminEmployeeGrid.Size = new System.Drawing.Size(620, 285);
+            this.adminEmployeeGrid.TabIndex = 17;
+            this.adminEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdminEmployeeGrid_CellContentClick);
+            // 
+            // adminCheckBox
+            // 
+            this.adminCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminCheckBox.Location = new System.Drawing.Point(685, 32);
+            this.adminCheckBox.Name = "adminCheckBox";
+            this.adminCheckBox.Size = new System.Drawing.Size(150, 24);
+            this.adminCheckBox.TabIndex = 16;
+            this.adminCheckBox.Text = "Is User an Admin?";
+            this.adminCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // adminHoursLabel
+            // 
+            this.adminHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminHoursLabel.Location = new System.Drawing.Point(446, 75);
+            this.adminHoursLabel.Name = "adminHoursLabel";
+            this.adminHoursLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminHoursLabel.TabIndex = 14;
+            this.adminHoursLabel.Text = "Available Hours: ";
+            this.adminHoursLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminPhoneLabel
+            // 
+            this.adminPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPhoneLabel.Location = new System.Drawing.Point(236, 75);
+            this.adminPhoneLabel.Name = "adminPhoneLabel";
+            this.adminPhoneLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminPhoneLabel.TabIndex = 13;
+            this.adminPhoneLabel.Text = "Phone #: ";
+            this.adminPhoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminPassLabel
+            // 
+            this.adminPassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPassLabel.Location = new System.Drawing.Point(656, 75);
+            this.adminPassLabel.Name = "adminPassLabel";
+            this.adminPassLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminPassLabel.TabIndex = 12;
+            this.adminPassLabel.Text = "Default/Reset Password: ";
+            this.adminPassLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminEmailLabel
+            // 
+            this.adminEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminEmailLabel.Location = new System.Drawing.Point(26, 75);
+            this.adminEmailLabel.Name = "adminEmailLabel";
+            this.adminEmailLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminEmailLabel.TabIndex = 11;
+            this.adminEmailLabel.Text = "EMail Address: ";
+            this.adminEmailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminLNameLabel
+            // 
+            this.adminLNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminLNameLabel.Location = new System.Drawing.Point(446, 20);
+            this.adminLNameLabel.Name = "adminLNameLabel";
+            this.adminLNameLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminLNameLabel.TabIndex = 10;
+            this.adminLNameLabel.Text = "Last Name: ";
+            this.adminLNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminFNameLabel
+            // 
+            this.adminFNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminFNameLabel.Location = new System.Drawing.Point(236, 20);
+            this.adminFNameLabel.Name = "adminFNameLabel";
+            this.adminFNameLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminFNameLabel.TabIndex = 9;
+            this.adminFNameLabel.Text = "First Name: ";
+            this.adminFNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminEIDLabel
+            // 
+            this.adminEIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminEIDLabel.Location = new System.Drawing.Point(26, 20);
+            this.adminEIDLabel.Name = "adminEIDLabel";
+            this.adminEIDLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminEIDLabel.TabIndex = 8;
+            this.adminEIDLabel.Text = "Employee ID: ";
+            this.adminEIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminHoursBox
+            // 
+            this.adminHoursBox.Location = new System.Drawing.Point(446, 100);
+            this.adminHoursBox.Name = "adminHoursBox";
+            this.adminHoursBox.Size = new System.Drawing.Size(200, 20);
+            this.adminHoursBox.TabIndex = 6;
+            // 
+            // adminPhoneBox
+            // 
+            this.adminPhoneBox.Location = new System.Drawing.Point(236, 100);
+            this.adminPhoneBox.Name = "adminPhoneBox";
+            this.adminPhoneBox.Size = new System.Drawing.Size(200, 20);
+            this.adminPhoneBox.TabIndex = 5;
+            // 
+            // adminPassBox
+            // 
+            this.adminPassBox.Location = new System.Drawing.Point(656, 100);
+            this.adminPassBox.Name = "adminPassBox";
+            this.adminPassBox.Size = new System.Drawing.Size(200, 20);
+            this.adminPassBox.TabIndex = 4;
+            // 
+            // adminEmailBox
+            // 
+            this.adminEmailBox.Location = new System.Drawing.Point(26, 100);
+            this.adminEmailBox.Name = "adminEmailBox";
+            this.adminEmailBox.Size = new System.Drawing.Size(200, 20);
+            this.adminEmailBox.TabIndex = 3;
+            // 
+            // adminLNameBox
+            // 
+            this.adminLNameBox.Location = new System.Drawing.Point(446, 45);
+            this.adminLNameBox.Name = "adminLNameBox";
+            this.adminLNameBox.Size = new System.Drawing.Size(200, 20);
+            this.adminLNameBox.TabIndex = 2;
+            // 
+            // adminFNameBox
+            // 
+            this.adminFNameBox.Location = new System.Drawing.Point(236, 45);
+            this.adminFNameBox.Name = "adminFNameBox";
+            this.adminFNameBox.Size = new System.Drawing.Size(200, 20);
+            this.adminFNameBox.TabIndex = 1;
+            // 
+            // adminEmployeeIDBox
+            // 
+            this.adminEmployeeIDBox.Location = new System.Drawing.Point(26, 45);
+            this.adminEmployeeIDBox.Name = "adminEmployeeIDBox";
+            this.adminEmployeeIDBox.Size = new System.Drawing.Size(200, 20);
+            this.adminEmployeeIDBox.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(928, 582);
+            this.ClientSize = new System.Drawing.Size(910, 571);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.projectPageBG);
-            this.Controls.Add(this.loginBG);
-            this.Controls.Add(this.profileBG);
+            this.Controls.Add(this.adminBackPanel);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.scheduleBG);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
+            this.Controls.Add(this.projectPageBG);
+            this.Controls.Add(this.loginBG);
+            this.Controls.Add(this.profileBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -1588,6 +1896,10 @@
             this.searchProjectsPageBackPanel.ResumeLayout(false);
             this.searchProjectsPageBackPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).EndInit();
+            this.adminBackPanel.ResumeLayout(false);
+            this.adminMainPanel.ResumeLayout(false);
+            this.adminMainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1709,6 +2021,30 @@
         private System.Windows.Forms.DateTimePicker employeeStartDate;
         private System.Windows.Forms.DataGridView projectPageOnProjectGrid;
         private System.Windows.Forms.DataGridView projectPageAssignmentGrid;
+        private System.Windows.Forms.Label adminLabel;
+        private System.Windows.Forms.Panel adminBackPanel;
+        private System.Windows.Forms.Panel adminMainPanel;
+        private System.Windows.Forms.Label adminPassLabel;
+        private System.Windows.Forms.Label adminEmailLabel;
+        private System.Windows.Forms.Label adminLNameLabel;
+        private System.Windows.Forms.Label adminFNameLabel;
+        private System.Windows.Forms.Label adminEIDLabel;
+        private System.Windows.Forms.TextBox adminHoursBox;
+        private System.Windows.Forms.TextBox adminPhoneBox;
+        private System.Windows.Forms.TextBox adminPassBox;
+        private System.Windows.Forms.TextBox adminEmailBox;
+        private System.Windows.Forms.TextBox adminLNameBox;
+        private System.Windows.Forms.TextBox adminFNameBox;
+        private System.Windows.Forms.TextBox adminEmployeeIDBox;
+        private System.Windows.Forms.Button adminRemoveUserButton;
+        private System.Windows.Forms.Button adminUpdateUserButton;
+        private System.Windows.Forms.Button adminSelectUserButton;
+        private System.Windows.Forms.Button adminAddUserButton;
+        private System.Windows.Forms.DataGridView adminEmployeeGrid;
+        private System.Windows.Forms.CheckBox adminCheckBox;
+        private System.Windows.Forms.Label adminHoursLabel;
+        private System.Windows.Forms.Label adminPhoneLabel;
+        private System.Windows.Forms.Label adminNoteLabel;
     }
 }
 

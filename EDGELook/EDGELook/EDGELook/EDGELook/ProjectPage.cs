@@ -155,15 +155,15 @@ namespace EDGELook
         {
             conn.Open();
             //populate assigned gird
-            MySqlDataAdapter da = new MySqlDataAdapter("select fname, lname, hours from Employee e, WorksOn w where w.employeeID = e.employeeID AND w.prjNo = '" + projectID + "';", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("select fname, lname, hoursAvail from Employee e, WorksOn w where w.employeeID = e.employeeID AND w.prjNo = '" + projectID + "';", conn);
             DataTable table = new DataTable();
             da.Fill(table);
             assigned.DataSource = table;
             assigned.Columns[0].Width = 55;
             assigned.Columns[1].Width = 55;
-            assigned.Columns[1].Width = 47;
+            assigned.Columns[2].Width = 47;
             //populate unassigned grid
-            MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT fname, lname, hoursavail FROM Employee e WHERE(not exists(SELECT * FROM WorksOn w WHERE prjNo = '" + projectID + "' AND e.employeeID = w.employeeID)) OR(not exists(SELECT * FROM WorksOn x WHERE e.employeeID = x.employeeID))", conn);
+            MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT fname, lname, hoursAvail FROM Employee e WHERE(not exists(SELECT * FROM WorksOn w WHERE prjNo = '" + projectID + "' AND e.employeeID = w.employeeID)) OR(not exists(SELECT * FROM WorksOn x WHERE e.employeeID = x.employeeID))", conn);
             DataTable table2 = new DataTable();
             da2.Fill(table2);
             unassigned.DataSource = table2;

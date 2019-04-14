@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="adminNoteLabel.Text" xml:space="preserve">
+    <value>"Add User" creates a new entry with the above inputs
+
+"Select User" populates above boxes with data from selection on left
+
+"Update User" commits the above updates to the existing user (Does not update password)
+
+"Remove User" removes a user from the database</value>
+  </data>
 </root>
