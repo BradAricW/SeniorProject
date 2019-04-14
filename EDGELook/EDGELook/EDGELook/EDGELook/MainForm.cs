@@ -18,7 +18,7 @@ namespace EDGELook
     {
         
         LoginPage login;
-        //private int loginResult;
+        AdminPage admin;
         ProjectPage edit = new ProjectPage();
         EmployeePage employee = new EmployeePage();
         private DBConn dbconn;
@@ -29,6 +29,7 @@ namespace EDGELook
         private String testPrjNo;
         private String profilePrjNo;
         private String empNo;
+        private Boolean isAdmin = false;
 
         public MainForm()
         {
@@ -68,8 +69,15 @@ namespace EDGELook
                 profile.GetPhone(profilePhoneTextBox);
                 profile.ListProjects(profileProjectGrid);
                 edit.Setup(conn);
+                isAdmin = profile.getAdmin();
+                if(isAdmin == true)
+                {
+                    admin = new AdminPage();
+                    admin.Setup(conn);                   
+                }
             }
             passBox.Text = "";
+
 
         }
         //private void 

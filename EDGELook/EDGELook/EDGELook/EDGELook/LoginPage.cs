@@ -29,7 +29,7 @@ namespace EDGELook
                 Console.WriteLine(ex.Message);
             }
 
-            String getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND pssword = '" + password + "';";
+            string getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND pssword = '" + password + "';";
             MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -48,6 +48,23 @@ namespace EDGELook
         public void Setup(MySqlConnection newConn)
         {
             conn = newConn;
+        }
+        //This only works after the user logs in and has a connection set up
+        public void ChangePassword(TextBox newPasswordBox)
+        {
+            string newPassword = newPasswordBox.Text;
+            if (newPassword.Length < 6)
+            {
+                MessageBox.Show("Password must be at least 6 characters");
+            }
+            else
+            {
+                conn.Open();
+                string setPassword = "UPDATE EMPLOYEE SET pssword = '" + newPassword + "' WHERE employeeID = " + eID + ";";
+                MySqlCommand cmd = new MySqlCommand(setPassword, conn);
+                Console.WriteLine(cmd.ExecuteNonQuery());
+                conn.Close();
+            }
         }
     }
 }

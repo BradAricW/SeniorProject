@@ -126,5 +126,23 @@ namespace EDGELook
             conn.Close();
             MessageBox.Show("Contact Information Updated");
         }
+        public Boolean getAdmin()
+        {
+            Boolean isAdmin = false;
+            int result = 0;
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT admin FROM Employee WHERE employeeID = '" + this.eID + "';", conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                result = reader.GetInt16("admin");
+            }
+            conn.Close();
+            if(result == 1)
+            {
+                isAdmin = true;              
+            }
+            return isAdmin;
+        }
     }
 }
