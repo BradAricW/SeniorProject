@@ -45,8 +45,8 @@ namespace EDGELook
             login.Setup(conn);
             employee.Setup(conn);
             //QUICK LOGIN
-            //emailBox.Text = "iris@yahoo.com";
-            //passBox.Text = "******";
+            emailBox.Text = "iris@yahoo.com";
+            passBox.Text = "******";
 
             eID = login.Login(emailBox, passBox);
             int success;
@@ -226,6 +226,7 @@ namespace EDGELook
             //dbconn = new DBConn();
             //conn = dbconn.Dbsetup();
             //edit.Setup(conn);
+            
             edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID);
         }
 
@@ -415,6 +416,11 @@ namespace EDGELook
         {
             admin.NewEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminPassBox, adminHoursBox, adminCheckBox);
             admin.DisplayEmployees(adminEmployeeGrid);
+        }
+
+        private void searchProjectsSearchButton_Click(object sender, EventArgs e)
+        {
+            edit.ProjectSearch(searchProjectsTextBox.Text, projectsGrid);
         }
 
         private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
