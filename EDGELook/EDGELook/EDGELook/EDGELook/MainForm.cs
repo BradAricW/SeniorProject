@@ -279,8 +279,10 @@ namespace EDGELook
 
         private void ProjectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
         {
-            String firstName = "";
-            String lastName = "";
+            String firstName = "Iris";
+            String lastName = "Ivy";
+            edit.RemoveEmployee(firstName, lastName);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             //edit.RemoveEmployee(firstName, lastName);
             /*if(this.projectPageEmployeeList.SelectedIndex >= 0)
             {

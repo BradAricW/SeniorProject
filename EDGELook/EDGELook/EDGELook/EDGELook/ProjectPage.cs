@@ -313,33 +313,65 @@ namespace EDGELook
 
         } //END ASSIGNEMPLOYEE: MM and SZ
 
-
-        public String RemoveEmployee(String firstName, String lastName, int? eID)
+        public void RemoveEmployee(String firstName, String lastName)
         { //get first name and last name as parameter?
             conn.Open();
-            String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
-            MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
+            //Get ID through Email or from input box
+            int empID = 0;
+            String getID = "SELECT employeeID FROM Employee E WHERE E.fname  = '" + firstName + "' AND  E.lname  = '" + lastName + "';";
+            MySqlCommand cmd = new MySqlCommand(getID, this.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                empID = reader.GetInt32("employeeID");
+            }
             
-            String getHours = "SELECT hours FROM WorksOn WHERE employeeID == " + getMyID + " ";
-            MySqlCommand cmd2 = new MySqlCommand(getMyID, this.conn);
-            MySqlDataReader reader1 = cmd2.ExecuteReader();
+            conn.Close();
+
+            conn.Open();
+            int hoursAssigned = 0;
+            String getHours = "SELECT hours FROM WorksOn E WHERE " + empID + " = E.employeeID;";
+            MySqlCommand cmd1 = new MySqlCommand(getHours, this.conn);
+            MySqlDataReader reader1 = cmd1.ExecuteReader();
+            while (reader1.Read())
+            {
+                hoursAssigned = reader1.GetInt32("hoursAvail");
+            }
+            conn.Close();
+
+            conn.Open();
+            int hoursAvail = 0;
+            String availGetHours = "SELECT hoursAvail FROM Employee E WHERE " + empID + " = E.employeeID;";
+            MySqlCommand cmd2 = new MySqlCommand(availGetHours, this.conn);
+            MySqlDataReader reader2 = cmd2.ExecuteReader();
+            while (reader2.Read())
+            {
+                hoursAvail = reader2.GetInt32("hoursAvail");
+            }
+            conn.Close();
+            
+
+            //String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
+            //MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
+            //MySqlDataReader reader = cmd.ExecuteReader();
+            
+            //String getHours = "SELECT hours FROM WorksOn WHERE employeeID == " + getMyID + " ";
+            //MySqlCommand cmd2 = new MySqlCommand(getMyID, this.conn);
+            //MySqlDataReader reader1 = cmd2.ExecuteReader();
             //String hours = getHours.ToString();
+            conn.Open();
 
-            String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + getMyID + " ";
-            MySqlCommand cmd1 = new MySqlCommand(removeID, conn);
-            Console.WriteLine(cmd1.ExecuteNonQuery());
-
-            //hoursAvail: fix this to make hoursAvail plus getHours
-            String setHours = "UPDATE Employee SET hoursAvail = '" + getHours + "'WHERE employeeID = '" + eID + "';";
-            MySqlCommand cmd3 = new MySqlCommand(setHours, this.conn);
+            String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + empID + " ";
+            MySqlCommand cmd3 = new MySqlCommand(removeID, conn);
             Console.WriteLine(cmd3.ExecuteNonQuery());
 
-            //conn.Open();
-            conn.Close();
-            String ret = firstName + " " + lastName + " " + getHours;
-            return ret;
+            int totalHours = 0;
+            totalHours = hoursAvail + hoursAssigned;
+            String setHours = "UPDATE Employee SET hoursAvail = '" + totalHours + "'WHERE employeeID = '" + empID + "';";
+            MySqlCommand cmd4 = new MySqlCommand(setHours, this.conn);
+            Console.WriteLine(cmd4.ExecuteNonQuery());
 
+            conn.Close();
         } //END REMOVEEMPLOYEE: MM and SZ   
 
         public void EditID(String newID)
