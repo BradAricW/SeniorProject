@@ -30,6 +30,10 @@ namespace EDGELook
         private String profilePrjNo;
         private String empNo, tempEID;
         private Boolean isAdmin = false;
+        private String assignFirstName;
+        private String assignLastName;
+        private String removeFirstName;
+        private String removeLastName;
 
         public MainForm()
         {
@@ -261,19 +265,19 @@ namespace EDGELook
 
         private void ProjectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
         {
-            String firstName = "Iris";
-            String lastName = "Ivy";
+            //String firstName = "Iris";
+            //String lastName = "Ivy";
             //hours = int.Parse(projectPageEditEmployeeText.Text);
-            edit.RemoveEmployee(firstName, lastName);
+            edit.RemoveEmployee(removeFirstName, removeLastName);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
         } //Remove Employee 
 
         private void ProjectPageAddEmployeeButton_Click(object sender, EventArgs e)
         {
-            String fname = "Iris";
-            String lname = "Ivy";
+            //String fname = "Iris";
+            //String lname = "Ivy";
             hours = int.Parse(projectPageEditEmployeeText.Text);
-            edit.AssignEmployee(hours, fname, lname);
+            edit.AssignEmployee(hours, assignFirstName, assignLastName);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
 
         } //Add Employee
@@ -281,9 +285,8 @@ namespace EDGELook
         private void ProjectPageEditEmployeeText_TextChanged(object sender, EventArgs e)
         {
             
-           // hours = int.Parse(projectPageEditEmployeeText.Text);
             
-        } //SZ, MM: input text box for hours
+        } 
 
 
 
@@ -402,6 +405,35 @@ namespace EDGELook
         {
 
         }
+
+        private void projectPageAssignmentGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (projectPageAssignmentGrid.SelectedCells.Count > 0) {
+
+                int selectedRowIndex = projectPageAssignmentGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = projectPageAssignmentGrid.Rows[selectedRowIndex];
+                assignFirstName = selectedRow.Cells[0].Value.ToString();
+                assignLastName = selectedRow.Cells[1].Value.ToString();
+
+            }
+
+
+        } //Employees not on Project (to assign)
+
+        private void projectPageOnProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (projectPageOnProjectGrid.SelectedCells.Count > 0)
+            {
+
+                int selectedRowIndex = projectPageOnProjectGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = projectPageOnProjectGrid.Rows[selectedRowIndex];
+                removeFirstName = selectedRow.Cells[0].Value.ToString();
+                removeLastName = selectedRow.Cells[1].Value.ToString();
+
+            }
+
+        } //Employees on Project (to remove)
+
 
         private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

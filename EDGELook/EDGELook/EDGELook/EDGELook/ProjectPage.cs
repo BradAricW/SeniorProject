@@ -313,7 +313,7 @@ namespace EDGELook
             }
             else 
             {
-                MessageBox.Show("Not enough hours available to be added to project.");
+                MessageBox.Show("Not enough hours available to be added to project." + firstName + "" + lastName + "");
             }
 
         } //END ASSIGNEMPLOYEE: MM and SZ
