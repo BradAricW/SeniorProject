@@ -44,9 +44,11 @@ namespace EDGELook
             login = new LoginPage();
             login.Setup(conn);
             employee.Setup(conn);
+            /*
             //QUICK LOGIN
             emailBox.Text = "iris@yahoo.com";
             passBox.Text = "******";
+            */
 
             eID = login.Login(emailBox, passBox);
             int success;
@@ -328,7 +330,8 @@ namespace EDGELook
             {
                 int selectedRowIndex = projectsGrid.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = projectsGrid.Rows[selectedRowIndex];
-                testPrjNo = selectedRow.Cells[0].Value.ToString();
+                //testPrjNo = selectedRow.Cells[0].Value.ToString();
+                testPrjNo = selectedRow.Cells[1].Value.ToString();
             }
         }
 
@@ -421,6 +424,11 @@ namespace EDGELook
         private void searchProjectsSearchButton_Click(object sender, EventArgs e)
         {
             edit.ProjectSearch(searchProjectsTextBox.Text, projectsGrid);
+        }
+
+        private void projectPageAddHoursButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)

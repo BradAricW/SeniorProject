@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\EDGELook",
-    "\\EDGELook\\EdgeLook1",
-    "\\Project",
-    "\\Test"
+    "\\EDGELook\\EDGELook",
+    "\\EDGELook\\EDGELook\\EDGELook"
   ],
-  "SelectedNode": "\\EDGELook\\EdgeLook1",
+  "SelectedNode": "\\EDGELook\\EDGELook\\EDGELook\\EDGELook.sln",
   "PreviewInSolutionExplorer": false
 }
