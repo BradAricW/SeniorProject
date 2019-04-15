@@ -245,12 +245,9 @@ namespace EDGELook
         }
         public void AssignEmployee(int hours, String firstName, String lastName)
         {
-            //String setHours = "";
-            //conn.Open();
-                
-
+            
             conn.Open();
-            //Get ID through Email or from input box
+          
             int empID = 0;
             String getID = "SELECT employeeID FROM Employee E WHERE E.fname  = '" + firstName + "' AND  E.lname  = '" + lastName + "';";
             MySqlCommand cmd = new MySqlCommand(getID, this.conn);
@@ -299,11 +296,19 @@ namespace EDGELook
                     conn.Close();
                 }
                 //update hours in employee table hoursAvail - hours
+                int totalHours = 0;
+                totalHours = hoursAvail - hours; //get new hours available for employee
+
                 conn.Open();
                 String setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + empID + "';";
                 MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
                 Console.WriteLine(cmd5.ExecuteNonQuery());
-                
+                conn.Close();
+
+                conn.Open();
+                String setAvailHours = "UPDATE Employee SET hoursAvail = '" + totalHours + "'WHERE employeeID = '" + empID + "';";
+                MySqlCommand cmd6 = new MySqlCommand(setAvailHours, this.conn);
+                Console.WriteLine(cmd6.ExecuteNonQuery());
                 conn.Close();
             }
             else 
@@ -335,7 +340,7 @@ namespace EDGELook
             MySqlDataReader reader1 = cmd1.ExecuteReader();
             while (reader1.Read())
             {
-                hoursAssigned = reader1.GetInt32("hoursAvail");
+                hoursAssigned = reader1.GetInt32("hours");
             }
             conn.Close();
 
@@ -350,18 +355,9 @@ namespace EDGELook
             }
             conn.Close();
             
-
-            //String getMyID = "SELECT employeeID FROM Employee WHERE fname = " + firstName + " AND lname = " + lastName + "";
-            //MySqlCommand cmd = new MySqlCommand(getMyID, this.conn);
-            //MySqlDataReader reader = cmd.ExecuteReader();
-            
-            //String getHours = "SELECT hours FROM WorksOn WHERE employeeID == " + getMyID + " ";
-            //MySqlCommand cmd2 = new MySqlCommand(getMyID, this.conn);
-            //MySqlDataReader reader1 = cmd2.ExecuteReader();
-            //String hours = getHours.ToString();
             conn.Open();
 
-            String removeID = "DELETE employeeID FROM WorksOn WHERE employeeID == " + empID + " ";
+            String removeID = "DELETE FROM WorksOn WHERE employeeID = '" + empID + "' ";
             MySqlCommand cmd3 = new MySqlCommand(removeID, conn);
             Console.WriteLine(cmd3.ExecuteNonQuery());
 

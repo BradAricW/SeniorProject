@@ -234,32 +234,14 @@ namespace EDGELook
 
         private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
         {
-            //Boolean addedMyself = true;
-            //String firstName = "";
-            //String lastName = "";
 
             hours = int.Parse(projectPageEditEmployeeText.Text); //get hours from input box
 
-            //String ret = "";
             edit.AssignMyself(hours, eID);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
 
 
-            //edit.AssignEmployee(addedMyself, hours, eID);
-            /* if (this.projectPageToBeAssignedListBox.SelectedIndex >= 0)
-             {
-                 this.projectPageToBeAssignedListBox.Items.RemoveAt(this.projectPageEmployeeList.SelectedIndex);
-                 String ret = "";
-                 String fullName = this.projectPageEmployeeList.ToString();
-                 string[] names = fullName.Split(' ');
-                 firstName = names[0];
-                 lastName = names[1];
-                 ret = edit.AssignEmployee(addedMyself, hours, eID, firstName, lastName);
-                 projectPageEmployeeList.Items.Add(ret); 
-
-             } //SZ, MM: add self button 
-             NOTE: Was not working even before I changed to grid, definitely doesn't now. -Brad */
-        }
+        } //Add Self Button 
 
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
         {
@@ -281,22 +263,10 @@ namespace EDGELook
         {
             String firstName = "Iris";
             String lastName = "Ivy";
+            //hours = int.Parse(projectPageEditEmployeeText.Text);
             edit.RemoveEmployee(firstName, lastName);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-            //edit.RemoveEmployee(firstName, lastName);
-            /*if(this.projectPageEmployeeList.SelectedIndex >= 0)
-            {
-                this.projectPageEmployeeList.Items.RemoveAt(this.projectPageEmployeeList.SelectedIndex);
-                String ret = "";
-                String fullName = this.projectPageEmployeeList.ToString();
-                string[] names = fullName.Split(' ');
-                firstName = names[0];
-                lastName = names[1];
-                ret = edit.RemoveEmployee(firstName, lastName, eID);
-                projectPageToBeAssignedListBox.Items.Add(ret);
-
-            } Same note as before: wasn't working, changed to grid, now needs to be rewritten -Brad*/
-        }
+        } //Remove Employee 
 
         private void ProjectPageAddEmployeeButton_Click(object sender, EventArgs e)
         {
@@ -306,12 +276,12 @@ namespace EDGELook
             edit.AssignEmployee(hours, fname, lname);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
 
-        } //SZ, MM: add employee button 
+        } //Add Employee
 
         private void ProjectPageEditEmployeeText_TextChanged(object sender, EventArgs e)
         {
             
-            hours = int.Parse(projectPageEditEmployeeText.Text);
+           // hours = int.Parse(projectPageEditEmployeeText.Text);
             
         } //SZ, MM: input text box for hours
 
