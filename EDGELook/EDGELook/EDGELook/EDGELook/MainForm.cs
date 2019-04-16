@@ -268,6 +268,7 @@ namespace EDGELook
             //String firstName = "Iris";
             //String lastName = "Ivy";
             //hours = int.Parse(projectPageEditEmployeeText.Text);
+            Console.WriteLine("First = " + removeFirstName + " Last = " + removeLastName);
             edit.RemoveEmployee(removeFirstName, removeLastName);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
         } //Remove Employee 
@@ -276,7 +277,12 @@ namespace EDGELook
         {
             //String fname = "Iris";
             //String lname = "Ivy";
-            hours = int.Parse(projectPageEditEmployeeText.Text);
+            try { hours = int.Parse(projectPageEditEmployeeText.Text); }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.WriteLine("First = " + assignFirstName + " Last = " + assignLastName);
             edit.AssignEmployee(hours, assignFirstName, assignLastName);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
 
@@ -317,6 +323,7 @@ namespace EDGELook
                 int selectedRowIndex = profileProjectGrid.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = profileProjectGrid.Rows[selectedRowIndex];
                 profilePrjNo = selectedRow.Cells[0].Value.ToString();
+                Console.WriteLine(profilePrjNo);
             }
         }
 
@@ -396,44 +403,43 @@ namespace EDGELook
             admin.DisplayEmployees(adminEmployeeGrid);
         }
 
-        private void searchProjectsSearchButton_Click(object sender, EventArgs e)
+        private void SearchProjectsSearchButton_Click(object sender, EventArgs e)
         {
             edit.ProjectSearch(searchProjectsTextBox.Text, projectsGrid);
         }
 
-        private void projectPageAddHoursButton_Click(object sender, EventArgs e)
+        private void ProjectPageAddHoursButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void projectPageAssignmentGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       
+
+        private void ProjectPageAssignmentGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (projectPageAssignmentGrid.SelectedCells.Count > 0) {
 
-                int selectedRowIndex = projectPageAssignmentGrid.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = projectPageAssignmentGrid.Rows[selectedRowIndex];
-                assignFirstName = selectedRow.Cells[0].Value.ToString();
-                assignLastName = selectedRow.Cells[1].Value.ToString();
-
+            int selectedRowIndex = projectPageAssignmentGrid.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = projectPageAssignmentGrid.Rows[selectedRowIndex];
+            assignFirstName = selectedRow.Cells[0].Value.ToString();
+            assignLastName = selectedRow.Cells[1].Value.ToString();
+            Console.WriteLine("First = " + assignFirstName + " Last = " + assignLastName);
             }
+        }
 
-
-        } //Employees not on Project (to assign)
-
-        private void projectPageOnProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ProjectPageOnProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (projectPageOnProjectGrid.SelectedCells.Count > 0)
             {
 
-                int selectedRowIndex = projectPageOnProjectGrid.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = projectPageOnProjectGrid.Rows[selectedRowIndex];
-                removeFirstName = selectedRow.Cells[0].Value.ToString();
-                removeLastName = selectedRow.Cells[1].Value.ToString();
+            int selectedRowIndex = projectPageOnProjectGrid.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = projectPageOnProjectGrid.Rows[selectedRowIndex];
+            removeFirstName = selectedRow.Cells[0].Value.ToString();
+            removeLastName = selectedRow.Cells[1].Value.ToString();
+            Console.WriteLine("First = " + removeFirstName + " Last = " + removeLastName);
 
             }
-
-        } //Employees on Project (to remove)
-
+        }
 
         private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

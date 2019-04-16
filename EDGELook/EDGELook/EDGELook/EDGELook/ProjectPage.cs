@@ -256,12 +256,13 @@ namespace EDGELook
             {
                 empID = reader.GetInt32("employeeID");
             }
+            Console.WriteLine(empID);
             
             conn.Close();
 
             conn.Open();
             int hoursAvail = 0;
-            String getHours = "SELECT hoursAvail FROM Employee E WHERE " + empID + " = E.employeeID;";
+            String getHours = "SELECT hoursAvail FROM Employee E WHERE '" + empID + "' = E.employeeID;";
             MySqlCommand cmd1 = new MySqlCommand(getHours, this.conn);
             MySqlDataReader reader1 = cmd1.ExecuteReader();
             while (reader1.Read())
@@ -290,7 +291,7 @@ namespace EDGELook
                 else
                 {
                     conn.Open();
-                    String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (" + empID + ",\'" + projectID + "');";
+                    String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (" + empID + ",'" + projectID + "');";
                     MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
                     Console.WriteLine(cmd2.ExecuteNonQuery());
                     conn.Close();
