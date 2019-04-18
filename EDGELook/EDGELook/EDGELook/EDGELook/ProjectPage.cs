@@ -203,10 +203,18 @@ namespace EDGELook
             conn.Close();
         }
 
-        public void ProjectSearch(String projSearch, DataGridView projectsGrid)
+        public void ProjectSearch(String projSearch, DataGridView projectsGrid, int passable)
         {
             conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("call Project_Search('" + projSearch + "');", conn);
+            MySqlDataAdapter da;
+            switch (passable) {
+                case 1:  da = new MySqlDataAdapter("call Search_By_Project('" + projSearch + "');", conn); break;
+                case 2:  da = new MySqlDataAdapter("call Search_By_Description('" + projSearch + "');", conn); break;
+                case 3:  da = new MySqlDataAdapter("call Search_By_Lead('" + projSearch + "');", conn); break;
+                default: da = new MySqlDataAdapter("call Project_Search('" + projSearch + "');", conn); break;     
+                    //MessageBox.Show("Nothing Selected"); break;
+        }
+               
             DataTable table = new DataTable();
             da.Fill(table);
             projectsGrid.DataSource = table;

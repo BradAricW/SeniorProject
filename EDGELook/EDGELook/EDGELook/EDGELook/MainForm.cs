@@ -48,11 +48,11 @@ namespace EDGELook
             login = new LoginPage();
             login.Setup(conn);
             employee.Setup(conn);
-            /*
+            
             //QUICK LOGIN
             emailBox.Text = "iris@yahoo.com";
             passBox.Text = "******";
-            */
+            
 
             eID = login.Login(emailBox, passBox);
             int success;
@@ -405,7 +405,28 @@ namespace EDGELook
 
         private void SearchProjectsSearchButton_Click(object sender, EventArgs e)
         {
-            edit.ProjectSearch(searchProjectsTextBox.Text, projectsGrid);
+            bool pRadioChecked = projectNumRadioButton.Checked;
+            bool dRadioChecked = projectDescriptionRadioButton.Checked;
+            bool lRadioChecked = projectLeaderRadioButton.Checked;
+            int passable; 
+
+            if (pRadioChecked == true)
+            {
+                passable = 1;
+            }
+            else if (dRadioChecked == true)
+            {
+                passable = 2;
+            }
+            else if (lRadioChecked == true)
+            {
+                passable = 3;
+            }
+            else
+            {
+                passable = 4;
+            }
+                edit.ProjectSearch(searchProjectsTextBox.Text, projectsGrid, passable);
         }
 
         private void ProjectPageAddHoursButton_Click(object sender, EventArgs e)
