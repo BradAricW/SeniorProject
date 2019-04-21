@@ -84,7 +84,7 @@ namespace EDGELook
             }
             else
             {
-                String deleteEmployee = "DELETE * FROM Employee WHERE employeeID = '" + employeeRem + "';";
+                String deleteEmployee = "update Employee set active = 0 WHERE employeeID = '" + employeeRem + "';";
                 MySqlCommand cmd = new MySqlCommand(deleteEmployee, conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
             }
