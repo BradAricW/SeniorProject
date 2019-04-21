@@ -7,6 +7,7 @@ create table Employee (
     phone varchar(50),
     hoursAvail int,
 	admin boolean,
+	active boolean,
     primary key(employeeID));
     
 create table Project (
@@ -97,6 +98,9 @@ create table Vacation (
  alter table Employee
  add admin boolean;
  
+ alter table Employee
+ add active boolean;
+ 
  update Employee
  set admin = 0
  where employeeID = 322;
@@ -125,5 +129,28 @@ create table Vacation (
  set prjComplete = 1
  where prjNo = 'E349';
  
+ update Employee
+ set active = 1
+ where employeeID = 0;
+ 
+  update Employee
+ set active = 1
+ where employeeID = 123;
+ 
+  update Employee
+ set active = 1
+ where employeeID = 222;
+ 
+  update Employee
+ set active = 1
+ where employeeID = 322;
+ 
+  update Employee
+ set active = 1
+ where employeeID = 420;
+ 
+  update Employee
+ set active = 1
+ where employeeID = 425;
  
  
