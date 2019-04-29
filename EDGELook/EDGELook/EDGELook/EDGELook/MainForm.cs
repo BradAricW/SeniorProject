@@ -462,6 +462,11 @@ namespace EDGELook
             }
         }
 
+        private void searchEmployeesButton_Click(object sender, EventArgs e)
+        {
+            employee.EmployeeSearch(searchEmployeesTextBox.Text, searchEmployeesGrid);
+        }
+
         private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (adminEmployeeGrid.SelectedCells.Count > 0)

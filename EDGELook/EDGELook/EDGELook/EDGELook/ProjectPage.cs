@@ -212,7 +212,6 @@ namespace EDGELook
                 case 2:  da = new MySqlDataAdapter("call Search_By_Description('" + projSearch + "');", conn); break;
                 case 3:  da = new MySqlDataAdapter("call Search_By_Lead('" + projSearch + "');", conn); break;
                 default: da = new MySqlDataAdapter("call Project_Search('" + projSearch + "');", conn); break;     
-                    //MessageBox.Show("Nothing Selected"); break;
         }
                
             DataTable table = new DataTable();

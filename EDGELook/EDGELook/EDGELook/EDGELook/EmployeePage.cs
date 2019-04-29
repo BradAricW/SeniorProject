@@ -93,5 +93,15 @@ namespace EDGELook
             employeeGrid.Columns[1].Width = 125;
             employeeGrid.Columns[2].Width = 125;
         }
+        public void EmployeeSearch(String EmpSearch, DataGridView searchEmployeesGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da;
+            da = new MySqlDataAdapter("call Employee_Search('" + EmpSearch + "');",conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            searchEmployeesGrid.DataSource = table;
+            conn.Close();
+        }
     }
 }
