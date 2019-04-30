@@ -108,7 +108,34 @@ namespace EDGELook
 
         public void UpdateEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox hours, CheckBox admin)
         {
+            int isAdmin;
+               if (admin.Checked)
+            {
+                isAdmin = 1;
+            }
+            else
+            {
+                isAdmin = 0;
+            }
+
+            String fName = firstName.Text;
+            String lName = lastName.Text;
+            String eMail = email.Text;
+            String phoneNum = phone.Text;
+            int empId = Int32.Parse(employeeID.Text);
+            int hoursAvail = Int32.Parse(hours.Text);
+
             conn.Open();
+                String upDateEmployee = ("UPDATE Employee SET employeeID = '" + empId +
+                                                            "', fname = '" + fName +
+                                                            "', lname = '" + lName +
+                                                            "', email = '" + eMail +
+                                                            "', phone = '" + phoneNum +
+                                                            "', hoursAvail = '" + hoursAvail +
+                                                            "', admin = '" + isAdmin +
+                                                            "' WHERE employeeID = '" + selectedEID + "';");
+                MySqlCommand cmd = new MySqlCommand(upDateEmployee, conn);
+                Console.WriteLine(cmd.ExecuteNonQuery());
             conn.Close();
         }
         public void SelectEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox hours, CheckBox admin)
