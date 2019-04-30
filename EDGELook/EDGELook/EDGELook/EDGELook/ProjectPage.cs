@@ -379,7 +379,7 @@ namespace EDGELook
             
                 conn.Open();
 
-                String removeID = "DELETE FROM WorksOn WHERE employeeID = '" + empID + "' ";
+                String removeID = "DELETE FROM WorksOn WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
                 MySqlCommand cmd3 = new MySqlCommand(removeID, conn);
                 Console.WriteLine(cmd3.ExecuteNonQuery());
 
