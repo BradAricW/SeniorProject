@@ -170,4 +170,15 @@ create table Vacation (
  set active = 1
  where employeeID = 425;
  
+ insert into ProjectPhase
+ values('F163','CC','2019-06-11','Site visits');
+ 
+  update Project
+ set prjComplete = 0
+ where prjNo = 'F163';
+ 
+ select E.fname, P.prjNo, P.description, PP.prjPhase, PP.phaseDueDate, P.deliverables, P.hoursNeeded, PP.status
+ from Employee E, Project P, ProjectPhase PP
+ where P.prjLeader = E.employeeID AND P.prjNo = PP.prjNo AND P.prjComplete = 0;
+ 
  
