@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleBackPanel = new System.Windows.Forms.Panel();
             this.titleFrontPanel = new System.Windows.Forms.Panel();
             this.adminLabel = new System.Windows.Forms.Label();
@@ -101,7 +102,6 @@
             this.projectPageDescriptionLabel = new System.Windows.Forms.Label();
             this.projectPagePNumLabel = new System.Windows.Forms.Label();
             this.projectPageUpdateButton = new System.Windows.Forms.Button();
-            this.projectPagePhaseLabel = new System.Windows.Forms.Label();
             this.projectPagePNameLabel = new System.Windows.Forms.Label();
             this.projectPageStatusBox = new System.Windows.Forms.TextBox();
             this.projectPagePanel1 = new System.Windows.Forms.Panel();
@@ -180,6 +180,8 @@
             this.adminFNameBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeIDBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeGrid = new System.Windows.Forms.DataGridView();
+            this.phasesGrid = new System.Windows.Forms.DataGridView();
+            this.phasesLabel = new System.Windows.Forms.Label();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -209,6 +211,7 @@
             this.adminBackPanel.SuspendLayout();
             this.adminMainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phasesGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -475,11 +478,11 @@
             // 
             this.profileProjectGrid.AllowUserToAddRows = false;
             this.profileProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.profileProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.profileProjectGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.profileProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -702,10 +705,14 @@
             // projectPagePanel3
             // 
             this.projectPagePanel3.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.projectPagePanel3.Controls.Add(this.notesGridView);
-            this.projectPagePanel3.Controls.Add(this.projectPageNotesTextBox);
-            this.projectPagePanel3.Controls.Add(this.projectPageAddNotesButton);
-            this.projectPagePanel3.Controls.Add(this.projectPageNotesLabel);
+            this.projectPagePanel3.Controls.Add(this.phasesLabel);
+            this.projectPagePanel3.Controls.Add(this.phasesGrid);
+            this.projectPagePanel3.Controls.Add(this.projectPageDueDateBox);
+            this.projectPagePanel3.Controls.Add(this.projectPageStatusLabel);
+            this.projectPagePanel3.Controls.Add(this.projectPagePhaseBox);
+            this.projectPagePanel3.Controls.Add(this.projectPagePhaseLabel2);
+            this.projectPagePanel3.Controls.Add(this.projectPageDueLabel);
+            this.projectPagePanel3.Controls.Add(this.projectPageStatusBox);
             this.projectPagePanel3.Location = new System.Drawing.Point(585, 20);
             this.projectPagePanel3.Name = "projectPagePanel3";
             this.projectPagePanel3.Size = new System.Drawing.Size(300, 420);
@@ -715,20 +722,20 @@
             // 
             this.notesGridView.AllowUserToAddRows = false;
             this.notesGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.notesGridView.BackgroundColor = System.Drawing.Color.White;
             this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.notesGridView.Location = new System.Drawing.Point(0, 60);
+            this.notesGridView.Location = new System.Drawing.Point(0, 269);
             this.notesGridView.Name = "notesGridView";
             this.notesGridView.RowTemplate.ReadOnly = true;
             this.notesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.notesGridView.Size = new System.Drawing.Size(300, 360);
+            this.notesGridView.Size = new System.Drawing.Size(300, 122);
             this.notesGridView.TabIndex = 8;
             // 
             // projectPageNotesTextBox
             // 
-            this.projectPageNotesTextBox.Location = new System.Drawing.Point(0, 7);
+            this.projectPageNotesTextBox.Location = new System.Drawing.Point(1, 395);
             this.projectPageNotesTextBox.Name = "projectPageNotesTextBox";
             this.projectPageNotesTextBox.Size = new System.Drawing.Size(220, 20);
             this.projectPageNotesTextBox.TabIndex = 7;
@@ -739,7 +746,7 @@
             this.projectPageAddNotesButton.FlatAppearance.BorderSize = 0;
             this.projectPageAddNotesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddNotesButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddNotesButton.Location = new System.Drawing.Point(225, 4);
+            this.projectPageAddNotesButton.Location = new System.Drawing.Point(226, 393);
             this.projectPageAddNotesButton.Name = "projectPageAddNotesButton";
             this.projectPageAddNotesButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageAddNotesButton.TabIndex = 5;
@@ -752,7 +759,7 @@
             this.projectPageNotesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageNotesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageNotesLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageNotesLabel.Location = new System.Drawing.Point(0, 31);
+            this.projectPageNotesLabel.Location = new System.Drawing.Point(0, 240);
             this.projectPageNotesLabel.Name = "projectPageNotesLabel";
             this.projectPageNotesLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPageNotesLabel.TabIndex = 4;
@@ -762,25 +769,22 @@
             // projectPagePanel2
             // 
             this.projectPagePanel2.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.projectPagePanel2.Controls.Add(this.projectPageDueDateBox);
             this.projectPagePanel2.Controls.Add(this.projectPageHoursBox);
+            this.projectPagePanel2.Controls.Add(this.notesGridView);
             this.projectPagePanel2.Controls.Add(this.projectPageDeliverablesBox);
-            this.projectPagePanel2.Controls.Add(this.projectPagePhaseBox);
+            this.projectPagePanel2.Controls.Add(this.projectPageNotesTextBox);
+            this.projectPagePanel2.Controls.Add(this.projectPageAddNotesButton);
             this.projectPagePanel2.Controls.Add(this.projectPageDescriptionBox);
             this.projectPagePanel2.Controls.Add(this.projectPagePNumBox);
-            this.projectPagePanel2.Controls.Add(this.projectPageStatusLabel);
             this.projectPagePanel2.Controls.Add(this.projectPageAddHoursButton);
+            this.projectPagePanel2.Controls.Add(this.projectPageNotesLabel);
             this.projectPagePanel2.Controls.Add(this.projectPageHoursLabel2);
             this.projectPagePanel2.Controls.Add(this.projectPageHoursLabel);
             this.projectPagePanel2.Controls.Add(this.projectPageDeliverablesLabel);
-            this.projectPagePanel2.Controls.Add(this.projectPagePhaseLabel2);
-            this.projectPagePanel2.Controls.Add(this.projectPageDueLabel);
             this.projectPagePanel2.Controls.Add(this.projectPageDescriptionLabel);
             this.projectPagePanel2.Controls.Add(this.projectPagePNumLabel);
             this.projectPagePanel2.Controls.Add(this.projectPageUpdateButton);
-            this.projectPagePanel2.Controls.Add(this.projectPagePhaseLabel);
             this.projectPagePanel2.Controls.Add(this.projectPagePNameLabel);
-            this.projectPagePanel2.Controls.Add(this.projectPageStatusBox);
             this.projectPagePanel2.Location = new System.Drawing.Point(255, 20);
             this.projectPagePanel2.Name = "projectPagePanel2";
             this.projectPagePanel2.Size = new System.Drawing.Size(300, 420);
@@ -788,14 +792,14 @@
             // 
             // projectPageDueDateBox
             // 
-            this.projectPageDueDateBox.Location = new System.Drawing.Point(0, 164);
+            this.projectPageDueDateBox.Location = new System.Drawing.Point(0, 85);
             this.projectPageDueDateBox.Name = "projectPageDueDateBox";
             this.projectPageDueDateBox.Size = new System.Drawing.Size(300, 20);
             this.projectPageDueDateBox.TabIndex = 26;
             // 
             // projectPageHoursBox
             // 
-            this.projectPageHoursBox.Location = new System.Drawing.Point(5, 345);
+            this.projectPageHoursBox.Location = new System.Drawing.Point(91, 216);
             this.projectPageHoursBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -807,14 +811,14 @@
             // 
             // projectPageDeliverablesBox
             // 
-            this.projectPageDeliverablesBox.Location = new System.Drawing.Point(0, 268);
+            this.projectPageDeliverablesBox.Location = new System.Drawing.Point(1, 164);
             this.projectPageDeliverablesBox.Name = "projectPageDeliverablesBox";
             this.projectPageDeliverablesBox.Size = new System.Drawing.Size(300, 20);
             this.projectPageDeliverablesBox.TabIndex = 23;
             // 
             // projectPagePhaseBox
             // 
-            this.projectPagePhaseBox.Location = new System.Drawing.Point(0, 216);
+            this.projectPagePhaseBox.Location = new System.Drawing.Point(0, 33);
             this.projectPagePhaseBox.Name = "projectPagePhaseBox";
             this.projectPagePhaseBox.Size = new System.Drawing.Size(300, 20);
             this.projectPagePhaseBox.TabIndex = 22;
@@ -838,7 +842,7 @@
             this.projectPageStatusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageStatusLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageStatusLabel.Location = new System.Drawing.Point(0, 369);
+            this.projectPageStatusLabel.Location = new System.Drawing.Point(0, 108);
             this.projectPageStatusLabel.Name = "projectPageStatusLabel";
             this.projectPageStatusLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPageStatusLabel.TabIndex = 17;
@@ -851,7 +855,7 @@
             this.projectPageAddHoursButton.FlatAppearance.BorderSize = 0;
             this.projectPageAddHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddHoursButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddHoursButton.Location = new System.Drawing.Point(113, 345);
+            this.projectPageAddHoursButton.Location = new System.Drawing.Point(202, 216);
             this.projectPageAddHoursButton.Name = "projectPageAddHoursButton";
             this.projectPageAddHoursButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageAddHoursButton.TabIndex = 15;
@@ -864,7 +868,7 @@
             this.projectPageHoursLabel2.BackColor = System.Drawing.SystemColors.MenuBar;
             this.projectPageHoursLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageHoursLabel2.ForeColor = System.Drawing.Color.Black;
-            this.projectPageHoursLabel2.Location = new System.Drawing.Point(0, 317);
+            this.projectPageHoursLabel2.Location = new System.Drawing.Point(13, 213);
             this.projectPageHoursLabel2.Name = "projectPageHoursLabel2";
             this.projectPageHoursLabel2.Size = new System.Drawing.Size(300, 26);
             this.projectPageHoursLabel2.TabIndex = 14;
@@ -876,7 +880,7 @@
             this.projectPageHoursLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageHoursLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageHoursLabel.Location = new System.Drawing.Point(0, 291);
+            this.projectPageHoursLabel.Location = new System.Drawing.Point(1, 187);
             this.projectPageHoursLabel.Name = "projectPageHoursLabel";
             this.projectPageHoursLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPageHoursLabel.TabIndex = 13;
@@ -888,7 +892,7 @@
             this.projectPageDeliverablesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageDeliverablesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageDeliverablesLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageDeliverablesLabel.Location = new System.Drawing.Point(0, 239);
+            this.projectPageDeliverablesLabel.Location = new System.Drawing.Point(1, 135);
             this.projectPageDeliverablesLabel.Name = "projectPageDeliverablesLabel";
             this.projectPageDeliverablesLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPageDeliverablesLabel.TabIndex = 11;
@@ -900,7 +904,7 @@
             this.projectPagePhaseLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPagePhaseLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPagePhaseLabel2.ForeColor = System.Drawing.Color.White;
-            this.projectPagePhaseLabel2.Location = new System.Drawing.Point(0, 187);
+            this.projectPagePhaseLabel2.Location = new System.Drawing.Point(0, 4);
             this.projectPagePhaseLabel2.Name = "projectPagePhaseLabel2";
             this.projectPagePhaseLabel2.Size = new System.Drawing.Size(300, 26);
             this.projectPagePhaseLabel2.TabIndex = 9;
@@ -912,7 +916,7 @@
             this.projectPageDueLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageDueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageDueLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageDueLabel.Location = new System.Drawing.Point(0, 135);
+            this.projectPageDueLabel.Location = new System.Drawing.Point(0, 56);
             this.projectPageDueLabel.Name = "projectPageDueLabel";
             this.projectPageDueLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPageDueLabel.TabIndex = 7;
@@ -958,18 +962,6 @@
             this.projectPageUpdateButton.UseVisualStyleBackColor = false;
             this.projectPageUpdateButton.Click += new System.EventHandler(this.ProjectPageUpdateButton_Click);
             // 
-            // projectPagePhaseLabel
-            // 
-            this.projectPagePhaseLabel.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.projectPagePhaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectPagePhaseLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.projectPagePhaseLabel.Location = new System.Drawing.Point(150, 0);
-            this.projectPagePhaseLabel.Name = "projectPagePhaseLabel";
-            this.projectPagePhaseLabel.Size = new System.Drawing.Size(75, 30);
-            this.projectPagePhaseLabel.TabIndex = 1;
-            this.projectPagePhaseLabel.Text = "Phase";
-            this.projectPagePhaseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // projectPagePNameLabel
             // 
             this.projectPagePNameLabel.BackColor = System.Drawing.SystemColors.MenuBar;
@@ -977,14 +969,14 @@
             this.projectPagePNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPagePNameLabel.Location = new System.Drawing.Point(0, 0);
             this.projectPagePNameLabel.Name = "projectPagePNameLabel";
-            this.projectPagePNameLabel.Size = new System.Drawing.Size(150, 30);
+            this.projectPagePNameLabel.Size = new System.Drawing.Size(225, 30);
             this.projectPagePNameLabel.TabIndex = 0;
             this.projectPagePNameLabel.Text = "Project Name";
             this.projectPagePNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // projectPageStatusBox
             // 
-            this.projectPageStatusBox.Location = new System.Drawing.Point(0, 398);
+            this.projectPageStatusBox.Location = new System.Drawing.Point(0, 137);
             this.projectPageStatusBox.Name = "projectPageStatusBox";
             this.projectPageStatusBox.Size = new System.Drawing.Size(300, 20);
             this.projectPageStatusBox.TabIndex = 24;
@@ -1011,11 +1003,11 @@
             // 
             this.projectPageOnProjectGrid.AllowUserToAddRows = false;
             this.projectPageOnProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
-            this.projectPageOnProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.projectPageOnProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.projectPageOnProjectGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageOnProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectPageOnProjectGrid.Location = new System.Drawing.Point(0, 282);
@@ -1031,11 +1023,11 @@
             // 
             this.projectPageAssignmentGrid.AllowUserToAddRows = false;
             this.projectPageAssignmentGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White;
-            this.projectPageAssignmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.projectPageAssignmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.projectPageAssignmentGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageAssignmentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectPageAssignmentGrid.Location = new System.Drawing.Point(0, 59);
@@ -1090,7 +1082,7 @@
             this.projectPageAddEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageAddEmployeeButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddEmployeeButton.Location = new System.Drawing.Point(115, 225);
+            this.projectPageAddEmployeeButton.Location = new System.Drawing.Point(115, 226);
             this.projectPageAddEmployeeButton.Name = "projectPageAddEmployeeButton";
             this.projectPageAddEmployeeButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageAddEmployeeButton.TabIndex = 9;
@@ -1114,7 +1106,7 @@
             // 
             // projectPageEditEmployeeText
             // 
-            this.projectPageEditEmployeeText.Location = new System.Drawing.Point(10, 199);
+            this.projectPageEditEmployeeText.Location = new System.Drawing.Point(10, 200);
             this.projectPageEditEmployeeText.Name = "projectPageEditEmployeeText";
             this.projectPageEditEmployeeText.Size = new System.Drawing.Size(180, 20);
             this.projectPageEditEmployeeText.TabIndex = 7;
@@ -1138,7 +1130,7 @@
             this.projectPageAddSelfButton.FlatAppearance.BorderSize = 0;
             this.projectPageAddSelfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddSelfButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddSelfButton.Location = new System.Drawing.Point(10, 225);
+            this.projectPageAddSelfButton.Location = new System.Drawing.Point(10, 226);
             this.projectPageAddSelfButton.Name = "projectPageAddSelfButton";
             this.projectPageAddSelfButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageAddSelfButton.TabIndex = 3;
@@ -1201,11 +1193,11 @@
             // 
             this.employeeProjectGrid.AllowUserToAddRows = false;
             this.employeeProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            this.employeeProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.employeeProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.employeeProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.employeeProjectGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.employeeProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1412,11 +1404,11 @@
             // 
             this.searchEmployeesGrid.AllowUserToAddRows = false;
             this.searchEmployeesGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
-            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.searchEmployeesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.searchEmployeesGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.searchEmployeesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1576,11 +1568,11 @@
             // 
             this.projectsGrid.AllowUserToAddRows = false;
             this.projectsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.White;
-            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.projectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.projectsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.projectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1891,8 +1883,8 @@
             // 
             this.adminEmployeeGrid.AllowUserToAddRows = false;
             this.adminEmployeeGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.adminEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminEmployeeGrid.Location = new System.Drawing.Point(26, 135);
             this.adminEmployeeGrid.Name = "adminEmployeeGrid";
@@ -1903,6 +1895,33 @@
             this.adminEmployeeGrid.TabIndex = 17;
             this.adminEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdminEmployeeGrid_CellContentClick);
             // 
+            // phasesGrid
+            // 
+            this.phasesGrid.AllowUserToAddRows = false;
+            this.phasesGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.phasesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.phasesGrid.BackgroundColor = System.Drawing.Color.White;
+            this.phasesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.phasesGrid.Location = new System.Drawing.Point(0, 190);
+            this.phasesGrid.Name = "phasesGrid";
+            this.phasesGrid.RowTemplate.ReadOnly = true;
+            this.phasesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.phasesGrid.Size = new System.Drawing.Size(300, 230);
+            this.phasesGrid.TabIndex = 27;
+            // 
+            // phasesLabel
+            // 
+            this.phasesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.phasesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phasesLabel.ForeColor = System.Drawing.Color.White;
+            this.phasesLabel.Location = new System.Drawing.Point(0, 160);
+            this.phasesLabel.Name = "phasesLabel";
+            this.phasesLabel.Size = new System.Drawing.Size(300, 26);
+            this.phasesLabel.TabIndex = 28;
+            this.phasesLabel.Text = "Project Phases";
+            this.phasesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1911,8 +1930,6 @@
             this.ClientSize = new System.Drawing.Size(910, 571);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.searchEmployeesBG);
-            this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
@@ -1920,6 +1937,8 @@
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.scheduleBG);
             this.Controls.Add(this.searchProjectsBG);
+            this.Controls.Add(this.searchEmployeesBG);
+            this.Controls.Add(this.employeePageBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -1966,6 +1985,7 @@
             this.adminMainPanel.ResumeLayout(false);
             this.adminMainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phasesGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2015,7 +2035,6 @@
         private System.Windows.Forms.Label projectPageDescriptionLabel;
         private System.Windows.Forms.Label projectPagePNumLabel;
         private System.Windows.Forms.Button projectPageUpdateButton;
-        private System.Windows.Forms.Label projectPagePhaseLabel;
         private System.Windows.Forms.Label projectPagePNameLabel;
         private System.Windows.Forms.Panel projectPagePanel1;
         private System.Windows.Forms.Button projectPageAddNotesButton;
@@ -2115,6 +2134,8 @@
         private System.Windows.Forms.RadioButton projectLeaderRadioButton;
         private System.Windows.Forms.RadioButton projectDescriptionRadioButton;
         private System.Windows.Forms.RadioButton projectNumRadioButton;
+        private System.Windows.Forms.Label phasesLabel;
+        private System.Windows.Forms.DataGridView phasesGrid;
     }
 }
 
