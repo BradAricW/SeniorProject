@@ -30,6 +30,13 @@ create table WorksOn (
     primary key(employeeID, prjNo),
     foreign key(employeeID) references Employee(employeeID),
     foreign key(prjNo) references Project(prjNo));
+	
+create table projectPhase (
+	prjNo int NOT NULL,
+	prjPhase varchar(30) NOT NULL,
+	phaseDueDate date,
+	primary key(prjNo, prjPhase),
+	foreign key(prjNo) references Project(prjNo));
     
 create table Notes (
 	employeeID int NOT NULL,
