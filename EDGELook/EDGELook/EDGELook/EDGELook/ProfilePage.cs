@@ -86,6 +86,12 @@ namespace EDGELook
             }
             conn.Close();
         }
+
+        public void RemoveVacation(string startDate)
+        {
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = " + eID + " AND startDate = '" + startDate + "';", conn);
+            cmd.ExecuteNonQuery();         
+        }
         public void Setup(MySqlConnection newConn, int? newEmpID)
         {
             conn = newConn;
@@ -130,22 +136,11 @@ namespace EDGELook
         public void ListProjects(DataGridView projectsGrid)
         {
             conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("Select p.prjNo, p.Description from Project p, WorksOn w where p.prjNo = w.prjNo AND w.employeeID = '" + this.eID + "';", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("Select p.prjNo, p.Description, w.hours from Project p, WorksOn w where p.prjNo = w.prjNo AND w.employeeID = '" + this.eID + "';", conn);
             DataTable table = new DataTable();
             da.Fill(table);
             projectsGrid.DataSource = table;
             conn.Close();           
-        }
-        //For the listing of different hours on different projects
-        public void ListWorksOn(DataGridView worksOnGrid)
-        {
-            conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT w.prjNo, p.Description, w.hours FROM Project p, WorksOn w WHERE w.prjNo = p.prjNo AND w.employeeID = '" + eID + "';", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            worksOnGrid.DataSource = table;
-            conn.Close();
-           
         }
 
         public void EditContact(TextBox emailBox, TextBox phoneBox)

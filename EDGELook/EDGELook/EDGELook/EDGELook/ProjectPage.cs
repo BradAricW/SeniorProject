@@ -189,34 +189,6 @@ namespace EDGELook
             conn.Close();
         }
 
-        /*public void AddProjectPhase(TextBox prjPhaseBox, DateTimePicker phaseDueDateBox, TextBox statusBox)
-        {
-            string prjPhase = prjPhaseBox.Text;
-            string dueDate = phaseDueDateBox.Text;
-            string status = statusBox.Text;
-            string dupPhase = null;
-            String getPrjDup = "SELECT prjNo FROM ProjectPhase WHERE prjNo = '" + this.projectNum + "' AND prjPhase = '" + prjPhase + "';";
-            MySqlCommand cmd1 = new MySqlCommand(getPrjDup, this.conn);
-            MySqlDataReader reader = cmd1.ExecuteReader();
-            while (reader.Read())
-            {
-                dupPhase = reader.GetString("prjNo");
-            }
-            reader.Close();
-            if (dupPhase != null)
-            {
-                MessageBox.Show("Duplicate Phase");
-            }
-            else
-            {
-
-                String addProjectPhase = "INSERT INTO ProjectPhase Values('" + projectNum + "','" + prjPhase + "','" + dueDate + "','" + status + "');";
-                MySqlCommand cmd = new MySqlCommand(addProjectPhase, conn);
-                cmd.ExecuteNonQuery();              
-                MessageBox.Show("Project Phase Added");
-            }
-        }*/
-
         public void SetCompleteIncomplete(Boolean complete)
         {
             if(complete == true)
