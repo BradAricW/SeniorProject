@@ -258,12 +258,6 @@ namespace EDGELook
             edit.DisplayNotes(notesGridView);
         }
 
-        private void ProfileEditButton1_Click(object sender, EventArgs e)
-        {
-            profile.EditMyHours(profileHoursTextBox, eID);
-            //profile.EditVacation(profileStartDate, profileEndDate);
-        }
-
         private void ProjectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
         {
             //String firstName = "Iris";

@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleBackPanel = new System.Windows.Forms.Panel();
             this.titleFrontPanel = new System.Windows.Forms.Panel();
             this.adminLabel = new System.Windows.Forms.Label();
@@ -57,28 +59,32 @@
             this.projectsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
             this.profileBackPanel = new System.Windows.Forms.Panel();
-            this.vacationLabel = new System.Windows.Forms.Label();
-            this.profileEndDate = new System.Windows.Forms.DateTimePicker();
-            this.profileStartDate = new System.Windows.Forms.DateTimePicker();
             this.profileProjectGrid = new System.Windows.Forms.DataGridView();
             this.profileEmailTextBox = new System.Windows.Forms.TextBox();
             this.profilePhoneTextBox = new System.Windows.Forms.TextBox();
-            this.profileHoursTextBox = new System.Windows.Forms.TextBox();
             this.profileEmailLabel = new System.Windows.Forms.Label();
             this.profilePhoneLabel = new System.Windows.Forms.Label();
-            this.profileEndLabel = new System.Windows.Forms.Label();
-            this.profileStartLabel = new System.Windows.Forms.Label();
-            this.profileHoursLabel2 = new System.Windows.Forms.Label();
             this.profileProjectsLabel = new System.Windows.Forms.Label();
             this.profileContactLabel = new System.Windows.Forms.Label();
-            this.profileHoursLabel1 = new System.Windows.Forms.Label();
             this.profileViewButton = new System.Windows.Forms.Button();
-            this.profileEditButton2 = new System.Windows.Forms.Button();
-            this.profileEditButton1 = new System.Windows.Forms.Button();
+            this.profileEditContactButton = new System.Windows.Forms.Button();
+            this.vacationLabel = new System.Windows.Forms.Label();
+            this.profileEndDate = new System.Windows.Forms.DateTimePicker();
+            this.profileStartDate = new System.Windows.Forms.DateTimePicker();
+            this.profileHoursTextBox = new System.Windows.Forms.TextBox();
+            this.profileEndLabel = new System.Windows.Forms.Label();
+            this.profileStartLabel = new System.Windows.Forms.Label();
+            this.profileHoursLabel = new System.Windows.Forms.Label();
+            this.profileEditHoursButton = new System.Windows.Forms.Button();
             this.profileLabel = new System.Windows.Forms.Label();
             this.formBGTemp = new System.Windows.Forms.Panel();
             this.loginBG = new System.Windows.Forms.Panel();
             this.profileBG = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.addVacationButton = new System.Windows.Forms.Button();
+            this.vacationsGrid = new System.Windows.Forms.DataGridView();
+            this.profileVacationHoursLabel = new System.Windows.Forms.Label();
+            this.removeVacationButton = new System.Windows.Forms.Button();
             this.projectPageBG = new System.Windows.Forms.Panel();
             this.projectPagePanel3 = new System.Windows.Forms.Panel();
             this.phasesLabel = new System.Windows.Forms.Label();
@@ -110,30 +116,12 @@
             this.projectPageOnProjectGrid = new System.Windows.Forms.DataGridView();
             this.projectPageAssignmentGrid = new System.Windows.Forms.DataGridView();
             this.projectPageEmployeesOnLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.projectPageAssignLabel = new System.Windows.Forms.Label();
+            this.projectPageDesignateLabel = new System.Windows.Forms.Label();
             this.projectPageAddEmployeeButton = new System.Windows.Forms.Button();
             this.projectPageRemoveEmployeeButton = new System.Windows.Forms.Button();
             this.projectPageEditEmployeeText = new System.Windows.Forms.TextBox();
             this.projectPageAssignedLabel = new System.Windows.Forms.Label();
             this.employeePageBG = new System.Windows.Forms.Panel();
-            this.employeePagePanel1 = new System.Windows.Forms.Panel();
-            this.employeeEndDate = new System.Windows.Forms.DateTimePicker();
-            this.employeeStartDate = new System.Windows.Forms.DateTimePicker();
-            this.employeeProjectGrid = new System.Windows.Forms.DataGridView();
-            this.employeeEmailTextBox = new System.Windows.Forms.TextBox();
-            this.employeePhoneTextBox = new System.Windows.Forms.TextBox();
-            this.employeePageHoursBox = new System.Windows.Forms.TextBox();
-            this.employeePageEmailLabel = new System.Windows.Forms.Label();
-            this.employeePagePhoneLabel = new System.Windows.Forms.Label();
-            this.employeePageEndLabel = new System.Windows.Forms.Label();
-            this.employeePageStartLabel = new System.Windows.Forms.Label();
-            this.employeePageHoursLabel2 = new System.Windows.Forms.Label();
-            this.employeePageProjectsLabel = new System.Windows.Forms.Label();
-            this.employeePageContactLabel = new System.Windows.Forms.Label();
-            this.employeePageVacationLabel = new System.Windows.Forms.Label();
-            this.employeePageHoursLabel = new System.Windows.Forms.Label();
-            this.employeePageViewButton = new System.Windows.Forms.Button();
             this.employeePageLabel = new System.Windows.Forms.Label();
             this.scheduleBG = new System.Windows.Forms.Panel();
             this.schedulePageTempCalendar = new System.Windows.Forms.MonthCalendar();
@@ -181,6 +169,36 @@
             this.adminFNameBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeIDBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeGrid = new System.Windows.Forms.DataGridView();
+            this.profileFNameBox = new System.Windows.Forms.TextBox();
+            this.profileFNameLabel = new System.Windows.Forms.Label();
+            this.profileLNameBox = new System.Windows.Forms.TextBox();
+            this.profileLNameLabel = new System.Windows.Forms.Label();
+            this.profileProjectHoursBox = new System.Windows.Forms.TextBox();
+            this.profileProjectHoursLabel = new System.Windows.Forms.Label();
+            this.profileEditProjectHoursButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.employeeVacationsGrid = new System.Windows.Forms.DataGridView();
+            this.employeeHoursBox = new System.Windows.Forms.TextBox();
+            this.employeeHoursLabel = new System.Windows.Forms.Label();
+            this.employeeVacationHoursLabel = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.employeeProjectHoursBox = new System.Windows.Forms.TextBox();
+            this.employeeProjectHoursLabel = new System.Windows.Forms.Label();
+            this.employeeLNameBox = new System.Windows.Forms.TextBox();
+            this.employeeLNameLabel = new System.Windows.Forms.Label();
+            this.employeeFNameBox = new System.Windows.Forms.TextBox();
+            this.employeeFNameLabel = new System.Windows.Forms.Label();
+            this.employeeProjectsGrid = new System.Windows.Forms.DataGridView();
+            this.employeeEmailBox = new System.Windows.Forms.TextBox();
+            this.employeePhoneBox = new System.Windows.Forms.TextBox();
+            this.employeeEmailLabel = new System.Windows.Forms.Label();
+            this.employeePhoneLabel = new System.Windows.Forms.Label();
+            this.employeeProjectsLabel = new System.Windows.Forms.Label();
+            this.employeeContactLabel = new System.Windows.Forms.Label();
+            this.employeeViewButton = new System.Windows.Forms.Button();
+            this.projectPageLeaderFNameBox = new System.Windows.Forms.TextBox();
+            this.projectPageLeaderLabel = new System.Windows.Forms.Label();
+            this.projectPageLeaderLNameBox = new System.Windows.Forms.TextBox();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -189,6 +207,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.profileProjectGrid)).BeginInit();
             this.loginBG.SuspendLayout();
             this.profileBG.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vacationsGrid)).BeginInit();
             this.projectPageBG.SuspendLayout();
             this.projectPagePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phasesGrid)).BeginInit();
@@ -199,8 +219,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectPageOnProjectGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectPageAssignmentGrid)).BeginInit();
             this.employeePageBG.SuspendLayout();
-            this.employeePagePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeProjectGrid)).BeginInit();
             this.scheduleBG.SuspendLayout();
             this.searchEmployeesBG.SuspendLayout();
             this.searchEmployeesBackPanel.SuspendLayout();
@@ -211,6 +229,10 @@
             this.adminBackPanel.SuspendLayout();
             this.adminMainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeVacationsGrid)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeProjectsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -425,98 +447,64 @@
             // profileBackPanel
             // 
             this.profileBackPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.profileBackPanel.Controls.Add(this.vacationLabel);
-            this.profileBackPanel.Controls.Add(this.profileEndDate);
-            this.profileBackPanel.Controls.Add(this.profileStartDate);
+            this.profileBackPanel.Controls.Add(this.profileProjectHoursBox);
+            this.profileBackPanel.Controls.Add(this.profileProjectHoursLabel);
+            this.profileBackPanel.Controls.Add(this.profileEditProjectHoursButton);
+            this.profileBackPanel.Controls.Add(this.profileLNameBox);
+            this.profileBackPanel.Controls.Add(this.profileLNameLabel);
+            this.profileBackPanel.Controls.Add(this.profileFNameBox);
+            this.profileBackPanel.Controls.Add(this.profileFNameLabel);
             this.profileBackPanel.Controls.Add(this.profileProjectGrid);
             this.profileBackPanel.Controls.Add(this.profileEmailTextBox);
             this.profileBackPanel.Controls.Add(this.profilePhoneTextBox);
-            this.profileBackPanel.Controls.Add(this.profileHoursTextBox);
             this.profileBackPanel.Controls.Add(this.profileEmailLabel);
             this.profileBackPanel.Controls.Add(this.profilePhoneLabel);
-            this.profileBackPanel.Controls.Add(this.profileEndLabel);
-            this.profileBackPanel.Controls.Add(this.profileStartLabel);
-            this.profileBackPanel.Controls.Add(this.profileHoursLabel2);
             this.profileBackPanel.Controls.Add(this.profileProjectsLabel);
             this.profileBackPanel.Controls.Add(this.profileContactLabel);
-            this.profileBackPanel.Controls.Add(this.profileHoursLabel1);
             this.profileBackPanel.Controls.Add(this.profileViewButton);
-            this.profileBackPanel.Controls.Add(this.profileEditButton2);
-            this.profileBackPanel.Controls.Add(this.profileEditButton1);
-            this.profileBackPanel.Location = new System.Drawing.Point(304, 60);
+            this.profileBackPanel.Controls.Add(this.profileEditContactButton);
+            this.profileBackPanel.Location = new System.Drawing.Point(147, 64);
             this.profileBackPanel.Name = "profileBackPanel";
             this.profileBackPanel.Size = new System.Drawing.Size(300, 327);
             this.profileBackPanel.TabIndex = 13;
-            // 
-            // vacationLabel
-            // 
-            this.vacationLabel.AutoSize = true;
-            this.vacationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.vacationLabel.Location = new System.Drawing.Point(110, 23);
-            this.vacationLabel.Name = "vacationLabel";
-            this.vacationLabel.Size = new System.Drawing.Size(55, 13);
-            this.vacationLabel.TabIndex = 25;
-            this.vacationLabel.Text = "Vacation: ";
-            // 
-            // profileEndDate
-            // 
-            this.profileEndDate.Location = new System.Drawing.Point(72, 62);
-            this.profileEndDate.Name = "profileEndDate";
-            this.profileEndDate.Size = new System.Drawing.Size(200, 20);
-            this.profileEndDate.TabIndex = 24;
-            this.profileEndDate.Value = new System.DateTime(2019, 4, 10, 0, 0, 0, 0);
-            // 
-            // profileStartDate
-            // 
-            this.profileStartDate.Location = new System.Drawing.Point(72, 38);
-            this.profileStartDate.Name = "profileStartDate";
-            this.profileStartDate.Size = new System.Drawing.Size(200, 20);
-            this.profileStartDate.TabIndex = 23;
             // 
             // profileProjectGrid
             // 
             this.profileProjectGrid.AllowUserToAddRows = false;
             this.profileProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
-            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.profileProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.profileProjectGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.profileProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.profileProjectGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.profileProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.profileProjectGrid.Location = new System.Drawing.Point(0, 201);
+            this.profileProjectGrid.Location = new System.Drawing.Point(0, 135);
             this.profileProjectGrid.Name = "profileProjectGrid";
             this.profileProjectGrid.ReadOnly = true;
             this.profileProjectGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.profileProjectGrid.RowTemplate.ReadOnly = true;
             this.profileProjectGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.profileProjectGrid.Size = new System.Drawing.Size(300, 99);
+            this.profileProjectGrid.Size = new System.Drawing.Size(300, 128);
             this.profileProjectGrid.TabIndex = 22;
             this.profileProjectGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProfileProjectGrid_CellContentClick);
             // 
             // profileEmailTextBox
             // 
-            this.profileEmailTextBox.Location = new System.Drawing.Point(64, 158);
+            this.profileEmailTextBox.Location = new System.Drawing.Point(71, 91);
             this.profileEmailTextBox.Name = "profileEmailTextBox";
             this.profileEmailTextBox.Size = new System.Drawing.Size(150, 20);
             this.profileEmailTextBox.TabIndex = 19;
             // 
             // profilePhoneTextBox
             // 
-            this.profilePhoneTextBox.Location = new System.Drawing.Point(64, 135);
+            this.profilePhoneTextBox.Location = new System.Drawing.Point(71, 68);
             this.profilePhoneTextBox.Name = "profilePhoneTextBox";
             this.profilePhoneTextBox.Size = new System.Drawing.Size(150, 20);
             this.profilePhoneTextBox.TabIndex = 18;
-            // 
-            // profileHoursTextBox
-            // 
-            this.profileHoursTextBox.Location = new System.Drawing.Point(106, 87);
-            this.profileHoursTextBox.Name = "profileHoursTextBox";
-            this.profileHoursTextBox.Size = new System.Drawing.Size(35, 20);
-            this.profileHoursTextBox.TabIndex = 14;
             // 
             // profileEmailLabel
             // 
@@ -524,7 +512,7 @@
             this.profileEmailLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileEmailLabel.Location = new System.Drawing.Point(8, 159);
+            this.profileEmailLabel.Location = new System.Drawing.Point(1, 92);
             this.profileEmailLabel.Name = "profileEmailLabel";
             this.profileEmailLabel.Size = new System.Drawing.Size(45, 15);
             this.profileEmailLabel.TabIndex = 12;
@@ -536,11 +524,93 @@
             this.profilePhoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.profilePhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profilePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profilePhoneLabel.Location = new System.Drawing.Point(8, 139);
+            this.profilePhoneLabel.Location = new System.Drawing.Point(1, 72);
             this.profilePhoneLabel.Name = "profilePhoneLabel";
             this.profilePhoneLabel.Size = new System.Drawing.Size(59, 15);
             this.profilePhoneLabel.TabIndex = 11;
             this.profilePhoneLabel.Text = "Phone #: ";
+            // 
+            // profileProjectsLabel
+            // 
+            this.profileProjectsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileProjectsLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.profileProjectsLabel.Location = new System.Drawing.Point(0, 113);
+            this.profileProjectsLabel.Name = "profileProjectsLabel";
+            this.profileProjectsLabel.Size = new System.Drawing.Size(300, 20);
+            this.profileProjectsLabel.TabIndex = 7;
+            this.profileProjectsLabel.Text = "Projects";
+            // 
+            // profileContactLabel
+            // 
+            this.profileContactLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileContactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileContactLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.profileContactLabel.Location = new System.Drawing.Point(1, 1);
+            this.profileContactLabel.Name = "profileContactLabel";
+            this.profileContactLabel.Size = new System.Drawing.Size(300, 20);
+            this.profileContactLabel.TabIndex = 6;
+            this.profileContactLabel.Text = "Contact Information";
+            // 
+            // profileViewButton
+            // 
+            this.profileViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileViewButton.FlatAppearance.BorderSize = 0;
+            this.profileViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileViewButton.ForeColor = System.Drawing.Color.Snow;
+            this.profileViewButton.Location = new System.Drawing.Point(90, 269);
+            this.profileViewButton.Name = "profileViewButton";
+            this.profileViewButton.Size = new System.Drawing.Size(125, 23);
+            this.profileViewButton.TabIndex = 3;
+            this.profileViewButton.Text = "View Selected Project";
+            this.profileViewButton.UseVisualStyleBackColor = false;
+            this.profileViewButton.Click += new System.EventHandler(this.ProfileViewButton_Click);
+            // 
+            // profileEditContactButton
+            // 
+            this.profileEditContactButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileEditContactButton.FlatAppearance.BorderSize = 0;
+            this.profileEditContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileEditContactButton.ForeColor = System.Drawing.Color.Snow;
+            this.profileEditContactButton.Location = new System.Drawing.Point(222, 55);
+            this.profileEditContactButton.Name = "profileEditContactButton";
+            this.profileEditContactButton.Size = new System.Drawing.Size(75, 23);
+            this.profileEditContactButton.TabIndex = 2;
+            this.profileEditContactButton.Text = "Edit";
+            this.profileEditContactButton.UseVisualStyleBackColor = false;
+            this.profileEditContactButton.Click += new System.EventHandler(this.ProfileEditButton2_Click);
+            // 
+            // vacationLabel
+            // 
+            this.vacationLabel.AutoSize = true;
+            this.vacationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.vacationLabel.Location = new System.Drawing.Point(123, 23);
+            this.vacationLabel.Name = "vacationLabel";
+            this.vacationLabel.Size = new System.Drawing.Size(55, 13);
+            this.vacationLabel.TabIndex = 25;
+            this.vacationLabel.Text = "Vacation: ";
+            // 
+            // profileEndDate
+            // 
+            this.profileEndDate.Location = new System.Drawing.Point(67, 62);
+            this.profileEndDate.Name = "profileEndDate";
+            this.profileEndDate.Size = new System.Drawing.Size(200, 20);
+            this.profileEndDate.TabIndex = 24;
+            this.profileEndDate.Value = new System.DateTime(2019, 5, 1, 0, 0, 0, 0);
+            // 
+            // profileStartDate
+            // 
+            this.profileStartDate.Location = new System.Drawing.Point(67, 38);
+            this.profileStartDate.Name = "profileStartDate";
+            this.profileStartDate.Size = new System.Drawing.Size(200, 20);
+            this.profileStartDate.TabIndex = 23;
+            // 
+            // profileHoursTextBox
+            // 
+            this.profileHoursTextBox.Location = new System.Drawing.Point(165, 297);
+            this.profileHoursTextBox.Name = "profileHoursTextBox";
+            this.profileHoursTextBox.Size = new System.Drawing.Size(50, 20);
+            this.profileHoursTextBox.TabIndex = 14;
             // 
             // profileEndLabel
             // 
@@ -548,7 +618,7 @@
             this.profileEndLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileEndLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileEndLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileEndLabel.Location = new System.Drawing.Point(22, 65);
+            this.profileEndLabel.Location = new System.Drawing.Point(17, 65);
             this.profileEndLabel.Name = "profileEndLabel";
             this.profileEndLabel.Size = new System.Drawing.Size(32, 15);
             this.profileEndLabel.TabIndex = 10;
@@ -560,98 +630,36 @@
             this.profileStartLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileStartLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileStartLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileStartLabel.Location = new System.Drawing.Point(21, 40);
+            this.profileStartLabel.Location = new System.Drawing.Point(16, 40);
             this.profileStartLabel.Name = "profileStartLabel";
             this.profileStartLabel.Size = new System.Drawing.Size(38, 15);
             this.profileStartLabel.TabIndex = 9;
             this.profileStartLabel.Text = "Start: ";
             // 
-            // profileHoursLabel2
+            // profileHoursLabel
             // 
-            this.profileHoursLabel2.AutoSize = true;
-            this.profileHoursLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.profileHoursLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileHoursLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileHoursLabel2.Location = new System.Drawing.Point(54, 88);
-            this.profileHoursLabel2.Name = "profileHoursLabel2";
-            this.profileHoursLabel2.Size = new System.Drawing.Size(46, 15);
-            this.profileHoursLabel2.TabIndex = 8;
-            this.profileHoursLabel2.Text = "Hours: ";
+            this.profileHoursLabel.BackColor = System.Drawing.Color.Transparent;
+            this.profileHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileHoursLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileHoursLabel.Location = new System.Drawing.Point(8, 300);
+            this.profileHoursLabel.Name = "profileHoursLabel";
+            this.profileHoursLabel.Size = new System.Drawing.Size(154, 15);
+            this.profileHoursLabel.TabIndex = 8;
+            this.profileHoursLabel.Text = "Total Hours Available: ";
+            this.profileHoursLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // profileProjectsLabel
+            // profileEditHoursButton
             // 
-            this.profileProjectsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileProjectsLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.profileProjectsLabel.Location = new System.Drawing.Point(0, 182);
-            this.profileProjectsLabel.Name = "profileProjectsLabel";
-            this.profileProjectsLabel.Size = new System.Drawing.Size(300, 20);
-            this.profileProjectsLabel.TabIndex = 7;
-            this.profileProjectsLabel.Text = "Projects";
-            // 
-            // profileContactLabel
-            // 
-            this.profileContactLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileContactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileContactLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.profileContactLabel.Location = new System.Drawing.Point(0, 111);
-            this.profileContactLabel.Name = "profileContactLabel";
-            this.profileContactLabel.Size = new System.Drawing.Size(300, 20);
-            this.profileContactLabel.TabIndex = 6;
-            this.profileContactLabel.Text = "Contact Information";
-            // 
-            // profileHoursLabel1
-            // 
-            this.profileHoursLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileHoursLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileHoursLabel1.ForeColor = System.Drawing.SystemColors.Window;
-            this.profileHoursLabel1.Location = new System.Drawing.Point(0, 0);
-            this.profileHoursLabel1.Name = "profileHoursLabel1";
-            this.profileHoursLabel1.Size = new System.Drawing.Size(300, 20);
-            this.profileHoursLabel1.TabIndex = 4;
-            this.profileHoursLabel1.Text = "Vaction and Hours";
-            // 
-            // profileViewButton
-            // 
-            this.profileViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileViewButton.FlatAppearance.BorderSize = 0;
-            this.profileViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.profileViewButton.ForeColor = System.Drawing.Color.Snow;
-            this.profileViewButton.Location = new System.Drawing.Point(113, 301);
-            this.profileViewButton.Name = "profileViewButton";
-            this.profileViewButton.Size = new System.Drawing.Size(75, 23);
-            this.profileViewButton.TabIndex = 3;
-            this.profileViewButton.Text = "View";
-            this.profileViewButton.UseVisualStyleBackColor = false;
-            this.profileViewButton.Click += new System.EventHandler(this.ProfileViewButton_Click);
-            // 
-            // profileEditButton2
-            // 
-            this.profileEditButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileEditButton2.FlatAppearance.BorderSize = 0;
-            this.profileEditButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.profileEditButton2.ForeColor = System.Drawing.Color.Snow;
-            this.profileEditButton2.Location = new System.Drawing.Point(221, 145);
-            this.profileEditButton2.Name = "profileEditButton2";
-            this.profileEditButton2.Size = new System.Drawing.Size(75, 23);
-            this.profileEditButton2.TabIndex = 2;
-            this.profileEditButton2.Text = "Edit";
-            this.profileEditButton2.UseVisualStyleBackColor = false;
-            this.profileEditButton2.Click += new System.EventHandler(this.ProfileEditButton2_Click);
-            // 
-            // profileEditButton1
-            // 
-            this.profileEditButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileEditButton1.FlatAppearance.BorderSize = 0;
-            this.profileEditButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.profileEditButton1.ForeColor = System.Drawing.Color.Snow;
-            this.profileEditButton1.Location = new System.Drawing.Point(161, 85);
-            this.profileEditButton1.Name = "profileEditButton1";
-            this.profileEditButton1.Size = new System.Drawing.Size(75, 23);
-            this.profileEditButton1.TabIndex = 0;
-            this.profileEditButton1.Text = "Edit";
-            this.profileEditButton1.UseVisualStyleBackColor = false;
-            this.profileEditButton1.Click += new System.EventHandler(this.ProfileEditButton1_Click);
+            this.profileEditHoursButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileEditHoursButton.FlatAppearance.BorderSize = 0;
+            this.profileEditHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileEditHoursButton.ForeColor = System.Drawing.Color.Snow;
+            this.profileEditHoursButton.Location = new System.Drawing.Point(222, 295);
+            this.profileEditHoursButton.Name = "profileEditHoursButton";
+            this.profileEditHoursButton.Size = new System.Drawing.Size(75, 23);
+            this.profileEditHoursButton.TabIndex = 0;
+            this.profileEditHoursButton.Text = "Edit";
+            this.profileEditHoursButton.UseVisualStyleBackColor = false;
             // 
             // profileLabel
             // 
@@ -682,6 +690,7 @@
             // 
             // profileBG
             // 
+            this.profileBG.Controls.Add(this.panel1);
             this.profileBG.Controls.Add(this.profileBackPanel);
             this.profileBG.Controls.Add(this.profileLabel);
             this.profileBG.Location = new System.Drawing.Point(0, 105);
@@ -689,6 +698,86 @@
             this.profileBG.Size = new System.Drawing.Size(910, 465);
             this.profileBG.TabIndex = 18;
             this.profileBG.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.addVacationButton);
+            this.panel1.Controls.Add(this.vacationLabel);
+            this.panel1.Controls.Add(this.vacationsGrid);
+            this.panel1.Controls.Add(this.profileHoursTextBox);
+            this.panel1.Controls.Add(this.profileEndDate);
+            this.panel1.Controls.Add(this.profileStartDate);
+            this.panel1.Controls.Add(this.profileEndLabel);
+            this.panel1.Controls.Add(this.profileHoursLabel);
+            this.panel1.Controls.Add(this.profileStartLabel);
+            this.panel1.Controls.Add(this.profileVacationHoursLabel);
+            this.panel1.Controls.Add(this.removeVacationButton);
+            this.panel1.Controls.Add(this.profileEditHoursButton);
+            this.panel1.Location = new System.Drawing.Point(469, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 327);
+            this.panel1.TabIndex = 15;
+            // 
+            // addVacationButton
+            // 
+            this.addVacationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.addVacationButton.FlatAppearance.BorderSize = 0;
+            this.addVacationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addVacationButton.ForeColor = System.Drawing.Color.Snow;
+            this.addVacationButton.Location = new System.Drawing.Point(90, 87);
+            this.addVacationButton.Name = "addVacationButton";
+            this.addVacationButton.Size = new System.Drawing.Size(125, 23);
+            this.addVacationButton.TabIndex = 26;
+            this.addVacationButton.Text = "Add Vacation";
+            this.addVacationButton.UseVisualStyleBackColor = false;
+            // 
+            // vacationsGrid
+            // 
+            this.vacationsGrid.AllowUserToAddRows = false;
+            this.vacationsGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.vacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.vacationsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.vacationsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.vacationsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.vacationsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.vacationsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vacationsGrid.Location = new System.Drawing.Point(0, 114);
+            this.vacationsGrid.Name = "vacationsGrid";
+            this.vacationsGrid.ReadOnly = true;
+            this.vacationsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.vacationsGrid.RowTemplate.ReadOnly = true;
+            this.vacationsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.vacationsGrid.Size = new System.Drawing.Size(300, 149);
+            this.vacationsGrid.TabIndex = 22;
+            // 
+            // profileVacationHoursLabel
+            // 
+            this.profileVacationHoursLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileVacationHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileVacationHoursLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.profileVacationHoursLabel.Location = new System.Drawing.Point(0, 0);
+            this.profileVacationHoursLabel.Name = "profileVacationHoursLabel";
+            this.profileVacationHoursLabel.Size = new System.Drawing.Size(300, 20);
+            this.profileVacationHoursLabel.TabIndex = 4;
+            this.profileVacationHoursLabel.Text = "Vaction and Hours";
+            // 
+            // removeVacationButton
+            // 
+            this.removeVacationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.removeVacationButton.FlatAppearance.BorderSize = 0;
+            this.removeVacationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeVacationButton.ForeColor = System.Drawing.Color.Snow;
+            this.removeVacationButton.Location = new System.Drawing.Point(90, 268);
+            this.removeVacationButton.Name = "removeVacationButton";
+            this.removeVacationButton.Size = new System.Drawing.Size(125, 23);
+            this.removeVacationButton.TabIndex = 3;
+            this.removeVacationButton.Text = "Remove Vacation";
+            this.removeVacationButton.UseVisualStyleBackColor = false;
             // 
             // projectPageBG
             // 
@@ -733,8 +822,8 @@
             // 
             this.phasesGrid.AllowUserToAddRows = false;
             this.phasesGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.phasesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.phasesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.phasesGrid.BackgroundColor = System.Drawing.Color.White;
             this.phasesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phasesGrid.Location = new System.Drawing.Point(0, 190);
@@ -852,8 +941,8 @@
             // 
             this.notesGridView.AllowUserToAddRows = false;
             this.notesGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.notesGridView.BackgroundColor = System.Drawing.Color.White;
             this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.notesGridView.Location = new System.Drawing.Point(0, 242);
@@ -1009,11 +1098,13 @@
             // projectPagePanel1
             // 
             this.projectPagePanel1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.projectPagePanel1.Controls.Add(this.projectPageLeaderLNameBox);
+            this.projectPagePanel1.Controls.Add(this.projectPageLeaderLabel);
+            this.projectPagePanel1.Controls.Add(this.projectPageLeaderFNameBox);
             this.projectPagePanel1.Controls.Add(this.projectPageOnProjectGrid);
             this.projectPagePanel1.Controls.Add(this.projectPageAssignmentGrid);
             this.projectPagePanel1.Controls.Add(this.projectPageEmployeesOnLabel);
-            this.projectPagePanel1.Controls.Add(this.label1);
-            this.projectPagePanel1.Controls.Add(this.projectPageAssignLabel);
+            this.projectPagePanel1.Controls.Add(this.projectPageDesignateLabel);
             this.projectPagePanel1.Controls.Add(this.projectPageAddEmployeeButton);
             this.projectPagePanel1.Controls.Add(this.projectPageRemoveEmployeeButton);
             this.projectPagePanel1.Controls.Add(this.projectPageEditEmployeeText);
@@ -1027,14 +1118,14 @@
             // 
             this.projectPageOnProjectGrid.AllowUserToAddRows = false;
             this.projectPageOnProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            this.projectPageOnProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.projectPageOnProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.projectPageOnProjectGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageOnProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.projectPageOnProjectGrid.Location = new System.Drawing.Point(0, 282);
+            this.projectPageOnProjectGrid.Location = new System.Drawing.Point(0, 285);
             this.projectPageOnProjectGrid.Name = "projectPageOnProjectGrid";
             this.projectPageOnProjectGrid.RowTemplate.ReadOnly = true;
             this.projectPageOnProjectGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -1047,14 +1138,14 @@
             // 
             this.projectPageAssignmentGrid.AllowUserToAddRows = false;
             this.projectPageAssignmentGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            this.projectPageAssignmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.projectPageAssignmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.projectPageAssignmentGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageAssignmentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.projectPageAssignmentGrid.Location = new System.Drawing.Point(0, 59);
+            this.projectPageAssignmentGrid.Location = new System.Drawing.Point(0, 76);
             this.projectPageAssignmentGrid.Name = "projectPageAssignmentGrid";
             this.projectPageAssignmentGrid.RowTemplate.ReadOnly = true;
             this.projectPageAssignmentGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -1068,36 +1159,24 @@
             this.projectPageEmployeesOnLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageEmployeesOnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageEmployeesOnLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageEmployeesOnLabel.Location = new System.Drawing.Point(0, 253);
+            this.projectPageEmployeesOnLabel.Location = new System.Drawing.Point(0, 258);
             this.projectPageEmployeesOnLabel.Name = "projectPageEmployeesOnLabel";
             this.projectPageEmployeesOnLabel.Size = new System.Drawing.Size(200, 26);
             this.projectPageEmployeesOnLabel.TabIndex = 15;
             this.projectPageEmployeesOnLabel.Text = "Employees On Project";
             this.projectPageEmployeesOnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // projectPageDesignateLabel
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 169);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 26);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Designate Hours";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // projectPageAssignLabel
-            // 
-            this.projectPageAssignLabel.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.projectPageAssignLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectPageAssignLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.projectPageAssignLabel.Location = new System.Drawing.Point(2, 0);
-            this.projectPageAssignLabel.Name = "projectPageAssignLabel";
-            this.projectPageAssignLabel.Size = new System.Drawing.Size(198, 30);
-            this.projectPageAssignLabel.TabIndex = 13;
-            this.projectPageAssignLabel.Text = "Assign Employees";
-            this.projectPageAssignLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.projectPageDesignateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.projectPageDesignateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectPageDesignateLabel.ForeColor = System.Drawing.Color.White;
+            this.projectPageDesignateLabel.Location = new System.Drawing.Point(0, 185);
+            this.projectPageDesignateLabel.Name = "projectPageDesignateLabel";
+            this.projectPageDesignateLabel.Size = new System.Drawing.Size(200, 26);
+            this.projectPageDesignateLabel.TabIndex = 14;
+            this.projectPageDesignateLabel.Text = "Designate Hours";
+            this.projectPageDesignateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectPageAddEmployeeButton
             // 
@@ -1106,7 +1185,7 @@
             this.projectPageAddEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageAddEmployeeButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddEmployeeButton.Location = new System.Drawing.Point(58, 226);
+            this.projectPageAddEmployeeButton.Location = new System.Drawing.Point(58, 234);
             this.projectPageAddEmployeeButton.Name = "projectPageAddEmployeeButton";
             this.projectPageAddEmployeeButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageAddEmployeeButton.TabIndex = 9;
@@ -1120,7 +1199,7 @@
             this.projectPageRemoveEmployeeButton.FlatAppearance.BorderSize = 0;
             this.projectPageRemoveEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageRemoveEmployeeButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageRemoveEmployeeButton.Location = new System.Drawing.Point(58, 393);
+            this.projectPageRemoveEmployeeButton.Location = new System.Drawing.Point(58, 395);
             this.projectPageRemoveEmployeeButton.Name = "projectPageRemoveEmployeeButton";
             this.projectPageRemoveEmployeeButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageRemoveEmployeeButton.TabIndex = 8;
@@ -1130,7 +1209,7 @@
             // 
             // projectPageEditEmployeeText
             // 
-            this.projectPageEditEmployeeText.Location = new System.Drawing.Point(10, 200);
+            this.projectPageEditEmployeeText.Location = new System.Drawing.Point(10, 212);
             this.projectPageEditEmployeeText.Name = "projectPageEditEmployeeText";
             this.projectPageEditEmployeeText.Size = new System.Drawing.Size(180, 20);
             this.projectPageEditEmployeeText.TabIndex = 7;
@@ -1141,7 +1220,7 @@
             this.projectPageAssignedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageAssignedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageAssignedLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageAssignedLabel.Location = new System.Drawing.Point(0, 31);
+            this.projectPageAssignedLabel.Location = new System.Drawing.Point(0, 49);
             this.projectPageAssignedLabel.Name = "projectPageAssignedLabel";
             this.projectPageAssignedLabel.Size = new System.Drawing.Size(200, 26);
             this.projectPageAssignedLabel.TabIndex = 4;
@@ -1150,215 +1229,14 @@
             // 
             // employeePageBG
             // 
-            this.employeePageBG.Controls.Add(this.employeePagePanel1);
+            this.employeePageBG.Controls.Add(this.panel2);
+            this.employeePageBG.Controls.Add(this.panel3);
             this.employeePageBG.Controls.Add(this.employeePageLabel);
             this.employeePageBG.Location = new System.Drawing.Point(0, 105);
             this.employeePageBG.Name = "employeePageBG";
             this.employeePageBG.Size = new System.Drawing.Size(910, 465);
             this.employeePageBG.TabIndex = 19;
             this.employeePageBG.Visible = false;
-            // 
-            // employeePagePanel1
-            // 
-            this.employeePagePanel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.employeePagePanel1.Controls.Add(this.employeeEndDate);
-            this.employeePagePanel1.Controls.Add(this.employeeStartDate);
-            this.employeePagePanel1.Controls.Add(this.employeeProjectGrid);
-            this.employeePagePanel1.Controls.Add(this.employeeEmailTextBox);
-            this.employeePagePanel1.Controls.Add(this.employeePhoneTextBox);
-            this.employeePagePanel1.Controls.Add(this.employeePageHoursBox);
-            this.employeePagePanel1.Controls.Add(this.employeePageEmailLabel);
-            this.employeePagePanel1.Controls.Add(this.employeePagePhoneLabel);
-            this.employeePagePanel1.Controls.Add(this.employeePageEndLabel);
-            this.employeePagePanel1.Controls.Add(this.employeePageStartLabel);
-            this.employeePagePanel1.Controls.Add(this.employeePageHoursLabel2);
-            this.employeePagePanel1.Controls.Add(this.employeePageProjectsLabel);
-            this.employeePagePanel1.Controls.Add(this.employeePageContactLabel);
-            this.employeePagePanel1.Controls.Add(this.employeePageVacationLabel);
-            this.employeePagePanel1.Controls.Add(this.employeePageHoursLabel);
-            this.employeePagePanel1.Controls.Add(this.employeePageViewButton);
-            this.employeePagePanel1.Location = new System.Drawing.Point(315, 61);
-            this.employeePagePanel1.Name = "employeePagePanel1";
-            this.employeePagePanel1.Size = new System.Drawing.Size(300, 327);
-            this.employeePagePanel1.TabIndex = 13;
-            // 
-            // employeeEndDate
-            // 
-            this.employeeEndDate.Enabled = false;
-            this.employeeEndDate.Location = new System.Drawing.Point(60, 94);
-            this.employeeEndDate.Name = "employeeEndDate";
-            this.employeeEndDate.Size = new System.Drawing.Size(200, 20);
-            this.employeeEndDate.TabIndex = 25;
-            this.employeeEndDate.Value = new System.DateTime(2019, 4, 10, 0, 0, 0, 0);
-            // 
-            // employeeStartDate
-            // 
-            this.employeeStartDate.Enabled = false;
-            this.employeeStartDate.Location = new System.Drawing.Point(60, 71);
-            this.employeeStartDate.Name = "employeeStartDate";
-            this.employeeStartDate.Size = new System.Drawing.Size(200, 20);
-            this.employeeStartDate.TabIndex = 24;
-            // 
-            // employeeProjectGrid
-            // 
-            this.employeeProjectGrid.AllowUserToAddRows = false;
-            this.employeeProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.employeeProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.employeeProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.employeeProjectGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.employeeProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.employeeProjectGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.employeeProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeProjectGrid.Location = new System.Drawing.Point(0, 208);
-            this.employeeProjectGrid.Name = "employeeProjectGrid";
-            this.employeeProjectGrid.ReadOnly = true;
-            this.employeeProjectGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.employeeProjectGrid.RowTemplate.ReadOnly = true;
-            this.employeeProjectGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeProjectGrid.Size = new System.Drawing.Size(300, 92);
-            this.employeeProjectGrid.TabIndex = 23;
-            // 
-            // employeeEmailTextBox
-            // 
-            this.employeeEmailTextBox.Location = new System.Drawing.Point(59, 166);
-            this.employeeEmailTextBox.Name = "employeeEmailTextBox";
-            this.employeeEmailTextBox.Size = new System.Drawing.Size(150, 20);
-            this.employeeEmailTextBox.TabIndex = 18;
-            // 
-            // employeePhoneTextBox
-            // 
-            this.employeePhoneTextBox.Location = new System.Drawing.Point(60, 140);
-            this.employeePhoneTextBox.Name = "employeePhoneTextBox";
-            this.employeePhoneTextBox.Size = new System.Drawing.Size(150, 20);
-            this.employeePhoneTextBox.TabIndex = 17;
-            // 
-            // employeePageHoursBox
-            // 
-            this.employeePageHoursBox.Location = new System.Drawing.Point(60, 24);
-            this.employeePageHoursBox.Name = "employeePageHoursBox";
-            this.employeePageHoursBox.Size = new System.Drawing.Size(35, 20);
-            this.employeePageHoursBox.TabIndex = 14;
-            // 
-            // employeePageEmailLabel
-            // 
-            this.employeePageEmailLabel.AutoSize = true;
-            this.employeePageEmailLabel.BackColor = System.Drawing.Color.Transparent;
-            this.employeePageEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePageEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageEmailLabel.Location = new System.Drawing.Point(8, 165);
-            this.employeePageEmailLabel.Name = "employeePageEmailLabel";
-            this.employeePageEmailLabel.Size = new System.Drawing.Size(45, 15);
-            this.employeePageEmailLabel.TabIndex = 12;
-            this.employeePageEmailLabel.Text = "Email: ";
-            // 
-            // employeePagePhoneLabel
-            // 
-            this.employeePagePhoneLabel.AutoSize = true;
-            this.employeePagePhoneLabel.BackColor = System.Drawing.Color.Transparent;
-            this.employeePagePhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePagePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePagePhoneLabel.Location = new System.Drawing.Point(3, 142);
-            this.employeePagePhoneLabel.Name = "employeePagePhoneLabel";
-            this.employeePagePhoneLabel.Size = new System.Drawing.Size(59, 15);
-            this.employeePagePhoneLabel.TabIndex = 11;
-            this.employeePagePhoneLabel.Text = "Phone #: ";
-            // 
-            // employeePageEndLabel
-            // 
-            this.employeePageEndLabel.AutoSize = true;
-            this.employeePageEndLabel.BackColor = System.Drawing.Color.Transparent;
-            this.employeePageEndLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePageEndLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageEndLabel.Location = new System.Drawing.Point(12, 96);
-            this.employeePageEndLabel.Name = "employeePageEndLabel";
-            this.employeePageEndLabel.Size = new System.Drawing.Size(32, 15);
-            this.employeePageEndLabel.TabIndex = 10;
-            this.employeePageEndLabel.Text = "End:";
-            // 
-            // employeePageStartLabel
-            // 
-            this.employeePageStartLabel.AutoSize = true;
-            this.employeePageStartLabel.BackColor = System.Drawing.Color.Transparent;
-            this.employeePageStartLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePageStartLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageStartLabel.Location = new System.Drawing.Point(9, 75);
-            this.employeePageStartLabel.Name = "employeePageStartLabel";
-            this.employeePageStartLabel.Size = new System.Drawing.Size(38, 15);
-            this.employeePageStartLabel.TabIndex = 9;
-            this.employeePageStartLabel.Text = "Start: ";
-            // 
-            // employeePageHoursLabel2
-            // 
-            this.employeePageHoursLabel2.AutoSize = true;
-            this.employeePageHoursLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.employeePageHoursLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePageHoursLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageHoursLabel2.Location = new System.Drawing.Point(8, 25);
-            this.employeePageHoursLabel2.Name = "employeePageHoursLabel2";
-            this.employeePageHoursLabel2.Size = new System.Drawing.Size(46, 15);
-            this.employeePageHoursLabel2.TabIndex = 8;
-            this.employeePageHoursLabel2.Text = "Hours: ";
-            // 
-            // employeePageProjectsLabel
-            // 
-            this.employeePageProjectsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePageProjectsLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.employeePageProjectsLabel.Location = new System.Drawing.Point(0, 188);
-            this.employeePageProjectsLabel.Name = "employeePageProjectsLabel";
-            this.employeePageProjectsLabel.Size = new System.Drawing.Size(300, 20);
-            this.employeePageProjectsLabel.TabIndex = 7;
-            this.employeePageProjectsLabel.Text = "Projects";
-            // 
-            // employeePageContactLabel
-            // 
-            this.employeePageContactLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageContactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePageContactLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.employeePageContactLabel.Location = new System.Drawing.Point(0, 117);
-            this.employeePageContactLabel.Name = "employeePageContactLabel";
-            this.employeePageContactLabel.Size = new System.Drawing.Size(300, 20);
-            this.employeePageContactLabel.TabIndex = 6;
-            this.employeePageContactLabel.Text = "Contact Information";
-            // 
-            // employeePageVacationLabel
-            // 
-            this.employeePageVacationLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageVacationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePageVacationLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.employeePageVacationLabel.Location = new System.Drawing.Point(1, 47);
-            this.employeePageVacationLabel.Name = "employeePageVacationLabel";
-            this.employeePageVacationLabel.Size = new System.Drawing.Size(300, 20);
-            this.employeePageVacationLabel.TabIndex = 5;
-            this.employeePageVacationLabel.Text = "Vacation Dates";
-            // 
-            // employeePageHoursLabel
-            // 
-            this.employeePageHoursLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePageHoursLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.employeePageHoursLabel.Location = new System.Drawing.Point(0, 0);
-            this.employeePageHoursLabel.Name = "employeePageHoursLabel";
-            this.employeePageHoursLabel.Size = new System.Drawing.Size(300, 20);
-            this.employeePageHoursLabel.TabIndex = 4;
-            this.employeePageHoursLabel.Text = "Hours Available";
-            // 
-            // employeePageViewButton
-            // 
-            this.employeePageViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageViewButton.FlatAppearance.BorderSize = 0;
-            this.employeePageViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.employeePageViewButton.ForeColor = System.Drawing.Color.Snow;
-            this.employeePageViewButton.Location = new System.Drawing.Point(113, 301);
-            this.employeePageViewButton.Name = "employeePageViewButton";
-            this.employeePageViewButton.Size = new System.Drawing.Size(75, 23);
-            this.employeePageViewButton.TabIndex = 3;
-            this.employeePageViewButton.Text = "View";
-            this.employeePageViewButton.UseVisualStyleBackColor = false;
             // 
             // employeePageLabel
             // 
@@ -1414,11 +1292,11 @@
             // 
             this.searchEmployeesGrid.AllowUserToAddRows = false;
             this.searchEmployeesGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.searchEmployeesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.searchEmployeesGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.searchEmployeesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1578,11 +1456,11 @@
             // 
             this.projectsGrid.AllowUserToAddRows = false;
             this.projectsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
-            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.projectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.projectsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.projectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1893,8 +1771,8 @@
             // 
             this.adminEmployeeGrid.AllowUserToAddRows = false;
             this.adminEmployeeGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.adminEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminEmployeeGrid.Location = new System.Drawing.Point(26, 135);
             this.adminEmployeeGrid.Name = "adminEmployeeGrid";
@@ -1904,6 +1782,342 @@
             this.adminEmployeeGrid.Size = new System.Drawing.Size(620, 285);
             this.adminEmployeeGrid.TabIndex = 17;
             this.adminEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdminEmployeeGrid_CellContentClick);
+            // 
+            // profileFNameBox
+            // 
+            this.profileFNameBox.Location = new System.Drawing.Point(71, 22);
+            this.profileFNameBox.Name = "profileFNameBox";
+            this.profileFNameBox.Size = new System.Drawing.Size(150, 20);
+            this.profileFNameBox.TabIndex = 24;
+            // 
+            // profileFNameLabel
+            // 
+            this.profileFNameLabel.AutoSize = true;
+            this.profileFNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.profileFNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileFNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileFNameLabel.Location = new System.Drawing.Point(1, 26);
+            this.profileFNameLabel.Name = "profileFNameLabel";
+            this.profileFNameLabel.Size = new System.Drawing.Size(73, 15);
+            this.profileFNameLabel.TabIndex = 23;
+            this.profileFNameLabel.Text = "First Name: ";
+            // 
+            // profileLNameBox
+            // 
+            this.profileLNameBox.Location = new System.Drawing.Point(71, 45);
+            this.profileLNameBox.Name = "profileLNameBox";
+            this.profileLNameBox.Size = new System.Drawing.Size(150, 20);
+            this.profileLNameBox.TabIndex = 26;
+            // 
+            // profileLNameLabel
+            // 
+            this.profileLNameLabel.AutoSize = true;
+            this.profileLNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.profileLNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileLNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileLNameLabel.Location = new System.Drawing.Point(1, 49);
+            this.profileLNameLabel.Name = "profileLNameLabel";
+            this.profileLNameLabel.Size = new System.Drawing.Size(73, 15);
+            this.profileLNameLabel.TabIndex = 25;
+            this.profileLNameLabel.Text = "Last Name: ";
+            // 
+            // profileProjectHoursBox
+            // 
+            this.profileProjectHoursBox.Location = new System.Drawing.Point(165, 298);
+            this.profileProjectHoursBox.Name = "profileProjectHoursBox";
+            this.profileProjectHoursBox.Size = new System.Drawing.Size(50, 20);
+            this.profileProjectHoursBox.TabIndex = 29;
+            // 
+            // profileProjectHoursLabel
+            // 
+            this.profileProjectHoursLabel.AutoSize = true;
+            this.profileProjectHoursLabel.BackColor = System.Drawing.Color.Transparent;
+            this.profileProjectHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileProjectHoursLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileProjectHoursLabel.Location = new System.Drawing.Point(8, 301);
+            this.profileProjectHoursLabel.Name = "profileProjectHoursLabel";
+            this.profileProjectHoursLabel.Size = new System.Drawing.Size(154, 15);
+            this.profileProjectHoursLabel.TabIndex = 28;
+            this.profileProjectHoursLabel.Text = "Hours On Selected Project:";
+            // 
+            // profileEditProjectHoursButton
+            // 
+            this.profileEditProjectHoursButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.profileEditProjectHoursButton.FlatAppearance.BorderSize = 0;
+            this.profileEditProjectHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileEditProjectHoursButton.ForeColor = System.Drawing.Color.Snow;
+            this.profileEditProjectHoursButton.Location = new System.Drawing.Point(222, 296);
+            this.profileEditProjectHoursButton.Name = "profileEditProjectHoursButton";
+            this.profileEditProjectHoursButton.Size = new System.Drawing.Size(75, 23);
+            this.profileEditProjectHoursButton.TabIndex = 27;
+            this.profileEditProjectHoursButton.Text = "Edit";
+            this.profileEditProjectHoursButton.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Controls.Add(this.employeeProjectsGrid);
+            this.panel2.Controls.Add(this.employeeProjectsLabel);
+            this.panel2.Controls.Add(this.employeeProjectHoursBox);
+            this.panel2.Controls.Add(this.employeeViewButton);
+            this.panel2.Controls.Add(this.employeeProjectHoursLabel);
+            this.panel2.Location = new System.Drawing.Point(473, 70);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 327);
+            this.panel2.TabIndex = 17;
+            // 
+            // employeeVacationsGrid
+            // 
+            this.employeeVacationsGrid.AllowUserToAddRows = false;
+            this.employeeVacationsGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.employeeVacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.employeeVacationsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.employeeVacationsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.employeeVacationsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.employeeVacationsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.employeeVacationsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeVacationsGrid.Location = new System.Drawing.Point(0, 134);
+            this.employeeVacationsGrid.Name = "employeeVacationsGrid";
+            this.employeeVacationsGrid.ReadOnly = true;
+            this.employeeVacationsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.employeeVacationsGrid.RowTemplate.ReadOnly = true;
+            this.employeeVacationsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeVacationsGrid.Size = new System.Drawing.Size(300, 162);
+            this.employeeVacationsGrid.TabIndex = 22;
+            // 
+            // employeeHoursBox
+            // 
+            this.employeeHoursBox.Location = new System.Drawing.Point(193, 301);
+            this.employeeHoursBox.Name = "employeeHoursBox";
+            this.employeeHoursBox.Size = new System.Drawing.Size(50, 20);
+            this.employeeHoursBox.TabIndex = 14;
+            // 
+            // employeeHoursLabel
+            // 
+            this.employeeHoursLabel.BackColor = System.Drawing.Color.Transparent;
+            this.employeeHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeHoursLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeHoursLabel.Location = new System.Drawing.Point(36, 305);
+            this.employeeHoursLabel.Name = "employeeHoursLabel";
+            this.employeeHoursLabel.Size = new System.Drawing.Size(154, 15);
+            this.employeeHoursLabel.TabIndex = 8;
+            this.employeeHoursLabel.Text = "Total Hours Available: ";
+            this.employeeHoursLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // employeeVacationHoursLabel
+            // 
+            this.employeeVacationHoursLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeVacationHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeVacationHoursLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.employeeVacationHoursLabel.Location = new System.Drawing.Point(1, 113);
+            this.employeeVacationHoursLabel.Name = "employeeVacationHoursLabel";
+            this.employeeVacationHoursLabel.Size = new System.Drawing.Size(300, 20);
+            this.employeeVacationHoursLabel.TabIndex = 4;
+            this.employeeVacationHoursLabel.Text = "Vaction and Hours";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel3.Controls.Add(this.employeeVacationsGrid);
+            this.panel3.Controls.Add(this.employeeHoursBox);
+            this.panel3.Controls.Add(this.employeeHoursLabel);
+            this.panel3.Controls.Add(this.employeeLNameBox);
+            this.panel3.Controls.Add(this.employeeVacationHoursLabel);
+            this.panel3.Controls.Add(this.employeeLNameLabel);
+            this.panel3.Controls.Add(this.employeeFNameBox);
+            this.panel3.Controls.Add(this.employeeFNameLabel);
+            this.panel3.Controls.Add(this.employeeEmailBox);
+            this.panel3.Controls.Add(this.employeePhoneBox);
+            this.panel3.Controls.Add(this.employeeEmailLabel);
+            this.panel3.Controls.Add(this.employeePhoneLabel);
+            this.panel3.Controls.Add(this.employeeContactLabel);
+            this.panel3.Location = new System.Drawing.Point(151, 70);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(300, 327);
+            this.panel3.TabIndex = 16;
+            // 
+            // employeeProjectHoursBox
+            // 
+            this.employeeProjectHoursBox.Location = new System.Drawing.Point(200, 301);
+            this.employeeProjectHoursBox.Name = "employeeProjectHoursBox";
+            this.employeeProjectHoursBox.Size = new System.Drawing.Size(50, 20);
+            this.employeeProjectHoursBox.TabIndex = 29;
+            // 
+            // employeeProjectHoursLabel
+            // 
+            this.employeeProjectHoursLabel.AutoSize = true;
+            this.employeeProjectHoursLabel.BackColor = System.Drawing.Color.Transparent;
+            this.employeeProjectHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeProjectHoursLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeProjectHoursLabel.Location = new System.Drawing.Point(43, 304);
+            this.employeeProjectHoursLabel.Name = "employeeProjectHoursLabel";
+            this.employeeProjectHoursLabel.Size = new System.Drawing.Size(154, 15);
+            this.employeeProjectHoursLabel.TabIndex = 28;
+            this.employeeProjectHoursLabel.Text = "Hours On Selected Project:";
+            // 
+            // employeeLNameBox
+            // 
+            this.employeeLNameBox.Location = new System.Drawing.Point(106, 45);
+            this.employeeLNameBox.Name = "employeeLNameBox";
+            this.employeeLNameBox.Size = new System.Drawing.Size(150, 20);
+            this.employeeLNameBox.TabIndex = 26;
+            // 
+            // employeeLNameLabel
+            // 
+            this.employeeLNameLabel.AutoSize = true;
+            this.employeeLNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.employeeLNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeLNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeLNameLabel.Location = new System.Drawing.Point(36, 49);
+            this.employeeLNameLabel.Name = "employeeLNameLabel";
+            this.employeeLNameLabel.Size = new System.Drawing.Size(73, 15);
+            this.employeeLNameLabel.TabIndex = 25;
+            this.employeeLNameLabel.Text = "Last Name: ";
+            // 
+            // employeeFNameBox
+            // 
+            this.employeeFNameBox.Location = new System.Drawing.Point(106, 22);
+            this.employeeFNameBox.Name = "employeeFNameBox";
+            this.employeeFNameBox.Size = new System.Drawing.Size(150, 20);
+            this.employeeFNameBox.TabIndex = 24;
+            // 
+            // employeeFNameLabel
+            // 
+            this.employeeFNameLabel.AutoSize = true;
+            this.employeeFNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.employeeFNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeFNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeFNameLabel.Location = new System.Drawing.Point(36, 26);
+            this.employeeFNameLabel.Name = "employeeFNameLabel";
+            this.employeeFNameLabel.Size = new System.Drawing.Size(73, 15);
+            this.employeeFNameLabel.TabIndex = 23;
+            this.employeeFNameLabel.Text = "First Name: ";
+            // 
+            // employeeProjectsGrid
+            // 
+            this.employeeProjectsGrid.AllowUserToAddRows = false;
+            this.employeeProjectsGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.employeeProjectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.employeeProjectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.employeeProjectsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.employeeProjectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.employeeProjectsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.employeeProjectsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeProjectsGrid.Location = new System.Drawing.Point(0, 23);
+            this.employeeProjectsGrid.Name = "employeeProjectsGrid";
+            this.employeeProjectsGrid.ReadOnly = true;
+            this.employeeProjectsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.employeeProjectsGrid.RowTemplate.ReadOnly = true;
+            this.employeeProjectsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeProjectsGrid.Size = new System.Drawing.Size(300, 246);
+            this.employeeProjectsGrid.TabIndex = 22;
+            // 
+            // employeeEmailBox
+            // 
+            this.employeeEmailBox.Location = new System.Drawing.Point(106, 91);
+            this.employeeEmailBox.Name = "employeeEmailBox";
+            this.employeeEmailBox.Size = new System.Drawing.Size(150, 20);
+            this.employeeEmailBox.TabIndex = 19;
+            // 
+            // employeePhoneBox
+            // 
+            this.employeePhoneBox.Location = new System.Drawing.Point(106, 68);
+            this.employeePhoneBox.Name = "employeePhoneBox";
+            this.employeePhoneBox.Size = new System.Drawing.Size(150, 20);
+            this.employeePhoneBox.TabIndex = 18;
+            // 
+            // employeeEmailLabel
+            // 
+            this.employeeEmailLabel.AutoSize = true;
+            this.employeeEmailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.employeeEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeEmailLabel.Location = new System.Drawing.Point(36, 92);
+            this.employeeEmailLabel.Name = "employeeEmailLabel";
+            this.employeeEmailLabel.Size = new System.Drawing.Size(45, 15);
+            this.employeeEmailLabel.TabIndex = 12;
+            this.employeeEmailLabel.Text = "Email: ";
+            // 
+            // employeePhoneLabel
+            // 
+            this.employeePhoneLabel.AutoSize = true;
+            this.employeePhoneLabel.BackColor = System.Drawing.Color.Transparent;
+            this.employeePhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeePhoneLabel.Location = new System.Drawing.Point(36, 72);
+            this.employeePhoneLabel.Name = "employeePhoneLabel";
+            this.employeePhoneLabel.Size = new System.Drawing.Size(59, 15);
+            this.employeePhoneLabel.TabIndex = 11;
+            this.employeePhoneLabel.Text = "Phone #: ";
+            // 
+            // employeeProjectsLabel
+            // 
+            this.employeeProjectsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeProjectsLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.employeeProjectsLabel.Location = new System.Drawing.Point(0, 1);
+            this.employeeProjectsLabel.Name = "employeeProjectsLabel";
+            this.employeeProjectsLabel.Size = new System.Drawing.Size(300, 20);
+            this.employeeProjectsLabel.TabIndex = 7;
+            this.employeeProjectsLabel.Text = "Projects";
+            // 
+            // employeeContactLabel
+            // 
+            this.employeeContactLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeContactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeContactLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.employeeContactLabel.Location = new System.Drawing.Point(1, 1);
+            this.employeeContactLabel.Name = "employeeContactLabel";
+            this.employeeContactLabel.Size = new System.Drawing.Size(300, 20);
+            this.employeeContactLabel.TabIndex = 6;
+            this.employeeContactLabel.Text = "Contact Information";
+            // 
+            // employeeViewButton
+            // 
+            this.employeeViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.employeeViewButton.FlatAppearance.BorderSize = 0;
+            this.employeeViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employeeViewButton.ForeColor = System.Drawing.Color.Snow;
+            this.employeeViewButton.Location = new System.Drawing.Point(89, 273);
+            this.employeeViewButton.Name = "employeeViewButton";
+            this.employeeViewButton.Size = new System.Drawing.Size(125, 23);
+            this.employeeViewButton.TabIndex = 3;
+            this.employeeViewButton.Text = "View Selected Project";
+            this.employeeViewButton.UseVisualStyleBackColor = false;
+            // 
+            // projectPageLeaderFNameBox
+            // 
+            this.projectPageLeaderFNameBox.Location = new System.Drawing.Point(7, 28);
+            this.projectPageLeaderFNameBox.Name = "projectPageLeaderFNameBox";
+            this.projectPageLeaderFNameBox.Size = new System.Drawing.Size(90, 20);
+            this.projectPageLeaderFNameBox.TabIndex = 18;
+            // 
+            // projectPageLeaderLabel
+            // 
+            this.projectPageLeaderLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.projectPageLeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectPageLeaderLabel.ForeColor = System.Drawing.Color.White;
+            this.projectPageLeaderLabel.Location = new System.Drawing.Point(0, 1);
+            this.projectPageLeaderLabel.Name = "projectPageLeaderLabel";
+            this.projectPageLeaderLabel.Size = new System.Drawing.Size(200, 26);
+            this.projectPageLeaderLabel.TabIndex = 19;
+            this.projectPageLeaderLabel.Text = "Project Leader";
+            this.projectPageLeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // projectPageLeaderLNameBox
+            // 
+            this.projectPageLeaderLNameBox.Location = new System.Drawing.Point(102, 28);
+            this.projectPageLeaderLNameBox.Name = "projectPageLeaderLNameBox";
+            this.projectPageLeaderLNameBox.Size = new System.Drawing.Size(90, 20);
+            this.projectPageLeaderLNameBox.TabIndex = 20;
             // 
             // MainForm
             // 
@@ -1938,6 +2152,9 @@
             this.loginBG.ResumeLayout(false);
             this.profileBG.ResumeLayout(false);
             this.profileBG.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vacationsGrid)).EndInit();
             this.projectPageBG.ResumeLayout(false);
             this.projectPagePanel3.ResumeLayout(false);
             this.projectPagePanel3.PerformLayout();
@@ -1951,9 +2168,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectPageOnProjectGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectPageAssignmentGrid)).EndInit();
             this.employeePageBG.ResumeLayout(false);
-            this.employeePagePanel1.ResumeLayout(false);
-            this.employeePagePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeProjectGrid)).EndInit();
             this.scheduleBG.ResumeLayout(false);
             this.searchEmployeesBG.ResumeLayout(false);
             this.searchEmployeesBG.PerformLayout();
@@ -1969,6 +2183,12 @@
             this.adminMainPanel.ResumeLayout(false);
             this.adminMainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeVacationsGrid)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeProjectsGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1998,13 +2218,12 @@
         private System.Windows.Forms.Label profilePhoneLabel;
         private System.Windows.Forms.Label profileEndLabel;
         private System.Windows.Forms.Label profileStartLabel;
-        private System.Windows.Forms.Label profileHoursLabel2;
+        private System.Windows.Forms.Label profileHoursLabel;
         private System.Windows.Forms.Label profileProjectsLabel;
         private System.Windows.Forms.Label profileContactLabel;
-        private System.Windows.Forms.Label profileHoursLabel1;
         private System.Windows.Forms.Button profileViewButton;
-        private System.Windows.Forms.Button profileEditButton1;
-        private System.Windows.Forms.Button profileEditButton2;
+        private System.Windows.Forms.Button profileEditHoursButton;
+        private System.Windows.Forms.Button profileEditContactButton;
         private System.Windows.Forms.Label profileLabel;
         private System.Windows.Forms.Panel formBGTemp;
         private System.Windows.Forms.Panel loginBG;
@@ -2030,18 +2249,6 @@
         private System.Windows.Forms.TextBox projectPageEditEmployeeText;
         private System.Windows.Forms.Label projectPageAssignedLabel;
         private System.Windows.Forms.Panel employeePageBG;
-        private System.Windows.Forms.Panel employeePagePanel1;
-        private System.Windows.Forms.TextBox employeePageHoursBox;
-        private System.Windows.Forms.Label employeePageEmailLabel;
-        private System.Windows.Forms.Label employeePagePhoneLabel;
-        private System.Windows.Forms.Label employeePageEndLabel;
-        private System.Windows.Forms.Label employeePageStartLabel;
-        private System.Windows.Forms.Label employeePageHoursLabel2;
-        private System.Windows.Forms.Label employeePageProjectsLabel;
-        private System.Windows.Forms.Label employeePageContactLabel;
-        private System.Windows.Forms.Label employeePageVacationLabel;
-        private System.Windows.Forms.Label employeePageHoursLabel;
-        private System.Windows.Forms.Button employeePageViewButton;
         private System.Windows.Forms.Label employeePageLabel;
         private System.Windows.Forms.Panel scheduleBG;
         private System.Windows.Forms.MonthCalendar schedulePageTempCalendar;
@@ -2070,21 +2277,15 @@
         private System.Windows.Forms.DataGridView projectsGrid;
         private System.Windows.Forms.TextBox profileEmailTextBox;
         private System.Windows.Forms.TextBox profilePhoneTextBox;
-        private System.Windows.Forms.TextBox employeeEmailTextBox;
-        private System.Windows.Forms.TextBox employeePhoneTextBox;
-        private System.Windows.Forms.Label projectPageAssignLabel;
         private System.Windows.Forms.Label projectPageEmployeesOnLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label projectPageDesignateLabel;
         private System.Windows.Forms.DateTimePicker projectPageDueDateBox;
         private System.Windows.Forms.NumericUpDown projectPageHoursBox;
         private System.Windows.Forms.DataGridView profileProjectGrid;
-        private System.Windows.Forms.DataGridView employeeProjectGrid;
         private System.Windows.Forms.DataGridView searchEmployeesGrid;
         private System.Windows.Forms.Label vacationLabel;
         private System.Windows.Forms.DateTimePicker profileEndDate;
         private System.Windows.Forms.DateTimePicker profileStartDate;
-        private System.Windows.Forms.DateTimePicker employeeEndDate;
-        private System.Windows.Forms.DateTimePicker employeeStartDate;
         private System.Windows.Forms.DataGridView projectPageOnProjectGrid;
         private System.Windows.Forms.DataGridView projectPageAssignmentGrid;
         private System.Windows.Forms.Label adminLabel;
@@ -2118,6 +2319,41 @@
         private System.Windows.Forms.Label phasesLabel;
         private System.Windows.Forms.DataGridView phasesGrid;
         private System.Windows.Forms.CheckBox completeCheckBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button addVacationButton;
+        private System.Windows.Forms.DataGridView vacationsGrid;
+        private System.Windows.Forms.Label profileVacationHoursLabel;
+        private System.Windows.Forms.Button removeVacationButton;
+        private System.Windows.Forms.TextBox profileLNameBox;
+        private System.Windows.Forms.Label profileLNameLabel;
+        private System.Windows.Forms.TextBox profileFNameBox;
+        private System.Windows.Forms.Label profileFNameLabel;
+        private System.Windows.Forms.TextBox profileProjectHoursBox;
+        private System.Windows.Forms.Label profileProjectHoursLabel;
+        private System.Windows.Forms.Button profileEditProjectHoursButton;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView employeeProjectsGrid;
+        private System.Windows.Forms.Label employeeProjectsLabel;
+        private System.Windows.Forms.TextBox employeeProjectHoursBox;
+        private System.Windows.Forms.Button employeeViewButton;
+        private System.Windows.Forms.Label employeeProjectHoursLabel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView employeeVacationsGrid;
+        private System.Windows.Forms.TextBox employeeHoursBox;
+        private System.Windows.Forms.Label employeeHoursLabel;
+        private System.Windows.Forms.TextBox employeeLNameBox;
+        private System.Windows.Forms.Label employeeVacationHoursLabel;
+        private System.Windows.Forms.Label employeeLNameLabel;
+        private System.Windows.Forms.TextBox employeeFNameBox;
+        private System.Windows.Forms.Label employeeFNameLabel;
+        private System.Windows.Forms.TextBox employeeEmailBox;
+        private System.Windows.Forms.TextBox employeePhoneBox;
+        private System.Windows.Forms.Label employeeEmailLabel;
+        private System.Windows.Forms.Label employeePhoneLabel;
+        private System.Windows.Forms.Label employeeContactLabel;
+        private System.Windows.Forms.TextBox projectPageLeaderLNameBox;
+        private System.Windows.Forms.Label projectPageLeaderLabel;
+        private System.Windows.Forms.TextBox projectPageLeaderFNameBox;
     }
 }
 
