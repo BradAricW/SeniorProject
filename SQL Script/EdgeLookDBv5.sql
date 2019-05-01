@@ -14,11 +14,8 @@ create table Project (
 	prjNo varchar(30) NOT NULL,
     prjLeader int,
     description varchar(255),
-    prjPhase varchar(30),
-    dueDate varchar(30),
     deliverables varchar(255),
     hoursNeeded int,
-    prjStatus varchar(255),
 	prjComplete boolean,
     primary key(prjNo),
     foreign key (prjLeader) references Employee (employeeID));
@@ -105,6 +102,15 @@ create table Vacation (
  
  alter table Project
  add prjComplete boolean;
+ 
+ alter table Project
+ drop prjPhase;
+ 
+ alter table Project
+ drop dueDate;
+ 
+ alter table Project
+ drop prjStatus;
  
  alter table Employee
  add admin boolean;

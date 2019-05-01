@@ -65,12 +65,9 @@ namespace EDGELook
 
                 if (flag == 1)
                 { // if its an update
-                    String upDateProject = ("UPDATE Project SET description = '" + projectDesc +
-                                                                           "', dueDate = '" + projectDueDates +
-                                                                           "', prjPhase = '" + projectPhase +
+                    String upDateProject = ("UPDATE Project SET description = '" + projectDesc +                                                                           
                                                                            "', deliverables = '" + projectDeliverables +
-                                                                           "', hoursNeeded = " + projectHours +
-                                                                           ", prjStatus = '" + projectStatus +
+                                                                           "', hoursNeeded = " + projectHours +                                                                          
                                                                            "' WHERE prjNo = '" + projectNum + "';");
                     //sql.queryRunner(upDateProject);
                     MySqlCommand cmd = new MySqlCommand(upDateProject, conn);
@@ -82,7 +79,7 @@ namespace EDGELook
 
                     //Checks for a duplicate project
                     string prj = null;
-                    String getPrjDup = "SELECT  prjNo FROM Project WHERE prjNo = '" + this.projectNum + "';";
+                    String getPrjDup = "SELECT  prjNo FROM Project p, WorksOn w WHERE p.prjNo = w.prjNo AND p.prjNo = '" + projectNum + "' AND w.prjPhase = '" + projectPhase + "';";
                     MySqlCommand cmd1 = new MySqlCommand(getPrjDup, this.conn);
                     MySqlDataReader reader = cmd1.ExecuteReader();
                     while (reader.Read())
@@ -97,11 +94,12 @@ namespace EDGELook
                     else
                     {
 
-                        String addProject = ("INSERT INTO Project (prjNo, prjLeader, description, prjPhase, dueDate, deliverables, hoursNeeded, prjStatus)" +
-                                                     "VALUES ('" + projectNum + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectPhase + "', '" + projectDueDates + "', '" + projectDeliverables + "', '" + projectHours + "', '" + projectStatus + "');");
+                        String addProject = ("INSERT INTO Project VALUES ('" + projectNum + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectDeliverables + "', '" + projectHours + "', 0);");
                         MySqlCommand cmd = new MySqlCommand(addProject, conn);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show(addProject);
+                        String addProjectPhase = "INSERT INTO ProjectPhase Values('" + projectNum + "','" + projectPhase + "','" + projectDueDates + "','" + projectStatus + "');";
+                        MySqlCommand cmd2 = new MySqlCommand(addProjectPhase, conn);
+                        cmd2.ExecuteNonQuery();
                         MessageBox.Show("Project Added");
                     }
                 }
@@ -166,7 +164,7 @@ namespace EDGELook
             conn.Close();
         }
 
-        public void AddProjectPhase(TextBox prjPhaseBox, DateTimePicker phaseDueDateBox, TextBox statusBox)
+        /*public void AddProjectPhase(TextBox prjPhaseBox, DateTimePicker phaseDueDateBox, TextBox statusBox)
         {
             string prjPhase = prjPhaseBox.Text;
             string dueDate = phaseDueDateBox.Text;
@@ -192,7 +190,7 @@ namespace EDGELook
                 cmd.ExecuteNonQuery();              
                 MessageBox.Show("Project Phase Added");
             }
-        }
+        }*/
 
         public void SetCompleteIncomplete(Boolean complete)
         {
