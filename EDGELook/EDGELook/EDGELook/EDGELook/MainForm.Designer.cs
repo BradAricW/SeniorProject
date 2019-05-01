@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleBackPanel = new System.Windows.Forms.Panel();
             this.titleFrontPanel = new System.Windows.Forms.Panel();
             this.adminLabel = new System.Windows.Forms.Label();
@@ -178,7 +178,7 @@
             this.profileEditProjectHoursButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.employeeVacationsGrid = new System.Windows.Forms.DataGridView();
-            this.employeeHoursBox = new System.Windows.Forms.TextBox();
+            this.employeePageHoursBox = new System.Windows.Forms.TextBox();
             this.employeeHoursLabel = new System.Windows.Forms.Label();
             this.employeeVacationHoursLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -188,9 +188,9 @@
             this.employeeLNameLabel = new System.Windows.Forms.Label();
             this.employeeFNameBox = new System.Windows.Forms.TextBox();
             this.employeeFNameLabel = new System.Windows.Forms.Label();
-            this.employeeProjectsGrid = new System.Windows.Forms.DataGridView();
-            this.employeeEmailBox = new System.Windows.Forms.TextBox();
-            this.employeePhoneBox = new System.Windows.Forms.TextBox();
+            this.employeeProjectGrid = new System.Windows.Forms.DataGridView();
+            this.employeeEmailTextBox = new System.Windows.Forms.TextBox();
+            this.employeePhoneTextBox = new System.Windows.Forms.TextBox();
             this.employeeEmailLabel = new System.Windows.Forms.Label();
             this.employeePhoneLabel = new System.Windows.Forms.Label();
             this.employeeProjectsLabel = new System.Windows.Forms.Label();
@@ -232,7 +232,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeVacationsGrid)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeProjectsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeProjectGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -472,11 +472,11 @@
             // 
             this.profileProjectGrid.AllowUserToAddRows = false;
             this.profileProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.profileProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.profileProjectGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.profileProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -736,11 +736,11 @@
             // 
             this.vacationsGrid.AllowUserToAddRows = false;
             this.vacationsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.vacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            this.vacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.vacationsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vacationsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.vacationsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -822,8 +822,8 @@
             // 
             this.phasesGrid.AllowUserToAddRows = false;
             this.phasesGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.phasesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.phasesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.phasesGrid.BackgroundColor = System.Drawing.Color.White;
             this.phasesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phasesGrid.Location = new System.Drawing.Point(0, 190);
@@ -941,8 +941,8 @@
             // 
             this.notesGridView.AllowUserToAddRows = false;
             this.notesGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.notesGridView.BackgroundColor = System.Drawing.Color.White;
             this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.notesGridView.Location = new System.Drawing.Point(0, 242);
@@ -1118,11 +1118,11 @@
             // 
             this.projectPageOnProjectGrid.AllowUserToAddRows = false;
             this.projectPageOnProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.projectPageOnProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.projectPageOnProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.projectPageOnProjectGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageOnProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectPageOnProjectGrid.Location = new System.Drawing.Point(0, 285);
@@ -1138,11 +1138,11 @@
             // 
             this.projectPageAssignmentGrid.AllowUserToAddRows = false;
             this.projectPageAssignmentGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.projectPageAssignmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+            this.projectPageAssignmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.projectPageAssignmentGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageAssignmentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectPageAssignmentGrid.Location = new System.Drawing.Point(0, 76);
@@ -1292,11 +1292,11 @@
             // 
             this.searchEmployeesGrid.AllowUserToAddRows = false;
             this.searchEmployeesGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.searchEmployeesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.searchEmployeesGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.searchEmployeesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1456,11 +1456,11 @@
             // 
             this.projectsGrid.AllowUserToAddRows = false;
             this.projectsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
             this.projectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.projectsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.projectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1771,8 +1771,8 @@
             // 
             this.adminEmployeeGrid.AllowUserToAddRows = false;
             this.adminEmployeeGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.adminEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminEmployeeGrid.Location = new System.Drawing.Point(26, 135);
             this.adminEmployeeGrid.Name = "adminEmployeeGrid";
@@ -1856,7 +1856,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Controls.Add(this.employeeProjectsGrid);
+            this.panel2.Controls.Add(this.employeeProjectGrid);
             this.panel2.Controls.Add(this.employeeProjectsLabel);
             this.panel2.Controls.Add(this.employeeProjectHoursBox);
             this.panel2.Controls.Add(this.employeeViewButton);
@@ -1870,11 +1870,11 @@
             // 
             this.employeeVacationsGrid.AllowUserToAddRows = false;
             this.employeeVacationsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.employeeVacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            this.employeeVacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
             this.employeeVacationsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.employeeVacationsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.employeeVacationsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1889,12 +1889,12 @@
             this.employeeVacationsGrid.Size = new System.Drawing.Size(300, 162);
             this.employeeVacationsGrid.TabIndex = 22;
             // 
-            // employeeHoursBox
+            // employeePageHoursBox
             // 
-            this.employeeHoursBox.Location = new System.Drawing.Point(193, 301);
-            this.employeeHoursBox.Name = "employeeHoursBox";
-            this.employeeHoursBox.Size = new System.Drawing.Size(50, 20);
-            this.employeeHoursBox.TabIndex = 14;
+            this.employeePageHoursBox.Location = new System.Drawing.Point(193, 301);
+            this.employeePageHoursBox.Name = "employeePageHoursBox";
+            this.employeePageHoursBox.Size = new System.Drawing.Size(50, 20);
+            this.employeePageHoursBox.TabIndex = 14;
             // 
             // employeeHoursLabel
             // 
@@ -1923,15 +1923,15 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel3.Controls.Add(this.employeeVacationsGrid);
-            this.panel3.Controls.Add(this.employeeHoursBox);
+            this.panel3.Controls.Add(this.employeePageHoursBox);
             this.panel3.Controls.Add(this.employeeHoursLabel);
             this.panel3.Controls.Add(this.employeeLNameBox);
             this.panel3.Controls.Add(this.employeeVacationHoursLabel);
             this.panel3.Controls.Add(this.employeeLNameLabel);
             this.panel3.Controls.Add(this.employeeFNameBox);
             this.panel3.Controls.Add(this.employeeFNameLabel);
-            this.panel3.Controls.Add(this.employeeEmailBox);
-            this.panel3.Controls.Add(this.employeePhoneBox);
+            this.panel3.Controls.Add(this.employeeEmailTextBox);
+            this.panel3.Controls.Add(this.employeePhoneTextBox);
             this.panel3.Controls.Add(this.employeeEmailLabel);
             this.panel3.Controls.Add(this.employeePhoneLabel);
             this.panel3.Controls.Add(this.employeeContactLabel);
@@ -1997,42 +1997,42 @@
             this.employeeFNameLabel.TabIndex = 23;
             this.employeeFNameLabel.Text = "First Name: ";
             // 
-            // employeeProjectsGrid
+            // employeeProjectGrid
             // 
-            this.employeeProjectsGrid.AllowUserToAddRows = false;
-            this.employeeProjectsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.employeeProjectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.employeeProjectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.employeeProjectsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.employeeProjectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.employeeProjectsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.employeeProjectsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeProjectsGrid.Location = new System.Drawing.Point(0, 23);
-            this.employeeProjectsGrid.Name = "employeeProjectsGrid";
-            this.employeeProjectsGrid.ReadOnly = true;
-            this.employeeProjectsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.employeeProjectsGrid.RowTemplate.ReadOnly = true;
-            this.employeeProjectsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeProjectsGrid.Size = new System.Drawing.Size(300, 246);
-            this.employeeProjectsGrid.TabIndex = 22;
+            this.employeeProjectGrid.AllowUserToAddRows = false;
+            this.employeeProjectGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
+            this.employeeProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.employeeProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.employeeProjectGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.employeeProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.employeeProjectGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.employeeProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeProjectGrid.Location = new System.Drawing.Point(0, 23);
+            this.employeeProjectGrid.Name = "employeeProjectGrid";
+            this.employeeProjectGrid.ReadOnly = true;
+            this.employeeProjectGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.employeeProjectGrid.RowTemplate.ReadOnly = true;
+            this.employeeProjectGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeProjectGrid.Size = new System.Drawing.Size(300, 246);
+            this.employeeProjectGrid.TabIndex = 22;
             // 
-            // employeeEmailBox
+            // employeeEmailTextBox
             // 
-            this.employeeEmailBox.Location = new System.Drawing.Point(106, 91);
-            this.employeeEmailBox.Name = "employeeEmailBox";
-            this.employeeEmailBox.Size = new System.Drawing.Size(150, 20);
-            this.employeeEmailBox.TabIndex = 19;
+            this.employeeEmailTextBox.Location = new System.Drawing.Point(106, 91);
+            this.employeeEmailTextBox.Name = "employeeEmailTextBox";
+            this.employeeEmailTextBox.Size = new System.Drawing.Size(150, 20);
+            this.employeeEmailTextBox.TabIndex = 19;
             // 
-            // employeePhoneBox
+            // employeePhoneTextBox
             // 
-            this.employeePhoneBox.Location = new System.Drawing.Point(106, 68);
-            this.employeePhoneBox.Name = "employeePhoneBox";
-            this.employeePhoneBox.Size = new System.Drawing.Size(150, 20);
-            this.employeePhoneBox.TabIndex = 18;
+            this.employeePhoneTextBox.Location = new System.Drawing.Point(106, 68);
+            this.employeePhoneTextBox.Name = "employeePhoneTextBox";
+            this.employeePhoneTextBox.Size = new System.Drawing.Size(150, 20);
+            this.employeePhoneTextBox.TabIndex = 18;
             // 
             // employeeEmailLabel
             // 
@@ -2127,6 +2127,7 @@
             this.ClientSize = new System.Drawing.Size(910, 571);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
+            this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
@@ -2135,7 +2136,6 @@
             this.Controls.Add(this.scheduleBG);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.searchEmployeesBG);
-            this.Controls.Add(this.employeePageBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -2188,7 +2188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeVacationsGrid)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeProjectsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeProjectGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2332,22 +2332,22 @@
         private System.Windows.Forms.Label profileProjectHoursLabel;
         private System.Windows.Forms.Button profileEditProjectHoursButton;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView employeeProjectsGrid;
+        private System.Windows.Forms.DataGridView employeeProjectGrid;
         private System.Windows.Forms.Label employeeProjectsLabel;
         private System.Windows.Forms.TextBox employeeProjectHoursBox;
         private System.Windows.Forms.Button employeeViewButton;
         private System.Windows.Forms.Label employeeProjectHoursLabel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView employeeVacationsGrid;
-        private System.Windows.Forms.TextBox employeeHoursBox;
+        private System.Windows.Forms.TextBox employeePageHoursBox;
         private System.Windows.Forms.Label employeeHoursLabel;
         private System.Windows.Forms.TextBox employeeLNameBox;
         private System.Windows.Forms.Label employeeVacationHoursLabel;
         private System.Windows.Forms.Label employeeLNameLabel;
         private System.Windows.Forms.TextBox employeeFNameBox;
         private System.Windows.Forms.Label employeeFNameLabel;
-        private System.Windows.Forms.TextBox employeeEmailBox;
-        private System.Windows.Forms.TextBox employeePhoneBox;
+        private System.Windows.Forms.TextBox employeeEmailTextBox;
+        private System.Windows.Forms.TextBox employeePhoneTextBox;
         private System.Windows.Forms.Label employeeEmailLabel;
         private System.Windows.Forms.Label employeePhoneLabel;
         private System.Windows.Forms.Label employeeContactLabel;
