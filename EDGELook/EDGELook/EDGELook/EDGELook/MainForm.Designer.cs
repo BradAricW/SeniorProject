@@ -102,7 +102,6 @@
             this.projectPageDescriptionLabel = new System.Windows.Forms.Label();
             this.projectPagePNumLabel = new System.Windows.Forms.Label();
             this.projectPageUpdateButton = new System.Windows.Forms.Button();
-            this.projectPagePNameLabel = new System.Windows.Forms.Label();
             this.projectPageStatusBox = new System.Windows.Forms.TextBox();
             this.projectPagePanel1 = new System.Windows.Forms.Panel();
             this.projectPageOnProjectGrid = new System.Windows.Forms.DataGridView();
@@ -182,6 +181,7 @@
             this.adminEmployeeGrid = new System.Windows.Forms.DataGridView();
             this.phasesGrid = new System.Windows.Forms.DataGridView();
             this.phasesLabel = new System.Windows.Forms.Label();
+            this.completeCheckBox = new System.Windows.Forms.CheckBox();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -726,7 +726,7 @@
             this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.notesGridView.BackgroundColor = System.Drawing.Color.White;
             this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.notesGridView.Location = new System.Drawing.Point(0, 269);
+            this.notesGridView.Location = new System.Drawing.Point(0, 242);
             this.notesGridView.Name = "notesGridView";
             this.notesGridView.RowTemplate.ReadOnly = true;
             this.notesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -735,7 +735,7 @@
             // 
             // projectPageNotesTextBox
             // 
-            this.projectPageNotesTextBox.Location = new System.Drawing.Point(1, 395);
+            this.projectPageNotesTextBox.Location = new System.Drawing.Point(1, 368);
             this.projectPageNotesTextBox.Name = "projectPageNotesTextBox";
             this.projectPageNotesTextBox.Size = new System.Drawing.Size(220, 20);
             this.projectPageNotesTextBox.TabIndex = 7;
@@ -746,7 +746,7 @@
             this.projectPageAddNotesButton.FlatAppearance.BorderSize = 0;
             this.projectPageAddNotesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddNotesButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddNotesButton.Location = new System.Drawing.Point(226, 393);
+            this.projectPageAddNotesButton.Location = new System.Drawing.Point(226, 366);
             this.projectPageAddNotesButton.Name = "projectPageAddNotesButton";
             this.projectPageAddNotesButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageAddNotesButton.TabIndex = 5;
@@ -759,7 +759,7 @@
             this.projectPageNotesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageNotesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageNotesLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageNotesLabel.Location = new System.Drawing.Point(0, 240);
+            this.projectPageNotesLabel.Location = new System.Drawing.Point(0, 213);
             this.projectPageNotesLabel.Name = "projectPageNotesLabel";
             this.projectPageNotesLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPageNotesLabel.TabIndex = 4;
@@ -769,9 +769,11 @@
             // projectPagePanel2
             // 
             this.projectPagePanel2.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.projectPagePanel2.Controls.Add(this.completeCheckBox);
             this.projectPagePanel2.Controls.Add(this.projectPageHoursBox);
             this.projectPagePanel2.Controls.Add(this.notesGridView);
             this.projectPagePanel2.Controls.Add(this.projectPageDeliverablesBox);
+            this.projectPagePanel2.Controls.Add(this.projectPageUpdateButton);
             this.projectPagePanel2.Controls.Add(this.projectPageNotesTextBox);
             this.projectPagePanel2.Controls.Add(this.projectPageAddNotesButton);
             this.projectPagePanel2.Controls.Add(this.projectPageDescriptionBox);
@@ -783,8 +785,6 @@
             this.projectPagePanel2.Controls.Add(this.projectPageDeliverablesLabel);
             this.projectPagePanel2.Controls.Add(this.projectPageDescriptionLabel);
             this.projectPagePanel2.Controls.Add(this.projectPagePNumLabel);
-            this.projectPagePanel2.Controls.Add(this.projectPageUpdateButton);
-            this.projectPagePanel2.Controls.Add(this.projectPagePNameLabel);
             this.projectPagePanel2.Location = new System.Drawing.Point(255, 20);
             this.projectPagePanel2.Name = "projectPagePanel2";
             this.projectPagePanel2.Size = new System.Drawing.Size(300, 420);
@@ -799,7 +799,7 @@
             // 
             // projectPageHoursBox
             // 
-            this.projectPageHoursBox.Location = new System.Drawing.Point(91, 216);
+            this.projectPageHoursBox.Location = new System.Drawing.Point(91, 189);
             this.projectPageHoursBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -811,7 +811,7 @@
             // 
             // projectPageDeliverablesBox
             // 
-            this.projectPageDeliverablesBox.Location = new System.Drawing.Point(1, 164);
+            this.projectPageDeliverablesBox.Location = new System.Drawing.Point(1, 137);
             this.projectPageDeliverablesBox.Name = "projectPageDeliverablesBox";
             this.projectPageDeliverablesBox.Size = new System.Drawing.Size(300, 20);
             this.projectPageDeliverablesBox.TabIndex = 23;
@@ -825,14 +825,14 @@
             // 
             // projectPageDescriptionBox
             // 
-            this.projectPageDescriptionBox.Location = new System.Drawing.Point(0, 112);
+            this.projectPageDescriptionBox.Location = new System.Drawing.Point(0, 85);
             this.projectPageDescriptionBox.Name = "projectPageDescriptionBox";
             this.projectPageDescriptionBox.Size = new System.Drawing.Size(300, 20);
             this.projectPageDescriptionBox.TabIndex = 20;
             // 
             // projectPagePNumBox
             // 
-            this.projectPagePNumBox.Location = new System.Drawing.Point(0, 60);
+            this.projectPagePNumBox.Location = new System.Drawing.Point(0, 33);
             this.projectPagePNumBox.Name = "projectPagePNumBox";
             this.projectPagePNumBox.Size = new System.Drawing.Size(300, 20);
             this.projectPagePNumBox.TabIndex = 19;
@@ -855,7 +855,7 @@
             this.projectPageAddHoursButton.FlatAppearance.BorderSize = 0;
             this.projectPageAddHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddHoursButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddHoursButton.Location = new System.Drawing.Point(202, 216);
+            this.projectPageAddHoursButton.Location = new System.Drawing.Point(202, 189);
             this.projectPageAddHoursButton.Name = "projectPageAddHoursButton";
             this.projectPageAddHoursButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageAddHoursButton.TabIndex = 15;
@@ -868,7 +868,7 @@
             this.projectPageHoursLabel2.BackColor = System.Drawing.SystemColors.MenuBar;
             this.projectPageHoursLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageHoursLabel2.ForeColor = System.Drawing.Color.Black;
-            this.projectPageHoursLabel2.Location = new System.Drawing.Point(13, 213);
+            this.projectPageHoursLabel2.Location = new System.Drawing.Point(13, 186);
             this.projectPageHoursLabel2.Name = "projectPageHoursLabel2";
             this.projectPageHoursLabel2.Size = new System.Drawing.Size(300, 26);
             this.projectPageHoursLabel2.TabIndex = 14;
@@ -880,7 +880,7 @@
             this.projectPageHoursLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageHoursLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageHoursLabel.Location = new System.Drawing.Point(1, 187);
+            this.projectPageHoursLabel.Location = new System.Drawing.Point(1, 160);
             this.projectPageHoursLabel.Name = "projectPageHoursLabel";
             this.projectPageHoursLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPageHoursLabel.TabIndex = 13;
@@ -892,7 +892,7 @@
             this.projectPageDeliverablesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageDeliverablesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageDeliverablesLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageDeliverablesLabel.Location = new System.Drawing.Point(1, 135);
+            this.projectPageDeliverablesLabel.Location = new System.Drawing.Point(1, 108);
             this.projectPageDeliverablesLabel.Name = "projectPageDeliverablesLabel";
             this.projectPageDeliverablesLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPageDeliverablesLabel.TabIndex = 11;
@@ -928,7 +928,7 @@
             this.projectPageDescriptionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageDescriptionLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageDescriptionLabel.Location = new System.Drawing.Point(0, 83);
+            this.projectPageDescriptionLabel.Location = new System.Drawing.Point(0, 56);
             this.projectPageDescriptionLabel.Name = "projectPageDescriptionLabel";
             this.projectPageDescriptionLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPageDescriptionLabel.TabIndex = 5;
@@ -940,7 +940,7 @@
             this.projectPagePNumLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPagePNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPagePNumLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPagePNumLabel.Location = new System.Drawing.Point(0, 31);
+            this.projectPagePNumLabel.Location = new System.Drawing.Point(0, 4);
             this.projectPagePNumLabel.Name = "projectPagePNumLabel";
             this.projectPagePNumLabel.Size = new System.Drawing.Size(300, 26);
             this.projectPagePNumLabel.TabIndex = 3;
@@ -954,25 +954,13 @@
             this.projectPageUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageUpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageUpdateButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageUpdateButton.Location = new System.Drawing.Point(225, 4);
+            this.projectPageUpdateButton.Location = new System.Drawing.Point(167, 392);
             this.projectPageUpdateButton.Name = "projectPageUpdateButton";
             this.projectPageUpdateButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageUpdateButton.TabIndex = 2;
             this.projectPageUpdateButton.Text = "Update Project";
             this.projectPageUpdateButton.UseVisualStyleBackColor = false;
             this.projectPageUpdateButton.Click += new System.EventHandler(this.ProjectPageUpdateButton_Click);
-            // 
-            // projectPagePNameLabel
-            // 
-            this.projectPagePNameLabel.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.projectPagePNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectPagePNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.projectPagePNameLabel.Location = new System.Drawing.Point(0, 0);
-            this.projectPagePNameLabel.Name = "projectPagePNameLabel";
-            this.projectPagePNameLabel.Size = new System.Drawing.Size(225, 30);
-            this.projectPagePNameLabel.TabIndex = 0;
-            this.projectPagePNameLabel.Text = "Project Name";
-            this.projectPagePNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // projectPageStatusBox
             // 
@@ -1922,6 +1910,16 @@
             this.phasesLabel.Text = "Project Phases";
             this.phasesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // completeCheckBox
+            // 
+            this.completeCheckBox.AutoSize = true;
+            this.completeCheckBox.Location = new System.Drawing.Point(48, 395);
+            this.completeCheckBox.Name = "completeCheckBox";
+            this.completeCheckBox.Size = new System.Drawing.Size(106, 17);
+            this.completeCheckBox.TabIndex = 26;
+            this.completeCheckBox.Text = "Project Complete";
+            this.completeCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2035,7 +2033,6 @@
         private System.Windows.Forms.Label projectPageDescriptionLabel;
         private System.Windows.Forms.Label projectPagePNumLabel;
         private System.Windows.Forms.Button projectPageUpdateButton;
-        private System.Windows.Forms.Label projectPagePNameLabel;
         private System.Windows.Forms.Panel projectPagePanel1;
         private System.Windows.Forms.Button projectPageAddNotesButton;
         private System.Windows.Forms.Label projectPageNotesLabel;
@@ -2136,6 +2133,7 @@
         private System.Windows.Forms.RadioButton projectNumRadioButton;
         private System.Windows.Forms.Label phasesLabel;
         private System.Windows.Forms.DataGridView phasesGrid;
+        private System.Windows.Forms.CheckBox completeCheckBox;
     }
 }
 
