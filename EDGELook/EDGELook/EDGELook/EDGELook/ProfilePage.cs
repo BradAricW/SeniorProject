@@ -36,7 +36,7 @@ namespace EDGELook
                 MessageBox.Show("Invalid Input");
             }
         }
-
+        //for editing those hours, temporary pid passed in
         public void EditProjectHours(TextBox newHoursBox, TextBox projectTextBox)
         {
             string pid = projectTextBox.Text;
@@ -136,10 +136,15 @@ namespace EDGELook
             projectsGrid.DataSource = table;
             conn.Close();
         }
+        //For the listing of different hours on different projects
         public void ListWorksOn(DataGridView worksOnGrid)
         {
             conn.Open();
             MySqlDataAdapter da = new MySqlDataAdapter("SELECT w.prjNo, p.Description, w.hours FROM Project p, WorksOn w WHERE w.prjNo = p.prjNo AND w.employeeID = '" + eID + "';", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            worksOnGrid.DataSource = table;
+            conn.Close();
         }
 
         public void EditContact(TextBox emailBox, TextBox phoneBox)
