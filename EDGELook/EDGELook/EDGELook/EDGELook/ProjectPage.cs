@@ -199,7 +199,7 @@ namespace EDGELook
             if(complete == true)
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "'WHERE employeeID = '" + this.eID + "';", conn);
+                MySqlCommand cmd = new MySqlCommand("UPDATE Project SET prjCOmplete = 1 WHERE prjNo = '" + projectID + "';", conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
                 conn.Close();
                 MessageBox.Show("Project set to Complete");
@@ -207,7 +207,7 @@ namespace EDGELook
             else if(complete == false)
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "'WHERE employeeID = '" + this.eID + "';", conn);
+                MySqlCommand cmd = new MySqlCommand("UPDATE Project SET prjCOmplete = 0 WHERE prjNo = '" + projectID + "';", conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
                 conn.Close();
                 MessageBox.Show("Hours Updated");
