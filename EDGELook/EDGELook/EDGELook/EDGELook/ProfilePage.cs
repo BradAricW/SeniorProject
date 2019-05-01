@@ -143,6 +143,16 @@ namespace EDGELook
             conn.Close();           
         }
 
+        public void ListVacations(DataGridView vacationGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("Select startDate, endDate from Vacation where employeeID = '" + this.eID + "';", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            vacationGrid.DataSource = table;
+            conn.Close();
+        }
+
         public void EditContact(TextBox emailBox, TextBox phoneBox)
         {
             String phoneNum = phoneBox.Text;

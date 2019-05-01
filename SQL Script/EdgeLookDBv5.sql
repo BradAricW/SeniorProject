@@ -50,7 +50,15 @@ create table Vacation (
     startDate date NOT NULL,
     endDate date,
     primary key(employeeID, startDate),
-    foreign key(employeeID) references Employee(employeeID));
+    foreign key(employeeID) references Employee(employeeID)); public void ListVacations(DataGridView vacationGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("Select startDate, endDate from Vacation where employeeID = '" + this.eID + "';", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            vacationGrid.DataSource = table;
+            conn.Close();
+        }
     
  insert into Employee
  values(322,'Chris','Williams','cwilliams@gmail.com','******','322-678-9821',20);

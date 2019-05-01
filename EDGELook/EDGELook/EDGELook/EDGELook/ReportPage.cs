@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -57,6 +58,24 @@ namespace EDGELook
         public void Setup(MySqlConnection newConn)
         {
             conn = newConn;
+        }
+        public void ListVacations(DataGridView vacationGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("Select * from Vacation;", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            vacationGrid.DataSource = table;
+            conn.Close();
+        }
+        public void ListProjects(DataGridView projectsGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("select E.fname as NAME, P.prjNo as PROJECT NUMBER, P.description as DESCRIPTION, PP.prjPhase as PHASE, PP.phaseDueDate as DUE DATE, P.deliverables as DELIVERABLES, P.hoursNeeded as ESTIMATED HOURS, PP.status as STATUS from Employee E, Project P, ProjectPhase PP where P.prjLeader = E.employeeID AND P.prjNo = PP.prjNo AND P.prjComplete = 0; ", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            projectsGrid.DataSource = table;
+            conn.Close();
         }
     }
 }
