@@ -49,9 +49,10 @@ namespace EDGELook
         public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, DateTimePicker projectPageDueDateBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, int? eID)
         {
             int flag = getFlag();
-            if (projectPagePNumBox.Text == "")
+            //Not catching empty phase, don't know why
+            if (projectPagePNumBox.Text == "" && projectPagePhaseBox.Text == "")
             {
-                MessageBox.Show("please enter Project Number");
+                MessageBox.Show("please enter Project Number and Phase");
             } else { 
 
                 projectNum = projectPagePNumBox.Text;
@@ -68,10 +69,32 @@ namespace EDGELook
                     String upDateProject = ("UPDATE Project SET description = '" + projectDesc +                                                                           
                                                                            "', deliverables = '" + projectDeliverables +
                                                                            "', hoursNeeded = " + projectHours +                                                                          
-                                                                           "' WHERE prjNo = '" + projectNum + "';");
+                                                                           " WHERE prjNo = '" + projectNum + "';");
                     //sql.queryRunner(upDateProject);
                     MySqlCommand cmd = new MySqlCommand(upDateProject, conn);
                     cmd.ExecuteNonQuery();
+
+                    string prj = null;
+                    String getPrjDup = "SELECT prjNo FROM ProjectPhase WHERE prjNo = '" + projectNum + "' AND prjPhase = '" + projectPhase + "';";
+                    MySqlCommand cmd1 = new MySqlCommand(getPrjDup, this.conn);
+                    MySqlDataReader reader = cmd1.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        prj = reader.GetString("prjNo");
+                    }
+                    reader.Close();
+                    if (prj != null)
+                    {
+                        string upDatePhase = "UPDATE ProjectPhase SET phaseDueDate = '" + projectDueDates + "', status = '" + projectStatus + "' WHERE prjNo = '" + projectNum + "' AND prjPhase = '" + projectPhase + "';";
+                        MySqlCommand cmd2 = new MySqlCommand(upDatePhase, conn);
+                        cmd2.ExecuteNonQuery();
+                    }
+                    else
+                    {                      
+                            String addProjectPhase = "INSERT INTO ProjectPhase Values('" + projectNum + "','" + projectPhase + "','" + projectDueDates + "','" + projectStatus + "');";
+                            MySqlCommand cmd2 = new MySqlCommand(addProjectPhase, conn);
+                            cmd2.ExecuteNonQuery();                        
+                    }
                     MessageBox.Show("Project Changed");
                 }
                 else if (flag == 0)
@@ -79,7 +102,7 @@ namespace EDGELook
 
                     //Checks for a duplicate project
                     string prj = null;
-                    String getPrjDup = "SELECT  prjNo FROM Project p, WorksOn w WHERE p.prjNo = w.prjNo AND p.prjNo = '" + projectNum + "' AND w.prjPhase = '" + projectPhase + "';";
+                    String getPrjDup = "SELECT p.prjNo FROM Project p, ProjectPhase w WHERE p.prjNo = w.prjNo AND p.prjNo = '" + projectNum + "' AND w.prjPhase = '" + projectPhase + "';";
                     MySqlCommand cmd1 = new MySqlCommand(getPrjDup, this.conn);
                     MySqlDataReader reader = cmd1.ExecuteReader();
                     while (reader.Read())
@@ -102,11 +125,13 @@ namespace EDGELook
                         cmd2.ExecuteNonQuery();
                         MessageBox.Show("Project Added");
                     }
+                    setFlag(1);
                 }
                 else
                 {
                     Console.WriteLine("ISSUE WITH EDIT PROJECT! FLAG PASSED INCORRECT VALUE.");
                 }
+                conn.Close();
             }
 
         } // END EDITPROJECT

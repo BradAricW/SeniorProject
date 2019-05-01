@@ -134,7 +134,7 @@ namespace EDGELook
             DataTable table = new DataTable();
             da.Fill(table);
             projectsGrid.DataSource = table;
-            conn.Close();
+            conn.Close();           
         }
         //For the listing of different hours on different projects
         public void ListWorksOn(DataGridView worksOnGrid)
@@ -145,6 +145,7 @@ namespace EDGELook
             da.Fill(table);
             worksOnGrid.DataSource = table;
             conn.Close();
+           
         }
 
         public void EditContact(TextBox emailBox, TextBox phoneBox)
