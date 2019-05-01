@@ -34,6 +34,7 @@ namespace EDGELook
         private String assignLastName;
         private String removeFirstName;
         private String removeLastName;
+        private String tempPhase;
 
         public MainForm()
         {
@@ -462,9 +463,19 @@ namespace EDGELook
             }
         }
 
-        private void searchEmployeesButton_Click(object sender, EventArgs e)
+        private void SearchEmployeesButton_Click(object sender, EventArgs e)
         {
             employee.EmployeeSearch(searchEmployeesTextBox.Text, searchEmployeesGrid);
+        }
+
+        private void PhasesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (phasesGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = phasesGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = phasesGrid.Rows[selectedRowIndex];
+                tempPhase = selectedRow.Cells[0].Value.ToString();
+            }
         }
 
         private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)

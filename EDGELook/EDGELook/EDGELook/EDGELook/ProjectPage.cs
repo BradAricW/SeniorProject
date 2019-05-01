@@ -125,11 +125,11 @@ namespace EDGELook
                 projectPagePNumBox.Text = dr.GetString(0);
                 notesPNum = dr.GetString(0);
                 projectPageDescriptionBox.Text = dr.GetString(2);
-                projectPagePhaseBox.Text = dr.GetString(3);
-                projectPageDueDateBox.Text = dr.GetString(4);
-                projectPageDeliverablesBox.Text = dr.GetString(5);
-                projectPageHoursBox.Value = dr.GetDecimal(6);
-                projectPageStatusBox.Text = dr.GetString(7);
+                //projectPagePhaseBox.Text = dr.GetString(3);
+                //projectPageDueDateBox.Text = dr.GetString(4);
+                projectPageDeliverablesBox.Text = dr.GetString(3);
+                projectPageHoursBox.Value = dr.GetDecimal(4);
+                //projectPageStatusBox.Text = dr.GetString(7);
                 
                 temp = true;
             }
