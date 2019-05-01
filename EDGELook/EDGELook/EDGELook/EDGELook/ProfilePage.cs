@@ -36,6 +36,29 @@ namespace EDGELook
                 MessageBox.Show("Invalid Input");
             }
         }
+
+        public void EditProjectHours(TextBox newHoursBox, TextBox projectTextBox)
+        {
+            string pid = projectTextBox.Text;
+            int prjHours = -1;
+            try { prjHours = int.Parse(newHoursBox.Text); }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            if(empHours >= 0)
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE WorksOn SET hours = '" + prjHours + "' WHERE emplopyeeID = '" + eID + "' AND prjNo = '" + pid + "';", conn);
+                Console.WriteLine(cmd.ExecuteNonQuery());
+                conn.Close();
+                MessageBox.Show("Hours Updated");
+            }
+            else
+            {
+                MessageBox.Show("Invalid Input");
+            }
+        }
         public void EditVacation(DateTimePicker newStartDate, DateTimePicker newEndDate)
         {
             string startDate = newStartDate.Text;
@@ -112,6 +135,11 @@ namespace EDGELook
             da.Fill(table);
             projectsGrid.DataSource = table;
             conn.Close();
+        }
+        public void ListWorksOn(DataGridView worksOnGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT w.prjNo, p.Description, w.hours FROM Project p, WorksOn w WHERE w.prjNo = p.prjNo AND w.employeeID = '" + eID + "';", conn);
         }
 
         public void EditContact(TextBox emailBox, TextBox phoneBox)
