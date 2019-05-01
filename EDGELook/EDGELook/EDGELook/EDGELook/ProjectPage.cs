@@ -194,6 +194,26 @@ namespace EDGELook
             }
         }
 
+        public void SetCompleteIncomplete(Boolean complete)
+        {
+            if(complete == true)
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "'WHERE employeeID = '" + this.eID + "';", conn);
+                Console.WriteLine(cmd.ExecuteNonQuery());
+                conn.Close();
+                MessageBox.Show("Project set to Complete");
+            }
+            else if(complete == false)
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "'WHERE employeeID = '" + this.eID + "';", conn);
+                Console.WriteLine(cmd.ExecuteNonQuery());
+                conn.Close();
+                MessageBox.Show("Hours Updated");
+            }
+        }
+
         public void DisplayEmployees(DataGridView unassigned, DataGridView assigned)
         {
             conn.Open();
