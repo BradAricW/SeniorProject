@@ -35,6 +35,7 @@ create table projectPhase (
 	prjNo int NOT NULL,
 	prjPhase varchar(30) NOT NULL,
 	phaseDueDate date,
+	status varchar(255),
 	primary key(prjNo, prjPhase),
 	foreign key(prjNo) references Project(prjNo));
     
