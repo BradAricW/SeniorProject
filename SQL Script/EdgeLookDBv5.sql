@@ -31,8 +31,8 @@ create table WorksOn (
     foreign key(employeeID) references Employee(employeeID),
     foreign key(prjNo) references Project(prjNo));
 	
-create table projectPhase (
-	prjNo int NOT NULL,
+create table ProjectPhase (
+	prjNo varchar(30) NOT NULL,
 	prjPhase varchar(30) NOT NULL,
 	phaseDueDate date,
 	status varchar(255),
@@ -72,6 +72,9 @@ create table Vacation (
  
  insert into Project
  values('F163',322,'Leimbach ES','CD','Saturday, December 28, 2019','50% CD',24,'Need to make a site visit');
+ 
+ insert into ProjectPhase
+ values('F163','CD','2019-06-11','Site visits');
  
  
  insert into WorksOn
