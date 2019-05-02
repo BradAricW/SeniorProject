@@ -34,7 +34,7 @@ namespace EDGELook
         private String assignLastName;
         private String removeFirstName;
         private String removeLastName;
-        private String tempPhase;
+        private String tempPhase, tempVac;
 
         public MainForm()
         {
@@ -58,9 +58,13 @@ namespace EDGELook
             eID = login.Login(emailBox, passBox);
             int success;
             if (eID == null)
+            {
                 success = 0;
+            }
             else
+            {
                 success = 1;
+            }
             if (success == 1)
             {
                 this.signOutLabel.Visible = true;
@@ -74,9 +78,11 @@ namespace EDGELook
                 profile.GetHours(profileHoursTextBox);
                 profile.GetEmail(profileEmailTextBox);
                 profile.GetPhone(profilePhoneTextBox);
+                profile.GetName(profileFNameBox, profileLNameBox);
                 profile.ListProjects(profileProjectGrid);
+                profile.ListVacations(vacationsGrid);
                 edit.Setup(conn);
-                isAdmin = profile.getAdmin();
+                isAdmin = profile.GetAdmin();
                 if(isAdmin == true)
                 {
                     admin = new AdminPage();
@@ -122,6 +128,8 @@ namespace EDGELook
             profile.GetEmail(profileEmailTextBox);
             profile.GetPhone(profilePhoneTextBox);
             profile.ListProjects(profileProjectGrid);
+            profile.ListVacations(vacationsGrid);
+            profile.GetName(profileFNameBox, profileLNameBox);
         }
 
         private void ProjectsButton_Click(object sender, EventArgs e)
@@ -283,14 +291,6 @@ namespace EDGELook
 
         } //Add Employee
 
-        private void ProjectPageEditEmployeeText_TextChanged(object sender, EventArgs e)
-        {
-            
-            
-        } 
-
-
-
         private void Clear()
         {
             projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageStatusBox.Text = "";
@@ -318,7 +318,7 @@ namespace EDGELook
                 int selectedRowIndex = profileProjectGrid.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = profileProjectGrid.Rows[selectedRowIndex];
                 profilePrjNo = selectedRow.Cells[0].Value.ToString();
-                Console.WriteLine(profilePrjNo);
+                profile.GetProjHours(profilePrjNo, profileProjectHoursBox);
             }
         }
 
@@ -359,7 +359,7 @@ namespace EDGELook
 
         private void AdminLabel_Click(object sender, EventArgs e)
         {
-            isAdmin = profile.getAdmin();
+            isAdmin = profile.GetAdmin();
             if (isAdmin == true)
             {
                 this.searchProjectsBG.Visible = false;
@@ -469,6 +469,28 @@ namespace EDGELook
                 int selectedRowIndex = phasesGrid.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = phasesGrid.Rows[selectedRowIndex];
                 tempPhase = selectedRow.Cells[0].Value.ToString();
+            }
+        }
+
+        private void AddVacationButton_Click(object sender, EventArgs e)
+        {
+            profile.EditVacation(profileStartDate, profileEndDate);
+            profile.ListVacations(vacationsGrid);
+        }
+
+        private void RemoveVacationButton_Click(object sender, EventArgs e)
+        {
+            profile.RemoveVacation(tempVac);
+            profile.ListVacations(vacationsGrid);
+        }
+
+        private void VacationsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (vacationsGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = vacationsGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = vacationsGrid.Rows[selectedRowIndex];
+                tempVac = selectedRow.Cells[0].Value.ToString();
             }
         }
 

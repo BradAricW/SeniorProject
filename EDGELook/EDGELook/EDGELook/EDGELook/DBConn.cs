@@ -27,8 +27,7 @@ namespace EDGELook
             this.database = "sevenwonders";
             this.uid = "sevenwonders";
             this.password = "sw_db";
-            this.connString = "server=" + server + ";" + "database=" +
-            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+            this.connString = "server=" + server + ";" + "database=" + database + ";" + "uid=" + uid + ";" + "password=" + password + ";" + "convert zero datetime=True;";
         }
 
         public MySqlConnection Dbsetup()
@@ -36,17 +35,14 @@ namespace EDGELook
             conn = new MySqlConnection(connString);
             return conn;
         }
-        //No more code after this point
-
         
-        public String connectionSetUp()
+        public String ConnectionSetUp()
         {
             this.server = "athena";
             this.database = "sevenwonders";
             this.uid = "sevenwonders";
             this.password = "sw_db";
-            this.connString = "server=" + server + ";" + "database=" +
-            database + ";" + "uid=" + uid + ";" + "password=" + password + ";";
+            this.connString = "server=" + server + ";" + "database=" + database + ";" + "uid=" + uid + ";" + "password=" + password + ";" + "convert zero datetime=True;";
             return connString;
         }
 
