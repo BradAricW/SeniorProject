@@ -11,11 +11,11 @@ namespace EDGELook
 {
     public class DBConn
     {
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
-        private string connString;
+        private String server;
+        private String database;
+        private String uid;
+        private String password;
+        private String connString;
         private MySqlConnection conn;
         //private int? eID;
         //private String projectID;

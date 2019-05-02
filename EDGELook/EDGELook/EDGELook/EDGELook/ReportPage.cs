@@ -16,7 +16,7 @@ namespace EDGELook
 
         public void CreateReport(DataGridView DGV)
         {
-            string filename = "";           
+            String filename = "";           
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "CSV (*.csv)|*.csv";
             sfd.FileName = "Output.csv";
@@ -35,8 +35,8 @@ namespace EDGELook
                     }
                 }
                 int columnCount = DGV.ColumnCount;
-                string columnNames = "";
-                string[] output = new string[DGV.RowCount + 1];
+                String columnNames = "";
+                String[] output = new String[DGV.RowCount + 1];
                 for (int i = 0; i < columnCount; i++)
                 {
                     columnNames += DGV.Columns[i].Name.ToString() + ",";

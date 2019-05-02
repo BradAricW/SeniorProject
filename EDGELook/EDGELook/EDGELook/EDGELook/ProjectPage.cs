@@ -16,17 +16,12 @@ namespace EDGELook
 {
     class ProjectPage
     {
-        private string  projectNum;
-        private string  projectDesc;
-        private string  projectDueDates;
-        private string  projectPhase;
-        private string  projectDeliverables;
+        private String  projectDesc;
+        private String  projectDeliverables;
         private int     projectHours;
-        private string  projectStatus;
-        private string  projectID;
-        private string notesPNum;
+        private String  projectID;
+        private String notesPNum;
         private String leaderID, fName, lName;
-        //private int? eID;
 
         private MySqlConnection conn;
 
@@ -45,65 +40,40 @@ namespace EDGELook
         {
             this.conn = con;
         }
+        public void EditID(String newID)
+        {
+            projectID = newID;
+        }
 
         //Edit Project
-        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, DateTimePicker projectPageDueDateBox, TextBox projectPagePhaseBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, int? eID)
+        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, int? eID)
         {
             int flag = GetFlag();
-            //Not catching empty phase, don't know why
-            if (projectPagePNumBox.Text == "" && projectPagePhaseBox.Text == "")
+            if (projectPagePNumBox.Text == "")
             {
-                MessageBox.Show("please enter Project Number and Phase");
+                MessageBox.Show("Please Enter a Project Number");
             } else { 
 
-                projectNum = projectPagePNumBox.Text;
+                projectID = projectPagePNumBox.Text;
                 projectDesc = projectPageDescriptionBox.Text;
-                projectDueDates = projectPageDueDateBox.Text;
-                projectPhase = projectPagePhaseBox.Text;
                 projectDeliverables = projectPageDeliverablesBox.Text;
                 projectHours = (int)projectPageHoursBox.Value;
-                projectStatus = projectPageStatusBox.Text;
                 conn.Open();
 
                 if (flag == 1)
                 { // if its an update
-                    String upDateProject = ("UPDATE Project SET description = '" + projectDesc +                                                                           
-                                                                           "', deliverables = '" + projectDeliverables +
-                                                                           "', hoursNeeded = " + projectHours +                                                                          
-                                                                           " WHERE prjNo = '" + projectNum + "';");
+                    String upDateProject = ("UPDATE Project SET description = '" + projectDesc + "', deliverables = '" + projectDeliverables + "', hoursNeeded = " + projectHours + " WHERE prjNo = '" + projectID + "';");
                     //sql.queryRunner(upDateProject);
                     MySqlCommand cmd = new MySqlCommand(upDateProject, conn);
                     cmd.ExecuteNonQuery();
-
-                    string prj = null;
-                    String getPrjDup = "SELECT prjNo FROM ProjectPhase WHERE prjNo = '" + projectNum + "' AND prjPhase = '" + projectPhase + "';";
-                    MySqlCommand cmd1 = new MySqlCommand(getPrjDup, this.conn);
-                    MySqlDataReader reader = cmd1.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        prj = reader.GetString("prjNo");
-                    }
-                    reader.Close();
-                    if (prj != null)
-                    {
-                        string upDatePhase = "UPDATE ProjectPhase SET phaseDueDate = '" + projectDueDates + "', status = '" + projectStatus + "' WHERE prjNo = '" + projectNum + "' AND prjPhase = '" + projectPhase + "';";
-                        MySqlCommand cmd2 = new MySqlCommand(upDatePhase, conn);
-                        cmd2.ExecuteNonQuery();
-                    }
-                    else
-                    {                      
-                            String addProjectPhase = "INSERT INTO ProjectPhase Values('" + projectNum + "','" + projectPhase + "','" + projectDueDates + "','" + projectStatus + "');";
-                            MySqlCommand cmd2 = new MySqlCommand(addProjectPhase, conn);
-                            cmd2.ExecuteNonQuery();                        
-                    }
                     MessageBox.Show("Project Changed");
                 }
                 else if (flag == 0)
                 { // if its a new project
 
                     //Checks for a duplicate project
-                    string prj = null;
-                    String getPrjDup = "SELECT p.prjNo FROM Project p, ProjectPhase w WHERE p.prjNo = w.prjNo AND p.prjNo = '" + projectNum + "' AND w.prjPhase = '" + projectPhase + "';";
+                    String prj = null;
+                    String getPrjDup = "SELECT p.prjNo FROM Project p, ProjectPhase w WHERE p.prjNo = w.prjNo AND p.prjNo = '" + projectID + "';";
                     MySqlCommand cmd1 = new MySqlCommand(getPrjDup, this.conn);
                     MySqlDataReader reader = cmd1.ExecuteReader();
                     while (reader.Read())
@@ -118,12 +88,9 @@ namespace EDGELook
                     else
                     {
 
-                        String addProject = ("INSERT INTO Project VALUES ('" + projectNum + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectDeliverables + "', '" + projectHours + "', 0);");
+                        String addProject = ("INSERT INTO Project VALUES ('" + projectID + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectDeliverables + "', '" + projectHours + "', 0);");
                         MySqlCommand cmd = new MySqlCommand(addProject, conn);
                         cmd.ExecuteNonQuery();
-                        String addProjectPhase = "INSERT INTO ProjectPhase Values('" + projectNum + "','" + projectPhase + "','" + projectDueDates + "','" + projectStatus + "');";
-                        MySqlCommand cmd2 = new MySqlCommand(addProjectPhase, conn);
-                        cmd2.ExecuteNonQuery();
                         MessageBox.Show("Project Added");
                     }
                     SetFlag(1);
@@ -192,7 +159,7 @@ namespace EDGELook
         public void AddNotes(int? eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
         {
             //Don't need validation here because NOW() will always make the entry unique
-            string pid = projectPagePNumBox.Text;          
+            String pid = projectPagePNumBox.Text;          
             conn.Open();
             String notes = "INSERT INTO Notes (employeeID, prjNo, nDate, notes) VALUES (" + eID + ", '" + pid + "', NOW(), '" + projectPageNotesBox.Text + "'); ";
             MySqlCommand cmd = new MySqlCommand(notes, conn);
@@ -203,16 +170,6 @@ namespace EDGELook
            
 
         } // END ADDNOTES
-
-        public void ListProjectPhase(DataGridView phaseGrid)
-        {
-            conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT prjPhase as Phase, phaseDueDate as 'Due Date', status as 'Status' FROM ProjectPhase WHERE prjNo = '" + projectID + "';", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            phaseGrid.DataSource = table;
-            conn.Close();
-        }
 
         public void SetCompleteIncomplete(CheckBox complete)
         {
@@ -292,7 +249,7 @@ namespace EDGELook
                 case 2:  da = new MySqlDataAdapter("call Search_By_Description('" + projSearch + "');", conn); break;
                 case 3:  da = new MySqlDataAdapter("call Search_By_Lead('" + projSearch + "');", conn); break;
                 default: da = new MySqlDataAdapter("call Project_Search('" + projSearch + "');", conn); break;     
-        }
+            }
                
             DataTable table = new DataTable();
             da.Fill(table);
@@ -313,13 +270,12 @@ namespace EDGELook
             {
                 hoursAvail = reader1.GetInt32("hoursAvail");
             }
-            conn.Close();
+            reader1.Close();
 
             if(hours <= hoursAvail) 
             {
-                conn.Open();
                 //this ensures the program doesn't crash due to duplicate entries in the db
-                string dupId = null;
+                String dupId = null;
                 String getEmpDup = "SELECT employeeID FROM WorksOn WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
                 MySqlCommand cmddup = new MySqlCommand(getEmpDup, this.conn);
                 MySqlDataReader reader2 = cmddup.ExecuteReader();
@@ -327,40 +283,34 @@ namespace EDGELook
                 {
                     dupId = reader2.GetString("employeeID");
                 }
-                conn.Close();
+                reader2.Close();
                 if (dupId != null)
                 {
                     MessageBox.Show("Duplicate Employee on Project, Hours Updated");
                 }
                 else
                 {
-                    conn.Open();
                     String setMyID = "INSERT INTO WorksOn VALUES ('" + empID + "','" + projectID + "'," + hours + ");";
                     MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
                     cmd2.ExecuteNonQuery();
-                    //Console.WriteLine(cmd2.ExecuteNonQuery());
-                    conn.Close();
                 }
                 //update hours in employee table hoursAvail - hours
                 int totalHours = 0;
                 totalHours = hoursAvail - hours; //get new hours available for employee
 
-                conn.Open();
                 String setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
                 MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
                 Console.WriteLine(cmd5.ExecuteNonQuery());
-                conn.Close();
-
-                conn.Open();
+                
                 String setAvailHours = "UPDATE Employee SET hoursAvail = '" + totalHours + "'WHERE employeeID = '" + empID + "';";
                 MySqlCommand cmd6 = new MySqlCommand(setAvailHours, this.conn);
                 Console.WriteLine(cmd6.ExecuteNonQuery());
-                conn.Close();
             }
             else 
             {
-                MessageBox.Show(empID + " does Not have enough hours available to be added to project.");
+                MessageBox.Show(empID + "does not have enough hours available to be added to project.");
             }
+            conn.Close();
 
         } //END ASSIGNEMPLOYEE: MM and SZ
 
@@ -369,28 +319,25 @@ namespace EDGELook
             //get project leader of current project
             conn.Open();
             String checkEmpID = "";
-            String checkID = "SELECT prjLeader FROM Project P WHERE P.prjNo  = '" + projectID + "' ;";
+            String checkID = "SELECT prjLeader FROM Project WHERE prjNo  = '" + projectID + "' ;";
             MySqlCommand cmd0 = new MySqlCommand(checkID, this.conn);
             MySqlDataReader reader0 = cmd0.ExecuteReader();
             while (reader0.Read())
             {
                 checkEmpID = reader0.GetString("prjLeader");
             }
+            reader0.Close();
 
             if(checkEmpID != empID) {
-
-                conn.Open();
                 int hoursAssigned = 0;
-                String getHours = "SELECT hours FROM WorksOn E WHERE " + empID + " = E.employeeID;";
+                String getHours = "SELECT hours FROM WorksOn WHERE employeeID  = '" + empID + "' ;";
                 MySqlCommand cmd1 = new MySqlCommand(getHours, this.conn);
                 MySqlDataReader reader1 = cmd1.ExecuteReader();
                 while (reader1.Read())
                 {
                     hoursAssigned = reader1.GetInt32("hours");
                 }
-                conn.Close();
-
-                conn.Open();
+                reader1.Close();
                 int hoursAvail = 0;
                 String availGetHours = "SELECT hoursAvail FROM Employee E WHERE " + empID + " = E.employeeID;";
                 MySqlCommand cmd2 = new MySqlCommand(availGetHours, this.conn);
@@ -399,10 +346,7 @@ namespace EDGELook
                 {
                    hoursAvail = reader2.GetInt32("hoursAvail");
                 }
-                conn.Close();
-            
-                conn.Open();
-
+                reader2.Close();
                 String removeID = "DELETE FROM WorksOn WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
                 MySqlCommand cmd3 = new MySqlCommand(removeID, conn);
                 Console.WriteLine(cmd3.ExecuteNonQuery());
@@ -412,20 +356,90 @@ namespace EDGELook
                 String setHours = "UPDATE Employee SET hoursAvail = '" + totalHours + "'WHERE employeeID = '" + empID + "';";
                 MySqlCommand cmd4 = new MySqlCommand(setHours, this.conn);
                 Console.WriteLine(cmd4.ExecuteNonQuery());
-
-                conn.Close();
+                
             }
             else 
             {
                 MessageBox.Show("Project Leader cannot be removed.");
             }
-        } //END REMOVEEMPLOYEE: MM and SZ   
+            conn.Close();
+        } //END REMOVEEMPLOYEE   
 
-        public void EditID(String newID)
+        public void ListPhases(DataGridView phases)
         {
-            projectID = newID;
+            conn.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT prjNo AS 'Project #', prjPhase AS 'Phase', phaseDueDate AS 'Phase Due Date', status AS Status from ProjectPhase WHERE prjNo = '" + projectID + "' ORDER BY phaseDueDate;", conn); 
+            DataTable table = new DataTable();
+            da.Fill(table);
+            phases.DataSource = table;
+            conn.Close();
         }
 
+        public void UpdatePhase(TextBox phase, DateTimePicker due, TextBox status)
+        {
+            due.Format = DateTimePickerFormat.Custom;
+            due.CustomFormat = "yyyy-MM-dd";
+            String projectPhase = phase.Text;
+            String projectDueDates = due.Text;
+            String projectStatus = status.Text;
+            if (projectPhase != "" && projectDueDates != "" && projectStatus != "")
+            {
+                conn.Open();
+                String prj = null;
+                String getPrjDup = "SELECT prjNo FROM ProjectPhase WHERE prjNo = '" + projectID + "' AND prjPhase = '" + projectPhase + "';";
+                MySqlCommand cmd = new MySqlCommand(getPrjDup, this.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    prj = reader.GetString("prjNo");
+                }
+                reader.Close();
+                String pid = null;
+                String getPIDDup = "SELECT prjNo FROM ProjectPhase WHERE prjNo = '" + projectID + "';";
+                cmd = new MySqlCommand(getPIDDup, this.conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    pid = reader.GetString("prjNo");
+                }
+                reader.Close();
+                if (pid != null)
+                {
+                    if (prj != null)
+                    {
+                        String upDatePhase = "UPDATE ProjectPhase SET phaseDueDate = '" + projectDueDates + "', status = '" + projectStatus + "' WHERE prjNo = '" + projectID + "' AND prjPhase = '" + projectPhase + "';";
+                        MySqlCommand cmd2 = new MySqlCommand(upDatePhase, conn);
+                        cmd2.ExecuteNonQuery();
+                        MessageBox.Show("Phase " + projectPhase + " Updated");
+                    }
+                    else
+                    {
+                        String addProjectPhase = "INSERT INTO ProjectPhase Values('" + projectID + "','" + projectPhase + "','" + projectDueDates + "','" + projectStatus + "');";
+                        MySqlCommand cmd2 = new MySqlCommand(addProjectPhase, conn);
+                        cmd2.ExecuteNonQuery();
+                        MessageBox.Show("Phase " + projectPhase + " Created");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please create project before adding phases.");
+                }
+                conn.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid input for Phase, Status, and Due Date.");
+            }
+        }
+
+        public void UpdateLeader(String eID)
+        {   
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("UPDATE Project SET prjLeader = '" + eID + "'WHERE prjNo = '" + projectID + "';", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
     } // END INTERNAL CLASS EDGELOOK
 } // END EDGELOOK

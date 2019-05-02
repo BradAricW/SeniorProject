@@ -14,10 +14,10 @@ namespace EDGELook
         private MySqlConnection conn;
         public void NewEmployee(TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox pass, TextBox hours, CheckBox admin)
         {
-            string fname = firstName.Text;
-            string lname = lastName.Text;
-            string userName = email.Text;
-            string phoneNumber = phone.Text;
+            String fname = firstName.Text;
+            String lname = lastName.Text;
+            String userName = email.Text;
+            String phoneNumber = phone.Text;
             int isAdmin;
             if (admin.Checked)
             {
@@ -28,7 +28,7 @@ namespace EDGELook
                 isAdmin = 0;
             }
             
-            string defaultPassword = pass.Text;
+            String defaultPassword = pass.Text;
             int defaultHours = -1;
             try { defaultHours = int.Parse(hours.Text); }
             catch (Exception ex)
@@ -44,8 +44,8 @@ namespace EDGELook
             }
 
             conn.Open();
-            string dupId = null;
-            string getEmpDup = "SELECT  employeeID FROM Employee WHERE employeeID = '" + eID + "';";
+            String dupId = null;
+            String getEmpDup = "SELECT  employeeID FROM Employee WHERE employeeID = '" + eID + "';";
             MySqlCommand cmd1 = new MySqlCommand(getEmpDup, this.conn);
             MySqlDataReader reader = cmd1.ExecuteReader();
             while (reader.Read())
@@ -59,7 +59,7 @@ namespace EDGELook
             }
             else
             {
-                string insertEmp = "INSERT INTO Employee VALUES (" + eID + ", '" + fname + "', '" + lname + "', '" + userName + "', '" + defaultPassword + "', '" + phoneNumber + "', " + defaultHours + ", " + isAdmin + ");";
+                String insertEmp = "INSERT INTO Employee VALUES (" + eID + ", '" + fname + "', '" + lname + "', '" + userName + "', '" + defaultPassword + "', '" + phoneNumber + "', " + defaultHours + ", " + isAdmin + ");";
                 MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
             }

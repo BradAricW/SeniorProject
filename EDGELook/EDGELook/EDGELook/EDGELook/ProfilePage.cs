@@ -110,11 +110,11 @@ namespace EDGELook
             newStartDate.CustomFormat = "yyyy-MM-dd";
             newEndDate.Format = DateTimePickerFormat.Custom;
             newEndDate.CustomFormat = "yyyy-MM-dd";
-            string startDate = newStartDate.Text;
-            string endDate = newEndDate.Text;
+            String startDate = newStartDate.Text;
+            String endDate = newEndDate.Text;
             conn.Open();
 
-            string dupId = null;
+            String dupId = null;
             String getVacDup = "SELECT  employeeID FROM Vacation WHERE employeeID = '" + this.eID + "' AND startDate = '" + startDate + "';";
             MySqlCommand cmd1 = new MySqlCommand(getVacDup, this.conn);
             MySqlDataReader reader = cmd1.ExecuteReader();
@@ -137,7 +137,7 @@ namespace EDGELook
             conn.Close();
         }
 
-        public void RemoveVacation(string startDate)
+        public void RemoveVacation(String startDate)
         {
             conn.Open();
             Console.WriteLine(startDate);

@@ -50,8 +50,8 @@ namespace EDGELook
             employee.Setup(conn);
 
             ////QUICK LOGIN
-            emailBox.Text = "iris@yahoo.com";
-            passBox.Text = "******";
+            //emailBox.Text = "iris@yahoo.com";
+            //passBox.Text = "******";
 
 
             eID = login.Login(emailBox, passBox);
@@ -213,11 +213,11 @@ namespace EDGELook
 
             Clear();
             edit.EditID(testPrjNo);
+            edit.ListPhases(phasesGrid);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
-            Console.WriteLine("Edit Project. Flag set to 1");
         }
 
         private void SearchProjectsPageAddProjectButton_Click(object sender, EventArgs e)
@@ -242,7 +242,15 @@ namespace EDGELook
         private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
             edit.SetCompleteIncomplete(completeCheckBox);
-            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID);
+            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID);
+
+            testPrjNo = projectPagePNumBox.Text;
+            edit.EditID(testPrjNo);
+            edit.ListPhases(phasesGrid);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+            edit.DisplayNotes(notesGridView);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+            edit.SetFlag(1);
         }
 
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
@@ -259,8 +267,6 @@ namespace EDGELook
 
         private void ProjectPageAddEmployeeButton_Click(object sender, EventArgs e)
         {
-            //String fname = "Iris";
-            //String lname = "Ivy";
             try { hours = int.Parse(projectPageEditEmployeeText.Text); }
             catch (Exception ex)
             {
@@ -314,6 +320,7 @@ namespace EDGELook
 
             Clear();
             edit.EditID(profilePrjNo);
+            edit.ListPhases(phasesGrid);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, profilePrjNo, completeCheckBox);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
@@ -414,10 +421,9 @@ namespace EDGELook
         private void ProjectPageAssignmentGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (projectPageAssignmentGrid.SelectedCells.Count > 0) {
-
-            int selectedRowIndex = projectPageAssignmentGrid.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = projectPageAssignmentGrid.Rows[selectedRowIndex];
-            assignEID = selectedRow.Cells[0].Value.ToString();
+                int selectedRowIndex = projectPageAssignmentGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = projectPageAssignmentGrid.Rows[selectedRowIndex];
+                assignEID = selectedRow.Cells[0].Value.ToString();
             }
         }
 
@@ -479,6 +485,38 @@ namespace EDGELook
         private void VacationReportButton_Click(object sender, EventArgs e)
         {
             report.CreateReport(vacationReportGrid);
+        }
+
+        private void ProjectPageUpdatePhaseButton_Click(object sender, EventArgs e)
+        {
+            edit.UpdatePhase(projectPagePhaseBox, projectPageDueDateBox, projectPageStatusBox);
+
+            testPrjNo = projectPagePNumBox.Text;
+            edit.EditID(testPrjNo);
+            edit.ListPhases(phasesGrid);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+            edit.DisplayNotes(notesGridView);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+            edit.SetFlag(1);
+        }
+
+        private void EditLeaderButton_Click(object sender, EventArgs e)
+        {
+            try { hours = int.Parse(projectPageEditEmployeeText.Text); }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            edit.UpdateLeader(assignEID);
+            edit.AssignEmployee(hours, assignEID);
+
+            testPrjNo = projectPagePNumBox.Text;
+            edit.EditID(testPrjNo);
+            edit.ListPhases(phasesGrid);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+            edit.DisplayNotes(notesGridView);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+            edit.SetFlag(1);
         }
 
         private void EmployeePageViewButton_Click(object sender, EventArgs e)

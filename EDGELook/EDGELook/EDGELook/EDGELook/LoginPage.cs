@@ -10,8 +10,8 @@ namespace EDGELook
 {
     class LoginPage
     {
-        private string email;
-        private string password;
+        private String email;
+        private String password;
         private MySqlConnection conn;
         private int? eID;
 
@@ -29,7 +29,7 @@ namespace EDGELook
                 Console.WriteLine(ex.Message);
             }
 
-            string getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND BINARY pssword = '" + password + "';";
+            String getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND BINARY pssword = '" + password + "';";
             MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -52,7 +52,7 @@ namespace EDGELook
         //This only works after the user logs in and has a connection set up
         public void ChangePassword(TextBox newPasswordBox)
         {
-            string newPassword = newPasswordBox.Text;
+            String newPassword = newPasswordBox.Text;
             if (newPassword.Length < 6)
             {
                 MessageBox.Show("Password must be at least 6 characters");
@@ -60,7 +60,7 @@ namespace EDGELook
             else
             {
                 conn.Open();
-                string setPassword = "UPDATE EMPLOYEE SET pssword = '" + newPassword + "' WHERE employeeID = " + eID + ";";
+                String setPassword = "UPDATE EMPLOYEE SET pssword = '" + newPassword + "' WHERE employeeID = " + eID + ";";
                 MySqlCommand cmd = new MySqlCommand(setPassword, conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
                 conn.Close();
