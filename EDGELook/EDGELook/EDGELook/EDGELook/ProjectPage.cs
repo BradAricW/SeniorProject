@@ -33,8 +33,7 @@ namespace EDGELook
         }
         public void SetFlag(int n)
         {
-             flag = n;
-            Console.WriteLine("Flag Set: " + flag);
+            flag = n;
         }
         public void Setup(MySqlConnection con)
         {
@@ -92,6 +91,10 @@ namespace EDGELook
                         MySqlCommand cmd = new MySqlCommand(addProject, conn);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Project Added");
+
+                        String addLeader = ("INSERT INTO WorksOn VALUES ('" + eID + "', " + "'" + projectID + "', 0);");
+                        MySqlCommand cmd2 = new MySqlCommand(addLeader, conn);
+                        cmd2.ExecuteNonQuery();
                     }
                     SetFlag(1);
                 }
@@ -272,43 +275,46 @@ namespace EDGELook
             }
             reader1.Close();
 
-            if(hours <= hoursAvail) 
+            if (projectID != null)
             {
-                //this ensures the program doesn't crash due to duplicate entries in the db
-                String dupId = null;
-                String getEmpDup = "SELECT employeeID FROM WorksOn WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
-                MySqlCommand cmddup = new MySqlCommand(getEmpDup, this.conn);
-                MySqlDataReader reader2 = cmddup.ExecuteReader();
-                while (reader2.Read())
+                if (hours <= hoursAvail)
                 {
-                    dupId = reader2.GetString("employeeID");
-                }
-                reader2.Close();
-                if (dupId != null)
-                {
-                    MessageBox.Show("Duplicate Employee on Project, Hours Updated");
+                    //this ensures the program doesn't crash due to duplicate entries in the db
+                    String dupId = null;
+                    String getEmpDup = "SELECT employeeID FROM WorksOn WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
+                    MySqlCommand cmddup = new MySqlCommand(getEmpDup, this.conn);
+                    MySqlDataReader reader2 = cmddup.ExecuteReader();
+                    while (reader2.Read())
+                    {
+                        dupId = reader2.GetString("employeeID");
+                    }
+                    reader2.Close();
+                    if (dupId != null)
+                    {
+                        MessageBox.Show("Duplicate Employee on Project, Hours Updated");
+                    }
+                    else
+                    {
+                        String setMyID = "INSERT INTO WorksOn VALUES ('" + empID + "','" + projectID + "'," + hours + ");";
+                        MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
+                        cmd2.ExecuteNonQuery();
+                    }
+                    //update hours in employee table hoursAvail - hours
+                    int totalHours = 0;
+                    totalHours = hoursAvail - hours; //get new hours available for employee
+
+                    String setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
+                    MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
+                    Console.WriteLine(cmd5.ExecuteNonQuery());
+
+                    String setAvailHours = "UPDATE Employee SET hoursAvail = '" + totalHours + "'WHERE employeeID = '" + empID + "';";
+                    MySqlCommand cmd6 = new MySqlCommand(setAvailHours, this.conn);
+                    Console.WriteLine(cmd6.ExecuteNonQuery());
                 }
                 else
                 {
-                    String setMyID = "INSERT INTO WorksOn VALUES ('" + empID + "','" + projectID + "'," + hours + ");";
-                    MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
-                    cmd2.ExecuteNonQuery();
+                    MessageBox.Show(empID + "does not have enough hours available to be added to project.");
                 }
-                //update hours in employee table hoursAvail - hours
-                int totalHours = 0;
-                totalHours = hoursAvail - hours; //get new hours available for employee
-
-                String setHours = "UPDATE WorksOn SET hours = '" + hours + "'WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
-                MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
-                Console.WriteLine(cmd5.ExecuteNonQuery());
-                
-                String setAvailHours = "UPDATE Employee SET hoursAvail = '" + totalHours + "'WHERE employeeID = '" + empID + "';";
-                MySqlCommand cmd6 = new MySqlCommand(setAvailHours, this.conn);
-                Console.WriteLine(cmd6.ExecuteNonQuery());
-            }
-            else 
-            {
-                MessageBox.Show(empID + "does not have enough hours available to be added to project.");
             }
             conn.Close();
 
@@ -396,8 +402,8 @@ namespace EDGELook
                 }
                 reader.Close();
                 String pid = null;
-                String getPIDDup = "SELECT prjNo FROM ProjectPhase WHERE prjNo = '" + projectID + "';";
-                cmd = new MySqlCommand(getPIDDup, this.conn);
+                String getPID = "SELECT prjNo FROM Project WHERE prjNo = '" + projectID + "';";
+                cmd = new MySqlCommand(getPID, this.conn);
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -434,11 +440,14 @@ namespace EDGELook
         }
 
         public void UpdateLeader(String eID)
-        {   
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("UPDATE Project SET prjLeader = '" + eID + "'WHERE prjNo = '" + projectID + "';", conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+        {
+            if (projectID != null)
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Project SET prjLeader = '" + eID + "'WHERE prjNo = '" + projectID + "';", conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
         }
 
     } // END INTERNAL CLASS EDGELOOK

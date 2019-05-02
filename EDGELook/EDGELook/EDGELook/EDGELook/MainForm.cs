@@ -112,7 +112,7 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
 
             //clear all data
-            this.Clear();
+            Clear();
         }
 
         private void HomeButton_Click(object sender, EventArgs e)
@@ -124,7 +124,7 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
             this.adminBackPanel.Visible = false;
-            this.Clear();
+            Clear();
 
             profile.GetHours(profileHoursTextBox);
             profile.GetEmail(profileEmailTextBox);
@@ -143,7 +143,7 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = true;
             this.adminBackPanel.Visible = false;
-            this.Clear();
+            Clear();
 
             edit.ListProjects(projectsGrid, eID);
         }
@@ -157,7 +157,7 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = true;
             this.searchProjectsBG.Visible = false;
             this.adminBackPanel.Visible = false;
-            this.Clear();
+            Clear();
 
             employee.ListEmployees(searchEmployeesGrid, eID);
         }
@@ -171,7 +171,7 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
             this.adminBackPanel.Visible = false;
-            this.Clear();
+            Clear();
 
             report.ListProjects(weeklyReportGrid);
             report.ListVacations(vacationReportGrid);
@@ -232,7 +232,10 @@ namespace EDGELook
 
             Clear();
             edit.SetFlag(0);
-            Console.WriteLine("Add Project. Flag set to 0");
+            edit.EditID(null);
+            edit.ListPhases(phasesGrid);
+            edit.DisplayNotes(notesGridView);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
         }
 
 
@@ -280,10 +283,11 @@ namespace EDGELook
         private void Clear()
         {
             projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageStatusBox.Text = "";
+            projectPageLeaderFNameBox.Text = projectPageLeaderLNameBox.Text = "";
             projectPageHoursBox.Value = 0;
-            profileHoursTextBox.Text =  profileEmailTextBox.Text = profilePhoneTextBox.Text = "";
+            profileFNameBox.Text = profileLNameBox.Text = profileHoursTextBox.Text =  profileEmailTextBox.Text = profilePhoneTextBox.Text = "";
             searchProjectsTextBox.Text = searchEmployeesTextBox.Text = "";
-            employeePageHoursBox.Text =  employeeEmailTextBox.Text = employeePhoneTextBox.Text = "";
+            employeeFNameBox.Text = employeeLNameBox.Text = employeePageHoursBox.Text = employeeEmailTextBox.Text = employeePhoneTextBox.Text = "";
         }
 
         private void ProjectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -325,7 +329,6 @@ namespace EDGELook
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
-            Console.WriteLine("Edit Project. Flag set to 1");
         }
 
         private void SearchEmployeesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -489,9 +492,9 @@ namespace EDGELook
 
         private void ProjectPageUpdatePhaseButton_Click(object sender, EventArgs e)
         {
-            edit.UpdatePhase(projectPagePhaseBox, projectPageDueDateBox, projectPageStatusBox);
-
             testPrjNo = projectPagePNumBox.Text;
+            edit.UpdatePhase(projectPagePhaseBox, projectPageDueDateBox, projectPageStatusBox);
+                        
             edit.EditID(testPrjNo);
             edit.ListPhases(phasesGrid);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
@@ -531,6 +534,7 @@ namespace EDGELook
 
             Clear();
             edit.EditID(tempEmpPrj);
+            edit.ListPhases(phasesGrid);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, tempEmpPrj, completeCheckBox);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
