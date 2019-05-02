@@ -93,7 +93,7 @@ namespace EDGELook
 
         public void DisplayEmployees(DataGridView emp)
         {
-            MySqlDataAdapter da = new MySqlDataAdapter("select employeeID, fname, lname, email, phone, hoursAvail, admin from Employee;", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("select employeeID as ID, fname as First, lname as Last, email as Email, phone as Phone, hoursAvail as Hours, admin as Admin from Employee;", conn);
             DataTable table = new DataTable();
             da.Fill(table);
             emp.DataSource = table;

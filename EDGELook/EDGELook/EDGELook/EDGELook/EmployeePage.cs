@@ -46,6 +46,19 @@ namespace EDGELook
             }
             conn.Close();
         }
+        public void GetName(TextBox fName, TextBox lName)
+        {
+            conn.Open();
+            String getName = "SELECT fname, lname FROM Employee WHERE employeeID = '" + eID + "';";
+            MySqlCommand cmd = new MySqlCommand(getName, this.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                fName.Text = reader.GetString("fname");
+                lName.Text = reader.GetString("lname");
+            }
+            conn.Close();
+        }
         public void GetPhone(TextBox phoneBox)
         {
             conn.Open();
@@ -61,7 +74,7 @@ namespace EDGELook
         public void ListProjects(DataGridView projectsGrid)
         {
             conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("Select p.prjNo, p.Description from Project p, WorksOn w where p.prjNo = w.prjNo AND w.employeeID = '" + eID + "';", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("Select p.prjNo as 'Project #', p.Description from Project p, WorksOn w where p.prjNo = w.prjNo AND w.employeeID = '" + eID + "';", conn);
             DataTable table = new DataTable();
             da.Fill(table);
             projectsGrid.DataSource = table;
@@ -84,14 +97,14 @@ namespace EDGELook
         {
             conn.Open();
 
-            MySqlDataAdapter da = new MySqlDataAdapter("Select employeeID, fname, lname from Employee ;", conn); 
+            MySqlDataAdapter da = new MySqlDataAdapter("Select employeeID as ID, fname as First, lname as Last from Employee ;", conn); 
             DataTable table = new DataTable();
             da.Fill(table);
             employeeGrid.DataSource = table;
             conn.Close();
             employeeGrid.Columns[0].Width = 50;
-            employeeGrid.Columns[1].Width = 125;
-            employeeGrid.Columns[2].Width = 125;
+            //employeeGrid.Columns[1].Width = 125;
+            //employeeGrid.Columns[2].Width = 125;
         }
         public void EmployeeSearch(String EmpSearch, DataGridView searchEmployeesGrid)
         {
@@ -101,6 +114,16 @@ namespace EDGELook
             DataTable table = new DataTable();
             da.Fill(table);
             searchEmployeesGrid.DataSource = table;
+            conn.Close();
+        }
+
+        public void ListVacations(DataGridView vacationGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("Select startDate AS Start, endDate AS End from Vacation where employeeID = '" + this.eID + "';", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            vacationGrid.DataSource = table;
             conn.Close();
         }
     }

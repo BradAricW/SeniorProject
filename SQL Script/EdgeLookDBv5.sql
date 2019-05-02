@@ -14,11 +14,8 @@ create table Project (
 	prjNo varchar(30) NOT NULL,
     prjLeader int,
     description varchar(255),
-    prjPhase varchar(30),
-    dueDate varchar(30),
     deliverables varchar(255),
     hoursNeeded int,
-    prjStatus varchar(255),
 	prjComplete boolean,
     primary key(prjNo),
     foreign key (prjLeader) references Employee (employeeID));
@@ -53,7 +50,15 @@ create table Vacation (
     startDate date NOT NULL,
     endDate date,
     primary key(employeeID, startDate),
-    foreign key(employeeID) references Employee(employeeID));
+    foreign key(employeeID) references Employee(employeeID)); public void ListVacations(DataGridView vacationGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("Select startDate, endDate from Vacation where employeeID = '" + this.eID + "';", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            vacationGrid.DataSource = table;
+            conn.Close();
+        }
     
  insert into Employee
  values(322,'Chris','Williams','cwilliams@gmail.com','******','322-678-9821',20);
@@ -105,6 +110,15 @@ create table Vacation (
  
  alter table Project
  add prjComplete boolean;
+ 
+ alter table Project
+ drop prjPhase;
+ 
+ alter table Project
+ drop dueDate;
+ 
+ alter table Project
+ drop prjStatus;
  
  alter table Employee
  add admin boolean;
@@ -163,5 +177,16 @@ create table Vacation (
   update Employee
  set active = 1
  where employeeID = 425;
+ 
+ insert into ProjectPhase
+ values('F163','CC','2019-06-11','Site visits');
+ 
+  update Project
+ set prjComplete = 0
+ where prjNo = 'F163';
+ 
+ select E.fname, P.prjNo, P.description, PP.prjPhase, PP.phaseDueDate, P.deliverables, P.hoursNeeded, PP.status
+ from Employee E, Project P, ProjectPhase PP
+ where P.prjLeader = E.employeeID AND P.prjNo = PP.prjNo AND P.prjComplete = 0;
  
  
