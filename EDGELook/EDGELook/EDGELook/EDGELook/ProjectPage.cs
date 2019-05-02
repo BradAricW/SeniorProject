@@ -335,9 +335,10 @@ namespace EDGELook
                 else
                 {
                     conn.Open();
-                    String setMyID = "INSERT INTO WorksOn (employeeID, prjNo) VALUES (" + empID + ",'" + projectID + "');";
+                    String setMyID = "INSERT INTO WorksOn VALUES ('" + empID + "','" + projectID + "'," + hours + ");";
                     MySqlCommand cmd2 = new MySqlCommand(setMyID, this.conn);
-                    Console.WriteLine(cmd2.ExecuteNonQuery());
+                    cmd2.ExecuteNonQuery();
+                    //Console.WriteLine(cmd2.ExecuteNonQuery());
                     conn.Close();
                 }
                 //update hours in employee table hoursAvail - hours
@@ -358,7 +359,7 @@ namespace EDGELook
             }
             else 
             {
-                MessageBox.Show("Not enough hours available to be added to project.");
+                MessageBox.Show(empID + " does Not have enough hours available to be added to project.");
             }
 
         } //END ASSIGNEMPLOYEE: MM and SZ

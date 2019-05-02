@@ -48,11 +48,11 @@ namespace EDGELook
             login.Setup(conn);
             employee = new EmployeePage();
             employee.Setup(conn);
-            
-            //QUICK LOGIN
+
+            ////QUICK LOGIN
             emailBox.Text = "iris@yahoo.com";
             passBox.Text = "******";
-            
+
 
             eID = login.Login(emailBox, passBox);
             int success;

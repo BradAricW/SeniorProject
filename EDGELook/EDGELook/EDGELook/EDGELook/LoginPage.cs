@@ -29,7 +29,7 @@ namespace EDGELook
                 Console.WriteLine(ex.Message);
             }
 
-            string getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND pssword = '" + password + "';";
+            string getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND BINARY pssword = '" + password + "';";
             MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
