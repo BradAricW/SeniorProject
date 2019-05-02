@@ -344,8 +344,9 @@ namespace EDGELook
                     hoursAssigned = reader1.GetInt32("hours");
                 }
                 reader1.Close();
+
                 int hoursAvail = 0;
-                String availGetHours = "SELECT hoursAvail FROM Employee E WHERE " + empID + " = E.employeeID;";
+                String availGetHours = "SELECT hoursAvail FROM Employee WHERE employeeID  = '" + empID + "' ;";
                 MySqlCommand cmd2 = new MySqlCommand(availGetHours, this.conn);
                 MySqlDataReader reader2 = cmd2.ExecuteReader();
                 while (reader2.Read())
@@ -353,6 +354,7 @@ namespace EDGELook
                    hoursAvail = reader2.GetInt32("hoursAvail");
                 }
                 reader2.Close();
+
                 String removeID = "DELETE FROM WorksOn WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
                 MySqlCommand cmd3 = new MySqlCommand(removeID, conn);
                 Console.WriteLine(cmd3.ExecuteNonQuery());
