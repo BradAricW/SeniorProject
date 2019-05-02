@@ -71,7 +71,7 @@ namespace EDGELook
         public void ListProjects(DataGridView projectsGrid)
         {
             conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("select E.fname as NAME, P.prjNo as PROJECT NUMBER, P.description as DESCRIPTION, PP.prjPhase as PHASE, PP.phaseDueDate as DUE DATE, P.deliverables as DELIVERABLES, P.hoursNeeded as ESTIMATED HOURS, PP.status as STATUS from Employee E, Project P, ProjectPhase PP where P.prjLeader = E.employeeID AND P.prjNo = PP.prjNo AND P.prjComplete = 0; ", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("select E.fname as Name, P.prjNo as 'Project Number', P.description as Description, PP.prjPhase as Phase, PP.phaseDueDate as 'Due Date', P.deliverables as Deliverables, P.hoursNeeded as 'Estimated Hours', PP.status as Status from Employee E, Project P, ProjectPhase PP where P.prjLeader = E.employeeID AND P.prjNo = PP.prjNo AND P.prjComplete = 0; ", conn);
             DataTable table = new DataTable();
             da.Fill(table);
             projectsGrid.DataSource = table;

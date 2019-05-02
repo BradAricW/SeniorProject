@@ -19,8 +19,9 @@ namespace EDGELook
         
         LoginPage login;
         AdminPage admin;
-        ProjectPage edit = new ProjectPage();
-        EmployeePage employee = new EmployeePage();
+        ReportPage report;
+        ProjectPage edit;
+        EmployeePage employee;
         private DBConn dbconn;
         private MySqlConnection conn;
         ProfilePage profile;
@@ -30,11 +31,8 @@ namespace EDGELook
         private String profilePrjNo;
         private String empNo, tempEID;
         private Boolean isAdmin = false;
-        private String assignFirstName;
-        private String assignLastName;
-        private String removeFirstName;
-        private String removeLastName;
-        private String tempPhase, tempVac;
+        private String assignEID, removeEID;
+        private String tempPhase, tempVac, tempEmpPrj;
 
         public MainForm()
         {
@@ -48,6 +46,7 @@ namespace EDGELook
             conn = dbconn.Dbsetup();
             login = new LoginPage();
             login.Setup(conn);
+            employee = new EmployeePage();
             employee.Setup(conn);
             
             //QUICK LOGIN
@@ -81,6 +80,9 @@ namespace EDGELook
                 profile.GetName(profileFNameBox, profileLNameBox);
                 profile.ListProjects(profileProjectGrid);
                 profile.ListVacations(vacationsGrid);
+                report = new ReportPage();
+                report.Setup(conn);
+                edit = new ProjectPage();
                 edit.Setup(conn);
                 isAdmin = profile.GetAdmin();
                 if(isAdmin == true)
@@ -116,7 +118,7 @@ namespace EDGELook
         private void HomeButton_Click(object sender, EventArgs e)
         {
             this.profileBG.Visible = true;
-            this.scheduleBG.Visible = false;
+            this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
@@ -135,7 +137,7 @@ namespace EDGELook
         private void ProjectsButton_Click(object sender, EventArgs e)
         {
             this.profileBG.Visible = false;
-            this.scheduleBG.Visible = false;
+            this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
@@ -143,17 +145,13 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.Clear();
 
-            //dbconn = new DBConn();
-            //conn = dbconn.Dbsetup();
-            //edit.Setup(conn);
-
             edit.ListProjects(projectsGrid, eID);
         }
 
         private void EmployeesButton_Click(object sender, EventArgs e)
         {
             this.profileBG.Visible = false;
-            this.scheduleBG.Visible = false;
+            this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = true;
@@ -164,16 +162,19 @@ namespace EDGELook
             employee.ListEmployees(searchEmployeesGrid, eID);
         }
 
-        private void SchedulesButton_Click(object sender, EventArgs e)
+        private void ReportsButton_Click(object sender, EventArgs e)
         {
             this.profileBG.Visible = false;
-            this.scheduleBG.Visible = true;
+            this.reportsBG.Visible = true;
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
             this.adminBackPanel.Visible = false;
             this.Clear();
+
+            report.ListProjects(weeklyReportGrid);
+            report.ListVacations(vacationReportGrid);
         }
 
         private void ResetPassLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -184,7 +185,7 @@ namespace EDGELook
         private void SearchEmployeesViewButton_Click(object sender, EventArgs e)
         {
             this.profileBG.Visible = false;
-            this.scheduleBG.Visible = false;
+            this.reportsBG.Visible = false;
             this.employeePageBG.Visible = true;
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
@@ -196,13 +197,15 @@ namespace EDGELook
             employee.GetPhone(employeePhoneTextBox);
             employee.ListProjects(employeeProjectGrid);
             employee.NameDisplay(employeePageLabel);
+            employee.ListVacations(employeeVacationsGrid);
+            employee.GetName(employeeFNameBox, employeeLNameBox);
         }
 
         private void SearchProjectsViewButton_Click(object sender, EventArgs e)
         {
             this.searchProjectsBG.Visible = false;
             this.profileBG.Visible = false;
-            this.scheduleBG.Visible = false;
+            this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
@@ -210,10 +213,10 @@ namespace EDGELook
 
             Clear();
             edit.EditID(testPrjNo);
-            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID, testPrjNo);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-            edit.setFlag(1);
+            edit.SetFlag(1);
             Console.WriteLine("Edit Project. Flag set to 1");
         }
 
@@ -221,14 +224,14 @@ namespace EDGELook
         {
             this.searchProjectsBG.Visible = false;
             this.profileBG.Visible = false;
-            this.scheduleBG.Visible = false;
+            this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
             this.adminBackPanel.Visible = false;
 
             Clear();
-            edit.setFlag(0);
+            edit.SetFlag(0);
             Console.WriteLine("Add Project. Flag set to 0");
         }
 
@@ -238,41 +241,19 @@ namespace EDGELook
         // Update Project
         private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
-            //dbconn = new DBConn();
-            //conn = dbconn.Dbsetup();
-            //edit.Setup(conn);
-            
+            edit.SetCompleteIncomplete(completeCheckBox);
             edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID);
         }
 
-        private void ProjectPageAddSelfButton_Click(object sender, EventArgs e)
-        {
-
-            hours = int.Parse(projectPageEditEmployeeText.Text); //get hours from input box
-
-            edit.AssignMyself(hours, eID);
-            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-
-
-        } //Add Self Button 
-
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
         {
-            dbconn = new DBConn();
-            conn = dbconn.Dbsetup();
-            edit.Setup(conn);
-
             edit.AddNotes(eID, projectPagePNumBox, projectPageNotesTextBox);
             edit.DisplayNotes(notesGridView);
         }
 
         private void ProjectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
         {
-            //String firstName = "Iris";
-            //String lastName = "Ivy";
-            //hours = int.Parse(projectPageEditEmployeeText.Text);
-            Console.WriteLine("First = " + removeFirstName + " Last = " + removeLastName);
-            edit.RemoveEmployee(removeFirstName, removeLastName);
+            edit.RemoveEmployee(removeEID);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
         } //Remove Employee 
 
@@ -285,8 +266,7 @@ namespace EDGELook
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.WriteLine("First = " + assignFirstName + " Last = " + assignLastName);
-            edit.AssignEmployee(hours, assignFirstName, assignLastName);
+            edit.AssignEmployee(hours, assignEID);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
 
         } //Add Employee
@@ -307,7 +287,7 @@ namespace EDGELook
                 int selectedRowIndex = projectsGrid.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = projectsGrid.Rows[selectedRowIndex];
                 //testPrjNo = selectedRow.Cells[0].Value.ToString();
-                testPrjNo = selectedRow.Cells[1].Value.ToString();
+                testPrjNo = selectedRow.Cells[2].Value.ToString();
             }
         }
 
@@ -318,7 +298,7 @@ namespace EDGELook
                 int selectedRowIndex = profileProjectGrid.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = profileProjectGrid.Rows[selectedRowIndex];
                 profilePrjNo = selectedRow.Cells[0].Value.ToString();
-                profile.GetProjHours(profilePrjNo, profileProjectHoursBox);
+                profileProjectHoursBox.Text = profile.GetProjHours(profilePrjNo).ToString();
             }
         }
 
@@ -326,7 +306,7 @@ namespace EDGELook
         {
             this.searchProjectsBG.Visible = false;
             this.profileBG.Visible = false;
-            this.scheduleBG.Visible = false;
+            this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
@@ -334,10 +314,10 @@ namespace EDGELook
 
             Clear();
             edit.EditID(profilePrjNo);
-            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageDueDateBox, projectPagePhaseBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID, profilePrjNo);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, profilePrjNo, completeCheckBox);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-            edit.setFlag(1);
+            edit.SetFlag(1);
             Console.WriteLine("Edit Project. Flag set to 1");
         }
 
@@ -352,7 +332,7 @@ namespace EDGELook
             }
         }
 
-        private void ProfileEditButton2_Click(object sender, EventArgs e)
+        private void ProfileEditContactButton_Click(object sender, EventArgs e)
         {
             profile.EditContact(profileEmailTextBox, profilePhoneTextBox);
         }
@@ -364,7 +344,7 @@ namespace EDGELook
             {
                 this.searchProjectsBG.Visible = false;
                 this.profileBG.Visible = false;
-                this.scheduleBG.Visible = false;
+                this.reportsBG.Visible = false;
                 this.employeePageBG.Visible = false;
                 this.projectPageBG.Visible = false;
                 this.searchEmployeesBG.Visible = false;
@@ -437,9 +417,7 @@ namespace EDGELook
 
             int selectedRowIndex = projectPageAssignmentGrid.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = projectPageAssignmentGrid.Rows[selectedRowIndex];
-            assignFirstName = selectedRow.Cells[0].Value.ToString();
-            assignLastName = selectedRow.Cells[1].Value.ToString();
-            Console.WriteLine("First = " + assignFirstName + " Last = " + assignLastName);
+            assignEID = selectedRow.Cells[0].Value.ToString();
             }
         }
 
@@ -450,10 +428,7 @@ namespace EDGELook
 
             int selectedRowIndex = projectPageOnProjectGrid.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = projectPageOnProjectGrid.Rows[selectedRowIndex];
-            removeFirstName = selectedRow.Cells[0].Value.ToString();
-            removeLastName = selectedRow.Cells[1].Value.ToString();
-            Console.WriteLine("First = " + removeFirstName + " Last = " + removeLastName);
-
+            removeEID = selectedRow.Cells[0].Value.ToString();
             }
         }
 
@@ -482,6 +457,57 @@ namespace EDGELook
         {
             profile.RemoveVacation(tempVac);
             profile.ListVacations(vacationsGrid);
+        }
+
+        private void ProfileEditProjectHoursButton_Click(object sender, EventArgs e)
+        {
+            profile.EditProjectHours(profileProjectHoursBox, profilePrjNo);
+            profile.ListProjects(profileProjectGrid);
+            profile.GetHours(profileHoursTextBox);
+        }
+
+        private void ProfileEditHoursButton_Click(object sender, EventArgs e)
+        {
+            profile.EditMyHours(profileHoursTextBox);
+        }
+
+        private void WeeklyReportButton_Click(object sender, EventArgs e)
+        {
+            report.CreateReport(weeklyReportGrid);
+        }
+
+        private void VacationReportButton_Click(object sender, EventArgs e)
+        {
+            report.CreateReport(vacationReportGrid);
+        }
+
+        private void EmployeePageViewButton_Click(object sender, EventArgs e)
+        {
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = true;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+
+            Clear();
+            edit.EditID(tempEmpPrj);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, tempEmpPrj, completeCheckBox);
+            edit.DisplayNotes(notesGridView);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+            edit.SetFlag(1);
+            Console.WriteLine("Edit Project. Flag set to 1");
+        }
+
+        private void EmployeeProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (employeeProjectGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = employeeProjectGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = employeeProjectGrid.Rows[selectedRowIndex];
+                tempEmpPrj = selectedRow.Cells[0].Value.ToString();
+            }
         }
 
         private void VacationsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
