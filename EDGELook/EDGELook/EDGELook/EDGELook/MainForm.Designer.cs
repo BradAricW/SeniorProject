@@ -60,7 +60,7 @@
             this.employeesButton = new System.Windows.Forms.Button();
             this.projectsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
-            this.profilePanel1 = new System.Windows.Forms.Panel();
+            this.profileBackPanel = new System.Windows.Forms.Panel();
             this.profileChangePassButton = new System.Windows.Forms.Button();
             this.profileProjectHoursBox = new System.Windows.Forms.TextBox();
             this.profileProjectHoursLabel = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.formBGTemp = new System.Windows.Forms.Panel();
             this.loginBG = new System.Windows.Forms.Panel();
             this.profileBG = new System.Windows.Forms.Panel();
-            this.profilePanel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.addVacationButton = new System.Windows.Forms.Button();
             this.vacationLabel = new System.Windows.Forms.Label();
             this.vacationsGrid = new System.Windows.Forms.DataGridView();
@@ -136,11 +136,11 @@
             this.projectPageEditEmployeeText = new System.Windows.Forms.TextBox();
             this.projectPageAssignedLabel = new System.Windows.Forms.Label();
             this.employeePageBG = new System.Windows.Forms.Panel();
-            this.employeePagePanel2 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.employeeProjectGrid = new System.Windows.Forms.DataGridView();
             this.employeeProjectsLabel = new System.Windows.Forms.Label();
             this.employeePageViewButton = new System.Windows.Forms.Button();
-            this.employeePagePanel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.employeeVacationsGrid = new System.Windows.Forms.DataGridView();
             this.employeePageHoursBox = new System.Windows.Forms.TextBox();
             this.employeeHoursLabel = new System.Windows.Forms.Label();
@@ -206,30 +206,15 @@
             this.adminFNameBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeIDBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeGrid = new System.Windows.Forms.DataGridView();
-            this.resetPassBG = new System.Windows.Forms.Panel();
-            this.resetPanel = new System.Windows.Forms.Panel();
-            this.resetPassExitLabel = new System.Windows.Forms.Label();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.resetBox = new System.Windows.Forms.TextBox();
-            this.resetEmailLabel = new System.Windows.Forms.Label();
-            this.resetLabel = new System.Windows.Forms.Label();
-            this.changePassBG = new System.Windows.Forms.Panel();
-            this.changePanel = new System.Windows.Forms.Panel();
-            this.newPassBox = new System.Windows.Forms.TextBox();
-            this.newPassLabel = new System.Windows.Forms.Label();
-            this.changeButton = new System.Windows.Forms.Button();
-            this.currentPassBox = new System.Windows.Forms.TextBox();
-            this.currentPassLabel = new System.Windows.Forms.Label();
-            this.changePasswordLabel = new System.Windows.Forms.Label();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.taskbarMenu.SuspendLayout();
-            this.profilePanel1.SuspendLayout();
+            this.profileBackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profileProjectGrid)).BeginInit();
             this.loginBG.SuspendLayout();
             this.profileBG.SuspendLayout();
-            this.profilePanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vacationsGrid)).BeginInit();
             this.projectPageBG.SuspendLayout();
             this.projectPagePanel3.SuspendLayout();
@@ -241,9 +226,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectPageOnProjectGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectPageAssignmentGrid)).BeginInit();
             this.employeePageBG.SuspendLayout();
-            this.employeePagePanel2.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeProjectGrid)).BeginInit();
-            this.employeePagePanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeVacationsGrid)).BeginInit();
             this.reportsBG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vacationReportGrid)).BeginInit();
@@ -257,10 +242,6 @@
             this.adminBackPanel.SuspendLayout();
             this.adminMainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).BeginInit();
-            this.resetPassBG.SuspendLayout();
-            this.resetPanel.SuspendLayout();
-            this.changePassBG.SuspendLayout();
-            this.changePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -472,30 +453,30 @@
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
-            // profilePanel1
+            // profileBackPanel
             // 
-            this.profilePanel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.profilePanel1.Controls.Add(this.profileChangePassButton);
-            this.profilePanel1.Controls.Add(this.profileProjectHoursBox);
-            this.profilePanel1.Controls.Add(this.profileProjectHoursLabel);
-            this.profilePanel1.Controls.Add(this.profileEditProjectHoursButton);
-            this.profilePanel1.Controls.Add(this.profileLNameBox);
-            this.profilePanel1.Controls.Add(this.profileLNameLabel);
-            this.profilePanel1.Controls.Add(this.profileFNameBox);
-            this.profilePanel1.Controls.Add(this.profileFNameLabel);
-            this.profilePanel1.Controls.Add(this.profileProjectGrid);
-            this.profilePanel1.Controls.Add(this.profileEmailTextBox);
-            this.profilePanel1.Controls.Add(this.profilePhoneTextBox);
-            this.profilePanel1.Controls.Add(this.profileEmailLabel);
-            this.profilePanel1.Controls.Add(this.profilePhoneLabel);
-            this.profilePanel1.Controls.Add(this.profileProjectsLabel);
-            this.profilePanel1.Controls.Add(this.profileContactLabel);
-            this.profilePanel1.Controls.Add(this.profileViewButton);
-            this.profilePanel1.Controls.Add(this.profileEditContactButton);
-            this.profilePanel1.Location = new System.Drawing.Point(147, 64);
-            this.profilePanel1.Name = "profilePanel1";
-            this.profilePanel1.Size = new System.Drawing.Size(300, 350);
-            this.profilePanel1.TabIndex = 13;
+            this.profileBackPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.profileBackPanel.Controls.Add(this.profileChangePassButton);
+            this.profileBackPanel.Controls.Add(this.profileProjectHoursBox);
+            this.profileBackPanel.Controls.Add(this.profileProjectHoursLabel);
+            this.profileBackPanel.Controls.Add(this.profileEditProjectHoursButton);
+            this.profileBackPanel.Controls.Add(this.profileLNameBox);
+            this.profileBackPanel.Controls.Add(this.profileLNameLabel);
+            this.profileBackPanel.Controls.Add(this.profileFNameBox);
+            this.profileBackPanel.Controls.Add(this.profileFNameLabel);
+            this.profileBackPanel.Controls.Add(this.profileProjectGrid);
+            this.profileBackPanel.Controls.Add(this.profileEmailTextBox);
+            this.profileBackPanel.Controls.Add(this.profilePhoneTextBox);
+            this.profileBackPanel.Controls.Add(this.profileEmailLabel);
+            this.profileBackPanel.Controls.Add(this.profilePhoneLabel);
+            this.profileBackPanel.Controls.Add(this.profileProjectsLabel);
+            this.profileBackPanel.Controls.Add(this.profileContactLabel);
+            this.profileBackPanel.Controls.Add(this.profileViewButton);
+            this.profileBackPanel.Controls.Add(this.profileEditContactButton);
+            this.profileBackPanel.Location = new System.Drawing.Point(147, 64);
+            this.profileBackPanel.Name = "profileBackPanel";
+            this.profileBackPanel.Size = new System.Drawing.Size(300, 350);
+            this.profileBackPanel.TabIndex = 13;
             // 
             // profileChangePassButton
             // 
@@ -795,8 +776,8 @@
             // 
             // profileBG
             // 
-            this.profileBG.Controls.Add(this.profilePanel2);
-            this.profileBG.Controls.Add(this.profilePanel1);
+            this.profileBG.Controls.Add(this.panel1);
+            this.profileBG.Controls.Add(this.profileBackPanel);
             this.profileBG.Controls.Add(this.profileLabel);
             this.profileBG.Location = new System.Drawing.Point(0, 105);
             this.profileBG.Name = "profileBG";
@@ -804,25 +785,25 @@
             this.profileBG.TabIndex = 18;
             this.profileBG.Visible = false;
             // 
-            // profilePanel2
+            // panel1
             // 
-            this.profilePanel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.profilePanel2.Controls.Add(this.addVacationButton);
-            this.profilePanel2.Controls.Add(this.vacationLabel);
-            this.profilePanel2.Controls.Add(this.vacationsGrid);
-            this.profilePanel2.Controls.Add(this.profileHoursTextBox);
-            this.profilePanel2.Controls.Add(this.profileEndDate);
-            this.profilePanel2.Controls.Add(this.profileStartDate);
-            this.profilePanel2.Controls.Add(this.profileEndLabel);
-            this.profilePanel2.Controls.Add(this.profileHoursLabel);
-            this.profilePanel2.Controls.Add(this.profileStartLabel);
-            this.profilePanel2.Controls.Add(this.profileVacationHoursLabel);
-            this.profilePanel2.Controls.Add(this.removeVacationButton);
-            this.profilePanel2.Controls.Add(this.profileEditHoursButton);
-            this.profilePanel2.Location = new System.Drawing.Point(469, 64);
-            this.profilePanel2.Name = "profilePanel2";
-            this.profilePanel2.Size = new System.Drawing.Size(300, 350);
-            this.profilePanel2.TabIndex = 15;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.addVacationButton);
+            this.panel1.Controls.Add(this.vacationLabel);
+            this.panel1.Controls.Add(this.vacationsGrid);
+            this.panel1.Controls.Add(this.profileHoursTextBox);
+            this.panel1.Controls.Add(this.profileEndDate);
+            this.panel1.Controls.Add(this.profileStartDate);
+            this.panel1.Controls.Add(this.profileEndLabel);
+            this.panel1.Controls.Add(this.profileHoursLabel);
+            this.panel1.Controls.Add(this.profileStartLabel);
+            this.panel1.Controls.Add(this.profileVacationHoursLabel);
+            this.panel1.Controls.Add(this.removeVacationButton);
+            this.panel1.Controls.Add(this.profileEditHoursButton);
+            this.panel1.Location = new System.Drawing.Point(469, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 350);
+            this.panel1.TabIndex = 15;
             // 
             // addVacationButton
             // 
@@ -1391,8 +1372,8 @@
             // 
             // employeePageBG
             // 
-            this.employeePageBG.Controls.Add(this.employeePagePanel2);
-            this.employeePageBG.Controls.Add(this.employeePagePanel1);
+            this.employeePageBG.Controls.Add(this.panel2);
+            this.employeePageBG.Controls.Add(this.panel3);
             this.employeePageBG.Controls.Add(this.employeePageLabel);
             this.employeePageBG.Location = new System.Drawing.Point(0, 105);
             this.employeePageBG.Name = "employeePageBG";
@@ -1400,16 +1381,16 @@
             this.employeePageBG.TabIndex = 19;
             this.employeePageBG.Visible = false;
             // 
-            // employeePagePanel2
+            // panel2
             // 
-            this.employeePagePanel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.employeePagePanel2.Controls.Add(this.employeeProjectGrid);
-            this.employeePagePanel2.Controls.Add(this.employeeProjectsLabel);
-            this.employeePagePanel2.Controls.Add(this.employeePageViewButton);
-            this.employeePagePanel2.Location = new System.Drawing.Point(473, 70);
-            this.employeePagePanel2.Name = "employeePagePanel2";
-            this.employeePagePanel2.Size = new System.Drawing.Size(300, 327);
-            this.employeePagePanel2.TabIndex = 17;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Controls.Add(this.employeeProjectGrid);
+            this.panel2.Controls.Add(this.employeeProjectsLabel);
+            this.panel2.Controls.Add(this.employeePageViewButton);
+            this.panel2.Location = new System.Drawing.Point(473, 70);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 327);
+            this.panel2.TabIndex = 17;
             // 
             // employeeProjectGrid
             // 
@@ -1460,26 +1441,26 @@
             this.employeePageViewButton.UseVisualStyleBackColor = false;
             this.employeePageViewButton.Click += new System.EventHandler(this.EmployeePageViewButton_Click);
             // 
-            // employeePagePanel1
+            // panel3
             // 
-            this.employeePagePanel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.employeePagePanel1.Controls.Add(this.employeeVacationsGrid);
-            this.employeePagePanel1.Controls.Add(this.employeePageHoursBox);
-            this.employeePagePanel1.Controls.Add(this.employeeHoursLabel);
-            this.employeePagePanel1.Controls.Add(this.employeeLNameBox);
-            this.employeePagePanel1.Controls.Add(this.employeeVacationHoursLabel);
-            this.employeePagePanel1.Controls.Add(this.employeeLNameLabel);
-            this.employeePagePanel1.Controls.Add(this.employeeFNameBox);
-            this.employeePagePanel1.Controls.Add(this.employeeFNameLabel);
-            this.employeePagePanel1.Controls.Add(this.employeeEmailTextBox);
-            this.employeePagePanel1.Controls.Add(this.employeePhoneTextBox);
-            this.employeePagePanel1.Controls.Add(this.employeeEmailLabel);
-            this.employeePagePanel1.Controls.Add(this.employeePhoneLabel);
-            this.employeePagePanel1.Controls.Add(this.employeeContactLabel);
-            this.employeePagePanel1.Location = new System.Drawing.Point(151, 70);
-            this.employeePagePanel1.Name = "employeePagePanel1";
-            this.employeePagePanel1.Size = new System.Drawing.Size(300, 327);
-            this.employeePagePanel1.TabIndex = 16;
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel3.Controls.Add(this.employeeVacationsGrid);
+            this.panel3.Controls.Add(this.employeePageHoursBox);
+            this.panel3.Controls.Add(this.employeeHoursLabel);
+            this.panel3.Controls.Add(this.employeeLNameBox);
+            this.panel3.Controls.Add(this.employeeVacationHoursLabel);
+            this.panel3.Controls.Add(this.employeeLNameLabel);
+            this.panel3.Controls.Add(this.employeeFNameBox);
+            this.panel3.Controls.Add(this.employeeFNameLabel);
+            this.panel3.Controls.Add(this.employeeEmailTextBox);
+            this.panel3.Controls.Add(this.employeePhoneTextBox);
+            this.panel3.Controls.Add(this.employeeEmailLabel);
+            this.panel3.Controls.Add(this.employeePhoneLabel);
+            this.panel3.Controls.Add(this.employeeContactLabel);
+            this.panel3.Location = new System.Drawing.Point(151, 70);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(300, 327);
+            this.panel3.TabIndex = 16;
             // 
             // employeeVacationsGrid
             // 
@@ -2216,10 +2197,8 @@
             // 
             this.adminPassBox.Location = new System.Drawing.Point(656, 100);
             this.adminPassBox.Name = "adminPassBox";
-            this.adminPassBox.PasswordChar = '*';
             this.adminPassBox.Size = new System.Drawing.Size(200, 20);
             this.adminPassBox.TabIndex = 4;
-            this.adminPassBox.UseSystemPasswordChar = true;
             // 
             // adminEmailBox
             // 
@@ -2265,169 +2244,6 @@
             this.adminEmployeeGrid.TabIndex = 17;
             this.adminEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdminEmployeeGrid_CellContentClick);
             // 
-            // resetPassBG
-            // 
-            this.resetPassBG.Controls.Add(this.resetPanel);
-            this.resetPassBG.Location = new System.Drawing.Point(0, 105);
-            this.resetPassBG.Name = "resetPassBG";
-            this.resetPassBG.Size = new System.Drawing.Size(910, 465);
-            this.resetPassBG.TabIndex = 24;
-            this.resetPassBG.Visible = false;
-            // 
-            // resetPanel
-            // 
-            this.resetPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.resetPanel.Controls.Add(this.resetPassExitLabel);
-            this.resetPanel.Controls.Add(this.resetButton);
-            this.resetPanel.Controls.Add(this.resetBox);
-            this.resetPanel.Controls.Add(this.resetEmailLabel);
-            this.resetPanel.Controls.Add(this.resetLabel);
-            this.resetPanel.Location = new System.Drawing.Point(312, 113);
-            this.resetPanel.Name = "resetPanel";
-            this.resetPanel.Size = new System.Drawing.Size(300, 200);
-            this.resetPanel.TabIndex = 11;
-            // 
-            // resetPassExitLabel
-            // 
-            this.resetPassExitLabel.AutoSize = true;
-            this.resetPassExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetPassExitLabel.ForeColor = System.Drawing.Color.White;
-            this.resetPassExitLabel.Location = new System.Drawing.Point(238, 131);
-            this.resetPassExitLabel.Name = "resetPassExitLabel";
-            this.resetPassExitLabel.Size = new System.Drawing.Size(29, 16);
-            this.resetPassExitLabel.TabIndex = 6;
-            this.resetPassExitLabel.Text = "Exit";
-            this.resetPassExitLabel.Click += new System.EventHandler(this.ResetPassExitLabel_Click);
-            // 
-            // resetButton
-            // 
-            this.resetButton.BackColor = System.Drawing.Color.White;
-            this.resetButton.FlatAppearance.BorderSize = 0;
-            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.Location = new System.Drawing.Point(116, 126);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(75, 23);
-            this.resetButton.TabIndex = 5;
-            this.resetButton.Text = "Send Reset";
-            this.resetButton.UseVisualStyleBackColor = false;
-            this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
-            // 
-            // resetBox
-            // 
-            this.resetBox.Location = new System.Drawing.Point(83, 81);
-            this.resetBox.Name = "resetBox";
-            this.resetBox.Size = new System.Drawing.Size(180, 20);
-            this.resetBox.TabIndex = 3;
-            // 
-            // resetEmailLabel
-            // 
-            this.resetEmailLabel.AutoSize = true;
-            this.resetEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetEmailLabel.ForeColor = System.Drawing.Color.White;
-            this.resetEmailLabel.Location = new System.Drawing.Point(32, 82);
-            this.resetEmailLabel.Name = "resetEmailLabel";
-            this.resetEmailLabel.Size = new System.Drawing.Size(45, 15);
-            this.resetEmailLabel.TabIndex = 1;
-            this.resetEmailLabel.Text = "Email: ";
-            // 
-            // resetLabel
-            // 
-            this.resetLabel.AutoSize = true;
-            this.resetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetLabel.ForeColor = System.Drawing.Color.White;
-            this.resetLabel.Location = new System.Drawing.Point(20, 39);
-            this.resetLabel.Name = "resetLabel";
-            this.resetLabel.Size = new System.Drawing.Size(267, 24);
-            this.resetLabel.TabIndex = 0;
-            this.resetLabel.Text = "Enter Email to Reset Password";
-            // 
-            // changePassBG
-            // 
-            this.changePassBG.Controls.Add(this.changePanel);
-            this.changePassBG.Location = new System.Drawing.Point(0, 105);
-            this.changePassBG.Name = "changePassBG";
-            this.changePassBG.Size = new System.Drawing.Size(910, 465);
-            this.changePassBG.TabIndex = 25;
-            this.changePassBG.Visible = false;
-            // 
-            // changePanel
-            // 
-            this.changePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.changePanel.Controls.Add(this.newPassBox);
-            this.changePanel.Controls.Add(this.newPassLabel);
-            this.changePanel.Controls.Add(this.changeButton);
-            this.changePanel.Controls.Add(this.currentPassBox);
-            this.changePanel.Controls.Add(this.currentPassLabel);
-            this.changePanel.Controls.Add(this.changePasswordLabel);
-            this.changePanel.Location = new System.Drawing.Point(312, 113);
-            this.changePanel.Name = "changePanel";
-            this.changePanel.Size = new System.Drawing.Size(300, 200);
-            this.changePanel.TabIndex = 11;
-            // 
-            // newPassBox
-            // 
-            this.newPassBox.Location = new System.Drawing.Point(50, 123);
-            this.newPassBox.Name = "newPassBox";
-            this.newPassBox.PasswordChar = '*';
-            this.newPassBox.Size = new System.Drawing.Size(200, 20);
-            this.newPassBox.TabIndex = 7;
-            this.newPassBox.UseSystemPasswordChar = true;
-            // 
-            // newPassLabel
-            // 
-            this.newPassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newPassLabel.ForeColor = System.Drawing.Color.White;
-            this.newPassLabel.Location = new System.Drawing.Point(0, 103);
-            this.newPassLabel.Name = "newPassLabel";
-            this.newPassLabel.Size = new System.Drawing.Size(300, 15);
-            this.newPassLabel.TabIndex = 6;
-            this.newPassLabel.Text = "New Password: ";
-            this.newPassLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // changeButton
-            // 
-            this.changeButton.BackColor = System.Drawing.Color.White;
-            this.changeButton.FlatAppearance.BorderSize = 0;
-            this.changeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changeButton.Location = new System.Drawing.Point(100, 158);
-            this.changeButton.Name = "changeButton";
-            this.changeButton.Size = new System.Drawing.Size(100, 23);
-            this.changeButton.TabIndex = 5;
-            this.changeButton.Text = "Confirm Change";
-            this.changeButton.UseVisualStyleBackColor = false;
-            this.changeButton.Click += new System.EventHandler(this.ChangeButton_Click);
-            // 
-            // currentPassBox
-            // 
-            this.currentPassBox.Location = new System.Drawing.Point(50, 69);
-            this.currentPassBox.Name = "currentPassBox";
-            this.currentPassBox.PasswordChar = '*';
-            this.currentPassBox.Size = new System.Drawing.Size(200, 20);
-            this.currentPassBox.TabIndex = 3;
-            this.currentPassBox.UseSystemPasswordChar = true;
-            // 
-            // currentPassLabel
-            // 
-            this.currentPassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentPassLabel.ForeColor = System.Drawing.Color.White;
-            this.currentPassLabel.Location = new System.Drawing.Point(0, 49);
-            this.currentPassLabel.Name = "currentPassLabel";
-            this.currentPassLabel.Size = new System.Drawing.Size(300, 15);
-            this.currentPassLabel.TabIndex = 1;
-            this.currentPassLabel.Text = "Current Password: ";
-            this.currentPassLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // changePasswordLabel
-            // 
-            this.changePasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changePasswordLabel.ForeColor = System.Drawing.Color.White;
-            this.changePasswordLabel.Location = new System.Drawing.Point(0, 17);
-            this.changePasswordLabel.Name = "changePasswordLabel";
-            this.changePasswordLabel.Size = new System.Drawing.Size(300, 24);
-            this.changePasswordLabel.TabIndex = 0;
-            this.changePasswordLabel.Text = "Change Password";
-            this.changePasswordLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2436,8 +2252,6 @@
             this.ClientSize = new System.Drawing.Size(910, 571);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.changePassBG);
-            this.Controls.Add(this.resetPassBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.adminBackPanel);
@@ -2457,14 +2271,14 @@
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();
             this.taskbarMenu.ResumeLayout(false);
-            this.profilePanel1.ResumeLayout(false);
-            this.profilePanel1.PerformLayout();
+            this.profileBackPanel.ResumeLayout(false);
+            this.profileBackPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profileProjectGrid)).EndInit();
             this.loginBG.ResumeLayout(false);
             this.profileBG.ResumeLayout(false);
             this.profileBG.PerformLayout();
-            this.profilePanel2.ResumeLayout(false);
-            this.profilePanel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vacationsGrid)).EndInit();
             this.projectPageBG.ResumeLayout(false);
             this.projectPagePanel3.ResumeLayout(false);
@@ -2479,10 +2293,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectPageOnProjectGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectPageAssignmentGrid)).EndInit();
             this.employeePageBG.ResumeLayout(false);
-            this.employeePagePanel2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.employeeProjectGrid)).EndInit();
-            this.employeePagePanel1.ResumeLayout(false);
-            this.employeePagePanel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeVacationsGrid)).EndInit();
             this.reportsBG.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vacationReportGrid)).EndInit();
@@ -2501,12 +2315,6 @@
             this.adminMainPanel.ResumeLayout(false);
             this.adminMainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).EndInit();
-            this.resetPassBG.ResumeLayout(false);
-            this.resetPanel.ResumeLayout(false);
-            this.resetPanel.PerformLayout();
-            this.changePassBG.ResumeLayout(false);
-            this.changePanel.ResumeLayout(false);
-            this.changePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2530,7 +2338,7 @@
         private System.Windows.Forms.Button employeesButton;
         private System.Windows.Forms.Button projectsButton;
         private System.Windows.Forms.Button homeButton;
-        private System.Windows.Forms.Panel profilePanel1;
+        private System.Windows.Forms.Panel profileBackPanel;
         private System.Windows.Forms.TextBox profileHoursTextBox;
         private System.Windows.Forms.Label profileEmailLabel;
         private System.Windows.Forms.Label profilePhoneLabel;
@@ -2634,7 +2442,7 @@
         private System.Windows.Forms.Label phasesLabel;
         private System.Windows.Forms.DataGridView phasesGrid;
         private System.Windows.Forms.CheckBox completeCheckBox;
-        private System.Windows.Forms.Panel profilePanel2;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button addVacationButton;
         private System.Windows.Forms.DataGridView vacationsGrid;
         private System.Windows.Forms.Label profileVacationHoursLabel;
@@ -2646,11 +2454,11 @@
         private System.Windows.Forms.TextBox profileProjectHoursBox;
         private System.Windows.Forms.Label profileProjectHoursLabel;
         private System.Windows.Forms.Button profileEditProjectHoursButton;
-        private System.Windows.Forms.Panel employeePagePanel2;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView employeeProjectGrid;
         private System.Windows.Forms.Label employeeProjectsLabel;
         private System.Windows.Forms.Button employeePageViewButton;
-        private System.Windows.Forms.Panel employeePagePanel1;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView employeeVacationsGrid;
         private System.Windows.Forms.TextBox employeePageHoursBox;
         private System.Windows.Forms.Label employeeHoursLabel;
@@ -2677,21 +2485,6 @@
         private System.Windows.Forms.Button editLeaderButton;
         private System.Windows.Forms.Button profileChangePassButton;
         private System.Windows.Forms.Label vacationLabel;
-        private System.Windows.Forms.Panel resetPassBG;
-        private System.Windows.Forms.Panel resetPanel;
-        private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.TextBox resetBox;
-        private System.Windows.Forms.Label resetEmailLabel;
-        private System.Windows.Forms.Label resetLabel;
-        private System.Windows.Forms.Panel changePassBG;
-        private System.Windows.Forms.Panel changePanel;
-        private System.Windows.Forms.TextBox newPassBox;
-        private System.Windows.Forms.Label newPassLabel;
-        private System.Windows.Forms.Button changeButton;
-        private System.Windows.Forms.TextBox currentPassBox;
-        private System.Windows.Forms.Label currentPassLabel;
-        private System.Windows.Forms.Label changePasswordLabel;
-        private System.Windows.Forms.Label resetPassExitLabel;
     }
 }
 

@@ -13,7 +13,7 @@ namespace EDGELook
     {
         private int empHours;
         private MySqlConnection conn;
-        private String eID;
+        private int? eID;
 
         public void EditMyHours(TextBox hoursBox)
         {
@@ -145,7 +145,7 @@ namespace EDGELook
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public void Setup(MySqlConnection newConn, String newEmpID)
+        public void Setup(MySqlConnection newConn, int? newEmpID)
         {
             conn = newConn;
             eID = newEmpID;

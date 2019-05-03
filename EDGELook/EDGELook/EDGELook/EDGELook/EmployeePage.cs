@@ -12,7 +12,7 @@ namespace EDGELook
     class EmployeePage
     {
         private MySqlConnection conn;
-        private String eID;
+        private int? eID;
 
         public void Setup(MySqlConnection newConn)
         {
@@ -20,7 +20,7 @@ namespace EDGELook
         }
         public void SetID(String newEmpID)
         {
-            eID = newEmpID;
+            eID = int.Parse(newEmpID);
         }
         public void GetHours(TextBox hoursBox)
         {
@@ -93,7 +93,7 @@ namespace EDGELook
             conn.Close();
         }
 
-        public void ListEmployees(DataGridView employeeGrid, String eID)
+        public void ListEmployees(DataGridView employeeGrid, int? eID)
         {
             conn.Open();
 

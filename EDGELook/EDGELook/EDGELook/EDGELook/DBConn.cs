@@ -17,6 +17,8 @@ namespace EDGELook
         private String password;
         private String connString;
         private MySqlConnection conn;
+        //private int? eID;
+        //private String projectID;
 
         //CONSTRUCTOR
         public DBConn()

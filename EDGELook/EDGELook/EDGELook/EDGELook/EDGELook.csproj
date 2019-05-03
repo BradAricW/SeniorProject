@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="AdminPage.cs" />
     <Compile Include="DBConn.cs" />
-    <Compile Include="PasswordPage.cs" />
     <Compile Include="ProjectPage.cs" />
     <Compile Include="EmployeePage.cs" />
     <Compile Include="LoginPage.cs" />
