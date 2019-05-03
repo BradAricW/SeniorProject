@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +15,7 @@ namespace EDGELook
 {
     class ProjectPage
     {
+        //variable initialization and setup
         private String  projectDesc;
         private String  projectDeliverables;
         private int     projectHours;
@@ -27,24 +27,167 @@ namespace EDGELook
 
         private int flag = 0;
 
-        public int GetFlag()
-        {
-            return flag;
-        }
-        public void SetFlag(int n)
-        {
-            flag = n;
-        }
         public void Setup(MySqlConnection con)
         {
             this.conn = con;
-        }
+        }//end setup
+
+        public int GetFlag()
+        {
+            return flag;
+        }//end get flag
+
+        public void SetFlag(int n)
+        {
+            flag = n;
+        }//end set flag
+        
         public void EditID(String newID)
         {
             projectID = newID;
-        }
+        }//end edit ID
 
-        //Edit Project
+        //display functions (search project page)
+        public void ListProjects(DataGridView projectsGrid, String eID)
+        {
+            conn.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.fname AS 'Leader First Name', E.lname AS 'Leader Last Name', P.prjNo AS 'Project #', P.Description, P.prjComplete AS 'Complete' FROM Project P, Employee E WHERE P.prjLeader = E.employeeID ORDER BY P.prjComplete;", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            projectsGrid.DataSource = table;
+            conn.Close();
+        }//end list projects
+
+        //display functions (project page)
+        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox leaderLNameBox, TextBox leaderFNameBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, String prjNo, CheckBox compCheck)
+        {
+            bool temp = false;
+            bool check = false;
+            conn.Open();
+            String getProjInfo = "SELECT * FROM Project WHERE prjNo = '" + prjNo + "';";
+            MySqlCommand cmd = new MySqlCommand(getProjInfo, conn);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                projectPagePNumBox.Text = dr.GetString(0);
+                notesPNum = dr.GetString(0);
+                leaderID = dr.GetString(1);
+                projectPageDescriptionBox.Text = dr.GetString(2);
+                projectPageDeliverablesBox.Text = dr.GetString(3);
+                projectPageHoursBox.Value = dr.GetDecimal(4);
+                check = dr.GetBoolean(5);
+                temp = true;
+            }
+
+            if (temp == false)
+            {
+                MessageBox.Show("Not found");
+            }
+            dr.Close();
+            String getName = "SELECT fname, lname FROM Employee WHERE employeeID = '" + leaderID + "';";
+            MySqlCommand cmdSet = new MySqlCommand(getName, this.conn);
+            MySqlDataReader reader2 = cmdSet.ExecuteReader();
+            while (reader2.Read())
+            {
+                fName = reader2.GetString("fname");
+                lName = reader2.GetString("lname");
+            }
+            reader2.Close();
+            conn.Close();
+            leaderFNameBox.Text = fName;
+            leaderLNameBox.Text = lName;
+            if (check)
+            {
+                compCheck.Checked = true;
+            }
+            else
+            {
+                compCheck.Checked = false;
+            }
+        } // END AUTODISPLAY
+
+        public void DisplayEmployees(DataGridView unassigned, DataGridView assigned)
+        {
+            conn.Open();
+            //populate assigned gird
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.employeeID AS ID, E.fname AS First, E.lname AS Last, W.hours AS Hours FROM Employee E, WorksOn W WHERE W.employeeID = E.employeeID AND W.prjNo = '" + projectID + "';", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            assigned.DataSource = table;
+            assigned.Columns[0].Width = 50;
+            assigned.Columns[1].Width = 55;
+            assigned.Columns[2].Width = 55;
+            assigned.Columns[3].Width = 50;
+            //populate unassigned grid
+            MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT E.employeeID AS ID, E.fname AS First, E.lname AS Last, E.hoursAvail AS Hours FROM Employee E WHERE(not exists(SELECT * FROM WorksOn W WHERE prjNo = '" + projectID + "' AND E.employeeID = W.employeeID)) OR(not exists(SELECT * FROM WorksOn X WHERE E.employeeID = X.employeeID))", conn);
+            DataTable table2 = new DataTable();
+            da2.Fill(table2);
+            unassigned.DataSource = table2;
+            unassigned.Columns[0].Width = 50;
+            unassigned.Columns[1].Width = 55;
+            unassigned.Columns[2].Width = 55;
+            unassigned.Columns[3].Width = 50;
+            conn.Close();
+
+        } //end display employees
+
+        public void DisplayNotes(DataGridView grid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT nDate AS Date, notes AS Notes FROM Notes WHERE prjNo = '" + notesPNum + "';", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            grid.DataSource = table;
+            grid.Columns[0].Width = 100;
+            grid.Columns[1].Width = 157;
+            conn.Close();
+        } //end display notes
+
+        public void ListPhases(DataGridView phases)
+        {
+            conn.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT prjNo AS 'Project #', prjPhase AS 'Phase', phaseDueDate AS 'Phase Due Date', status AS Status FROM ProjectPhase WHERE prjNo = '" + projectID + "' ORDER BY phaseDueDate;", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            phases.DataSource = table;
+            conn.Close();
+        }//end list phases
+
+        public void HoursDisplay(Label hours)
+        {
+            conn.Open();
+            String getHours = "SELECT hoursNeeded FROM Project WHERE prjNo = '" + projectID + "';";
+            MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                hours.Text = reader.GetString("hoursNeeded") + " Hours";
+            }
+            conn.Close();
+        } //end hours display
+
+        //core functionality (search project page)
+        public void ProjectSearch(String projSearch, DataGridView projectsGrid, int passable)
+        {
+            conn.Open();
+            MySqlDataAdapter da;
+            switch (passable)
+            {
+                case 1: da = new MySqlDataAdapter("call Search_By_Project('" + projSearch + "');", conn); break;
+                case 2: da = new MySqlDataAdapter("call Search_By_Description('" + projSearch + "');", conn); break;
+                case 3: da = new MySqlDataAdapter("call Search_By_Lead('" + projSearch + "');", conn); break;
+                default: da = new MySqlDataAdapter("call Project_Search('" + projSearch + "');", conn); break;
+            }
+
+            DataTable table = new DataTable();
+            da.Fill(table);
+            projectsGrid.DataSource = table;
+            conn.Close();
+        }//end project search
+
+        //core functionality (project page)
         public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, String eID)
         {
             int flag = GetFlag();
@@ -98,64 +241,10 @@ namespace EDGELook
                     }
                     SetFlag(1);
                 }
-                else
-                {
-                    Console.WriteLine("ISSUE WITH EDIT PROJECT! FLAG PASSED INCORRECT VALUE.");
-                }
                 conn.Close();
             }
 
         } // END EDITPROJECT
-
-
-        // Auto Display Project Info in Edit Project Page
-        public void AutoDisplay(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox leaderLNameBox, TextBox leaderFNameBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, String prjNo, CheckBox compCheck)
-        {
-            bool temp = false;
-            bool check = false;
-            conn.Open();
-            String getProjInfo = "select * from Project where prjNo = '" + prjNo + "';";
-            MySqlCommand cmd = new MySqlCommand(getProjInfo, conn);
-            MySqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                projectPagePNumBox.Text = dr.GetString(0);
-                notesPNum = dr.GetString(0);
-                leaderID = dr.GetString(1);
-                projectPageDescriptionBox.Text = dr.GetString(2);
-                projectPageDeliverablesBox.Text = dr.GetString(3);
-                projectPageHoursBox.Value = dr.GetDecimal(4);
-                check = dr.GetBoolean(5);
-                temp = true;
-            }
-            
-            if (temp == false)
-            {
-                MessageBox.Show("Not found");
-            }
-            dr.Close();
-            String getName = "SELECT fname, lname FROM Employee WHERE employeeID = '" + leaderID + "';";
-            MySqlCommand cmdSet = new MySqlCommand(getName, this.conn);
-            MySqlDataReader reader2 = cmdSet.ExecuteReader();
-            while (reader2.Read())
-            {
-                fName = reader2.GetString("fname");
-                lName = reader2.GetString("lname");
-            }
-            reader2.Close();
-            conn.Close();
-            leaderFNameBox.Text = fName;
-            leaderLNameBox.Text = lName;
-            if (check)
-            {
-                compCheck.Checked = true;
-            }
-            else
-            {
-                compCheck.Checked = false;
-            }
-        } // END AUTODISPLAY
-
 
         public void AddNotes(String eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
         {
@@ -187,73 +276,7 @@ namespace EDGELook
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-        }
-
-        public void DisplayEmployees(DataGridView unassigned, DataGridView assigned)
-        {
-            conn.Open();
-            //populate assigned gird
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT e.employeeID as ID, e.fname as First, e.lname as Last, w.hours as Hours FROM Employee e, WorksOn w WHERE w.employeeID = e.employeeID AND w.prjNo = '" + projectID + "';", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            assigned.DataSource = table;
-            assigned.Columns[0].Width = 50;
-            assigned.Columns[1].Width = 55;
-            assigned.Columns[2].Width = 55;
-            assigned.Columns[3].Width = 50;
-            //populate unassigned grid
-            MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT e.employeeID as ID, e.fname as First, e.lname as Last, e.hoursAvail as Hours FROM Employee e WHERE(not exists(SELECT * FROM WorksOn w WHERE prjNo = '" + projectID + "' AND e.employeeID = w.employeeID)) OR(not exists(SELECT * FROM WorksOn x WHERE e.employeeID = x.employeeID))", conn);
-            DataTable table2 = new DataTable();
-            da2.Fill(table2);
-            unassigned.DataSource = table2;
-            unassigned.Columns[0].Width = 50;
-            unassigned.Columns[1].Width = 55;
-            unassigned.Columns[2].Width = 55;
-            unassigned.Columns[3].Width = 50;
-            conn.Close();
-
-        }
-
-        // Displays Notes in the Edit Project Page
-        public void DisplayNotes(DataGridView grid)
-        {
-            conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("select nDate as Date, notes as Notes from Notes where prjNo = '" + notesPNum +"';",conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            grid.DataSource = table;
-            grid.Columns[0].Width = 100;
-            grid.Columns[1].Width = 157;
-            conn.Close();
-        } // END EDIT NOTES
-
-        public void ListProjects(DataGridView projectsGrid, String eID)
-        {
-            conn.Open();
-
-            MySqlDataAdapter da = new MySqlDataAdapter("Select E.fname as 'Leader First Name', E.lname as 'Leader Last Name', P.prjNo as 'Project #', P.Description, P.prjComplete as 'Complete' from Project P, Employee E where P.prjLeader = E.employeeID ORDER BY P.prjComplete;", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            projectsGrid.DataSource = table;
-            conn.Close();
-        }
-
-        public void ProjectSearch(String projSearch, DataGridView projectsGrid, int passable)
-        {
-            conn.Open();
-            MySqlDataAdapter da;
-            switch (passable) {
-                case 1:  da = new MySqlDataAdapter("call Search_By_Project('" + projSearch + "');", conn); break;
-                case 2:  da = new MySqlDataAdapter("call Search_By_Description('" + projSearch + "');", conn); break;
-                case 3:  da = new MySqlDataAdapter("call Search_By_Lead('" + projSearch + "');", conn); break;
-                default: da = new MySqlDataAdapter("call Project_Search('" + projSearch + "');", conn); break;     
-            }
-               
-            DataTable table = new DataTable();
-            da.Fill(table);
-            projectsGrid.DataSource = table;
-            conn.Close();
-        }
+        }//end set completion
 
         public void AssignEmployee(int prjHours, String empID)
         {
@@ -359,7 +382,7 @@ namespace EDGELook
                 MessageBox.Show("Invalid Input");
             }
             conn.Close();
-        }
+        } //end assign employee
 
         public void RemoveEmployee(String empID)
         { 
@@ -413,17 +436,6 @@ namespace EDGELook
             }
             conn.Close();
         } //END REMOVEEMPLOYEE   
-
-        public void ListPhases(DataGridView phases)
-        {
-            conn.Open();
-
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT prjNo AS 'Project #', prjPhase AS 'Phase', phaseDueDate AS 'Phase Due Date', status AS Status from ProjectPhase WHERE prjNo = '" + projectID + "' ORDER BY phaseDueDate;", conn); 
-            DataTable table = new DataTable();
-            da.Fill(table);
-            phases.DataSource = table;
-            conn.Close();
-        }
 
         public void UpdatePhase(TextBox phase, DateTimePicker due, TextBox status)
         {
@@ -481,7 +493,7 @@ namespace EDGELook
             {
                 MessageBox.Show("Please enter a valid input for Phase, Status, and Due Date.");
             }
-        }
+        } //end update phase
 
         public void UpdateLeader(String eID)
         {
@@ -492,20 +504,7 @@ namespace EDGELook
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-        }
-
-        public void HoursDisplay(Label hours)
-        {
-            conn.Open();
-            String getHours = "SELECT hoursNeeded FROM Project WHERE prjNo = '" + projectID + "';";
-            MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                hours.Text = reader.GetString("hoursNeeded") + " Hours";
-            }
-            conn.Close();
-        }
+        } //end update leader
 
     } // END INTERNAL CLASS EDGELOOK
 } // END EDGELOOK

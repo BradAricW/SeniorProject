@@ -10,11 +10,18 @@ namespace EDGELook
 {
     class LoginPage
     {
+        //initialize variables and setup
         private String email;
         private String password;
         private MySqlConnection conn;
         private String eID;
 
+        public void Setup(MySqlConnection newConn)
+        {
+            conn = newConn;
+        } //end setup
+
+        //core functionality
         public String Login (TextBox emailBox, TextBox passwordBox)
         {
             email = emailBox.Text;
@@ -40,14 +47,9 @@ namespace EDGELook
             {
                 MessageBox.Show("Not valid login");
             }
-            else
-                Console.WriteLine("Logged in");
             conn.Close();
             return eID;
-        }
-        public void Setup(MySqlConnection newConn)
-        {
-            conn = newConn;
-        }
+        } //end login
+
     }
 }

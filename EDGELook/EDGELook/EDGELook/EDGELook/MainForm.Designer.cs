@@ -106,6 +106,7 @@
             this.projectPageDueLabel = new System.Windows.Forms.Label();
             this.projectPageStatusBox = new System.Windows.Forms.TextBox();
             this.projectPagePanel2 = new System.Windows.Forms.Panel();
+            this.projectHoursLabel2 = new System.Windows.Forms.Label();
             this.completeCheckBox = new System.Windows.Forms.CheckBox();
             this.projectPageHoursBox = new System.Windows.Forms.NumericUpDown();
             this.notesGridView = new System.Windows.Forms.DataGridView();
@@ -121,6 +122,7 @@
             this.projectPageDescriptionLabel = new System.Windows.Forms.Label();
             this.projectPagePNumLabel = new System.Windows.Forms.Label();
             this.projectPagePanel1 = new System.Windows.Forms.Panel();
+            this.projectPageUpdateHoursButton = new System.Windows.Forms.Button();
             this.editLeaderButton = new System.Windows.Forms.Button();
             this.projectPageLeaderLNameBox = new System.Windows.Forms.TextBox();
             this.projectPageLeaderLabel = new System.Windows.Forms.Label();
@@ -220,8 +222,7 @@
             this.currentPassBox = new System.Windows.Forms.TextBox();
             this.currentPassLabel = new System.Windows.Forms.Label();
             this.changePasswordLabel = new System.Windows.Forms.Label();
-            this.projectHoursLabel2 = new System.Windows.Forms.Label();
-            this.projectPageUpdateHoursButton = new System.Windows.Forms.Button();
+            this.changePassExitLabel = new System.Windows.Forms.Label();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -1053,6 +1054,17 @@
             this.projectPagePanel2.Size = new System.Drawing.Size(300, 420);
             this.projectPagePanel2.TabIndex = 1;
             // 
+            // projectHoursLabel2
+            // 
+            this.projectHoursLabel2.AutoSize = true;
+            this.projectHoursLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectHoursLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.projectHoursLabel2.Location = new System.Drawing.Point(44, 190);
+            this.projectHoursLabel2.Name = "projectHoursLabel2";
+            this.projectHoursLabel2.Size = new System.Drawing.Size(74, 20);
+            this.projectHoursLabel2.TabIndex = 27;
+            this.projectHoursLabel2.Text = "__ Hours";
+            // 
             // completeCheckBox
             // 
             this.completeCheckBox.AutoSize = true;
@@ -1227,6 +1239,21 @@
             this.projectPagePanel1.Name = "projectPagePanel1";
             this.projectPagePanel1.Size = new System.Drawing.Size(265, 420);
             this.projectPagePanel1.TabIndex = 0;
+            // 
+            // projectPageUpdateHoursButton
+            // 
+            this.projectPageUpdateHoursButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.projectPageUpdateHoursButton.FlatAppearance.BorderSize = 0;
+            this.projectPageUpdateHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.projectPageUpdateHoursButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectPageUpdateHoursButton.ForeColor = System.Drawing.Color.Snow;
+            this.projectPageUpdateHoursButton.Location = new System.Drawing.Point(55, 395);
+            this.projectPageUpdateHoursButton.Name = "projectPageUpdateHoursButton";
+            this.projectPageUpdateHoursButton.Size = new System.Drawing.Size(75, 22);
+            this.projectPageUpdateHoursButton.TabIndex = 22;
+            this.projectPageUpdateHoursButton.Text = "Update Hours";
+            this.projectPageUpdateHoursButton.UseVisualStyleBackColor = false;
+            this.projectPageUpdateHoursButton.Click += new System.EventHandler(this.ProjectPageUpdateHoursButton_Click);
             // 
             // editLeaderButton
             // 
@@ -2362,6 +2389,7 @@
             // changePanel
             // 
             this.changePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.changePanel.Controls.Add(this.changePassExitLabel);
             this.changePanel.Controls.Add(this.newPassBox);
             this.changePanel.Controls.Add(this.newPassLabel);
             this.changePanel.Controls.Add(this.changeButton);
@@ -2437,31 +2465,17 @@
             this.changePasswordLabel.Text = "Change Password";
             this.changePasswordLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // projectHoursLabel2
+            // changePassExitLabel
             // 
-            this.projectHoursLabel2.AutoSize = true;
-            this.projectHoursLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectHoursLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.projectHoursLabel2.Location = new System.Drawing.Point(44, 190);
-            this.projectHoursLabel2.Name = "projectHoursLabel2";
-            this.projectHoursLabel2.Size = new System.Drawing.Size(74, 20);
-            this.projectHoursLabel2.TabIndex = 27;
-            this.projectHoursLabel2.Text = "__ Hours";
-            // 
-            // projectPageUpdateHoursButton
-            // 
-            this.projectPageUpdateHoursButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.projectPageUpdateHoursButton.FlatAppearance.BorderSize = 0;
-            this.projectPageUpdateHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.projectPageUpdateHoursButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectPageUpdateHoursButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageUpdateHoursButton.Location = new System.Drawing.Point(55, 395);
-            this.projectPageUpdateHoursButton.Name = "projectPageUpdateHoursButton";
-            this.projectPageUpdateHoursButton.Size = new System.Drawing.Size(75, 22);
-            this.projectPageUpdateHoursButton.TabIndex = 22;
-            this.projectPageUpdateHoursButton.Text = "Update Hours";
-            this.projectPageUpdateHoursButton.UseVisualStyleBackColor = false;
-            this.projectPageUpdateHoursButton.Click += new System.EventHandler(this.ProjectPageUpdateHoursButton_Click);
+            this.changePassExitLabel.AutoSize = true;
+            this.changePassExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePassExitLabel.ForeColor = System.Drawing.Color.White;
+            this.changePassExitLabel.Location = new System.Drawing.Point(221, 165);
+            this.changePassExitLabel.Name = "changePassExitLabel";
+            this.changePassExitLabel.Size = new System.Drawing.Size(29, 16);
+            this.changePassExitLabel.TabIndex = 8;
+            this.changePassExitLabel.Text = "Exit";
+            this.changePassExitLabel.Click += new System.EventHandler(this.ChangePassExitLabel_Click);
             // 
             // MainForm
             // 
@@ -2471,9 +2485,6 @@
             this.ClientSize = new System.Drawing.Size(910, 571);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.projectPageBG);
-            this.Controls.Add(this.loginBG);
-            this.Controls.Add(this.profileBG);
             this.Controls.Add(this.changePassBG);
             this.Controls.Add(this.resetPassBG);
             this.Controls.Add(this.adminBackPanel);
@@ -2482,6 +2493,9 @@
             this.Controls.Add(this.reportsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
+            this.Controls.Add(this.projectPageBG);
+            this.Controls.Add(this.loginBG);
+            this.Controls.Add(this.profileBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -2730,6 +2744,7 @@
         private System.Windows.Forms.Button adminClearButton;
         private System.Windows.Forms.Label projectHoursLabel2;
         private System.Windows.Forms.Button projectPageUpdateHoursButton;
+        private System.Windows.Forms.Label changePassExitLabel;
     }
 }
 

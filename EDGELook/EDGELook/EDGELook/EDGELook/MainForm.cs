@@ -17,6 +17,7 @@ namespace EDGELook
 {
     public partial class MainForm : Form
     {
+        //initialize variables and setup
         PasswordPage passPage;
         LoginPage login;
         AdminPage admin;
@@ -38,20 +39,34 @@ namespace EDGELook
         public MainForm()
         {
             InitializeComponent();
-            //setup Connection object
+            //setup page classes and connections
             dbconn = new DBConn();
             conn = dbconn.Dbsetup();
+
             login = new LoginPage();
             login.Setup(conn);
+
             passPage = new PasswordPage();
             passPage.Setup(conn);
-        }
 
-        private void LoginButton_Click(object sender, EventArgs e)
-        {
+            profile = new ProfilePage();
+            profile.Setup(conn, eID);
+
+            report = new ReportPage();
+            report.Setup(conn);
+
+            edit = new ProjectPage();
+            edit.Setup(conn);
+
             employee = new EmployeePage();
             employee.Setup(conn);
+        } //end MainForm
 
+        //BUTTONS
+
+        //Login Buttons
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
             eID = login.Login(emailBox, passBox);
             int success;
             if (eID == null)
@@ -70,18 +85,14 @@ namespace EDGELook
                 this.profileBG.Visible = true;
                 emailBox.Text = "";
 
-                profile = new ProfilePage();
-                profile.Setup(conn, eID);
+                
                 profile.GetHours(profileHoursTextBox);
                 profile.GetEmail(profileEmailTextBox);
                 profile.GetPhone(profilePhoneTextBox);
                 profile.GetName(profileFNameBox, profileLNameBox);
                 profile.ListProjects(profileProjectGrid);
                 profile.ListVacations(vacationsGrid);
-                report = new ReportPage();
-                report.Setup(conn);
-                edit = new ProjectPage();
-                edit.Setup(conn);
+                
                 isAdmin = profile.GetAdmin();
                 if(isAdmin == true)
                 {
@@ -93,9 +104,102 @@ namespace EDGELook
             passBox.Text = "";
 
 
-        }
-        //private void 
+        } //end login button
 
+        private void ResetPassLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.searchProjectsBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = true;
+            this.changePassBG.Visible = false;
+        } //end reset password button
+
+        //Password Buttons
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            passPage.ResetPass(resetBox);
+
+            Clear();
+            this.loginBG.Visible = true;
+            this.taskbarMenu.Visible = false;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+        } //end password reset button
+
+        private void ChangeButton_Click(object sender, EventArgs e)
+        {
+            passPage.ChangePass(currentPassBox, newPassBox, eID);
+
+            currentPassBox.Text = newPassBox.Text = "";
+
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = true;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+        } //end password change button
+
+        private void ResetPassExitLabel_Click(object sender, EventArgs e)
+        {
+            Clear();
+            this.loginBG.Visible = true;
+            this.taskbarMenu.Visible = false;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+        } //end reset pass exit button
+
+        private void ChangePassExitLabel_Click(object sender, EventArgs e)
+        {
+            Clear();
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = true;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+
+            profile.GetHours(profileHoursTextBox);
+            profile.GetEmail(profileEmailTextBox);
+            profile.GetPhone(profilePhoneTextBox);
+            profile.GetName(profileFNameBox, profileLNameBox);
+            profile.ListProjects(profileProjectGrid);
+            profile.ListVacations(vacationsGrid);
+        } //end change pass exit button
+
+        //Taskbar Buttons
         private void SignOutLabel_Click(object sender, EventArgs e)
         {
             this.signOutLabel.Visible = false;
@@ -114,7 +218,7 @@ namespace EDGELook
 
             //clear all data
             Clear();
-        }
+        } //end signout button
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
@@ -138,7 +242,7 @@ namespace EDGELook
             profile.ListProjects(profileProjectGrid);
             profile.ListVacations(vacationsGrid);
             profile.GetName(profileFNameBox, profileLNameBox);
-        }
+        } //end home button
 
         private void ProjectsButton_Click(object sender, EventArgs e)
         {
@@ -157,7 +261,7 @@ namespace EDGELook
             Clear();
 
             edit.ListProjects(projectsGrid, eID);
-        }
+        } //end project button
 
         private void EmployeesButton_Click(object sender, EventArgs e)
         {
@@ -176,7 +280,7 @@ namespace EDGELook
             Clear();
 
             employee.ListEmployees(searchEmployeesGrid, eID);
-        }
+        } //end employees button
 
         private void ReportsButton_Click(object sender, EventArgs e)
         {
@@ -196,164 +300,90 @@ namespace EDGELook
 
             report.ListProjects(weeklyReportGrid);
             report.ListVacations(vacationReportGrid);
-        }
+        } //end reports button
 
-        private void ResetPassLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void AdminLabel_Click(object sender, EventArgs e)
+        {
+            isAdmin = profile.GetAdmin();
+            if (isAdmin == true)
+            {
+                this.signOutLabel.Visible = true;
+                this.loginBG.Visible = false;
+                this.taskbarMenu.Visible = true;
+                this.searchProjectsBG.Visible = false;
+                this.profileBG.Visible = false;
+                this.reportsBG.Visible = false;
+                this.employeePageBG.Visible = false;
+                this.projectPageBG.Visible = false;
+                this.searchEmployeesBG.Visible = false;
+                this.adminBackPanel.Visible = true;
+                this.resetPassBG.Visible = false;
+                this.changePassBG.Visible = false;
+
+                admin.DisplayEmployees(adminEmployeeGrid);
+
+            }
+        } //end admin button
+
+        //Admin Buttons
+        private void AdminClearButton_Click(object sender, EventArgs e)
+        {
+            Clear();
+        } //end admin clear button
+
+        private void AdminResetPasswordButton_Click(object sender, EventArgs e)
+        {
+            admin.ResetPassword(adminEmployeeIDBox, adminPassBox);
+        } //end admin reset password button
+
+        private void AdminUpdateUserButton_Click(object sender, EventArgs e)
+        {
+            admin.UpdateEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox, activeCheckBox);
+            admin.DisplayEmployees(adminEmployeeGrid);
+        } //end admin update user button
+
+        private void AdminSelectUserButton_Click(object sender, EventArgs e)
+        {
+            admin.SelectEmployee(tempEID, adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox, activeCheckBox);
+        } // end admin select user button
+
+        private void AdminAddUserButton_Click(object sender, EventArgs e)
+        {
+            if (adminEmployeeIDBox.Text == "" || adminEmployeeIDBox.Text == null)
+            {
+                MessageBox.Show("Please add employee ID");
+            }
+            else if (adminEmailBox.Text == "" || adminEmailBox.Text == null)
+            {
+                MessageBox.Show("Please add employee email");
+            }
+            else if (adminPassBox.Text == "" || adminPassBox.Text == null)
+            {
+                MessageBox.Show("Please add employee password");
+            }
+            else
+            {
+                admin.NewEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminPassBox, adminHoursBox, adminCheckBox, activeCheckBox);
+                admin.DisplayEmployees(adminEmployeeGrid);
+
+            }
+        } // end admin add user button
+
+        //Profile Buttons
+        private void ProfileChangePassButton_Click(object sender, EventArgs e)
         {
             this.loginBG.Visible = false;
             this.taskbarMenu.Visible = false;
+            this.searchProjectsBG.Visible = false;
             this.profileBG.Visible = false;
             this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
             this.projectPageBG.Visible = false;
             this.searchEmployeesBG.Visible = false;
-            this.searchProjectsBG.Visible = false;
-            this.adminBackPanel.Visible = false;
-            this.resetPassBG.Visible = true;
-            this.changePassBG.Visible = false;
-        }
-
-        private void SearchEmployeesViewButton_Click(object sender, EventArgs e)
-        {
-            this.signOutLabel.Visible = true;
-            this.loginBG.Visible = false;
-            this.taskbarMenu.Visible = true;
-            this.profileBG.Visible = false;
-            this.reportsBG.Visible = false;
-            this.employeePageBG.Visible = true;
-            this.projectPageBG.Visible = false;
-            this.searchEmployeesBG.Visible = false;
-            this.searchProjectsBG.Visible = false;
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
-            this.changePassBG.Visible = false;
-
-            employee.GetHours(employeePageHoursBox);
-            employee.GetEmail(employeeEmailTextBox);
-            employee.GetPhone(employeePhoneTextBox);
-            employee.ListProjects(employeeProjectGrid);
-            employee.NameDisplay(employeePageLabel);
-            employee.ListVacations(employeeVacationsGrid);
-            employee.GetName(employeeFNameBox, employeeLNameBox);
-        }
-
-        private void SearchProjectsViewButton_Click(object sender, EventArgs e)
-        {
-            this.signOutLabel.Visible = true;
-            this.loginBG.Visible = false;
-            this.taskbarMenu.Visible = true;
-            this.searchProjectsBG.Visible = false;
-            this.profileBG.Visible = false;
-            this.reportsBG.Visible = false;
-            this.employeePageBG.Visible = false;
-            this.projectPageBG.Visible = true;
-            this.searchEmployeesBG.Visible = false;
-            this.adminBackPanel.Visible = false;
-            this.resetPassBG.Visible = false;
-            this.changePassBG.Visible = false;
-
-            Clear();
-            edit.EditID(testPrjNo);
-            edit.ListPhases(phasesGrid);
-            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
-            edit.HoursDisplay(projectHoursLabel2);
-            edit.DisplayNotes(notesGridView);
-            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-            edit.SetFlag(1);
-        }
-
-        private void SearchProjectsPageAddProjectButton_Click(object sender, EventArgs e)
-        {
-            this.signOutLabel.Visible = true;
-            this.loginBG.Visible = false;
-            this.taskbarMenu.Visible = true;
-            this.searchProjectsBG.Visible = false;
-            this.profileBG.Visible = false;
-            this.reportsBG.Visible = false;
-            this.employeePageBG.Visible = false;
-            this.projectPageBG.Visible = true;
-            this.searchEmployeesBG.Visible = false;
-            this.adminBackPanel.Visible = false;
-            this.resetPassBG.Visible = false;
-            this.changePassBG.Visible = false;
-
-            Clear();
-            edit.SetFlag(0);
-            edit.EditID(null);
-            edit.ListPhases(phasesGrid);
-            edit.DisplayNotes(notesGridView);
-            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-        }
-
-
-        // Button Functionality
-
-        // Update Project
-        private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
-        {
-            if(projectPagePNumBox.Text == "" || projectPagePNumBox.Text == null)
-            {
-                MessageBox.Show("Must enter project number");
-            } else { 
-                edit.SetCompleteIncomplete(completeCheckBox);
-                edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID);
-
-                testPrjNo = projectPagePNumBox.Text;
-                edit.EditID(testPrjNo);
-                edit.ListPhases(phasesGrid);
-                edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
-                edit.HoursDisplay(projectHoursLabel2);
-                edit.DisplayNotes(notesGridView);
-                edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-                edit.SetFlag(1);
-            }
-        }
-
-        private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
-        {
-            edit.AddNotes(eID, projectPagePNumBox, projectPageNotesTextBox);
-            edit.DisplayNotes(notesGridView);
-        }
-
-        private void ProjectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
-        {
-            edit.RemoveEmployee(removeEID);
-            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-        } //Remove Employee 
-
-        private void ProjectPageAddEmployeeButton_Click(object sender, EventArgs e)
-        {
-            try { hours = int.Parse(projectPageEditEmployeeText.Text); }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            edit.AssignEmployee(hours, assignEID);
-            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-            edit.HoursDisplay(projectHoursLabel2);
-
-        } //Add Employee
-
-        private void ProjectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (projectsGrid.SelectedCells.Count > 0)
-            {
-                int selectedRowIndex = projectsGrid.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = projectsGrid.Rows[selectedRowIndex];
-                testPrjNo = selectedRow.Cells[2].Value.ToString();
-            }
-        }
-
-        private void ProfileProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (profileProjectGrid.SelectedCells.Count > 0)
-            {
-                int selectedRowIndex = profileProjectGrid.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = profileProjectGrid.Rows[selectedRowIndex];
-                profilePrjNo = selectedRow.Cells[0].Value.ToString();
-                profileProjectHoursBox.Text = profile.GetProjHours(profilePrjNo).ToString();
-            }
-        }
+            this.changePassBG.Visible = true;
+        } //end profile change password button
 
         private void ProfileViewButton_Click(object sender, EventArgs e)
         {
@@ -378,87 +408,92 @@ namespace EDGELook
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
-        }
-
-        private void SearchEmployeesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (searchEmployeesGrid.SelectedCells.Count > 0)
-            {
-                int selectedRowIndex = searchEmployeesGrid.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = searchEmployeesGrid.Rows[selectedRowIndex];
-                empNo = selectedRow.Cells[0].Value.ToString();
-                employee.SetID(empNo);
-            }
-        }
+        } //end profile view button
 
         private void ProfileEditContactButton_Click(object sender, EventArgs e)
         {
             profile.EditContact(profileEmailTextBox, profilePhoneTextBox, profileFNameBox, profileLNameBox);
-        }
+        } //end profile edit contact button
 
-        private void AdminLabel_Click(object sender, EventArgs e)
+        private void AddVacationButton_Click(object sender, EventArgs e)
         {
-            isAdmin = profile.GetAdmin();
-            if (isAdmin == true)
-            {
-                this.signOutLabel.Visible = true;
-                this.loginBG.Visible = false;
-                this.taskbarMenu.Visible = true;
-                this.searchProjectsBG.Visible = false;
-                this.profileBG.Visible = false;
-                this.reportsBG.Visible = false;
-                this.employeePageBG.Visible = false;
-                this.projectPageBG.Visible = false;
-                this.searchEmployeesBG.Visible = false;
-                this.adminBackPanel.Visible = true;
-                this.resetPassBG.Visible = false;
-                this.changePassBG.Visible = false;
+            profile.EditVacation(profileStartDate, profileEndDate);
+            profile.ListVacations(vacationsGrid);
+        } //end profile add vacation button
 
-                admin.DisplayEmployees(adminEmployeeGrid);
-
-            }
-        }
-
-        private void AdminResetPasswordButton_Click(object sender, EventArgs e)
+        private void RemoveVacationButton_Click(object sender, EventArgs e)
         {
-            admin.ResetPassword(adminEmployeeIDBox, adminPassBox);
-        }
+            profile.RemoveVacation(tempVac);
+            profile.ListVacations(vacationsGrid);
+        } //end profile remove vacation button
 
-        private void AdminUpdateUserButton_Click(object sender, EventArgs e)
+        private void ProfileEditProjectHoursButton_Click(object sender, EventArgs e)
         {
-            admin.UpdateEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox, activeCheckBox);
-            admin.DisplayEmployees(adminEmployeeGrid);
-        }
+            profile.EditProjectHours(profileProjectHoursBox, profilePrjNo);
+            profile.ListProjects(profileProjectGrid);
+            profile.GetHours(profileHoursTextBox);
+        } //end profile edit project hours button
 
-        private void AdminSelectUserButton_Click(object sender, EventArgs e)
+        private void ProfileEditHoursButton_Click(object sender, EventArgs e)
         {
-            admin.SelectEmployee(tempEID, adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox, activeCheckBox);
-        }
+            profile.EditMyHours(profileHoursTextBox);
+        } //end profile edit hours button
 
-        private void AdminAddUserButton_Click(object sender, EventArgs e)
+        //Search Project Page Buttons
+        private void SearchProjectsViewButton_Click(object sender, EventArgs e)
         {
-            if(adminEmployeeIDBox.Text == "" || adminEmployeeIDBox.Text == null) {
-                MessageBox.Show("Please add employee ID");
-            } else if (adminEmailBox.Text == "" || adminEmailBox.Text == null)
-            {
-                MessageBox.Show("Please add employee email");
-            } else if (adminPassBox.Text == "" || adminPassBox.Text == null)
-            {
-                MessageBox.Show("Please add employee password");
-            } else
-            {
-                admin.NewEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminPassBox, adminHoursBox, adminCheckBox, activeCheckBox);
-                admin.DisplayEmployees(adminEmployeeGrid);
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = true;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
 
-            }
-        }
+            Clear();
+            edit.EditID(testPrjNo);
+            edit.ListPhases(phasesGrid);
+            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+            edit.HoursDisplay(projectHoursLabel2);
+            edit.DisplayNotes(notesGridView);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+            edit.SetFlag(1);
+        } //end search projects view button
+
+        private void SearchProjectsPageAddProjectButton_Click(object sender, EventArgs e)
+        {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = true;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+
+            Clear();
+            edit.SetFlag(0);
+            edit.EditID(null);
+            edit.ListPhases(phasesGrid);
+            edit.DisplayNotes(notesGridView);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+        } //end search projects page add project button
 
         private void SearchProjectsSearchButton_Click(object sender, EventArgs e)
         {
             bool pRadioChecked = projectNumRadioButton.Checked;
             bool dRadioChecked = projectDescriptionRadioButton.Checked;
             bool lRadioChecked = projectLeaderRadioButton.Checked;
-            int passable; 
+            int passable;
 
             if (pRadioChecked == true)
             {
@@ -476,83 +511,74 @@ namespace EDGELook
             {
                 passable = 4;
             }
-                edit.ProjectSearch(searchProjectsTextBox.Text, projectsGrid, passable);
-        }  
-       
-        private void ProjectPageAssignmentGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (projectPageAssignmentGrid.SelectedCells.Count > 0) {
-                int selectedRowIndex = projectPageAssignmentGrid.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = projectPageAssignmentGrid.Rows[selectedRowIndex];
-                assignEID = selectedRow.Cells[0].Value.ToString();
-            }
-        }
+            edit.ProjectSearch(searchProjectsTextBox.Text, projectsGrid, passable);
+        }   //end project search button
 
-        private void ProjectPageOnProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //Project Page Buttons
+        private void ProjectPageUpdateHoursButton_Click(object sender, EventArgs e)
         {
-            if (projectPageOnProjectGrid.SelectedCells.Count > 0)
+            try { hours = int.Parse(projectPageEditEmployeeText.Text); }
+            catch (Exception ex)
             {
-
-            int selectedRowIndex = projectPageOnProjectGrid.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = projectPageOnProjectGrid.Rows[selectedRowIndex];
-            removeEID = selectedRow.Cells[0].Value.ToString();
+                Console.WriteLine(ex.Message);
             }
-        }
+            edit.AssignEmployee(hours, removeEID);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+            edit.HoursDisplay(projectHoursLabel2);
+        } //end project page update hours button
 
-        private void SearchEmployeesButton_Click(object sender, EventArgs e)
+        private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
-            employee.EmployeeSearch(searchEmployeesTextBox.Text, searchEmployeesGrid);
-        }
-
-        private void PhasesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (phasesGrid.SelectedCells.Count > 0)
+            if (projectPagePNumBox.Text == "" || projectPagePNumBox.Text == null)
             {
-                int selectedRowIndex = phasesGrid.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = phasesGrid.Rows[selectedRowIndex];
-                tempPhase = selectedRow.Cells[0].Value.ToString();
+                MessageBox.Show("Must enter project number");
             }
-        }
+            else
+            {
+                edit.SetCompleteIncomplete(completeCheckBox);
+                edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID);
 
-        private void AddVacationButton_Click(object sender, EventArgs e)
-        {
-            profile.EditVacation(profileStartDate, profileEndDate);
-            profile.ListVacations(vacationsGrid);
-        }
+                testPrjNo = projectPagePNumBox.Text;
+                edit.EditID(testPrjNo);
+                edit.ListPhases(phasesGrid);
+                edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+                edit.HoursDisplay(projectHoursLabel2);
+                edit.DisplayNotes(notesGridView);
+                edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+                edit.SetFlag(1);
+            }
+        } //end project page update button
 
-        private void RemoveVacationButton_Click(object sender, EventArgs e)
+        private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
         {
-            profile.RemoveVacation(tempVac);
-            profile.ListVacations(vacationsGrid);
-        }
+            edit.AddNotes(eID, projectPagePNumBox, projectPageNotesTextBox);
+            edit.DisplayNotes(notesGridView);
+        } //end project page add notes button
 
-        private void ProfileEditProjectHoursButton_Click(object sender, EventArgs e)
+        private void ProjectPageRemoveEmployeeButton_Click(object sender, EventArgs e)
         {
-            profile.EditProjectHours(profileProjectHoursBox, profilePrjNo);
-            profile.ListProjects(profileProjectGrid);
-            profile.GetHours(profileHoursTextBox);
-        }
+            edit.RemoveEmployee(removeEID);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+        } //end project page Remove Employee button
 
-        private void ProfileEditHoursButton_Click(object sender, EventArgs e)
+        private void ProjectPageAddEmployeeButton_Click(object sender, EventArgs e)
         {
-            profile.EditMyHours(profileHoursTextBox);
-        }
+            try { hours = int.Parse(projectPageEditEmployeeText.Text); }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            edit.AssignEmployee(hours, assignEID);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+            edit.HoursDisplay(projectHoursLabel2);
 
-        private void WeeklyReportButton_Click(object sender, EventArgs e)
-        {
-            report.CreateReport(weeklyReportGrid);
-        }
-
-        private void VacationReportButton_Click(object sender, EventArgs e)
-        {
-            report.CreateReport(vacationReportGrid);
-        }
+        } //end project page Add Employee button
 
         private void ProjectPageUpdatePhaseButton_Click(object sender, EventArgs e)
         {
             testPrjNo = projectPagePNumBox.Text;
             edit.UpdatePhase(projectPagePhaseBox, projectPageDueDateBox, projectPageStatusBox);
-                        
+
             edit.EditID(testPrjNo);
             edit.ListPhases(phasesGrid);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
@@ -560,7 +586,7 @@ namespace EDGELook
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
-        }
+        } //end project page edit phase button
 
         private void EditLeaderButton_Click(object sender, EventArgs e)
         {
@@ -581,8 +607,39 @@ namespace EDGELook
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
-        }
+        } //end project page edit leader button
 
+        //Search Employee Page Buttons
+        private void SearchEmployeesViewButton_Click(object sender, EventArgs e)
+        {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = true;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.searchProjectsBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+
+            employee.GetHours(employeePageHoursBox);
+            employee.GetEmail(employeeEmailTextBox);
+            employee.GetPhone(employeePhoneTextBox);
+            employee.ListProjects(employeeProjectGrid);
+            employee.NameDisplay(employeePageLabel);
+            employee.ListVacations(employeeVacationsGrid);
+            employee.GetName(employeeFNameBox, employeeLNameBox);
+        } //end search employees view button
+
+        private void SearchEmployeesButton_Click(object sender, EventArgs e)
+        {
+            employee.EmployeeSearch(searchEmployeesTextBox.Text, searchEmployeesGrid);
+        } //end search employees button
+
+        //Employee Page Buttons
         private void EmployeePageViewButton_Click(object sender, EventArgs e)
         {
             this.signOutLabel.Visible = true;
@@ -606,18 +663,32 @@ namespace EDGELook
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
-            Console.WriteLine("Edit Project. Flag set to 1");
-        }
+        } //end employee page view button
 
-        private void EmployeeProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //Reports Buttons
+        private void WeeklyReportButton_Click(object sender, EventArgs e)
         {
-            if (employeeProjectGrid.SelectedCells.Count > 0)
+            report.CreateReport(weeklyReportGrid);
+        } //end weekly report button
+
+        private void VacationReportButton_Click(object sender, EventArgs e)
+        {
+            report.CreateReport(vacationReportGrid);
+        } //end vacation report button
+
+        //GRIDS
+
+        //profile grids
+        private void ProfileProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (profileProjectGrid.SelectedCells.Count > 0)
             {
-                int selectedRowIndex = employeeProjectGrid.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = employeeProjectGrid.Rows[selectedRowIndex];
-                tempEmpPrj = selectedRow.Cells[0].Value.ToString();
+                int selectedRowIndex = profileProjectGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = profileProjectGrid.Rows[selectedRowIndex];
+                profilePrjNo = selectedRow.Cells[0].Value.ToString();
+                profileProjectHoursBox.Text = profile.GetProjHours(profilePrjNo).ToString();
             }
-        }
+        } //end profile projects grid
 
         private void VacationsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -627,8 +698,74 @@ namespace EDGELook
                 DataGridViewRow selectedRow = vacationsGrid.Rows[selectedRowIndex];
                 tempVac = selectedRow.Cells[0].Value.ToString();
             }
-        }
+        } //end profile vacations grid
 
+        //project grids
+
+        private void ProjectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (projectsGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = projectsGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = projectsGrid.Rows[selectedRowIndex];
+                testPrjNo = selectedRow.Cells[2].Value.ToString();
+            }
+        } //end projects grid
+
+        private void ProjectPageAssignmentGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (projectPageAssignmentGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = projectPageAssignmentGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = projectPageAssignmentGrid.Rows[selectedRowIndex];
+                assignEID = selectedRow.Cells[0].Value.ToString();
+            }
+        } //end project page assignment grid
+
+        private void ProjectPageOnProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (projectPageOnProjectGrid.SelectedCells.Count > 0)
+            {
+
+                int selectedRowIndex = projectPageOnProjectGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = projectPageOnProjectGrid.Rows[selectedRowIndex];
+                removeEID = selectedRow.Cells[0].Value.ToString();
+            }
+        } //end project page on project grid
+
+        private void PhasesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (phasesGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = phasesGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = phasesGrid.Rows[selectedRowIndex];
+                tempPhase = selectedRow.Cells[0].Value.ToString();
+            }
+        } //end project page phases grid
+
+        //employee grids
+        private void SearchEmployeesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (searchEmployeesGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = searchEmployeesGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = searchEmployeesGrid.Rows[selectedRowIndex];
+                empNo = selectedRow.Cells[0].Value.ToString();
+                employee.SetID(empNo);
+            }
+        } //end search employees grid
+               
+        private void EmployeeProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (employeeProjectGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = employeeProjectGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = employeeProjectGrid.Rows[selectedRowIndex];
+                tempEmpPrj = selectedRow.Cells[0].Value.ToString();
+            }
+        } //end employee project grid
+
+        //admin grids
         private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (adminEmployeeGrid.SelectedCells.Count > 0)
@@ -637,94 +774,9 @@ namespace EDGELook
                 DataGridViewRow selectedRow = adminEmployeeGrid.Rows[selectedRowIndex];
                 tempEID = selectedRow.Cells[0].Value.ToString();  
             }
-        }
+        } //end admin grid
 
-        private void ResetPassExitLabel_Click(object sender, EventArgs e)
-        {
-            Clear();
-            this.loginBG.Visible = true;
-            this.taskbarMenu.Visible = false;
-            this.searchProjectsBG.Visible = false;
-            this.profileBG.Visible = false;
-            this.reportsBG.Visible = false;
-            this.employeePageBG.Visible = false;
-            this.projectPageBG.Visible = false;
-            this.searchEmployeesBG.Visible = false;
-            this.adminBackPanel.Visible = false;
-            this.resetPassBG.Visible = false;
-            this.changePassBG.Visible = false;
-        }
-
-        private void AdminClearButton_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
-
-        private void ProjectPageUpdateHoursButton_Click(object sender, EventArgs e)
-        {
-            try { hours = int.Parse(projectPageEditEmployeeText.Text); }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            edit.AssignEmployee(hours, removeEID);
-            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-            edit.HoursDisplay(projectHoursLabel2);
-        }
-
-        private void ProfileChangePassButton_Click(object sender, EventArgs e)
-        {
-            this.loginBG.Visible = false;
-            this.taskbarMenu.Visible = false;
-            this.searchProjectsBG.Visible = false;
-            this.profileBG.Visible = false;
-            this.reportsBG.Visible = false;
-            this.employeePageBG.Visible = false;
-            this.projectPageBG.Visible = false;
-            this.searchEmployeesBG.Visible = false;
-            this.adminBackPanel.Visible = false;
-            this.resetPassBG.Visible = false;
-            this.changePassBG.Visible = true;
-        }
-
-        private void ResetButton_Click(object sender, EventArgs e)
-        {
-            passPage.ResetPass(resetBox);
-
-            Clear();
-            this.loginBG.Visible = true;
-            this.taskbarMenu.Visible = false;
-            this.searchProjectsBG.Visible = false;
-            this.profileBG.Visible = false;
-            this.reportsBG.Visible = false;
-            this.employeePageBG.Visible = false;
-            this.projectPageBG.Visible = false;
-            this.searchEmployeesBG.Visible = false;
-            this.adminBackPanel.Visible = false;
-            this.resetPassBG.Visible = false;
-            this.changePassBG.Visible = false;
-        }
-
-        private void ChangeButton_Click(object sender, EventArgs e)
-        {
-            passPage.ChangePass(currentPassBox, newPassBox, eID);
-
-            currentPassBox.Text = newPassBox.Text = "";
-
-            this.signOutLabel.Visible = true;
-            this.loginBG.Visible = false;
-            this.taskbarMenu.Visible = true;
-            this.searchProjectsBG.Visible = false;
-            this.profileBG.Visible = true;
-            this.reportsBG.Visible = false;
-            this.employeePageBG.Visible = false;
-            this.projectPageBG.Visible = false;
-            this.searchEmployeesBG.Visible = false;
-            this.adminBackPanel.Visible = false;
-            this.resetPassBG.Visible = false;
-            this.changePassBG.Visible = false;
-        }
-
+        //other functions
         private void Clear()
         {
             projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageStatusBox.Text = "";
@@ -735,5 +787,5 @@ namespace EDGELook
             searchProjectsTextBox.Text = searchEmployeesTextBox.Text = "";
             employeeFNameBox.Text = employeeLNameBox.Text = employeePageHoursBox.Text = employeeEmailTextBox.Text = employeePhoneTextBox.Text = "";
         }
-    }
-}
+    }//end class
+}//end namespace

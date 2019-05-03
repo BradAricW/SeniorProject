@@ -11,12 +11,24 @@ namespace EDGELook
 {
     class AdminPage
     {
+        //initialize variables and setup
+        private MySqlConnection conn;
+
         public void Setup(MySqlConnection newConn)
         {
             conn = newConn;
-        }
+        } //end setup
 
-        private MySqlConnection conn;
+        //display functions
+        public void DisplayEmployees(DataGridView emp)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT employeeID AS ID, fname AS First, lname AS Last, email AS Email, phone AS Phone, hoursAvail AS Hours, admin AS Admin, active AS Active FROM Employee ORDER BY active DESC;", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            emp.DataSource = table;
+        } //end display employees
+
+        //core functionality
         public void NewEmployee(TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox pass, NumericUpDown hours, CheckBox admin, CheckBox active)
         {
             String fname = firstName.Text;
@@ -55,7 +67,7 @@ namespace EDGELook
 
             conn.Open();
             String dupId = null;
-            String getEmpDup = "SELECT  employeeID FROM Employee WHERE employeeID = '" + eID + "';";
+            String getEmpDup = "SELECT employeeID FROM Employee WHERE employeeID = '" + eID + "';";
             MySqlCommand cmd1 = new MySqlCommand(getEmpDup, this.conn);
             MySqlDataReader reader = cmd1.ExecuteReader();
             while (reader.Read())
@@ -75,15 +87,7 @@ namespace EDGELook
                 MessageBox.Show("Employee Added");
             }
             conn.Close();
-        }
-
-        public void DisplayEmployees(DataGridView emp)
-        {
-            MySqlDataAdapter da = new MySqlDataAdapter("select employeeID as ID, fname as First, lname as Last, email as Email, phone as Phone, hoursAvail as Hours, admin as Admin, active as Active from Employee ORDER BY active DESC;", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            emp.DataSource = table;
-        }
+        } //end new employee
 
         public void UpdateEmployee(TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, NumericUpDown hours, CheckBox admin, CheckBox active)
         {
@@ -120,7 +124,8 @@ namespace EDGELook
             cmd.ExecuteNonQuery();
             conn.Close();
             MessageBox.Show("Employee Updated");
-        }
+        } //end update employee
+
         public void SelectEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, NumericUpDown hours, CheckBox admin, CheckBox active)
         {
             int eID = -1;
@@ -132,7 +137,7 @@ namespace EDGELook
             int testAdmin = 0;
             int testActive = 0;
             conn.Open();
-            String getEmployeeInfo = "select * from Employee where employeeID = '" + selectedEID + "';";
+            String getEmployeeInfo = "SELECT * FROM Employee WHERE employeeID = '" + selectedEID + "';";
             MySqlCommand cmd = new MySqlCommand(getEmployeeInfo, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -165,7 +170,7 @@ namespace EDGELook
             }
 
             conn.Close();
-        }
+        } //end select employee
 
         public void ResetPassword(TextBox eID, TextBox newPass)
         {
@@ -177,7 +182,7 @@ namespace EDGELook
             cmd.ExecuteNonQuery();
             conn.Close();
             MessageBox.Show("Password Updated");
-        }
+        } //end reset password
 
-    }
-}
+    }//end class
+}//end namespace

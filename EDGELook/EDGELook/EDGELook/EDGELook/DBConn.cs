@@ -11,6 +11,7 @@ namespace EDGELook
 {
     public class DBConn
     {
+        //initialize variables and setup
         private String server;
         private String database;
         private String uid;
@@ -18,7 +19,6 @@ namespace EDGELook
         private String connString;
         private MySqlConnection conn;
 
-        //CONSTRUCTOR
         public DBConn()
         {
             this.server = "athena";
@@ -26,13 +26,13 @@ namespace EDGELook
             this.uid = "sevenwonders";
             this.password = "sw_db";
             this.connString = "server=" + server + ";" + "database=" + database + ";" + "uid=" + uid + ";" + "password=" + password + ";" + "convert zero datetime=True;";
-        }
+        } //end constructor
 
         public MySqlConnection Dbsetup()
         {
             conn = new MySqlConnection(connString);
             return conn;
-        }
+        } //end db setup
         
         public String ConnectionSetUp()
         {
@@ -42,8 +42,7 @@ namespace EDGELook
             this.password = "sw_db";
             this.connString = "server=" + server + ";" + "database=" + database + ";" + "uid=" + uid + ";" + "password=" + password + ";" + "convert zero datetime=True;";
             return connString;
-        }
-
+        } //end connection setup
 
     } // Class DBConn END
 } // Name Space EdgeLook END

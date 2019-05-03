@@ -11,13 +11,15 @@ namespace EDGELook
 {
     class PasswordPage
     {
+        //initialize variables and setup
         private MySqlConnection conn;
 
         public void Setup(MySqlConnection newConn)
         {
             conn = newConn;
-        }
+        } //end setup
 
+        //core functionality
         public void ChangePass(TextBox currentPassBox, TextBox newPassBox, String eID)
         {
             conn.Open();
@@ -69,7 +71,8 @@ namespace EDGELook
                 }
             }
             conn.Close();
-        }
+        } //end change password
+
         public void ResetPass(TextBox resetBox)
         {
             String email = resetBox.Text;
@@ -119,7 +122,7 @@ namespace EDGELook
                 MessageBox.Show("No such email.");
             }
             conn.Close();
-        }
+        } //end reset password
 
         public String RandomPassword()
         {
@@ -128,7 +131,7 @@ namespace EDGELook
             builder.Append(RandomNumber(1000, 9999));
             builder.Append(RandomString(2, false));
             return builder.ToString();
-        }
+        } //end random password
 
         public String RandomString(int size, bool lowerCase)
         {
@@ -143,12 +146,12 @@ namespace EDGELook
             if (lowerCase)
                 return builder.ToString().ToLower();
             return builder.ToString();
-        }
+        } //end random string
 
         public int RandomNumber(int min, int max)
         {
             Random random = new Random();
             return random.Next(min, max);
-        }
-    }
-}
+        } //end random number
+    }//end class
+}//end namespace

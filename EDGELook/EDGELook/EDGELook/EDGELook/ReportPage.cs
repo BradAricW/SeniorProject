@@ -12,8 +12,36 @@ namespace EDGELook
 {
     class ReportPage
     {
+        //initialize variables and setup
         private MySqlConnection conn;
 
+        public void Setup(MySqlConnection newConn)
+        {
+            conn = newConn;
+        }//end setup
+
+        //displays
+        public void ListVacations(DataGridView vacationGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM Vacation;", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            vacationGrid.DataSource = table;
+            conn.Close();
+        }//end list vacations
+
+        public void ListProjects(DataGridView projectsGrid)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.fname AS Name, P.prjNo AS 'Project Number', P.description AS Description, PP.prjPhase AS Phase, PP.phaseDueDate AS 'Due Date', P.deliverables AS Deliverables, P.hoursNeeded AS 'Estimated Hours', PP.status AS Status FROM Employee E, Project P, ProjectPhase PP WHERE P.prjLeader = E.employeeID AND P.prjNo = PP.prjNo AND P.prjComplete = 0; ", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            projectsGrid.DataSource = table;
+            conn.Close();
+        }//end list projects
+
+        //primary functionality
         public void CreateReport(DataGridView DGV)
         {
             String filename = "";           
@@ -52,30 +80,7 @@ namespace EDGELook
                 System.IO.File.WriteAllLines(sfd.FileName, output, System.Text.Encoding.UTF8);
                 MessageBox.Show("Your file was generated and its ready for use.");
             }
+        }//end create report
 
-        }
-
-        public void Setup(MySqlConnection newConn)
-        {
-            conn = newConn;
-        }
-        public void ListVacations(DataGridView vacationGrid)
-        {
-            conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("Select * from Vacation;", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            vacationGrid.DataSource = table;
-            conn.Close();
-        }
-        public void ListProjects(DataGridView projectsGrid)
-        {
-            conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("select E.fname as Name, P.prjNo as 'Project Number', P.description as Description, PP.prjPhase as Phase, PP.phaseDueDate as 'Due Date', P.deliverables as Deliverables, P.hoursNeeded as 'Estimated Hours', PP.status as Status from Employee E, Project P, ProjectPhase PP where P.prjLeader = E.employeeID AND P.prjNo = PP.prjNo AND P.prjComplete = 0; ", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            projectsGrid.DataSource = table;
-            conn.Close();
-        }
-    }
-}
+    }//end class
+}//end namespace
