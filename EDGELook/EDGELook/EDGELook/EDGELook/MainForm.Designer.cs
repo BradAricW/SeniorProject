@@ -1,4 +1,6 @@
-﻿namespace EDGELook
+﻿using System;
+
+namespace EDGELook
 {
     partial class MainForm
     {
@@ -271,8 +273,9 @@
             this.titleBackPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.titleBackPanel.Controls.Add(this.titleFrontPanel);
             this.titleBackPanel.Location = new System.Drawing.Point(0, 0);
+            this.titleBackPanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.titleBackPanel.Name = "titleBackPanel";
-            this.titleBackPanel.Size = new System.Drawing.Size(925, 65);
+            this.titleBackPanel.Size = new System.Drawing.Size(2929, 185);
             this.titleBackPanel.TabIndex = 0;
             // 
             // titleFrontPanel
@@ -282,8 +285,9 @@
             this.titleFrontPanel.Controls.Add(this.signOutLabel);
             this.titleFrontPanel.Controls.Add(this.titleLabel);
             this.titleFrontPanel.Location = new System.Drawing.Point(0, 0);
+            this.titleFrontPanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.titleFrontPanel.Name = "titleFrontPanel";
-            this.titleFrontPanel.Size = new System.Drawing.Size(925, 55);
+            this.titleFrontPanel.Size = new System.Drawing.Size(2929, 157);
             this.titleFrontPanel.TabIndex = 0;
             // 
             // adminLabel
@@ -291,9 +295,10 @@
             this.adminLabel.AutoSize = true;
             this.adminLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminLabel.ForeColor = System.Drawing.Color.White;
-            this.adminLabel.Location = new System.Drawing.Point(12, 9);
+            this.adminLabel.Location = new System.Drawing.Point(38, 26);
+            this.adminLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.adminLabel.Name = "adminLabel";
-            this.adminLabel.Size = new System.Drawing.Size(94, 16);
+            this.adminLabel.Size = new System.Drawing.Size(274, 44);
             this.adminLabel.TabIndex = 3;
             this.adminLabel.Text = "System Admin";
             this.adminLabel.Visible = false;
@@ -304,9 +309,10 @@
             this.signOutLabel.AutoSize = true;
             this.signOutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signOutLabel.ForeColor = System.Drawing.Color.White;
-            this.signOutLabel.Location = new System.Drawing.Point(839, 9);
+            this.signOutLabel.Location = new System.Drawing.Point(2657, 26);
+            this.signOutLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.signOutLabel.Name = "signOutLabel";
-            this.signOutLabel.Size = new System.Drawing.Size(58, 16);
+            this.signOutLabel.Size = new System.Drawing.Size(172, 44);
             this.signOutLabel.TabIndex = 2;
             this.signOutLabel.Text = "Sign Out";
             this.signOutLabel.Visible = false;
@@ -317,9 +323,10 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(360, 7);
+            this.titleLabel.Location = new System.Drawing.Point(1140, 20);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(206, 42);
+            this.titleLabel.Size = new System.Drawing.Size(609, 126);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "EDGELook";
             // 
@@ -333,18 +340,20 @@
             this.loginPanel.Controls.Add(this.passLabel);
             this.loginPanel.Controls.Add(this.eMailLabel);
             this.loginPanel.Controls.Add(this.loginLabel);
-            this.loginPanel.Location = new System.Drawing.Point(312, 75);
+            this.loginPanel.Location = new System.Drawing.Point(988, 213);
+            this.loginPanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(300, 242);
+            this.loginPanel.Size = new System.Drawing.Size(950, 689);
             this.loginPanel.TabIndex = 11;
             // 
             // resetPassLabel
             // 
             this.resetPassLabel.AutoSize = true;
             this.resetPassLabel.LinkColor = System.Drawing.Color.White;
-            this.resetPassLabel.Location = new System.Drawing.Point(177, 193);
+            this.resetPassLabel.Location = new System.Drawing.Point(561, 549);
+            this.resetPassLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.resetPassLabel.Name = "resetPassLabel";
-            this.resetPassLabel.Size = new System.Drawing.Size(90, 13);
+            this.resetPassLabel.Size = new System.Drawing.Size(266, 37);
             this.resetPassLabel.TabIndex = 6;
             this.resetPassLabel.TabStop = true;
             this.resetPassLabel.Text = "[Reset Password]";
@@ -355,9 +364,10 @@
             this.loginButton.BackColor = System.Drawing.Color.White;
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.Location = new System.Drawing.Point(188, 150);
+            this.loginButton.Location = new System.Drawing.Point(595, 427);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.Size = new System.Drawing.Size(238, 65);
             this.loginButton.TabIndex = 5;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -365,17 +375,19 @@
             // 
             // passBox
             // 
-            this.passBox.Location = new System.Drawing.Point(83, 112);
+            this.passBox.Location = new System.Drawing.Point(263, 319);
+            this.passBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.passBox.Name = "passBox";
             this.passBox.PasswordChar = '*';
-            this.passBox.Size = new System.Drawing.Size(180, 20);
+            this.passBox.Size = new System.Drawing.Size(561, 44);
             this.passBox.TabIndex = 4;
             // 
             // emailBox
             // 
-            this.emailBox.Location = new System.Drawing.Point(83, 75);
+            this.emailBox.Location = new System.Drawing.Point(263, 213);
+            this.emailBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(180, 20);
+            this.emailBox.Size = new System.Drawing.Size(561, 44);
             this.emailBox.TabIndex = 3;
             // 
             // passLabel
@@ -383,9 +395,10 @@
             this.passLabel.AutoSize = true;
             this.passLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passLabel.ForeColor = System.Drawing.Color.White;
-            this.passLabel.Location = new System.Drawing.Point(10, 113);
+            this.passLabel.Location = new System.Drawing.Point(32, 322);
+            this.passLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.passLabel.Name = "passLabel";
-            this.passLabel.Size = new System.Drawing.Size(67, 15);
+            this.passLabel.Size = new System.Drawing.Size(195, 40);
             this.passLabel.TabIndex = 2;
             this.passLabel.Text = "Password: ";
             // 
@@ -394,9 +407,10 @@
             this.eMailLabel.AutoSize = true;
             this.eMailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eMailLabel.ForeColor = System.Drawing.Color.White;
-            this.eMailLabel.Location = new System.Drawing.Point(32, 76);
+            this.eMailLabel.Location = new System.Drawing.Point(101, 216);
+            this.eMailLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.eMailLabel.Name = "eMailLabel";
-            this.eMailLabel.Size = new System.Drawing.Size(45, 15);
+            this.eMailLabel.Size = new System.Drawing.Size(127, 40);
             this.eMailLabel.TabIndex = 1;
             this.eMailLabel.Text = "Email: ";
             // 
@@ -404,9 +418,10 @@
             // 
             this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginLabel.ForeColor = System.Drawing.Color.White;
-            this.loginLabel.Location = new System.Drawing.Point(121, 28);
+            this.loginLabel.Location = new System.Drawing.Point(383, 80);
+            this.loginLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(58, 24);
+            this.loginLabel.Size = new System.Drawing.Size(184, 68);
             this.loginLabel.TabIndex = 0;
             this.loginLabel.Text = "Login";
             // 
@@ -417,9 +432,10 @@
             this.taskbarMenu.Controls.Add(this.employeesButton);
             this.taskbarMenu.Controls.Add(this.projectsButton);
             this.taskbarMenu.Controls.Add(this.homeButton);
-            this.taskbarMenu.Location = new System.Drawing.Point(0, 65);
+            this.taskbarMenu.Location = new System.Drawing.Point(0, 185);
+            this.taskbarMenu.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.taskbarMenu.Name = "taskbarMenu";
-            this.taskbarMenu.Size = new System.Drawing.Size(910, 40);
+            this.taskbarMenu.Size = new System.Drawing.Size(2882, 114);
             this.taskbarMenu.TabIndex = 12;
             this.taskbarMenu.Visible = false;
             // 
@@ -428,9 +444,10 @@
             this.reportsButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.reportsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportsButton.Location = new System.Drawing.Point(562, 0);
+            this.reportsButton.Location = new System.Drawing.Point(1780, 0);
+            this.reportsButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.reportsButton.Name = "reportsButton";
-            this.reportsButton.Size = new System.Drawing.Size(100, 40);
+            this.reportsButton.Size = new System.Drawing.Size(317, 114);
             this.reportsButton.TabIndex = 3;
             this.reportsButton.Text = "Reports";
             this.reportsButton.UseVisualStyleBackColor = true;
@@ -441,9 +458,10 @@
             this.employeesButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.employeesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeesButton.Location = new System.Drawing.Point(462, 0);
+            this.employeesButton.Location = new System.Drawing.Point(1463, 0);
+            this.employeesButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeesButton.Name = "employeesButton";
-            this.employeesButton.Size = new System.Drawing.Size(100, 40);
+            this.employeesButton.Size = new System.Drawing.Size(317, 114);
             this.employeesButton.TabIndex = 2;
             this.employeesButton.Text = "Employees";
             this.employeesButton.UseVisualStyleBackColor = true;
@@ -454,9 +472,10 @@
             this.projectsButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.projectsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectsButton.Location = new System.Drawing.Point(362, 0);
+            this.projectsButton.Location = new System.Drawing.Point(1146, 0);
+            this.projectsButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectsButton.Name = "projectsButton";
-            this.projectsButton.Size = new System.Drawing.Size(100, 40);
+            this.projectsButton.Size = new System.Drawing.Size(317, 114);
             this.projectsButton.TabIndex = 1;
             this.projectsButton.Text = "Projects";
             this.projectsButton.UseVisualStyleBackColor = true;
@@ -467,9 +486,10 @@
             this.homeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButton.Location = new System.Drawing.Point(262, 0);
+            this.homeButton.Location = new System.Drawing.Point(830, 0);
+            this.homeButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(100, 40);
+            this.homeButton.Size = new System.Drawing.Size(317, 114);
             this.homeButton.TabIndex = 0;
             this.homeButton.Text = "Home";
             this.homeButton.UseVisualStyleBackColor = true;
@@ -495,9 +515,10 @@
             this.profilePanel1.Controls.Add(this.profileContactLabel);
             this.profilePanel1.Controls.Add(this.profileViewButton);
             this.profilePanel1.Controls.Add(this.profileEditContactButton);
-            this.profilePanel1.Location = new System.Drawing.Point(147, 64);
+            this.profilePanel1.Location = new System.Drawing.Point(466, 182);
+            this.profilePanel1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profilePanel1.Name = "profilePanel1";
-            this.profilePanel1.Size = new System.Drawing.Size(300, 350);
+            this.profilePanel1.Size = new System.Drawing.Size(950, 996);
             this.profilePanel1.TabIndex = 13;
             // 
             // profileChangePassButton
@@ -506,9 +527,10 @@
             this.profileChangePassButton.FlatAppearance.BorderSize = 0;
             this.profileChangePassButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profileChangePassButton.ForeColor = System.Drawing.Color.Snow;
-            this.profileChangePassButton.Location = new System.Drawing.Point(84, 116);
+            this.profileChangePassButton.Location = new System.Drawing.Point(266, 330);
+            this.profileChangePassButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileChangePassButton.Name = "profileChangePassButton";
-            this.profileChangePassButton.Size = new System.Drawing.Size(125, 23);
+            this.profileChangePassButton.Size = new System.Drawing.Size(396, 65);
             this.profileChangePassButton.TabIndex = 30;
             this.profileChangePassButton.Text = "Change Password";
             this.profileChangePassButton.UseVisualStyleBackColor = false;
@@ -516,9 +538,10 @@
             // 
             // profileProjectHoursBox
             // 
-            this.profileProjectHoursBox.Location = new System.Drawing.Point(165, 325);
+            this.profileProjectHoursBox.Location = new System.Drawing.Point(523, 925);
+            this.profileProjectHoursBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileProjectHoursBox.Name = "profileProjectHoursBox";
-            this.profileProjectHoursBox.Size = new System.Drawing.Size(50, 20);
+            this.profileProjectHoursBox.Size = new System.Drawing.Size(150, 44);
             this.profileProjectHoursBox.TabIndex = 29;
             // 
             // profileProjectHoursLabel
@@ -527,9 +550,10 @@
             this.profileProjectHoursLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileProjectHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileProjectHoursLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileProjectHoursLabel.Location = new System.Drawing.Point(8, 328);
+            this.profileProjectHoursLabel.Location = new System.Drawing.Point(25, 934);
+            this.profileProjectHoursLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileProjectHoursLabel.Name = "profileProjectHoursLabel";
-            this.profileProjectHoursLabel.Size = new System.Drawing.Size(154, 15);
+            this.profileProjectHoursLabel.Size = new System.Drawing.Size(453, 40);
             this.profileProjectHoursLabel.TabIndex = 28;
             this.profileProjectHoursLabel.Text = "Hours On Selected Project:";
             // 
@@ -539,9 +563,10 @@
             this.profileEditProjectHoursButton.FlatAppearance.BorderSize = 0;
             this.profileEditProjectHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profileEditProjectHoursButton.ForeColor = System.Drawing.Color.Snow;
-            this.profileEditProjectHoursButton.Location = new System.Drawing.Point(222, 323);
+            this.profileEditProjectHoursButton.Location = new System.Drawing.Point(703, 919);
+            this.profileEditProjectHoursButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileEditProjectHoursButton.Name = "profileEditProjectHoursButton";
-            this.profileEditProjectHoursButton.Size = new System.Drawing.Size(75, 23);
+            this.profileEditProjectHoursButton.Size = new System.Drawing.Size(238, 65);
             this.profileEditProjectHoursButton.TabIndex = 27;
             this.profileEditProjectHoursButton.Text = "Edit";
             this.profileEditProjectHoursButton.UseVisualStyleBackColor = false;
@@ -549,9 +574,10 @@
             // 
             // profileLNameBox
             // 
-            this.profileLNameBox.Location = new System.Drawing.Point(71, 47);
+            this.profileLNameBox.Location = new System.Drawing.Point(225, 134);
+            this.profileLNameBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileLNameBox.Name = "profileLNameBox";
-            this.profileLNameBox.Size = new System.Drawing.Size(150, 20);
+            this.profileLNameBox.Size = new System.Drawing.Size(466, 44);
             this.profileLNameBox.TabIndex = 26;
             // 
             // profileLNameLabel
@@ -560,17 +586,19 @@
             this.profileLNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileLNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileLNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileLNameLabel.Location = new System.Drawing.Point(1, 51);
+            this.profileLNameLabel.Location = new System.Drawing.Point(3, 145);
+            this.profileLNameLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileLNameLabel.Name = "profileLNameLabel";
-            this.profileLNameLabel.Size = new System.Drawing.Size(73, 15);
+            this.profileLNameLabel.Size = new System.Drawing.Size(211, 40);
             this.profileLNameLabel.TabIndex = 25;
             this.profileLNameLabel.Text = "Last Name: ";
             // 
             // profileFNameBox
             // 
-            this.profileFNameBox.Location = new System.Drawing.Point(71, 24);
+            this.profileFNameBox.Location = new System.Drawing.Point(225, 68);
+            this.profileFNameBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileFNameBox.Name = "profileFNameBox";
-            this.profileFNameBox.Size = new System.Drawing.Size(150, 20);
+            this.profileFNameBox.Size = new System.Drawing.Size(466, 44);
             this.profileFNameBox.TabIndex = 24;
             // 
             // profileFNameLabel
@@ -579,9 +607,10 @@
             this.profileFNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileFNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileFNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileFNameLabel.Location = new System.Drawing.Point(1, 28);
+            this.profileFNameLabel.Location = new System.Drawing.Point(3, 80);
+            this.profileFNameLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileFNameLabel.Name = "profileFNameLabel";
-            this.profileFNameLabel.Size = new System.Drawing.Size(73, 15);
+            this.profileFNameLabel.Size = new System.Drawing.Size(213, 40);
             this.profileFNameLabel.TabIndex = 23;
             this.profileFNameLabel.Text = "First Name: ";
             // 
@@ -599,28 +628,31 @@
             this.profileProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.profileProjectGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.profileProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.profileProjectGrid.Location = new System.Drawing.Point(0, 164);
+            this.profileProjectGrid.Location = new System.Drawing.Point(0, 467);
+            this.profileProjectGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileProjectGrid.Name = "profileProjectGrid";
             this.profileProjectGrid.ReadOnly = true;
             this.profileProjectGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.profileProjectGrid.RowTemplate.ReadOnly = true;
             this.profileProjectGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.profileProjectGrid.Size = new System.Drawing.Size(300, 128);
+            this.profileProjectGrid.Size = new System.Drawing.Size(950, 364);
             this.profileProjectGrid.TabIndex = 22;
             this.profileProjectGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProfileProjectGrid_CellContentClick);
             // 
             // profileEmailTextBox
             // 
-            this.profileEmailTextBox.Location = new System.Drawing.Point(71, 93);
+            this.profileEmailTextBox.Location = new System.Drawing.Point(225, 265);
+            this.profileEmailTextBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileEmailTextBox.Name = "profileEmailTextBox";
-            this.profileEmailTextBox.Size = new System.Drawing.Size(150, 20);
+            this.profileEmailTextBox.Size = new System.Drawing.Size(466, 44);
             this.profileEmailTextBox.TabIndex = 19;
             // 
             // profilePhoneTextBox
             // 
-            this.profilePhoneTextBox.Location = new System.Drawing.Point(71, 70);
+            this.profilePhoneTextBox.Location = new System.Drawing.Point(225, 199);
+            this.profilePhoneTextBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profilePhoneTextBox.Name = "profilePhoneTextBox";
-            this.profilePhoneTextBox.Size = new System.Drawing.Size(150, 20);
+            this.profilePhoneTextBox.Size = new System.Drawing.Size(466, 44);
             this.profilePhoneTextBox.TabIndex = 18;
             // 
             // profileEmailLabel
@@ -629,9 +661,10 @@
             this.profileEmailLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileEmailLabel.Location = new System.Drawing.Point(1, 94);
+            this.profileEmailLabel.Location = new System.Drawing.Point(3, 268);
+            this.profileEmailLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileEmailLabel.Name = "profileEmailLabel";
-            this.profileEmailLabel.Size = new System.Drawing.Size(45, 15);
+            this.profileEmailLabel.Size = new System.Drawing.Size(127, 40);
             this.profileEmailLabel.TabIndex = 12;
             this.profileEmailLabel.Text = "Email: ";
             // 
@@ -641,9 +674,10 @@
             this.profilePhoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.profilePhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profilePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profilePhoneLabel.Location = new System.Drawing.Point(1, 74);
+            this.profilePhoneLabel.Location = new System.Drawing.Point(3, 211);
+            this.profilePhoneLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profilePhoneLabel.Name = "profilePhoneLabel";
-            this.profilePhoneLabel.Size = new System.Drawing.Size(59, 15);
+            this.profilePhoneLabel.Size = new System.Drawing.Size(171, 40);
             this.profilePhoneLabel.TabIndex = 11;
             this.profilePhoneLabel.Text = "Phone #: ";
             // 
@@ -652,9 +686,10 @@
             this.profileProjectsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.profileProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileProjectsLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.profileProjectsLabel.Location = new System.Drawing.Point(0, 142);
+            this.profileProjectsLabel.Location = new System.Drawing.Point(0, 404);
+            this.profileProjectsLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileProjectsLabel.Name = "profileProjectsLabel";
-            this.profileProjectsLabel.Size = new System.Drawing.Size(300, 20);
+            this.profileProjectsLabel.Size = new System.Drawing.Size(950, 57);
             this.profileProjectsLabel.TabIndex = 7;
             this.profileProjectsLabel.Text = "Projects";
             // 
@@ -663,9 +698,10 @@
             this.profileContactLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.profileContactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileContactLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.profileContactLabel.Location = new System.Drawing.Point(1, 1);
+            this.profileContactLabel.Location = new System.Drawing.Point(3, 3);
+            this.profileContactLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileContactLabel.Name = "profileContactLabel";
-            this.profileContactLabel.Size = new System.Drawing.Size(300, 20);
+            this.profileContactLabel.Size = new System.Drawing.Size(950, 57);
             this.profileContactLabel.TabIndex = 6;
             this.profileContactLabel.Text = "Contact Information";
             // 
@@ -675,9 +711,10 @@
             this.profileViewButton.FlatAppearance.BorderSize = 0;
             this.profileViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profileViewButton.ForeColor = System.Drawing.Color.Snow;
-            this.profileViewButton.Location = new System.Drawing.Point(90, 296);
+            this.profileViewButton.Location = new System.Drawing.Point(285, 842);
+            this.profileViewButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileViewButton.Name = "profileViewButton";
-            this.profileViewButton.Size = new System.Drawing.Size(125, 23);
+            this.profileViewButton.Size = new System.Drawing.Size(396, 65);
             this.profileViewButton.TabIndex = 3;
             this.profileViewButton.Text = "View Selected Project";
             this.profileViewButton.UseVisualStyleBackColor = false;
@@ -689,9 +726,10 @@
             this.profileEditContactButton.FlatAppearance.BorderSize = 0;
             this.profileEditContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profileEditContactButton.ForeColor = System.Drawing.Color.Snow;
-            this.profileEditContactButton.Location = new System.Drawing.Point(222, 57);
+            this.profileEditContactButton.Location = new System.Drawing.Point(703, 162);
+            this.profileEditContactButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileEditContactButton.Name = "profileEditContactButton";
-            this.profileEditContactButton.Size = new System.Drawing.Size(75, 23);
+            this.profileEditContactButton.Size = new System.Drawing.Size(238, 65);
             this.profileEditContactButton.TabIndex = 2;
             this.profileEditContactButton.Text = "Edit";
             this.profileEditContactButton.UseVisualStyleBackColor = false;
@@ -699,26 +737,31 @@
             // 
             // profileEndDate
             // 
-            this.profileEndDate.Location = new System.Drawing.Point(67, 62);
-            this.profileEndDate.MinDate = new System.DateTime(2019, 5, 2, 0, 0, 0, 0);
+            this.profileEndDate.Location = new System.Drawing.Point(212, 176);
+            this.profileEndDate.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.profileEndDate.MinDate = new System.DateTime(2019, 5, 3, 0, 0, 0, 0);
             this.profileEndDate.Name = "profileEndDate";
-            this.profileEndDate.Size = new System.Drawing.Size(200, 20);
+            this.profileEndDate.Size = new System.Drawing.Size(625, 44);
             this.profileEndDate.TabIndex = 24;
-            this.profileEndDate.Value = new System.DateTime(2019, 5, 2, 0, 0, 0, 0);
+            this.profileEndDate.Value = new System.DateTime(2019, 5, 3, 0, 0, 0, 0);
+            this.profileEndDate.MinDate = DateTime.Today;
             // 
             // profileStartDate
             // 
-            this.profileStartDate.Location = new System.Drawing.Point(67, 38);
+            this.profileStartDate.Location = new System.Drawing.Point(212, 108);
+            this.profileStartDate.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileStartDate.MinDate = new System.DateTime(2019, 5, 2, 0, 0, 0, 0);
             this.profileStartDate.Name = "profileStartDate";
-            this.profileStartDate.Size = new System.Drawing.Size(200, 20);
+            this.profileStartDate.Size = new System.Drawing.Size(625, 44);
             this.profileStartDate.TabIndex = 23;
+            this.profileStartDate.MinDate = DateTime.Today;
             // 
             // profileHoursTextBox
             // 
-            this.profileHoursTextBox.Location = new System.Drawing.Point(165, 324);
+            this.profileHoursTextBox.Location = new System.Drawing.Point(523, 922);
+            this.profileHoursTextBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileHoursTextBox.Name = "profileHoursTextBox";
-            this.profileHoursTextBox.Size = new System.Drawing.Size(50, 20);
+            this.profileHoursTextBox.Size = new System.Drawing.Size(150, 44);
             this.profileHoursTextBox.TabIndex = 14;
             // 
             // profileEndLabel
@@ -727,9 +770,10 @@
             this.profileEndLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileEndLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileEndLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileEndLabel.Location = new System.Drawing.Point(17, 65);
+            this.profileEndLabel.Location = new System.Drawing.Point(54, 185);
+            this.profileEndLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileEndLabel.Name = "profileEndLabel";
-            this.profileEndLabel.Size = new System.Drawing.Size(32, 15);
+            this.profileEndLabel.Size = new System.Drawing.Size(91, 40);
             this.profileEndLabel.TabIndex = 10;
             this.profileEndLabel.Text = "End:";
             // 
@@ -739,9 +783,10 @@
             this.profileStartLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileStartLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileStartLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileStartLabel.Location = new System.Drawing.Point(16, 40);
+            this.profileStartLabel.Location = new System.Drawing.Point(51, 114);
+            this.profileStartLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileStartLabel.Name = "profileStartLabel";
-            this.profileStartLabel.Size = new System.Drawing.Size(38, 15);
+            this.profileStartLabel.Size = new System.Drawing.Size(113, 40);
             this.profileStartLabel.TabIndex = 9;
             this.profileStartLabel.Text = "Start: ";
             // 
@@ -750,9 +795,10 @@
             this.profileHoursLabel.BackColor = System.Drawing.Color.Transparent;
             this.profileHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileHoursLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileHoursLabel.Location = new System.Drawing.Point(8, 327);
+            this.profileHoursLabel.Location = new System.Drawing.Point(25, 931);
+            this.profileHoursLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileHoursLabel.Name = "profileHoursLabel";
-            this.profileHoursLabel.Size = new System.Drawing.Size(154, 15);
+            this.profileHoursLabel.Size = new System.Drawing.Size(488, 43);
             this.profileHoursLabel.TabIndex = 8;
             this.profileHoursLabel.Text = "Total Hours Available: ";
             this.profileHoursLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -763,9 +809,10 @@
             this.profileEditHoursButton.FlatAppearance.BorderSize = 0;
             this.profileEditHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profileEditHoursButton.ForeColor = System.Drawing.Color.Snow;
-            this.profileEditHoursButton.Location = new System.Drawing.Point(222, 322);
+            this.profileEditHoursButton.Location = new System.Drawing.Point(703, 916);
+            this.profileEditHoursButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileEditHoursButton.Name = "profileEditHoursButton";
-            this.profileEditHoursButton.Size = new System.Drawing.Size(75, 23);
+            this.profileEditHoursButton.Size = new System.Drawing.Size(238, 65);
             this.profileEditHoursButton.TabIndex = 0;
             this.profileEditHoursButton.Text = "Edit";
             this.profileEditHoursButton.UseVisualStyleBackColor = false;
@@ -776,26 +823,29 @@
             this.profileLabel.AutoSize = true;
             this.profileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.profileLabel.Location = new System.Drawing.Point(411, 34);
+            this.profileLabel.Location = new System.Drawing.Point(1302, 97);
+            this.profileLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileLabel.Name = "profileLabel";
-            this.profileLabel.Size = new System.Drawing.Size(92, 24);
+            this.profileLabel.Size = new System.Drawing.Size(278, 64);
             this.profileLabel.TabIndex = 14;
             this.profileLabel.Text = "My Profile";
             // 
             // formBGTemp
             // 
-            this.formBGTemp.Location = new System.Drawing.Point(0, 105);
+            this.formBGTemp.Location = new System.Drawing.Point(0, 299);
+            this.formBGTemp.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.formBGTemp.Name = "formBGTemp";
-            this.formBGTemp.Size = new System.Drawing.Size(910, 465);
+            this.formBGTemp.Size = new System.Drawing.Size(2882, 1323);
             this.formBGTemp.TabIndex = 16;
             this.formBGTemp.Visible = false;
             // 
             // loginBG
             // 
             this.loginBG.Controls.Add(this.loginPanel);
-            this.loginBG.Location = new System.Drawing.Point(0, 105);
+            this.loginBG.Location = new System.Drawing.Point(0, 299);
+            this.loginBG.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.loginBG.Name = "loginBG";
-            this.loginBG.Size = new System.Drawing.Size(910, 465);
+            this.loginBG.Size = new System.Drawing.Size(2882, 1323);
             this.loginBG.TabIndex = 17;
             // 
             // profileBG
@@ -803,9 +853,10 @@
             this.profileBG.Controls.Add(this.profilePanel2);
             this.profileBG.Controls.Add(this.profilePanel1);
             this.profileBG.Controls.Add(this.profileLabel);
-            this.profileBG.Location = new System.Drawing.Point(0, 105);
+            this.profileBG.Location = new System.Drawing.Point(0, 299);
+            this.profileBG.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profileBG.Name = "profileBG";
-            this.profileBG.Size = new System.Drawing.Size(910, 465);
+            this.profileBG.Size = new System.Drawing.Size(2882, 1323);
             this.profileBG.TabIndex = 18;
             this.profileBG.Visible = false;
             // 
@@ -824,9 +875,10 @@
             this.profilePanel2.Controls.Add(this.profileVacationHoursLabel);
             this.profilePanel2.Controls.Add(this.removeVacationButton);
             this.profilePanel2.Controls.Add(this.profileEditHoursButton);
-            this.profilePanel2.Location = new System.Drawing.Point(469, 64);
+            this.profilePanel2.Location = new System.Drawing.Point(1485, 182);
+            this.profilePanel2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.profilePanel2.Name = "profilePanel2";
-            this.profilePanel2.Size = new System.Drawing.Size(300, 350);
+            this.profilePanel2.Size = new System.Drawing.Size(950, 996);
             this.profilePanel2.TabIndex = 15;
             // 
             // addVacationButton
@@ -835,9 +887,10 @@
             this.addVacationButton.FlatAppearance.BorderSize = 0;
             this.addVacationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addVacationButton.ForeColor = System.Drawing.Color.Snow;
-            this.addVacationButton.Location = new System.Drawing.Point(90, 87);
+            this.addVacationButton.Location = new System.Drawing.Point(285, 248);
+            this.addVacationButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.addVacationButton.Name = "addVacationButton";
-            this.addVacationButton.Size = new System.Drawing.Size(125, 23);
+            this.addVacationButton.Size = new System.Drawing.Size(396, 65);
             this.addVacationButton.TabIndex = 26;
             this.addVacationButton.Text = "Add Vacation";
             this.addVacationButton.UseVisualStyleBackColor = false;
@@ -847,9 +900,10 @@
             // 
             this.vacationLabel.AutoSize = true;
             this.vacationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.vacationLabel.Location = new System.Drawing.Point(123, 23);
+            this.vacationLabel.Location = new System.Drawing.Point(390, 65);
+            this.vacationLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.vacationLabel.Name = "vacationLabel";
-            this.vacationLabel.Size = new System.Drawing.Size(55, 13);
+            this.vacationLabel.Size = new System.Drawing.Size(161, 37);
             this.vacationLabel.TabIndex = 25;
             this.vacationLabel.Text = "Vacation: ";
             // 
@@ -867,13 +921,14 @@
             this.vacationsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.vacationsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.vacationsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vacationsGrid.Location = new System.Drawing.Point(0, 115);
+            this.vacationsGrid.Location = new System.Drawing.Point(0, 327);
+            this.vacationsGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.vacationsGrid.Name = "vacationsGrid";
             this.vacationsGrid.ReadOnly = true;
             this.vacationsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.vacationsGrid.RowTemplate.ReadOnly = true;
             this.vacationsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.vacationsGrid.Size = new System.Drawing.Size(300, 177);
+            this.vacationsGrid.Size = new System.Drawing.Size(950, 504);
             this.vacationsGrid.TabIndex = 22;
             this.vacationsGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VacationsGrid_CellContentClick);
             // 
@@ -883,8 +938,9 @@
             this.profileVacationHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileVacationHoursLabel.ForeColor = System.Drawing.SystemColors.Window;
             this.profileVacationHoursLabel.Location = new System.Drawing.Point(0, 0);
+            this.profileVacationHoursLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.profileVacationHoursLabel.Name = "profileVacationHoursLabel";
-            this.profileVacationHoursLabel.Size = new System.Drawing.Size(300, 20);
+            this.profileVacationHoursLabel.Size = new System.Drawing.Size(950, 57);
             this.profileVacationHoursLabel.TabIndex = 4;
             this.profileVacationHoursLabel.Text = "Vacation and Hours";
             // 
@@ -894,9 +950,10 @@
             this.removeVacationButton.FlatAppearance.BorderSize = 0;
             this.removeVacationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeVacationButton.ForeColor = System.Drawing.Color.Snow;
-            this.removeVacationButton.Location = new System.Drawing.Point(90, 295);
+            this.removeVacationButton.Location = new System.Drawing.Point(285, 840);
+            this.removeVacationButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.removeVacationButton.Name = "removeVacationButton";
-            this.removeVacationButton.Size = new System.Drawing.Size(125, 23);
+            this.removeVacationButton.Size = new System.Drawing.Size(396, 65);
             this.removeVacationButton.TabIndex = 3;
             this.removeVacationButton.Text = "Remove Vacation";
             this.removeVacationButton.UseVisualStyleBackColor = false;
@@ -907,9 +964,10 @@
             this.projectPageBG.Controls.Add(this.projectPagePanel3);
             this.projectPageBG.Controls.Add(this.projectPagePanel2);
             this.projectPageBG.Controls.Add(this.projectPagePanel1);
-            this.projectPageBG.Location = new System.Drawing.Point(0, 105);
+            this.projectPageBG.Location = new System.Drawing.Point(0, 299);
+            this.projectPageBG.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageBG.Name = "projectPageBG";
-            this.projectPageBG.Size = new System.Drawing.Size(910, 465);
+            this.projectPageBG.Size = new System.Drawing.Size(2882, 1323);
             this.projectPageBG.TabIndex = 17;
             this.projectPageBG.Visible = false;
             // 
@@ -925,9 +983,10 @@
             this.projectPagePanel3.Controls.Add(this.projectPagePhaseLabel2);
             this.projectPagePanel3.Controls.Add(this.projectPageDueLabel);
             this.projectPagePanel3.Controls.Add(this.projectPageStatusBox);
-            this.projectPagePanel3.Location = new System.Drawing.Point(599, 20);
+            this.projectPagePanel3.Location = new System.Drawing.Point(1897, 57);
+            this.projectPagePanel3.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPagePanel3.Name = "projectPagePanel3";
-            this.projectPagePanel3.Size = new System.Drawing.Size(300, 420);
+            this.projectPagePanel3.Size = new System.Drawing.Size(950, 1195);
             this.projectPagePanel3.TabIndex = 2;
             // 
             // projectPageUpdatePhaseButton
@@ -937,9 +996,10 @@
             this.projectPageUpdatePhaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageUpdatePhaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageUpdatePhaseButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageUpdatePhaseButton.Location = new System.Drawing.Point(88, 392);
+            this.projectPageUpdatePhaseButton.Location = new System.Drawing.Point(279, 1116);
+            this.projectPageUpdatePhaseButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageUpdatePhaseButton.Name = "projectPageUpdatePhaseButton";
-            this.projectPageUpdatePhaseButton.Size = new System.Drawing.Size(125, 22);
+            this.projectPageUpdatePhaseButton.Size = new System.Drawing.Size(396, 63);
             this.projectPageUpdatePhaseButton.TabIndex = 30;
             this.projectPageUpdatePhaseButton.Text = "Update Phase";
             this.projectPageUpdatePhaseButton.UseVisualStyleBackColor = false;
@@ -950,9 +1010,10 @@
             this.phasesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.phasesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phasesLabel.ForeColor = System.Drawing.Color.White;
-            this.phasesLabel.Location = new System.Drawing.Point(0, 160);
+            this.phasesLabel.Location = new System.Drawing.Point(0, 455);
+            this.phasesLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.phasesLabel.Name = "phasesLabel";
-            this.phasesLabel.Size = new System.Drawing.Size(300, 26);
+            this.phasesLabel.Size = new System.Drawing.Size(950, 74);
             this.phasesLabel.TabIndex = 28;
             this.phasesLabel.Text = "Project Phases";
             this.phasesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -965,20 +1026,22 @@
             this.phasesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.phasesGrid.BackgroundColor = System.Drawing.Color.White;
             this.phasesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.phasesGrid.Location = new System.Drawing.Point(0, 190);
+            this.phasesGrid.Location = new System.Drawing.Point(0, 541);
+            this.phasesGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.phasesGrid.Name = "phasesGrid";
             this.phasesGrid.RowTemplate.ReadOnly = true;
             this.phasesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.phasesGrid.Size = new System.Drawing.Size(300, 198);
+            this.phasesGrid.Size = new System.Drawing.Size(950, 564);
             this.phasesGrid.TabIndex = 27;
             this.phasesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PhasesGrid_CellContentClick);
             // 
             // projectPageDueDateBox
             // 
-            this.projectPageDueDateBox.Location = new System.Drawing.Point(0, 85);
+            this.projectPageDueDateBox.Location = new System.Drawing.Point(0, 242);
+            this.projectPageDueDateBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageDueDateBox.MinDate = new System.DateTime(2019, 5, 2, 0, 0, 0, 0);
             this.projectPageDueDateBox.Name = "projectPageDueDateBox";
-            this.projectPageDueDateBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPageDueDateBox.Size = new System.Drawing.Size(941, 44);
             this.projectPageDueDateBox.TabIndex = 26;
             // 
             // projectPageStatusLabel
@@ -986,18 +1049,20 @@
             this.projectPageStatusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageStatusLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageStatusLabel.Location = new System.Drawing.Point(0, 108);
+            this.projectPageStatusLabel.Location = new System.Drawing.Point(0, 307);
+            this.projectPageStatusLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageStatusLabel.Name = "projectPageStatusLabel";
-            this.projectPageStatusLabel.Size = new System.Drawing.Size(300, 26);
+            this.projectPageStatusLabel.Size = new System.Drawing.Size(950, 74);
             this.projectPageStatusLabel.TabIndex = 17;
             this.projectPageStatusLabel.Text = "Status";
             this.projectPageStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // projectPagePhaseBox
             // 
-            this.projectPagePhaseBox.Location = new System.Drawing.Point(0, 33);
+            this.projectPagePhaseBox.Location = new System.Drawing.Point(0, 94);
+            this.projectPagePhaseBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPagePhaseBox.Name = "projectPagePhaseBox";
-            this.projectPagePhaseBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPagePhaseBox.Size = new System.Drawing.Size(941, 44);
             this.projectPagePhaseBox.TabIndex = 22;
             // 
             // projectPagePhaseLabel2
@@ -1005,9 +1070,10 @@
             this.projectPagePhaseLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPagePhaseLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPagePhaseLabel2.ForeColor = System.Drawing.Color.White;
-            this.projectPagePhaseLabel2.Location = new System.Drawing.Point(0, 4);
+            this.projectPagePhaseLabel2.Location = new System.Drawing.Point(0, 11);
+            this.projectPagePhaseLabel2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPagePhaseLabel2.Name = "projectPagePhaseLabel2";
-            this.projectPagePhaseLabel2.Size = new System.Drawing.Size(300, 26);
+            this.projectPagePhaseLabel2.Size = new System.Drawing.Size(950, 74);
             this.projectPagePhaseLabel2.TabIndex = 9;
             this.projectPagePhaseLabel2.Text = "Phase";
             this.projectPagePhaseLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1017,18 +1083,20 @@
             this.projectPageDueLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageDueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageDueLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageDueLabel.Location = new System.Drawing.Point(0, 56);
+            this.projectPageDueLabel.Location = new System.Drawing.Point(0, 159);
+            this.projectPageDueLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageDueLabel.Name = "projectPageDueLabel";
-            this.projectPageDueLabel.Size = new System.Drawing.Size(300, 26);
+            this.projectPageDueLabel.Size = new System.Drawing.Size(950, 74);
             this.projectPageDueLabel.TabIndex = 7;
             this.projectPageDueLabel.Text = "Due Date";
             this.projectPageDueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // projectPageStatusBox
             // 
-            this.projectPageStatusBox.Location = new System.Drawing.Point(0, 137);
+            this.projectPageStatusBox.Location = new System.Drawing.Point(0, 390);
+            this.projectPageStatusBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageStatusBox.Name = "projectPageStatusBox";
-            this.projectPageStatusBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPageStatusBox.Size = new System.Drawing.Size(941, 44);
             this.projectPageStatusBox.TabIndex = 24;
             // 
             // projectPagePanel2
@@ -1049,9 +1117,10 @@
             this.projectPagePanel2.Controls.Add(this.projectPageDeliverablesLabel);
             this.projectPagePanel2.Controls.Add(this.projectPageDescriptionLabel);
             this.projectPagePanel2.Controls.Add(this.projectPagePNumLabel);
-            this.projectPagePanel2.Location = new System.Drawing.Point(289, 20);
+            this.projectPagePanel2.Location = new System.Drawing.Point(915, 57);
+            this.projectPagePanel2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPagePanel2.Name = "projectPagePanel2";
-            this.projectPagePanel2.Size = new System.Drawing.Size(300, 420);
+            this.projectPagePanel2.Size = new System.Drawing.Size(950, 1195);
             this.projectPagePanel2.TabIndex = 1;
             // 
             // projectHoursLabel2
@@ -1059,32 +1128,35 @@
             this.projectHoursLabel2.AutoSize = true;
             this.projectHoursLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectHoursLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.projectHoursLabel2.Location = new System.Drawing.Point(44, 190);
+            this.projectHoursLabel2.Location = new System.Drawing.Point(139, 541);
+            this.projectHoursLabel2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectHoursLabel2.Name = "projectHoursLabel2";
-            this.projectHoursLabel2.Size = new System.Drawing.Size(74, 20);
+            this.projectHoursLabel2.Size = new System.Drawing.Size(218, 55);
             this.projectHoursLabel2.TabIndex = 27;
             this.projectHoursLabel2.Text = "__ Hours";
             // 
             // completeCheckBox
             // 
             this.completeCheckBox.AutoSize = true;
-            this.completeCheckBox.Location = new System.Drawing.Point(48, 395);
+            this.completeCheckBox.Location = new System.Drawing.Point(152, 1124);
+            this.completeCheckBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.completeCheckBox.Name = "completeCheckBox";
-            this.completeCheckBox.Size = new System.Drawing.Size(106, 17);
+            this.completeCheckBox.Size = new System.Drawing.Size(307, 41);
             this.completeCheckBox.TabIndex = 26;
             this.completeCheckBox.Text = "Project Complete";
             this.completeCheckBox.UseVisualStyleBackColor = true;
             // 
             // projectPageHoursBox
             // 
-            this.projectPageHoursBox.Location = new System.Drawing.Point(146, 190);
+            this.projectPageHoursBox.Location = new System.Drawing.Point(462, 541);
+            this.projectPageHoursBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageHoursBox.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.projectPageHoursBox.Name = "projectPageHoursBox";
-            this.projectPageHoursBox.Size = new System.Drawing.Size(101, 20);
+            this.projectPageHoursBox.Size = new System.Drawing.Size(320, 44);
             this.projectPageHoursBox.TabIndex = 25;
             // 
             // notesGridView
@@ -1095,18 +1167,20 @@
             this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.notesGridView.BackgroundColor = System.Drawing.Color.White;
             this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.notesGridView.Location = new System.Drawing.Point(0, 242);
+            this.notesGridView.Location = new System.Drawing.Point(0, 689);
+            this.notesGridView.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.notesGridView.Name = "notesGridView";
             this.notesGridView.RowTemplate.ReadOnly = true;
             this.notesGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.notesGridView.Size = new System.Drawing.Size(300, 122);
+            this.notesGridView.Size = new System.Drawing.Size(950, 347);
             this.notesGridView.TabIndex = 8;
             // 
             // projectPageDeliverablesBox
             // 
-            this.projectPageDeliverablesBox.Location = new System.Drawing.Point(1, 137);
+            this.projectPageDeliverablesBox.Location = new System.Drawing.Point(3, 390);
+            this.projectPageDeliverablesBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageDeliverablesBox.Name = "projectPageDeliverablesBox";
-            this.projectPageDeliverablesBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPageDeliverablesBox.Size = new System.Drawing.Size(941, 44);
             this.projectPageDeliverablesBox.TabIndex = 23;
             // 
             // projectPageUpdateButton
@@ -1116,9 +1190,10 @@
             this.projectPageUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageUpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageUpdateButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageUpdateButton.Location = new System.Drawing.Point(167, 392);
+            this.projectPageUpdateButton.Location = new System.Drawing.Point(529, 1116);
+            this.projectPageUpdateButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageUpdateButton.Name = "projectPageUpdateButton";
-            this.projectPageUpdateButton.Size = new System.Drawing.Size(75, 22);
+            this.projectPageUpdateButton.Size = new System.Drawing.Size(238, 63);
             this.projectPageUpdateButton.TabIndex = 2;
             this.projectPageUpdateButton.Text = "Update Project";
             this.projectPageUpdateButton.UseVisualStyleBackColor = false;
@@ -1126,9 +1201,10 @@
             // 
             // projectPageNotesTextBox
             // 
-            this.projectPageNotesTextBox.Location = new System.Drawing.Point(1, 368);
+            this.projectPageNotesTextBox.Location = new System.Drawing.Point(3, 1047);
+            this.projectPageNotesTextBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageNotesTextBox.Name = "projectPageNotesTextBox";
-            this.projectPageNotesTextBox.Size = new System.Drawing.Size(220, 20);
+            this.projectPageNotesTextBox.Size = new System.Drawing.Size(688, 44);
             this.projectPageNotesTextBox.TabIndex = 7;
             // 
             // projectPageAddNotesButton
@@ -1137,9 +1213,10 @@
             this.projectPageAddNotesButton.FlatAppearance.BorderSize = 0;
             this.projectPageAddNotesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddNotesButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddNotesButton.Location = new System.Drawing.Point(226, 366);
+            this.projectPageAddNotesButton.Location = new System.Drawing.Point(716, 1042);
+            this.projectPageAddNotesButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageAddNotesButton.Name = "projectPageAddNotesButton";
-            this.projectPageAddNotesButton.Size = new System.Drawing.Size(75, 22);
+            this.projectPageAddNotesButton.Size = new System.Drawing.Size(238, 63);
             this.projectPageAddNotesButton.TabIndex = 5;
             this.projectPageAddNotesButton.Text = "Add Notes";
             this.projectPageAddNotesButton.UseVisualStyleBackColor = false;
@@ -1147,16 +1224,18 @@
             // 
             // projectPageDescriptionBox
             // 
-            this.projectPageDescriptionBox.Location = new System.Drawing.Point(0, 85);
+            this.projectPageDescriptionBox.Location = new System.Drawing.Point(0, 242);
+            this.projectPageDescriptionBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageDescriptionBox.Name = "projectPageDescriptionBox";
-            this.projectPageDescriptionBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPageDescriptionBox.Size = new System.Drawing.Size(941, 44);
             this.projectPageDescriptionBox.TabIndex = 20;
             // 
             // projectPagePNumBox
             // 
-            this.projectPagePNumBox.Location = new System.Drawing.Point(0, 33);
+            this.projectPagePNumBox.Location = new System.Drawing.Point(0, 94);
+            this.projectPagePNumBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPagePNumBox.Name = "projectPagePNumBox";
-            this.projectPagePNumBox.Size = new System.Drawing.Size(300, 20);
+            this.projectPagePNumBox.Size = new System.Drawing.Size(941, 44);
             this.projectPagePNumBox.TabIndex = 19;
             // 
             // projectPageNotesLabel
@@ -1164,9 +1243,10 @@
             this.projectPageNotesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageNotesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageNotesLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageNotesLabel.Location = new System.Drawing.Point(0, 213);
+            this.projectPageNotesLabel.Location = new System.Drawing.Point(0, 606);
+            this.projectPageNotesLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageNotesLabel.Name = "projectPageNotesLabel";
-            this.projectPageNotesLabel.Size = new System.Drawing.Size(300, 26);
+            this.projectPageNotesLabel.Size = new System.Drawing.Size(950, 74);
             this.projectPageNotesLabel.TabIndex = 4;
             this.projectPageNotesLabel.Text = "Notes";
             this.projectPageNotesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1176,9 +1256,10 @@
             this.projectPageHoursLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageHoursLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageHoursLabel.Location = new System.Drawing.Point(1, 160);
+            this.projectPageHoursLabel.Location = new System.Drawing.Point(3, 455);
+            this.projectPageHoursLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageHoursLabel.Name = "projectPageHoursLabel";
-            this.projectPageHoursLabel.Size = new System.Drawing.Size(300, 26);
+            this.projectPageHoursLabel.Size = new System.Drawing.Size(950, 74);
             this.projectPageHoursLabel.TabIndex = 13;
             this.projectPageHoursLabel.Text = "Hours Needed";
             this.projectPageHoursLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1188,9 +1269,10 @@
             this.projectPageDeliverablesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageDeliverablesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageDeliverablesLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageDeliverablesLabel.Location = new System.Drawing.Point(1, 108);
+            this.projectPageDeliverablesLabel.Location = new System.Drawing.Point(3, 307);
+            this.projectPageDeliverablesLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageDeliverablesLabel.Name = "projectPageDeliverablesLabel";
-            this.projectPageDeliverablesLabel.Size = new System.Drawing.Size(300, 26);
+            this.projectPageDeliverablesLabel.Size = new System.Drawing.Size(950, 74);
             this.projectPageDeliverablesLabel.TabIndex = 11;
             this.projectPageDeliverablesLabel.Text = "Deliverables";
             this.projectPageDeliverablesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1200,9 +1282,10 @@
             this.projectPageDescriptionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageDescriptionLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageDescriptionLabel.Location = new System.Drawing.Point(0, 56);
+            this.projectPageDescriptionLabel.Location = new System.Drawing.Point(0, 159);
+            this.projectPageDescriptionLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageDescriptionLabel.Name = "projectPageDescriptionLabel";
-            this.projectPageDescriptionLabel.Size = new System.Drawing.Size(300, 26);
+            this.projectPageDescriptionLabel.Size = new System.Drawing.Size(950, 74);
             this.projectPageDescriptionLabel.TabIndex = 5;
             this.projectPageDescriptionLabel.Text = "Description";
             this.projectPageDescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1212,9 +1295,10 @@
             this.projectPagePNumLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPagePNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPagePNumLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPagePNumLabel.Location = new System.Drawing.Point(0, 4);
+            this.projectPagePNumLabel.Location = new System.Drawing.Point(0, 11);
+            this.projectPagePNumLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPagePNumLabel.Name = "projectPagePNumLabel";
-            this.projectPagePNumLabel.Size = new System.Drawing.Size(300, 26);
+            this.projectPagePNumLabel.Size = new System.Drawing.Size(950, 74);
             this.projectPagePNumLabel.TabIndex = 3;
             this.projectPagePNumLabel.Text = "Project Number";
             this.projectPagePNumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1235,9 +1319,10 @@
             this.projectPagePanel1.Controls.Add(this.projectPageRemoveEmployeeButton);
             this.projectPagePanel1.Controls.Add(this.projectPageEditEmployeeText);
             this.projectPagePanel1.Controls.Add(this.projectPageAssignedLabel);
-            this.projectPagePanel1.Location = new System.Drawing.Point(12, 20);
+            this.projectPagePanel1.Location = new System.Drawing.Point(38, 57);
+            this.projectPagePanel1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPagePanel1.Name = "projectPagePanel1";
-            this.projectPagePanel1.Size = new System.Drawing.Size(265, 420);
+            this.projectPagePanel1.Size = new System.Drawing.Size(839, 1195);
             this.projectPagePanel1.TabIndex = 0;
             // 
             // projectPageUpdateHoursButton
@@ -1247,9 +1332,10 @@
             this.projectPageUpdateHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageUpdateHoursButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageUpdateHoursButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageUpdateHoursButton.Location = new System.Drawing.Point(55, 395);
+            this.projectPageUpdateHoursButton.Location = new System.Drawing.Point(174, 1124);
+            this.projectPageUpdateHoursButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageUpdateHoursButton.Name = "projectPageUpdateHoursButton";
-            this.projectPageUpdateHoursButton.Size = new System.Drawing.Size(75, 22);
+            this.projectPageUpdateHoursButton.Size = new System.Drawing.Size(238, 63);
             this.projectPageUpdateHoursButton.TabIndex = 22;
             this.projectPageUpdateHoursButton.Text = "Update Hours";
             this.projectPageUpdateHoursButton.UseVisualStyleBackColor = false;
@@ -1262,9 +1348,10 @@
             this.editLeaderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editLeaderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editLeaderButton.ForeColor = System.Drawing.Color.Snow;
-            this.editLeaderButton.Location = new System.Drawing.Point(55, 235);
+            this.editLeaderButton.Location = new System.Drawing.Point(174, 669);
+            this.editLeaderButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.editLeaderButton.Name = "editLeaderButton";
-            this.editLeaderButton.Size = new System.Drawing.Size(75, 22);
+            this.editLeaderButton.Size = new System.Drawing.Size(238, 63);
             this.editLeaderButton.TabIndex = 21;
             this.editLeaderButton.Text = "Add As Leader";
             this.editLeaderButton.UseVisualStyleBackColor = false;
@@ -1272,9 +1359,10 @@
             // 
             // projectPageLeaderLNameBox
             // 
-            this.projectPageLeaderLNameBox.Location = new System.Drawing.Point(135, 29);
+            this.projectPageLeaderLNameBox.Location = new System.Drawing.Point(428, 83);
+            this.projectPageLeaderLNameBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageLeaderLNameBox.Name = "projectPageLeaderLNameBox";
-            this.projectPageLeaderLNameBox.Size = new System.Drawing.Size(125, 20);
+            this.projectPageLeaderLNameBox.Size = new System.Drawing.Size(387, 44);
             this.projectPageLeaderLNameBox.TabIndex = 20;
             // 
             // projectPageLeaderLabel
@@ -1282,18 +1370,20 @@
             this.projectPageLeaderLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageLeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageLeaderLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageLeaderLabel.Location = new System.Drawing.Point(0, 1);
+            this.projectPageLeaderLabel.Location = new System.Drawing.Point(0, 3);
+            this.projectPageLeaderLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageLeaderLabel.Name = "projectPageLeaderLabel";
-            this.projectPageLeaderLabel.Size = new System.Drawing.Size(265, 26);
+            this.projectPageLeaderLabel.Size = new System.Drawing.Size(839, 74);
             this.projectPageLeaderLabel.TabIndex = 19;
             this.projectPageLeaderLabel.Text = "Project Leader";
             this.projectPageLeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // projectPageLeaderFNameBox
             // 
-            this.projectPageLeaderFNameBox.Location = new System.Drawing.Point(5, 29);
+            this.projectPageLeaderFNameBox.Location = new System.Drawing.Point(16, 83);
+            this.projectPageLeaderFNameBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageLeaderFNameBox.Name = "projectPageLeaderFNameBox";
-            this.projectPageLeaderFNameBox.Size = new System.Drawing.Size(125, 20);
+            this.projectPageLeaderFNameBox.Size = new System.Drawing.Size(387, 44);
             this.projectPageLeaderFNameBox.TabIndex = 18;
             // 
             // projectPageOnProjectGrid
@@ -1307,12 +1397,13 @@
             this.projectPageOnProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.projectPageOnProjectGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageOnProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.projectPageOnProjectGrid.Location = new System.Drawing.Point(0, 285);
+            this.projectPageOnProjectGrid.Location = new System.Drawing.Point(0, 811);
+            this.projectPageOnProjectGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageOnProjectGrid.Name = "projectPageOnProjectGrid";
             this.projectPageOnProjectGrid.RowTemplate.ReadOnly = true;
             this.projectPageOnProjectGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.projectPageOnProjectGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.projectPageOnProjectGrid.Size = new System.Drawing.Size(265, 108);
+            this.projectPageOnProjectGrid.Size = new System.Drawing.Size(839, 307);
             this.projectPageOnProjectGrid.TabIndex = 17;
             this.projectPageOnProjectGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProjectPageOnProjectGrid_CellContentClick);
             // 
@@ -1327,12 +1418,13 @@
             this.projectPageAssignmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.projectPageAssignmentGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageAssignmentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.projectPageAssignmentGrid.Location = new System.Drawing.Point(0, 77);
+            this.projectPageAssignmentGrid.Location = new System.Drawing.Point(0, 219);
+            this.projectPageAssignmentGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageAssignmentGrid.Name = "projectPageAssignmentGrid";
             this.projectPageAssignmentGrid.RowTemplate.ReadOnly = true;
             this.projectPageAssignmentGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.projectPageAssignmentGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.projectPageAssignmentGrid.Size = new System.Drawing.Size(265, 108);
+            this.projectPageAssignmentGrid.Size = new System.Drawing.Size(839, 307);
             this.projectPageAssignmentGrid.TabIndex = 16;
             this.projectPageAssignmentGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProjectPageAssignmentGrid_CellContentClick);
             // 
@@ -1341,9 +1433,10 @@
             this.projectPageEmployeesOnLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageEmployeesOnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageEmployeesOnLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageEmployeesOnLabel.Location = new System.Drawing.Point(0, 259);
+            this.projectPageEmployeesOnLabel.Location = new System.Drawing.Point(0, 737);
+            this.projectPageEmployeesOnLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageEmployeesOnLabel.Name = "projectPageEmployeesOnLabel";
-            this.projectPageEmployeesOnLabel.Size = new System.Drawing.Size(265, 26);
+            this.projectPageEmployeesOnLabel.Size = new System.Drawing.Size(839, 74);
             this.projectPageEmployeesOnLabel.TabIndex = 15;
             this.projectPageEmployeesOnLabel.Text = "Employees On Project";
             this.projectPageEmployeesOnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1353,9 +1446,10 @@
             this.projectPageDesignateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageDesignateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageDesignateLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageDesignateLabel.Location = new System.Drawing.Point(0, 187);
+            this.projectPageDesignateLabel.Location = new System.Drawing.Point(0, 532);
+            this.projectPageDesignateLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageDesignateLabel.Name = "projectPageDesignateLabel";
-            this.projectPageDesignateLabel.Size = new System.Drawing.Size(265, 26);
+            this.projectPageDesignateLabel.Size = new System.Drawing.Size(839, 74);
             this.projectPageDesignateLabel.TabIndex = 14;
             this.projectPageDesignateLabel.Text = "Designate Hours";
             this.projectPageDesignateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1367,9 +1461,10 @@
             this.projectPageAddEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageAddEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageAddEmployeeButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddEmployeeButton.Location = new System.Drawing.Point(140, 235);
+            this.projectPageAddEmployeeButton.Location = new System.Drawing.Point(443, 669);
+            this.projectPageAddEmployeeButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageAddEmployeeButton.Name = "projectPageAddEmployeeButton";
-            this.projectPageAddEmployeeButton.Size = new System.Drawing.Size(75, 22);
+            this.projectPageAddEmployeeButton.Size = new System.Drawing.Size(238, 63);
             this.projectPageAddEmployeeButton.TabIndex = 9;
             this.projectPageAddEmployeeButton.Text = "Add Employee";
             this.projectPageAddEmployeeButton.UseVisualStyleBackColor = false;
@@ -1381,9 +1476,10 @@
             this.projectPageRemoveEmployeeButton.FlatAppearance.BorderSize = 0;
             this.projectPageRemoveEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageRemoveEmployeeButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageRemoveEmployeeButton.Location = new System.Drawing.Point(140, 395);
+            this.projectPageRemoveEmployeeButton.Location = new System.Drawing.Point(443, 1124);
+            this.projectPageRemoveEmployeeButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageRemoveEmployeeButton.Name = "projectPageRemoveEmployeeButton";
-            this.projectPageRemoveEmployeeButton.Size = new System.Drawing.Size(75, 22);
+            this.projectPageRemoveEmployeeButton.Size = new System.Drawing.Size(238, 63);
             this.projectPageRemoveEmployeeButton.TabIndex = 8;
             this.projectPageRemoveEmployeeButton.Text = "Remove";
             this.projectPageRemoveEmployeeButton.UseVisualStyleBackColor = false;
@@ -1391,9 +1487,10 @@
             // 
             // projectPageEditEmployeeText
             // 
-            this.projectPageEditEmployeeText.Location = new System.Drawing.Point(0, 213);
+            this.projectPageEditEmployeeText.Location = new System.Drawing.Point(0, 606);
+            this.projectPageEditEmployeeText.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectPageEditEmployeeText.Name = "projectPageEditEmployeeText";
-            this.projectPageEditEmployeeText.Size = new System.Drawing.Size(265, 20);
+            this.projectPageEditEmployeeText.Size = new System.Drawing.Size(831, 44);
             this.projectPageEditEmployeeText.TabIndex = 7;
             // 
             // projectPageAssignedLabel
@@ -1401,9 +1498,10 @@
             this.projectPageAssignedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.projectPageAssignedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectPageAssignedLabel.ForeColor = System.Drawing.Color.White;
-            this.projectPageAssignedLabel.Location = new System.Drawing.Point(0, 51);
+            this.projectPageAssignedLabel.Location = new System.Drawing.Point(0, 145);
+            this.projectPageAssignedLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.projectPageAssignedLabel.Name = "projectPageAssignedLabel";
-            this.projectPageAssignedLabel.Size = new System.Drawing.Size(265, 26);
+            this.projectPageAssignedLabel.Size = new System.Drawing.Size(839, 74);
             this.projectPageAssignedLabel.TabIndex = 4;
             this.projectPageAssignedLabel.Text = "Employees To Be Assigned";
             this.projectPageAssignedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1413,9 +1511,10 @@
             this.employeePageBG.Controls.Add(this.employeePagePanel2);
             this.employeePageBG.Controls.Add(this.employeePagePanel1);
             this.employeePageBG.Controls.Add(this.employeePageLabel);
-            this.employeePageBG.Location = new System.Drawing.Point(0, 105);
+            this.employeePageBG.Location = new System.Drawing.Point(0, 299);
+            this.employeePageBG.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeePageBG.Name = "employeePageBG";
-            this.employeePageBG.Size = new System.Drawing.Size(910, 465);
+            this.employeePageBG.Size = new System.Drawing.Size(2882, 1323);
             this.employeePageBG.TabIndex = 19;
             this.employeePageBG.Visible = false;
             // 
@@ -1425,9 +1524,10 @@
             this.employeePagePanel2.Controls.Add(this.employeeProjectGrid);
             this.employeePagePanel2.Controls.Add(this.employeeProjectsLabel);
             this.employeePagePanel2.Controls.Add(this.employeePageViewButton);
-            this.employeePagePanel2.Location = new System.Drawing.Point(473, 70);
+            this.employeePagePanel2.Location = new System.Drawing.Point(1498, 199);
+            this.employeePagePanel2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeePagePanel2.Name = "employeePagePanel2";
-            this.employeePagePanel2.Size = new System.Drawing.Size(300, 327);
+            this.employeePagePanel2.Size = new System.Drawing.Size(950, 931);
             this.employeePagePanel2.TabIndex = 17;
             // 
             // employeeProjectGrid
@@ -1444,13 +1544,14 @@
             this.employeeProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.employeeProjectGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.employeeProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeProjectGrid.Location = new System.Drawing.Point(0, 23);
+            this.employeeProjectGrid.Location = new System.Drawing.Point(0, 65);
+            this.employeeProjectGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeeProjectGrid.Name = "employeeProjectGrid";
             this.employeeProjectGrid.ReadOnly = true;
             this.employeeProjectGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.employeeProjectGrid.RowTemplate.ReadOnly = true;
             this.employeeProjectGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeProjectGrid.Size = new System.Drawing.Size(300, 273);
+            this.employeeProjectGrid.Size = new System.Drawing.Size(950, 777);
             this.employeeProjectGrid.TabIndex = 22;
             this.employeeProjectGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeProjectGrid_CellContentClick);
             // 
@@ -1459,9 +1560,10 @@
             this.employeeProjectsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.employeeProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeProjectsLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.employeeProjectsLabel.Location = new System.Drawing.Point(0, 1);
+            this.employeeProjectsLabel.Location = new System.Drawing.Point(0, 3);
+            this.employeeProjectsLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.employeeProjectsLabel.Name = "employeeProjectsLabel";
-            this.employeeProjectsLabel.Size = new System.Drawing.Size(300, 20);
+            this.employeeProjectsLabel.Size = new System.Drawing.Size(950, 57);
             this.employeeProjectsLabel.TabIndex = 7;
             this.employeeProjectsLabel.Text = "Projects";
             // 
@@ -1471,9 +1573,10 @@
             this.employeePageViewButton.FlatAppearance.BorderSize = 0;
             this.employeePageViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeePageViewButton.ForeColor = System.Drawing.Color.Snow;
-            this.employeePageViewButton.Location = new System.Drawing.Point(89, 299);
+            this.employeePageViewButton.Location = new System.Drawing.Point(282, 851);
+            this.employeePageViewButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeePageViewButton.Name = "employeePageViewButton";
-            this.employeePageViewButton.Size = new System.Drawing.Size(125, 23);
+            this.employeePageViewButton.Size = new System.Drawing.Size(396, 65);
             this.employeePageViewButton.TabIndex = 3;
             this.employeePageViewButton.Text = "View Selected Project";
             this.employeePageViewButton.UseVisualStyleBackColor = false;
@@ -1495,9 +1598,10 @@
             this.employeePagePanel1.Controls.Add(this.employeeEmailLabel);
             this.employeePagePanel1.Controls.Add(this.employeePhoneLabel);
             this.employeePagePanel1.Controls.Add(this.employeeContactLabel);
-            this.employeePagePanel1.Location = new System.Drawing.Point(151, 70);
+            this.employeePagePanel1.Location = new System.Drawing.Point(478, 199);
+            this.employeePagePanel1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeePagePanel1.Name = "employeePagePanel1";
-            this.employeePagePanel1.Size = new System.Drawing.Size(300, 327);
+            this.employeePagePanel1.Size = new System.Drawing.Size(950, 931);
             this.employeePagePanel1.TabIndex = 16;
             // 
             // employeeVacationsGrid
@@ -1514,20 +1618,22 @@
             this.employeeVacationsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.employeeVacationsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.employeeVacationsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeVacationsGrid.Location = new System.Drawing.Point(0, 134);
+            this.employeeVacationsGrid.Location = new System.Drawing.Point(0, 381);
+            this.employeeVacationsGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeeVacationsGrid.Name = "employeeVacationsGrid";
             this.employeeVacationsGrid.ReadOnly = true;
             this.employeeVacationsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.employeeVacationsGrid.RowTemplate.ReadOnly = true;
             this.employeeVacationsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeVacationsGrid.Size = new System.Drawing.Size(300, 162);
+            this.employeeVacationsGrid.Size = new System.Drawing.Size(950, 461);
             this.employeeVacationsGrid.TabIndex = 22;
             // 
             // employeePageHoursBox
             // 
-            this.employeePageHoursBox.Location = new System.Drawing.Point(193, 301);
+            this.employeePageHoursBox.Location = new System.Drawing.Point(611, 857);
+            this.employeePageHoursBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeePageHoursBox.Name = "employeePageHoursBox";
-            this.employeePageHoursBox.Size = new System.Drawing.Size(50, 20);
+            this.employeePageHoursBox.Size = new System.Drawing.Size(150, 44);
             this.employeePageHoursBox.TabIndex = 14;
             // 
             // employeeHoursLabel
@@ -1535,18 +1641,20 @@
             this.employeeHoursLabel.BackColor = System.Drawing.Color.Transparent;
             this.employeeHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeHoursLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeeHoursLabel.Location = new System.Drawing.Point(36, 305);
+            this.employeeHoursLabel.Location = new System.Drawing.Point(114, 868);
+            this.employeeHoursLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.employeeHoursLabel.Name = "employeeHoursLabel";
-            this.employeeHoursLabel.Size = new System.Drawing.Size(154, 15);
+            this.employeeHoursLabel.Size = new System.Drawing.Size(488, 43);
             this.employeeHoursLabel.TabIndex = 8;
             this.employeeHoursLabel.Text = "Total Hours Available: ";
             this.employeeHoursLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // employeeLNameBox
             // 
-            this.employeeLNameBox.Location = new System.Drawing.Point(106, 45);
+            this.employeeLNameBox.Location = new System.Drawing.Point(336, 128);
+            this.employeeLNameBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeeLNameBox.Name = "employeeLNameBox";
-            this.employeeLNameBox.Size = new System.Drawing.Size(150, 20);
+            this.employeeLNameBox.Size = new System.Drawing.Size(466, 44);
             this.employeeLNameBox.TabIndex = 26;
             // 
             // employeeVacationHoursLabel
@@ -1554,9 +1662,10 @@
             this.employeeVacationHoursLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.employeeVacationHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeVacationHoursLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.employeeVacationHoursLabel.Location = new System.Drawing.Point(1, 113);
+            this.employeeVacationHoursLabel.Location = new System.Drawing.Point(3, 322);
+            this.employeeVacationHoursLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.employeeVacationHoursLabel.Name = "employeeVacationHoursLabel";
-            this.employeeVacationHoursLabel.Size = new System.Drawing.Size(300, 20);
+            this.employeeVacationHoursLabel.Size = new System.Drawing.Size(950, 57);
             this.employeeVacationHoursLabel.TabIndex = 4;
             this.employeeVacationHoursLabel.Text = "Vacation and Hours";
             // 
@@ -1566,17 +1675,19 @@
             this.employeeLNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.employeeLNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeLNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeeLNameLabel.Location = new System.Drawing.Point(36, 49);
+            this.employeeLNameLabel.Location = new System.Drawing.Point(114, 139);
+            this.employeeLNameLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.employeeLNameLabel.Name = "employeeLNameLabel";
-            this.employeeLNameLabel.Size = new System.Drawing.Size(73, 15);
+            this.employeeLNameLabel.Size = new System.Drawing.Size(211, 40);
             this.employeeLNameLabel.TabIndex = 25;
             this.employeeLNameLabel.Text = "Last Name: ";
             // 
             // employeeFNameBox
             // 
-            this.employeeFNameBox.Location = new System.Drawing.Point(106, 22);
+            this.employeeFNameBox.Location = new System.Drawing.Point(336, 63);
+            this.employeeFNameBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeeFNameBox.Name = "employeeFNameBox";
-            this.employeeFNameBox.Size = new System.Drawing.Size(150, 20);
+            this.employeeFNameBox.Size = new System.Drawing.Size(466, 44);
             this.employeeFNameBox.TabIndex = 24;
             // 
             // employeeFNameLabel
@@ -1585,24 +1696,27 @@
             this.employeeFNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.employeeFNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeFNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeeFNameLabel.Location = new System.Drawing.Point(36, 26);
+            this.employeeFNameLabel.Location = new System.Drawing.Point(114, 74);
+            this.employeeFNameLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.employeeFNameLabel.Name = "employeeFNameLabel";
-            this.employeeFNameLabel.Size = new System.Drawing.Size(73, 15);
+            this.employeeFNameLabel.Size = new System.Drawing.Size(213, 40);
             this.employeeFNameLabel.TabIndex = 23;
             this.employeeFNameLabel.Text = "First Name: ";
             // 
             // employeeEmailTextBox
             // 
-            this.employeeEmailTextBox.Location = new System.Drawing.Point(106, 91);
+            this.employeeEmailTextBox.Location = new System.Drawing.Point(336, 259);
+            this.employeeEmailTextBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeeEmailTextBox.Name = "employeeEmailTextBox";
-            this.employeeEmailTextBox.Size = new System.Drawing.Size(150, 20);
+            this.employeeEmailTextBox.Size = new System.Drawing.Size(466, 44);
             this.employeeEmailTextBox.TabIndex = 19;
             // 
             // employeePhoneTextBox
             // 
-            this.employeePhoneTextBox.Location = new System.Drawing.Point(106, 68);
+            this.employeePhoneTextBox.Location = new System.Drawing.Point(336, 194);
+            this.employeePhoneTextBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.employeePhoneTextBox.Name = "employeePhoneTextBox";
-            this.employeePhoneTextBox.Size = new System.Drawing.Size(150, 20);
+            this.employeePhoneTextBox.Size = new System.Drawing.Size(466, 44);
             this.employeePhoneTextBox.TabIndex = 18;
             // 
             // employeeEmailLabel
@@ -1611,9 +1725,10 @@
             this.employeeEmailLabel.BackColor = System.Drawing.Color.Transparent;
             this.employeeEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeeEmailLabel.Location = new System.Drawing.Point(36, 92);
+            this.employeeEmailLabel.Location = new System.Drawing.Point(114, 262);
+            this.employeeEmailLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.employeeEmailLabel.Name = "employeeEmailLabel";
-            this.employeeEmailLabel.Size = new System.Drawing.Size(45, 15);
+            this.employeeEmailLabel.Size = new System.Drawing.Size(127, 40);
             this.employeeEmailLabel.TabIndex = 12;
             this.employeeEmailLabel.Text = "Email: ";
             // 
@@ -1623,9 +1738,10 @@
             this.employeePhoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.employeePhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePhoneLabel.Location = new System.Drawing.Point(36, 72);
+            this.employeePhoneLabel.Location = new System.Drawing.Point(114, 205);
+            this.employeePhoneLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.employeePhoneLabel.Name = "employeePhoneLabel";
-            this.employeePhoneLabel.Size = new System.Drawing.Size(59, 15);
+            this.employeePhoneLabel.Size = new System.Drawing.Size(171, 40);
             this.employeePhoneLabel.TabIndex = 11;
             this.employeePhoneLabel.Text = "Phone #: ";
             // 
@@ -1634,9 +1750,10 @@
             this.employeeContactLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.employeeContactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeContactLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.employeeContactLabel.Location = new System.Drawing.Point(1, 1);
+            this.employeeContactLabel.Location = new System.Drawing.Point(3, 3);
+            this.employeeContactLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.employeeContactLabel.Name = "employeeContactLabel";
-            this.employeeContactLabel.Size = new System.Drawing.Size(300, 20);
+            this.employeeContactLabel.Size = new System.Drawing.Size(950, 57);
             this.employeeContactLabel.TabIndex = 6;
             this.employeeContactLabel.Text = "Contact Information";
             // 
@@ -1645,9 +1762,10 @@
             this.employeePageLabel.BackColor = System.Drawing.Color.White;
             this.employeePageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeePageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.employeePageLabel.Location = new System.Drawing.Point(315, 37);
+            this.employeePageLabel.Location = new System.Drawing.Point(998, 105);
+            this.employeePageLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.employeePageLabel.Name = "employeePageLabel";
-            this.employeePageLabel.Size = new System.Drawing.Size(300, 24);
+            this.employeePageLabel.Size = new System.Drawing.Size(950, 68);
             this.employeePageLabel.TabIndex = 14;
             this.employeePageLabel.Text = "Employee";
             this.employeePageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1660,9 +1778,10 @@
             this.reportsBG.Controls.Add(this.vacationReportButton);
             this.reportsBG.Controls.Add(this.vacationReportGrid);
             this.reportsBG.Controls.Add(this.weeklyReportGrid);
-            this.reportsBG.Location = new System.Drawing.Point(0, 105);
+            this.reportsBG.Location = new System.Drawing.Point(0, 299);
+            this.reportsBG.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.reportsBG.Name = "reportsBG";
-            this.reportsBG.Size = new System.Drawing.Size(910, 465);
+            this.reportsBG.Size = new System.Drawing.Size(2882, 1323);
             this.reportsBG.TabIndex = 20;
             this.reportsBG.Visible = false;
             // 
@@ -1671,9 +1790,10 @@
             this.vacationReportLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.vacationReportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vacationReportLabel.ForeColor = System.Drawing.Color.White;
-            this.vacationReportLabel.Location = new System.Drawing.Point(599, 31);
+            this.vacationReportLabel.Location = new System.Drawing.Point(1897, 88);
+            this.vacationReportLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.vacationReportLabel.Name = "vacationReportLabel";
-            this.vacationReportLabel.Size = new System.Drawing.Size(300, 31);
+            this.vacationReportLabel.Size = new System.Drawing.Size(950, 88);
             this.vacationReportLabel.TabIndex = 24;
             this.vacationReportLabel.Text = "Vacations Report";
             this.vacationReportLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1683,9 +1803,10 @@
             this.weeklyReportLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
             this.weeklyReportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.weeklyReportLabel.ForeColor = System.Drawing.Color.White;
-            this.weeklyReportLabel.Location = new System.Drawing.Point(10, 31);
+            this.weeklyReportLabel.Location = new System.Drawing.Point(32, 88);
+            this.weeklyReportLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.weeklyReportLabel.Name = "weeklyReportLabel";
-            this.weeklyReportLabel.Size = new System.Drawing.Size(580, 31);
+            this.weeklyReportLabel.Size = new System.Drawing.Size(1837, 88);
             this.weeklyReportLabel.TabIndex = 23;
             this.weeklyReportLabel.Text = "Weekly Meeting Report";
             this.weeklyReportLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1696,9 +1817,10 @@
             this.weeklyReportButton.FlatAppearance.BorderSize = 0;
             this.weeklyReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.weeklyReportButton.ForeColor = System.Drawing.Color.Snow;
-            this.weeklyReportButton.Location = new System.Drawing.Point(614, 410);
+            this.weeklyReportButton.Location = new System.Drawing.Point(1944, 1167);
+            this.weeklyReportButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.weeklyReportButton.Name = "weeklyReportButton";
-            this.weeklyReportButton.Size = new System.Drawing.Size(125, 23);
+            this.weeklyReportButton.Size = new System.Drawing.Size(396, 65);
             this.weeklyReportButton.TabIndex = 22;
             this.weeklyReportButton.Text = "Export Weekly CSV";
             this.weeklyReportButton.UseVisualStyleBackColor = false;
@@ -1710,9 +1832,10 @@
             this.vacationReportButton.FlatAppearance.BorderSize = 0;
             this.vacationReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vacationReportButton.ForeColor = System.Drawing.Color.Snow;
-            this.vacationReportButton.Location = new System.Drawing.Point(759, 410);
+            this.vacationReportButton.Location = new System.Drawing.Point(2404, 1167);
+            this.vacationReportButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.vacationReportButton.Name = "vacationReportButton";
-            this.vacationReportButton.Size = new System.Drawing.Size(125, 23);
+            this.vacationReportButton.Size = new System.Drawing.Size(396, 65);
             this.vacationReportButton.TabIndex = 21;
             this.vacationReportButton.Text = "Export Vacation CSV";
             this.vacationReportButton.UseVisualStyleBackColor = false;
@@ -1732,13 +1855,14 @@
             this.vacationReportGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.vacationReportGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.vacationReportGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vacationReportGrid.Location = new System.Drawing.Point(599, 63);
+            this.vacationReportGrid.Location = new System.Drawing.Point(1897, 179);
+            this.vacationReportGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.vacationReportGrid.Name = "vacationReportGrid";
             this.vacationReportGrid.ReadOnly = true;
             this.vacationReportGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.vacationReportGrid.RowTemplate.ReadOnly = true;
             this.vacationReportGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.vacationReportGrid.Size = new System.Drawing.Size(300, 338);
+            this.vacationReportGrid.Size = new System.Drawing.Size(950, 962);
             this.vacationReportGrid.TabIndex = 20;
             // 
             // weeklyReportGrid
@@ -1755,22 +1879,24 @@
             this.weeklyReportGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.weeklyReportGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.weeklyReportGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.weeklyReportGrid.Location = new System.Drawing.Point(10, 63);
+            this.weeklyReportGrid.Location = new System.Drawing.Point(32, 179);
+            this.weeklyReportGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.weeklyReportGrid.Name = "weeklyReportGrid";
             this.weeklyReportGrid.ReadOnly = true;
             this.weeklyReportGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.weeklyReportGrid.RowTemplate.ReadOnly = true;
             this.weeklyReportGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.weeklyReportGrid.Size = new System.Drawing.Size(580, 370);
+            this.weeklyReportGrid.Size = new System.Drawing.Size(1837, 1053);
             this.weeklyReportGrid.TabIndex = 19;
             // 
             // searchEmployeesBG
             // 
             this.searchEmployeesBG.Controls.Add(this.searchEmployeesBackPanel);
             this.searchEmployeesBG.Controls.Add(this.searchEmployeesLabel);
-            this.searchEmployeesBG.Location = new System.Drawing.Point(0, 105);
+            this.searchEmployeesBG.Location = new System.Drawing.Point(0, 299);
+            this.searchEmployeesBG.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchEmployeesBG.Name = "searchEmployeesBG";
-            this.searchEmployeesBG.Size = new System.Drawing.Size(910, 465);
+            this.searchEmployeesBG.Size = new System.Drawing.Size(2882, 1323);
             this.searchEmployeesBG.TabIndex = 21;
             this.searchEmployeesBG.Visible = false;
             // 
@@ -1782,9 +1908,10 @@
             this.searchEmployeesBackPanel.Controls.Add(this.searchEmployeesButton);
             this.searchEmployeesBackPanel.Controls.Add(this.searchEmployeesTextBox);
             this.searchEmployeesBackPanel.Controls.Add(this.searchEmployeesViewButton);
-            this.searchEmployeesBackPanel.Location = new System.Drawing.Point(32, 65);
+            this.searchEmployeesBackPanel.Location = new System.Drawing.Point(101, 185);
+            this.searchEmployeesBackPanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchEmployeesBackPanel.Name = "searchEmployeesBackPanel";
-            this.searchEmployeesBackPanel.Size = new System.Drawing.Size(846, 327);
+            this.searchEmployeesBackPanel.Size = new System.Drawing.Size(2679, 931);
             this.searchEmployeesBackPanel.TabIndex = 13;
             // 
             // searchEmployeesGrid
@@ -1801,13 +1928,14 @@
             this.searchEmployeesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.searchEmployeesGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.searchEmployeesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.searchEmployeesGrid.Location = new System.Drawing.Point(21, 56);
+            this.searchEmployeesGrid.Location = new System.Drawing.Point(67, 159);
+            this.searchEmployeesGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchEmployeesGrid.Name = "searchEmployeesGrid";
             this.searchEmployeesGrid.ReadOnly = true;
             this.searchEmployeesGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.searchEmployeesGrid.RowTemplate.ReadOnly = true;
             this.searchEmployeesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.searchEmployeesGrid.Size = new System.Drawing.Size(806, 238);
+            this.searchEmployeesGrid.Size = new System.Drawing.Size(2552, 677);
             this.searchEmployeesGrid.TabIndex = 19;
             this.searchEmployeesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SearchEmployeesGrid_CellContentClick);
             // 
@@ -1815,9 +1943,10 @@
             // 
             this.searchEmployeesSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchEmployeesSearchLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchEmployeesSearchLabel.Location = new System.Drawing.Point(194, 16);
+            this.searchEmployeesSearchLabel.Location = new System.Drawing.Point(614, 46);
+            this.searchEmployeesSearchLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.searchEmployeesSearchLabel.Name = "searchEmployeesSearchLabel";
-            this.searchEmployeesSearchLabel.Size = new System.Drawing.Size(100, 26);
+            this.searchEmployeesSearchLabel.Size = new System.Drawing.Size(317, 74);
             this.searchEmployeesSearchLabel.TabIndex = 16;
             this.searchEmployeesSearchLabel.Text = "Name:";
             this.searchEmployeesSearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1828,9 +1957,10 @@
             this.searchEmployeesButton.FlatAppearance.BorderSize = 0;
             this.searchEmployeesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchEmployeesButton.ForeColor = System.Drawing.Color.Snow;
-            this.searchEmployeesButton.Location = new System.Drawing.Point(502, 18);
+            this.searchEmployeesButton.Location = new System.Drawing.Point(1590, 51);
+            this.searchEmployeesButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchEmployeesButton.Name = "searchEmployeesButton";
-            this.searchEmployeesButton.Size = new System.Drawing.Size(75, 23);
+            this.searchEmployeesButton.Size = new System.Drawing.Size(238, 65);
             this.searchEmployeesButton.TabIndex = 15;
             this.searchEmployeesButton.Text = "Search";
             this.searchEmployeesButton.UseVisualStyleBackColor = false;
@@ -1838,9 +1968,10 @@
             // 
             // searchEmployeesTextBox
             // 
-            this.searchEmployeesTextBox.Location = new System.Drawing.Point(295, 20);
+            this.searchEmployeesTextBox.Location = new System.Drawing.Point(934, 57);
+            this.searchEmployeesTextBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchEmployeesTextBox.Name = "searchEmployeesTextBox";
-            this.searchEmployeesTextBox.Size = new System.Drawing.Size(200, 20);
+            this.searchEmployeesTextBox.Size = new System.Drawing.Size(625, 44);
             this.searchEmployeesTextBox.TabIndex = 14;
             // 
             // searchEmployeesViewButton
@@ -1849,9 +1980,10 @@
             this.searchEmployeesViewButton.FlatAppearance.BorderSize = 0;
             this.searchEmployeesViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchEmployeesViewButton.ForeColor = System.Drawing.Color.Snow;
-            this.searchEmployeesViewButton.Location = new System.Drawing.Point(389, 299);
+            this.searchEmployeesViewButton.Location = new System.Drawing.Point(1232, 851);
+            this.searchEmployeesViewButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchEmployeesViewButton.Name = "searchEmployeesViewButton";
-            this.searchEmployeesViewButton.Size = new System.Drawing.Size(75, 23);
+            this.searchEmployeesViewButton.Size = new System.Drawing.Size(238, 65);
             this.searchEmployeesViewButton.TabIndex = 3;
             this.searchEmployeesViewButton.Text = "View";
             this.searchEmployeesViewButton.UseVisualStyleBackColor = false;
@@ -1862,9 +1994,10 @@
             this.searchEmployeesLabel.AutoSize = true;
             this.searchEmployeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchEmployeesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchEmployeesLabel.Location = new System.Drawing.Point(380, 34);
+            this.searchEmployeesLabel.Location = new System.Drawing.Point(1203, 97);
+            this.searchEmployeesLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.searchEmployeesLabel.Name = "searchEmployeesLabel";
-            this.searchEmployeesLabel.Size = new System.Drawing.Size(170, 24);
+            this.searchEmployeesLabel.Size = new System.Drawing.Size(497, 64);
             this.searchEmployeesLabel.TabIndex = 14;
             this.searchEmployeesLabel.Text = "Search Employees";
             // 
@@ -1872,9 +2005,10 @@
             // 
             this.searchProjectsBG.Controls.Add(this.searchProjectsLabel);
             this.searchProjectsBG.Controls.Add(this.searchProjectsPageBackPanel);
-            this.searchProjectsBG.Location = new System.Drawing.Point(0, 105);
+            this.searchProjectsBG.Location = new System.Drawing.Point(0, 299);
+            this.searchProjectsBG.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchProjectsBG.Name = "searchProjectsBG";
-            this.searchProjectsBG.Size = new System.Drawing.Size(910, 465);
+            this.searchProjectsBG.Size = new System.Drawing.Size(2882, 1323);
             this.searchProjectsBG.TabIndex = 22;
             this.searchProjectsBG.Visible = false;
             // 
@@ -1883,9 +2017,10 @@
             this.searchProjectsLabel.AutoSize = true;
             this.searchProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchProjectsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchProjectsLabel.Location = new System.Drawing.Point(394, 34);
+            this.searchProjectsLabel.Location = new System.Drawing.Point(1248, 97);
+            this.searchProjectsLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.searchProjectsLabel.Name = "searchProjectsLabel";
-            this.searchProjectsLabel.Size = new System.Drawing.Size(142, 24);
+            this.searchProjectsLabel.Size = new System.Drawing.Size(423, 64);
             this.searchProjectsLabel.TabIndex = 14;
             this.searchProjectsLabel.Text = "Search Projects";
             // 
@@ -1902,18 +2037,20 @@
             this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsSearchButton);
             this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsTextBox);
             this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsViewButton);
-            this.searchProjectsPageBackPanel.Location = new System.Drawing.Point(25, 61);
+            this.searchProjectsPageBackPanel.Location = new System.Drawing.Point(79, 174);
+            this.searchProjectsPageBackPanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchProjectsPageBackPanel.Name = "searchProjectsPageBackPanel";
-            this.searchProjectsPageBackPanel.Size = new System.Drawing.Size(846, 346);
+            this.searchProjectsPageBackPanel.Size = new System.Drawing.Size(2679, 985);
             this.searchProjectsPageBackPanel.TabIndex = 13;
             // 
             // searchProjectLabel
             // 
             this.searchProjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchProjectLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchProjectLabel.Location = new System.Drawing.Point(131, 8);
+            this.searchProjectLabel.Location = new System.Drawing.Point(415, 23);
+            this.searchProjectLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.searchProjectLabel.Name = "searchProjectLabel";
-            this.searchProjectLabel.Size = new System.Drawing.Size(100, 26);
+            this.searchProjectLabel.Size = new System.Drawing.Size(317, 74);
             this.searchProjectLabel.TabIndex = 22;
             this.searchProjectLabel.Text = "Search: ";
             this.searchProjectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1921,9 +2058,10 @@
             // projectLeaderRadioButton
             // 
             this.projectLeaderRadioButton.AutoSize = true;
-            this.projectLeaderRadioButton.Location = new System.Drawing.Point(467, 39);
+            this.projectLeaderRadioButton.Location = new System.Drawing.Point(1479, 111);
+            this.projectLeaderRadioButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectLeaderRadioButton.Name = "projectLeaderRadioButton";
-            this.projectLeaderRadioButton.Size = new System.Drawing.Size(94, 17);
+            this.projectLeaderRadioButton.Size = new System.Drawing.Size(268, 41);
             this.projectLeaderRadioButton.TabIndex = 21;
             this.projectLeaderRadioButton.TabStop = true;
             this.projectLeaderRadioButton.Text = "Project Leader";
@@ -1932,9 +2070,10 @@
             // projectDescriptionRadioButton
             // 
             this.projectDescriptionRadioButton.AutoSize = true;
-            this.projectDescriptionRadioButton.Location = new System.Drawing.Point(347, 40);
+            this.projectDescriptionRadioButton.Location = new System.Drawing.Point(1099, 114);
+            this.projectDescriptionRadioButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectDescriptionRadioButton.Name = "projectDescriptionRadioButton";
-            this.projectDescriptionRadioButton.Size = new System.Drawing.Size(114, 17);
+            this.projectDescriptionRadioButton.Size = new System.Drawing.Size(329, 41);
             this.projectDescriptionRadioButton.TabIndex = 20;
             this.projectDescriptionRadioButton.TabStop = true;
             this.projectDescriptionRadioButton.Text = "Project Description";
@@ -1943,9 +2082,10 @@
             // projectNumRadioButton
             // 
             this.projectNumRadioButton.AutoSize = true;
-            this.projectNumRadioButton.Location = new System.Drawing.Point(237, 40);
+            this.projectNumRadioButton.Location = new System.Drawing.Point(751, 114);
+            this.projectNumRadioButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectNumRadioButton.Name = "projectNumRadioButton";
-            this.projectNumRadioButton.Size = new System.Drawing.Size(98, 17);
+            this.projectNumRadioButton.Size = new System.Drawing.Size(284, 41);
             this.projectNumRadioButton.TabIndex = 19;
             this.projectNumRadioButton.TabStop = true;
             this.projectNumRadioButton.Text = "Project Number";
@@ -1965,13 +2105,14 @@
             this.projectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.projectsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.projectsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.projectsGrid.Location = new System.Drawing.Point(19, 64);
+            this.projectsGrid.Location = new System.Drawing.Point(60, 182);
+            this.projectsGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.projectsGrid.Name = "projectsGrid";
             this.projectsGrid.ReadOnly = true;
             this.projectsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.projectsGrid.RowTemplate.ReadOnly = true;
             this.projectsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.projectsGrid.Size = new System.Drawing.Size(806, 238);
+            this.projectsGrid.Size = new System.Drawing.Size(2552, 677);
             this.projectsGrid.TabIndex = 18;
             this.projectsGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ProjectsGrid_CellMouseClick);
             // 
@@ -1981,9 +2122,10 @@
             this.searchProjectsPageAddProjectButton.FlatAppearance.BorderSize = 0;
             this.searchProjectsPageAddProjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchProjectsPageAddProjectButton.ForeColor = System.Drawing.Color.Snow;
-            this.searchProjectsPageAddProjectButton.Location = new System.Drawing.Point(750, 34);
+            this.searchProjectsPageAddProjectButton.Location = new System.Drawing.Point(2375, 97);
+            this.searchProjectsPageAddProjectButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchProjectsPageAddProjectButton.Name = "searchProjectsPageAddProjectButton";
-            this.searchProjectsPageAddProjectButton.Size = new System.Drawing.Size(75, 23);
+            this.searchProjectsPageAddProjectButton.Size = new System.Drawing.Size(238, 65);
             this.searchProjectsPageAddProjectButton.TabIndex = 17;
             this.searchProjectsPageAddProjectButton.Text = "Add Project";
             this.searchProjectsPageAddProjectButton.UseVisualStyleBackColor = false;
@@ -1993,9 +2135,10 @@
             // 
             this.searchProjectByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchProjectByLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchProjectByLabel.Location = new System.Drawing.Point(131, 34);
+            this.searchProjectByLabel.Location = new System.Drawing.Point(415, 97);
+            this.searchProjectByLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.searchProjectByLabel.Name = "searchProjectByLabel";
-            this.searchProjectByLabel.Size = new System.Drawing.Size(100, 26);
+            this.searchProjectByLabel.Size = new System.Drawing.Size(317, 74);
             this.searchProjectByLabel.TabIndex = 16;
             this.searchProjectByLabel.Text = "Search By: ";
             this.searchProjectByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2006,9 +2149,10 @@
             this.searchProjectsSearchButton.FlatAppearance.BorderSize = 0;
             this.searchProjectsSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchProjectsSearchButton.ForeColor = System.Drawing.Color.Snow;
-            this.searchProjectsSearchButton.Location = new System.Drawing.Point(475, 9);
+            this.searchProjectsSearchButton.Location = new System.Drawing.Point(1504, 26);
+            this.searchProjectsSearchButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchProjectsSearchButton.Name = "searchProjectsSearchButton";
-            this.searchProjectsSearchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchProjectsSearchButton.Size = new System.Drawing.Size(238, 65);
             this.searchProjectsSearchButton.TabIndex = 15;
             this.searchProjectsSearchButton.Text = "Search";
             this.searchProjectsSearchButton.UseVisualStyleBackColor = false;
@@ -2016,9 +2160,10 @@
             // 
             // searchProjectsTextBox
             // 
-            this.searchProjectsTextBox.Location = new System.Drawing.Point(237, 11);
+            this.searchProjectsTextBox.Location = new System.Drawing.Point(751, 31);
+            this.searchProjectsTextBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchProjectsTextBox.Name = "searchProjectsTextBox";
-            this.searchProjectsTextBox.Size = new System.Drawing.Size(224, 20);
+            this.searchProjectsTextBox.Size = new System.Drawing.Size(701, 44);
             this.searchProjectsTextBox.TabIndex = 14;
             // 
             // searchProjectsViewButton
@@ -2027,9 +2172,10 @@
             this.searchProjectsViewButton.FlatAppearance.BorderSize = 0;
             this.searchProjectsViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchProjectsViewButton.ForeColor = System.Drawing.Color.Snow;
-            this.searchProjectsViewButton.Location = new System.Drawing.Point(403, 308);
+            this.searchProjectsViewButton.Location = new System.Drawing.Point(1276, 877);
+            this.searchProjectsViewButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.searchProjectsViewButton.Name = "searchProjectsViewButton";
-            this.searchProjectsViewButton.Size = new System.Drawing.Size(75, 23);
+            this.searchProjectsViewButton.Size = new System.Drawing.Size(238, 65);
             this.searchProjectsViewButton.TabIndex = 3;
             this.searchProjectsViewButton.Text = "View";
             this.searchProjectsViewButton.UseVisualStyleBackColor = false;
@@ -2038,9 +2184,10 @@
             // adminBackPanel
             // 
             this.adminBackPanel.Controls.Add(this.adminMainPanel);
-            this.adminBackPanel.Location = new System.Drawing.Point(0, 106);
+            this.adminBackPanel.Location = new System.Drawing.Point(0, 302);
+            this.adminBackPanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminBackPanel.Name = "adminBackPanel";
-            this.adminBackPanel.Size = new System.Drawing.Size(910, 465);
+            this.adminBackPanel.Size = new System.Drawing.Size(2882, 1323);
             this.adminBackPanel.TabIndex = 23;
             this.adminBackPanel.Visible = false;
             // 
@@ -2069,9 +2216,10 @@
             this.adminMainPanel.Controls.Add(this.adminFNameBox);
             this.adminMainPanel.Controls.Add(this.adminEmployeeIDBox);
             this.adminMainPanel.Controls.Add(this.adminEmployeeGrid);
-            this.adminMainPanel.Location = new System.Drawing.Point(15, 15);
+            this.adminMainPanel.Location = new System.Drawing.Point(48, 43);
+            this.adminMainPanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminMainPanel.Name = "adminMainPanel";
-            this.adminMainPanel.Size = new System.Drawing.Size(882, 438);
+            this.adminMainPanel.Size = new System.Drawing.Size(2793, 1247);
             this.adminMainPanel.TabIndex = 0;
             // 
             // adminClearButton
@@ -2080,9 +2228,10 @@
             this.adminClearButton.FlatAppearance.BorderSize = 0;
             this.adminClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminClearButton.ForeColor = System.Drawing.Color.White;
-            this.adminClearButton.Location = new System.Drawing.Point(803, 31);
+            this.adminClearButton.Location = new System.Drawing.Point(2543, 88);
+            this.adminClearButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminClearButton.Name = "adminClearButton";
-            this.adminClearButton.Size = new System.Drawing.Size(50, 23);
+            this.adminClearButton.Size = new System.Drawing.Size(158, 65);
             this.adminClearButton.TabIndex = 25;
             this.adminClearButton.Text = "Clear";
             this.adminClearButton.UseVisualStyleBackColor = false;
@@ -2091,18 +2240,20 @@
             // activeCheckBox
             // 
             this.activeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activeCheckBox.Location = new System.Drawing.Point(656, 42);
+            this.activeCheckBox.Location = new System.Drawing.Point(2077, 120);
+            this.activeCheckBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.activeCheckBox.Name = "activeCheckBox";
-            this.activeCheckBox.Size = new System.Drawing.Size(150, 24);
+            this.activeCheckBox.Size = new System.Drawing.Size(475, 68);
             this.activeCheckBox.TabIndex = 24;
             this.activeCheckBox.Text = "Is User Active?";
             this.activeCheckBox.UseVisualStyleBackColor = true;
             // 
             // adminHoursBox
             // 
-            this.adminHoursBox.Location = new System.Drawing.Point(446, 100);
+            this.adminHoursBox.Location = new System.Drawing.Point(1412, 285);
+            this.adminHoursBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminHoursBox.Name = "adminHoursBox";
-            this.adminHoursBox.Size = new System.Drawing.Size(201, 20);
+            this.adminHoursBox.Size = new System.Drawing.Size(637, 44);
             this.adminHoursBox.TabIndex = 23;
             // 
             // adminPasswordButton
@@ -2111,9 +2262,10 @@
             this.adminPasswordButton.FlatAppearance.BorderSize = 0;
             this.adminPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminPasswordButton.ForeColor = System.Drawing.Color.White;
-            this.adminPasswordButton.Location = new System.Drawing.Point(656, 134);
+            this.adminPasswordButton.Location = new System.Drawing.Point(2077, 381);
+            this.adminPasswordButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminPasswordButton.Name = "adminPasswordButton";
-            this.adminPasswordButton.Size = new System.Drawing.Size(200, 23);
+            this.adminPasswordButton.Size = new System.Drawing.Size(633, 65);
             this.adminPasswordButton.TabIndex = 21;
             this.adminPasswordButton.Text = "Reset Password";
             this.adminPasswordButton.UseVisualStyleBackColor = false;
@@ -2125,9 +2277,10 @@
             this.adminUpdateUserButton.FlatAppearance.BorderSize = 0;
             this.adminUpdateUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminUpdateUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminUpdateUserButton.Location = new System.Drawing.Point(447, 134);
+            this.adminUpdateUserButton.Location = new System.Drawing.Point(1416, 381);
+            this.adminUpdateUserButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminUpdateUserButton.Name = "adminUpdateUserButton";
-            this.adminUpdateUserButton.Size = new System.Drawing.Size(200, 23);
+            this.adminUpdateUserButton.Size = new System.Drawing.Size(633, 65);
             this.adminUpdateUserButton.TabIndex = 20;
             this.adminUpdateUserButton.Text = "Update User";
             this.adminUpdateUserButton.UseVisualStyleBackColor = false;
@@ -2139,9 +2292,10 @@
             this.adminSelectUserButton.FlatAppearance.BorderSize = 0;
             this.adminSelectUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminSelectUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminSelectUserButton.Location = new System.Drawing.Point(237, 134);
+            this.adminSelectUserButton.Location = new System.Drawing.Point(751, 381);
+            this.adminSelectUserButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminSelectUserButton.Name = "adminSelectUserButton";
-            this.adminSelectUserButton.Size = new System.Drawing.Size(200, 23);
+            this.adminSelectUserButton.Size = new System.Drawing.Size(633, 65);
             this.adminSelectUserButton.TabIndex = 19;
             this.adminSelectUserButton.Text = "Select User";
             this.adminSelectUserButton.UseVisualStyleBackColor = false;
@@ -2153,9 +2307,10 @@
             this.adminAddUserButton.FlatAppearance.BorderSize = 0;
             this.adminAddUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminAddUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminAddUserButton.Location = new System.Drawing.Point(26, 134);
+            this.adminAddUserButton.Location = new System.Drawing.Point(82, 381);
+            this.adminAddUserButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminAddUserButton.Name = "adminAddUserButton";
-            this.adminAddUserButton.Size = new System.Drawing.Size(200, 23);
+            this.adminAddUserButton.Size = new System.Drawing.Size(633, 65);
             this.adminAddUserButton.TabIndex = 18;
             this.adminAddUserButton.Text = "Add User";
             this.adminAddUserButton.UseVisualStyleBackColor = false;
@@ -2164,9 +2319,10 @@
             // adminCheckBox
             // 
             this.adminCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminCheckBox.Location = new System.Drawing.Point(656, 19);
+            this.adminCheckBox.Location = new System.Drawing.Point(2077, 54);
+            this.adminCheckBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminCheckBox.Name = "adminCheckBox";
-            this.adminCheckBox.Size = new System.Drawing.Size(150, 24);
+            this.adminCheckBox.Size = new System.Drawing.Size(475, 68);
             this.adminCheckBox.TabIndex = 16;
             this.adminCheckBox.Text = "Is User an Admin?";
             this.adminCheckBox.UseVisualStyleBackColor = true;
@@ -2174,9 +2330,10 @@
             // adminHoursLabel
             // 
             this.adminHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminHoursLabel.Location = new System.Drawing.Point(446, 75);
+            this.adminHoursLabel.Location = new System.Drawing.Point(1412, 213);
+            this.adminHoursLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.adminHoursLabel.Name = "adminHoursLabel";
-            this.adminHoursLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminHoursLabel.Size = new System.Drawing.Size(633, 65);
             this.adminHoursLabel.TabIndex = 14;
             this.adminHoursLabel.Text = "Available Hours: ";
             this.adminHoursLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2184,9 +2341,10 @@
             // adminPhoneLabel
             // 
             this.adminPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminPhoneLabel.Location = new System.Drawing.Point(236, 75);
+            this.adminPhoneLabel.Location = new System.Drawing.Point(747, 213);
+            this.adminPhoneLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.adminPhoneLabel.Name = "adminPhoneLabel";
-            this.adminPhoneLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminPhoneLabel.Size = new System.Drawing.Size(633, 65);
             this.adminPhoneLabel.TabIndex = 13;
             this.adminPhoneLabel.Text = "Phone #: ";
             this.adminPhoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2194,9 +2352,10 @@
             // adminPassLabel
             // 
             this.adminPassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminPassLabel.Location = new System.Drawing.Point(656, 75);
+            this.adminPassLabel.Location = new System.Drawing.Point(2077, 213);
+            this.adminPassLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.adminPassLabel.Name = "adminPassLabel";
-            this.adminPassLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminPassLabel.Size = new System.Drawing.Size(633, 65);
             this.adminPassLabel.TabIndex = 12;
             this.adminPassLabel.Text = "Default/Reset Password: *";
             this.adminPassLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2204,9 +2363,10 @@
             // adminEmailLabel
             // 
             this.adminEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminEmailLabel.Location = new System.Drawing.Point(26, 75);
+            this.adminEmailLabel.Location = new System.Drawing.Point(82, 213);
+            this.adminEmailLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.adminEmailLabel.Name = "adminEmailLabel";
-            this.adminEmailLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminEmailLabel.Size = new System.Drawing.Size(633, 65);
             this.adminEmailLabel.TabIndex = 11;
             this.adminEmailLabel.Text = "Email Address: *";
             this.adminEmailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2214,9 +2374,10 @@
             // adminLNameLabel
             // 
             this.adminLNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminLNameLabel.Location = new System.Drawing.Point(446, 20);
+            this.adminLNameLabel.Location = new System.Drawing.Point(1412, 57);
+            this.adminLNameLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.adminLNameLabel.Name = "adminLNameLabel";
-            this.adminLNameLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminLNameLabel.Size = new System.Drawing.Size(633, 65);
             this.adminLNameLabel.TabIndex = 10;
             this.adminLNameLabel.Text = "Last Name: ";
             this.adminLNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2224,9 +2385,10 @@
             // adminFNameLabel
             // 
             this.adminFNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminFNameLabel.Location = new System.Drawing.Point(236, 20);
+            this.adminFNameLabel.Location = new System.Drawing.Point(747, 57);
+            this.adminFNameLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.adminFNameLabel.Name = "adminFNameLabel";
-            this.adminFNameLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminFNameLabel.Size = new System.Drawing.Size(633, 65);
             this.adminFNameLabel.TabIndex = 9;
             this.adminFNameLabel.Text = "First Name: ";
             this.adminFNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2234,55 +2396,62 @@
             // adminEIDLabel
             // 
             this.adminEIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminEIDLabel.Location = new System.Drawing.Point(26, 20);
+            this.adminEIDLabel.Location = new System.Drawing.Point(82, 57);
+            this.adminEIDLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.adminEIDLabel.Name = "adminEIDLabel";
-            this.adminEIDLabel.Size = new System.Drawing.Size(200, 23);
+            this.adminEIDLabel.Size = new System.Drawing.Size(633, 65);
             this.adminEIDLabel.TabIndex = 8;
             this.adminEIDLabel.Text = "Employee ID: *";
             this.adminEIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // adminPhoneBox
             // 
-            this.adminPhoneBox.Location = new System.Drawing.Point(236, 100);
+            this.adminPhoneBox.Location = new System.Drawing.Point(747, 285);
+            this.adminPhoneBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminPhoneBox.Name = "adminPhoneBox";
-            this.adminPhoneBox.Size = new System.Drawing.Size(200, 20);
+            this.adminPhoneBox.Size = new System.Drawing.Size(625, 44);
             this.adminPhoneBox.TabIndex = 5;
             // 
             // adminPassBox
             // 
-            this.adminPassBox.Location = new System.Drawing.Point(656, 100);
+            this.adminPassBox.Location = new System.Drawing.Point(2077, 285);
+            this.adminPassBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminPassBox.Name = "adminPassBox";
             this.adminPassBox.PasswordChar = '*';
-            this.adminPassBox.Size = new System.Drawing.Size(200, 20);
+            this.adminPassBox.Size = new System.Drawing.Size(625, 44);
             this.adminPassBox.TabIndex = 4;
             this.adminPassBox.UseSystemPasswordChar = true;
             // 
             // adminEmailBox
             // 
-            this.adminEmailBox.Location = new System.Drawing.Point(26, 100);
+            this.adminEmailBox.Location = new System.Drawing.Point(82, 285);
+            this.adminEmailBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminEmailBox.Name = "adminEmailBox";
-            this.adminEmailBox.Size = new System.Drawing.Size(200, 20);
+            this.adminEmailBox.Size = new System.Drawing.Size(625, 44);
             this.adminEmailBox.TabIndex = 3;
             // 
             // adminLNameBox
             // 
-            this.adminLNameBox.Location = new System.Drawing.Point(446, 45);
+            this.adminLNameBox.Location = new System.Drawing.Point(1412, 128);
+            this.adminLNameBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminLNameBox.Name = "adminLNameBox";
-            this.adminLNameBox.Size = new System.Drawing.Size(200, 20);
+            this.adminLNameBox.Size = new System.Drawing.Size(625, 44);
             this.adminLNameBox.TabIndex = 2;
             // 
             // adminFNameBox
             // 
-            this.adminFNameBox.Location = new System.Drawing.Point(236, 45);
+            this.adminFNameBox.Location = new System.Drawing.Point(747, 128);
+            this.adminFNameBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminFNameBox.Name = "adminFNameBox";
-            this.adminFNameBox.Size = new System.Drawing.Size(200, 20);
+            this.adminFNameBox.Size = new System.Drawing.Size(625, 44);
             this.adminFNameBox.TabIndex = 1;
             // 
             // adminEmployeeIDBox
             // 
-            this.adminEmployeeIDBox.Location = new System.Drawing.Point(26, 45);
+            this.adminEmployeeIDBox.Location = new System.Drawing.Point(82, 128);
+            this.adminEmployeeIDBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminEmployeeIDBox.Name = "adminEmployeeIDBox";
-            this.adminEmployeeIDBox.Size = new System.Drawing.Size(200, 20);
+            this.adminEmployeeIDBox.Size = new System.Drawing.Size(625, 44);
             this.adminEmployeeIDBox.TabIndex = 0;
             // 
             // adminEmployeeGrid
@@ -2292,21 +2461,23 @@
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.MenuBar;
             this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.adminEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.adminEmployeeGrid.Location = new System.Drawing.Point(26, 166);
+            this.adminEmployeeGrid.Location = new System.Drawing.Point(82, 472);
+            this.adminEmployeeGrid.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.adminEmployeeGrid.Name = "adminEmployeeGrid";
             this.adminEmployeeGrid.RowTemplate.ReadOnly = true;
             this.adminEmployeeGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.adminEmployeeGrid.ShowEditingIcon = false;
-            this.adminEmployeeGrid.Size = new System.Drawing.Size(830, 254);
+            this.adminEmployeeGrid.Size = new System.Drawing.Size(2628, 723);
             this.adminEmployeeGrid.TabIndex = 17;
             this.adminEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdminEmployeeGrid_CellContentClick);
             // 
             // resetPassBG
             // 
             this.resetPassBG.Controls.Add(this.resetPanel);
-            this.resetPassBG.Location = new System.Drawing.Point(0, 105);
+            this.resetPassBG.Location = new System.Drawing.Point(0, 299);
+            this.resetPassBG.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.resetPassBG.Name = "resetPassBG";
-            this.resetPassBG.Size = new System.Drawing.Size(910, 465);
+            this.resetPassBG.Size = new System.Drawing.Size(2882, 1323);
             this.resetPassBG.TabIndex = 24;
             this.resetPassBG.Visible = false;
             // 
@@ -2318,9 +2489,10 @@
             this.resetPanel.Controls.Add(this.resetBox);
             this.resetPanel.Controls.Add(this.resetEmailLabel);
             this.resetPanel.Controls.Add(this.resetLabel);
-            this.resetPanel.Location = new System.Drawing.Point(312, 113);
+            this.resetPanel.Location = new System.Drawing.Point(988, 322);
+            this.resetPanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.resetPanel.Name = "resetPanel";
-            this.resetPanel.Size = new System.Drawing.Size(300, 200);
+            this.resetPanel.Size = new System.Drawing.Size(950, 569);
             this.resetPanel.TabIndex = 11;
             // 
             // resetPassExitLabel
@@ -2328,9 +2500,10 @@
             this.resetPassExitLabel.AutoSize = true;
             this.resetPassExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetPassExitLabel.ForeColor = System.Drawing.Color.White;
-            this.resetPassExitLabel.Location = new System.Drawing.Point(238, 131);
+            this.resetPassExitLabel.Location = new System.Drawing.Point(754, 373);
+            this.resetPassExitLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.resetPassExitLabel.Name = "resetPassExitLabel";
-            this.resetPassExitLabel.Size = new System.Drawing.Size(29, 16);
+            this.resetPassExitLabel.Size = new System.Drawing.Size(86, 44);
             this.resetPassExitLabel.TabIndex = 6;
             this.resetPassExitLabel.Text = "Exit";
             this.resetPassExitLabel.Click += new System.EventHandler(this.ResetPassExitLabel_Click);
@@ -2340,9 +2513,10 @@
             this.resetButton.BackColor = System.Drawing.Color.White;
             this.resetButton.FlatAppearance.BorderSize = 0;
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetButton.Location = new System.Drawing.Point(116, 126);
+            this.resetButton.Location = new System.Drawing.Point(367, 359);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(75, 23);
+            this.resetButton.Size = new System.Drawing.Size(238, 65);
             this.resetButton.TabIndex = 5;
             this.resetButton.Text = "Send Reset";
             this.resetButton.UseVisualStyleBackColor = false;
@@ -2350,9 +2524,10 @@
             // 
             // resetBox
             // 
-            this.resetBox.Location = new System.Drawing.Point(83, 81);
+            this.resetBox.Location = new System.Drawing.Point(263, 231);
+            this.resetBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.resetBox.Name = "resetBox";
-            this.resetBox.Size = new System.Drawing.Size(180, 20);
+            this.resetBox.Size = new System.Drawing.Size(561, 44);
             this.resetBox.TabIndex = 3;
             // 
             // resetEmailLabel
@@ -2360,9 +2535,10 @@
             this.resetEmailLabel.AutoSize = true;
             this.resetEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetEmailLabel.ForeColor = System.Drawing.Color.White;
-            this.resetEmailLabel.Location = new System.Drawing.Point(32, 82);
+            this.resetEmailLabel.Location = new System.Drawing.Point(101, 233);
+            this.resetEmailLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.resetEmailLabel.Name = "resetEmailLabel";
-            this.resetEmailLabel.Size = new System.Drawing.Size(45, 15);
+            this.resetEmailLabel.Size = new System.Drawing.Size(127, 40);
             this.resetEmailLabel.TabIndex = 1;
             this.resetEmailLabel.Text = "Email: ";
             // 
@@ -2371,18 +2547,20 @@
             this.resetLabel.AutoSize = true;
             this.resetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetLabel.ForeColor = System.Drawing.Color.White;
-            this.resetLabel.Location = new System.Drawing.Point(20, 39);
+            this.resetLabel.Location = new System.Drawing.Point(63, 111);
+            this.resetLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.resetLabel.Name = "resetLabel";
-            this.resetLabel.Size = new System.Drawing.Size(267, 24);
+            this.resetLabel.Size = new System.Drawing.Size(801, 64);
             this.resetLabel.TabIndex = 0;
             this.resetLabel.Text = "Enter Email to Reset Password";
             // 
             // changePassBG
             // 
             this.changePassBG.Controls.Add(this.changePanel);
-            this.changePassBG.Location = new System.Drawing.Point(0, 105);
+            this.changePassBG.Location = new System.Drawing.Point(0, 299);
+            this.changePassBG.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.changePassBG.Name = "changePassBG";
-            this.changePassBG.Size = new System.Drawing.Size(910, 465);
+            this.changePassBG.Size = new System.Drawing.Size(2882, 1323);
             this.changePassBG.TabIndex = 25;
             this.changePassBG.Visible = false;
             // 
@@ -2396,9 +2574,10 @@
             this.changePanel.Controls.Add(this.currentPassBox);
             this.changePanel.Controls.Add(this.currentPassLabel);
             this.changePanel.Controls.Add(this.changePasswordLabel);
-            this.changePanel.Location = new System.Drawing.Point(312, 113);
+            this.changePanel.Location = new System.Drawing.Point(988, 322);
+            this.changePanel.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.changePanel.Name = "changePanel";
-            this.changePanel.Size = new System.Drawing.Size(300, 200);
+            this.changePanel.Size = new System.Drawing.Size(950, 569);
             this.changePanel.TabIndex = 11;
             // 
             // changePassExitLabel
@@ -2406,19 +2585,21 @@
             this.changePassExitLabel.AutoSize = true;
             this.changePassExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changePassExitLabel.ForeColor = System.Drawing.Color.White;
-            this.changePassExitLabel.Location = new System.Drawing.Point(221, 165);
+            this.changePassExitLabel.Location = new System.Drawing.Point(700, 470);
+            this.changePassExitLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.changePassExitLabel.Name = "changePassExitLabel";
-            this.changePassExitLabel.Size = new System.Drawing.Size(29, 16);
+            this.changePassExitLabel.Size = new System.Drawing.Size(86, 44);
             this.changePassExitLabel.TabIndex = 8;
             this.changePassExitLabel.Text = "Exit";
             this.changePassExitLabel.Click += new System.EventHandler(this.ChangePassExitLabel_Click);
             // 
             // newPassBox
             // 
-            this.newPassBox.Location = new System.Drawing.Point(50, 123);
+            this.newPassBox.Location = new System.Drawing.Point(158, 350);
+            this.newPassBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.newPassBox.Name = "newPassBox";
             this.newPassBox.PasswordChar = '*';
-            this.newPassBox.Size = new System.Drawing.Size(200, 20);
+            this.newPassBox.Size = new System.Drawing.Size(625, 44);
             this.newPassBox.TabIndex = 7;
             this.newPassBox.UseSystemPasswordChar = true;
             // 
@@ -2426,9 +2607,10 @@
             // 
             this.newPassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newPassLabel.ForeColor = System.Drawing.Color.White;
-            this.newPassLabel.Location = new System.Drawing.Point(0, 103);
+            this.newPassLabel.Location = new System.Drawing.Point(0, 293);
+            this.newPassLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.newPassLabel.Name = "newPassLabel";
-            this.newPassLabel.Size = new System.Drawing.Size(300, 15);
+            this.newPassLabel.Size = new System.Drawing.Size(950, 43);
             this.newPassLabel.TabIndex = 6;
             this.newPassLabel.Text = "New Password: ";
             this.newPassLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2438,9 +2620,10 @@
             this.changeButton.BackColor = System.Drawing.Color.White;
             this.changeButton.FlatAppearance.BorderSize = 0;
             this.changeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changeButton.Location = new System.Drawing.Point(100, 158);
+            this.changeButton.Location = new System.Drawing.Point(317, 450);
+            this.changeButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.changeButton.Name = "changeButton";
-            this.changeButton.Size = new System.Drawing.Size(100, 23);
+            this.changeButton.Size = new System.Drawing.Size(317, 65);
             this.changeButton.TabIndex = 5;
             this.changeButton.Text = "Confirm Change";
             this.changeButton.UseVisualStyleBackColor = false;
@@ -2448,10 +2631,11 @@
             // 
             // currentPassBox
             // 
-            this.currentPassBox.Location = new System.Drawing.Point(50, 69);
+            this.currentPassBox.Location = new System.Drawing.Point(158, 196);
+            this.currentPassBox.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.currentPassBox.Name = "currentPassBox";
             this.currentPassBox.PasswordChar = '*';
-            this.currentPassBox.Size = new System.Drawing.Size(200, 20);
+            this.currentPassBox.Size = new System.Drawing.Size(625, 44);
             this.currentPassBox.TabIndex = 3;
             this.currentPassBox.UseSystemPasswordChar = true;
             // 
@@ -2459,9 +2643,10 @@
             // 
             this.currentPassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentPassLabel.ForeColor = System.Drawing.Color.White;
-            this.currentPassLabel.Location = new System.Drawing.Point(0, 49);
+            this.currentPassLabel.Location = new System.Drawing.Point(0, 139);
+            this.currentPassLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.currentPassLabel.Name = "currentPassLabel";
-            this.currentPassLabel.Size = new System.Drawing.Size(300, 15);
+            this.currentPassLabel.Size = new System.Drawing.Size(950, 43);
             this.currentPassLabel.TabIndex = 1;
             this.currentPassLabel.Text = "Current Password: ";
             this.currentPassLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2470,21 +2655,25 @@
             // 
             this.changePasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changePasswordLabel.ForeColor = System.Drawing.Color.White;
-            this.changePasswordLabel.Location = new System.Drawing.Point(0, 17);
+            this.changePasswordLabel.Location = new System.Drawing.Point(0, 48);
+            this.changePasswordLabel.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.changePasswordLabel.Name = "changePasswordLabel";
-            this.changePasswordLabel.Size = new System.Drawing.Size(300, 24);
+            this.changePasswordLabel.Size = new System.Drawing.Size(950, 68);
             this.changePasswordLabel.TabIndex = 0;
             this.changePasswordLabel.Text = "Change Password";
             this.changePasswordLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(910, 571);
+            this.ClientSize = new System.Drawing.Size(2882, 1625);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
+            this.Controls.Add(this.profileBG);
+            this.Controls.Add(this.changePassBG);
+            this.Controls.Add(this.resetPassBG);
             this.Controls.Add(this.adminBackPanel);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.searchProjectsBG);
@@ -2493,10 +2682,8 @@
             this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
-            this.Controls.Add(this.profileBG);
-            this.Controls.Add(this.changePassBG);
-            this.Controls.Add(this.resetPassBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "EDGELook";
