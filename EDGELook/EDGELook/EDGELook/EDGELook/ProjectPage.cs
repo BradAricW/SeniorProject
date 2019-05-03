@@ -388,6 +388,7 @@ namespace EDGELook
         {
             due.Format = DateTimePickerFormat.Custom;
             due.CustomFormat = "yyyy-MM-dd";
+            due.MinDate = DateTime.Today;
             String projectPhase = phase.Text;
             String projectDueDates = due.Text;
             String projectStatus = status.Text;

@@ -51,8 +51,8 @@ namespace EDGELook
             employee.Setup(conn);
 
             ////QUICK LOGIN
-            //emailBox.Text = "iris@yahoo.com";
-            //passBox.Text = "******";
+            emailBox.Text = "iris@yahoo.com";
+            passBox.Text = "******";
 
 
             eID = login.Login(emailBox, passBox);
@@ -265,16 +265,21 @@ namespace EDGELook
         // Update Project
         private void ProjectPageUpdateButton_Click(object sender, EventArgs e)
         {
-            edit.SetCompleteIncomplete(completeCheckBox);
-            edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID);
+            if(projectPagePNumBox.Text == "" || projectPagePNumBox.Text == null)
+            {
+                MessageBox.Show("Must enter project number");
+            } else { 
+                edit.SetCompleteIncomplete(completeCheckBox);
+                edit.EditProject(projectPagePNumBox, projectPageDescriptionBox, projectPageDeliverablesBox, projectPageHoursBox, projectPageStatusBox, eID);
 
-            testPrjNo = projectPagePNumBox.Text;
-            edit.EditID(testPrjNo);
-            edit.ListPhases(phasesGrid);
-            edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
-            edit.DisplayNotes(notesGridView);
-            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
-            edit.SetFlag(1);
+                testPrjNo = projectPagePNumBox.Text;
+                edit.EditID(testPrjNo);
+                edit.ListPhases(phasesGrid);
+                edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+                edit.DisplayNotes(notesGridView);
+                edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+                edit.SetFlag(1);
+            }
         }
 
         private void ProjectPageAddNotesButton_Click(object sender, EventArgs e)
@@ -405,8 +410,20 @@ namespace EDGELook
 
         private void AdminAddUserButton_Click(object sender, EventArgs e)
         {
-            admin.NewEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminPassBox, adminHoursBox, adminCheckBox);
-            admin.DisplayEmployees(adminEmployeeGrid);
+            if(adminEmployeeIDBox.Text == "" || adminEmployeeIDBox.Text == null) {
+                MessageBox.Show("Please add employee ID");
+            } else if (adminEmailBox.Text == "" || adminEmailBox.Text == null)
+            {
+                MessageBox.Show("Please add employee email");
+            } else if (adminPassBox.Text == "" || adminPassBox.Text == null)
+            {
+                MessageBox.Show("Please add employee password");
+            } else
+            {
+                admin.NewEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminPassBox, adminHoursBox, adminCheckBox);
+                admin.DisplayEmployees(adminEmployeeGrid);
+
+            }
         }
 
         private void SearchProjectsSearchButton_Click(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace EDGELook
     class AdminPage
     {
         private MySqlConnection conn;
-        public void NewEmployee(TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox pass, TextBox hours, CheckBox admin)
+        public void NewEmployee(TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox pass, NumericUpDown hours, CheckBox admin)
         {
             String fname = firstName.Text;
             String lname = lastName.Text;
@@ -30,7 +30,7 @@ namespace EDGELook
             
             String defaultPassword = pass.Text;
             int defaultHours = -1;
-            try { defaultHours = int.Parse(hours.Text); }
+            try { defaultHours = (int)hours.Value; }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
@@ -52,14 +52,14 @@ namespace EDGELook
             {
                 dupId = reader.GetString("employeeID");
             }
-
+            reader.Close();
             if (dupId != null)
             {
                 MessageBox.Show("Duplicate Employee");
             }
             else
             {
-                String insertEmp = "INSERT INTO Employee VALUES (" + eID + ", '" + fname + "', '" + lname + "', '" + userName + "', '" + defaultPassword + "', '" + phoneNumber + "', " + defaultHours + ", " + isAdmin + ");";
+                String insertEmp = "INSERT INTO Employee VALUES (" + eID + ", '" + fname + "', '" + lname + "', '" + userName + "', SHA2('" + defaultPassword + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), '" + phoneNumber + "', " + defaultHours + ", " + isAdmin + ", " + 1 + ");";
                 MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
             }
@@ -87,6 +87,7 @@ namespace EDGELook
                 String deleteEmployee = "update Employee set active = 0 WHERE employeeID = '" + employeeRem + "';";
                 MySqlCommand cmd = new MySqlCommand(deleteEmployee, conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
+                MessageBox.Show("Employee " + employeeID + "set to inactive. They will still appear in the list of employees, but they cannot be assigned to projects.");
             }
             conn.Close();
         }
@@ -106,7 +107,7 @@ namespace EDGELook
             emp.Columns[6].Width = 45;
         }
 
-        public void UpdateEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox hours, CheckBox admin)
+        public void UpdateEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, NumericUpDown hours, CheckBox admin)
         {
             int isAdmin;
                if (admin.Checked)
@@ -123,7 +124,7 @@ namespace EDGELook
             String eMail = email.Text;
             String phoneNum = phone.Text;
             int empId = Int32.Parse(employeeID.Text);
-            int hoursAvail = Int32.Parse(hours.Text);
+            int hoursAvail = (int)hours.Value;
 
             conn.Open();
                 String upDateEmployee = ("UPDATE Employee SET employeeID = '" + empId +
@@ -138,7 +139,7 @@ namespace EDGELook
                 Console.WriteLine(cmd.ExecuteNonQuery());
             conn.Close();
         }
-        public void SelectEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox hours, CheckBox admin)
+        public void SelectEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, NumericUpDown hours, CheckBox admin)
         {
             int eID = -1;
             try { eID = int.Parse(selectedEID); }
@@ -158,7 +159,7 @@ namespace EDGELook
                 lastName.Text = dr.GetString(2);
                 email.Text = dr.GetString(3);
                 phone.Text = dr.GetString(5);
-                hours.Text = dr.GetString(6);
+                hours.Value = dr.GetDecimal(6);
                 testHours = dr.GetInt16(7);
             }
             dr.Close();
