@@ -89,7 +89,8 @@ namespace EDGELook
                 }
                 else
                 {
-                    String insertEmp = "INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "', SHA2('" + defaultPassword + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');";
+                    //String insertEmp = "INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "', SHA2('" + defaultPassword + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');";
+                    String insertEmp = "INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "','" + defaultPassword + "', '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');";
                     MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Added");
