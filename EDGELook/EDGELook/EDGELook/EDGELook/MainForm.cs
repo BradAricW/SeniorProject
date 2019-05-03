@@ -51,8 +51,8 @@ namespace EDGELook
             employee.Setup(conn);
 
             ////QUICK LOGIN
-            //emailBox.Text = "iris@yahoo.com";
-            //passBox.Text = "******";
+            emailBox.Text = "iris@yahoo.com";
+            passBox.Text = "******";
 
 
             eID = login.Login(emailBox, passBox);

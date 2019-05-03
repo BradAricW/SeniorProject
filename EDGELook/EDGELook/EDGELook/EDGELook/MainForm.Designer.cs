@@ -198,7 +198,6 @@
             this.adminLNameLabel = new System.Windows.Forms.Label();
             this.adminFNameLabel = new System.Windows.Forms.Label();
             this.adminEIDLabel = new System.Windows.Forms.Label();
-            this.adminHoursBox = new System.Windows.Forms.TextBox();
             this.adminPhoneBox = new System.Windows.Forms.TextBox();
             this.adminPassBox = new System.Windows.Forms.TextBox();
             this.adminEmailBox = new System.Windows.Forms.TextBox();
@@ -206,6 +205,7 @@
             this.adminFNameBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeIDBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeGrid = new System.Windows.Forms.DataGridView();
+            this.adminHoursBox = new System.Windows.Forms.NumericUpDown();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -242,6 +242,7 @@
             this.adminBackPanel.SuspendLayout();
             this.adminMainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminHoursBox)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -2009,6 +2010,7 @@
             // adminMainPanel
             // 
             this.adminMainPanel.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.adminMainPanel.Controls.Add(this.adminHoursBox);
             this.adminMainPanel.Controls.Add(this.adminNoteLabel);
             this.adminMainPanel.Controls.Add(this.adminRemoveUserButton);
             this.adminMainPanel.Controls.Add(this.adminUpdateUserButton);
@@ -2022,7 +2024,6 @@
             this.adminMainPanel.Controls.Add(this.adminLNameLabel);
             this.adminMainPanel.Controls.Add(this.adminFNameLabel);
             this.adminMainPanel.Controls.Add(this.adminEIDLabel);
-            this.adminMainPanel.Controls.Add(this.adminHoursBox);
             this.adminMainPanel.Controls.Add(this.adminPhoneBox);
             this.adminMainPanel.Controls.Add(this.adminPassBox);
             this.adminMainPanel.Controls.Add(this.adminEmailBox);
@@ -2179,13 +2180,6 @@
             this.adminEIDLabel.Text = "Employee ID: ";
             this.adminEIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // adminHoursBox
-            // 
-            this.adminHoursBox.Location = new System.Drawing.Point(446, 100);
-            this.adminHoursBox.Name = "adminHoursBox";
-            this.adminHoursBox.Size = new System.Drawing.Size(200, 20);
-            this.adminHoursBox.TabIndex = 6;
-            // 
             // adminPhoneBox
             // 
             this.adminPhoneBox.Location = new System.Drawing.Point(236, 100);
@@ -2244,6 +2238,13 @@
             this.adminEmployeeGrid.TabIndex = 17;
             this.adminEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdminEmployeeGrid_CellContentClick);
             // 
+            // adminHoursBox
+            // 
+            this.adminHoursBox.Location = new System.Drawing.Point(446, 100);
+            this.adminHoursBox.Name = "adminHoursBox";
+            this.adminHoursBox.Size = new System.Drawing.Size(201, 20);
+            this.adminHoursBox.TabIndex = 23;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2252,8 +2253,6 @@
             this.ClientSize = new System.Drawing.Size(910, 571);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.loginBG);
-            this.Controls.Add(this.profileBG);
             this.Controls.Add(this.adminBackPanel);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.searchProjectsBG);
@@ -2261,6 +2260,8 @@
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
             this.Controls.Add(this.projectPageBG);
+            this.Controls.Add(this.loginBG);
+            this.Controls.Add(this.profileBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -2315,6 +2316,7 @@
             this.adminMainPanel.ResumeLayout(false);
             this.adminMainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminHoursBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2419,7 +2421,6 @@
         private System.Windows.Forms.Label adminLNameLabel;
         private System.Windows.Forms.Label adminFNameLabel;
         private System.Windows.Forms.Label adminEIDLabel;
-        private System.Windows.Forms.TextBox adminHoursBox;
         private System.Windows.Forms.TextBox adminPhoneBox;
         private System.Windows.Forms.TextBox adminPassBox;
         private System.Windows.Forms.TextBox adminEmailBox;
@@ -2485,6 +2486,7 @@
         private System.Windows.Forms.Button editLeaderButton;
         private System.Windows.Forms.Button profileChangePassButton;
         private System.Windows.Forms.Label vacationLabel;
+        private System.Windows.Forms.NumericUpDown adminHoursBox;
     }
 }
 
