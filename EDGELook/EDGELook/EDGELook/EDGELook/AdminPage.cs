@@ -87,6 +87,7 @@ namespace EDGELook
                 String deleteEmployee = "update Employee set active = 0 WHERE employeeID = '" + employeeRem + "';";
                 MySqlCommand cmd = new MySqlCommand(deleteEmployee, conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
+                MessageBox.Show("Employee " + employeeID + "set to inactive. They will still appear in the list of employees, but they cannot be assigned to projects.");
             }
             conn.Close();
         }
