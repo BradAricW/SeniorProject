@@ -17,7 +17,7 @@ namespace EDGELook
 {
     public partial class MainForm : Form
     {
-        
+        PasswordPage passPage;
         LoginPage login;
         AdminPage admin;
         ReportPage report;
@@ -26,7 +26,7 @@ namespace EDGELook
         private DBConn dbconn;
         private MySqlConnection conn;
         ProfilePage profile;
-        int? eID;
+        String eID;
         private int hours;
         private String testPrjNo;
         private String profilePrjNo;
@@ -38,22 +38,19 @@ namespace EDGELook
         public MainForm()
         {
             InitializeComponent();
-        }
-
-        private void LoginButton_Click(object sender, EventArgs e)
-        {
             //setup Connection object
             dbconn = new DBConn();
             conn = dbconn.Dbsetup();
             login = new LoginPage();
             login.Setup(conn);
+            passPage = new PasswordPage();
+            passPage.Setup(conn);
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
             employee = new EmployeePage();
             employee.Setup(conn);
-
-            ////QUICK LOGIN
-            emailBox.Text = "iris@yahoo.com";
-            passBox.Text = "******";
-
 
             eID = login.Login(emailBox, passBox);
             int success;
@@ -111,6 +108,9 @@ namespace EDGELook
             this.searchProjectsBG.Visible = false;
             this.adminLabel.Visible = false;
             this.adminBackPanel.Visible = false;
+            this.reportsBG.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
 
             //clear all data
             Clear();
@@ -118,6 +118,9 @@ namespace EDGELook
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
             this.profileBG.Visible = true;
             this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
@@ -125,6 +128,8 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
             this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
             Clear();
 
             profile.GetHours(profileHoursTextBox);
@@ -137,6 +142,9 @@ namespace EDGELook
 
         private void ProjectsButton_Click(object sender, EventArgs e)
         {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
             this.profileBG.Visible = false;
             this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
@@ -144,6 +152,8 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = true;
             this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
             Clear();
 
             edit.ListProjects(projectsGrid, eID);
@@ -151,6 +161,9 @@ namespace EDGELook
 
         private void EmployeesButton_Click(object sender, EventArgs e)
         {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
             this.profileBG.Visible = false;
             this.reportsBG.Visible = false;
             this.employeePageBG.Visible = false;
@@ -158,6 +171,8 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = true;
             this.searchProjectsBG.Visible = false;
             this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
             Clear();
 
             employee.ListEmployees(searchEmployeesGrid, eID);
@@ -165,6 +180,9 @@ namespace EDGELook
 
         private void ReportsButton_Click(object sender, EventArgs e)
         {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
             this.profileBG.Visible = false;
             this.reportsBG.Visible = true;
             this.employeePageBG.Visible = false;
@@ -172,6 +190,8 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
             this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
             Clear();
 
             report.ListProjects(weeklyReportGrid);
@@ -180,31 +200,24 @@ namespace EDGELook
 
         private void ResetPassLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            try
-            {
-                MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-
-                mail.From = new MailAddress("your_email_address@gmail.com");
-                mail.To.Add("to_address");
-                mail.Subject = "Test Mail";
-                mail.Body = "This is for testing SMTP mail from GMAIL";
-
-                SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("username", "password");
-                SmtpServer.EnableSsl = true;
-
-                SmtpServer.Send(mail);
-                MessageBox.Show("mail Send");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.searchProjectsBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = true;
+            this.changePassBG.Visible = false;
         }
 
         private void SearchEmployeesViewButton_Click(object sender, EventArgs e)
         {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
             this.profileBG.Visible = false;
             this.reportsBG.Visible = false;
             this.employeePageBG.Visible = true;
@@ -212,6 +225,8 @@ namespace EDGELook
             this.searchEmployeesBG.Visible = false;
             this.searchProjectsBG.Visible = false;
             this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
 
             employee.GetHours(employeePageHoursBox);
             employee.GetEmail(employeeEmailTextBox);
@@ -224,6 +239,9 @@ namespace EDGELook
 
         private void SearchProjectsViewButton_Click(object sender, EventArgs e)
         {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
             this.searchProjectsBG.Visible = false;
             this.profileBG.Visible = false;
             this.reportsBG.Visible = false;
@@ -231,6 +249,8 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
             this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
 
             Clear();
             edit.EditID(testPrjNo);
@@ -243,6 +263,9 @@ namespace EDGELook
 
         private void SearchProjectsPageAddProjectButton_Click(object sender, EventArgs e)
         {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
             this.searchProjectsBG.Visible = false;
             this.profileBG.Visible = false;
             this.reportsBG.Visible = false;
@@ -250,6 +273,8 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
             this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
 
             Clear();
             edit.SetFlag(0);
@@ -306,23 +331,12 @@ namespace EDGELook
 
         } //Add Employee
 
-        private void Clear()
-        {
-            projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageStatusBox.Text = "";
-            projectPageLeaderFNameBox.Text = projectPageLeaderLNameBox.Text = "";
-            projectPageHoursBox.Value = 0;
-            profileFNameBox.Text = profileLNameBox.Text = profileHoursTextBox.Text =  profileEmailTextBox.Text = profilePhoneTextBox.Text = "";
-            searchProjectsTextBox.Text = searchEmployeesTextBox.Text = "";
-            employeeFNameBox.Text = employeeLNameBox.Text = employeePageHoursBox.Text = employeeEmailTextBox.Text = employeePhoneTextBox.Text = "";
-        }
-
         private void ProjectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (projectsGrid.SelectedCells.Count > 0)
             {
                 int selectedRowIndex = projectsGrid.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = projectsGrid.Rows[selectedRowIndex];
-                //testPrjNo = selectedRow.Cells[0].Value.ToString();
                 testPrjNo = selectedRow.Cells[2].Value.ToString();
             }
         }
@@ -340,6 +354,9 @@ namespace EDGELook
 
         private void ProfileViewButton_Click(object sender, EventArgs e)
         {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
             this.searchProjectsBG.Visible = false;
             this.profileBG.Visible = false;
             this.reportsBG.Visible = false;
@@ -347,6 +364,8 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
             this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
 
             Clear();
             edit.EditID(profilePrjNo);
@@ -378,6 +397,9 @@ namespace EDGELook
             isAdmin = profile.GetAdmin();
             if (isAdmin == true)
             {
+                this.signOutLabel.Visible = true;
+                this.loginBG.Visible = false;
+                this.taskbarMenu.Visible = true;
                 this.searchProjectsBG.Visible = false;
                 this.profileBG.Visible = false;
                 this.reportsBG.Visible = false;
@@ -385,6 +407,8 @@ namespace EDGELook
                 this.projectPageBG.Visible = false;
                 this.searchEmployeesBG.Visible = false;
                 this.adminBackPanel.Visible = true;
+                this.resetPassBG.Visible = false;
+                this.changePassBG.Visible = false;
 
                 admin.DisplayEmployees(adminEmployeeGrid);
 
@@ -560,13 +584,11 @@ namespace EDGELook
             edit.SetFlag(1);
         }
 
-        private void ProfileChangePassButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void EmployeePageViewButton_Click(object sender, EventArgs e)
         {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
             this.searchProjectsBG.Visible = false;
             this.profileBG.Visible = false;
             this.reportsBG.Visible = false;
@@ -574,6 +596,8 @@ namespace EDGELook
             this.projectPageBG.Visible = true;
             this.searchEmployeesBG.Visible = false;
             this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
 
             Clear();
             edit.EditID(tempEmpPrj);
@@ -613,6 +637,85 @@ namespace EDGELook
                 DataGridViewRow selectedRow = adminEmployeeGrid.Rows[selectedRowIndex];
                 tempEID = selectedRow.Cells[0].Value.ToString();  
             }
+        }
+
+        private void ResetPassExitLabel_Click(object sender, EventArgs e)
+        {
+            Clear();
+            this.loginBG.Visible = true;
+            this.taskbarMenu.Visible = false;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+        }
+
+        private void ProfileChangePassButton_Click(object sender, EventArgs e)
+        {
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = false;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = true;
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            passPage.ResetPass(resetBox);
+
+            Clear();
+            this.loginBG.Visible = true;
+            this.taskbarMenu.Visible = false;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+        }
+
+        private void ChangeButton_Click(object sender, EventArgs e)
+        {
+            passPage.ChangePass(currentPassBox, newPassBox, eID);
+
+            currentPassBox.Text = newPassBox.Text = "";
+
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
+            this.searchProjectsBG.Visible = false;
+            this.profileBG.Visible = true;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+        }
+
+        private void Clear()
+        {
+            projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageStatusBox.Text = "";
+            projectPageLeaderFNameBox.Text = projectPageLeaderLNameBox.Text = "";
+            projectPageHoursBox.Value = 0;
+            profileFNameBox.Text = profileLNameBox.Text = profileHoursTextBox.Text = profileEmailTextBox.Text = profilePhoneTextBox.Text = "";
+            searchProjectsTextBox.Text = searchEmployeesTextBox.Text = "";
+            employeeFNameBox.Text = employeeLNameBox.Text = employeePageHoursBox.Text = employeeEmailTextBox.Text = employeePhoneTextBox.Text = "";
         }
     }
 }

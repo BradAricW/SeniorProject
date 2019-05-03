@@ -45,7 +45,7 @@ namespace EDGELook
         }
 
         //Edit Project
-        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, int? eID)
+        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, String eID)
         {
             int flag = GetFlag();
             if (projectPagePNumBox.Text == "")
@@ -87,7 +87,7 @@ namespace EDGELook
                     else
                     {
 
-                        String addProject = ("INSERT INTO Project VALUES ('" + projectID + "', " + "'" + eID + "', '" + projectDesc + "', '" + projectDeliverables + "', '" + projectHours + "', 0);");
+                        String addProject = ("INSERT INTO Project VALUES ('" + projectID + "', '" + eID + "', '" + projectDesc + "', '" + projectDeliverables + "', '" + projectHours + "', 0);");
                         MySqlCommand cmd = new MySqlCommand(addProject, conn);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Project Added");
@@ -159,7 +159,7 @@ namespace EDGELook
         } // END AUTODISPLAY
 
 
-        public void AddNotes(int? eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
+        public void AddNotes(String eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
         {
             //Don't need validation here because NOW() will always make the entry unique
             String pid = projectPagePNumBox.Text;          
@@ -168,9 +168,7 @@ namespace EDGELook
             MySqlCommand cmd = new MySqlCommand(notes, conn);
             cmd.ExecuteNonQuery();
             projectPageNotesBox.Text = "";
-            conn.Close();
-            
-           
+            conn.Close();  
 
         } // END ADDNOTES
 
@@ -190,7 +188,6 @@ namespace EDGELook
                 MySqlCommand cmd = new MySqlCommand("UPDATE Project SET prjCOmplete = 0 WHERE prjNo = '" + projectID + "';", conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
                 conn.Close();
-                MessageBox.Show("Hours Updated");
             }
         }
 
@@ -198,7 +195,7 @@ namespace EDGELook
         {
             conn.Open();
             //populate assigned gird
-            MySqlDataAdapter da = new MySqlDataAdapter("select e.employeeID as ID, e.fname as First, e.lname as Last, w.hours as Hours from Employee e, WorksOn w where w.employeeID = e.employeeID AND w.prjNo = '" + projectID + "';", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT e.employeeID as ID, e.fname as First, e.lname as Last, w.hours as Hours FROM Employee e, WorksOn w WHERE w.employeeID = e.employeeID AND w.prjNo = '" + projectID + "';", conn);
             DataTable table = new DataTable();
             da.Fill(table);
             assigned.DataSource = table;
@@ -207,7 +204,7 @@ namespace EDGELook
             assigned.Columns[2].Width = 55;
             assigned.Columns[3].Width = 50;
             //populate unassigned grid
-            MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT e.employeeID as ID, fname as First, lname as Last, hoursAvail as Hours FROM Employee e WHERE(not exists(SELECT * FROM WorksOn w WHERE prjNo = '" + projectID + "' AND e.employeeID = w.employeeID)) OR(not exists(SELECT * FROM WorksOn x WHERE e.employeeID = x.employeeID))", conn);
+            MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT e.employeeID as ID, e.fname as First, e.lname as Last, e.hoursAvail as Hours FROM Employee e WHERE(not exists(SELECT * FROM WorksOn w WHERE prjNo = '" + projectID + "' AND e.employeeID = w.employeeID)) OR(not exists(SELECT * FROM WorksOn x WHERE e.employeeID = x.employeeID))", conn);
             DataTable table2 = new DataTable();
             da2.Fill(table2);
             unassigned.DataSource = table2;
@@ -232,11 +229,11 @@ namespace EDGELook
             conn.Close();
         } // END EDIT NOTES
 
-        public void ListProjects(DataGridView projectsGrid, int? eID)
+        public void ListProjects(DataGridView projectsGrid, String eID)
         {
             conn.Open();
 
-            MySqlDataAdapter da = new MySqlDataAdapter("Select E.fname as 'Leader First Name', E.lname as 'Leader Last Name', P.prjNo as 'Project #', P.Description, P.prjComplete as 'Complete' from Project as P, Employee as E where P.prjLeader = E.employeeID ORDER BY P.prjComplete;", conn); //where prjLeader = '" + eID + "'
+            MySqlDataAdapter da = new MySqlDataAdapter("Select E.fname as 'Leader First Name', E.lname as 'Leader Last Name', P.prjNo as 'Project #', P.Description, P.prjComplete as 'Complete' from Project P, Employee E where P.prjLeader = E.employeeID ORDER BY P.prjComplete;", conn);
             DataTable table = new DataTable();
             da.Fill(table);
             projectsGrid.DataSource = table;
@@ -266,7 +263,7 @@ namespace EDGELook
             conn.Open();
 
             int hoursAvail = 0;
-            String getHours = "SELECT hoursAvail FROM Employee E WHERE '" + empID + "' = E.employeeID;";
+            String getHours = "SELECT hoursAvail FROM Employee E WHERE employeeID = '" + empID + "';";
             MySqlCommand cmd1 = new MySqlCommand(getHours, this.conn);
             MySqlDataReader reader1 = cmd1.ExecuteReader();
             while (reader1.Read())

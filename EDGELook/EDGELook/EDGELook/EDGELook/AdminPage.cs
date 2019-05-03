@@ -27,7 +27,16 @@ namespace EDGELook
             {
                 isAdmin = 0;
             }
-            
+            int isActive;
+            if (admin.Checked)
+            {
+                isActive = 1;
+            }
+            else
+            {
+                isActive = 0;
+            }
+
             String defaultPassword = pass.Text;
             int defaultHours = -1;
             try { defaultHours = (int)hours.Value; }
@@ -36,12 +45,8 @@ namespace EDGELook
                 Console.WriteLine(ex.Message);
             }
 
-            int eID = -1;
-            try { eID = int.Parse(employeeID.Text); }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            String eID;
+            eID = employeeID.Text;
 
             conn.Open();
             String dupId = null;
@@ -59,7 +64,7 @@ namespace EDGELook
             }
             else
             {
-                String insertEmp = "INSERT INTO Employee VALUES (" + eID + ", '" + fname + "', '" + lname + "', '" + userName + "', SHA2('" + defaultPassword + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), '" + phoneNumber + "', " + defaultHours + ", " + isAdmin + ", " + 1 + ");";
+                String insertEmp = ("INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "', '" + defaultPassword + "', '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');");
                 MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
                 Console.WriteLine(cmd.ExecuteNonQuery());
             }
