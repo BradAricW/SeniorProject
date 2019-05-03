@@ -45,7 +45,7 @@ namespace EDGELook
         }
 
         //Edit Project
-        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, int? eID)
+        public void EditProject(TextBox projectPagePNumBox, TextBox projectPageDescriptionBox, TextBox projectPageDeliverablesBox, NumericUpDown projectPageHoursBox, TextBox projectPageStatusBox, String eID)
         {
             int flag = GetFlag();
             if (projectPagePNumBox.Text == "")
@@ -159,7 +159,7 @@ namespace EDGELook
         } // END AUTODISPLAY
 
 
-        public void AddNotes(int? eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
+        public void AddNotes(String eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
         {
             //Don't need validation here because NOW() will always make the entry unique
             String pid = projectPagePNumBox.Text;          
@@ -232,7 +232,7 @@ namespace EDGELook
             conn.Close();
         } // END EDIT NOTES
 
-        public void ListProjects(DataGridView projectsGrid, int? eID)
+        public void ListProjects(DataGridView projectsGrid, String eID)
         {
             conn.Open();
 
@@ -266,7 +266,7 @@ namespace EDGELook
             conn.Open();
 
             int hoursAvail = 0;
-            String getHours = "SELECT hoursAvail FROM Employee E WHERE '" + empID + "' = E.employeeID;";
+            String getHours = "SELECT hoursAvail FROM Employee E WHERE employeeID = '" + empID + "';";
             MySqlCommand cmd1 = new MySqlCommand(getHours, this.conn);
             MySqlDataReader reader1 = cmd1.ExecuteReader();
             while (reader1.Read())
