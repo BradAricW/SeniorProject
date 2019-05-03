@@ -216,13 +216,13 @@
             this.resetLabel = new System.Windows.Forms.Label();
             this.changePassBG = new System.Windows.Forms.Panel();
             this.changePanel = new System.Windows.Forms.Panel();
+            this.changePassExitLabel = new System.Windows.Forms.Label();
             this.newPassBox = new System.Windows.Forms.TextBox();
             this.newPassLabel = new System.Windows.Forms.Label();
             this.changeButton = new System.Windows.Forms.Button();
             this.currentPassBox = new System.Windows.Forms.TextBox();
             this.currentPassLabel = new System.Windows.Forms.Label();
             this.changePasswordLabel = new System.Windows.Forms.Label();
-            this.changePassExitLabel = new System.Windows.Forms.Label();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -2401,6 +2401,18 @@
             this.changePanel.Size = new System.Drawing.Size(300, 200);
             this.changePanel.TabIndex = 11;
             // 
+            // changePassExitLabel
+            // 
+            this.changePassExitLabel.AutoSize = true;
+            this.changePassExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePassExitLabel.ForeColor = System.Drawing.Color.White;
+            this.changePassExitLabel.Location = new System.Drawing.Point(221, 165);
+            this.changePassExitLabel.Name = "changePassExitLabel";
+            this.changePassExitLabel.Size = new System.Drawing.Size(29, 16);
+            this.changePassExitLabel.TabIndex = 8;
+            this.changePassExitLabel.Text = "Exit";
+            this.changePassExitLabel.Click += new System.EventHandler(this.ChangePassExitLabel_Click);
+            // 
             // newPassBox
             // 
             this.newPassBox.Location = new System.Drawing.Point(50, 123);
@@ -2465,18 +2477,6 @@
             this.changePasswordLabel.Text = "Change Password";
             this.changePasswordLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // changePassExitLabel
-            // 
-            this.changePassExitLabel.AutoSize = true;
-            this.changePassExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changePassExitLabel.ForeColor = System.Drawing.Color.White;
-            this.changePassExitLabel.Location = new System.Drawing.Point(221, 165);
-            this.changePassExitLabel.Name = "changePassExitLabel";
-            this.changePassExitLabel.Size = new System.Drawing.Size(29, 16);
-            this.changePassExitLabel.TabIndex = 8;
-            this.changePassExitLabel.Text = "Exit";
-            this.changePassExitLabel.Click += new System.EventHandler(this.ChangePassExitLabel_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2485,8 +2485,6 @@
             this.ClientSize = new System.Drawing.Size(910, 571);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.changePassBG);
-            this.Controls.Add(this.resetPassBG);
             this.Controls.Add(this.adminBackPanel);
             this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.searchProjectsBG);
@@ -2496,6 +2494,8 @@
             this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
+            this.Controls.Add(this.changePassBG);
+            this.Controls.Add(this.resetPassBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";

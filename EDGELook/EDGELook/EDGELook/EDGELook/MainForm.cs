@@ -27,7 +27,7 @@ namespace EDGELook
         private DBConn dbconn;
         private MySqlConnection conn;
         ProfilePage profile;
-        String eID;
+        private String eID;
         private int hours;
         private String testPrjNo;
         private String profilePrjNo;
@@ -40,26 +40,26 @@ namespace EDGELook
         {
             InitializeComponent();
             //setup page classes and connections
-            dbconn = new DBConn();
-            conn = dbconn.Dbsetup();
+            //dbconn = new DBConn();
+            //conn = dbconn.Dbsetup();
 
-            login = new LoginPage();
-            login.Setup(conn);
+            //login = new LoginPage();
+            //login.Setup(conn);
 
-            passPage = new PasswordPage();
-            passPage.Setup(conn);
+            //passPage = new PasswordPage();
+            //passPage.Setup(conn);
 
-            profile = new ProfilePage();
-            profile.Setup(conn, eID);
+            //profile = new ProfilePage();
+            //profile.Setup(conn, eID);
 
-            report = new ReportPage();
-            report.Setup(conn);
+            //report = new ReportPage();
+            //report.Setup(conn);
 
-            edit = new ProjectPage();
-            edit.Setup(conn);
+            //edit = new ProjectPage();
+            //edit.Setup(conn);
 
-            employee = new EmployeePage();
-            employee.Setup(conn);
+            //employee = new EmployeePage();
+            //employee.Setup(conn);
         } //end MainForm
 
         //BUTTONS
@@ -67,7 +67,17 @@ namespace EDGELook
         //Login Buttons
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            eID = login.Login(emailBox, passBox);
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
+            login = new LoginPage();
+            login.Setup(conn);
+            employee = new EmployeePage();
+            employee.Setup(conn);
+            //emailBox.Text = "iris@yahoo.com";
+            //passBox.Text = "******";
+            //emailBox.Text = "valeriykutsar18@gmail.com";
+            //passBox.Text = "goodpass";
+            this.eID = login.Login(emailBox, passBox);
             int success;
             if (eID == null)
             {
@@ -85,7 +95,8 @@ namespace EDGELook
                 this.profileBG.Visible = true;
                 emailBox.Text = "";
 
-                
+                profile = new ProfilePage();
+                profile.Setup(conn, eID);
                 profile.GetHours(profileHoursTextBox);
                 profile.GetEmail(profileEmailTextBox);
                 profile.GetPhone(profilePhoneTextBox);
@@ -344,6 +355,7 @@ namespace EDGELook
 
         private void AdminSelectUserButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(tempEID);
             admin.SelectEmployee(tempEID, adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox, activeCheckBox);
         } // end admin select user button
 
@@ -768,11 +780,13 @@ namespace EDGELook
         //admin grids
         private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (adminEmployeeGrid.SelectedCells.Count > 0)
             {
                 int selectedRowIndex = adminEmployeeGrid.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = adminEmployeeGrid.Rows[selectedRowIndex];
-                tempEID = selectedRow.Cells[0].Value.ToString();  
+                tempEID = selectedRow.Cells[0].Value.ToString();
+                MessageBox.Show(tempEID);
             }
         } //end admin grid
 

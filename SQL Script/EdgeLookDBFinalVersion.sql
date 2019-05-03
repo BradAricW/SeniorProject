@@ -3,7 +3,7 @@ create table Employee (
     fname varchar(30),
 	lname varchar(30),
     email varchar(50),
-    pssword varchar(50),
+    pssword varchar(256),
     phone varchar(50),
     hoursAvail int,
 	admin boolean,

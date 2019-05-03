@@ -81,7 +81,7 @@ namespace EDGELook
             }
             else
             {
-                String insertEmp = ("INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "', '" + defaultPassword + "', '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');");
+                String insertEmp = "INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "', SHA2('" + defaultPassword + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');";
                 MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Employee Added");
@@ -119,7 +119,7 @@ namespace EDGELook
             int hoursAvail = (int)hours.Value;
 
             conn.Open();
-            String upDateEmployee = ("UPDATE Employee SET employeeID = '" + empID + "', fname = '" + fName + "', lname = '" + lName + "', email = '" + eMail + "', phone = '" + phoneNum + "', hoursAvail = '" + hoursAvail + "', admin = '" + isAdmin + "', active = '" + isActive + "' WHERE employeeID = '" + empID + "';");
+            String upDateEmployee = "UPDATE Employee SET employeeID = '" + empID + "', fname = '" + fName + "', lname = '" + lName + "', email = '" + eMail + "', phone = '" + phoneNum + "', hoursAvail = '" + hoursAvail + "', admin = '" + isAdmin + "', active = '" + isActive + "' WHERE employeeID = '" + empID + "';";
             MySqlCommand cmd = new MySqlCommand(upDateEmployee, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
