@@ -85,12 +85,23 @@ namespace EDGELook
                 reader.Close();
                 if (dupId != null)
                 {
-                    MessageBox.Show("Duplicate Employee");
+                    MessageBox.Show("Duplicate Employee: " + dupId);
                 }
                 else
                 {
-                    String insertEmp = "INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "', SHA2('" + defaultPassword + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');";
+                    //String insertEmp = "INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "', SHA2('" + defaultPassword + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');";
+                    //MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
+                    string insertEmp = "INSERT INTO Employee VALUES (?val1, ?val2, ?val3, ?val4, ?val5, ?val6, ?val7, ?val8, ?val9);";
                     MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
+                    cmd.Parameters.AddWithValue("?val1", eID);
+                    cmd.Parameters.AddWithValue("?val2", fname);
+                    cmd.Parameters.AddWithValue("?val3", lname);
+                    cmd.Parameters.AddWithValue("?val4", userName);
+                    cmd.Parameters.AddWithValue("?val5", defaultPassword);
+                    cmd.Parameters.AddWithValue("?val6", phoneNumber);
+                    cmd.Parameters.AddWithValue("?val7", defaultHours);
+                    cmd.Parameters.AddWithValue("?val8", isAdmin);
+                    cmd.Parameters.AddWithValue("?val9", isActive);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Added");
                 }

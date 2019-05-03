@@ -340,7 +340,12 @@ namespace EDGELook
                 }
                 else
                 {
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO Vacation VALUES('" + eID + "', '" + startDate + "','" + endDate + "');", conn);
+                    //MySqlCommand cmd = new MySqlCommand("INSERT INTO Vacation VALUES('" + eID + "', '" + startDate + "','" + endDate + "');", conn);
+                    //cmd.ExecuteNonQuery();
+                    MySqlCommand cmd = new MySqlCommand("INSERT into Vacation VALUES(?val1, ?val2, ?val3)", conn);
+                    cmd.Parameters.AddWithValue("?val1", eID);
+                    cmd.Parameters.AddWithValue("?val2", startDate);
+                    cmd.Parameters.AddWithValue("?val3", endDate);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Vacation Days Created");
                 }
