@@ -73,8 +73,8 @@ namespace EDGELook
             login.Setup(conn);
             employee = new EmployeePage();
             employee.Setup(conn);
-            //emailBox.Text = "iris@yahoo.com";
-            //passBox.Text = "******";
+            emailBox.Text = "iris@yahoo.com";
+            passBox.Text = "******";
             //emailBox.Text = "valeriykutsar18@gmail.com";
             //passBox.Text = "goodpass";
             this.eID = login.Login(emailBox, passBox);

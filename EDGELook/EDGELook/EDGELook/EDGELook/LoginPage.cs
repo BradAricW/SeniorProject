@@ -36,8 +36,8 @@ namespace EDGELook
                 Console.WriteLine(ex.Message);
             }
 
-            //String getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND BINARY pssword = '" + password + "';";
-            String getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND BINARY pssword = SHA2('" + password + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16)));"; 
+            String getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND BINARY pssword = '" + password + "';";
+            //String getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND BINARY pssword = SHA2('" + password + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16)));"; 
             MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
