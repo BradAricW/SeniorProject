@@ -256,6 +256,7 @@ namespace EDGELook
             edit.EditID(testPrjNo);
             edit.ListPhases(phasesGrid);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+            edit.HoursDisplay(projectHoursLabel2);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
@@ -301,6 +302,7 @@ namespace EDGELook
                 edit.EditID(testPrjNo);
                 edit.ListPhases(phasesGrid);
                 edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+                edit.HoursDisplay(projectHoursLabel2);
                 edit.DisplayNotes(notesGridView);
                 edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
                 edit.SetFlag(1);
@@ -328,6 +330,7 @@ namespace EDGELook
             }
             edit.AssignEmployee(hours, assignEID);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+            edit.HoursDisplay(projectHoursLabel2);
 
         } //Add Employee
 
@@ -371,6 +374,7 @@ namespace EDGELook
             edit.EditID(profilePrjNo);
             edit.ListPhases(phasesGrid);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, profilePrjNo, completeCheckBox);
+            edit.HoursDisplay(projectHoursLabel2);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
@@ -389,7 +393,7 @@ namespace EDGELook
 
         private void ProfileEditContactButton_Click(object sender, EventArgs e)
         {
-            profile.EditContact(profileEmailTextBox, profilePhoneTextBox);
+            profile.EditContact(profileEmailTextBox, profilePhoneTextBox, profileFNameBox, profileLNameBox);
         }
 
         private void AdminLabel_Click(object sender, EventArgs e)
@@ -415,21 +419,20 @@ namespace EDGELook
             }
         }
 
-        private void AdminRemoveUserButton_Click(object sender, EventArgs e)
+        private void AdminResetPasswordButton_Click(object sender, EventArgs e)
         {
-            admin.RemoveEmployee(tempEID);
-            admin.DisplayEmployees(adminEmployeeGrid);
+            admin.ResetPassword(adminEmployeeIDBox, adminPassBox);
         }
 
         private void AdminUpdateUserButton_Click(object sender, EventArgs e)
         {
-            admin.UpdateEmployee(tempEID, adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox);
+            admin.UpdateEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox, activeCheckBox);
             admin.DisplayEmployees(adminEmployeeGrid);
         }
 
         private void AdminSelectUserButton_Click(object sender, EventArgs e)
         {
-            admin.SelectEmployee(tempEID, adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox);
+            admin.SelectEmployee(tempEID, adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox, activeCheckBox);
         }
 
         private void AdminAddUserButton_Click(object sender, EventArgs e)
@@ -444,7 +447,7 @@ namespace EDGELook
                 MessageBox.Show("Please add employee password");
             } else
             {
-                admin.NewEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminPassBox, adminHoursBox, adminCheckBox);
+                admin.NewEmployee(adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminPassBox, adminHoursBox, adminCheckBox, activeCheckBox);
                 admin.DisplayEmployees(adminEmployeeGrid);
 
             }
@@ -474,15 +477,8 @@ namespace EDGELook
                 passable = 4;
             }
                 edit.ProjectSearch(searchProjectsTextBox.Text, projectsGrid, passable);
-        }
-
-        private void ProjectPageAddHoursButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        }  
        
-
         private void ProjectPageAssignmentGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (projectPageAssignmentGrid.SelectedCells.Count > 0) {
@@ -560,6 +556,7 @@ namespace EDGELook
             edit.EditID(testPrjNo);
             edit.ListPhases(phasesGrid);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+            edit.HoursDisplay(projectHoursLabel2);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
@@ -578,7 +575,9 @@ namespace EDGELook
             testPrjNo = projectPagePNumBox.Text;
             edit.EditID(testPrjNo);
             edit.ListPhases(phasesGrid);
+            edit.HoursDisplay(projectHoursLabel2);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, testPrjNo, completeCheckBox);
+            edit.HoursDisplay(projectHoursLabel2);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
@@ -603,6 +602,7 @@ namespace EDGELook
             edit.EditID(tempEmpPrj);
             edit.ListPhases(phasesGrid);
             edit.AutoDisplay(projectPagePNumBox, projectPageDescriptionBox, projectPageLeaderLNameBox, projectPageLeaderFNameBox, projectPageDeliverablesBox, projectPageHoursBox, tempEmpPrj, completeCheckBox);
+            edit.HoursDisplay(projectHoursLabel2);
             edit.DisplayNotes(notesGridView);
             edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
             edit.SetFlag(1);
@@ -653,6 +653,23 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+        }
+
+        private void AdminClearButton_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void ProjectPageUpdateHoursButton_Click(object sender, EventArgs e)
+        {
+            try { hours = int.Parse(projectPageEditEmployeeText.Text); }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            edit.AssignEmployee(hours, removeEID);
+            edit.DisplayEmployees(projectPageAssignmentGrid, projectPageOnProjectGrid);
+            edit.HoursDisplay(projectHoursLabel2);
         }
 
         private void ProfileChangePassButton_Click(object sender, EventArgs e)
@@ -713,6 +730,7 @@ namespace EDGELook
             projectPagePNumBox.Text = projectPageDescriptionBox.Text = projectPagePhaseBox.Text = projectPageDeliverablesBox.Text = projectPageStatusBox.Text = "";
             projectPageLeaderFNameBox.Text = projectPageLeaderLNameBox.Text = "";
             projectPageHoursBox.Value = 0;
+            adminEmailBox.Text = adminEmployeeIDBox.Text = adminFNameBox.Text = adminHoursBox.Text = adminLNameBox.Text = adminPassBox.Text = adminPhoneBox.Text = "";
             profileFNameBox.Text = profileLNameBox.Text = profileHoursTextBox.Text = profileEmailTextBox.Text = profilePhoneTextBox.Text = "";
             searchProjectsTextBox.Text = searchEmployeesTextBox.Text = "";
             employeeFNameBox.Text = employeeLNameBox.Text = employeePageHoursBox.Text = employeeEmailTextBox.Text = employeePhoneTextBox.Text = "";

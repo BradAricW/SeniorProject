@@ -28,7 +28,7 @@ namespace EDGELook
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "'WHERE employeeID = '" + this.eID + "';", conn);
-                Console.WriteLine(cmd.ExecuteNonQuery());
+                cmd.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Hours Updated");
             }
@@ -73,24 +73,40 @@ namespace EDGELook
                 if (prjHours <= hoursNeeded || prjHours <= currHours)
                 {
                     MySqlCommand cmd1 = new MySqlCommand("UPDATE WorksOn SET hours = '" + prjHours + "' WHERE employeeID = '" + eID + "' AND prjNo = '" + pid + "';", conn);
-                    Console.WriteLine(cmd1.ExecuteNonQuery());
+                    cmd1.ExecuteNonQuery();
 
                     empHours += currHours - prjHours;
                     
                     MySqlCommand cmd2 = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "' WHERE employeeID = '" + eID + "';", conn);
-                    Console.WriteLine(cmd2.ExecuteNonQuery());
+                    cmd2.ExecuteNonQuery();
 
                     hoursNeeded += currHours - prjHours;
                     MySqlCommand cmd3 = new MySqlCommand("UPDATE Project SET hoursNeeded = '" + hoursNeeded + "' WHERE prjNo = '" + pid + "';", conn);
-                    Console.WriteLine(cmd3.ExecuteNonQuery());
+                    cmd3.ExecuteNonQuery();
 
                     MessageBox.Show("Hours Updated");
-                    
+
                     if (prjHours == 0)
                     {
-                        MySqlCommand cmd4 = new MySqlCommand("DELETE FROM WorksOn WHERE employeeID = '" + eID + "' AND prjNo = '" + pid + "';", conn);
-                        Console.WriteLine(cmd4.ExecuteNonQuery());
-                        MessageBox.Show("0 Hours Assigned. Removed From Project");
+                        String checkEmpID = "";
+                        String checkID = "SELECT prjLeader FROM Project WHERE prjNo  = '" + pid + "' ;";
+                        MySqlCommand cmd0 = new MySqlCommand(checkID, this.conn);
+                        MySqlDataReader reader0 = cmd0.ExecuteReader();
+                        while (reader0.Read())
+                        {
+                            checkEmpID = reader0.GetString("prjLeader");
+                        }
+                        reader0.Close();
+                        if (checkEmpID != this.eID)
+                        {
+                            cmd = new MySqlCommand("DELETE FROM WorksOn WHERE employeeID = '" + this.eID + "' AND prjNo = '" + this.eID + "';", conn);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("0 Hours Assigned. Removed From Project");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hours set to 0, but you are Project Leader and cannot be deleted from project.");
+                        }
                     }
                 }
                 else
@@ -131,7 +147,7 @@ namespace EDGELook
             else
             {
                 MySqlCommand cmd = new MySqlCommand("INSERT into Vacation VALUES(" + eID + ", '" + startDate + "','" + endDate + "');", conn);
-                Console.WriteLine(cmd.ExecuteNonQuery());                
+                cmd.ExecuteNonQuery();                
                 MessageBox.Show("Vacation Days Created");
             }
             conn.Close();
@@ -140,7 +156,6 @@ namespace EDGELook
         public void RemoveVacation(String startDate)
         {
             conn.Open();
-            Console.WriteLine(startDate);
             MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = " + eID + " AND startDate = '" + startDate + "';", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -226,15 +241,15 @@ namespace EDGELook
             conn.Close();
         }
 
-        public void EditContact(TextBox emailBox, TextBox phoneBox)
+        public void EditContact(TextBox emailBox, TextBox phoneBox, TextBox fnameBox, TextBox lnameBox)
         {
             String phoneNum = phoneBox.Text;
             String emailAdd = emailBox.Text;
+            String fname = fnameBox.Text;
+            String lname = lnameBox.Text;
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET phone = '" + phoneNum + "'WHERE employeeID = '" + this.eID + "';", conn);
-            Console.WriteLine(cmd.ExecuteNonQuery());
-            MySqlCommand cmd2 = new MySqlCommand("UPDATE Employee SET email = '" + emailAdd + "'WHERE employeeID = '" + this.eID + "';", conn);
-            Console.WriteLine(cmd2.ExecuteNonQuery());
+            MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET phone = '" + phoneNum + "', email = '" + emailAdd + "', fname = '" + fname + "', lname = '" + lname + "' WHERE employeeID = '" + this.eID + "';", conn);
+            cmd.ExecuteNonQuery();
             conn.Close();
             MessageBox.Show("Contact Information Updated");
         }

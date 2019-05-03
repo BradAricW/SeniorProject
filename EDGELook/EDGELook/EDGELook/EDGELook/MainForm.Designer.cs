@@ -40,7 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleBackPanel = new System.Windows.Forms.Panel();
             this.titleFrontPanel = new System.Windows.Forms.Panel();
@@ -116,7 +115,6 @@
             this.projectPageAddNotesButton = new System.Windows.Forms.Button();
             this.projectPageDescriptionBox = new System.Windows.Forms.TextBox();
             this.projectPagePNumBox = new System.Windows.Forms.TextBox();
-            this.projectPageAddHoursButton = new System.Windows.Forms.Button();
             this.projectPageNotesLabel = new System.Windows.Forms.Label();
             this.projectPageHoursLabel = new System.Windows.Forms.Label();
             this.projectPageDeliverablesLabel = new System.Windows.Forms.Label();
@@ -185,9 +183,10 @@
             this.searchProjectsViewButton = new System.Windows.Forms.Button();
             this.adminBackPanel = new System.Windows.Forms.Panel();
             this.adminMainPanel = new System.Windows.Forms.Panel();
+            this.adminClearButton = new System.Windows.Forms.Button();
+            this.activeCheckBox = new System.Windows.Forms.CheckBox();
             this.adminHoursBox = new System.Windows.Forms.NumericUpDown();
-            this.adminNoteLabel = new System.Windows.Forms.Label();
-            this.adminRemoveUserButton = new System.Windows.Forms.Button();
+            this.adminPasswordButton = new System.Windows.Forms.Button();
             this.adminUpdateUserButton = new System.Windows.Forms.Button();
             this.adminSelectUserButton = new System.Windows.Forms.Button();
             this.adminAddUserButton = new System.Windows.Forms.Button();
@@ -221,6 +220,8 @@
             this.currentPassBox = new System.Windows.Forms.TextBox();
             this.currentPassLabel = new System.Windows.Forms.Label();
             this.changePasswordLabel = new System.Windows.Forms.Label();
+            this.projectHoursLabel2 = new System.Windows.Forms.Label();
+            this.projectPageUpdateHoursButton = new System.Windows.Forms.Button();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -1032,6 +1033,7 @@
             // projectPagePanel2
             // 
             this.projectPagePanel2.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.projectPagePanel2.Controls.Add(this.projectHoursLabel2);
             this.projectPagePanel2.Controls.Add(this.completeCheckBox);
             this.projectPagePanel2.Controls.Add(this.projectPageHoursBox);
             this.projectPagePanel2.Controls.Add(this.notesGridView);
@@ -1041,7 +1043,6 @@
             this.projectPagePanel2.Controls.Add(this.projectPageAddNotesButton);
             this.projectPagePanel2.Controls.Add(this.projectPageDescriptionBox);
             this.projectPagePanel2.Controls.Add(this.projectPagePNumBox);
-            this.projectPagePanel2.Controls.Add(this.projectPageAddHoursButton);
             this.projectPagePanel2.Controls.Add(this.projectPageNotesLabel);
             this.projectPagePanel2.Controls.Add(this.projectPageHoursLabel);
             this.projectPagePanel2.Controls.Add(this.projectPageDeliverablesLabel);
@@ -1064,7 +1065,7 @@
             // 
             // projectPageHoursBox
             // 
-            this.projectPageHoursBox.Location = new System.Drawing.Point(51, 190);
+            this.projectPageHoursBox.Location = new System.Drawing.Point(146, 190);
             this.projectPageHoursBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -1146,20 +1147,6 @@
             this.projectPagePNumBox.Size = new System.Drawing.Size(300, 20);
             this.projectPagePNumBox.TabIndex = 19;
             // 
-            // projectPageAddHoursButton
-            // 
-            this.projectPageAddHoursButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.projectPageAddHoursButton.FlatAppearance.BorderSize = 0;
-            this.projectPageAddHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.projectPageAddHoursButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageAddHoursButton.Location = new System.Drawing.Point(162, 189);
-            this.projectPageAddHoursButton.Name = "projectPageAddHoursButton";
-            this.projectPageAddHoursButton.Size = new System.Drawing.Size(75, 22);
-            this.projectPageAddHoursButton.TabIndex = 15;
-            this.projectPageAddHoursButton.Text = "Add Hours";
-            this.projectPageAddHoursButton.UseVisualStyleBackColor = false;
-            this.projectPageAddHoursButton.Click += new System.EventHandler(this.ProjectPageAddHoursButton_Click);
-            // 
             // projectPageNotesLabel
             // 
             this.projectPageNotesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
@@ -1223,6 +1210,7 @@
             // projectPagePanel1
             // 
             this.projectPagePanel1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.projectPagePanel1.Controls.Add(this.projectPageUpdateHoursButton);
             this.projectPagePanel1.Controls.Add(this.editLeaderButton);
             this.projectPagePanel1.Controls.Add(this.projectPageLeaderLNameBox);
             this.projectPagePanel1.Controls.Add(this.projectPageLeaderLabel);
@@ -1366,7 +1354,7 @@
             this.projectPageRemoveEmployeeButton.FlatAppearance.BorderSize = 0;
             this.projectPageRemoveEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.projectPageRemoveEmployeeButton.ForeColor = System.Drawing.Color.Snow;
-            this.projectPageRemoveEmployeeButton.Location = new System.Drawing.Point(98, 395);
+            this.projectPageRemoveEmployeeButton.Location = new System.Drawing.Point(140, 395);
             this.projectPageRemoveEmployeeButton.Name = "projectPageRemoveEmployeeButton";
             this.projectPageRemoveEmployeeButton.Size = new System.Drawing.Size(75, 22);
             this.projectPageRemoveEmployeeButton.TabIndex = 8;
@@ -2032,9 +2020,10 @@
             // adminMainPanel
             // 
             this.adminMainPanel.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.adminMainPanel.Controls.Add(this.adminClearButton);
+            this.adminMainPanel.Controls.Add(this.activeCheckBox);
             this.adminMainPanel.Controls.Add(this.adminHoursBox);
-            this.adminMainPanel.Controls.Add(this.adminNoteLabel);
-            this.adminMainPanel.Controls.Add(this.adminRemoveUserButton);
+            this.adminMainPanel.Controls.Add(this.adminPasswordButton);
             this.adminMainPanel.Controls.Add(this.adminUpdateUserButton);
             this.adminMainPanel.Controls.Add(this.adminSelectUserButton);
             this.adminMainPanel.Controls.Add(this.adminAddUserButton);
@@ -2058,6 +2047,30 @@
             this.adminMainPanel.Size = new System.Drawing.Size(882, 438);
             this.adminMainPanel.TabIndex = 0;
             // 
+            // adminClearButton
+            // 
+            this.adminClearButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.adminClearButton.FlatAppearance.BorderSize = 0;
+            this.adminClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminClearButton.ForeColor = System.Drawing.Color.White;
+            this.adminClearButton.Location = new System.Drawing.Point(803, 31);
+            this.adminClearButton.Name = "adminClearButton";
+            this.adminClearButton.Size = new System.Drawing.Size(50, 23);
+            this.adminClearButton.TabIndex = 25;
+            this.adminClearButton.Text = "Clear";
+            this.adminClearButton.UseVisualStyleBackColor = false;
+            this.adminClearButton.Click += new System.EventHandler(this.AdminClearButton_Click);
+            // 
+            // activeCheckBox
+            // 
+            this.activeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activeCheckBox.Location = new System.Drawing.Point(656, 42);
+            this.activeCheckBox.Name = "activeCheckBox";
+            this.activeCheckBox.Size = new System.Drawing.Size(150, 24);
+            this.activeCheckBox.TabIndex = 24;
+            this.activeCheckBox.Text = "Is User Active?";
+            this.activeCheckBox.UseVisualStyleBackColor = true;
+            // 
             // adminHoursBox
             // 
             this.adminHoursBox.Location = new System.Drawing.Point(446, 100);
@@ -2065,27 +2078,19 @@
             this.adminHoursBox.Size = new System.Drawing.Size(201, 20);
             this.adminHoursBox.TabIndex = 23;
             // 
-            // adminNoteLabel
+            // adminPasswordButton
             // 
-            this.adminNoteLabel.Location = new System.Drawing.Point(656, 252);
-            this.adminNoteLabel.Name = "adminNoteLabel";
-            this.adminNoteLabel.Size = new System.Drawing.Size(200, 160);
-            this.adminNoteLabel.TabIndex = 22;
-            this.adminNoteLabel.Text = resources.GetString("adminNoteLabel.Text");
-            // 
-            // adminRemoveUserButton
-            // 
-            this.adminRemoveUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.adminRemoveUserButton.FlatAppearance.BorderSize = 0;
-            this.adminRemoveUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminRemoveUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminRemoveUserButton.Location = new System.Drawing.Point(656, 222);
-            this.adminRemoveUserButton.Name = "adminRemoveUserButton";
-            this.adminRemoveUserButton.Size = new System.Drawing.Size(200, 23);
-            this.adminRemoveUserButton.TabIndex = 21;
-            this.adminRemoveUserButton.Text = "Remove User";
-            this.adminRemoveUserButton.UseVisualStyleBackColor = false;
-            this.adminRemoveUserButton.Click += new System.EventHandler(this.AdminRemoveUserButton_Click);
+            this.adminPasswordButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.adminPasswordButton.FlatAppearance.BorderSize = 0;
+            this.adminPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminPasswordButton.ForeColor = System.Drawing.Color.White;
+            this.adminPasswordButton.Location = new System.Drawing.Point(656, 134);
+            this.adminPasswordButton.Name = "adminPasswordButton";
+            this.adminPasswordButton.Size = new System.Drawing.Size(200, 23);
+            this.adminPasswordButton.TabIndex = 21;
+            this.adminPasswordButton.Text = "Reset Password";
+            this.adminPasswordButton.UseVisualStyleBackColor = false;
+            this.adminPasswordButton.Click += new System.EventHandler(this.AdminResetPasswordButton_Click);
             // 
             // adminUpdateUserButton
             // 
@@ -2093,7 +2098,7 @@
             this.adminUpdateUserButton.FlatAppearance.BorderSize = 0;
             this.adminUpdateUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminUpdateUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminUpdateUserButton.Location = new System.Drawing.Point(656, 193);
+            this.adminUpdateUserButton.Location = new System.Drawing.Point(447, 134);
             this.adminUpdateUserButton.Name = "adminUpdateUserButton";
             this.adminUpdateUserButton.Size = new System.Drawing.Size(200, 23);
             this.adminUpdateUserButton.TabIndex = 20;
@@ -2107,7 +2112,7 @@
             this.adminSelectUserButton.FlatAppearance.BorderSize = 0;
             this.adminSelectUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminSelectUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminSelectUserButton.Location = new System.Drawing.Point(656, 165);
+            this.adminSelectUserButton.Location = new System.Drawing.Point(237, 134);
             this.adminSelectUserButton.Name = "adminSelectUserButton";
             this.adminSelectUserButton.Size = new System.Drawing.Size(200, 23);
             this.adminSelectUserButton.TabIndex = 19;
@@ -2121,7 +2126,7 @@
             this.adminAddUserButton.FlatAppearance.BorderSize = 0;
             this.adminAddUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminAddUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminAddUserButton.Location = new System.Drawing.Point(656, 136);
+            this.adminAddUserButton.Location = new System.Drawing.Point(26, 134);
             this.adminAddUserButton.Name = "adminAddUserButton";
             this.adminAddUserButton.Size = new System.Drawing.Size(200, 23);
             this.adminAddUserButton.TabIndex = 18;
@@ -2132,7 +2137,7 @@
             // adminCheckBox
             // 
             this.adminCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminCheckBox.Location = new System.Drawing.Point(685, 32);
+            this.adminCheckBox.Location = new System.Drawing.Point(656, 19);
             this.adminCheckBox.Name = "adminCheckBox";
             this.adminCheckBox.Size = new System.Drawing.Size(150, 24);
             this.adminCheckBox.TabIndex = 16;
@@ -2260,12 +2265,12 @@
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.MenuBar;
             this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.adminEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.adminEmployeeGrid.Location = new System.Drawing.Point(26, 135);
+            this.adminEmployeeGrid.Location = new System.Drawing.Point(26, 166);
             this.adminEmployeeGrid.Name = "adminEmployeeGrid";
             this.adminEmployeeGrid.RowTemplate.ReadOnly = true;
             this.adminEmployeeGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.adminEmployeeGrid.ShowEditingIcon = false;
-            this.adminEmployeeGrid.Size = new System.Drawing.Size(620, 285);
+            this.adminEmployeeGrid.Size = new System.Drawing.Size(830, 254);
             this.adminEmployeeGrid.TabIndex = 17;
             this.adminEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdminEmployeeGrid_CellContentClick);
             // 
@@ -2432,6 +2437,32 @@
             this.changePasswordLabel.Text = "Change Password";
             this.changePasswordLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // projectHoursLabel2
+            // 
+            this.projectHoursLabel2.AutoSize = true;
+            this.projectHoursLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectHoursLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.projectHoursLabel2.Location = new System.Drawing.Point(44, 190);
+            this.projectHoursLabel2.Name = "projectHoursLabel2";
+            this.projectHoursLabel2.Size = new System.Drawing.Size(74, 20);
+            this.projectHoursLabel2.TabIndex = 27;
+            this.projectHoursLabel2.Text = "__ Hours";
+            // 
+            // projectPageUpdateHoursButton
+            // 
+            this.projectPageUpdateHoursButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.projectPageUpdateHoursButton.FlatAppearance.BorderSize = 0;
+            this.projectPageUpdateHoursButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.projectPageUpdateHoursButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectPageUpdateHoursButton.ForeColor = System.Drawing.Color.Snow;
+            this.projectPageUpdateHoursButton.Location = new System.Drawing.Point(55, 395);
+            this.projectPageUpdateHoursButton.Name = "projectPageUpdateHoursButton";
+            this.projectPageUpdateHoursButton.Size = new System.Drawing.Size(75, 22);
+            this.projectPageUpdateHoursButton.TabIndex = 22;
+            this.projectPageUpdateHoursButton.Text = "Update Hours";
+            this.projectPageUpdateHoursButton.UseVisualStyleBackColor = false;
+            this.projectPageUpdateHoursButton.Click += new System.EventHandler(this.ProjectPageUpdateHoursButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2440,6 +2471,7 @@
             this.ClientSize = new System.Drawing.Size(910, 571);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
+            this.Controls.Add(this.projectPageBG);
             this.Controls.Add(this.loginBG);
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.changePassBG);
@@ -2450,7 +2482,6 @@
             this.Controls.Add(this.reportsBG);
             this.Controls.Add(this.searchEmployeesBG);
             this.Controls.Add(this.employeePageBG);
-            this.Controls.Add(this.projectPageBG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -2564,7 +2595,6 @@
         private System.Windows.Forms.Button projectPageAddNotesButton;
         private System.Windows.Forms.Label projectPageNotesLabel;
         private System.Windows.Forms.Label projectPageStatusLabel;
-        private System.Windows.Forms.Button projectPageAddHoursButton;
         private System.Windows.Forms.Label projectPageHoursLabel;
         private System.Windows.Forms.Button projectPageAddEmployeeButton;
         private System.Windows.Forms.Button projectPageRemoveEmployeeButton;
@@ -2622,7 +2652,7 @@
         private System.Windows.Forms.TextBox adminLNameBox;
         private System.Windows.Forms.TextBox adminFNameBox;
         private System.Windows.Forms.TextBox adminEmployeeIDBox;
-        private System.Windows.Forms.Button adminRemoveUserButton;
+        private System.Windows.Forms.Button adminPasswordButton;
         private System.Windows.Forms.Button adminUpdateUserButton;
         private System.Windows.Forms.Button adminSelectUserButton;
         private System.Windows.Forms.Button adminAddUserButton;
@@ -2630,7 +2660,6 @@
         private System.Windows.Forms.CheckBox adminCheckBox;
         private System.Windows.Forms.Label adminHoursLabel;
         private System.Windows.Forms.Label adminPhoneLabel;
-        private System.Windows.Forms.Label adminNoteLabel;
         private System.Windows.Forms.Label searchProjectLabel;
         private System.Windows.Forms.RadioButton projectLeaderRadioButton;
         private System.Windows.Forms.RadioButton projectDescriptionRadioButton;
@@ -2697,6 +2726,10 @@
         private System.Windows.Forms.Label currentPassLabel;
         private System.Windows.Forms.Label changePasswordLabel;
         private System.Windows.Forms.Label resetPassExitLabel;
+        private System.Windows.Forms.CheckBox activeCheckBox;
+        private System.Windows.Forms.Button adminClearButton;
+        private System.Windows.Forms.Label projectHoursLabel2;
+        private System.Windows.Forms.Button projectPageUpdateHoursButton;
     }
 }
 
