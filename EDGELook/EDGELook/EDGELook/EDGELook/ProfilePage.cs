@@ -269,7 +269,7 @@ namespace EDGELook
             }
             else
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO Vacation VALUES(" + eID + ", '" + startDate + "','" + endDate + "');", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Vacation VALUES('" + eID + "', '" + startDate + "','" + endDate + "');", conn);
                 cmd.ExecuteNonQuery();                
                 MessageBox.Show("Vacation Days Created");
             }
@@ -279,7 +279,7 @@ namespace EDGELook
         public void RemoveVacation(String startDate)
         {
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = " + eID + " AND startDate = '" + startDate + "';", conn);
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = '" + eID + "' AND startDate = '" + startDate + "';", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }//end remove vacation
