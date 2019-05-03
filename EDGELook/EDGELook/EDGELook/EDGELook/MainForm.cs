@@ -40,26 +40,26 @@ namespace EDGELook
         {
             InitializeComponent();
             //setup page classes and connections
-            //dbconn = new DBConn();
-            //conn = dbconn.Dbsetup();
+            dbconn = new DBConn();
+            conn = dbconn.Dbsetup();
 
-            //login = new LoginPage();
-            //login.Setup(conn);
+            login = new LoginPage();
+            login.Setup(conn);
 
-            //passPage = new PasswordPage();
-            //passPage.Setup(conn);
+            passPage = new PasswordPage();
+            passPage.Setup(conn);
 
-            //profile = new ProfilePage();
-            //profile.Setup(conn, eID);
+            profile = new ProfilePage();
+            profile.Setup(conn, eID);
 
-            //report = new ReportPage();
-            //report.Setup(conn);
+            report = new ReportPage();
+            report.Setup(conn);
 
-            //edit = new ProjectPage();
-            //edit.Setup(conn);
+            edit = new ProjectPage();
+            edit.Setup(conn);
 
-            //employee = new EmployeePage();
-            //employee.Setup(conn);
+            employee = new EmployeePage();
+            employee.Setup(conn);
         } //end MainForm
 
         //BUTTONS
@@ -73,10 +73,6 @@ namespace EDGELook
             login.Setup(conn);
             employee = new EmployeePage();
             employee.Setup(conn);
-            //emailBox.Text = "iris@yahoo.com";
-            //passBox.Text = "******";
-            //emailBox.Text = "valeriykutsar18@gmail.com";
-            //passBox.Text = "goodpass";
             this.eID = login.Login(emailBox, passBox);
             int success;
             if (eID == null)
