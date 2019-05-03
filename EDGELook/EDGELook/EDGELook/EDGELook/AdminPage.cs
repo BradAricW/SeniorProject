@@ -88,15 +88,13 @@ namespace EDGELook
                 }
                 else
                 {
-                    //String insertEmp = "INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "', SHA2('" + defaultPassword + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');";
-                    //MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
                     if (eID == null)
                     {
                         MessageBox.Show("Enter an employee ID");
                     }
                     else
                     {
-                        string insertEmp = "INSERT INTO Employee VALUES (?val1, ?val2, ?val3, ?val4, ?val5, ?val6, ?val7, ?val8, ?val9);";
+                        String insertEmp = "INSERT INTO Employee VALUES (?val1, ?val2, ?val3, ?val4, ?val5, ?val6, ?val7, ?val8, ?val9);";
                         MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
                         cmd.Parameters.AddWithValue("?val1", eID);
                         cmd.Parameters.AddWithValue("?val2", fname);
