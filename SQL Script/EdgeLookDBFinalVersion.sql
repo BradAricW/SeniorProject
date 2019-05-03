@@ -1,5 +1,5 @@
 create table Employee (
-	employeeID int NOT NULL,
+	employeeID varchar(11) NOT NULL,
     fname varchar(30),
 	lname varchar(30),
     email varchar(50),
@@ -12,7 +12,7 @@ create table Employee (
     
 create table Project (
 	prjNo varchar(30) NOT NULL,
-    prjLeader int,
+    prjLeader varchar(11),
     description varchar(255),
     deliverables varchar(255),
     hoursNeeded int,
@@ -21,7 +21,7 @@ create table Project (
     foreign key (prjLeader) references Employee (employeeID));
     
 create table WorksOn (
-	employeeID int NOT NULL,
+	employeeID varchar(11) NOT NULL,
     prjNo varchar(30) NOT NULL,
 	hours int,
     primary key(employeeID, prjNo),
@@ -37,7 +37,7 @@ create table ProjectPhase (
 	foreign key(prjNo) references Project(prjNo));
     
 create table Notes (
-	employeeID int NOT NULL,
+	employeeID varchar(11) NOT NULL,
     prjNo varchar(30) NOT NULL,
 	nDate varchar(30) NOT NULL,
     notes varchar(255),
@@ -46,12 +46,12 @@ create table Notes (
     foreign key(prjNo) references Project(prjNo));
     
 create table Vacation (
-	employeeID int NOT NULL,
+	employeeID varchar(11) NOT NULL,
     startDate date NOT NULL,
     endDate date,
     primary key(employeeID, startDate),
     foreign key(employeeID) references Employee(employeeID));
 	
-insert into Employee values(1, "Admin","Admin","admin@gmail.com","password","111-111-1111",0,1,1);
+insert into Employee values("1", "Admin","Admin","admin@gmail.com","password","111-111-1111",0,1,1);
     
  
