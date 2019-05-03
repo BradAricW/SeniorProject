@@ -25,96 +25,145 @@ namespace EDGELook
         //Display functions
         public void ListProjects(DataGridView projectsGrid)
         {
-            conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT P.prjNo AS 'Project #', P.Description, W.hours AS Hours FROM Project P, WorksOn W WHERE P.prjNo = W.prjNo AND W.employeeID = '" + this.eID + "';", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            projectsGrid.DataSource = table;
-            conn.Close();
+            try
+            {
+                conn.Open();
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT P.prjNo AS 'Project #', P.Description, W.hours AS Hours FROM Project P, WorksOn W WHERE P.prjNo = W.prjNo AND W.employeeID = '" + this.eID + "';", conn);
+                DataTable table = new DataTable();
+                da.Fill(table);
+                projectsGrid.DataSource = table;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }//end list projects
 
         public void ListVacations(DataGridView vacationGrid)
         {
-            conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT startDate AS Start, endDate AS End FROM Vacation WHERE employeeID = '" + this.eID + "';", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            vacationGrid.DataSource = table;
-            conn.Close();
+            try
+            {
+                conn.Open();
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT startDate AS Start, endDate AS End FROM Vacation WHERE employeeID = '" + this.eID + "';", conn);
+                DataTable table = new DataTable();
+                da.Fill(table);
+                vacationGrid.DataSource = table;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }//end list vacations
 
         public void GetHours(TextBox hoursBox)
         {
-            conn.Open();
-            String getHours = "SELECT hoursAvail FROM Employee WHERE employeeID = '" + this.eID + "';";
-            MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                hoursBox.Text = reader.GetString("hoursAvail");
+                conn.Open();
+                String getHours = "SELECT hoursAvail FROM Employee WHERE employeeID = '" + this.eID + "';";
+                MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    hoursBox.Text = reader.GetString("hoursAvail");
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         } //end get hours
 
         public void GetEmail(TextBox emailBox)
         {
-            conn.Open();
-            String getEmail = "SELECT email FROM Employee WHERE employeeID = '" + this.eID + "';";
-            MySqlCommand cmd = new MySqlCommand(getEmail, this.conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                emailBox.Text = reader.GetString("email");
+                conn.Open();
+                String getEmail = "SELECT email FROM Employee WHERE employeeID = '" + this.eID + "';";
+                MySqlCommand cmd = new MySqlCommand(getEmail, this.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    emailBox.Text = reader.GetString("email");
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         } //end get email
 
         public void GetPhone(TextBox phoneBox)
         {
-            conn.Open();
-            String getPhone = "SELECT phone FROM Employee WHERE employeeID = '" + this.eID + "';";
-            MySqlCommand cmd = new MySqlCommand(getPhone, this.conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                phoneBox.Text = reader.GetString("phone");
+                conn.Open();
+                String getPhone = "SELECT phone FROM Employee WHERE employeeID = '" + this.eID + "';";
+                MySqlCommand cmd = new MySqlCommand(getPhone, this.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    phoneBox.Text = reader.GetString("phone");
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }//end get phone
 
         public void GetName(TextBox fName, TextBox lName)
         {
-            conn.Open();
-            String getFirst = "SELECT fname FROM Employee WHERE employeeID = '" + this.eID + "';";
-            MySqlCommand cmd = new MySqlCommand(getFirst, this.conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                fName.Text = reader.GetString("fname");
+                conn.Open();
+                String getFirst = "SELECT fname FROM Employee WHERE employeeID = '" + this.eID + "';";
+                MySqlCommand cmd = new MySqlCommand(getFirst, this.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    fName.Text = reader.GetString("fname");
+                }
+                reader.Close();
+                String getLast = "SELECT lname FROM Employee WHERE employeeID = '" + this.eID + "';";
+                cmd = new MySqlCommand(getLast, this.conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    lName.Text = reader.GetString("lname");
+                }
+                conn.Close();
             }
-            reader.Close();
-            String getLast = "SELECT lname FROM Employee WHERE employeeID = '" + this.eID + "';";
-            cmd = new MySqlCommand(getLast, this.conn);
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
+            catch (Exception ex)
             {
-                lName.Text = reader.GetString("lname");
+                Console.WriteLine(ex.Message);
             }
-            conn.Close();
         } //end get name
 
         public Boolean GetAdmin()
         {
             Boolean isAdmin = false;
             int result = 0;
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT admin FROM Employee WHERE employeeID = '" + this.eID + "';", conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                result = reader.GetInt16("admin");
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT admin FROM Employee WHERE employeeID = '" + this.eID + "';", conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    result = reader.GetInt16("admin");
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             if (result == 1)
             {
                 isAdmin = true;
@@ -125,14 +174,21 @@ namespace EDGELook
         public int GetProjHours(String prjNo)
         {
             int hours = 0;
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT hours FROM WorksOn WHERE prjNo = '" + prjNo + "' AND employeeID = '" + this.eID + "';", conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                hours = reader.GetInt16("hours");
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT hours FROM WorksOn WHERE prjNo = '" + prjNo + "' AND employeeID = '" + this.eID + "';", conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    hours = reader.GetInt16("hours");
+                }
+                conn.Close();
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             return hours;
         }//end get project hours
 
@@ -148,10 +204,17 @@ namespace EDGELook
 
             if (empHours >= 0)
             {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "'WHERE employeeID = '" + this.eID + "';", conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                try
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "'WHERE employeeID = '" + this.eID + "';", conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 MessageBox.Show("Hours Updated");
             }
             else
@@ -171,74 +234,81 @@ namespace EDGELook
             int currHours = GetProjHours(pid);
 
             int hoursNeeded = 0;
-            conn.Open();
-            String getHoursNeeded = "SELECT hoursNeeded FROM Project WHERE prjNo = '" + pid + "';";
-            MySqlCommand cmd = new MySqlCommand(getHoursNeeded, this.conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                hoursNeeded = reader.GetInt16("hoursNeeded");
-            }
-            reader.Close();
-
-            String getEmpHours = "SELECT hoursAvail FROM Employee WHERE employeeID = '" + this.eID + "';";
-            MySqlCommand cmdSet = new MySqlCommand(getEmpHours, this.conn);
-            MySqlDataReader reader2 = cmdSet.ExecuteReader();
-            while (reader2.Read())
-            {
-                empHours = reader2.GetInt16("hoursAvail");
-            }
-            reader2.Close();
-
-            if ((empHours + currHours) >= prjHours || prjHours <= currHours)
-            {
-                if (prjHours <= hoursNeeded || prjHours <= currHours)
+                conn.Open();
+                String getHoursNeeded = "SELECT hoursNeeded FROM Project WHERE prjNo = '" + pid + "';";
+                MySqlCommand cmd = new MySqlCommand(getHoursNeeded, this.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    MySqlCommand cmd1 = new MySqlCommand("UPDATE WorksOn SET hours = '" + prjHours + "' WHERE employeeID = '" + eID + "' AND prjNo = '" + pid + "';", conn);
-                    cmd1.ExecuteNonQuery();
+                    hoursNeeded = reader.GetInt16("hoursNeeded");
+                }
+                reader.Close();
 
-                    empHours += currHours - prjHours;
-                    
-                    MySqlCommand cmd2 = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "' WHERE employeeID = '" + eID + "';", conn);
-                    cmd2.ExecuteNonQuery();
+                String getEmpHours = "SELECT hoursAvail FROM Employee WHERE employeeID = '" + this.eID + "';";
+                MySqlCommand cmdSet = new MySqlCommand(getEmpHours, this.conn);
+                MySqlDataReader reader2 = cmdSet.ExecuteReader();
+                while (reader2.Read())
+                {
+                    empHours = reader2.GetInt16("hoursAvail");
+                }
+                reader2.Close();
 
-                    hoursNeeded += currHours - prjHours;
-                    MySqlCommand cmd3 = new MySqlCommand("UPDATE Project SET hoursNeeded = '" + hoursNeeded + "' WHERE prjNo = '" + pid + "';", conn);
-                    cmd3.ExecuteNonQuery();
-
-                    MessageBox.Show("Hours Updated");
-
-                    if (prjHours == 0)
+                if ((empHours + currHours) >= prjHours || prjHours <= currHours)
+                {
+                    if (prjHours <= hoursNeeded || prjHours <= currHours)
                     {
-                        String checkEmpID = "";
-                        String checkID = "SELECT prjLeader FROM Project WHERE prjNo  = '" + pid + "' ;";
-                        MySqlCommand cmd0 = new MySqlCommand(checkID, this.conn);
-                        MySqlDataReader reader0 = cmd0.ExecuteReader();
-                        while (reader0.Read())
+                        MySqlCommand cmd1 = new MySqlCommand("UPDATE WorksOn SET hours = '" + prjHours + "' WHERE employeeID = '" + eID + "' AND prjNo = '" + pid + "';", conn);
+                        cmd1.ExecuteNonQuery();
+
+                        empHours += currHours - prjHours;
+
+                        MySqlCommand cmd2 = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "' WHERE employeeID = '" + eID + "';", conn);
+                        cmd2.ExecuteNonQuery();
+
+                        hoursNeeded += currHours - prjHours;
+                        MySqlCommand cmd3 = new MySqlCommand("UPDATE Project SET hoursNeeded = '" + hoursNeeded + "' WHERE prjNo = '" + pid + "';", conn);
+                        cmd3.ExecuteNonQuery();
+
+                        MessageBox.Show("Hours Updated");
+
+                        if (prjHours == 0)
                         {
-                            checkEmpID = reader0.GetString("prjLeader");
+                            String checkEmpID = "";
+                            String checkID = "SELECT prjLeader FROM Project WHERE prjNo  = '" + pid + "' ;";
+                            MySqlCommand cmd0 = new MySqlCommand(checkID, this.conn);
+                            MySqlDataReader reader0 = cmd0.ExecuteReader();
+                            while (reader0.Read())
+                            {
+                                checkEmpID = reader0.GetString("prjLeader");
+                            }
+                            reader0.Close();
+                            if (checkEmpID != this.eID)
+                            {
+                                cmd = new MySqlCommand("DELETE FROM WorksOn WHERE employeeID = '" + this.eID + "' AND prjNo = '" + this.eID + "';", conn);
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("0 Hours Assigned. Removed From Project");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Hours set to 0, but you are Project Leader and cannot be deleted from project.");
+                            }
                         }
-                        reader0.Close();
-                        if (checkEmpID != this.eID)
-                        {
-                            cmd = new MySqlCommand("DELETE FROM WorksOn WHERE employeeID = '" + this.eID + "' AND prjNo = '" + this.eID + "';", conn);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("0 Hours Assigned. Removed From Project");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Hours set to 0, but you are Project Leader and cannot be deleted from project.");
-                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("This project only requires " + hoursNeeded + " hours.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("This project only requires " + hoursNeeded + " hours.");
+                    MessageBox.Show("Invalid Input");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Invalid Input");
+                Console.WriteLine(ex.Message);
             }
             conn.Close();
         }//end edit project hours
@@ -252,36 +322,49 @@ namespace EDGELook
             String startDate = newStartDate.Text;
             String endDate = newEndDate.Text;
             conn.Open();
+            try
+            {
+                String dupId = null;
+                String getVacDup = "SELECT  employeeID FROM Vacation WHERE employeeID = '" + this.eID + "' AND startDate = '" + startDate + "';";
+                MySqlCommand cmd1 = new MySqlCommand(getVacDup, this.conn);
+                MySqlDataReader reader = cmd1.ExecuteReader();
+                while (reader.Read())
+                {
+                    dupId = reader.GetString("employeeID");
+                }
+                reader.Close();
 
-            String dupId = null;
-            String getVacDup = "SELECT  employeeID FROM Vacation WHERE employeeID = '" + this.eID + "' AND startDate = '" + startDate + "';";
-            MySqlCommand cmd1 = new MySqlCommand(getVacDup, this.conn);
-            MySqlDataReader reader = cmd1.ExecuteReader();
-            while (reader.Read())
-            {
-                dupId = reader.GetString("employeeID");
+                if (dupId != null)
+                {
+                    MessageBox.Show("Duplicate Vacation");
+                }
+                else
+                {
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO Vacation VALUES('" + eID + "', '" + startDate + "','" + endDate + "');", conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Vacation Days Created");
+                }
+                conn.Close();
             }
-            reader.Close();
-
-            if (dupId != null)
+            catch (Exception ex)
             {
-                MessageBox.Show("Duplicate Vacation");
+                Console.WriteLine(ex.Message);
             }
-            else
-            {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO Vacation VALUES('" + eID + "', '" + startDate + "','" + endDate + "');", conn);
-                cmd.ExecuteNonQuery();                
-                MessageBox.Show("Vacation Days Created");
-            }
-            conn.Close();
         } //end edit vacation
 
         public void RemoveVacation(String startDate)
         {
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = '" + eID + "' AND startDate = '" + startDate + "';", conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = '" + eID + "' AND startDate = '" + startDate + "';", conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }//end remove vacation
 
         public void EditContact(TextBox emailBox, TextBox phoneBox, TextBox fnameBox, TextBox lnameBox)
@@ -290,10 +373,17 @@ namespace EDGELook
             String emailAdd = emailBox.Text;
             String fname = fnameBox.Text;
             String lname = lnameBox.Text;
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET phone = '" + phoneNum + "', email = '" + emailAdd + "', fname = '" + fname + "', lname = '" + lname + "' WHERE employeeID = '" + this.eID + "';", conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET phone = '" + phoneNum + "', email = '" + emailAdd + "', fname = '" + fname + "', lname = '" + lname + "' WHERE employeeID = '" + this.eID + "';", conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             MessageBox.Show("Contact Information Updated");
         }//end edit contact info
 
