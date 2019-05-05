@@ -26,7 +26,7 @@ namespace EDGELook
             try
             {
                 conn.Open();
-                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM Vacation;", conn);
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.fname, E.lname, V.startDate, V.endDate, V.status FROM Vacation V, Employee E WHERE E.employeeID = V.employeeID;", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 vacationGrid.DataSource = table;

@@ -249,6 +249,8 @@ namespace EDGELook
                 projectDesc = projectPageDescriptionBox.Text;
                 projectDeliverables = projectPageDeliverablesBox.Text;
                 projectHours = (int)projectPageHoursBox.Value;
+                int projectComplete = 0;
+                int defaultHours = 0;
                 try
                 {
                     conn.Open();
@@ -280,13 +282,22 @@ namespace EDGELook
                         else
                         {
 
-                            String addProject = ("INSERT INTO Project VALUES ('" + projectID + "', '" + eID + "', '" + projectDesc + "', '" + projectDeliverables + "', '" + projectHours + "', 0);");
+                            String addProject = ("INSERT INTO Project VALUES (?val1, ?val2, ?val3, ?val4, ?val5, ?val6);");
                             MySqlCommand cmd = new MySqlCommand(addProject, conn);
+                            cmd.Parameters.AddWithValue("?val1", projectID);
+                            cmd.Parameters.AddWithValue("?val2", eID);
+                            cmd.Parameters.AddWithValue("?val3", projectDesc);
+                            cmd.Parameters.AddWithValue("?val4", projectDeliverables);
+                            cmd.Parameters.AddWithValue("?val5", projectHours);
+                            cmd.Parameters.AddWithValue("?val6", projectComplete);                       
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Project Added");
 
-                            String addLeader = ("INSERT INTO WorksOn VALUES ('" + eID + "', " + "'" + projectID + "', 0);");
+                            String addLeader = ("INSERT INTO WorksOn VALUES (?val7, ?val8, ?val9);");
                             MySqlCommand cmd2 = new MySqlCommand(addLeader, conn);
+                            cmd2.Parameters.AddWithValue("?val7", eID);
+                            cmd2.Parameters.AddWithValue("?val8", projectID);
+                            cmd2.Parameters.AddWithValue("?val9", defaultHours);
                             cmd2.ExecuteNonQuery();
                         }
                         SetFlag(1);
@@ -305,11 +316,15 @@ namespace EDGELook
         {
             //Don't need validation here because NOW() will always make the entry unique
             String pid = projectPagePNumBox.Text;
+            String notesText = projectPageNotesBox.Text;           
             try
             {
                 conn.Open();
-                String notes = "INSERT INTO Notes (employeeID, prjNo, nDate, notes) VALUES (" + eID + ", '" + pid + "', NOW(), '" + projectPageNotesBox.Text + "'); ";
+                String notes = "INSERT INTO Notes VALUES (?val1, ?val2, NOW(), ?val3); ";
                 MySqlCommand cmd = new MySqlCommand(notes, conn);
+                cmd.Parameters.AddWithValue("?val1", eID);
+                cmd.Parameters.AddWithValue("?val2", pid);
+                cmd.Parameters.AddWithValue("?val3", notesText);
                 cmd.ExecuteNonQuery();
                 projectPageNotesBox.Text = "";
                 conn.Close();
@@ -410,8 +425,11 @@ namespace EDGELook
                         }
                         else
                         {
-                            String setMyID = "INSERT INTO WorksOn VALUES ('" + empID + "','" + projectID + "'," + prjHours + ");";
+                            String setMyID = "INSERT INTO WorksOn VALUES (?val1, ?val2, ?val3);";
                             cmd = new MySqlCommand(setMyID, this.conn);
+                            cmd.Parameters.AddWithValue("?val1", empID);
+                            cmd.Parameters.AddWithValue("?val2", projectID);
+                            cmd.Parameters.AddWithValue("?val3", prjHours);                           
                             cmd.ExecuteNonQuery();
                         }
 
@@ -570,8 +588,12 @@ namespace EDGELook
                         }
                         else
                         {
-                            String addProjectPhase = "INSERT INTO ProjectPhase Values('" + projectID + "','" + projectPhase + "','" + projectDueDates + "','" + projectStatus + "');";
+                            String addProjectPhase = "INSERT INTO ProjectPhase VALUES (?val1, ?val2, ?val3, ?val4);";
                             MySqlCommand cmd2 = new MySqlCommand(addProjectPhase, conn);
+                            cmd2.Parameters.AddWithValue("?val1", projectID);
+                            cmd2.Parameters.AddWithValue("?val2", projectPhase);
+                            cmd2.Parameters.AddWithValue("?val3", projectDueDates);
+                            cmd2.Parameters.AddWithValue("?val4", projectStatus);                            
                             cmd2.ExecuteNonQuery();
                             MessageBox.Show("Phase " + projectPhase + " Created");
                         }

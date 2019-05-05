@@ -45,7 +45,7 @@ namespace EDGELook
             try
             {
                 conn.Open();
-                MySqlDataAdapter da = new MySqlDataAdapter("SELECT startDate AS Start, endDate AS End FROM Vacation WHERE employeeID = '" + this.eID + "';", conn);
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT startDate AS Start, endDate AS End, status as Status FROM Vacation WHERE employeeID = '" + this.eID + "';", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 vacationGrid.DataSource = table;
@@ -321,6 +321,7 @@ namespace EDGELook
             newEndDate.CustomFormat = "yyyy-MM-dd";
             String startDate = newStartDate.Text;
             String endDate = newEndDate.Text;
+            String defaultStatus = "Pending";
             conn.Open();
             try
             {
@@ -340,10 +341,11 @@ namespace EDGELook
                 }
                 else
                 {
-                    MySqlCommand cmd = new MySqlCommand("INSERT into Vacation VALUES(?val1, ?val2, ?val3)", conn);
+                    MySqlCommand cmd = new MySqlCommand("INSERT into Vacation VALUES(?val1, ?val2, ?val3, ?val4)", conn);
                     cmd.Parameters.AddWithValue("?val1", eID);
                     cmd.Parameters.AddWithValue("?val2", startDate);
                     cmd.Parameters.AddWithValue("?val3", endDate);
+                    cmd.Parameters.AddWithValue("?val4", defaultStatus);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Vacation Days Created");
                 }

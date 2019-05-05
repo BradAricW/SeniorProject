@@ -77,51 +77,59 @@ namespace EDGELook
         {
             String email = resetBox.Text;
             String newPass = RandomPassword();
-            conn.Open();
-
-            String testEmail = null;
-            String getEmail = "SELECT email FROM Employee WHERE email = '" + email + "';";
-            MySqlCommand cmd = new MySqlCommand(getEmail, this.conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                testEmail = reader.GetString("email");
-            }
-            reader.Close();
+                conn.Open();
 
-            if (testEmail != null)
-            {
-
-                try
+                String testEmail = null;
+                String getEmail = "SELECT email FROM Employee WHERE email = '" + email + "';";
+                MySqlCommand cmd = new MySqlCommand(getEmail, this.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    MailMessage mail = new MailMessage();
-                    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-
-                    mail.From = new MailAddress("edgelookserver@gmail.com");
-                    mail.To.Add(email);
-                    mail.Subject = "Password Reset";
-                    mail.Body = "Your temporary EdgeLook password is: " + newPass + "\nPlease change password after next login. \n\nIf you did not request a reset, or if issues persist, please contact your system administrator.";
-
-                    SmtpServer.Port = 587;
-                    SmtpServer.Credentials = new System.Net.NetworkCredential("edgelookserver@gmail.com", "edgeLook1!");
-                    SmtpServer.EnableSsl = true;
-
-                    SmtpServer.Send(mail);
-                    MessageBox.Show("New Password Sent");
-
-                    cmd = new MySqlCommand("UPDATE Employee SET pssword = '" + newPass + "' WHERE email = '" + email + "';", conn);
-                    cmd.ExecuteReader();
+                    testEmail = reader.GetString("email");
                 }
-                catch (Exception ex)
+                reader.Close();
+
+                if (testEmail != null)
                 {
-                    MessageBox.Show(ex.ToString());
+
+                    try
+                    {
+                        MailMessage mail = new MailMessage();
+                        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                        mail.From = new MailAddress("edgelookserver@gmail.com");
+                        mail.To.Add(email);
+                        mail.Subject = "Password Reset";
+                        mail.Body = "Your temporary EdgeLook password is: " + newPass + "\nPlease change password after next login. \n\nIf you did not request a reset, or if issues persist, please contact your system administrator.";
+
+                        SmtpServer.Port = 587;
+                        SmtpServer.Credentials = new System.Net.NetworkCredential("edgelookserver@gmail.com", "edgeLook1!");
+                        SmtpServer.EnableSsl = true;
+
+                        SmtpServer.Send(mail);
+                        MessageBox.Show("New Password Sent");
+
+                        cmd = new MySqlCommand("UPDATE Employee SET pssword = '" + newPass + "' WHERE email = '" + email + "';", conn);
+                        cmd.ExecuteReader();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("No such email.");
+                }
+                conn.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No such email.");
+                MessageBox.Show(ex.ToString());
             }
-            conn.Close();
+
         } //end reset password
 
         public String RandomPassword()
