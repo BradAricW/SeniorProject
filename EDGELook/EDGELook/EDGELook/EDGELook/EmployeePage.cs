@@ -168,7 +168,7 @@ namespace EDGELook
             try
             {
                 conn.Open();
-                MySqlDataAdapter da = new MySqlDataAdapter("SELECT startDate AS Start, endDate AS End FROM Vacation where employeeID = '" + this.eID + "';", conn);
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT startDate AS Start, endDate AS End, status as Status FROM Vacation where employeeID = '" + this.eID + "';", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 vacationGrid.DataSource = table;

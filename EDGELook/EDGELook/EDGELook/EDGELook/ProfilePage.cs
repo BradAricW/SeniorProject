@@ -305,12 +305,13 @@ namespace EDGELook
                 {
                     MessageBox.Show("Invalid Input");
                 }
+                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            conn.Close();
+            
         }//end edit project hours
 
         public void EditVacation(DateTimePicker newStartDate, DateTimePicker newEndDate)
@@ -321,10 +322,10 @@ namespace EDGELook
             newEndDate.CustomFormat = "yyyy-MM-dd";
             String startDate = newStartDate.Text;
             String endDate = newEndDate.Text;
-            String defaultStatus = "Pending";
-            conn.Open();
+            String defaultStatus = "Pending";           
             try
             {
+                conn.Open();
                 String dupId = null;
                 String getVacDup = "SELECT  employeeID FROM Vacation WHERE employeeID = '" + this.eID + "' AND startDate = '" + startDate + "';";
                 MySqlCommand cmd1 = new MySqlCommand(getVacDup, this.conn);
@@ -361,9 +362,23 @@ namespace EDGELook
         {
             try
             {
+                //They must double click to select, or maybe more
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = '" + eID + "' AND startDate = '" + startDate + "';", conn);
-                cmd.ExecuteNonQuery();
+                if (startDate == null)
+                {
+                    MessageBox.Show("Date not Selected");
+                }
+                else {
+                    string[] dateTime = startDate.Split(' ');
+                    string date = dateTime[0];
+                    string[] dateSeperated = date.Split('/');
+                    string month = dateSeperated[0];
+                    string day = dateSeperated[1];
+                    string year = dateSeperated[2];
+                    string newDateFormat = "" + year + "-" + month + "-" + day + "";
+                    MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = '" + eID + "' AND startDate = '" + newDateFormat + "';", conn);
+                    cmd.ExecuteNonQuery();
+                }
                 conn.Close();
             }
             catch (Exception ex)

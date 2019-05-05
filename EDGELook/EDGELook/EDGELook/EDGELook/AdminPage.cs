@@ -34,6 +34,13 @@ namespace EDGELook
                 Console.WriteLine(ex.Message);
             }
         } //end display employees
+        public void DisplayPendingVacation(DataGridView pendingVacations)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.fname, E.lname, V.startDate, V.endDate FROM Vacation V, Employee E WHERE E.employeeID = V.employeeID AND V.status = 'Pending';", conn);
+            DataTable table = new DataTable();
+            da.Fill(table);
+            pendingVacations.DataSource = table;
+        }
 
         //core functionality
         public void NewEmployee(TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox pass, NumericUpDown hours, CheckBox admin, CheckBox active)
@@ -155,6 +162,35 @@ namespace EDGELook
             }
             MessageBox.Show("Employee Updated");
         } //end update employee
+
+        public void UpdateVacationStatus(String approval, String selectedEID, String selectedDate) 
+        {
+            try
+            {               
+                conn.Open();
+                if (selectedDate == null)
+                {
+                    MessageBox.Show("Date not Selected");
+                }
+                else
+                {
+                    string[] dateTime = selectedDate.Split(' ');
+                    string date = dateTime[0];
+                    string[] dateSeperated = date.Split('/');
+                    string month = dateSeperated[0];
+                    string day = dateSeperated[1];
+                    string year = dateSeperated[2];
+                    string newDateFormat = "" + year + "-" + month + "-" + day + "";
+                    MySqlCommand cmd = new MySqlCommand("UPDATE Vacation SET status = '" + approval + "' WHERE employeeID = '" + selectedEID + "' AND startDate = '" + newDateFormat + "';", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
         public void SelectEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, NumericUpDown hours, CheckBox admin, CheckBox active)
         {
