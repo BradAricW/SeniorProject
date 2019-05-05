@@ -312,6 +312,35 @@ namespace EDGELook
 
         } // END EDITPROJECT
 
+        public void DeleteProject()
+        {
+            try
+            {
+                conn.Open();
+                String deleteWorksOn = "DELETE FROM WorksOn WHERE prjNo = '" + projectID + "';";
+                MySqlCommand cmd = new MySqlCommand(deleteWorksOn, conn);
+                cmd.ExecuteNonQuery();
+
+                String deleteNotes = "DELETE FROM Notes WHERE prjNo = '" + projectID + "';";
+                MySqlCommand cmd2 = new MySqlCommand(deleteNotes, conn);
+                cmd2.ExecuteNonQuery();
+
+                String deleteProjectPhase = "DELETE FROM ProjectPhase WHERE prjNo = '" + projectID + "';";
+                MySqlCommand cmd3 = new MySqlCommand(deleteProjectPhase, conn);
+                cmd3.ExecuteNonQuery();
+
+                String deleteProject = "DELETE FROM Project WHERE prjNo = '" + projectID + "';";
+                MySqlCommand cmd4 = new MySqlCommand(deleteProject, conn);
+                cmd4.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
         public void AddNotes(String eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
         {
             //Don't need validation here because NOW() will always make the entry unique
