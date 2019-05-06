@@ -67,12 +67,6 @@ namespace EDGELook
         //Login Buttons
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            dbconn = new DBConn();
-            conn = dbconn.Dbsetup();
-            login = new LoginPage();
-            login.Setup(conn);
-            employee = new EmployeePage();
-            employee.Setup(conn);
             this.eID = login.Login(emailBox, passBox);
             int success;
             if (eID == null)
