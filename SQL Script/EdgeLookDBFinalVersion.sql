@@ -51,6 +51,61 @@ create table Vacation (
     endDate date,
     primary key(employeeID, startDate),
     foreign key(employeeID) references Employee(employeeID));
+
+    DELIMITER ;;
+
+CREATE PROCEDURE `Employee_Search`(
+SearchValue varchar(45)
+)
+BEGIN
+Select E.employeeID, E.fname, E.lname
+FROM Employee E
+Where E.fname like CONCAT('%',SearchValue,'%') || E.lname like CONCAT('%',SearchValue,'%') || E.employeeID like CONCAT ('%',SearchValue,'%');
+END ;;
+DELIMITER ;
+
+DELIMITER ;;
+CREATE PROCEDURE `Project_Search`(
+SearchValue varchar(45)
+)
+BEGIN
+select DISTINCT  E.fname as 'Leader First Name', E.lname as 'Leader Last Name',P.Description, P.prjNo, P.prjComplete as 'Complete'
+from Project as P join Employee as E
+	on E.employeeID = P.prjLeader
+where 	P.prjNo like CONCAT('%', SearchValue,'%') || E.fname like CONCAT('%', SearchValue,'%')
+|| 	P.Description LIKE Concat('%', SearchValue, '%') || E.lname like CONCAT('%',SearchValue,'%');
+END ;;
+DELIMITER ;
+
+DELIMITER ;;
+CREATE PROCEDURE `Search_By_Description`(SearchValue varchar(45))
+BEGIN
+select DISTINCT  E.fname as 'Leader First Name', E.lname as 'Leader Last Name',P.Description, P.prjNo, P.prjComplete as 'Complete'
+from Project as P join Employee as E
+	on E.employeeID = P.prjLeader
+where P.Description LIKE Concat('%', SearchValue, '%');
+END ;;
+DELIMITER ;
+
+DELIMITER ;;
+CREATE PROCEDURE `Search_By_Lead`(SearchValue varchar(45))
+BEGIN
+select DISTINCT  E.fname as 'Leader First Name', E.lname as 'Leader Last Name',P.Description, P.prjNo, P.prjComplete as 'Complete'
+from Project as P join Employee as E
+	on E.employeeID = P.prjLeader
+where 	E.fname like CONCAT('%', SearchValue,'%');
+END ;;
+DELIMITER ;
+
+DELIMITER ;;
+CREATE PROCEDURE `Search_By_Project`(SearchValue varchar(45))
+BEGIN
+select DISTINCT  E.fname as 'Leader First Name', E.lname as 'Leader Last Name',P.Description, P.prjNo, P.prjComplete as 'Complete'
+from Project as P join Employee as E
+	on E.employeeID = P.prjLeader
+where 	P.prjNo like CONCAT('%', SearchValue,'%');
+END ;;
+DELIMITER ;
 	
 insert into Employee values("1", "Admin","Admin","admin@gmail.com","password","111-111-1111",0,1,1);
     
