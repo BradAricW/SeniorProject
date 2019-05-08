@@ -20,7 +20,6 @@ namespace EDGELook
         private String  projectDeliverables;
         private int     projectHours;
         private String  projectID;
-        private String notesPNum;
         private String leaderID, fName, lName;
 
         private MySqlConnection conn;
@@ -48,7 +47,7 @@ namespace EDGELook
         }//end edit ID
 
         //display functions (search project page)
-        public void ListProjects(DataGridView projectsGrid, String eID)
+        public void ListProjects(DataGridView projectsGrid)
         {
             conn.Open();
             try
@@ -79,7 +78,6 @@ namespace EDGELook
                 while (dr.Read())
                 {
                     projectPagePNumBox.Text = dr.GetString(0);
-                    notesPNum = dr.GetString(0);
                     leaderID = dr.GetString(1);
                     projectPageDescriptionBox.Text = dr.GetString(2);
                     projectPageDeliverablesBox.Text = dr.GetString(3);
@@ -149,7 +147,7 @@ namespace EDGELook
             conn.Open();
             try
             {
-                MySqlDataAdapter da = new MySqlDataAdapter("SELECT nDate AS Date, notes AS Notes FROM Notes WHERE prjNo = '" + notesPNum + "';", conn);
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT nDate AS Date, notes AS Notes FROM Notes WHERE prjNo = '" + projectID + "';", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 grid.DataSource = table;

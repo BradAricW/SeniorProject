@@ -120,6 +120,7 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = true;
             this.changePassBG.Visible = false;
+            this.projectPageRemoveProjectButton.Visible = false;
         } //end reset password button
 
         //Password Buttons
@@ -139,6 +140,7 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.projectPageRemoveProjectButton.Visible = false;
         } //end password reset button
 
         private void ChangeButton_Click(object sender, EventArgs e)
@@ -159,6 +161,7 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.projectPageRemoveProjectButton.Visible = false;
         } //end password change button
 
         private void ResetPassExitLabel_Click(object sender, EventArgs e)
@@ -175,6 +178,7 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.projectPageRemoveProjectButton.Visible = false;
         } //end reset pass exit button
 
         private void ChangePassExitLabel_Click(object sender, EventArgs e)
@@ -191,6 +195,7 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.projectPageRemoveProjectButton.Visible = false;
 
             profile.GetHours(profileHoursTextBox);
             profile.GetEmail(profileEmailTextBox);
@@ -216,6 +221,7 @@ namespace EDGELook
             this.reportsBG.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.projectPageRemoveProjectButton.Visible = false;
 
             //clear all data
             Clear();
@@ -235,6 +241,7 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.projectPageRemoveProjectButton.Visible = false;
             Clear();
 
             profile.GetHours(profileHoursTextBox);
@@ -259,9 +266,16 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+
+            isAdmin = profile.GetAdmin();
+            if (isAdmin == true)
+            {
+                this.projectPageRemoveProjectButton.Visible = true;
+            }
+
             Clear();
 
-            edit.ListProjects(projectsGrid, eID);
+            edit.ListProjects(projectsGrid);
         } //end project button
 
         private void EmployeesButton_Click(object sender, EventArgs e)
@@ -278,6 +292,7 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.projectPageRemoveProjectButton.Visible = false;
             Clear();
 
             employee.ListEmployees(searchEmployeesGrid, eID);
@@ -297,6 +312,7 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.projectPageRemoveProjectButton.Visible = false;
             Clear();
 
             report.ListProjects(weeklyReportGrid);
@@ -320,6 +336,7 @@ namespace EDGELook
                 this.adminBackPanel.Visible = true;
                 this.resetPassBG.Visible = false;
                 this.changePassBG.Visible = false;
+                this.projectPageRemoveProjectButton.Visible = false;
 
                 admin.DisplayEmployees(adminEmployeeGrid);
 
@@ -515,6 +532,25 @@ namespace EDGELook
             edit.ProjectSearch(searchProjectsTextBox.Text, projectsGrid, passable);
         }   //end project search button
 
+        private void ProjectPageRemoveProjectButton_Click(object sender, EventArgs e)
+        {
+            this.projectPageDeleteConfirmPanel.Visible = true;
+            this.projectDeleteNumBox.Text = testPrjNo;
+        } //end project page remove button
+
+        private void ProjectDeleteNoButton_Click(object sender, EventArgs e)
+        {
+            this.projectPageDeleteConfirmPanel.Visible = false;
+        } //end project no button
+
+        private void ProjectDeleteYesButton_Click(object sender, EventArgs e)
+        {
+            edit.EditID(testPrjNo);
+            edit.DeleteProject();
+            edit.ListProjects(projectsGrid);
+            this.projectPageDeleteConfirmPanel.Visible = false;
+        } //end project yes button
+
         //Project Page Buttons
         private void ProjectPageUpdateHoursButton_Click(object sender, EventArgs e)
         {
@@ -680,7 +716,7 @@ namespace EDGELook
         //GRIDS
 
         //profile grids
-        private void ProfileProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ProfileProjectGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (profileProjectGrid.SelectedCells.Count > 0)
             {
@@ -691,7 +727,7 @@ namespace EDGELook
             }
         } //end profile projects grid
 
-        private void VacationsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void VacationsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (vacationsGrid.SelectedCells.Count > 0)
             {
@@ -702,7 +738,6 @@ namespace EDGELook
         } //end profile vacations grid
 
         //project grids
-
         private void ProjectsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (projectsGrid.SelectedCells.Count > 0)
@@ -713,7 +748,7 @@ namespace EDGELook
             }
         } //end projects grid
 
-        private void ProjectPageAssignmentGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ProjectPageAssignmentGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (projectPageAssignmentGrid.SelectedCells.Count > 0)
             {
@@ -723,7 +758,7 @@ namespace EDGELook
             }
         } //end project page assignment grid
 
-        private void ProjectPageOnProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ProjectPageOnProjectGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (projectPageOnProjectGrid.SelectedCells.Count > 0)
             {
@@ -734,7 +769,7 @@ namespace EDGELook
             }
         } //end project page on project grid
 
-        private void PhasesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void PhasesGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (phasesGrid.SelectedCells.Count > 0)
             {
@@ -745,7 +780,7 @@ namespace EDGELook
         } //end project page phases grid
 
         //employee grids
-        private void SearchEmployeesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SearchEmployeesGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (searchEmployeesGrid.SelectedCells.Count > 0)
             {
@@ -756,7 +791,7 @@ namespace EDGELook
             }
         } //end search employees grid
                
-        private void EmployeeProjectGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void EmployeeProjectGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (employeeProjectGrid.SelectedCells.Count > 0)
             {
@@ -767,7 +802,7 @@ namespace EDGELook
         } //end employee project grid
 
         //admin grids
-        private void AdminEmployeeGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void AdminEmployeeGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
             if (adminEmployeeGrid.SelectedCells.Count > 0)
