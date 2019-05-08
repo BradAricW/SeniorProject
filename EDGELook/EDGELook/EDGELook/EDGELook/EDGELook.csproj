@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>edgeLogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -77,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -90,6 +94,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edgeLogoSmaller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminpanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="edgeicon.ico" />
+    <Content Include="edgeLogo.ico" />
+    <None Include="Resources\reportbutton.png" />
+    <None Include="Resources\stdbutton.png" />
+    <None Include="Resources\searchpanel.png" />
+    <None Include="Resources\clearbutton.png" />
+    <None Include="Resources\adminbuttons.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

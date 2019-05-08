@@ -172,6 +172,25 @@
             this.searchEmployeesLabel = new System.Windows.Forms.Label();
             this.searchProjectsBG = new System.Windows.Forms.Panel();
             this.searchProjectsLabel = new System.Windows.Forms.Label();
+            this.adminBackPanel = new System.Windows.Forms.Panel();
+            this.resetPassBG = new System.Windows.Forms.Panel();
+            this.resetPanel = new System.Windows.Forms.Panel();
+            this.resetPassExitLabel = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.resetBox = new System.Windows.Forms.TextBox();
+            this.resetEmailLabel = new System.Windows.Forms.Label();
+            this.resetLabel = new System.Windows.Forms.Label();
+            this.changePassBG = new System.Windows.Forms.Panel();
+            this.changePanel = new System.Windows.Forms.Panel();
+            this.changePassExitLabel = new System.Windows.Forms.Label();
+            this.newPassBox = new System.Windows.Forms.TextBox();
+            this.newPassLabel = new System.Windows.Forms.Label();
+            this.changeButton = new System.Windows.Forms.Button();
+            this.currentPassBox = new System.Windows.Forms.TextBox();
+            this.currentPassLabel = new System.Windows.Forms.Label();
+            this.changePasswordLabel = new System.Windows.Forms.Label();
+            this.bottomBarGrey = new System.Windows.Forms.Panel();
+            this.bottomBarBlue = new System.Windows.Forms.Panel();
             this.searchProjectsPageBackPanel = new System.Windows.Forms.Panel();
             this.searchProjectLabel = new System.Windows.Forms.Label();
             this.projectLeaderRadioButton = new System.Windows.Forms.RadioButton();
@@ -183,7 +202,6 @@
             this.searchProjectsSearchButton = new System.Windows.Forms.Button();
             this.searchProjectsTextBox = new System.Windows.Forms.TextBox();
             this.searchProjectsViewButton = new System.Windows.Forms.Button();
-            this.adminBackPanel = new System.Windows.Forms.Panel();
             this.adminMainPanel = new System.Windows.Forms.Panel();
             this.adminClearButton = new System.Windows.Forms.Button();
             this.activeCheckBox = new System.Windows.Forms.CheckBox();
@@ -207,22 +225,6 @@
             this.adminFNameBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeIDBox = new System.Windows.Forms.TextBox();
             this.adminEmployeeGrid = new System.Windows.Forms.DataGridView();
-            this.resetPassBG = new System.Windows.Forms.Panel();
-            this.resetPanel = new System.Windows.Forms.Panel();
-            this.resetPassExitLabel = new System.Windows.Forms.Label();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.resetBox = new System.Windows.Forms.TextBox();
-            this.resetEmailLabel = new System.Windows.Forms.Label();
-            this.resetLabel = new System.Windows.Forms.Label();
-            this.changePassBG = new System.Windows.Forms.Panel();
-            this.changePanel = new System.Windows.Forms.Panel();
-            this.changePassExitLabel = new System.Windows.Forms.Label();
-            this.newPassBox = new System.Windows.Forms.TextBox();
-            this.newPassLabel = new System.Windows.Forms.Label();
-            this.changeButton = new System.Windows.Forms.Button();
-            this.currentPassBox = new System.Windows.Forms.TextBox();
-            this.currentPassLabel = new System.Windows.Forms.Label();
-            this.changePasswordLabel = new System.Windows.Forms.Label();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
@@ -254,16 +256,17 @@
             this.searchEmployeesBackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchEmployeesGrid)).BeginInit();
             this.searchProjectsBG.SuspendLayout();
-            this.searchProjectsPageBackPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).BeginInit();
             this.adminBackPanel.SuspendLayout();
-            this.adminMainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adminHoursBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).BeginInit();
             this.resetPassBG.SuspendLayout();
             this.resetPanel.SuspendLayout();
             this.changePassBG.SuspendLayout();
             this.changePanel.SuspendLayout();
+            this.bottomBarGrey.SuspendLayout();
+            this.searchProjectsPageBackPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).BeginInit();
+            this.adminMainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adminHoursBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -278,7 +281,7 @@
             // 
             // titleFrontPanel
             // 
-            this.titleFrontPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.titleFrontPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
             this.titleFrontPanel.Controls.Add(this.adminLabel);
             this.titleFrontPanel.Controls.Add(this.signOutLabel);
             this.titleFrontPanel.Controls.Add(this.titleLabel);
@@ -291,6 +294,7 @@
             // adminLabel
             // 
             this.adminLabel.AutoSize = true;
+            this.adminLabel.BackColor = System.Drawing.Color.Transparent;
             this.adminLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminLabel.ForeColor = System.Drawing.Color.White;
             this.adminLabel.Location = new System.Drawing.Point(14, 11);
@@ -304,6 +308,7 @@
             // signOutLabel
             // 
             this.signOutLabel.AutoSize = true;
+            this.signOutLabel.BackColor = System.Drawing.Color.Transparent;
             this.signOutLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signOutLabel.ForeColor = System.Drawing.Color.White;
             this.signOutLabel.Location = new System.Drawing.Point(979, 11);
@@ -317,9 +322,10 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(420, 9);
+            this.titleLabel.Location = new System.Drawing.Point(420, 13);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(204, 44);
             this.titleLabel.TabIndex = 0;
@@ -810,6 +816,7 @@
             // 
             // formBGTemp
             // 
+            this.formBGTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
             this.formBGTemp.Location = new System.Drawing.Point(0, 129);
             this.formBGTemp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.formBGTemp.Name = "formBGTemp";
@@ -1952,6 +1959,7 @@
             // 
             // searchProjectsBG
             // 
+            this.searchProjectsBG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
             this.searchProjectsBG.Controls.Add(this.searchProjectsLabel);
             this.searchProjectsBG.Controls.Add(this.searchProjectsPageBackPanel);
             this.searchProjectsBG.Location = new System.Drawing.Point(0, 129);
@@ -1964,451 +1972,25 @@
             // searchProjectsLabel
             // 
             this.searchProjectsLabel.AutoSize = true;
+            this.searchProjectsLabel.BackColor = System.Drawing.Color.Transparent;
             this.searchProjectsLabel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchProjectsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.searchProjectsLabel.ForeColor = System.Drawing.Color.White;
             this.searchProjectsLabel.Location = new System.Drawing.Point(460, 42);
             this.searchProjectsLabel.Name = "searchProjectsLabel";
             this.searchProjectsLabel.Size = new System.Drawing.Size(149, 22);
             this.searchProjectsLabel.TabIndex = 14;
             this.searchProjectsLabel.Text = "Search Projects";
             // 
-            // searchProjectsPageBackPanel
-            // 
-            this.searchProjectsPageBackPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectLabel);
-            this.searchProjectsPageBackPanel.Controls.Add(this.projectLeaderRadioButton);
-            this.searchProjectsPageBackPanel.Controls.Add(this.projectDescriptionRadioButton);
-            this.searchProjectsPageBackPanel.Controls.Add(this.projectNumRadioButton);
-            this.searchProjectsPageBackPanel.Controls.Add(this.projectsGrid);
-            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsPageAddProjectButton);
-            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectByLabel);
-            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsSearchButton);
-            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsTextBox);
-            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsViewButton);
-            this.searchProjectsPageBackPanel.Location = new System.Drawing.Point(29, 75);
-            this.searchProjectsPageBackPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchProjectsPageBackPanel.Name = "searchProjectsPageBackPanel";
-            this.searchProjectsPageBackPanel.Size = new System.Drawing.Size(987, 426);
-            this.searchProjectsPageBackPanel.TabIndex = 13;
-            // 
-            // searchProjectLabel
-            // 
-            this.searchProjectLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchProjectLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchProjectLabel.Location = new System.Drawing.Point(153, 10);
-            this.searchProjectLabel.Name = "searchProjectLabel";
-            this.searchProjectLabel.Size = new System.Drawing.Size(117, 32);
-            this.searchProjectLabel.TabIndex = 22;
-            this.searchProjectLabel.Text = "Search: ";
-            this.searchProjectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // projectLeaderRadioButton
-            // 
-            this.projectLeaderRadioButton.AutoSize = true;
-            this.projectLeaderRadioButton.Location = new System.Drawing.Point(545, 48);
-            this.projectLeaderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.projectLeaderRadioButton.Name = "projectLeaderRadioButton";
-            this.projectLeaderRadioButton.Size = new System.Drawing.Size(104, 20);
-            this.projectLeaderRadioButton.TabIndex = 21;
-            this.projectLeaderRadioButton.TabStop = true;
-            this.projectLeaderRadioButton.Text = "Project Leader";
-            this.projectLeaderRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // projectDescriptionRadioButton
-            // 
-            this.projectDescriptionRadioButton.AutoSize = true;
-            this.projectDescriptionRadioButton.Location = new System.Drawing.Point(405, 49);
-            this.projectDescriptionRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.projectDescriptionRadioButton.Name = "projectDescriptionRadioButton";
-            this.projectDescriptionRadioButton.Size = new System.Drawing.Size(125, 20);
-            this.projectDescriptionRadioButton.TabIndex = 20;
-            this.projectDescriptionRadioButton.TabStop = true;
-            this.projectDescriptionRadioButton.Text = "Project Description";
-            this.projectDescriptionRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // projectNumRadioButton
-            // 
-            this.projectNumRadioButton.AutoSize = true;
-            this.projectNumRadioButton.Location = new System.Drawing.Point(276, 49);
-            this.projectNumRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.projectNumRadioButton.Name = "projectNumRadioButton";
-            this.projectNumRadioButton.Size = new System.Drawing.Size(109, 20);
-            this.projectNumRadioButton.TabIndex = 19;
-            this.projectNumRadioButton.TabStop = true;
-            this.projectNumRadioButton.Text = "Project Number";
-            this.projectNumRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // projectsGrid
-            // 
-            this.projectsGrid.AllowUserToAddRows = false;
-            this.projectsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
-            this.projectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.projectsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.projectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.projectsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.projectsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.projectsGrid.Location = new System.Drawing.Point(22, 79);
-            this.projectsGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.projectsGrid.Name = "projectsGrid";
-            this.projectsGrid.ReadOnly = true;
-            this.projectsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.projectsGrid.RowTemplate.ReadOnly = true;
-            this.projectsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.projectsGrid.Size = new System.Drawing.Size(940, 293);
-            this.projectsGrid.TabIndex = 18;
-            this.projectsGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ProjectsGrid_CellMouseClick);
-            // 
-            // searchProjectsPageAddProjectButton
-            // 
-            this.searchProjectsPageAddProjectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchProjectsPageAddProjectButton.FlatAppearance.BorderSize = 0;
-            this.searchProjectsPageAddProjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchProjectsPageAddProjectButton.ForeColor = System.Drawing.Color.Snow;
-            this.searchProjectsPageAddProjectButton.Location = new System.Drawing.Point(875, 42);
-            this.searchProjectsPageAddProjectButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchProjectsPageAddProjectButton.Name = "searchProjectsPageAddProjectButton";
-            this.searchProjectsPageAddProjectButton.Size = new System.Drawing.Size(87, 28);
-            this.searchProjectsPageAddProjectButton.TabIndex = 17;
-            this.searchProjectsPageAddProjectButton.Text = "Add Project";
-            this.searchProjectsPageAddProjectButton.UseVisualStyleBackColor = false;
-            this.searchProjectsPageAddProjectButton.Click += new System.EventHandler(this.SearchProjectsPageAddProjectButton_Click);
-            // 
-            // searchProjectByLabel
-            // 
-            this.searchProjectByLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchProjectByLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchProjectByLabel.Location = new System.Drawing.Point(153, 42);
-            this.searchProjectByLabel.Name = "searchProjectByLabel";
-            this.searchProjectByLabel.Size = new System.Drawing.Size(117, 32);
-            this.searchProjectByLabel.TabIndex = 16;
-            this.searchProjectByLabel.Text = "Search By: ";
-            this.searchProjectByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // searchProjectsSearchButton
-            // 
-            this.searchProjectsSearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchProjectsSearchButton.FlatAppearance.BorderSize = 0;
-            this.searchProjectsSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchProjectsSearchButton.ForeColor = System.Drawing.Color.Snow;
-            this.searchProjectsSearchButton.Location = new System.Drawing.Point(554, 11);
-            this.searchProjectsSearchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchProjectsSearchButton.Name = "searchProjectsSearchButton";
-            this.searchProjectsSearchButton.Size = new System.Drawing.Size(87, 28);
-            this.searchProjectsSearchButton.TabIndex = 15;
-            this.searchProjectsSearchButton.Text = "Search";
-            this.searchProjectsSearchButton.UseVisualStyleBackColor = false;
-            this.searchProjectsSearchButton.Click += new System.EventHandler(this.SearchProjectsSearchButton_Click);
-            // 
-            // searchProjectsTextBox
-            // 
-            this.searchProjectsTextBox.Location = new System.Drawing.Point(276, 14);
-            this.searchProjectsTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchProjectsTextBox.Name = "searchProjectsTextBox";
-            this.searchProjectsTextBox.Size = new System.Drawing.Size(261, 21);
-            this.searchProjectsTextBox.TabIndex = 14;
-            // 
-            // searchProjectsViewButton
-            // 
-            this.searchProjectsViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.searchProjectsViewButton.FlatAppearance.BorderSize = 0;
-            this.searchProjectsViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchProjectsViewButton.ForeColor = System.Drawing.Color.Snow;
-            this.searchProjectsViewButton.Location = new System.Drawing.Point(470, 379);
-            this.searchProjectsViewButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchProjectsViewButton.Name = "searchProjectsViewButton";
-            this.searchProjectsViewButton.Size = new System.Drawing.Size(87, 28);
-            this.searchProjectsViewButton.TabIndex = 3;
-            this.searchProjectsViewButton.Text = "View";
-            this.searchProjectsViewButton.UseVisualStyleBackColor = false;
-            this.searchProjectsViewButton.Click += new System.EventHandler(this.SearchProjectsViewButton_Click);
-            // 
             // adminBackPanel
             // 
+            this.adminBackPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
             this.adminBackPanel.Controls.Add(this.adminMainPanel);
-            this.adminBackPanel.Location = new System.Drawing.Point(0, 130);
+            this.adminBackPanel.Location = new System.Drawing.Point(0, 129);
             this.adminBackPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.adminBackPanel.Name = "adminBackPanel";
             this.adminBackPanel.Size = new System.Drawing.Size(1062, 572);
             this.adminBackPanel.TabIndex = 23;
             this.adminBackPanel.Visible = false;
-            // 
-            // adminMainPanel
-            // 
-            this.adminMainPanel.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.adminMainPanel.Controls.Add(this.adminClearButton);
-            this.adminMainPanel.Controls.Add(this.activeCheckBox);
-            this.adminMainPanel.Controls.Add(this.adminHoursBox);
-            this.adminMainPanel.Controls.Add(this.adminPasswordButton);
-            this.adminMainPanel.Controls.Add(this.adminUpdateUserButton);
-            this.adminMainPanel.Controls.Add(this.adminSelectUserButton);
-            this.adminMainPanel.Controls.Add(this.adminAddUserButton);
-            this.adminMainPanel.Controls.Add(this.adminCheckBox);
-            this.adminMainPanel.Controls.Add(this.adminHoursLabel);
-            this.adminMainPanel.Controls.Add(this.adminPhoneLabel);
-            this.adminMainPanel.Controls.Add(this.adminPassLabel);
-            this.adminMainPanel.Controls.Add(this.adminEmailLabel);
-            this.adminMainPanel.Controls.Add(this.adminLNameLabel);
-            this.adminMainPanel.Controls.Add(this.adminFNameLabel);
-            this.adminMainPanel.Controls.Add(this.adminEIDLabel);
-            this.adminMainPanel.Controls.Add(this.adminPhoneBox);
-            this.adminMainPanel.Controls.Add(this.adminPassBox);
-            this.adminMainPanel.Controls.Add(this.adminEmailBox);
-            this.adminMainPanel.Controls.Add(this.adminLNameBox);
-            this.adminMainPanel.Controls.Add(this.adminFNameBox);
-            this.adminMainPanel.Controls.Add(this.adminEmployeeIDBox);
-            this.adminMainPanel.Controls.Add(this.adminEmployeeGrid);
-            this.adminMainPanel.Location = new System.Drawing.Point(17, 18);
-            this.adminMainPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminMainPanel.Name = "adminMainPanel";
-            this.adminMainPanel.Size = new System.Drawing.Size(1029, 539);
-            this.adminMainPanel.TabIndex = 0;
-            // 
-            // adminClearButton
-            // 
-            this.adminClearButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.adminClearButton.FlatAppearance.BorderSize = 0;
-            this.adminClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminClearButton.ForeColor = System.Drawing.Color.White;
-            this.adminClearButton.Location = new System.Drawing.Point(937, 38);
-            this.adminClearButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminClearButton.Name = "adminClearButton";
-            this.adminClearButton.Size = new System.Drawing.Size(58, 28);
-            this.adminClearButton.TabIndex = 25;
-            this.adminClearButton.Text = "Clear";
-            this.adminClearButton.UseVisualStyleBackColor = false;
-            this.adminClearButton.Click += new System.EventHandler(this.AdminClearButton_Click);
-            // 
-            // activeCheckBox
-            // 
-            this.activeCheckBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activeCheckBox.Location = new System.Drawing.Point(765, 52);
-            this.activeCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.activeCheckBox.Name = "activeCheckBox";
-            this.activeCheckBox.Size = new System.Drawing.Size(175, 30);
-            this.activeCheckBox.TabIndex = 24;
-            this.activeCheckBox.Text = "Is User Active?";
-            this.activeCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // adminHoursBox
-            // 
-            this.adminHoursBox.Location = new System.Drawing.Point(520, 123);
-            this.adminHoursBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminHoursBox.Name = "adminHoursBox";
-            this.adminHoursBox.Size = new System.Drawing.Size(234, 21);
-            this.adminHoursBox.TabIndex = 23;
-            // 
-            // adminPasswordButton
-            // 
-            this.adminPasswordButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.adminPasswordButton.FlatAppearance.BorderSize = 0;
-            this.adminPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminPasswordButton.ForeColor = System.Drawing.Color.White;
-            this.adminPasswordButton.Location = new System.Drawing.Point(765, 165);
-            this.adminPasswordButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminPasswordButton.Name = "adminPasswordButton";
-            this.adminPasswordButton.Size = new System.Drawing.Size(233, 28);
-            this.adminPasswordButton.TabIndex = 21;
-            this.adminPasswordButton.Text = "Reset Password";
-            this.adminPasswordButton.UseVisualStyleBackColor = false;
-            this.adminPasswordButton.Click += new System.EventHandler(this.AdminResetPasswordButton_Click);
-            // 
-            // adminUpdateUserButton
-            // 
-            this.adminUpdateUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.adminUpdateUserButton.FlatAppearance.BorderSize = 0;
-            this.adminUpdateUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminUpdateUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminUpdateUserButton.Location = new System.Drawing.Point(521, 165);
-            this.adminUpdateUserButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminUpdateUserButton.Name = "adminUpdateUserButton";
-            this.adminUpdateUserButton.Size = new System.Drawing.Size(233, 28);
-            this.adminUpdateUserButton.TabIndex = 20;
-            this.adminUpdateUserButton.Text = "Update User";
-            this.adminUpdateUserButton.UseVisualStyleBackColor = false;
-            this.adminUpdateUserButton.Click += new System.EventHandler(this.AdminUpdateUserButton_Click);
-            // 
-            // adminSelectUserButton
-            // 
-            this.adminSelectUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.adminSelectUserButton.FlatAppearance.BorderSize = 0;
-            this.adminSelectUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminSelectUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminSelectUserButton.Location = new System.Drawing.Point(276, 165);
-            this.adminSelectUserButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminSelectUserButton.Name = "adminSelectUserButton";
-            this.adminSelectUserButton.Size = new System.Drawing.Size(233, 28);
-            this.adminSelectUserButton.TabIndex = 19;
-            this.adminSelectUserButton.Text = "Select User";
-            this.adminSelectUserButton.UseVisualStyleBackColor = false;
-            this.adminSelectUserButton.Click += new System.EventHandler(this.AdminSelectUserButton_Click);
-            // 
-            // adminAddUserButton
-            // 
-            this.adminAddUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            this.adminAddUserButton.FlatAppearance.BorderSize = 0;
-            this.adminAddUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminAddUserButton.ForeColor = System.Drawing.Color.White;
-            this.adminAddUserButton.Location = new System.Drawing.Point(30, 165);
-            this.adminAddUserButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminAddUserButton.Name = "adminAddUserButton";
-            this.adminAddUserButton.Size = new System.Drawing.Size(233, 28);
-            this.adminAddUserButton.TabIndex = 18;
-            this.adminAddUserButton.Text = "Add User";
-            this.adminAddUserButton.UseVisualStyleBackColor = false;
-            this.adminAddUserButton.Click += new System.EventHandler(this.AdminAddUserButton_Click);
-            // 
-            // adminCheckBox
-            // 
-            this.adminCheckBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminCheckBox.Location = new System.Drawing.Point(765, 23);
-            this.adminCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminCheckBox.Name = "adminCheckBox";
-            this.adminCheckBox.Size = new System.Drawing.Size(175, 30);
-            this.adminCheckBox.TabIndex = 16;
-            this.adminCheckBox.Text = "Is User an Admin?";
-            this.adminCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // adminHoursLabel
-            // 
-            this.adminHoursLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminHoursLabel.Location = new System.Drawing.Point(520, 92);
-            this.adminHoursLabel.Name = "adminHoursLabel";
-            this.adminHoursLabel.Size = new System.Drawing.Size(233, 28);
-            this.adminHoursLabel.TabIndex = 14;
-            this.adminHoursLabel.Text = "Available Hours: ";
-            this.adminHoursLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // adminPhoneLabel
-            // 
-            this.adminPhoneLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminPhoneLabel.Location = new System.Drawing.Point(275, 92);
-            this.adminPhoneLabel.Name = "adminPhoneLabel";
-            this.adminPhoneLabel.Size = new System.Drawing.Size(233, 28);
-            this.adminPhoneLabel.TabIndex = 13;
-            this.adminPhoneLabel.Text = "Phone #: ";
-            this.adminPhoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // adminPassLabel
-            // 
-            this.adminPassLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminPassLabel.Location = new System.Drawing.Point(765, 92);
-            this.adminPassLabel.Name = "adminPassLabel";
-            this.adminPassLabel.Size = new System.Drawing.Size(233, 28);
-            this.adminPassLabel.TabIndex = 12;
-            this.adminPassLabel.Text = "Default/Reset Password: *";
-            this.adminPassLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // adminEmailLabel
-            // 
-            this.adminEmailLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminEmailLabel.Location = new System.Drawing.Point(30, 92);
-            this.adminEmailLabel.Name = "adminEmailLabel";
-            this.adminEmailLabel.Size = new System.Drawing.Size(233, 28);
-            this.adminEmailLabel.TabIndex = 11;
-            this.adminEmailLabel.Text = "Email Address: *";
-            this.adminEmailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // adminLNameLabel
-            // 
-            this.adminLNameLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminLNameLabel.Location = new System.Drawing.Point(520, 25);
-            this.adminLNameLabel.Name = "adminLNameLabel";
-            this.adminLNameLabel.Size = new System.Drawing.Size(233, 28);
-            this.adminLNameLabel.TabIndex = 10;
-            this.adminLNameLabel.Text = "Last Name: ";
-            this.adminLNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // adminFNameLabel
-            // 
-            this.adminFNameLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminFNameLabel.Location = new System.Drawing.Point(275, 25);
-            this.adminFNameLabel.Name = "adminFNameLabel";
-            this.adminFNameLabel.Size = new System.Drawing.Size(233, 28);
-            this.adminFNameLabel.TabIndex = 9;
-            this.adminFNameLabel.Text = "First Name: ";
-            this.adminFNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // adminEIDLabel
-            // 
-            this.adminEIDLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminEIDLabel.Location = new System.Drawing.Point(30, 25);
-            this.adminEIDLabel.Name = "adminEIDLabel";
-            this.adminEIDLabel.Size = new System.Drawing.Size(233, 28);
-            this.adminEIDLabel.TabIndex = 8;
-            this.adminEIDLabel.Text = "Employee ID: *";
-            this.adminEIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // adminPhoneBox
-            // 
-            this.adminPhoneBox.Location = new System.Drawing.Point(275, 123);
-            this.adminPhoneBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminPhoneBox.Name = "adminPhoneBox";
-            this.adminPhoneBox.Size = new System.Drawing.Size(233, 21);
-            this.adminPhoneBox.TabIndex = 5;
-            // 
-            // adminPassBox
-            // 
-            this.adminPassBox.Location = new System.Drawing.Point(765, 123);
-            this.adminPassBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminPassBox.Name = "adminPassBox";
-            this.adminPassBox.PasswordChar = '*';
-            this.adminPassBox.Size = new System.Drawing.Size(233, 21);
-            this.adminPassBox.TabIndex = 4;
-            this.adminPassBox.UseSystemPasswordChar = true;
-            // 
-            // adminEmailBox
-            // 
-            this.adminEmailBox.Location = new System.Drawing.Point(30, 123);
-            this.adminEmailBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminEmailBox.Name = "adminEmailBox";
-            this.adminEmailBox.Size = new System.Drawing.Size(233, 21);
-            this.adminEmailBox.TabIndex = 3;
-            // 
-            // adminLNameBox
-            // 
-            this.adminLNameBox.Location = new System.Drawing.Point(520, 55);
-            this.adminLNameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminLNameBox.Name = "adminLNameBox";
-            this.adminLNameBox.Size = new System.Drawing.Size(233, 21);
-            this.adminLNameBox.TabIndex = 2;
-            // 
-            // adminFNameBox
-            // 
-            this.adminFNameBox.Location = new System.Drawing.Point(275, 55);
-            this.adminFNameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminFNameBox.Name = "adminFNameBox";
-            this.adminFNameBox.Size = new System.Drawing.Size(233, 21);
-            this.adminFNameBox.TabIndex = 1;
-            // 
-            // adminEmployeeIDBox
-            // 
-            this.adminEmployeeIDBox.Location = new System.Drawing.Point(30, 55);
-            this.adminEmployeeIDBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminEmployeeIDBox.Name = "adminEmployeeIDBox";
-            this.adminEmployeeIDBox.Size = new System.Drawing.Size(233, 21);
-            this.adminEmployeeIDBox.TabIndex = 0;
-            // 
-            // adminEmployeeGrid
-            // 
-            this.adminEmployeeGrid.AllowUserToAddRows = false;
-            this.adminEmployeeGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
-            this.adminEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.adminEmployeeGrid.Location = new System.Drawing.Point(30, 204);
-            this.adminEmployeeGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.adminEmployeeGrid.Name = "adminEmployeeGrid";
-            this.adminEmployeeGrid.RowTemplate.ReadOnly = true;
-            this.adminEmployeeGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adminEmployeeGrid.ShowEditingIcon = false;
-            this.adminEmployeeGrid.Size = new System.Drawing.Size(968, 313);
-            this.adminEmployeeGrid.TabIndex = 17;
-            this.adminEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdminEmployeeGrid_CellContentClick);
             // 
             // resetPassBG
             // 
@@ -2595,16 +2177,480 @@
             this.changePasswordLabel.Text = "Change Password";
             this.changePasswordLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // bottomBarGrey
+            // 
+            this.bottomBarGrey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.bottomBarGrey.Controls.Add(this.bottomBarBlue);
+            this.bottomBarGrey.Location = new System.Drawing.Point(-8, 701);
+            this.bottomBarGrey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bottomBarGrey.Name = "bottomBarGrey";
+            this.bottomBarGrey.Size = new System.Drawing.Size(1079, 80);
+            this.bottomBarGrey.TabIndex = 27;
+            // 
+            // bottomBarBlue
+            // 
+            this.bottomBarBlue.BackColor = System.Drawing.Color.White;
+            this.bottomBarBlue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bottomBarBlue.Location = new System.Drawing.Point(0, 12);
+            this.bottomBarBlue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bottomBarBlue.Name = "bottomBarBlue";
+            this.bottomBarBlue.Size = new System.Drawing.Size(1079, 68);
+            this.bottomBarBlue.TabIndex = 0;
+            // 
+            // searchProjectsPageBackPanel
+            // 
+            this.searchProjectsPageBackPanel.BackColor = System.Drawing.Color.Transparent;
+            this.searchProjectsPageBackPanel.BackgroundImage = global::EDGELook.Properties.Resources.searchpanel1;
+            this.searchProjectsPageBackPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectLabel);
+            this.searchProjectsPageBackPanel.Controls.Add(this.projectLeaderRadioButton);
+            this.searchProjectsPageBackPanel.Controls.Add(this.projectDescriptionRadioButton);
+            this.searchProjectsPageBackPanel.Controls.Add(this.projectNumRadioButton);
+            this.searchProjectsPageBackPanel.Controls.Add(this.projectsGrid);
+            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsPageAddProjectButton);
+            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectByLabel);
+            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsSearchButton);
+            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsTextBox);
+            this.searchProjectsPageBackPanel.Controls.Add(this.searchProjectsViewButton);
+            this.searchProjectsPageBackPanel.Location = new System.Drawing.Point(29, 75);
+            this.searchProjectsPageBackPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchProjectsPageBackPanel.Name = "searchProjectsPageBackPanel";
+            this.searchProjectsPageBackPanel.Size = new System.Drawing.Size(987, 426);
+            this.searchProjectsPageBackPanel.TabIndex = 13;
+            // 
+            // searchProjectLabel
+            // 
+            this.searchProjectLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchProjectLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.searchProjectLabel.Location = new System.Drawing.Point(153, 10);
+            this.searchProjectLabel.Name = "searchProjectLabel";
+            this.searchProjectLabel.Size = new System.Drawing.Size(117, 32);
+            this.searchProjectLabel.TabIndex = 22;
+            this.searchProjectLabel.Text = "Search: ";
+            this.searchProjectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // projectLeaderRadioButton
+            // 
+            this.projectLeaderRadioButton.AutoSize = true;
+            this.projectLeaderRadioButton.Location = new System.Drawing.Point(545, 48);
+            this.projectLeaderRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.projectLeaderRadioButton.Name = "projectLeaderRadioButton";
+            this.projectLeaderRadioButton.Size = new System.Drawing.Size(104, 20);
+            this.projectLeaderRadioButton.TabIndex = 21;
+            this.projectLeaderRadioButton.TabStop = true;
+            this.projectLeaderRadioButton.Text = "Project Leader";
+            this.projectLeaderRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // projectDescriptionRadioButton
+            // 
+            this.projectDescriptionRadioButton.AutoSize = true;
+            this.projectDescriptionRadioButton.Location = new System.Drawing.Point(405, 49);
+            this.projectDescriptionRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.projectDescriptionRadioButton.Name = "projectDescriptionRadioButton";
+            this.projectDescriptionRadioButton.Size = new System.Drawing.Size(125, 20);
+            this.projectDescriptionRadioButton.TabIndex = 20;
+            this.projectDescriptionRadioButton.TabStop = true;
+            this.projectDescriptionRadioButton.Text = "Project Description";
+            this.projectDescriptionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // projectNumRadioButton
+            // 
+            this.projectNumRadioButton.AutoSize = true;
+            this.projectNumRadioButton.Location = new System.Drawing.Point(276, 49);
+            this.projectNumRadioButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.projectNumRadioButton.Name = "projectNumRadioButton";
+            this.projectNumRadioButton.Size = new System.Drawing.Size(109, 20);
+            this.projectNumRadioButton.TabIndex = 19;
+            this.projectNumRadioButton.TabStop = true;
+            this.projectNumRadioButton.Text = "Project Number";
+            this.projectNumRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // projectsGrid
+            // 
+            this.projectsGrid.AllowUserToAddRows = false;
+            this.projectsGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
+            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.projectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.projectsGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.projectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.projectsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.projectsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.projectsGrid.Location = new System.Drawing.Point(22, 79);
+            this.projectsGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.projectsGrid.Name = "projectsGrid";
+            this.projectsGrid.ReadOnly = true;
+            this.projectsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.projectsGrid.RowTemplate.ReadOnly = true;
+            this.projectsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.projectsGrid.Size = new System.Drawing.Size(940, 293);
+            this.projectsGrid.TabIndex = 18;
+            this.projectsGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ProjectsGrid_CellMouseClick);
+            // 
+            // searchProjectsPageAddProjectButton
+            // 
+            this.searchProjectsPageAddProjectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.searchProjectsPageAddProjectButton.FlatAppearance.BorderSize = 0;
+            this.searchProjectsPageAddProjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchProjectsPageAddProjectButton.ForeColor = System.Drawing.Color.Snow;
+            this.searchProjectsPageAddProjectButton.Location = new System.Drawing.Point(875, 42);
+            this.searchProjectsPageAddProjectButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchProjectsPageAddProjectButton.Name = "searchProjectsPageAddProjectButton";
+            this.searchProjectsPageAddProjectButton.Size = new System.Drawing.Size(87, 28);
+            this.searchProjectsPageAddProjectButton.TabIndex = 17;
+            this.searchProjectsPageAddProjectButton.Text = "Add Project";
+            this.searchProjectsPageAddProjectButton.UseVisualStyleBackColor = false;
+            this.searchProjectsPageAddProjectButton.Click += new System.EventHandler(this.SearchProjectsPageAddProjectButton_Click);
+            // 
+            // searchProjectByLabel
+            // 
+            this.searchProjectByLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchProjectByLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.searchProjectByLabel.Location = new System.Drawing.Point(153, 42);
+            this.searchProjectByLabel.Name = "searchProjectByLabel";
+            this.searchProjectByLabel.Size = new System.Drawing.Size(117, 32);
+            this.searchProjectByLabel.TabIndex = 16;
+            this.searchProjectByLabel.Text = "Search By: ";
+            this.searchProjectByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // searchProjectsSearchButton
+            // 
+            this.searchProjectsSearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.searchProjectsSearchButton.FlatAppearance.BorderSize = 0;
+            this.searchProjectsSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchProjectsSearchButton.ForeColor = System.Drawing.Color.Snow;
+            this.searchProjectsSearchButton.Location = new System.Drawing.Point(554, 11);
+            this.searchProjectsSearchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchProjectsSearchButton.Name = "searchProjectsSearchButton";
+            this.searchProjectsSearchButton.Size = new System.Drawing.Size(87, 28);
+            this.searchProjectsSearchButton.TabIndex = 15;
+            this.searchProjectsSearchButton.Text = "Search";
+            this.searchProjectsSearchButton.UseVisualStyleBackColor = false;
+            this.searchProjectsSearchButton.Click += new System.EventHandler(this.SearchProjectsSearchButton_Click);
+            // 
+            // searchProjectsTextBox
+            // 
+            this.searchProjectsTextBox.Location = new System.Drawing.Point(276, 14);
+            this.searchProjectsTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchProjectsTextBox.Name = "searchProjectsTextBox";
+            this.searchProjectsTextBox.Size = new System.Drawing.Size(261, 21);
+            this.searchProjectsTextBox.TabIndex = 14;
+            // 
+            // searchProjectsViewButton
+            // 
+            this.searchProjectsViewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            this.searchProjectsViewButton.FlatAppearance.BorderSize = 0;
+            this.searchProjectsViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchProjectsViewButton.ForeColor = System.Drawing.Color.Snow;
+            this.searchProjectsViewButton.Location = new System.Drawing.Point(470, 379);
+            this.searchProjectsViewButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchProjectsViewButton.Name = "searchProjectsViewButton";
+            this.searchProjectsViewButton.Size = new System.Drawing.Size(87, 28);
+            this.searchProjectsViewButton.TabIndex = 3;
+            this.searchProjectsViewButton.Text = "View";
+            this.searchProjectsViewButton.UseVisualStyleBackColor = false;
+            this.searchProjectsViewButton.Click += new System.EventHandler(this.SearchProjectsViewButton_Click);
+            // 
+            // adminMainPanel
+            // 
+            this.adminMainPanel.BackColor = System.Drawing.Color.Transparent;
+            this.adminMainPanel.Controls.Add(this.adminClearButton);
+            this.adminMainPanel.Controls.Add(this.activeCheckBox);
+            this.adminMainPanel.Controls.Add(this.adminHoursBox);
+            this.adminMainPanel.Controls.Add(this.adminPasswordButton);
+            this.adminMainPanel.Controls.Add(this.adminUpdateUserButton);
+            this.adminMainPanel.Controls.Add(this.adminSelectUserButton);
+            this.adminMainPanel.Controls.Add(this.adminAddUserButton);
+            this.adminMainPanel.Controls.Add(this.adminCheckBox);
+            this.adminMainPanel.Controls.Add(this.adminHoursLabel);
+            this.adminMainPanel.Controls.Add(this.adminPhoneLabel);
+            this.adminMainPanel.Controls.Add(this.adminPassLabel);
+            this.adminMainPanel.Controls.Add(this.adminEmailLabel);
+            this.adminMainPanel.Controls.Add(this.adminLNameLabel);
+            this.adminMainPanel.Controls.Add(this.adminFNameLabel);
+            this.adminMainPanel.Controls.Add(this.adminEIDLabel);
+            this.adminMainPanel.Controls.Add(this.adminPhoneBox);
+            this.adminMainPanel.Controls.Add(this.adminPassBox);
+            this.adminMainPanel.Controls.Add(this.adminEmailBox);
+            this.adminMainPanel.Controls.Add(this.adminLNameBox);
+            this.adminMainPanel.Controls.Add(this.adminFNameBox);
+            this.adminMainPanel.Controls.Add(this.adminEmployeeIDBox);
+            this.adminMainPanel.Controls.Add(this.adminEmployeeGrid);
+            this.adminMainPanel.Location = new System.Drawing.Point(17, 18);
+            this.adminMainPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminMainPanel.Name = "adminMainPanel";
+            this.adminMainPanel.Size = new System.Drawing.Size(1029, 539);
+            this.adminMainPanel.TabIndex = 0;
+            // 
+            // adminClearButton
+            // 
+            this.adminClearButton.BackColor = System.Drawing.Color.Transparent;
+            this.adminClearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adminClearButton.FlatAppearance.BorderSize = 0;
+            this.adminClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminClearButton.ForeColor = System.Drawing.Color.White;
+            this.adminClearButton.Location = new System.Drawing.Point(937, 38);
+            this.adminClearButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminClearButton.Name = "adminClearButton";
+            this.adminClearButton.Size = new System.Drawing.Size(58, 28);
+            this.adminClearButton.TabIndex = 25;
+            this.adminClearButton.Text = "Clear";
+            this.adminClearButton.UseVisualStyleBackColor = false;
+            this.adminClearButton.Click += new System.EventHandler(this.AdminClearButton_Click);
+            // 
+            // activeCheckBox
+            // 
+            this.activeCheckBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activeCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.activeCheckBox.Location = new System.Drawing.Point(765, 52);
+            this.activeCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.activeCheckBox.Name = "activeCheckBox";
+            this.activeCheckBox.Size = new System.Drawing.Size(175, 30);
+            this.activeCheckBox.TabIndex = 24;
+            this.activeCheckBox.Text = "Is User Active?";
+            this.activeCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // adminHoursBox
+            // 
+            this.adminHoursBox.Location = new System.Drawing.Point(520, 123);
+            this.adminHoursBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminHoursBox.Name = "adminHoursBox";
+            this.adminHoursBox.Size = new System.Drawing.Size(234, 21);
+            this.adminHoursBox.TabIndex = 23;
+            // 
+            // adminPasswordButton
+            // 
+            this.adminPasswordButton.BackColor = System.Drawing.Color.Transparent;
+            this.adminPasswordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adminPasswordButton.FlatAppearance.BorderSize = 0;
+            this.adminPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminPasswordButton.ForeColor = System.Drawing.Color.White;
+            this.adminPasswordButton.Location = new System.Drawing.Point(765, 165);
+            this.adminPasswordButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminPasswordButton.Name = "adminPasswordButton";
+            this.adminPasswordButton.Size = new System.Drawing.Size(233, 28);
+            this.adminPasswordButton.TabIndex = 21;
+            this.adminPasswordButton.Text = "Reset Password";
+            this.adminPasswordButton.UseVisualStyleBackColor = false;
+            this.adminPasswordButton.Click += new System.EventHandler(this.AdminResetPasswordButton_Click);
+            // 
+            // adminUpdateUserButton
+            // 
+            this.adminUpdateUserButton.BackColor = System.Drawing.Color.Transparent;
+            this.adminUpdateUserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adminUpdateUserButton.FlatAppearance.BorderSize = 0;
+            this.adminUpdateUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminUpdateUserButton.ForeColor = System.Drawing.Color.White;
+            this.adminUpdateUserButton.Location = new System.Drawing.Point(521, 165);
+            this.adminUpdateUserButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminUpdateUserButton.Name = "adminUpdateUserButton";
+            this.adminUpdateUserButton.Size = new System.Drawing.Size(233, 28);
+            this.adminUpdateUserButton.TabIndex = 20;
+            this.adminUpdateUserButton.Text = "Update User";
+            this.adminUpdateUserButton.UseVisualStyleBackColor = false;
+            this.adminUpdateUserButton.Click += new System.EventHandler(this.AdminUpdateUserButton_Click);
+            // 
+            // adminSelectUserButton
+            // 
+            this.adminSelectUserButton.BackColor = System.Drawing.Color.Transparent;
+            this.adminSelectUserButton.FlatAppearance.BorderSize = 0;
+            this.adminSelectUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminSelectUserButton.ForeColor = System.Drawing.Color.White;
+            this.adminSelectUserButton.Location = new System.Drawing.Point(276, 165);
+            this.adminSelectUserButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminSelectUserButton.Name = "adminSelectUserButton";
+            this.adminSelectUserButton.Size = new System.Drawing.Size(233, 28);
+            this.adminSelectUserButton.TabIndex = 19;
+            this.adminSelectUserButton.Text = "Select User";
+            this.adminSelectUserButton.UseVisualStyleBackColor = false;
+            this.adminSelectUserButton.Click += new System.EventHandler(this.AdminSelectUserButton_Click);
+            // 
+            // adminAddUserButton
+            // 
+            this.adminAddUserButton.BackColor = System.Drawing.Color.Transparent;
+            this.adminAddUserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adminAddUserButton.FlatAppearance.BorderSize = 0;
+            this.adminAddUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminAddUserButton.ForeColor = System.Drawing.Color.White;
+            this.adminAddUserButton.Location = new System.Drawing.Point(30, 165);
+            this.adminAddUserButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminAddUserButton.Name = "adminAddUserButton";
+            this.adminAddUserButton.Size = new System.Drawing.Size(233, 28);
+            this.adminAddUserButton.TabIndex = 18;
+            this.adminAddUserButton.Text = "Add User";
+            this.adminAddUserButton.UseVisualStyleBackColor = false;
+            this.adminAddUserButton.Click += new System.EventHandler(this.AdminAddUserButton_Click);
+            // 
+            // adminCheckBox
+            // 
+            this.adminCheckBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminCheckBox.Location = new System.Drawing.Point(765, 23);
+            this.adminCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminCheckBox.Name = "adminCheckBox";
+            this.adminCheckBox.Size = new System.Drawing.Size(175, 30);
+            this.adminCheckBox.TabIndex = 16;
+            this.adminCheckBox.Text = "Is User an Admin?";
+            this.adminCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // adminHoursLabel
+            // 
+            this.adminHoursLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminHoursLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminHoursLabel.Location = new System.Drawing.Point(520, 92);
+            this.adminHoursLabel.Name = "adminHoursLabel";
+            this.adminHoursLabel.Size = new System.Drawing.Size(233, 28);
+            this.adminHoursLabel.TabIndex = 14;
+            this.adminHoursLabel.Text = "Available Hours: ";
+            this.adminHoursLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminPhoneLabel
+            // 
+            this.adminPhoneLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminPhoneLabel.Location = new System.Drawing.Point(275, 92);
+            this.adminPhoneLabel.Name = "adminPhoneLabel";
+            this.adminPhoneLabel.Size = new System.Drawing.Size(233, 28);
+            this.adminPhoneLabel.TabIndex = 13;
+            this.adminPhoneLabel.Text = "Phone #: ";
+            this.adminPhoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminPassLabel
+            // 
+            this.adminPassLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPassLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminPassLabel.Location = new System.Drawing.Point(765, 92);
+            this.adminPassLabel.Name = "adminPassLabel";
+            this.adminPassLabel.Size = new System.Drawing.Size(233, 28);
+            this.adminPassLabel.TabIndex = 12;
+            this.adminPassLabel.Text = "Default/Reset Password: *";
+            this.adminPassLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminEmailLabel
+            // 
+            this.adminEmailLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminEmailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminEmailLabel.Location = new System.Drawing.Point(30, 92);
+            this.adminEmailLabel.Name = "adminEmailLabel";
+            this.adminEmailLabel.Size = new System.Drawing.Size(233, 28);
+            this.adminEmailLabel.TabIndex = 11;
+            this.adminEmailLabel.Text = "Email Address: *";
+            this.adminEmailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminLNameLabel
+            // 
+            this.adminLNameLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminLNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminLNameLabel.Location = new System.Drawing.Point(520, 25);
+            this.adminLNameLabel.Name = "adminLNameLabel";
+            this.adminLNameLabel.Size = new System.Drawing.Size(233, 28);
+            this.adminLNameLabel.TabIndex = 10;
+            this.adminLNameLabel.Text = "Last Name: ";
+            this.adminLNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminFNameLabel
+            // 
+            this.adminFNameLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminFNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminFNameLabel.Location = new System.Drawing.Point(275, 25);
+            this.adminFNameLabel.Name = "adminFNameLabel";
+            this.adminFNameLabel.Size = new System.Drawing.Size(233, 28);
+            this.adminFNameLabel.TabIndex = 9;
+            this.adminFNameLabel.Text = "First Name: ";
+            this.adminFNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminEIDLabel
+            // 
+            this.adminEIDLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminEIDLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminEIDLabel.Location = new System.Drawing.Point(30, 25);
+            this.adminEIDLabel.Name = "adminEIDLabel";
+            this.adminEIDLabel.Size = new System.Drawing.Size(233, 28);
+            this.adminEIDLabel.TabIndex = 8;
+            this.adminEIDLabel.Text = "Employee ID: *";
+            this.adminEIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // adminPhoneBox
+            // 
+            this.adminPhoneBox.Location = new System.Drawing.Point(275, 123);
+            this.adminPhoneBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminPhoneBox.Name = "adminPhoneBox";
+            this.adminPhoneBox.Size = new System.Drawing.Size(233, 21);
+            this.adminPhoneBox.TabIndex = 5;
+            // 
+            // adminPassBox
+            // 
+            this.adminPassBox.Location = new System.Drawing.Point(765, 123);
+            this.adminPassBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminPassBox.Name = "adminPassBox";
+            this.adminPassBox.PasswordChar = '*';
+            this.adminPassBox.Size = new System.Drawing.Size(233, 21);
+            this.adminPassBox.TabIndex = 4;
+            this.adminPassBox.UseSystemPasswordChar = true;
+            // 
+            // adminEmailBox
+            // 
+            this.adminEmailBox.Location = new System.Drawing.Point(30, 123);
+            this.adminEmailBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminEmailBox.Name = "adminEmailBox";
+            this.adminEmailBox.Size = new System.Drawing.Size(233, 21);
+            this.adminEmailBox.TabIndex = 3;
+            // 
+            // adminLNameBox
+            // 
+            this.adminLNameBox.Location = new System.Drawing.Point(520, 55);
+            this.adminLNameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminLNameBox.Name = "adminLNameBox";
+            this.adminLNameBox.Size = new System.Drawing.Size(233, 21);
+            this.adminLNameBox.TabIndex = 2;
+            // 
+            // adminFNameBox
+            // 
+            this.adminFNameBox.Location = new System.Drawing.Point(275, 55);
+            this.adminFNameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminFNameBox.Name = "adminFNameBox";
+            this.adminFNameBox.Size = new System.Drawing.Size(233, 21);
+            this.adminFNameBox.TabIndex = 1;
+            // 
+            // adminEmployeeIDBox
+            // 
+            this.adminEmployeeIDBox.Location = new System.Drawing.Point(30, 55);
+            this.adminEmployeeIDBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminEmployeeIDBox.Name = "adminEmployeeIDBox";
+            this.adminEmployeeIDBox.Size = new System.Drawing.Size(233, 21);
+            this.adminEmployeeIDBox.TabIndex = 0;
+            // 
+            // adminEmployeeGrid
+            // 
+            this.adminEmployeeGrid.AllowUserToAddRows = false;
+            this.adminEmployeeGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            this.adminEmployeeGrid.BackgroundColor = System.Drawing.Color.White;
+            this.adminEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adminEmployeeGrid.GridColor = System.Drawing.Color.White;
+            this.adminEmployeeGrid.Location = new System.Drawing.Point(30, 204);
+            this.adminEmployeeGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminEmployeeGrid.Name = "adminEmployeeGrid";
+            this.adminEmployeeGrid.RowTemplate.ReadOnly = true;
+            this.adminEmployeeGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.adminEmployeeGrid.ShowEditingIcon = false;
+            this.adminEmployeeGrid.Size = new System.Drawing.Size(968, 313);
+            this.adminEmployeeGrid.TabIndex = 17;
+            this.adminEmployeeGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdminEmployeeGrid_CellContentClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1062, 703);
+            this.ClientSize = new System.Drawing.Size(1062, 781);
+            this.Controls.Add(this.bottomBarGrey);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
-            this.Controls.Add(this.adminBackPanel);
-            this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.reportsBG);
             this.Controls.Add(this.searchEmployeesBG);
@@ -2614,7 +2660,10 @@
             this.Controls.Add(this.profileBG);
             this.Controls.Add(this.changePassBG);
             this.Controls.Add(this.resetPassBG);
+            this.Controls.Add(this.adminBackPanel);
+            this.Controls.Add(this.formBGTemp);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -2663,20 +2712,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchEmployeesGrid)).EndInit();
             this.searchProjectsBG.ResumeLayout(false);
             this.searchProjectsBG.PerformLayout();
-            this.searchProjectsPageBackPanel.ResumeLayout(false);
-            this.searchProjectsPageBackPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).EndInit();
             this.adminBackPanel.ResumeLayout(false);
-            this.adminMainPanel.ResumeLayout(false);
-            this.adminMainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adminHoursBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).EndInit();
             this.resetPassBG.ResumeLayout(false);
             this.resetPanel.ResumeLayout(false);
             this.resetPanel.PerformLayout();
             this.changePassBG.ResumeLayout(false);
             this.changePanel.ResumeLayout(false);
             this.changePanel.PerformLayout();
+            this.bottomBarGrey.ResumeLayout(false);
+            this.searchProjectsPageBackPanel.ResumeLayout(false);
+            this.searchProjectsPageBackPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsGrid)).EndInit();
+            this.adminMainPanel.ResumeLayout(false);
+            this.adminMainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adminHoursBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminEmployeeGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2865,6 +2915,8 @@
         private System.Windows.Forms.Label projectHoursLabel2;
         private System.Windows.Forms.Button projectPageUpdateHoursButton;
         private System.Windows.Forms.Label changePassExitLabel;
+        private System.Windows.Forms.Panel bottomBarGrey;
+        private System.Windows.Forms.Panel bottomBarBlue;
     }
 }
 
