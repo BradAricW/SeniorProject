@@ -19,6 +19,11 @@ namespace EDGELook
         public void Setup(MySqlConnection newConn)
         {
             conn = newConn;
+        } 
+        
+        public void SetEID(String newID)
+        {
+            eID = newID;
         } //end setup
 
         //core functionality

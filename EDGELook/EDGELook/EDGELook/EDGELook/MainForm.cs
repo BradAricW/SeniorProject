@@ -27,7 +27,7 @@ namespace EDGELook
         private DBConn dbconn;
         private MySqlConnection conn;
         ProfilePage profile;
-        private int hours;
+        private int hours, success;
         private String eID, testPrjNo, profilePrjNo;
         private Boolean isAdmin = false;
         private String assignEID, removeEID, empNo, tempEID;
@@ -65,7 +65,7 @@ namespace EDGELook
         private void LoginButton_Click(object sender, EventArgs e)
         {
             this.eID = login.Login(emailBox, passBox);
-            int success;
+            
             if (eID == null)
             {
                 success = 0;
@@ -100,6 +100,7 @@ namespace EDGELook
                 }
             }
             passBox.Text = "";
+
 
 
         } //end login button
@@ -215,6 +216,9 @@ namespace EDGELook
         //Taskbar Buttons
         private void SignOutLabel_Click(object sender, EventArgs e)
         {
+            this.eID = null;
+            login.SetEID(null);
+            success = 0;
             this.signOutLabel.Visible = false;
             this.loginBG.Visible = true;
             this.taskbarMenu.Visible = false;

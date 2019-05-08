@@ -305,6 +305,8 @@ namespace EDGELook
             conn.Open();
             try
             {
+
+
                 String deleteWorksOn = "DELETE FROM WorksOn WHERE prjNo = '" + projectID + "';";
                 MySqlCommand cmd = new MySqlCommand(deleteWorksOn, conn);
                 cmd.ExecuteNonQuery();
