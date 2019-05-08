@@ -25,12 +25,11 @@ namespace EDGELook
         public String Login (TextBox emailBox, TextBox passwordBox)
         {
             email = emailBox.Text;
-            password = passwordBox.Text;   
+            password = passwordBox.Text;
+            conn.Open();
             try
             {
-                conn.Open();
                 String getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND BINARY pssword = '" + password + "';";
-                //String getLogin = "SELECT employeeID FROM Employee WHERE email = '" + email + "' AND BINARY pssword = SHA2('" + password + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16)));"; 
                 MySqlCommand cmd = new MySqlCommand(getLogin, this.conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -41,12 +40,12 @@ namespace EDGELook
                 {
                     MessageBox.Show("Not valid login");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
             return eID;
         } //end login
 

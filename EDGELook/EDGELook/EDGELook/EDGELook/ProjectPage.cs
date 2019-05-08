@@ -50,20 +50,19 @@ namespace EDGELook
         //display functions (search project page)
         public void ListProjects(DataGridView projectsGrid, String eID)
         {
+            conn.Open();
             try
             {
-                conn.Open();
-
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.fname AS 'Leader First Name', E.lname AS 'Leader Last Name', P.prjNo AS 'Project #', P.Description, P.prjComplete AS 'Complete' FROM Project P, Employee E WHERE P.prjLeader = E.employeeID ORDER BY P.prjComplete;", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 projectsGrid.DataSource = table;
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }//end list projects
 
         //display functions (project page)
@@ -71,9 +70,9 @@ namespace EDGELook
         {
             bool temp = false;
             bool check = false;
+            conn.Open();
             try
             {
-                conn.Open();
                 String getProjInfo = "SELECT * FROM Project WHERE prjNo = '" + prjNo + "';";
                 MySqlCommand cmd = new MySqlCommand(getProjInfo, conn);
                 MySqlDataReader dr = cmd.ExecuteReader();
@@ -103,12 +102,12 @@ namespace EDGELook
                     lName = reader2.GetString("lname");
                 }
                 reader2.Close();
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
             leaderFNameBox.Text = fName;
             leaderLNameBox.Text = lName;
             if (check)
@@ -123,9 +122,9 @@ namespace EDGELook
 
         public void DisplayEmployees(DataGridView unassigned, DataGridView assigned)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 //populate assigned gird
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.employeeID AS ID, E.fname AS First, E.lname AS Last, W.hours AS Hours FROM Employee E, WorksOn W WHERE W.employeeID = E.employeeID AND W.prjNo = '" + projectID + "';", conn);
                 DataTable table = new DataTable();
@@ -136,57 +135,56 @@ namespace EDGELook
                 DataTable table2 = new DataTable();
                 da2.Fill(table2);
                 unassigned.DataSource = table2;
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
 
         } //end display employees
 
         public void DisplayNotes(DataGridView grid)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT nDate AS Date, notes AS Notes FROM Notes WHERE prjNo = '" + notesPNum + "';", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 grid.DataSource = table;
                 grid.Columns[0].Width = 100;
                 grid.Columns[1].Width = 205;
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end display notes
 
         public void ListPhases(DataGridView phases)
         {
+            conn.Open();
             try
             {
-                conn.Open();
-
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT prjNo AS 'Project #', prjPhase AS 'Phase', phaseDueDate AS 'Phase Due Date', status AS Status FROM ProjectPhase WHERE prjNo = '" + projectID + "' ORDER BY phaseDueDate;", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 phases.DataSource = table;
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }//end list phases
 
         public void HoursDisplay(Label hours)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 String getHours = "SELECT hoursNeeded FROM Project WHERE prjNo = '" + projectID + "';";
                 MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -194,20 +192,20 @@ namespace EDGELook
                 {
                     hours.Text = reader.GetString("hoursNeeded") + " Hours";
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end hours display
 
         //core functionality (search project page)
         public void ProjectSearch(String projSearch, DataGridView projectsGrid, int passable)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 MySqlDataAdapter da;
                 switch (passable)
                 {
@@ -220,12 +218,12 @@ namespace EDGELook
                 DataTable table = new DataTable();
                 da.Fill(table);
                 projectsGrid.DataSource = table;
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }//end project search
 
         //core functionality (project page)
@@ -243,9 +241,9 @@ namespace EDGELook
                 projectHours = (int)projectPageHoursBox.Value;
                 int projectComplete = 0;
                 int defaultHours = 0;
+                conn.Open();
                 try
                 {
-                    conn.Open();
 
                     if (flag == 1)
                     { // if its an update
@@ -294,21 +292,21 @@ namespace EDGELook
                         }
                         SetFlag(1);
                     }
-                    conn.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
+                conn.Close();
             }
 
         } // END EDITPROJECT
 
         public void DeleteProject()
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 String deleteWorksOn = "DELETE FROM WorksOn WHERE prjNo = '" + projectID + "';";
                 MySqlCommand cmd = new MySqlCommand(deleteWorksOn, conn);
                 cmd.ExecuteNonQuery();
@@ -324,23 +322,22 @@ namespace EDGELook
                 String deleteProject = "DELETE FROM Project WHERE prjNo = '" + projectID + "';";
                 MySqlCommand cmd4 = new MySqlCommand(deleteProject, conn);
                 cmd4.ExecuteNonQuery();
-
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }
 
         public void AddNotes(String eID, TextBox projectPagePNumBox, TextBox projectPageNotesBox)
         {
             //Don't need validation here because NOW() will always make the entry unique
             String pid = projectPagePNumBox.Text;
-            String notesText = projectPageNotesBox.Text;           
+            String notesText = projectPageNotesBox.Text;
+            conn.Open();
             try
             {
-                conn.Open();
                 String notes = "INSERT INTO Notes VALUES (?val1, ?val2, NOW(), ?val3); ";
                 MySqlCommand cmd = new MySqlCommand(notes, conn);
                 cmd.Parameters.AddWithValue("?val1", eID);
@@ -348,12 +345,12 @@ namespace EDGELook
                 cmd.Parameters.AddWithValue("?val3", notesText);
                 cmd.ExecuteNonQuery();
                 projectPageNotesBox.Text = "";
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
 
         } // END ADDNOTES
 
@@ -361,32 +358,32 @@ namespace EDGELook
         {
             if(complete.Checked)
             {
+                conn.Open();
                 try
                 {
-                    conn.Open();
                     MySqlCommand cmd = new MySqlCommand("UPDATE Project SET prjCOmplete = 1 WHERE prjNo = '" + projectID + "';", conn);
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
+                conn.Close();
                 MessageBox.Show("Project set to Complete");
             }
             else
             {
+                conn.Open();
                 try
                 {
-                    conn.Open();
                     MySqlCommand cmd = new MySqlCommand("UPDATE Project SET prjCOmplete = 0 WHERE prjNo = '" + projectID + "';", conn);
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
+                conn.Close();
             }
         }//end set completion
 
@@ -498,20 +495,20 @@ namespace EDGELook
                 {
                     MessageBox.Show("Invalid Input");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end assign employee
 
         public void RemoveEmployee(String empID)
         {
             //get project leader of current project
+            conn.Open();
             try
             {
-                conn.Open();
                 String checkEmpID = "";
                 String checkID = "SELECT prjLeader FROM Project WHERE prjNo  = '" + projectID + "' ;";
                 MySqlCommand cmd0 = new MySqlCommand(checkID, this.conn);
@@ -544,27 +541,41 @@ namespace EDGELook
                     }
                     reader2.Close();
 
+                    int hoursNeeded = 0;
+                    String needGetHours = "SELECT hoursNeeded FROM Project WHERE prjNo  = '" + projectID + "' ;";
+                    MySqlCommand cmd3 = new MySqlCommand(needGetHours, this.conn);
+                    MySqlDataReader reader3 = cmd3.ExecuteReader();
+                    while (reader3.Read())
+                    {
+                        hoursNeeded = reader3.GetInt32("hoursAvail");
+                    }
+                    reader3.Close();
+
                     String removeID = "DELETE FROM WorksOn WHERE employeeID = '" + empID + "' AND prjNo = '" + projectID + "';";
-                    MySqlCommand cmd3 = new MySqlCommand(removeID, conn);
-                    cmd3.ExecuteNonQuery();
+                    MySqlCommand cmd4 = new MySqlCommand(removeID, conn);
+                    cmd4.ExecuteNonQuery();
 
                     int totalHours = 0;
                     totalHours = hoursAvail + hoursAssigned;
                     String setHours = "UPDATE Employee SET hoursAvail = '" + totalHours + "'WHERE employeeID = '" + empID + "';";
-                    MySqlCommand cmd4 = new MySqlCommand(setHours, this.conn);
-                    cmd4.ExecuteNonQuery();
+                    MySqlCommand cmd5 = new MySqlCommand(setHours, this.conn);
+                    cmd5.ExecuteNonQuery();
 
+                    hoursNeeded -= hoursAssigned;
+                    String setHoursNeeded = "UPDATE Project SET hoursNeeded = '" + hoursNeeded + "'WHERE prjNo = '" + projectID + "';";
+                    MySqlCommand cmd6 = new MySqlCommand(setHoursNeeded, this.conn);
+                    cmd6.ExecuteNonQuery();
                 }
                 else
                 {
                     MessageBox.Show("Project Leader cannot be removed.");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //END REMOVEEMPLOYEE   
 
         public void UpdatePhase(TextBox phase, DateTimePicker due, TextBox status)
@@ -577,9 +588,9 @@ namespace EDGELook
             String projectStatus = status.Text;
             if (projectPhase != "" && projectDueDates != "" && projectStatus != "")
             {
+                conn.Open();
                 try
                 {
-                    conn.Open();
                     String prj = null;
                     String getPrjDup = "SELECT prjNo FROM ProjectPhase WHERE prjNo = '" + projectID + "' AND prjPhase = '" + projectPhase + "';";
                     MySqlCommand cmd = new MySqlCommand(getPrjDup, this.conn);
@@ -623,12 +634,12 @@ namespace EDGELook
                     {
                         MessageBox.Show("Please create project before adding phases.");
                     }
-                    conn.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
+                conn.Close();
             }
             else
             {
@@ -640,17 +651,17 @@ namespace EDGELook
         {
             if (projectID != null)
             {
+                conn.Open();
                 try
                 {
-                    conn.Open();
                     MySqlCommand cmd = new MySqlCommand("UPDATE Project SET prjLeader = '" + eID + "'WHERE prjNo = '" + projectID + "';", conn);
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
+                conn.Close();
             }
         } //end update leader
 

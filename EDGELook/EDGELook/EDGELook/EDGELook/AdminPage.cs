@@ -22,6 +22,7 @@ namespace EDGELook
         //display functions
         public void DisplayEmployees(DataGridView emp)
         {
+            conn.Open();
             try
             {
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT employeeID AS ID, fname AS First, lname AS Last, email AS Email, phone AS Phone, hoursAvail AS Hours, admin AS Admin, active AS Active FROM Employee ORDER BY active DESC;", conn);
@@ -36,6 +37,7 @@ namespace EDGELook
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end display employees
         public void DisplayPendingVacation(DataGridView pendingVacations)
         {
@@ -81,9 +83,9 @@ namespace EDGELook
 
             String eID;
             eID = employeeID.Text;
+            conn.Open();
             try
             {
-                conn.Open();
                 String dupId = null;
                 String getEmpDup = "SELECT employeeID FROM Employee WHERE employeeID = '" + eID + "';";
                 MySqlCommand cmd1 = new MySqlCommand(getEmpDup, this.conn);
@@ -115,12 +117,12 @@ namespace EDGELook
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee Added");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end new employee
 
         public void UpdateEmployee(TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, NumericUpDown hours, CheckBox admin, CheckBox active)
@@ -151,26 +153,26 @@ namespace EDGELook
             String phoneNum = phone.Text;
             String empID = employeeID.Text;
             int hoursAvail = (int)hours.Value;
+            conn.Open();
             try
             {
-                conn.Open();
                 String upDateEmployee = "UPDATE Employee SET employeeID = '" + empID + "', fname = '" + fName + "', lname = '" + lName + "', email = '" + eMail + "', phone = '" + phoneNum + "', hoursAvail = '" + hoursAvail + "', admin = '" + isAdmin + "', active = '" + isActive + "' WHERE employeeID = '" + empID + "';";
                 MySqlCommand cmd = new MySqlCommand(upDateEmployee, conn);
                 cmd.ExecuteNonQuery();
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
             MessageBox.Show("Employee Updated");
         } //end update employee
 
-        public void UpdateVacationStatus(String approval, String selectedEID, String selectedDate) 
+        public void UpdateVacationStatus(String approval, String selectedEID, String selectedDate)
         {
+            conn.Open();
             try
             {               
-                conn.Open();
                 if (selectedDate == null)
                 {
                     MessageBox.Show("Date not Selected");
@@ -187,12 +189,12 @@ namespace EDGELook
                     MySqlCommand cmd = new MySqlCommand("UPDATE Vacation SET status = '" + approval + "' WHERE employeeID = '" + selectedEID + "' AND startDate = '" + newDateFormat + "';", conn);
                     cmd.ExecuteNonQuery();
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }
 
         public void SelectEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, NumericUpDown hours, CheckBox admin, CheckBox active)
@@ -205,9 +207,9 @@ namespace EDGELook
             }
             int testAdmin = 0;
             int testActive = 0;
+            conn.Open();
             try
             {
-                conn.Open();
                 String getEmployeeInfo = "SELECT * FROM Employee WHERE employeeID = '" + selectedEID + "';";
                 MySqlCommand cmd = new MySqlCommand(getEmployeeInfo, conn);
                 MySqlDataReader dr = cmd.ExecuteReader();
@@ -239,31 +241,30 @@ namespace EDGELook
                 {
                     active.Checked = false;
                 }
-
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end select employee
 
         public void ResetPassword(TextBox eID, TextBox newPass)
         {
             String pass = newPass.Text;
             String empID = eID.Text;
+            conn.Open();
             try
             {
-                conn.Open();
                 String upDateEmployee = ("UPDATE Employee SET pssword = '" + pass + "' WHERE employeeID = '" + empID + "';");
                 MySqlCommand cmd = new MySqlCommand(upDateEmployee, conn);
                 cmd.ExecuteNonQuery();
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
             MessageBox.Show("Password Updated");
         } //end reset password
 

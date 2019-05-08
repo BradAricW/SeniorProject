@@ -23,52 +23,58 @@ namespace EDGELook
         public void ChangePass(TextBox currentPassBox, TextBox newPassBox, String eID)
         {
             conn.Open();
-
-            String newPassword = newPassBox.Text;
-            if (newPassword.Length < 6)
+            try
             {
-                MessageBox.Show("Password must be at least 6 characters");
-            }
-            else
-            {
-                String testID = null;
-                String getID = "SELECT employeeID FROM Employee WHERE employeeID = '" + eID + "';";
-                MySqlCommand cmd = new MySqlCommand(getID, this.conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                String newPassword = newPassBox.Text;
+                if (newPassword.Length < 6)
                 {
-                    testID = reader.GetString("employeeID");
-                }
-                reader.Close();
-
-                if (testID != null)
-                {
-                    String oldPass = currentPassBox.Text;
-                    String testPass = null;
-                    String getPass = "SELECT pssword FROM Employee WHERE employeeID = '" + eID + "' AND BINARY pssword = '" + oldPass + "';";
-                    cmd = new MySqlCommand(getPass, this.conn);
-                    reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        testPass = reader.GetString("pssword");
-                    }
-                    reader.Close();
-
-                    if (testPass != null)
-                    {
-                        String setPassword = "UPDATE Employee SET pssword = '" + newPassword + "' WHERE employeeID = " + eID + ";";
-                        cmd = new MySqlCommand(setPassword, conn);
-                        cmd.ExecuteNonQuery();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Current Password Invalid. Unable to change password.");
-                    }
+                    MessageBox.Show("Password must be at least 6 characters");
                 }
                 else
                 {
-                    MessageBox.Show("Invalid email.");
+                    String testID = null;
+                    String getID = "SELECT employeeID FROM Employee WHERE employeeID = '" + eID + "';";
+                    MySqlCommand cmd = new MySqlCommand(getID, this.conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        testID = reader.GetString("employeeID");
+                    }
+                    reader.Close();
+
+                    if (testID != null)
+                    {
+                        String oldPass = currentPassBox.Text;
+                        String testPass = null;
+                        String getPass = "SELECT pssword FROM Employee WHERE employeeID = '" + eID + "' AND BINARY pssword = '" + oldPass + "';";
+                        cmd = new MySqlCommand(getPass, this.conn);
+                        reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            testPass = reader.GetString("pssword");
+                        }
+                        reader.Close();
+
+                        if (testPass != null)
+                        {
+                            String setPassword = "UPDATE Employee SET pssword = '" + newPassword + "' WHERE employeeID = " + eID + ";";
+                            cmd = new MySqlCommand(setPassword, conn);
+                            cmd.ExecuteNonQuery();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Current Password Invalid. Unable to change password.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid email.");
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             conn.Close();
         } //end change password
@@ -77,10 +83,9 @@ namespace EDGELook
         {
             String email = resetBox.Text;
             String newPass = RandomPassword();
+            conn.Open();
             try
             {
-                conn.Open();
-
                 String testEmail = null;
                 String getEmail = "SELECT email FROM Employee WHERE email = '" + email + "';";
                 MySqlCommand cmd = new MySqlCommand(getEmail, this.conn);
@@ -93,7 +98,6 @@ namespace EDGELook
 
                 if (testEmail != null)
                 {
-
                     try
                     {
                         MailMessage mail = new MailMessage();
@@ -123,12 +127,12 @@ namespace EDGELook
                 {
                     MessageBox.Show("No such email.");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+            conn.Close();
 
         } //end reset password
 

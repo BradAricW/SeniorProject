@@ -23,36 +23,36 @@ namespace EDGELook
         //displays
         public void ListVacations(DataGridView vacationGrid)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.fname AS First, E.lname AS Last, V.startDate AS Start, V.endDate AS End, V.status AS Status FROM Vacation V, Employee E WHERE E.employeeID = V.employeeID;", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 vacationGrid.DataSource = table;
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }//end list vacations
 
         public void ListProjects(DataGridView projectsGrid)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.fname AS Name, P.prjNo AS 'Project Number', P.description AS Description, PP.prjPhase AS Phase, PP.phaseDueDate AS 'Due Date', P.deliverables AS Deliverables, P.hoursNeeded AS 'Estimated Hours', PP.status AS Status FROM Employee E, Project P, ProjectPhase PP WHERE P.prjLeader = E.employeeID AND P.prjNo = PP.prjNo AND P.prjComplete = 0; ", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 projectsGrid.DataSource = table;
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }//end list projects
 
         //primary functionality

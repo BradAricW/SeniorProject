@@ -25,43 +25,43 @@ namespace EDGELook
         //Display functions
         public void ListProjects(DataGridView projectsGrid)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT P.prjNo AS 'Project #', P.Description, W.hours AS Hours FROM Project P, WorksOn W WHERE P.prjNo = W.prjNo AND W.employeeID = '" + this.eID + "';", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 projectsGrid.DataSource = table;
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }//end list projects
 
         public void ListVacations(DataGridView vacationGrid)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT startDate AS Start, endDate AS End, status as Status FROM Vacation WHERE employeeID = '" + this.eID + "';", conn);
                 DataTable table = new DataTable();
                 da.Fill(table);
                 vacationGrid.DataSource = table;
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }//end list vacations
 
         public void GetHours(TextBox hoursBox)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 String getHours = "SELECT hoursAvail FROM Employee WHERE employeeID = '" + this.eID + "';";
                 MySqlCommand cmd = new MySqlCommand(getHours, this.conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -69,19 +69,19 @@ namespace EDGELook
                 {
                     hoursBox.Text = reader.GetString("hoursAvail");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end get hours
 
         public void GetEmail(TextBox emailBox)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 String getEmail = "SELECT email FROM Employee WHERE employeeID = '" + this.eID + "';";
                 MySqlCommand cmd = new MySqlCommand(getEmail, this.conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -89,19 +89,19 @@ namespace EDGELook
                 {
                     emailBox.Text = reader.GetString("email");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end get email
 
         public void GetPhone(TextBox phoneBox)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 String getPhone = "SELECT phone FROM Employee WHERE employeeID = '" + this.eID + "';";
                 MySqlCommand cmd = new MySqlCommand(getPhone, this.conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -109,19 +109,19 @@ namespace EDGELook
                 {
                     phoneBox.Text = reader.GetString("phone");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }//end get phone
 
         public void GetName(TextBox fName, TextBox lName)
         {
+            conn.Open();
             try
             {
-                conn.Open();
                 String getFirst = "SELECT fname FROM Employee WHERE employeeID = '" + this.eID + "';";
                 MySqlCommand cmd = new MySqlCommand(getFirst, this.conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -137,33 +137,33 @@ namespace EDGELook
                 {
                     lName.Text = reader.GetString("lname");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end get name
 
         public Boolean GetAdmin()
         {
             Boolean isAdmin = false;
             int result = 0;
+            conn.Open();
             try
             {
-                conn.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT admin FROM Employee WHERE employeeID = '" + this.eID + "';", conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     result = reader.GetInt16("admin");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
             if (result == 1)
             {
                 isAdmin = true;
@@ -174,21 +174,21 @@ namespace EDGELook
         public int GetProjHours(String prjNo)
         {
             int hours = 0;
+            conn.Open();
             try
             {
-                conn.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT hours FROM WorksOn WHERE prjNo = '" + prjNo + "' AND employeeID = '" + this.eID + "';", conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     hours = reader.GetInt16("hours");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
             return hours;
         }//end get project hours
 
@@ -196,7 +196,10 @@ namespace EDGELook
         public void EditMyHours(TextBox hoursBox)
         {
             empHours = -1;
-            try { empHours = int.Parse(hoursBox.Text); }
+            try
+            {
+                empHours = int.Parse(hoursBox.Text);
+            }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
@@ -204,17 +207,17 @@ namespace EDGELook
 
             if (empHours >= 0)
             {
+                conn.Open();
                 try
                 {
-                    conn.Open();
                     MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET hoursAvail = '" + empHours + "'WHERE employeeID = '" + this.eID + "';", conn);
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
+                conn.Close();
                 MessageBox.Show("Hours Updated");
             }
             else
@@ -226,7 +229,9 @@ namespace EDGELook
         public void EditProjectHours(TextBox newHoursBox, String pid)
         {
             int prjHours = -1;
-            try { prjHours = int.Parse(newHoursBox.Text); }
+            try {
+                prjHours = int.Parse(newHoursBox.Text);
+            }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
@@ -234,9 +239,9 @@ namespace EDGELook
             int currHours = GetProjHours(pid);
 
             int hoursNeeded = 0;
+            conn.Open();
             try
             {
-                conn.Open();
                 String getHoursNeeded = "SELECT hoursNeeded FROM Project WHERE prjNo = '" + pid + "';";
                 MySqlCommand cmd = new MySqlCommand(getHoursNeeded, this.conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -305,13 +310,13 @@ namespace EDGELook
                 {
                     MessageBox.Show("Invalid Input");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            
+            conn.Close();
+
         }//end edit project hours
 
         public void EditVacation(DateTimePicker newStartDate, DateTimePicker newEndDate)
@@ -322,10 +327,10 @@ namespace EDGELook
             newEndDate.CustomFormat = "yyyy-MM-dd";
             String startDate = newStartDate.Text;
             String endDate = newEndDate.Text;
-            String defaultStatus = "Pending";           
+            String defaultStatus = "Pending";
+            conn.Open();
             try
             {
-                conn.Open();
                 String dupId = null;
                 String getVacDup = "SELECT  employeeID FROM Vacation WHERE employeeID = '" + this.eID + "' AND startDate = '" + startDate + "';";
                 MySqlCommand cmd1 = new MySqlCommand(getVacDup, this.conn);
@@ -350,20 +355,19 @@ namespace EDGELook
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Vacation Days Created");
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         } //end edit vacation
 
         public void RemoveVacation(String startDate)
         {
+            conn.Open();
             try
             {
-                //They must double click to select, or maybe more
-                conn.Open();
                 if (startDate == null)
                 {
                     MessageBox.Show("Date not Selected");
@@ -379,12 +383,12 @@ namespace EDGELook
                     MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = '" + eID + "' AND startDate = '" + newDateFormat + "';", conn);
                     cmd.ExecuteNonQuery();
                 }
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }//end remove vacation
 
         public void EditContact(TextBox emailBox, TextBox phoneBox, TextBox fnameBox, TextBox lnameBox)
@@ -393,17 +397,17 @@ namespace EDGELook
             String emailAdd = emailBox.Text;
             String fname = fnameBox.Text;
             String lname = lnameBox.Text;
+            conn.Open();
             try
             {
-                conn.Open();
                 MySqlCommand cmd = new MySqlCommand("UPDATE Employee SET phone = '" + phoneNum + "', email = '" + emailAdd + "', fname = '" + fname + "', lname = '" + lname + "' WHERE employeeID = '" + this.eID + "';", conn);
                 cmd.ExecuteNonQuery();
-                conn.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
             MessageBox.Show("Contact Information Updated");
         }//end edit contact info
 
