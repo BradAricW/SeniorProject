@@ -104,6 +104,12 @@
   <ItemGroup>
     <Content Include="edgeicon.ico" />
     <Content Include="edgeLogo.ico" />
+    <None Include="Resources\whitebutton.png" />
+    <None Include="Resources\loginpanel.png" />
+    <None Include="Resources\projectpanel2.png" />
+    <None Include="Resources\projectpanel1.png" />
+    <None Include="Resources\employeepanels1.png" />
+    <None Include="Resources\employeepanels.png" />
     <None Include="Resources\reportbutton.png" />
     <None Include="Resources\stdbutton.png" />
     <None Include="Resources\searchpanel.png" />

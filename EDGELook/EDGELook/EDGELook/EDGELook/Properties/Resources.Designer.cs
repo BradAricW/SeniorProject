@@ -103,6 +103,56 @@ namespace EDGELook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap employeepanels {
+            get {
+                object obj = ResourceManager.GetObject("employeepanels", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap employeepanels1 {
+            get {
+                object obj = ResourceManager.GetObject("employeepanels1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loginpanel {
+            get {
+                object obj = ResourceManager.GetObject("loginpanel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap projectpanel1 {
+            get {
+                object obj = ResourceManager.GetObject("projectpanel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap projectpanel2 {
+            get {
+                object obj = ResourceManager.GetObject("projectpanel2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reportbutton {
             get {
                 object obj = ResourceManager.GetObject("reportbutton", resourceCulture);
@@ -136,6 +186,16 @@ namespace EDGELook.Properties {
         internal static System.Drawing.Bitmap stdbutton {
             get {
                 object obj = ResourceManager.GetObject("stdbutton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whitebutton {
+            get {
+                object obj = ResourceManager.GetObject("whitebutton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

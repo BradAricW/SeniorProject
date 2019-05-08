@@ -345,7 +345,6 @@ namespace EDGELook
 
         private void AdminSelectUserButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(tempEID);
             admin.SelectEmployee(tempEID, adminEmployeeIDBox, adminFNameBox, adminLNameBox, adminEmailBox, adminPhoneBox, adminHoursBox, adminCheckBox, activeCheckBox);
         } // end admin select user button
 
@@ -776,7 +775,6 @@ namespace EDGELook
                 int selectedRowIndex = adminEmployeeGrid.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = adminEmployeeGrid.Rows[selectedRowIndex];
                 tempEID = selectedRow.Cells[0].Value.ToString();
-                MessageBox.Show(tempEID);
             }
         } //end admin grid
 

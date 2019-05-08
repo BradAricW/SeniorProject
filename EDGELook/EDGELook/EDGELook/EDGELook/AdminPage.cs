@@ -28,6 +28,9 @@ namespace EDGELook
                 DataTable table = new DataTable();
                 da.Fill(table);
                 emp.DataSource = table;
+                emp.Columns[1].Width = 115;
+                emp.Columns[2].Width = 115;
+                emp.Columns[3].Width = 200;
             }
             catch (Exception ex)
             {

@@ -118,28 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="adminpanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adminpanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clearbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clearbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="stdbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stdbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edgeLogoSmaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edgeLogoSmaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="projectpanel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\projectpanel2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searchpanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchpanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adminbuttons" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adminbuttons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="reportbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reportbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="projectpanel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\projectpanel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employeepanels" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employeepanels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adminpanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adminpanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loginpanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginpanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employeepanels1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employeepanels1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searchpanel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchpanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="reportbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reportbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clearbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clearbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edgeLogoSmaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edgeLogoSmaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adminbuttons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adminbuttons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whitebutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whitebutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

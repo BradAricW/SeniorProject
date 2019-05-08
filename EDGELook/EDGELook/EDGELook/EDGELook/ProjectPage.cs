@@ -131,19 +131,11 @@ namespace EDGELook
                 DataTable table = new DataTable();
                 da.Fill(table);
                 assigned.DataSource = table;
-                assigned.Columns[0].Width = 50;
-                assigned.Columns[1].Width = 55;
-                assigned.Columns[2].Width = 55;
-                assigned.Columns[3].Width = 50;
                 //populate unassigned grid
                 MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT E.employeeID AS ID, E.fname AS First, E.lname AS Last, E.hoursAvail AS Hours FROM Employee E WHERE(not exists(SELECT * FROM WorksOn W WHERE prjNo = '" + projectID + "' AND E.employeeID = W.employeeID)) OR(not exists(SELECT * FROM WorksOn X WHERE E.employeeID = X.employeeID))", conn);
                 DataTable table2 = new DataTable();
                 da2.Fill(table2);
                 unassigned.DataSource = table2;
-                unassigned.Columns[0].Width = 50;
-                unassigned.Columns[1].Width = 55;
-                unassigned.Columns[2].Width = 55;
-                unassigned.Columns[3].Width = 50;
                 conn.Close();
             }
             catch (Exception ex)
@@ -163,7 +155,7 @@ namespace EDGELook
                 da.Fill(table);
                 grid.DataSource = table;
                 grid.Columns[0].Width = 100;
-                grid.Columns[1].Width = 157;
+                grid.Columns[1].Width = 205;
                 conn.Close();
             }
             catch (Exception ex)
