@@ -27,14 +27,11 @@ namespace EDGELook
         private DBConn dbconn;
         private MySqlConnection conn;
         ProfilePage profile;
-        private String eID;
         private int hours;
-        private String testPrjNo;
-        private String profilePrjNo;
-        private String empNo, tempEID;
+        private String eID, testPrjNo, profilePrjNo;
         private Boolean isAdmin = false;
-        private String assignEID, removeEID;
-        private String tempPhase, tempVac, tempEmpPrj;
+        private String assignEID, removeEID, empNo, tempEID;
+        private String tempPhase, tempVac, tempEmpPrj, tempAdminVac, tempAdminEID;
 
         public MainForm()
         {
@@ -121,6 +118,8 @@ namespace EDGELook
             this.resetPassBG.Visible = true;
             this.changePassBG.Visible = false;
             this.projectPageRemoveProjectButton.Visible = false;
+            this.adminVacationPageBG.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
         } //end reset password button
 
         //Password Buttons
@@ -141,6 +140,8 @@ namespace EDGELook
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
             this.projectPageRemoveProjectButton.Visible = false;
+            this.adminVacationPageBG.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
         } //end password reset button
 
         private void ChangeButton_Click(object sender, EventArgs e)
@@ -162,6 +163,8 @@ namespace EDGELook
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
             this.projectPageRemoveProjectButton.Visible = false;
+            this.adminVacationPageBG.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
         } //end password change button
 
         private void ResetPassExitLabel_Click(object sender, EventArgs e)
@@ -179,6 +182,8 @@ namespace EDGELook
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
             this.projectPageRemoveProjectButton.Visible = false;
+            this.adminVacationPageBG.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
         } //end reset pass exit button
 
         private void ChangePassExitLabel_Click(object sender, EventArgs e)
@@ -196,6 +201,8 @@ namespace EDGELook
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
             this.projectPageRemoveProjectButton.Visible = false;
+            this.adminVacationPageBG.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
 
             profile.GetHours(profileHoursTextBox);
             profile.GetEmail(profileEmailTextBox);
@@ -222,6 +229,8 @@ namespace EDGELook
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
             this.projectPageRemoveProjectButton.Visible = false;
+            this.adminVacationPageBG.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
 
             //clear all data
             Clear();
@@ -242,6 +251,8 @@ namespace EDGELook
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
             this.projectPageRemoveProjectButton.Visible = false;
+            this.adminVacationPageBG.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
             Clear();
 
             profile.GetHours(profileHoursTextBox);
@@ -266,6 +277,8 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.adminVacationPageBG.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
 
             isAdmin = profile.GetAdmin();
             if (isAdmin == true)
@@ -292,7 +305,14 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.adminVacationPageBG.Visible = false;
             this.projectPageRemoveProjectButton.Visible = false;
+
+            isAdmin = profile.GetAdmin();
+            if (isAdmin == true)
+            {
+                this.employeeAdminViewVacationsButton.Visible = true;
+            }
             Clear();
 
             employee.ListEmployees(searchEmployeesGrid, eID);
@@ -312,7 +332,9 @@ namespace EDGELook
             this.adminBackPanel.Visible = false;
             this.resetPassBG.Visible = false;
             this.changePassBG.Visible = false;
+            this.adminVacationPageBG.Visible = false;
             this.projectPageRemoveProjectButton.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
             Clear();
 
             report.ListProjects(weeklyReportGrid);
@@ -336,6 +358,7 @@ namespace EDGELook
                 this.adminBackPanel.Visible = true;
                 this.resetPassBG.Visible = false;
                 this.changePassBG.Visible = false;
+                this.adminVacationPageBG.Visible = false;
                 this.projectPageRemoveProjectButton.Visible = false;
 
                 admin.DisplayEmployees(adminEmployeeGrid);
@@ -344,6 +367,27 @@ namespace EDGELook
         } //end admin button
 
         //Admin Buttons
+        private void EmployeeAdminViewVacationsButton_Click(object sender, EventArgs e)
+        {
+            this.signOutLabel.Visible = true;
+            this.loginBG.Visible = false;
+            this.taskbarMenu.Visible = true;
+            this.profileBG.Visible = false;
+            this.reportsBG.Visible = false;
+            this.employeePageBG.Visible = false;
+            this.projectPageBG.Visible = false;
+            this.searchEmployeesBG.Visible = false;
+            this.searchProjectsBG.Visible = false;
+            this.adminBackPanel.Visible = false;
+            this.resetPassBG.Visible = false;
+            this.changePassBG.Visible = false;
+            this.adminVacationPageBG.Visible = true;
+            this.projectPageRemoveProjectButton.Visible = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
+
+            report.ListVacations(adminVacationsGrid);
+        } //end employee admin view vacations button
+
         private void AdminClearButton_Click(object sender, EventArgs e)
         {
             Clear();
@@ -386,6 +430,26 @@ namespace EDGELook
 
             }
         } // end admin add user button
+
+        //Admin Vacation Buttons
+
+        private void AdminVacationApproveButton_Click(object sender, EventArgs e)
+        {
+            admin.UpdateVacationStatus("Approved", tempAdminEID, tempAdminVac);
+            report.ListVacations(adminVacationsGrid);
+        } //end admin vacation approve button
+
+        private void AdminVacationDenyButton_Click(object sender, EventArgs e)
+        {
+            admin.UpdateVacationStatus("Denied", tempAdminEID, tempAdminVac);
+            report.ListVacations(adminVacationsGrid);
+        } //end admin vacation deny button
+
+        private void AdminVacationDeleteButton_Click(object sender, EventArgs e)
+        {
+            admin.DeleteVacation(tempAdminEID, tempAdminVac);
+            report.ListVacations(adminVacationsGrid);
+        } // end admin vacation delete button
 
         //Profile Buttons
         private void ProfileChangePassButton_Click(object sender, EventArgs e)
@@ -812,6 +876,17 @@ namespace EDGELook
                 tempEID = selectedRow.Cells[0].Value.ToString();
             }
         } //end admin grid
+
+        private void AdminVacationsGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (adminVacationsGrid.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = adminVacationsGrid.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = adminVacationsGrid.Rows[selectedRowIndex];
+                tempAdminEID = selectedRow.Cells[0].Value.ToString();
+                tempAdminVac = selectedRow.Cells[3].Value.ToString();
+            }
+        }
 
         //other functions
         private void Clear()

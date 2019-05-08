@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleBackPanel = new System.Windows.Forms.Panel();
             this.titleFrontPanel = new System.Windows.Forms.Panel();
             this.adminLabel = new System.Windows.Forms.Label();
@@ -166,6 +167,7 @@
             this.vacationReportButton = new System.Windows.Forms.Button();
             this.searchEmployeesBG = new System.Windows.Forms.Panel();
             this.searchEmployeesBackPanel = new System.Windows.Forms.Panel();
+            this.employeeAdminViewVacationsButton = new System.Windows.Forms.Button();
             this.searchEmployeesGrid = new System.Windows.Forms.DataGridView();
             this.searchEmployeesSearchLabel = new System.Windows.Forms.Label();
             this.searchEmployeesButton = new System.Windows.Forms.Button();
@@ -233,6 +235,13 @@
             this.changePasswordLabel = new System.Windows.Forms.Label();
             this.bottomBarGrey = new System.Windows.Forms.Panel();
             this.bottomBarBlue = new System.Windows.Forms.Panel();
+            this.adminVacationPageBG = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.adminVacationDeleteButton = new System.Windows.Forms.Button();
+            this.adminVacationsLabel = new System.Windows.Forms.Label();
+            this.adminVacationApproveButton = new System.Windows.Forms.Button();
+            this.adminVacationsGrid = new System.Windows.Forms.DataGridView();
+            this.adminVacationDenyButton = new System.Windows.Forms.Button();
             this.titleBackPanel.SuspendLayout();
             this.titleFrontPanel.SuspendLayout();
             this.taskbarMenu.SuspendLayout();
@@ -277,6 +286,9 @@
             this.changePassBG.SuspendLayout();
             this.changePanel.SuspendLayout();
             this.bottomBarGrey.SuspendLayout();
+            this.adminVacationPageBG.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adminVacationsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBackPanel
@@ -537,11 +549,11 @@
             // 
             this.profileProjectGrid.AllowUserToAddRows = false;
             this.profileProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.profileProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.profileProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.profileProjectGrid.BackgroundColor = System.Drawing.Color.White;
             this.profileProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -930,11 +942,11 @@
             // 
             this.vacationsGrid.AllowUserToAddRows = false;
             this.vacationsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            this.vacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.vacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.vacationsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vacationsGrid.BackgroundColor = System.Drawing.Color.White;
             this.vacationsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1047,8 +1059,8 @@
             // 
             this.phasesGrid.AllowUserToAddRows = false;
             this.phasesGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.phasesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.phasesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.phasesGrid.BackgroundColor = System.Drawing.Color.White;
             this.phasesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phasesGrid.Location = new System.Drawing.Point(0, 234);
@@ -1186,8 +1198,8 @@
             // 
             this.notesGridView.AllowUserToAddRows = false;
             this.notesGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.notesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.notesGridView.BackgroundColor = System.Drawing.Color.White;
             this.notesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.notesGridView.Location = new System.Drawing.Point(0, 298);
@@ -1417,11 +1429,11 @@
             // 
             this.projectPageOnProjectGrid.AllowUserToAddRows = false;
             this.projectPageOnProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            this.projectPageOnProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.projectPageOnProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.projectPageOnProjectGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageOnProjectGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectPageOnProjectGrid.GridColor = System.Drawing.Color.White;
@@ -1438,11 +1450,11 @@
             // 
             this.projectPageAssignmentGrid.AllowUserToAddRows = false;
             this.projectPageAssignmentGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
-            this.projectPageAssignmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.projectPageAssignmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.projectPageAssignmentGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectPageAssignmentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projectPageAssignmentGrid.GridColor = System.Drawing.Color.White;
@@ -1564,11 +1576,11 @@
             // 
             this.employeeProjectGrid.AllowUserToAddRows = false;
             this.employeeProjectGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            this.employeeProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.employeeProjectGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.employeeProjectGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.employeeProjectGrid.BackgroundColor = System.Drawing.Color.White;
             this.employeeProjectGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1643,11 +1655,11 @@
             // 
             this.employeeVacationsGrid.AllowUserToAddRows = false;
             this.employeeVacationsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            this.employeeVacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.employeeVacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.employeeVacationsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.employeeVacationsGrid.BackgroundColor = System.Drawing.Color.White;
             this.employeeVacationsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1855,11 +1867,11 @@
             // 
             this.weeklyReportGrid.AllowUserToAddRows = false;
             this.weeklyReportGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            this.weeklyReportGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.weeklyReportGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.weeklyReportGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.weeklyReportGrid.BackgroundColor = System.Drawing.Color.White;
             this.weeklyReportGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1897,11 +1909,11 @@
             // 
             this.vacationReportGrid.AllowUserToAddRows = false;
             this.vacationReportGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            this.vacationReportGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.vacationReportGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.vacationReportGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vacationReportGrid.BackgroundColor = System.Drawing.Color.White;
             this.vacationReportGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1952,6 +1964,7 @@
             this.searchEmployeesBackPanel.BackColor = System.Drawing.Color.Transparent;
             this.searchEmployeesBackPanel.BackgroundImage = global::EDGELook.Properties.Resources.searchpanel1;
             this.searchEmployeesBackPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.searchEmployeesBackPanel.Controls.Add(this.employeeAdminViewVacationsButton);
             this.searchEmployeesBackPanel.Controls.Add(this.searchEmployeesGrid);
             this.searchEmployeesBackPanel.Controls.Add(this.searchEmployeesSearchLabel);
             this.searchEmployeesBackPanel.Controls.Add(this.searchEmployeesButton);
@@ -1963,15 +1976,33 @@
             this.searchEmployeesBackPanel.Size = new System.Drawing.Size(987, 429);
             this.searchEmployeesBackPanel.TabIndex = 13;
             // 
+            // employeeAdminViewVacationsButton
+            // 
+            this.employeeAdminViewVacationsButton.BackColor = System.Drawing.Color.Transparent;
+            this.employeeAdminViewVacationsButton.BackgroundImage = global::EDGELook.Properties.Resources.stdbutton;
+            this.employeeAdminViewVacationsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.employeeAdminViewVacationsButton.FlatAppearance.BorderSize = 0;
+            this.employeeAdminViewVacationsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employeeAdminViewVacationsButton.ForeColor = System.Drawing.Color.White;
+            this.employeeAdminViewVacationsButton.Location = new System.Drawing.Point(24, 38);
+            this.employeeAdminViewVacationsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.employeeAdminViewVacationsButton.Name = "employeeAdminViewVacationsButton";
+            this.employeeAdminViewVacationsButton.Size = new System.Drawing.Size(125, 28);
+            this.employeeAdminViewVacationsButton.TabIndex = 20;
+            this.employeeAdminViewVacationsButton.Text = "View Vacations";
+            this.employeeAdminViewVacationsButton.UseVisualStyleBackColor = false;
+            this.employeeAdminViewVacationsButton.Visible = false;
+            this.employeeAdminViewVacationsButton.Click += new System.EventHandler(this.EmployeeAdminViewVacationsButton_Click);
+            // 
             // searchEmployeesGrid
             // 
             this.searchEmployeesGrid.AllowUserToAddRows = false;
             this.searchEmployeesGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.searchEmployeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.searchEmployeesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.searchEmployeesGrid.BackgroundColor = System.Drawing.Color.White;
             this.searchEmployeesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -2239,11 +2270,11 @@
             // 
             this.projectsGrid.AllowUserToAddRows = false;
             this.projectsGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.MenuBar;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.projectsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.projectsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.projectsGrid.BackgroundColor = System.Drawing.Color.White;
             this.projectsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -2621,8 +2652,8 @@
             // 
             this.adminEmployeeGrid.AllowUserToAddRows = false;
             this.adminEmployeeGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.adminEmployeeGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.adminEmployeeGrid.BackgroundColor = System.Drawing.Color.White;
             this.adminEmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminEmployeeGrid.GridColor = System.Drawing.Color.White;
@@ -2852,6 +2883,121 @@
             this.bottomBarBlue.Size = new System.Drawing.Size(1079, 68);
             this.bottomBarBlue.TabIndex = 0;
             // 
+            // adminVacationPageBG
+            // 
+            this.adminVacationPageBG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminVacationPageBG.Controls.Add(this.panel2);
+            this.adminVacationPageBG.Location = new System.Drawing.Point(0, 128);
+            this.adminVacationPageBG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminVacationPageBG.Name = "adminVacationPageBG";
+            this.adminVacationPageBG.Size = new System.Drawing.Size(1062, 572);
+            this.adminVacationPageBG.TabIndex = 28;
+            this.adminVacationPageBG.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::EDGELook.Properties.Resources.adminpanel;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.adminVacationDeleteButton);
+            this.panel2.Controls.Add(this.adminVacationsLabel);
+            this.panel2.Controls.Add(this.adminVacationApproveButton);
+            this.panel2.Controls.Add(this.adminVacationsGrid);
+            this.panel2.Controls.Add(this.adminVacationDenyButton);
+            this.panel2.Location = new System.Drawing.Point(17, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1029, 539);
+            this.panel2.TabIndex = 25;
+            // 
+            // adminVacationDeleteButton
+            // 
+            this.adminVacationDeleteButton.BackColor = System.Drawing.Color.Transparent;
+            this.adminVacationDeleteButton.BackgroundImage = global::EDGELook.Properties.Resources.reportbutton;
+            this.adminVacationDeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adminVacationDeleteButton.FlatAppearance.BorderSize = 0;
+            this.adminVacationDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminVacationDeleteButton.ForeColor = System.Drawing.Color.Snow;
+            this.adminVacationDeleteButton.Location = new System.Drawing.Point(614, 497);
+            this.adminVacationDeleteButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminVacationDeleteButton.Name = "adminVacationDeleteButton";
+            this.adminVacationDeleteButton.Size = new System.Drawing.Size(146, 28);
+            this.adminVacationDeleteButton.TabIndex = 25;
+            this.adminVacationDeleteButton.Text = "Delete Vacation";
+            this.adminVacationDeleteButton.UseVisualStyleBackColor = false;
+            this.adminVacationDeleteButton.Click += new System.EventHandler(this.AdminVacationDeleteButton_Click);
+            // 
+            // adminVacationsLabel
+            // 
+            this.adminVacationsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.adminVacationsLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminVacationsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(186)))));
+            this.adminVacationsLabel.Location = new System.Drawing.Point(13, 26);
+            this.adminVacationsLabel.Name = "adminVacationsLabel";
+            this.adminVacationsLabel.Size = new System.Drawing.Size(1001, 38);
+            this.adminVacationsLabel.TabIndex = 24;
+            this.adminVacationsLabel.Text = "All Employee Vacations";
+            this.adminVacationsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // adminVacationApproveButton
+            // 
+            this.adminVacationApproveButton.BackColor = System.Drawing.Color.Transparent;
+            this.adminVacationApproveButton.BackgroundImage = global::EDGELook.Properties.Resources.reportbutton;
+            this.adminVacationApproveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adminVacationApproveButton.FlatAppearance.BorderSize = 0;
+            this.adminVacationApproveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminVacationApproveButton.ForeColor = System.Drawing.Color.Snow;
+            this.adminVacationApproveButton.Location = new System.Drawing.Point(266, 497);
+            this.adminVacationApproveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminVacationApproveButton.Name = "adminVacationApproveButton";
+            this.adminVacationApproveButton.Size = new System.Drawing.Size(146, 28);
+            this.adminVacationApproveButton.TabIndex = 22;
+            this.adminVacationApproveButton.Text = "Approve Vacation";
+            this.adminVacationApproveButton.UseVisualStyleBackColor = false;
+            this.adminVacationApproveButton.Click += new System.EventHandler(this.AdminVacationApproveButton_Click);
+            // 
+            // adminVacationsGrid
+            // 
+            this.adminVacationsGrid.AllowUserToAddRows = false;
+            this.adminVacationsGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.MenuBar;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(114)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            this.adminVacationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            this.adminVacationsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.adminVacationsGrid.BackgroundColor = System.Drawing.Color.White;
+            this.adminVacationsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.adminVacationsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.adminVacationsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adminVacationsGrid.GridColor = System.Drawing.Color.White;
+            this.adminVacationsGrid.Location = new System.Drawing.Point(13, 64);
+            this.adminVacationsGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminVacationsGrid.Name = "adminVacationsGrid";
+            this.adminVacationsGrid.ReadOnly = true;
+            this.adminVacationsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.adminVacationsGrid.RowTemplate.ReadOnly = true;
+            this.adminVacationsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.adminVacationsGrid.Size = new System.Drawing.Size(1001, 416);
+            this.adminVacationsGrid.TabIndex = 20;
+            this.adminVacationsGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.AdminVacationsGrid_CellMouseClick);
+            // 
+            // adminVacationDenyButton
+            // 
+            this.adminVacationDenyButton.BackColor = System.Drawing.Color.Transparent;
+            this.adminVacationDenyButton.BackgroundImage = global::EDGELook.Properties.Resources.reportbutton;
+            this.adminVacationDenyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adminVacationDenyButton.FlatAppearance.BorderSize = 0;
+            this.adminVacationDenyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminVacationDenyButton.ForeColor = System.Drawing.Color.Snow;
+            this.adminVacationDenyButton.Location = new System.Drawing.Point(441, 497);
+            this.adminVacationDenyButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.adminVacationDenyButton.Name = "adminVacationDenyButton";
+            this.adminVacationDenyButton.Size = new System.Drawing.Size(146, 28);
+            this.adminVacationDenyButton.TabIndex = 21;
+            this.adminVacationDenyButton.Text = "Deny Vacation";
+            this.adminVacationDenyButton.UseVisualStyleBackColor = false;
+            this.adminVacationDenyButton.Click += new System.EventHandler(this.AdminVacationDenyButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2861,6 +3007,8 @@
             this.Controls.Add(this.bottomBarGrey);
             this.Controls.Add(this.taskbarMenu);
             this.Controls.Add(this.titleBackPanel);
+            this.Controls.Add(this.adminVacationPageBG);
+            this.Controls.Add(this.formBGTemp);
             this.Controls.Add(this.searchProjectsBG);
             this.Controls.Add(this.reportsBG);
             this.Controls.Add(this.searchEmployeesBG);
@@ -2871,7 +3019,6 @@
             this.Controls.Add(this.changePassBG);
             this.Controls.Add(this.resetPassBG);
             this.Controls.Add(this.adminBackPanel);
-            this.Controls.Add(this.formBGTemp);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2940,6 +3087,9 @@
             this.changePanel.ResumeLayout(false);
             this.changePanel.PerformLayout();
             this.bottomBarGrey.ResumeLayout(false);
+            this.adminVacationPageBG.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.adminVacationsGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3137,6 +3287,14 @@
         private System.Windows.Forms.Button projectDeleteYesButton;
         private System.Windows.Forms.TextBox projectDeleteNumBox;
         private System.Windows.Forms.Label projectDeleteConfirmLabel;
+        private System.Windows.Forms.Panel adminVacationPageBG;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label adminVacationsLabel;
+        private System.Windows.Forms.Button adminVacationApproveButton;
+        private System.Windows.Forms.DataGridView adminVacationsGrid;
+        private System.Windows.Forms.Button adminVacationDenyButton;
+        private System.Windows.Forms.Button adminVacationDeleteButton;
+        private System.Windows.Forms.Button employeeAdminViewVacationsButton;
     }
 }
 

@@ -39,13 +39,6 @@ namespace EDGELook
             }
             conn.Close();
         } //end display employees
-        public void DisplayPendingVacation(DataGridView pendingVacations)
-        {
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT E.fname, E.lname, V.startDate, V.endDate FROM Vacation V, Employee E WHERE E.employeeID = V.employeeID AND V.status = 'Pending';", conn);
-            DataTable table = new DataTable();
-            da.Fill(table);
-            pendingVacations.DataSource = table;
-        }
 
         //core functionality
         public void NewEmployee(TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, TextBox pass, NumericUpDown hours, CheckBox admin, CheckBox active)
@@ -101,9 +94,7 @@ namespace EDGELook
                 }
                 else
                 {
-                    //String insertEmp = "INSERT INTO Employee VALUES ('" + eID + "', '" + fname + "', '" + lname + "', '" + userName + "', SHA2('" + defaultPassword + "', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), '" + phoneNumber + "', '" + hours + "', '" + isAdmin + "', '" + isActive + "');";
-                    //MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
-                    string insertEmp = "INSERT INTO Employee VALUES (?val1, ?val2, ?val3, ?val4, ?val5, ?val6, ?val7, ?val8, ?val9);";
+                    String insertEmp = "INSERT INTO Employee VALUES (?val1, ?val2, ?val3, ?val4, ?val5, ?val6, ?val7, ?val8, ?val9);";
                     MySqlCommand cmd = new MySqlCommand(insertEmp, conn);
                     cmd.Parameters.AddWithValue("?val1", eID);
                     cmd.Parameters.AddWithValue("?val2", fname);
@@ -179,13 +170,13 @@ namespace EDGELook
                 }
                 else
                 {
-                    string[] dateTime = selectedDate.Split(' ');
-                    string date = dateTime[0];
-                    string[] dateSeperated = date.Split('/');
-                    string month = dateSeperated[0];
-                    string day = dateSeperated[1];
-                    string year = dateSeperated[2];
-                    string newDateFormat = "" + year + "-" + month + "-" + day + "";
+                    String[] dateTime = selectedDate.Split(' ');
+                    String date = dateTime[0];
+                    String[] dateSeperated = date.Split('/');
+                    String month = dateSeperated[0];
+                    String day = dateSeperated[1];
+                    String year = dateSeperated[2];
+                    String newDateFormat = "" + year + "-" + month + "-" + day + "";
                     MySqlCommand cmd = new MySqlCommand("UPDATE Vacation SET status = '" + approval + "' WHERE employeeID = '" + selectedEID + "' AND startDate = '" + newDateFormat + "';", conn);
                     cmd.ExecuteNonQuery();
                 }
@@ -197,7 +188,36 @@ namespace EDGELook
             conn.Close();
         }
 
-        public void SelectEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, NumericUpDown hours, CheckBox admin, CheckBox active)
+        public void DeleteVacation(String selectedEID, String startDate)
+        {
+            conn.Open();
+            try
+            {
+                if (startDate == null)
+                {
+                    MessageBox.Show("Date not Selected");
+                }
+                else
+                {
+                    String[] dateTime = startDate.Split(' ');
+                    String date = dateTime[0];
+                    String[] dateSeperated = date.Split('/');
+                    String month = dateSeperated[0];
+                    String day = dateSeperated[1];
+                    String year = dateSeperated[2];
+                    String newDateFormat = "" + year + "-" + month + "-" + day + "";
+                    MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = '" + selectedEID + "' AND startDate = '" + newDateFormat + "';", conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conn.Close();
+        }//end remove vacation
+
+            public void SelectEmployee(String selectedEID, TextBox employeeID, TextBox firstName, TextBox lastName, TextBox email, TextBox phone, NumericUpDown hours, CheckBox admin, CheckBox active)
         {
             int eID = -1;
             try { eID = int.Parse(selectedEID); }
@@ -267,6 +287,5 @@ namespace EDGELook
             conn.Close();
             MessageBox.Show("Password Updated");
         } //end reset password
-
     }//end class
 }//end namespace

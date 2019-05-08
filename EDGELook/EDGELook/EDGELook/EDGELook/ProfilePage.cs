@@ -373,13 +373,13 @@ namespace EDGELook
                     MessageBox.Show("Date not Selected");
                 }
                 else {
-                    string[] dateTime = startDate.Split(' ');
-                    string date = dateTime[0];
-                    string[] dateSeperated = date.Split('/');
-                    string month = dateSeperated[0];
-                    string day = dateSeperated[1];
-                    string year = dateSeperated[2];
-                    string newDateFormat = "" + year + "-" + month + "-" + day + "";
+                    String[] dateTime = startDate.Split(' ');
+                    String date = dateTime[0];
+                    String[] dateSeperated = date.Split('/');
+                    String month = dateSeperated[0];
+                    String day = dateSeperated[1];
+                    String year = dateSeperated[2];
+                    String newDateFormat = "" + year + "-" + month + "-" + day + "";
                     MySqlCommand cmd = new MySqlCommand("DELETE FROM Vacation WHERE employeeID = '" + eID + "' AND startDate = '" + newDateFormat + "';", conn);
                     cmd.ExecuteNonQuery();
                 }
